@@ -3,7 +3,7 @@
 ### 以mis后台为例：
 
 ````
-git clone http://gitlab.baidu.com/tb-component/mis-template.git
+git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template; sudo rm -rf .git
 cd mis-template
 npm install
 npm start
