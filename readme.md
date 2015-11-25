@@ -4,8 +4,7 @@
 
 ````
 git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template; sudo rm -rf .git
-cd mis-template
-npm install
+cd mis-template; npm install
 npm start
 ````
 
@@ -27,7 +26,7 @@ package.json
 webpack.config.js
 ````
 
-- `control`文件夹下为所有子项目的入口，命名规范为『项目名』.php，引入webpack打包后的文件，建议将打包后的文件放在`src/bundle/『项目名』.js`中
+- `control`文件夹下为所有子项目的入口，命名规范为『项目名』.php，引入webpack打包后的文件，将打包后的文件放在`static/『项目名』.js`中（必须放在static文件夹下，否则编译脚本会报错）
 - `src`文件夹下所有子文件夹为独立项目，内部使用react+webpack，因此可直接使用commonjs规范引入需要的文件
 - 安装新依赖包时，请npm install example --save 以便其他人install的时候能安装到完整的包
 
