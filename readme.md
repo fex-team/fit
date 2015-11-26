@@ -3,7 +3,7 @@
 ### 以mis后台为例：
 
 ````
-git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template; sudo rm -rf .git; npm config set registry http://registry.npm.baidu.com; npm install cnpm -g; cnpm install
+git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template; sudo rm -rf .git; npm install cnpm -g --registry=http://registry.npm.baidu.com; cnpm install
 npm start
 ````
 
