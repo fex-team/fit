@@ -11,16 +11,31 @@ tb-component 是基于贴吧已有编译脚本基础上，支持本地开发、�
 - 放弃php模块化方案，前端就不需要care php的模块化，首屏、后端渲染都已实现
 - 放弃全部内联样式的激进写法，推崇sass模块化 https://github.com/fex-team/css-path-loader https://github.com/fex-team/html-path-loader
 
-# 快速开始新项目
-
-### 以mis后台为例：
+# 创建一个新的mis项目
 
 ````
-git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template; sudo rm -rf .git; npm install cnpm -g --registry=http://registry.npm.baidu.com; cnpm install
+$ git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template; sudo rm -rf .git; npm install cnpm -g --registry=http://registry.npm.baidu.com; cnpm install
+````
+
+# 构建和部署
+
+## 本地开发
+
+````
 npm start
 ````
 
-`npm start` 开启了代码编译，它是webpack与**贴吧编译**的集成，因此贴吧组件化解决方案实质是在贴吧编译脚本的基础上实现了webpack+react的生态圈。
+打开 localhost:8090 进行调试（小甜点：支持代码热更新）
+
+因为mac权限问题，本地server端口开在高位的8080，webpack服务开在8090并代理到8080端口，因此支持在8090端口下热更新开发。
+
+## 沙盒开发&部署
+
+````
+$ npm run build
+````
+
+`npm run build` 是webpack与**贴吧编译**的集成，先通过webpack打包后再经由贴吧编译脚本上传至沙盒服务器。
 
 # 开发指南
 
