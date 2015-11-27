@@ -14,7 +14,7 @@ tb-component 是基于贴吧已有编译脚本基础上，支持本地开发、�
 # 创建一个新的mis项目
 
 ````
-$ git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template; sudo rm -rf .git; npm install cnpm -g --registry=http://registry.npm.baidu.com; cnpm install
+$ git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template; git clone http://gitlab.baidu.com/tb-component/build.git _build; sudo rm -rf .git; npm install cnpm -g --registry=http://registry.npm.baidu.com; cnpm install
 ````
 
 # 构建和部署
