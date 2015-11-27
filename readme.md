@@ -25,9 +25,9 @@ $ git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-tem
 npm start
 ````
 
-打开 localhost:8090 进行调试（小甜点：支持代码热更新）
-
-因为mac权限问题，本地server端口开在高位的8080，webpack服务开在8090并代理到8080端口，因此支持在8090端口下热更新开发。
+- 需要node版本4.0+
+-打开 localhost:8090 进行调试（小甜点：支持代码热更新）
+-因为mac权限问题，本地server端口开在高位的8080，webpack服务开在8090并代理到8080端口，因此支持在8090端口下热更新开发。
 
 ## 沙盒部署
 
