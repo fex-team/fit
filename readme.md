@@ -14,7 +14,7 @@ tb-component 是基于贴吧已有编译脚本基础上，支持本地开发、�
 # 创建一个新的mis项目
 
 ````
-$ git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template; git clone http://gitlab.baidu.com/tb-component/build.git _build; sudo rm -rf .git; npm install cnpm -g --registry=http://registry.npm.baidu.com; cnpm install
+$ git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template readme.md; git clone http://gitlab.baidu.com/tb-component/build.git _build; sudo rm -rf .git; npm install cnpm -g --registry=http://registry.npm.baidu.com; cnpm install
 ````
 
 # 构建和部署
@@ -40,7 +40,7 @@ $ npm run build
 # 项目结构
 
 - 移除了旧的 `template` `widget` `static` 文件夹
-- 现在仅 `src` 和 `control` 两个文件夹 + 三个配置文件！ `control` 是入口， `src` 里是全部项目源代码！
+- 现在仅 `src` 和 `control` 两个文件夹 + 四个文件！ `control` 是入口， `src` 里是全部项目源代码！
 
 ## 这是一个名称为example的项目
 
@@ -52,6 +52,7 @@ src
 build.sh
 deploy-conf.js
 package.json
+fis-conf.js
 ````
 
 - `control`文件夹下为所有子项目的入口，命名规范为『项目名』.php，引入webpack打包后的文件，将打包后的文件放在`src/bundle/『项目名』.js`中
