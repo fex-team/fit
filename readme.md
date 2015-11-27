@@ -40,7 +40,7 @@ $ npm run build
 # 项目结构
 
 - 移除了旧的 `template` `widget` `static` 文件夹
-- 现在仅 `src` 和 `control` 两个文件夹 + 四个文件！ `control` 是入口， `src` 里是全部项目源代码！
+- 现在仅 `src` 和 `control` 两个文件夹！ `control` 是入口， `src` 里是全部项目源代码！
 
 ## 这是一个名称为example的项目
 
@@ -53,6 +53,9 @@ build.sh
 deploy-conf.js
 package.json
 fis-conf.js
+server.js
+webpack.config.js
+webpack.config.dev.js
 ````
 
 - `control`文件夹下为所有子项目的入口，命名规范为『项目名』.php，引入webpack打包后的文件，将打包后的文件放在`src/bundle/『项目名』.js`中
