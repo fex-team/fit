@@ -53,9 +53,6 @@ build.sh
 deploy-conf.js
 package.json
 fis-conf.js
-server.js
-webpack.config.js
-webpack.config.dev.js
 ````
 
 - `control`文件夹下为所有子项目的入口，命名规范为『项目名』.php，引入webpack打包后的文件，将打包后的文件放在`src/bundle/『项目名』.js`中
