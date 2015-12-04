@@ -5,25 +5,9 @@ tb-component 贴吧组件化开发流程，致力于打造一套完全前端模�
 - react + redux + webpack
 - 一个组件包含（html+js+css），一行引入代码便引入了全部
 - 首屏、后端渲染
-- sass模块化 https://github.com/fex-team/css-path-loader https://github.com/fex-team/html-path-loader
+- sass模块化
 
 # 快速上手
-
-
-
-
-
-# 创建一个新的mis项目
-
-1. fork mis项目模板（http://gitlab.baidu.com/tb-component/mis-template.git）到 `tb` 组
-
-````
-$ git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template readme.md; git clone http://gitlab.baidu.com/tb-component/build.git _build; sudo rm -rf .git; npm install cnpm -g --registry=http://registry.npm.baidu.com; cnpm install
-````
-
-# 构建和部署
-
-## 本地开发
 
 ````
 npm start
@@ -33,34 +17,20 @@ npm start
 - 打开 localhost:8090 进行调试（小甜点：支持代码热更新）
 - 因为mac权限问题，本地server端口开在高位的8080，webpack服务开在8090并代理到8080端口，因此支持在8090端口下热更新开发。
 
-## 沙盒部署
+# 部署到沙盒
 
 ````
 $ npm run build
 ````
 
-`npm run build` 是webpack与**贴吧编译**的集成，先通过webpack打包后再经由贴吧编译脚本上传至沙盒服务器。
+# 新建模块
+
+[新建模块](newProject.md)
 
 # 项目结构
 
-- 移除了旧的 `template` `widget` `static` 文件夹
-- 现在仅 `src` 和 `control` 两个文件夹！ `control` 是入口， `src` 里是全部项目源代码！
-
-## 这是一个名称为example的项目
-
-````
-control
-|--example.php
-src
-|--example
-build.sh
-deploy-conf.js
-package.json
-fis-conf.js
-````
-
-- `control`文件夹下为所有子项目的入口，命名规范为『项目名』.php，引入webpack打包后的文件，将打包后的文件放在`src/bundle/『项目名』.js`中
-- `src`文件夹下所有子文件夹为独立项目，直接使用commonjs规范引入需要的文件
-- 安装新依赖包时，请npm install example --save 以便其他人install的时候能安装到完整的包
+[项目结构](tree.md)
 
 # 组件索引
+
+captcha 验证码
