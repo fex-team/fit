@@ -5,7 +5,7 @@
 - 一个完整的项目需要的所有html、css、js和资源文件都统一在`src/项目名`文件夹下管理
 - `src/bundle`文件夹存放所有项目打包后的文件
 
-## 这是一个名称为example的项目
+## 这是一个example项目
 
 ````
 control/example.php
