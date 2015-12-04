@@ -1,17 +1,21 @@
-# 快速上手
+# 前言
 
 tb-component 贴吧组件化开发流程，致力于打造一套完全前端模块化、真正意义上的组件即插即用的生态圈。
 
-# 前言
-
-tb-component 是基于贴吧已有编译脚本基础上，本地开发的解决方案。我们的宗旨是：
-
-- react + flux(redux) + webpack
+- react + redux + webpack
 - 一个组件包含（html+js+css），一行引入代码便引入了全部
-- 放弃php模块化方案，前端就不需要care php的模块化，首屏、后端渲染都已实现
-- 放弃全部内联样式的激进写法，推崇sass模块化 https://github.com/fex-team/css-path-loader https://github.com/fex-team/html-path-loader
+- 首屏、后端渲染
+- sass模块化 https://github.com/fex-team/css-path-loader https://github.com/fex-team/html-path-loader
+
+# 快速上手
+
+
+
+
 
 # 创建一个新的mis项目
+
+1. fork mis项目模板（http://gitlab.baidu.com/tb-component/mis-template.git）到 `tb` 组
 
 ````
 $ git clone http://gitlab.baidu.com/tb-component/mis-template.git; cp -r mis-template/* ./; sudo rm -rf mis-template readme.md; git clone http://gitlab.baidu.com/tb-component/build.git _build; sudo rm -rf .git; npm install cnpm -g --registry=http://registry.npm.baidu.com; cnpm install
