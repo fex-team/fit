@@ -1,4 +1,4 @@
-# 新模块如何初始化
+### 新模块如何初始化
 
 1. 在svn申请一个新的模块
 2. 在http://gitlab.baidu.com/groups/tb 项目组里新建模块，教程：http://agroup.baidu.com/dev/md/article/17002#
