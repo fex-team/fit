@@ -27,6 +27,12 @@ npm install
 
 没有代理的同学可以添加参数`--registry=https://registry.npm.taobao.org`，从淘宝的npm镜像进行安装
 
+最后，需要配置项目信息，修改 `deploy-conf.js` 文件中配置项：
+
+- host: 沙盒地址
+- modName: 模块名，此项目为captcha
+- webpackProject: 需要打包的项目名，一个project下面可能存放多个子项目，这个字段标识了当前打包哪一个项目。参数名需要与`src/项目名`中 『项目名』 一致
+
 然后执行`npm start`就可以本地开发了：
 
 - node版本 4+
