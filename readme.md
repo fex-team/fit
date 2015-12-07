@@ -63,11 +63,11 @@ git push origin master
 
 ### 新建模块
 
-[新模块如何初始化](newProject.md)
+[新模块如何初始化](doc/newProject.md)
 
 ### 代码结构
 
-[项目结构说明](tree.md)
+[项目结构说明](doc/tree.md)
 
 ### 组件索引
 
