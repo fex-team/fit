@@ -20,4 +20,4 @@ fis-conf.js
 - `src`文件夹下所有子文件夹为独立项目，直接使用commonjs规范引入需要的文件
 - 安装新依赖包时，请npm install somePackage --save 以便其他人install的时候能安装到完整的包
 
-[返回](../readme.md)
+[返回](readme.md)

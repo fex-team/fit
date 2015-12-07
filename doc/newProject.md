@@ -12,6 +12,6 @@ sudo rm -rf mis-template
 ````
 
 
-- 按照 [快速入手](../readme.md) 的步骤开始开发！
+- 按照 [快速入手](readme.md) 的步骤开始开发！
 
-[返回](../readme.md)
+[返回](readme.md)
