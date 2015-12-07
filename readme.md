@@ -7,6 +7,19 @@ tb-component 贴吧组件化开发流程，致力于打造一套完全前端模�
 - 首屏、后端渲染
 - sass模块化
 
+123
+
+
+
+
+
+
+
+
+
+
+
+
 ### 快速上手
 
 **使用gitlab进行版本控制**，代码地址：http://gitlab.baidu.com/groups/tb
