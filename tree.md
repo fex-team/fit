@@ -1,5 +1,7 @@
 ### 项目结构说明
 
+
+
 - 移除了旧的 `template` `widget` `static` 文件夹
 - 现在仅需要 `src` 和 `control` 两个文件夹！ `control` 是入口， `src` 里是全部项目源代码
 - 一个完整的项目需要的所有html、css、js和资源文件都统一在`src/项目名`文件夹下管理
