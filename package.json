@@ -1,0 +1,43 @@
+{
+  "name": "awesome",
+  "version": "1.0.0",
+  "description": "tb-component 贴吧组件化开发流程，致力于打造一套完全前端模块化、真正意义上的组件即插即用的生态圈。",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.baidu.com/tb-component/awesome.git"
+  },
+  "scripts": {
+    "server": "node server.js",
+    "webpack-dev": "node webpack.js",
+    "webpack-dist": "webpack -p --profile --display-modules --config webpack.config.js",
+    "start": "npm run server & npm run webpack-dev",
+    "build": "npm run webpack-dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.2.0",
+    "koa": "^1.1.2",
+    "koa-static-cache": "^3.1.3",
+    "node-sass": "^3.4.2",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-router": "^1.0.0",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "react-hot-loader": "^1.3.0",
+    "babel-loader": "^6.2.0",
+    "css-loader": "^0.23.0",
+    "css-path-loader": "^0.1.1",
+    "file-loader": "^0.8.4",
+    "html-path-loader": "^0.1.0",
+    "json-loader": "^0.5.3",
+    "autoprefixer-loader": "^3.1.0",
+    "webpack": "^1.12.6",
+    "webpack-dev-server": "^1.14.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18"
+  }
+}
