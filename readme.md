@@ -57,6 +57,8 @@ git commit -m "ISSUE=yourCode"
 git push origin master
 ````
 
+没有接入gitlab开发流程的同学，[点击链接](http://solar.baidu.com/ci/platform/#/gitlab)进入绑定帐号。
+
 你没看错，先要加入 贴吧前端Gitlab hi群，群号：1493692
 
 对，这是提交代码到master分支，因为项目集成了fisCI钩子，会自动同步到svn主干并在agile平台执行编译。
