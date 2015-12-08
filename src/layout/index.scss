@@ -31,6 +31,7 @@ html {
 
 .g-sd {
   bottom: 0;
+  padding-top: 15px;
 }
 
 .g-hd {
@@ -72,10 +73,12 @@ html {
       height: auto;
       width: 160px;
       padding: 0 20px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       line-height: 50px;
       text-align: left;
+      color: $font-color-dark;
+      text-decoration: none;
     }
     .navbar-right {
       flex-grow: 1;

@@ -1,0 +1,23 @@
+@import "../../mixins";
+
+> .title {
+  font-size: 12px;
+  color: $font-color-muted;
+  padding: 10px 15px;
+}
+
+.item {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  font-weight: normal;
+  text-transform: none;
+  transition: background-color 0.2s ease-in-out 0s;
+  color: #b4b6bd;
+  text-decoration: none;
+  font-size: 14px;
+  &:hover, &.active {
+    color: #fff;
+    background-color: #32374a;
+  }
+}
