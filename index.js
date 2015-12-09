@@ -9,14 +9,31 @@ export default class Layout extends React.Component {
     }
 
     render() {
+        // addon
+        let addon = null
+        let addonValue = this.props['addon-left'] || this.props['addon-right']
+        if (addonValue) {
+            let addonClass = classnames({
+                'fa': true,
+                ['fa-' + addonValue]: true
+            })
+            addon = (
+                <i className={addonClass}></i>
+            )
+        }
+
         let btnClass = classnames({
             'btn': true,
             ['btn-' + this.props.type]: true,
-            'disabled': this.props.disabled
+            'disabled': this.props.disabled,
+            'btn-addon': addonValue
         })
 
         return (
-            <button {...this.props} className={btnClass}>{this.props.children}</button>
+            <button {...this.props} className={btnClass}>
+                {addon ? addon : null}
+                {this.props.children}
+            </button>
         )
     }
 }
