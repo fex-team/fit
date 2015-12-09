@@ -43,8 +43,16 @@ npm install
 - modName: 模块名，此项目为captcha
 - webpackProject: 需要打包的项目名，一个project下面可能存放多个子项目，这个字段标识了当前打包哪一个项目。参数名需要与`src/项目名`中 『项目名』 一致
 
-然后执行`npm start`就可以本地开发了：
+然后执行
+
+```
+npm start
+```
+
+就可以本地开发了：
 本地开发需要占用8080和8090端口，被占用的话，请到_build/server.js 和 _build/webpack.js 最底部更改
+
+对于某些可能出现 npm start 依然失败的情况，请开2个命令行窗口，并分别运行 node _build/server.js 和 node _build/wepack.js
 
 - node版本 4+
 - 打开 localhost:8090 进行调试（小甜点：支持代码热更新）
