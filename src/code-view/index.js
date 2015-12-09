@@ -33,7 +33,7 @@ export default class Layout extends React.Component {
                             <Panel header={title[1]}>
                                 <div className="description"
                                      dangerouslySetInnerHTML={{__html: marked(content)}}></div>
-                                <Highlight className='javascript'>
+                                <Highlight className='jsx'>
                                     {code}
                                 </Highlight>
                             </Panel>

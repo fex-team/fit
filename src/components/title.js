@@ -1,6 +1,7 @@
 import React from 'react'
 import Highlight from 'react-highlight'
 import marked from 'marked'
+import './index.scss'
 
 export default class Layout extends React.Component {
     constructor(props) {
@@ -17,12 +18,14 @@ export default class Layout extends React.Component {
         let code = infoArray[1].replace(/(````jsx|````)/g, '').replace(/^\s*\n*/g, '')
 
         return (
-            <div className="bar-header">
-                <div className="title"
-                     dangerouslySetInnerHTML={{__html: description}}></div>
-                <Highlight className='jsx'>
-                    {code}
-                </Highlight>
+            <div _namespace>
+                <div className="bar-header">
+                    <div className="title"
+                         dangerouslySetInnerHTML={{__html: description}}></div>
+                    <Highlight className='jsx'>
+                        {code}
+                    </Highlight>
+                </div>
             </div>
         )
     }
