@@ -7,14 +7,13 @@
 
 + 配置 fis.yml 的时候， `hi_group_id: 1493692`
 
-````
-git clone http://gitlab.baidu.com/tb-component/mis-template.git mis-template
-mv mis-template/* ./
-sudo rm -rf mis-template
-````
-
 + 配置 BCLOUD 的时候， 一般贴吧项目的 thunk 路径开头都为  `app/search/forum/fe`
 
++ 安装项目编辑脚本
+
+````
+git clone http://gitlab.baidu.com/tb-component/mis-template.git mis-template && mv mis-template/* ./ && rm -rf mis-template
+````
 
 - 按照 [快速入手](readme.md) 的步骤开始开发！
 
