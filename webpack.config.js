@@ -11,8 +11,12 @@ module.exports = {
         loaders: [
             {
                 test: /\.js?$/,
-                exclude: /node_modules/,
-                loaders: ['babel?presets[]=react,presets[]=es2015', 'html-path-loader']
+                exclude: [/node_modules/, /demo/],
+                loaders: ['react-hot-loader', 'babel?presets[]=react,presets[]=es2015', 'html-path-loader']
+            },{
+                test: /\.js?$/,
+                include: [/demo/],
+                loaders: ['html-path-loader']
             }, {
                 test: /\.(scss|css)/,
                 exclude: /node_modules/,
