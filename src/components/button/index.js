@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../../lib/button'
 import CodeView from '../../code-view'
 import Highlight from 'react-highlight'
 import { Row, Col } from 'antd'
