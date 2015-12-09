@@ -9,6 +9,14 @@ tb-component 贴吧组件化开发流程，致力于打造一套完全前端模�
 - 首屏、后端渲染
 - sass模块化
 
+### 环境要求
+
++ node
++ webpack
++ 支持 node-grp
+
+针对 windows 机器 npm install 出现 node-grp安装出错的情况请安装 node-grp[这里](https://github.com/nodejs/node-gyp)
+
 ### 快速上手
 
 **使用gitlab进行版本控制**，代码地址：http://gitlab.baidu.com/groups/tb
@@ -16,9 +24,9 @@ tb-component 贴吧组件化开发流程，致力于打造一套完全前端模�
 在已有的模块中进行开发，无论是修改还是新增子模块，先clone代码到本地（下面以captcha模块为例）
 
 ````
-git clone http://gitlab.baidu.com/tb/captcha.git
+git clone http://gitlab.baidu.com/tb/captcha.git # 替换项目地址为你的项目地址
 cd captcha
-git clone http://gitlab.baidu.com/tb-component/build.git _build
+git clone http://gitlab.baidu.com/tb-component/build.git _build 
 ````
 
 再安装编译所需的`npm`依赖包
@@ -36,6 +44,7 @@ npm install
 - webpackProject: 需要打包的项目名，一个project下面可能存放多个子项目，这个字段标识了当前打包哪一个项目。参数名需要与`src/项目名`中 『项目名』 一致
 
 然后执行`npm start`就可以本地开发了：
+本地开发需要占用8080和8090端口，被占用的话，请到_build/server.js 和 _build/webpack.js 最底部更改
 
 - node版本 4+
 - 打开 localhost:8090 进行调试（小甜点：支持代码热更新）
@@ -76,3 +85,4 @@ git push origin master
 ### 组件索引
 
 captcha 验证码
+mis-react mis 平台
