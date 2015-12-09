@@ -30,7 +30,7 @@ export default class Layout extends React.Component {
                     {this.props.children}
                 </div>
                 <div className="g-ft">
-
+                    贴吧组件库
                 </div>
             </div>
         )

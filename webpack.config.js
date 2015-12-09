@@ -32,6 +32,9 @@ module.exports = {
             }, {
                 test: /\.json$/,
                 loader: 'json-loader'
+            }, {
+                test: /\.md$/,
+                loader: 'text-loader'
             }
         ]
     }
