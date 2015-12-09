@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import '../../src/all.scss'
+import 'tb-style'
 
 export default class Layout extends React.Component {
     constructor(props) {
