@@ -1,3 +1,5 @@
+var resolve = require('./resolve')
+
 module.exports = {
     entry: [
         './src/index.js'
@@ -41,5 +43,7 @@ module.exports = {
                 loader: 'text-loader'
             }
         ]
-    }
+    },
+
+    resolve: resolve
 };

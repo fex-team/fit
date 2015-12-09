@@ -10,7 +10,8 @@ import 'font-awesome/css/font-awesome.css'
 // highlight
 import 'highlight.js/styles/github.css'
 
-import './reset.scss'
-import './common.scss'
+import './all.scss'
+
+document.title = '贴吧组件库'
 
 ReactDOM.render(routes, document.getElementById('react-dom'))

@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../../../lib/button'
+import Button from 'tb-button'
 
 const style = {
     marginLeft: 5

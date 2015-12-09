@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var path = require('path')
+var resolve = require('./resolve')
 
 var config = {
     devtool: 'eval-source-map',
@@ -23,7 +24,7 @@ var config = {
                 test: /\.js?$/,
                 exclude: [/node_modules/, /demo/],
                 loaders: ['react-hot-loader', 'babel?presets[]=react,presets[]=es2015', 'html-path-loader']
-            },{
+            }, {
                 test: /\.js?$/,
                 include: [/demo/],
                 loaders: ['html-path-loader']
@@ -58,7 +59,9 @@ var config = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
-    ]
+    ],
+
+    resolve: resolve
 }
 
 module.exports = config
