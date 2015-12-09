@@ -17,6 +17,14 @@ import Addon from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import addonCode from 'text!./demo/addon.js'
 import addonMarkdown from './demo/addon.md'
 
+import Rounded from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/rounded.js'
+import roundedCode from 'text!./demo/rounded.js'
+import roundedMarkdown from './demo/rounded.md'
+
+import Group from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/group.js'
+import groupCode from 'text!./demo/group.js'
+import groupMarkdown from './demo/group.md'
+
 const colStyle = {
     padding: 10
 }
@@ -51,6 +59,15 @@ export default class Layout extends React.Component {
                         <CodeView md={colorMarkdown}
                                   code={colorCode}>
                             <Color/>
+                        </CodeView>
+                        <CodeView md={roundedMarkdown}
+                                  code={roundedCode}>
+                            <Rounded/>
+                        </CodeView>
+                        <CodeView md={groupMarkdown}
+                                  code={groupCode}
+                                  style={{marginTop:10}}>
+                            <Group/>
                         </CodeView>
                     </Col>
                 </Row>

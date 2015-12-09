@@ -70,13 +70,14 @@ html {
   border-top: 1px solid #dee5e7;
 }
 
-.navbar {
+.tb-navbar {
   .navbar-header {
     display: flex;
     width: 100%;
     background: $bg-color-dark;
     color: $font-color-dark;
     .navbar-brand {
+      margin-right: 0;
       height: auto;
       width: 200px;
       padding: 0 20px;

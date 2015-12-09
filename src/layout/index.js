@@ -14,7 +14,7 @@ export default class Layout extends React.Component {
         return (
             <div _namespace>
                 <div className="g-hd">
-                    <div className="navbar">
+                    <div className="tb-navbar">
                         <div className="navbar-header">
                             <Link to="/" className="navbar-brand">贴吧组件库</Link>
                             <div className="navbar-right">

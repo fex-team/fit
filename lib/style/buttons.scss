@@ -20,6 +20,9 @@
     box-shadow: none;
     opacity: .65;
   }
+  & > i.pull-right {
+    line-height: 35px !important;
+  }
 }
 
 .btn-link {
