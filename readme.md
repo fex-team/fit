@@ -90,6 +90,10 @@ git push origin master
 
 [项目结构说明](doc/tree.md)
 
+### 组件发布
+
+[组件如何发布到npm](doc/publish.md)
+
 ### 组件索引
 
 captcha 验证码
