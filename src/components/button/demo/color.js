@@ -2,24 +2,25 @@ import React from 'react'
 import Button from 'tb-button'
 
 const style = {
-    marginLeft: 5
+    margin: 3
 }
 
 export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Button type="primary">primary</Button>
+                <Button type="primary"
+                        style={style}>Primary</Button>
                 <Button type="success"
-                        style={style}>primary</Button>
+                        style={style}>Success</Button>
                 <Button type="info"
-                        style={style}>info</Button>
+                        style={style}>Info</Button>
                 <Button type="warning"
-                        style={style}>warning</Button>
+                        style={style}>Warning</Button>
                 <Button type="danger"
-                        style={style}>danger</Button>
+                        style={style}>Danger</Button>
                 <Button type="dark"
-                        style={style}>dark</Button>
+                        style={style}>Dark</Button>
             </div>
         )
     }

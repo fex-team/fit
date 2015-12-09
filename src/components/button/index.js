@@ -13,6 +13,10 @@ import Color from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import colorCode from 'text!./demo/color.js'
 import colorMarkdown from './demo/color.md'
 
+import Addon from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/addon.js'
+import addonCode from 'text!./demo/addon.js'
+import addonMarkdown from './demo/addon.md'
+
 const colStyle = {
     padding: 10
 }
@@ -32,13 +36,20 @@ export default class Layout extends React.Component {
                 <Row>
                     <Col span="12"
                          style={colStyle}>
-                        <CodeView md={basicMarkdown} code={basicCode}>
+                        <CodeView md={basicMarkdown}
+                                  code={basicCode}>
                             <Basic/>
+                        </CodeView>
+                        <CodeView md={addonMarkdown}
+                                  code={addonCode}
+                                  style={{marginTop:10}}>
+                            <Addon/>
                         </CodeView>
                     </Col>
                     <Col span="12"
                          style={colStyle}>
-                        <CodeView md={colorMarkdown} code={colorCode}>
+                        <CodeView md={colorMarkdown}
+                                  code={colorCode}>
                             <Color/>
                         </CodeView>
                     </Col>

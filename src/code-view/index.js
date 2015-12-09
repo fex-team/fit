@@ -23,7 +23,7 @@ export default class Layout extends React.Component {
         let code = this.props.code.replace(/^import\s*React\s*from\s*\'react\'\n/g, '')
 
         return (
-            <div _namespace>
+            <div _namespace {...this.props}>
                 <div className="container">
                     <div className="example-container">
                         {this.props.children}
