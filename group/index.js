@@ -3,8 +3,13 @@ import classnames from 'classnames'
 
 export default class ButtonGroup extends React.Component {
     render() {
+        let groupClass = classnames({
+            'btn-group': !this.props.vertical,
+            'btn-group-vertical': this.props.vertical
+        })
+
         return (
-            <div className="btn-group">
+            <div {...this.props} className={groupClass}>
                 {this.props.children}
             </div>
         )

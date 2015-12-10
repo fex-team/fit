@@ -28,7 +28,10 @@ export default class Layout extends React.Component {
             ['btn-' + this.props.type]: true,
             'disabled': this.props.disabled,
             'btn-addon': addonValue,
-            'btn-rounded': this.props.rounded
+            'btn-rounded': this.props.rounded,
+            'btn-lg': this.props.size && this.props.size === 'lg',
+            'btn-xs': this.props.size && this.props.size === 'xs',
+            'btn-sm': this.props.size && this.props.size === 'sm'
         })
 
         return (
