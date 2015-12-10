@@ -10,7 +10,7 @@ export default class Layout extends React.Component {
     render() {
         return (
             <div _namespace>
-                home
+                bootstrap4（基础） + Angulr（样式覆盖） + antd（交互）
             </div>
         )
     }

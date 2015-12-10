@@ -25,6 +25,10 @@ import Group from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import groupCode from 'text!./demo/group.js'
 import groupMarkdown from './demo/group.md'
 
+import Size from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/size.js'
+import sizeCode from 'text!./demo/size.js'
+import sizeMarkdown from './demo/size.md'
+
 const colStyle = {
     padding: 10
 }
@@ -52,6 +56,11 @@ export default class Layout extends React.Component {
                                   code={addonCode}
                                   style={{marginTop:10}}>
                             <Addon/>
+                        </CodeView>
+                        <CodeView md={sizeMarkdown}
+                                  code={sizeCode}
+                                  style={{marginTop:10}}>
+                            <Size/>
                         </CodeView>
                     </Col>
                     <Col span="12"

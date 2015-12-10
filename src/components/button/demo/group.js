@@ -4,11 +4,20 @@ import { Button, ButtonGroup } from 'tb-button'
 export default class Demo extends React.Component {
     render() {
         return (
-            <ButtonGroup>
-                <Button>Left</Button>
-                <Button>Middle</Button>
-                <Button>Right</Button>
-            </ButtonGroup>
+            <div>
+                <ButtonGroup>
+                    <Button>Left</Button>
+                    <Button>Middle</Button>
+                    <Button>Right</Button>
+                </ButtonGroup>
+
+                <ButtonGroup vertical
+                             style={{marginLeft:10}}>
+                    <Button>Left</Button>
+                    <Button>Middle</Button>
+                    <Button>Right</Button>
+                </ButtonGroup>
+            </div>
         )
     }
 }
