@@ -6,8 +6,8 @@ TIEBAACCOUNT="http://gitlab.baidu.com/tb-component/awesome/blob/master/doc/publi
 trap ctrl_c INT
 
 function ctrl_c() {
-    rm npm-debug.log
-    rm lib/$1/npm-debug.log
+    expect rm npm-debug.log
+    expect rm lib/$1/npm-debug.log
     exit 1
 }
 
