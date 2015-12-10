@@ -18,7 +18,7 @@ export default class Layout extends React.Component {
         let code = infoArray[1].replace(/(````jsx|````)/g, '').replace(/^\s*\n*/g, '')
 
         return (
-            <div _namespace>
+            <div className="_namespace">
                 <div className="bar-header">
                     <div className="title"
                          dangerouslySetInnerHTML={{__html: description}}></div>

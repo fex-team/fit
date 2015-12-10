@@ -43,7 +43,7 @@ export default class Layout extends React.Component {
         })
 
         return (
-            <div _namespace>
+            <div className="_namespace">
                 <div className="title">基本</div>
                 {Menus}
             </div>

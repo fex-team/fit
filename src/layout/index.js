@@ -12,7 +12,7 @@ export default class Layout extends React.Component {
 
     render() {
         return (
-            <div _namespace>
+            <div className="_namespace">
                 <div className="g-hd">
                     <div className="tb-navbar">
                         <div className="navbar-header">
