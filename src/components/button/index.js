@@ -61,6 +61,7 @@ export default class Layout extends React.Component {
                             <Color/>
                         </CodeView>
                         <CodeView md={roundedMarkdown}
+                                  style={{marginTop:10}}
                                   code={roundedCode}>
                             <Rounded/>
                         </CodeView>
