@@ -3,6 +3,14 @@
 ROOT=`pwd`
 TIEBAACCOUNT="http://gitlab.baidu.com/tb-component/awesome/blob/master/doc/publish.md"
 
+trap ctrl_c INT
+
+function ctrl_c() {
+    echo "123"
+#    rm npm-debug.log
+#    rm lib/$1/npm-debug.log
+}
+
 
 ## check first param
 if [ -z "$1" ]; then
@@ -13,7 +21,6 @@ fi
 login() {
    npm login
 }
-
 
 update() {
     cd ./lib/$1
