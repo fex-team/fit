@@ -9,7 +9,11 @@ const colStyle = {
     padding: 10
 }
 
-export default class Layout extends React.Component {
+import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
+import basicCode from 'text!./demo/basic.js'
+import basicMarkdown from './demo/basic.md'
+
+export default class Datepicker extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -20,6 +24,15 @@ export default class Layout extends React.Component {
         return (
             <div className="_namespace">
                 <Title>{readme}</Title>
+
+                <Row>
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={basicMarkdown} code={basicCode}>
+                            <Basic />
+                        </CodeView>
+                    </Col>
+
+                </Row>
             </div>
         )
     }
