@@ -12,6 +12,10 @@ const menus = [{
     title: '按钮',
     path: '/button',
     icon: 'square-o'
+}, {
+    title: '日期',
+    path: '/datepicker',
+    icon: 'calendar'
 }]
 
 export default class Layout extends React.Component {

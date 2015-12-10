@@ -12,6 +12,6 @@ import 'highlight.js/styles/github.css'
 
 import './all.scss'
 
-document.title = '贴吧组件库'
+document.title = '贴吧Mis组件库'
 
 ReactDOM.render(routes, document.getElementById('react-dom'))

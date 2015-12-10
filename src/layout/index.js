@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
                 <div className="g-hd">
                     <div className="tb-navbar">
                         <div className="navbar-header">
-                            <Link to="/" className="navbar-brand">贴吧组件库</Link>
+                            <Link to="/" className="navbar-brand">贴吧Mis组件库</Link>
                             <div className="navbar-right">
 
                             </div>
@@ -30,7 +30,7 @@ export default class Layout extends React.Component {
                     {this.props.children}
                 </div>
                 <div className="g-ft">
-                    贴吧组件库
+                    贴吧Mis组件库
                 </div>
             </div>
         )
