@@ -1,9 +1,3 @@
-<?php
-
-ob_start("ob_gzhandler");
-
-?>
-
 <!DOCTYPE html>
 <html lang="zh-cn">
 <meta charset="utf-8">
