@@ -17,7 +17,7 @@ update() {
         npm publish
         git add ./package.json
         git commit -m "upgrade package: $1"
-        cd ROOT
+        cd $ROOT
         git subtree push --prefix=lib/$1 $1 master
     else
         echo "There is no package.json file in `pwd`"
