@@ -34,4 +34,5 @@ if test `npm whoami` = tieba; then
 else
     log "You must login with tieba"
     login
+    update $1
 fi
