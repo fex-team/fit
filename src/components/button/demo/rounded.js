@@ -11,7 +11,6 @@ export default class Demo extends React.Component {
         return (
             <div>
                 <Button type="primary"
-                        size="lg"
                         rounded
                         style={style}>Primary</Button>
                 <Button type="success"

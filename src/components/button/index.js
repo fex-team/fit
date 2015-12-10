@@ -1,5 +1,5 @@
 import React from 'react'
-import CodeView from '../../code-view'
+import CodeView from '../../code-view/index'
 import Highlight from 'react-highlight'
 import { Row, Col } from 'antd'
 import Title from '../title.js'

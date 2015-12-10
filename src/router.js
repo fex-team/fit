@@ -2,16 +2,20 @@ import React from 'react'
 import { Router, Route, IndexRoute } from 'react-router'
 
 import Layout from './layout'
-import Button from './components/button'
 import Home from './home'
+
+import ButtonComponent from './components/button'
+import LayoutComponent from './components/layout'
 
 const MainRouter = (
     <Router>
         <Route path="/"
                component={Layout}>
             <IndexRoute component={Home}/>
+            <Route path="layout"
+                   component={LayoutComponent}/>
             <Route path="button"
-                   component={Button}/>
+                   component={ButtonComponent}/>
         </Route>
     </Router>
 )
