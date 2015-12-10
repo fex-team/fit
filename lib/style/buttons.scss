@@ -41,50 +41,18 @@
     border-color: rgba(0, 0, 0, 0.1);
     background-clip: padding-box;
   }
-  &:hover, &:active, &.active {
-    color: #58666e !important;
-    background-color: #edf1f2;
-    border-color: #c7d3d6;
-  }
-  &:active {
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-  }
 }
 
 .btn-primary {
   @include button-variant(#fff, $brand-primary, $brand-primary);
-  &:hover, &:active, &.active {
-    color: #ffffff !important;
-    background-color: #6254b2;
-    border-color: #5a4daa;
-  }
-  &:active {
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-  }
 }
 
 .btn-success {
   @include button-variant(#fff, $brand-success, $brand-success);
-  &:hover, &:active, &.active {
-    color: #ffffff !important;
-    background-color: #23ad44;
-    border-color: #20a03f;
-  }
-  &:active {
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-  }
 }
 
 .btn-info {
   @include button-variant(#fff, $brand-info, $brand-info);
-  &:hover, &:active, &.active {
-    color: #ffffff !important;
-    background-color: #19a9d5;
-    border-color: #189ec8;
-  }
-  &:active {
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-  }
 }
 
 .btn-warning {
@@ -94,33 +62,14 @@
     background-color: #f9d21a;
     border-color: #f9cf0b;
   }
-  &:active {
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-  }
 }
 
 .btn-danger {
   @include button-variant(#fff, $brand-danger, $brand-danger);
-  &:hover, &:active, &.active {
-    color: #ffffff !important;
-    background-color: #ee3939;
-    border-color: #ed2a2a;
-  }
-  &:active {
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-  }
 }
 
 .btn-dark {
   @include button-variant(#fff, $brand-dark, $brand-dark);
-  &:hover, &:active, &.active {
-    color: #ffffff !important;
-    background-color: #2f3342;
-    border-color: #292d39;
-  }
-  &:active {
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-  }
 }
 
 .btn-black {
