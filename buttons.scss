@@ -6,10 +6,8 @@
   font-weight: 500;
   border-radius: $btn-border-radius;
   outline: 0 !important;
-  padding: 6px 12px;
   border: 1px solid transparent;
   line-height: 1.42857143;
-  font-size: 14px;
   white-space: nowrap;
   touch-action: manipulation;
   cursor: pointer;
@@ -20,9 +18,18 @@
     box-shadow: none;
     opacity: .65;
   }
-  & > i.pull-right {
-    line-height: 35px !important;
-  }
+}
+
+.btn-lg {
+  padding: 0.65rem 1.05rem;
+}
+
+.btn-xs {
+  padding: 0.15rem .75rem;
+}
+
+.btn-sm {
+  padding: 0 .65rem;
 }
 
 .btn-link {
@@ -86,20 +93,10 @@
     position: relative;
     line-height: 34px;
   }
-  &.btn-sm {
-    width: 30px;
-    height: 30px;
-    i {
-      line-height: 30px;
-    }
-  }
-  &.btn-lg {
-    width: 45px;
-    height: 45px;
-    i {
-      line-height: 45px;
-    }
-  }
+}
+
+.btn-sm {
+  line-height: 1.5rem;
 }
 
 .btn-rounded {
@@ -116,7 +113,7 @@
   > i {
     &.pull-left,
     &.pull-right {
-      line-height: $line-height-base;
+      line-height: 2.5rem;
     }
   }
 }
@@ -136,19 +133,18 @@
 
 .btn-addon {
   i {
-    margin: -7px -12px;
-    margin-right: 12px;
+    margin: -.4rem -1rem;
+    margin-right: 1rem;
     background-color: rgba(0, 0, 0, 0.1);
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
+    width: 2.3rem;
+    height: 2.3rem;
+    line-height: 2.3rem;
     text-align: center;
-    float: left;
     position: relative;
     border-radius: $btn-border-radius 0 0 $btn-border-radius;
     &.pull-right {
-      margin-right: -12px;
-      margin-left: 12px;
+      margin-right: -1rem;
+      margin-left: 1rem;
       border-radius: 0 $btn-border-radius $btn-border-radius 0;
     }
   }
@@ -167,14 +163,40 @@
   }
   &.btn-lg {
     i {
-      margin: -11px -16px;
-      margin-right: 16px;
-      width: 45px;
-      height: 45px;
-      line-height: 45px;
+      margin: -0.7rem -1.2rem;
+      margin-right: 1rem;
+      width: 3.3rem;
+      height: 3.3rem;
+      line-height: 3.3rem;
       &.pull-right {
-        margin-right: -16px;
-        margin-left: 16px;
+        margin-right: -1.2rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+  &.btn-xs {
+    i {
+      width: 1.8rem;
+      height: 1.8rem;
+      line-height: 1.8rem;
+      margin: -.2rem -.85rem;
+      margin-right: 1.1rem;
+      &.pull-right {
+        margin-left: 1.1rem;
+        margin-right: -.8rem;
+      }
+    }
+  }
+  &.btn-sm {
+    i {
+      width: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      margin: -0.4rem -.7rem;
+      margin-right: .5rem;
+      margin-top: 0;
+      &.pull-right {
+        margin-right: -.7rem;
       }
     }
   }
