@@ -43,7 +43,7 @@ checkChange
 if test `npm whoami` = tieba; then
     update $1
 else
-    log "You must login with tieba"
+    echo "You must login with tieba"
     echo "|---------------------------------------------"
     echo "|  Login Url:   $TIEBAACCOUNT                 "
     echo "|---------------------------------------------"
