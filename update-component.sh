@@ -6,11 +6,10 @@ TIEBAACCOUNT="http://gitlab.baidu.com/tb-component/awesome/blob/master/doc/publi
 trap ctrl_c INT
 
 function ctrl_c() {
-    expect rm npm-debug.log
-    expect rm lib/$1/npm-debug.log
+    rm npm-debug.log 2 > /dev/null
+    rm lib/$1/npm-debug.log 2 > /dev/null
     exit 1
 }
-
 
 ## check first param
 if [ -z "$1" ]; then
