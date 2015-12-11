@@ -48,7 +48,7 @@ checkWhoami () {
 
     npm whoami > /dev/null 2>&1 || knowami=0
 
-    if [$knowami=0]; then
+    if [ $knowami == 0 ]; then
         echo "You are not login.." && exit
     else
         echo "$knowami"
