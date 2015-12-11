@@ -16,9 +16,12 @@ export default class Layout extends React.Component {
                 <div className="g-hd">
                     <div className="tb-navbar">
                         <div className="navbar-header">
-                            <Link to="/" className="navbar-brand">贴吧Mis组件库</Link>
+                            <Link to="/"
+                                  className="navbar-brand">贴吧Mis组件库</Link>
                             <div className="navbar-right">
-
+                                <a className="item"
+                                   href="http://gitlab.baidu.com/tb-component/awesome"
+                                   target="_blank">Gitlab</a>
                             </div>
                         </div>
                     </div>

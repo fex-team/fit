@@ -10,6 +10,9 @@ import 'font-awesome/css/font-awesome.css'
 // highlight
 import 'highlight.js/styles/github.css'
 
+// github-markdown css
+import './github-markdown.scss'
+
 import './all.scss'
 
 document.title = '贴吧Mis组件库'
