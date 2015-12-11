@@ -6,8 +6,8 @@ TIEBAACCOUNT="http://gitlab.baidu.com/tb-component/awesome/blob/master/doc/publi
 trap ctrl_c INT
 
 function ctrl_c() {
-    rm npm-debug.log 2 > /dev/null
-    rm lib/$1/npm-debug.log 2 > /dev/null
+    rm npm-debug.log > /dev/null 2>&1
+    rm lib/$1/npm-debug.log > /dev/null 2>&1
     exit 1
 }
 
@@ -49,9 +49,7 @@ checkWhoami () {
     npm whoami > /dev/null 2>&1 || knowami=0
 
     if [ $knowami == 0 ]; then
-        echo "You are not login.." && exit
-    else
-        echo "$knowami"
+        echo "You are not login..\n run npm login and login with tieba \n $TIEBAACCOUNT" && exit 1
     fi
 }
 
