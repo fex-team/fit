@@ -43,8 +43,20 @@ checkChange () {
     fi
 }
 
+checkWhoami () {
+    local knowami=1
+
+    npm whoami > /dev/null 2>&1 || knowami=0
+
+    if [$knowami=0]; then
+        echo "You are not login.." && exit
+    else
+        echo "$knowami"
+    fi
+}
 
 checkChange
+checkWhoami
 
 if test `npm whoami` = tieba; then
     update $1
