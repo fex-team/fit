@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var path = require('path')
 var resolve = require('./resolve')
+var externals = require('./externals')
 
 var config = {
     devtool: 'eval-source-map',
@@ -11,6 +12,8 @@ var config = {
         'webpack/hot/only-dev-server',
         './src/index.js'
     ],
+
+    externals: externals,
 
     output: {
         path: __dirname + '/output',

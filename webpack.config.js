@@ -1,4 +1,5 @@
 var resolve = require('./resolve')
+var externals = require('./externals')
 
 module.exports = {
     entry: [
@@ -8,6 +9,8 @@ module.exports = {
     output: {
         filename: 'output/index.js'
     },
+
+    externals: externals,
 
     module: {
         loaders: [
