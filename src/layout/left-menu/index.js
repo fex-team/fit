@@ -4,7 +4,11 @@ import {Link} from 'react-router'
 import classnames from 'classnames'
 import { Row, Col } from 'antd'
 
-const menus = [{
+const menuBase = [{
+    title: '全屏布局',
+    path: '/layout-global',
+    icon: 'columns'
+}, {
     title: '布局',
     path: '/layout',
     icon: 'th'
@@ -25,7 +29,7 @@ export default class Layout extends React.Component {
     }
 
     render() {
-        let Menus = menus.map((item, index)=> {
+        let MenuBase = menuBase.map((item, index)=> {
             let iconClass = classnames(['fa', 'fa-' + item.icon])
             return (
                 <Link key={index}
@@ -49,7 +53,7 @@ export default class Layout extends React.Component {
         return (
             <div className="_namespace">
                 <div className="title">基本</div>
-                {Menus}
+                {MenuBase}
             </div>
         )
     }

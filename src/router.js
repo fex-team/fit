@@ -6,6 +6,7 @@ import Home from './home'
 
 import ButtonComponent from './components/button'
 import LayoutComponent from './components/layout'
+import LayoutGlobalComponent from './components/layout-global'
 import DatepickerComponent from './components/datepicker'
 
 const MainRouter = (
@@ -13,6 +14,8 @@ const MainRouter = (
         <Route path="/"
                component={Layout}>
             <IndexRoute component={Home}/>
+            <Route path="layout-global"
+                   component={LayoutGlobalComponent}/>
             <Route path="layout"
                    component={LayoutComponent}/>
             <Route path="button"

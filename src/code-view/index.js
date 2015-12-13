@@ -9,7 +9,16 @@ const Panel = Collapse.Panel
 export default class Layout extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            showCode: false
+        }
+    }
+
+    handleCollapseChange() {
+        if (this.state.showCode)return
+        this.setState({
+            showCode: true
+        })
     }
 
     render() {
@@ -22,6 +31,15 @@ export default class Layout extends React.Component {
         // 代码
         let code = this.props.code.replace(/^import\s*React\s*from\s*\'react\'\n/g, '')
 
+        let codeDetail = null
+        if (this.state.showCode) {
+            codeDetail = (
+                <Highlight className='jsx'>
+                    {code}
+                </Highlight>
+            )
+        }
+
         return (
             <div className="_namespace" {...this.props}>
                 <div className="container">
@@ -29,13 +47,11 @@ export default class Layout extends React.Component {
                         {this.props.children}
                     </div>
                     <div className="code">
-                        <Collapse>
+                        <Collapse onChange={this.handleCollapseChange.bind(this)}>
                             <Panel header={title[1]}>
                                 <div className="description"
                                      dangerouslySetInnerHTML={{__html: marked(content)}}></div>
-                                <Highlight className='jsx'>
-                                    {code}
-                                </Highlight>
+                                {codeDetail ? codeDetail : null}
                             </Panel>
                         </Collapse>
                     </div>
