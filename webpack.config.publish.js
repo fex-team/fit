@@ -1,14 +1,20 @@
 var webpack = require('webpack')
+var path = require('path')
 
 module.exports = {
-    entry: {
-        [process.argv[4]]: './lib/' + process.argv[4] + '/index.js'
-    },
+    entry: [
+        './lib/' + process.argv[5] + '/index.js'
+    ],
 
     output: {
-        filename: './lib/' + process.argv[4] + '/dist/index.js',
-        library: process.argv[4],
+        path: path.join(__dirname, 'lib/' + process.argv[5] + '/dist'),
+        filename: 'index.js',
+        library: process.argv[5],
         libraryTarget: 'umd'
+    },
+
+    externals: {
+        'react': 'React'
     },
 
     module: {

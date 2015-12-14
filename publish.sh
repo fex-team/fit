@@ -57,7 +57,7 @@ checkChange
 checkWhoami
 
 if test `npm whoami` = tieba; then
-    webpack --config webpack.config.publish.js $1
+    cp -r lib/$1 lib/$1/dist
     update $1
     sudo rm -rf lib/$1/dist
 else
