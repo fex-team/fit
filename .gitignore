@@ -1,5 +1,4 @@
 node_modules
 .idea
-lib/**/package.json
 dist
 npm-debug.log
