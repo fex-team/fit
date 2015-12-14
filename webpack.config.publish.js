@@ -1,16 +1,12 @@
 var webpack = require('webpack')
 
-process.argv.forEach(function (val, index, array) {
-    console.log(index + ': ' + val);
-})
-
 module.exports = {
     entry: [
-        './lib/button/index.js'
+        './lib/' + process.argv[4] + '/index.js'
     ],
 
     output: {
-        filename: './lib/button/dist/index.js',
+        filename: './lib/' + process.argv[4] + '/dist/index.js',
         libraryTarget: "umd"
     },
 
