@@ -55,7 +55,7 @@ checkWhoami () {
 
 checkChange
 echo "1"
-checkWhoami
+#checkWhoami
 echo "2"
 
 if test `npm whoami` = tieba; then
