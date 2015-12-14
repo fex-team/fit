@@ -1,6 +1,6 @@
 {
   "name": "tb-layout-global",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "全局布局",
   "main": "index.js",
   "scripts": {
