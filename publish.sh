@@ -57,9 +57,9 @@ checkChange
 checkWhoami
 
 if test `npm whoami` = tieba; then
-    cp -r lib/$1 lib/$1/dist
+    #cp -r lib/$1 lib/$1/dist
     update $1
-    sudo rm -rf lib/$1/dist
+    #sudo rm -rf lib/$1/dist
 else
     echo "You must login with tieba"
     echo "|---------------------------------------------"
