@@ -1,5 +1,9 @@
 var webpack = require('webpack')
 
+process.argv.forEach(function (val, index, array) {
+    console.log(index + ': ' + val);
+})
+
 module.exports = {
     entry: [
         './lib/button/index.js'

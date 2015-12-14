@@ -15,7 +15,7 @@
     "start": "npm run cdn && npm run server & npm run webpack-dev",
     "build": "npm run cdn && npm run webpack-dist && npm run server",
     "push": "git add -A && git commit -m \"quick push\" && git push",
-    "pub" : "webpack --config webpack.config.publish.js && ./publish.sh"
+    "pub" : "./publish.sh"
   },
   "author": "",
   "license": "ISC",

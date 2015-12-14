@@ -14,11 +14,10 @@
 8 verbose lifecycle awesome@1.0.1~pub: unsafe-perm in lifecycle true
 9 verbose lifecycle awesome@1.0.1~pub: PATH: /Users/baidu/.nvm/versions/node/v5.0.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/baidu/tieba/awesome/node_modules/.bin:/Users/baidu/.nvm/versions/node/v5.0.0/bin:/usr/local/Cellar/ant/1.9.6/bin:/Users/baidu/lib/cocos2d-x-3.8/templates:/Users/baidu/lib/cocos2d-x-3.8/tools/cocos2d-console/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 10 verbose lifecycle awesome@1.0.1~pub: CWD: /Users/baidu/tieba/awesome
-11 silly lifecycle awesome@1.0.1~pub: Args: [ '-c',
-11 silly lifecycle   'webpack --config webpack.config.publish.js && ./publish.sh "button"' ]
+11 silly lifecycle awesome@1.0.1~pub: Args: [ '-c', './publish.sh "button"' ]
 12 silly lifecycle awesome@1.0.1~pub: Returned: code: 1  signal: null
 13 info lifecycle awesome@1.0.1~pub: Failed to exec pub script
-14 verbose stack Error: awesome@1.0.1 pub: `webpack --config webpack.config.publish.js && ./publish.sh "button"`
+14 verbose stack Error: awesome@1.0.1 pub: `./publish.sh "button"`
 14 verbose stack Exit status 1
 14 verbose stack     at EventEmitter.<anonymous> (/Users/baidu/.nvm/versions/node/v5.0.0/lib/node_modules/npm/lib/utils/lifecycle.js:233:16)
 14 verbose stack     at emitTwo (events.js:87:13)
@@ -35,13 +34,13 @@
 19 error node v5.0.0
 20 error npm  v3.3.6
 21 error code ELIFECYCLE
-22 error awesome@1.0.1 pub: `webpack --config webpack.config.publish.js && ./publish.sh "button"`
+22 error awesome@1.0.1 pub: `./publish.sh "button"`
 22 error Exit status 1
-23 error Failed at the awesome@1.0.1 pub script 'webpack --config webpack.config.publish.js && ./publish.sh "button"'.
+23 error Failed at the awesome@1.0.1 pub script './publish.sh "button"'.
 23 error This is most likely a problem with the awesome package,
 23 error not with npm itself.
 23 error Tell the author that this fails on your system:
-23 error     webpack --config webpack.config.publish.js && ./publish.sh "button"
+23 error     ./publish.sh "button"
 23 error You can get their info via:
 23 error     npm owner ls awesome
 23 error There is likely additional logging output above.

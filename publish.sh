@@ -57,6 +57,7 @@ checkChange
 checkWhoami
 
 if test `npm whoami` = tieba; then
+    webpack --config webpack.config.publish.js $1
     update $1
 else
     echo "You must login with tieba"
