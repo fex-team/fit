@@ -13,7 +13,8 @@
     "webpack-dist": "webpack -p --profile --display-modules --config webpack.config.js",
     "cdn": "webpack -p --profile --config webpack.config.cdn.js",
     "start": "npm run cdn && npm run server & npm run webpack-dev",
-    "build": "npm run cdn && npm run webpack-dist && npm run server"
+    "build": "npm run cdn && npm run webpack-dist && npm run server",
+    "pub" : "./publish.sh"
   },
   "author": "",
   "license": "ISC",
