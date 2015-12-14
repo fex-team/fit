@@ -54,20 +54,17 @@ checkWhoami () {
 }
 
 checkChange
-echo "1"
 #checkWhoami
-echo "2"
 
-if test `npm whoami` = tieba; then
-    echo "123"
+#if test `npm whoami` = tieba; then
     babel lib/$1/src --out-dir lib/$1/dist
     update $1
     sudo rm -rf lib/$1/dist
-else
-    echo "You must login with tieba"
-    echo "|---------------------------------------------"
-    echo "|  Login Url:   $TIEBAACCOUNT                 "
-    echo "|---------------------------------------------"
-    login
-    update $1
-fi
+#else
+#    echo "You must login with tieba"
+#    echo "|---------------------------------------------"
+#    echo "|  Login Url:   $TIEBAACCOUNT                 "
+#    echo "|---------------------------------------------"
+#    login
+#    update $1
+#fi
