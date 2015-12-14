@@ -57,6 +57,7 @@ checkChange
 checkWhoami
 
 if test `npm whoami` = tieba; then
+    echo "123"
     babel lib/$1/src --out-dir lib/$1/dist
     update $1
     sudo rm -rf lib/$1/dist
