@@ -2,13 +2,11 @@ var webpack = require('webpack')
 
 module.exports = {
     entry: [
-        './src/edit/toolbar/index.js'
+        './lib/button/index.js'
     ],
 
     output: {
-        path: __dirname + '/dist/',
-        publicPath: '/dist',
-        filename: './index.js',
+        filename: './lib/button/dist/index.js',
         libraryTarget: "umd"
     },
 

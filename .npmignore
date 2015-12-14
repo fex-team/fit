@@ -1,0 +1,10 @@
+output
+.idea
+node_modules
+src
+server
+publish
+webpack.*
+*.md
+*.sh
+npm-debug.log
