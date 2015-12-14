@@ -54,7 +54,9 @@ checkWhoami () {
 }
 
 checkChange
+echo "1"
 checkWhoami
+echo "2"
 
 if test `npm whoami` = tieba; then
     echo "123"
