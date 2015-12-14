@@ -1,13 +1,14 @@
 var webpack = require('webpack')
 
 module.exports = {
-    entry: [
-        './lib/' + process.argv[4] + '/index.js'
-    ],
+    entry: {
+        [process.argv[4]]: './lib/' + process.argv[4] + '/index.js'
+    },
 
     output: {
         filename: './lib/' + process.argv[4] + '/dist/index.js',
-        libraryTarget: "umd"
+        library: process.argv[4],
+        libraryTarget: 'umd'
     },
 
     module: {
