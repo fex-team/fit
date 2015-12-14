@@ -22,7 +22,6 @@ login() {
 }
 
 update() {
-    echo 123
     cd ./lib/$1
     if test -f package.json; then
         npm version patch
