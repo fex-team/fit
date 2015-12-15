@@ -50,7 +50,7 @@ npm start
 ```
 
 就可以本地开发了：
-本地开发需要占用8080和8090端口，被占用的话，请到_build/server.js 和 _build/webpack.js 最底部更改
+本地开发需要占用8080和8090端口，被占用的话，请到_build/server.js 和 _build/webpack.js 更改所有的8080和8090
 
 对于某些可能出现 npm start 依然失败的情况，请开2个命令行窗口，并分别运行 node _build/server.js 和 node _build/wepack.js
 
