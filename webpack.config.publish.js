@@ -3,18 +3,19 @@ var path = require('path')
 
 module.exports = {
     entry: [
-        './lib/' + process.argv[5] + '/index.js'
+        './lib/' + 'layout-global/src' + '/index.js'
     ],
 
     output: {
-        path: path.join(__dirname, 'lib/' + process.argv[5] + '/dist'),
+        path: path.join(__dirname, 'lib/' + 'layout-global' + '/dist'),
         filename: 'index.js',
-        library: process.argv[5],
+        library: 'layout-global/src',
         libraryTarget: 'umd'
     },
 
     externals: {
-        'react': 'React'
+        'react': true,
+        'jquery': true
     },
 
     module: {
