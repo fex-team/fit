@@ -3,13 +3,13 @@ var path = require('path')
 
 module.exports = {
     entry: [
-        './lib/' + 'checkbox/src' + '/index.js'
+        './lib/' + 'layout-global/src' + '/index.js'
     ],
 
     output: {
-        path: path.join(__dirname, 'lib/' + 'checkbox' + '/dist'),
+        path: path.join(__dirname, 'lib/' + 'layout-global' + '/dist'),
         filename: 'index.js',
-        library: 'checkbox/src',
+        library: 'layout-global/src',
         libraryTarget: 'umd'
     },
 
