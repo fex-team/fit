@@ -57,9 +57,9 @@ checkChange
 checkWhoami
 
 if test `npm whoami` = tieba; then
-    babel lib/$1/src --out-dir lib/$1/dist
+    #babel lib/$1/src --out-dir lib/$1/dist
     update $1
-    rm -rf lib/$1/dist
+    #rm -rf lib/$1/dist
 else
     echo "You must login with tieba"
     echo "|---------------------------------------------"
