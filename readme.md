@@ -13,9 +13,9 @@ tb-component 贴吧组件化开发流程，致力于打造一套完全前端模�
 
 + node
 + webpack
-+ 支持 node-grp
++ 支持 node-gyp
 
-针对 windows 机器 npm install 出现 node-grp安装出错的情况请安装 node-grp[这里](https://github.com/nodejs/node-gyp)
+针对 windows 机器 npm install 出现 node-gyp安装出错的情况请安装 node-gyp[这里](https://github.com/nodejs/node-gyp)
 
 ### 快速上手
 
