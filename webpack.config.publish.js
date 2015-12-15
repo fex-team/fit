@@ -14,8 +14,8 @@ module.exports = {
     },
 
     externals: {
-        //'react': 'React',
-        //'jquery': '$'
+        'react': true,
+        'jquery': true
     },
 
     module: {
