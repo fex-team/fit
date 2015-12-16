@@ -1,5 +1,5 @@
 {
-  "name": "tb-layout-global",
+  "name": "conic-layout-global",
   "version": "0.1.6",
   "description": "全局布局",
   "main": "dist/index.js",
