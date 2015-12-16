@@ -13,9 +13,9 @@ tb-component 贴吧组件化开发流程，致力于打造一套完全前端模�
 
 + node
 + webpack
-+ 支持 node-grp
++ 支持 node-gyp
 
-针对 windows 机器 npm install 出现 node-grp安装出错的情况请安装 node-grp[这里](https://github.com/nodejs/node-gyp)
+针对 windows 机器 npm install 出现 node-gyp安装出错的情况请安装 node-gyp[这里](https://github.com/nodejs/node-gyp)
 
 ### 快速上手
 
@@ -50,7 +50,8 @@ npm start
 ```
 
 就可以本地开发了：
-本地开发需要占用8080和8090端口，被占用的话，请到_build/server.js 和 _build/webpack.js 最底部更改
+
+本地开发需要占用8080和8090端口，被占用的话，请到_build/server.js 和 _build/webpack.js 更改所有的8080和8090
 
 对于某些可能出现 npm start 依然失败的情况，请开2个命令行窗口，并分别运行 node _build/server.js 和 node _build/wepack.js
 
