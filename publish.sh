@@ -58,6 +58,7 @@ checkWhoami
 
 if test `npm whoami` = tieba; then
     node webpack.publish.js $1
+    echo $1
     update $1
     rm -rf lib/$1/dist
 else
