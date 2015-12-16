@@ -11,8 +11,8 @@ export default class Layout extends React.Component {
             position: 'absolute',
             left: 0,
             bottom: 0,
-            height: this.props.footer,
-            width: '100%'
+            height: this.props.height || '100px',
+            width: this.props.width || '100%'
         }
 
         return (
