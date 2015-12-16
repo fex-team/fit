@@ -24,7 +24,6 @@ login() {
 update() {
     cd ./lib/$1
     if test -f package.json; then
-        echo 1
         npm version patch
         npm publish
         git add ./package.json
