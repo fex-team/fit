@@ -4,11 +4,11 @@ import { Layout, Header , Sidebar, Section, Footer } from 'tb-layout-global'
 export default class Demo extends React.Component {
     render() {
         return (
-            <Layout header={50} footer={50} sidebar={100}>
-                <Header>导航栏</Header>
-                <Sidebar>侧边栏</Sidebar>
+            <Layout>
+                <Header height={50}>导航栏</Header>
+                <Sidebar width={250} direction='right'>侧边栏</Sidebar>
                 <Section>主体</Section>
-                <Footer>页尾</Footer>
+                <Footer height={40}>页尾</Footer>
             </Layout>
         )
     }
