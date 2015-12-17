@@ -1,15 +1,21 @@
+import React from 'react'
+import 'tb-style'
+import { Datepicker } from 'antd'
 
-//import React from 'react'
-//import 'tb-style'
-//
-//export default class Datepicker extends React.component {
-//    constructor (props) {
-//        super(props)
-//        this.state = {}
-//    }
-//
-//
-//}
-//
+import './index.scss'
 
-//export { Datepicker } from 'antd'
+class _Datepicker extends React.Component {
+    constructor (props) {
+        super(props)
+    }
+
+    render () {
+        return (
+            <div className="_namespace">
+                <Datepicker {...this.props} />
+            </div>
+        )
+    }
+}
+
+export default _Datepicker
