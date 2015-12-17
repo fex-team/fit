@@ -1,0 +1,11 @@
+{
+  "name": "tb-layout",
+  "version": "1.0.3",
+  "description": "布局组件",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
