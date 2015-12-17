@@ -64,8 +64,10 @@ checkWhoami
 
 if test `npm whoami` = tieba; then
     node webpack.publish.js $1
+    echo "pack:$1 success"
     update $1
     rm -rf lib/$1/dist
+    echo "remove lib/$1/dist"
 else
     echo "You must login with tieba"
     echo "|---------------------------------------------"
