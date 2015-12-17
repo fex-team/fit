@@ -13,7 +13,7 @@ checkRemote () {
 # 添加 subtree
 splitRemove () {
     cd $ROOT
-    git subtree split -P lib/$1 -b $1
+    git subtree split -P lib/$1 -b $1 2>/dev/null
 }
 
 # 添加 remote 地址
@@ -27,8 +27,10 @@ updateSubtree () {
 
     for directory in ${directions[@]}; do
         if test `checkRemote $directory` = 1; then
-            git subtree pull --prefix=lib/$directory $directory master  --squash
-            git subtree push --prefix=lib/$directory $directory master
+            git subtree pull --prefix=lib/$directory $directory master  --squash 2>/dev/null
+            echo "subtree:$directory pull success"
+            git subtree push --prefix=lib/$directory $directory master 2>/dev/null
+            echo "subtree:$directory push success"
             ./publish.sh $directory
        fi
     done
@@ -40,7 +42,9 @@ addExist () {
     for directory in ${directions[@]}; do
         if test `checkRemote $directory` = 0; then
             addRemote $directory
+            echo "remote $directions added"
             splitRemove $directory
+            echo "subtree:$directory splited"
        fi
     done
 }
