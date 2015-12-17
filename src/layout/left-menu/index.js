@@ -22,6 +22,35 @@ const menuBase = [{
     icon: 'calendar'
 }]
 
+const menuShow = [{
+    title: '表格',
+    path: '/table',
+    icon: 'table'
+}]
+
+const menuFactory = (data)=> {
+    return data.map((item, index)=> {
+        let iconClass = classnames(['fa', 'fa-' + item.icon])
+        return (
+            <Link key={index}
+                  className="item"
+                  activeClassName="active"
+                  to={item.path}>
+                <Row>
+                    <Col span="6"
+                         style={{paddingLeft:10}}>
+                        <i style={{marginRight:10}}
+                           className={iconClass}></i>
+                    </Col>
+                    <Col span="18">
+                        {item.title}
+                    </Col>
+                </Row>
+            </Link>
+        )
+    })
+}
+
 export default class Layout extends React.Component {
     constructor(props) {
         super(props)
@@ -29,31 +58,15 @@ export default class Layout extends React.Component {
     }
 
     render() {
-        let MenuBase = menuBase.map((item, index)=> {
-            let iconClass = classnames(['fa', 'fa-' + item.icon])
-            return (
-                <Link key={index}
-                      className="item"
-                      activeClassName="active"
-                      to={item.path}>
-                    <Row>
-                        <Col span="6"
-                             style={{paddingLeft:10}}>
-                            <i style={{marginRight:10}}
-                               className={iconClass}></i>
-                        </Col>
-                        <Col span="18">
-                            {item.title}
-                        </Col>
-                    </Row>
-                </Link>
-            )
-        })
+        let MenuBase = menuFactory(menuBase)
+        let MenuShow = menuFactory(menuShow)
 
         return (
             <div className="_namespace">
                 <div className="title">基本</div>
                 {MenuBase}
+                <div className="title">展示</div>
+                {MenuShow}
             </div>
         )
     }

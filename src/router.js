@@ -8,6 +8,7 @@ import ButtonComponent from './components/button'
 import LayoutComponent from './components/layout'
 import LayoutGlobalComponent from './components/layout-global'
 import DatepickerComponent from './components/datepicker'
+import TableComponent from './components/table'
 
 const MainRouter = (
     <Router>
@@ -22,6 +23,8 @@ const MainRouter = (
                    component={ButtonComponent}/>
             <Route path="datepicker"
                    component={DatepickerComponent}/>
+            <Route path="table"
+                   component={TableComponent}/>
         </Route>
     </Router>
 )
