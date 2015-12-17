@@ -15,7 +15,10 @@ module.exports = {
 
     externals: {
         'react': true,
-        'jquery': true
+        'jquery': true,
+        'classnames': true,
+        'bootstrap/dist/css/bootstrap.css': true,
+        'react-router': true
     },
 
     module: {
