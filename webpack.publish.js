@@ -1,7 +1,9 @@
 var webpack = require('webpack')
 var path = require('path')
 
-var treeName = process.argv.slice(2, 1)
+var treeName = process.argv.slice(2)[0]
+
+console.log(path.join(__dirname, 'lib', treeName, 'dist'))
 
 webpack({
     entry: [
