@@ -29,6 +29,7 @@ updateSubtree () {
         if test `checkRemote $directory` = 1; then
             git subtree pull --prefix=lib/$directory $directory master  --squash
             git subtree push --prefix=lib/$directory $directory master
+            ./publish.sh $directory
        fi
     done
 }
@@ -49,17 +50,5 @@ updateAll () {
     updateSubtree
 }
 
-
-#if test `checkRemote $1` = 0; then
-#    addRemote $1
-#else
-#    echo "success"
-#fi
-
 updateAll
-
-#splitRemove $1
-
-
-#checkRemote $1
 
