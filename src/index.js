@@ -1,4 +1,4 @@
 import TableComponent from './table'
-import 'bootstrap/dist/css/bootstrap.css'
+import 'tb-style'
 
 export default TableComponent
