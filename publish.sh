@@ -18,6 +18,7 @@ fi
 
 ## npm login
 login() {
+   npm logout
    npm login
 }
 
