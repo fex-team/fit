@@ -1,6 +1,6 @@
 {
   "name": "tb-datepicker",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "tb react datapicker",
   "main": "dist/index.js",
   "scripts": {
