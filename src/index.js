@@ -1,3 +1,6 @@
+import $ from 'jquery'
+import 'tb-style'
+
 import LayoutComponent from './layout'
 export class Layout extends LayoutComponent {
 }
@@ -17,8 +20,6 @@ export class Section extends SectionComponent {
 import FooterComponent from './footer'
 export class Footer extends FooterComponent {
 }
-
-import $ from 'jquery'
 
 // 设置全局样式
 $('html,body').css({
