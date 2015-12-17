@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^2.1.4"
+  },
+  "peerDependencies": {
+    "redux": "^3.0.5"
   }
 }

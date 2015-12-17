@@ -1,4 +1,6 @@
 import React from 'react'
+import { createStore } from 'redux'
+import LayoutApp from '../reducers'
 
 export default class Layout extends React.Component {
     constructor(props) {
@@ -7,9 +9,19 @@ export default class Layout extends React.Component {
     }
 
     render() {
+        let store = createStore(LayoutApp)
+
         let childs = this.props.children.map((children, index)=> {
             return React.cloneElement(children, {
-                key: index
+                key: index,
+                headerHeight: this.props.headerHeight,
+                headerWidth: this.props.headerWidth,
+                siderbarWidth: this.props.siderbarWidth,
+                siderbarHeight: this.props.siderbarHeight,
+                footerHeight: this.props.footerHeight,
+                footerWidth: this.props.footerWidth,
+                sectionDirection: this.props.sectionDirection,
+                store: store
             })
         })
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { setFooterHeight } from '../actions'
 
 export default class Layout extends React.Component {
     constructor(props) {
@@ -6,13 +7,17 @@ export default class Layout extends React.Component {
         this.state = {}
     }
 
+    componentDidMount () {
+        this.props.store.dispatch(setFooterHeight(this.props.height || this.props.footerHeight || 100 ))
+    }
+
     render() {
         let style = {
             position: 'absolute',
             left: 0,
             bottom: 0,
-            height: this.props.height || '100px',
-            width: this.props.width || '100%'
+            height: this.props.height || this.props.footerHeight || 100,
+            width: this.props.width || this.props.footerWidth || '100%'
         }
 
         return (
