@@ -50,7 +50,6 @@
     "babel-preset-stage-0": "^6.3.13",
     "classnames": "^2.2.1",
     "css-path-loader": "^0.2.14",
-    "flux": "^2.1.1",
     "font-awesome": "^4.5.0",
     "highlight": "^0.2.4",
     "highlight.js": "^8.9.1",

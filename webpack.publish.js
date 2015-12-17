@@ -18,6 +18,9 @@ webpack({
     externals: {
         'react': true,
         'jquery': true,
+        'classnames': true,
+        'bootstrap/dist/css/bootstrap.css': true,
+        'react-router': true,
         'flux': true
     },
 
