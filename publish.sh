@@ -22,16 +22,20 @@ login() {
 }
 
 update() {
-    cd ./lib/$1
-    if test -f package.json; then
-        npm version patch
-        npm publish
-        git add ./package.json
-        git commit -m "upgrade package: $1"
-        cd $ROOT
-        git subtree push --prefix=lib/$1 $1 master
+    if test -f `pwd`/lib/$1; then
+        cd ./lib/$1
+        if test -f package.json; then
+            npm version patch
+            npm publish
+            git add ./package.json
+            git commit -m "upgrade package: $1"
+            cd $ROOT
+            git subtree push --prefix=lib/$1 $1 master
+        else
+            echo "There is no package.json file in `pwd`"
+        fi
     else
-        echo "There is no package.json file in `pwd`"
+        echo "no such file or directory `pwd`/lib/$1"
     fi
 }
 
@@ -57,9 +61,9 @@ checkChange
 checkWhoami
 
 if test `npm whoami` = tieba; then
-    #babel lib/$1/src --out-dir lib/$1/dist
+    node webpack.publish.js $1
     update $1
-    #rm -rf lib/$1/dist
+    rm -rf lib/$1/dist
 else
     echo "You must login with tieba"
     echo "|---------------------------------------------"

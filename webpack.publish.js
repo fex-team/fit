@@ -1,15 +1,17 @@
 var webpack = require('webpack')
 var path = require('path')
 
-module.exports = {
+var treeName = process.argv.slice(2, 1)
+
+webpack({
     entry: [
-        './lib/' + 'layout-global/src' + '/index.js'
+        './lib/' + treeName + '/src' + '/index.js'
     ],
 
     output: {
-        path: path.join(__dirname, 'lib/' + 'layout-global' + '/dist'),
+        path: path.join(__dirname, 'lib/' + treeName + '/dist'),
         filename: 'index.js',
-        library: 'layout-global/src',
+        library: treeName + '/src',
         libraryTarget: 'umd'
     },
 
@@ -18,7 +20,8 @@ module.exports = {
         'jquery': true,
         'classnames': true,
         'bootstrap/dist/css/bootstrap.css': true,
-        'react-router': true
+        'react-router': true,
+        'flux': true
     },
 
     module: {
@@ -48,4 +51,5 @@ module.exports = {
             }
         ]
     }
-}
+}, function (err, stats) {
+})

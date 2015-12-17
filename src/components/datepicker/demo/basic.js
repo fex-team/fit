@@ -1,7 +1,7 @@
 import React from 'react'
 import Datepicker from 'tb-datepicker'
 
-export default class Demo extends React.Component {
+export default class DatepickerDemo extends React.Component {
     render() {
         return (
             <div>
