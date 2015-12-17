@@ -1,0 +1,17 @@
+{
+  "name": "conic-layout-global",
+  "version": "0.1.10",
+  "description": "全局布局",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tieba",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^2.1.4"
+  },
+  "peerDependencies": {
+    "redux": "^3.0.5"
+  }
+}
