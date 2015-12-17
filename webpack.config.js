@@ -26,12 +26,12 @@ module.exports = {
                 loaders: ['html-path-loader']
             }, {
                 test: /\.(scss|css)/,
-                exclude: /node_modules/,
+                exclude: [/node_modules/, /lib\/style/],
                 loaders: ['style', 'css', 'autoprefixer', 'sass', 'css-path-loader']
             },
             {
                 test: /\.(scss|css)/,
-                include: /node_modules/,
+                include: [/node_modules/, /lib\/style/],
                 loaders: ['style', 'css', 'autoprefixer', 'sass']
             }, {
                 test: /\.(png|jpg)$/,

@@ -39,17 +39,11 @@ export default class Layout extends React.Component {
                 <Title>{readme}</Title>
 
                 <Row style={colStyle}>
-                    <Col span="24">
+                    <Col style={colStyle}
+                         span="12">
                         <CodeView md={basicMarkdown}
-                                  code={basicCode}
-                                  style={{marginTop:10}}>
+                                  code={basicCode}>
                             <Basic/>
-                        </CodeView>
-
-                        <CodeView md={headerMarkdown}
-                                  code={headerCode}
-                                  style={{marginTop:10}}>
-                            <Header/>
                         </CodeView>
 
                         <CodeView md={footerMarkdown}
@@ -57,7 +51,14 @@ export default class Layout extends React.Component {
                                   style={{marginTop:10}}>
                             <Footer/>
                         </CodeView>
+                    </Col>
 
+                    <Col style={colStyle}
+                         span="12">
+                        <CodeView md={headerMarkdown}
+                                  code={headerCode}>
+                            <Header/>
+                        </CodeView>
                         <CodeView md={allMarkdown}
                                   code={allCode}
                                   style={{marginTop:10}}>
