@@ -1,6 +1,6 @@
 {
-  "name": "conic-table",
-  "version": "1.0.1",
+  "name": "conic-style",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -9,10 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.2",
-    "classnames": "^2.2.1",
-    "dateformat": "^1.0.12",
-    "jquery": "^2.1.4",
-    "lodash": "^3.10.1"
+    "bootstrap": "^4.0.0-alpha.2"
   }
 }
