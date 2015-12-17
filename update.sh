@@ -28,11 +28,10 @@ updateSubtree () {
     for directory in ${directions[@]}; do
         if test `checkRemote $directory` = 1; then
             git subtree pull --prefix=lib/$directory $directory master  --squash
+            git subtree push --prefix=lib/$directory $directory master
        fi
     done
-
 }
-
 # 为现有文件夹添加 subtree和 remote 分支
 addExist () {
     local directions=$(ls ./lib)
@@ -48,7 +47,6 @@ addExist () {
 updateAll () {
     addExist
     updateSubtree
-
 }
 
 
