@@ -22,7 +22,7 @@ login() {
 }
 
 update() {
-    if test -f `pwd`/lib/$1; then
+    if test -d `pwd`/lib/$1; then
         cd ./lib/$1
         if test -f package.json; then
             npm version patch
