@@ -1,5 +1,5 @@
 import React from 'react'
-import $ from 'jquery'
+import 'tb-style'
 
 export default class CheckBox extends React.Component {
     constructor(props) {
