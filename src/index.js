@@ -1,4 +1,4 @@
 import TableComponent from './table'
-import 'tb-style'
+import 'conic-style'
 
 export default TableComponent
