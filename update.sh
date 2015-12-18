@@ -42,7 +42,7 @@ updateSubtree () {
     cd $ROOT
     for directory in ${DIRECTIONS[@]}; do
         if test `checkRemote $directory` = 1; then
-            git subtree pull --prefix=lib/$directory $directory master 2>/dev/null
+            git subtree pull --prefix=lib/$directory $directory master 2>/dev/null || exit 1
             echo "subtree:$directory pull success"
             git subtree push --prefix=lib/$directory $directory master 2>/dev/null
             echo "subtree:$directory push success"
