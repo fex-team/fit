@@ -18,6 +18,7 @@ fi
 
 ## npm login
 login() {
+   npm logout
    npm login
 }
 
@@ -30,7 +31,8 @@ update() {
             git add ./package.json
             git commit -m "upgrade package: $1"
             cd $ROOT
-            git subtree push --prefix=lib/$1 $1 master
+            git subtree push --prefix=lib/$1 $1 master 2>/dev/null
+            echo "subtree:$1 push success"
         else
             echo "There is no package.json file in `pwd`"
         fi
@@ -62,8 +64,10 @@ checkWhoami
 
 if test `npm whoami` = tieba; then
     node webpack.publish.js $1
+    echo "pack:$1 success"
     update $1
     rm -rf lib/$1/dist
+    echo "remove lib/$1/dist"
 else
     echo "You must login with tieba"
     echo "|---------------------------------------------"
