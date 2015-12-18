@@ -3,8 +3,6 @@ var path = require('path')
 
 var treeName = process.argv.slice(2)[0]
 
-console.log(path.join(__dirname, 'lib', treeName, 'dist'))
-
 webpack({
     entry: [
         './lib/' + treeName + '/src' + '/index.js'
