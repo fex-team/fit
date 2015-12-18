@@ -39,7 +39,6 @@ export default class AllPage extends React.Component {
         this.state = {
             currentPage: this.props.defaultPage,
             prevPage: this.props.defaultPage,
-            loading: false,
             activeButtonName: ''
         }
     }
@@ -144,5 +143,7 @@ export default class AllPage extends React.Component {
 
 AllPage.defaultProps = {
     defaultPage: 1,
-    allPage: 10
+    allPage: 10,
+    onChange: ()=> {
+    }
 }

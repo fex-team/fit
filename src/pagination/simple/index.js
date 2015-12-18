@@ -7,7 +7,6 @@ export default class SimplePagination extends React.Component {
         super(props)
         this.state = {
             currentPage: this.props.defaultPage,
-            loading: false,
             activeButtonName: ''
         }
     }
@@ -74,5 +73,7 @@ export default class SimplePagination extends React.Component {
 }
 
 SimplePagination.defaultProps = {
-    defaultPage: 1
+    defaultPage: 1,
+    onChange: ()=> {
+    }
 }
