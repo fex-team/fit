@@ -17,6 +17,7 @@ module.exports = `
 <script src="/output/cdn/classNames.js"></script>
 <script src="/output/cdn/_.js"></script>
 <script src="/output/cdn/$.js"></script>
+<script src="/output/cdn/jquery.mockjax.min.js"></script>
 <script src="/output/index.js"></script>
 
 </html>
