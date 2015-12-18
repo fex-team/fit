@@ -1,6 +1,6 @@
 {
   "name": "conic-checkbox",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "多选框",
   "main": "dist/index.js",
   "scripts": {
