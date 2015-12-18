@@ -14,14 +14,17 @@ export default class Table extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            datas: []
+            datas: [],
+            paginOpts: {
+                defaultPage: 1
+            },
+            currentPage: 1
         }
     }
 
     componentWillMount() {
-        this.updateTable()
-
         this.searchOpts = {}
+        this.updateTable()
     }
 
     // 搜索区内容修改
@@ -69,7 +72,7 @@ export default class Table extends React.Component {
     }
 
     // 刷新数据表
-    updateTable() {
+    updateTable(page) {
         if (this.props.get.url === '') {
             this.setState({
                 datas: this.props.datas
@@ -77,16 +80,27 @@ export default class Table extends React.Component {
         } else {
             $.ajax({
                 url: this.props.get.url,
-                data: this.props.get.beforeSend(this.searchOpts)
+                data: this.props.get.beforeSend(this.searchOpts, page || this.state.currentPage)
             }).done((res)=> {
                 if (typeof res === 'string') {
                     res = JSON.parse(res)
                 }
+
+                let newPaginOpts = this.state.paginOpts
+                let newDatas = this.props.get.success(res, newPaginOpts)
+                console.log(newDatas)
                 this.setState({
-                    datas: this.props.get.success(res)
+                    datas: newDatas,
+                    paginOpts: newPaginOpts,
+                    currentPage: page || this.state.currentPage
                 })
             })
         }
+    }
+
+    // 翻页
+    handleChangePage(page) {
+        this.updateTable(page)
     }
 
     render() {
@@ -167,9 +181,12 @@ export default class Table extends React.Component {
                         </tbody>
                     </table>
 
-                    <div className="pagination-container">
-                        <Pagination/>
-                    </div>
+                    {_.isEmpty(this.state.paginOpts) ? null :
+                        <div className="pagination-container">
+                            <Pagination onChange={this.handleChangePage.bind(this)}
+                                {...this.state.paginOpts}/>
+                        </div>
+                    }
                 </div>
             </div>
         )
