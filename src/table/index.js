@@ -4,7 +4,7 @@ import $ from 'jquery'
 import _ from 'lodash'
 import { Datepicker, Timepicker } from 'antd'
 import dateFormat from 'dateformat'
-import Pagination from 'conic-pagination'
+import Pagination from 'tb-pagination'
 import './index.scss'
 
 const mockList = [{
