@@ -66,13 +66,13 @@ addExist () {
 }
 
 
-#checkChange () {
-#    if git diff-index --quiet HEAD --; then
-#        echo "INFO:" "there no changes :)"
-#    else
-#        echo "ERROR:" "there are changes, please commit first" && exit 1
-#    fi
-#}
+checkChange () {
+    if git diff-index --quiet HEAD --; then
+        echo "INFO:" "there no changes :)"
+    else
+        echo "ERROR:" "there are changes, please commit first" && exit 1
+    fi
+}
 
 updateAll () {
     checkChange
