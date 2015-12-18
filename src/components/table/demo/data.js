@@ -1,5 +1,5 @@
 import React from 'react'
-import Table from 'tb-table'
+import Table from 'conic-table'
 
 const info = {
     fields:[{

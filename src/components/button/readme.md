@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Button from 'tb-button'
+import Button from 'conic-button'
 ````

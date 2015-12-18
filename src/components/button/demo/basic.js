@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from 'tb-button'
+import Button from 'conic-button'
 
 const style = {
     margin: 3

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Header, Sidebar, Section } from 'tb-layout-global'
+import { Layout, Header, Sidebar, Section } from 'conic-layout-global'
 
 export default class Demo extends React.Component {
     render() {
