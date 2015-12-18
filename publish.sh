@@ -22,7 +22,6 @@ log() {
         echo -e "$datestring $2" | fold -w70 -s | sed '2~1s/^/  /' >&3
     fi
 }
-view raw
 
 ROOT=`pwd`
 TIEBAACCOUNT="http://gitlab.baidu.com/tb-component/awesome/blob/master/doc/publish.md"
