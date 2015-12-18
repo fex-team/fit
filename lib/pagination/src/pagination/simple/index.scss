@@ -1,0 +1,21 @@
+.pager {
+  & > li > span {
+    color: #23527c;
+    cursor: pointer;
+    &:hover {
+      background-color: #eee;
+    }
+    &.disabled {
+      color: #818a91;
+      cursor: not-allowed;
+      background-color: #fff;
+    }
+  }
+  .before {
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+  }
+  .after {
+    border-radius: 0 5px 5px 0;
+  }
+}

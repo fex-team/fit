@@ -71,24 +71,9 @@ th {
 .pagination-container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   width: 100%;
   padding-right: 20px;
   border-top: 1px solid #eaeff0;
-}
-
-.pager {
-  & > li > span {
-    color: #23527c;
-    cursor: pointer;
-    &:hover {
-      background-color: #eee;
-    }
-  }
-  .before {
-    border-radius: 5px 0 0 5px;
-    border-right: none;
-  }
-  .after {
-    border-radius: 0 5px 5px 0;
-  }
+  height: 50px;
 }

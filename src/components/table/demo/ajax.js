@@ -12,13 +12,13 @@ const info = {
     get: {
         url: '/api/regex',
         method: 'get',
-        beforeSend: (info, pagination)=> {
-            return {
-                page: 1
-            }
+        beforeSend: (info, currentPage)=> {
+            info.page = currentPage
+            return info
         },
         success: (res, pagination)=> {
-            return res.data
+            pagination.next = res['has_next']
+            return res['data']
         }
     }
 }
