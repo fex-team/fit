@@ -18,7 +18,7 @@ const info = {
     get: {
         url: '/api/table/form',
         method: 'get',
-        beforeSend: (info, currentPage)=> {
+        beforeSend: (info, currentPage, response)=> {
             info.page = currentPage
             return info
         },
