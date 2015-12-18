@@ -31,7 +31,7 @@ update() {
             git add ./package.json
             git commit -m "upgrade package: $1"
             cd $ROOT
-            git subtree pull --prefix=lib/$1 $1 master 2>/dev/null
+            git subtree pull --prefix=lib/$1 $1 master 2>/dev/null || exit 1
             git subtree push --prefix=lib/$1 $1 master 2>/dev/null
             echo "subtree:$1 push success"
         else
