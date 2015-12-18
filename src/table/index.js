@@ -4,7 +4,7 @@ import $ from 'jquery'
 import _ from 'lodash'
 import { Datepicker, Timepicker } from 'antd'
 import dateFormat from 'dateformat'
-import Pagination from 'tb-pagination'
+import Pagination from 'conic-pagination'
 import './index.scss'
 
 // 延时查询计时器
