@@ -46,7 +46,7 @@ updateSubtree () {
             echo "subtree:$directory pull success"
             git subtree push --prefix=lib/$directory $directory master 2>/dev/null
             echo "subtree:$directory push success"
-            ./publish.sh $directory
+#            ./publish.sh $directory
        fi
     done
 }
