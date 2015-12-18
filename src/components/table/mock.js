@@ -28,9 +28,11 @@ $.mockjax({
     url: "/api/regex",
     contentType: "application/json",
     response: function (settings) {
+        let hasNext = settings.data.page >= 5 ? false : true
         this.responseText = {
             ok: true,
-            data: regexData[settings.data.page - 1]
+            data: regexData[settings.data.page - 1],
+            has_next: hasNext
         }
     }
 })
