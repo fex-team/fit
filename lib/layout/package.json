@@ -1,5 +1,5 @@
 {
-  "name": "conic-layout",
+  "name": "tb-layout",
   "version": "1.0.6",
   "description": "布局组件",
   "main": "dist/index.js",

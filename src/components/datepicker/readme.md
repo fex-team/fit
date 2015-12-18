@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Button from 'conic-datepicker'
+import Button from 'tb-datepicker'
 ````

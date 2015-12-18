@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import { Header, Sidebar, Footer, Section } from 'conic-layout-global'
+import { Header, Sidebar, Footer, Section } from 'tb-layout-global'
 ````

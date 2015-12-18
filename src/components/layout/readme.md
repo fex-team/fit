@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import { Row, Col } from 'conic-layout'
+import { Row, Col } from 'tb-layout'
 ````

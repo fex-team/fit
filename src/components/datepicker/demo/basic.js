@@ -1,5 +1,5 @@
 import React from 'react'
-import Datepicker from 'conic-datepicker'
+import Datepicker from 'tb-datepicker'
 
 export default class DatepickerDemo extends React.Component {
     render() {

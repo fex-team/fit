@@ -1,5 +1,5 @@
 {
-  "name": "conic-button",
+  "name": "tb-button",
   "version": "1.1.17",
   "description": "按钮",
   "main": "dist/index.js",

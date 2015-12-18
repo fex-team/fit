@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'conic-layout'
+import { Row, Col } from 'tb-layout'
 
 export default class Demo extends React.Component {
     render() {
