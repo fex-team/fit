@@ -5,20 +5,20 @@ ROOT=`pwd`
 DIRECTIONS=$(ls ./lib)
 
 
-# 检查更改的 subtree
-checkSubtreeChange () {
-    cd $ROOT
-
-    for direction in ${DIRECTIONS[@]}; do
-         if test `checkRemote $direction` = 1; then
-            if test `$(git status --short | grep -c "lib/$1/")` = 1;then
-
-         fi
-    done
-
-    local changes=$(git status --short)
-    echo $changes
-}
+## 检查更改的 subtree
+#checkSubtreeChange () {
+#    cd $ROOT
+#
+#    for direction in ${DIRECTIONS[@]}; do
+#         if test `checkRemote $direction` = 1; then
+#            if test `$(git status --short | grep -c "lib/$1/")` = 1;then
+#
+#         fi
+#    done
+#
+#    local changes=$(git status --short)
+#    echo $changes
+#}
 
 
 # 检查git remote 分支
@@ -80,7 +80,7 @@ updateAll () {
     updateSubtree
 }
 
-#updateAll
+updateAll
 
 
-checkSubtreeChange
+#checkSubtreeChange
