@@ -1,6 +1,6 @@
 {
   "name": "conic-layout-global",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "全局布局",
   "main": "dist/index.js",
   "scripts": {
