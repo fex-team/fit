@@ -1,6 +1,6 @@
 {
   "name": "conic-datepicker",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "tb react datapicker",
   "main": "dist/index.js",
   "scripts": {
