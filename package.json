@@ -1,5 +1,5 @@
 {
-  "name": "conic-pagination",
+  "name": "tb-pagination",
   "version": "1.0.1",
   "description": "分页",
   "main": "dist/index.js",
