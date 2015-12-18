@@ -1,0 +1,13 @@
+import React from 'react'
+import Checkbox from 'tb-checkbox'
+
+export default class Demo extends React.Component {
+    render() {
+        return (
+            <div>
+                <Checkbox/>
+                <Checkbox label="点击选中"/>
+            </div>
+        )
+    }
+}

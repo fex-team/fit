@@ -28,6 +28,10 @@ import Pagination from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!
 import paginationCode from 'text!./demo/pagination.js'
 import paginationMarkdown from './demo/pagination.md'
 
+import Select from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/select.js'
+import selectCode from 'text!./demo/select.js'
+import selectMarkdown from './demo/select.md'
+
 const colStyle = {
     padding: 10
 }
@@ -73,6 +77,12 @@ export default class Layout extends React.Component {
                                   code={paginationCode}
                                   style={{marginTop:10}}>
                             <Pagination/>
+                        </CodeView>
+
+                        <CodeView md={selectMarkdown}
+                                  code={selectCode}
+                                  style={{marginTop:10}}>
+                            <Select/>
                         </CodeView>
                     </Col>
                 </Row>

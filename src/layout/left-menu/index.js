@@ -5,27 +5,37 @@ import classnames from 'classnames'
 import { Row, Col } from 'antd'
 
 const menuBase = [{
-    title: '全屏布局',
+    title: '全屏布局 Layouts',
     path: '/layout-global',
     icon: 'columns'
 }, {
-    title: '布局',
+    title: '布局 Layout',
     path: '/layout',
     icon: 'th'
 }, {
-    title: '按钮',
+    title: '按钮 Button',
     path: '/button',
     icon: 'square-o'
 }, {
-    title: '日期',
+    title: '日期 Datepiacker',
     path: '/datepicker',
     icon: 'calendar'
 }]
 
 const menuShow = [{
-    title: '表格',
+    title: '分页 Pagination',
+    path: 'pagination',
+    icon: 'sticky-note-o'
+}, {
+    title: '表格 Table',
     path: '/table',
     icon: 'table'
+}]
+
+const menuForm = [{
+    title: '多选框 Checkbox',
+    path: '/checkbox',
+    icon: 'check-square'
 }]
 
 const menuFactory = (data)=> {
@@ -60,6 +70,7 @@ export default class Layout extends React.Component {
     render() {
         let MenuBase = menuFactory(menuBase)
         let MenuShow = menuFactory(menuShow)
+        let MenuTable = menuFactory(menuForm)
 
         return (
             <div className="_namespace">
@@ -67,6 +78,8 @@ export default class Layout extends React.Component {
                 {MenuBase}
                 <div className="title">展示</div>
                 {MenuShow}
+                <div className="title">表单</div>
+                {MenuTable}
             </div>
         )
     }

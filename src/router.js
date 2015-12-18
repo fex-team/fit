@@ -9,6 +9,8 @@ import LayoutComponent from './components/layout'
 import LayoutGlobalComponent from './components/layout-global'
 import DatepickerComponent from './components/datepicker'
 import TableComponent from './components/table'
+import CheckboxComponent from './components/checkbox'
+import PaginationComponent from './components/pagination'
 
 const MainRouter = (
     <Router>
@@ -25,6 +27,10 @@ const MainRouter = (
                    component={DatepickerComponent}/>
             <Route path="table"
                    component={TableComponent}/>
+            <Route path="pagination"
+                   component={PaginationComponent}/>
+            <Route path="checkbox"
+                   component={CheckboxComponent}/>
         </Route>
     </Router>
 )
