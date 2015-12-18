@@ -5,7 +5,7 @@ import mock from 'jquery-mockjax'
 let mockjax = mock($, window)
 
 mockjax({
-    url: "/api/member",
+    url: "/api/table/member",
     contentType: "application/json",
     responseText: {
         ok: true,
@@ -29,7 +29,7 @@ mockjax({
 })
 
 mockjax({
-    url: "/api/regex",
+    url: "/api/table/regex",
     contentType: "application/json",
     response: function (settings) {
         let hasNext = settings.data.page >= 5 ? false : true
@@ -37,6 +37,27 @@ mockjax({
             ok: true,
             data: regexData[settings.data.page - 1],
             has_next: hasNext
+        }
+    }
+})
+
+mockjax({
+    url: "/api/table/form",
+    contentType: "application/json",
+    response: function (settings) {
+        let infoArray = []
+        for (let i = (settings.data.page - 1) * 10; i < settings.data.page * 10; i++) {
+            let random = Math.floor(Math.random() * 10000)
+            infoArray.push({
+                id: i,
+                yesterday: random,
+                today: random + Math.floor(Math.random() * 1000)
+            })
+        }
+        this.responseText = {
+            ok: true,
+            data: infoArray,
+            all_page: 45000
         }
     }
 })

@@ -3,21 +3,25 @@ import Table from 'tb-table'
 
 const info = {
     fields: [{
-        key: 'value',
-        value: '元字符'
+        key: 'id',
+        value: 'ID'
     }, {
-        key: 'description',
-        value: '描述'
+        key: 'name',
+        value: '用户名'
+    }, {
+        key: 'department',
+        value: '部门'
+    }, {
+        key: 'age',
+        value: '年龄'
     }],
     get: {
-        url: '/api/table/regex',
+        url: '/api/table/member',
         method: 'get',
-        beforeSend: (info, currentPage)=> {
-            info.page = currentPage
+        beforeSend: (info)=> {
             return info
         },
-        success: (res, pagination)=> {
-            pagination.next = res['has_next']
+        success: (res)=> {
             return res['data']
         }
     }

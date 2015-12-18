@@ -1,11 +1,13 @@
-.pager {
+.pagination {
   display: flex;
-  & > li > span {
+  div {
     user-select: none;
     color: #23527c;
     cursor: pointer;
+    padding: 4px 10px;
+    border: 1px solid #dee5e7;
     &:hover {
-      background-color: #eee;
+      background: whitesmoke;
     }
     &.disabled {
       color: #818a91;
@@ -13,25 +15,30 @@
       background-color: #fff;
     }
   }
+  div + div {
+    border-left: none;
+  }
   .loading {
     width: 14px;
     height: 14px;
   }
   .before {
-    display: flex;
-    align-items: center;
-    border-radius: 5px 0 0 5px;
-    border-right: none;
     .loading {
       margin-right: 5px;
     }
   }
   .after {
-    display: flex;
-    align-items: center;
-    border-radius: 0 5px 5px 0;
     .loading {
       margin-left: 5px;
+    }
+  }
+  .active {
+    background-color: #337ab7;
+    color: white;
+    cursor: default;
+    &:hover {
+      background-color: #337ab7;
+      color: white;
     }
   }
 }
