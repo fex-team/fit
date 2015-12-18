@@ -1,0 +1,15 @@
+@import "../mixins";
+
+& {
+  @include menu-button;
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+

@@ -1,0 +1,15 @@
+@import "../mixins";
+
+& {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+  &.inverse {
+    @include inverse;
+  }
+  &.vertical {
+    flex-direction: column;
+  }
+}
