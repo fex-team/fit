@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Table from 'tb-table'
+import Table from 'conic-table'
 ````

@@ -1,6 +1,10 @@
 import regexData from './regexData'
+import $ from 'jquery'
+import mock from 'jquery-mockjax'
 
-$.mockjax({
+let mockjax = mock($, window)
+
+mockjax({
     url: "/api/member",
     contentType: "application/json",
     responseText: {
@@ -24,7 +28,7 @@ $.mockjax({
     }
 })
 
-$.mockjax({
+mockjax({
     url: "/api/regex",
     contentType: "application/json",
     response: function (settings) {
