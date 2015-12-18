@@ -14,12 +14,10 @@ const info = {
         method: 'get',
         beforeSend: (info, pagination)=> {
             return {
-                page: 1,
-                a: pagination.currentPage
+                page: 1
             }
         },
         success: (res, pagination)=> {
-            pagination.next = true
             return res.data
         }
     }
