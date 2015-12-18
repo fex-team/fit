@@ -11,7 +11,8 @@ checkSubtreeChange () {
 
     for direction in ${DIRECTIONS[@]}; do
          if test `checkRemote $direction` = 1; then
-            if test `$(git status --short | grep -c "lib/$1")`
+            if test `$(git status --short | grep -c "lib/$1/")` = 1;then
+
          fi
     done
 
