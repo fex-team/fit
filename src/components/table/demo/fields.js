@@ -14,7 +14,8 @@ const info = {
     }, {
         key: 'age',
         value: '年龄'
-    }]
+    }],
+    title: '如何设置表头'
 }
 
 export default class Demo extends React.Component {
