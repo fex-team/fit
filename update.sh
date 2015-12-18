@@ -2,6 +2,22 @@
 
 REMOTE_PREFIX="ssh://g@gitlab.baidu.com:8022/tb-component"
 ROOT=`pwd`
+DIRECTIONS=$(ls ./lib)
+
+
+# 检查更改的 subtree
+checkSubtreeChange () {
+    cd $ROOT
+
+    for direction in ${DIRECTIONS[@]}; do
+         if test `checkRemote $direction` = 1; then
+            if test `$(git status --short | grep -c "lib/$1")`
+         fi
+    done
+
+    local changes=$(git status --short)
+    echo $changes
+}
 
 
 # 检查git remote 分支
@@ -23,9 +39,7 @@ addRemote () {
 
 updateSubtree () {
     cd $ROOT
-    local directions=$(ls ./lib)
-
-    for directory in ${directions[@]}; do
+    for directory in ${DIRECTIONS[@]}; do
         if test `checkRemote $directory` = 1; then
             git subtree pull --prefix=lib/$directory $directory master 2>/dev/null
             echo "subtree:$directory pull success"
@@ -35,6 +49,7 @@ updateSubtree () {
        fi
     done
 }
+
 # 为现有文件夹添加 subtree和 remote 分支
 addExist () {
     local directions=$(ls ./lib)
@@ -49,13 +64,14 @@ addExist () {
     done
 }
 
-checkChange () {
-    if git diff-index --quiet HEAD --; then
-        echo "INFO:" "there no changes :)"
-    else
-        echo "ERROR:" "there are changes, please commit first" && exit 1
-    fi
-}
+
+#checkChange () {
+#    if git diff-index --quiet HEAD --; then
+#        echo "INFO:" "there no changes :)"
+#    else
+#        echo "ERROR:" "there are changes, please commit first" && exit 1
+#    fi
+#}
 
 updateAll () {
     checkChange
@@ -63,5 +79,7 @@ updateAll () {
     updateSubtree
 }
 
-updateAll
+#updateAll
 
+
+checkSubtreeChange
