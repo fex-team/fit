@@ -1,6 +1,6 @@
 {
   "name": "tb-checkbox",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "多选框",
   "main": "dist/index.js",
   "scripts": {
