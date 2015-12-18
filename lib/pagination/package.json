@@ -1,7 +1,7 @@
 {
-  "name": "tb-layout",
-  "version": "1.0.6",
-  "description": "布局组件",
+  "name": "tb-pagination",
+  "version": "1.0.0",
+  "description": "分页",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

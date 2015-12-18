@@ -57,6 +57,7 @@
     "history": "^1.13.1",
     "html-path-loader": "^0.1.10",
     "jquery": "^2.1.4",
+    "jquery-mockjax": "git+https://github.com/jakerella/jquery-mockjax.git",
     "lodash": "^3.10.1",
     "marked": "^0.3.5",
     "react-highlight": "^0.6.1",

@@ -5,8 +5,8 @@ export default class Demo extends React.Component {
     render() {
         return (
             <Layout>
-                <Header height={100}>导航条</Header>
-                <Sidebar width={100}>侧边栏</Sidebar>
+                <Header height={60}>导航条</Header>
+                <Sidebar width={60}>侧边栏</Sidebar>
                 <Section>主体</Section>
             </Layout>
         )

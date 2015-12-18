@@ -8,6 +8,7 @@ module.exports = {
         'tb-layout-global': path.join(__dirname, 'lib/layout-global/src'),
         'tb-checkbox': path.join(__dirname, 'lib/checkbox/src'),
         'tb-datepicker': path.join(__dirname, 'lib/datepicker/src'),
-        'tb-table': path.join(__dirname, 'lib/table/src')
+        'tb-table': path.join(__dirname, 'lib/table/src'),
+        'tb-pagination': path.join(__dirname, 'lib/pagination/src')
     }
 }

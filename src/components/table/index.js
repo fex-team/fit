@@ -4,11 +4,21 @@ import Highlight from 'react-highlight'
 import Title from '../title.js'
 import readme from './readme.md'
 import { Row, Col } from 'antd'
+import $ from 'jquery'
+import './mock'
 import './index.scss'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+import Fields from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/fields.js'
+import fieldsCode from 'text!./demo/fields.js'
+import fieldsMarkdown from './demo/fields.md'
+
+import Data from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/data.js'
+import dataCode from 'text!./demo/data.js'
+import dataMarkdown from './demo/data.md'
+
+import Ajax from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/ajax.js'
+import ajaxCode from 'text!./demo/ajax.js'
+import ajaxMarkdown from './demo/ajax.md'
 
 const colStyle = {
     padding: 10
@@ -28,10 +38,21 @@ export default class Layout extends React.Component {
 
                 <Row style={colStyle}>
                     <Col span="24">
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}
+                        <CodeView md={fieldsMarkdown}
+                                  code={fieldsCode}>
+                            <Fields/>
+                        </CodeView>
+
+                        <CodeView md={dataMarkdown}
+                                  code={dataCode}
                                   style={{marginTop:10}}>
-                            <Basic/>
+                            <Data/>
+                        </CodeView>
+
+                        <CodeView md={ajaxMarkdown}
+                                  code={ajaxCode}
+                                  style={{marginTop:10}}>
+                            <Ajax/>
                         </CodeView>
                     </Col>
                 </Row>
