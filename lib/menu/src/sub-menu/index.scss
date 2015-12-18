@@ -1,0 +1,5 @@
+@import "../mixins";
+
+& {
+  @include menu-button;
+}

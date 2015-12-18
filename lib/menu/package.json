@@ -1,0 +1,19 @@
+{
+  "name": "tb-menu",
+  "version": "0.1.0",
+  "description": "tb react menu component",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/menu.git"
+  },
+  "keywords": [
+    "tb",
+    "menu"
+  ],
+  "author": "tieba",
+  "license": "ISC"
+}
