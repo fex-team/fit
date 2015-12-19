@@ -36,6 +36,10 @@ const menuForm = [{
     title: '多选框 Checkbox',
     path: '/checkbox',
     icon: 'check-square'
+},{
+    title: '单选框 Radio',
+    path: '/radio',
+    icon: 'check-circle'
 }]
 
 const menuFactory = (data)=> {

@@ -5,9 +5,9 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Checkbox size="large" label="大尺寸"/>
-                <Checkbox size="small" label="小尺寸"
-                          style={{marginLeft:20}}/>
+                <Checkbox size="large">大尺寸</Checkbox>
+                <Checkbox size="small"
+                          style={{marginLeft:20}}>小尺寸</Checkbox>
             </div>
         )
     }

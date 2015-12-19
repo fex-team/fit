@@ -10,6 +10,7 @@ import LayoutGlobalComponent from './components/layout-global'
 import DatepickerComponent from './components/datepicker'
 import TableComponent from './components/table'
 import CheckboxComponent from './components/checkbox'
+import RadioComponent from './components/radio'
 import PaginationComponent from './components/pagination'
 
 const MainRouter = (
@@ -31,6 +32,8 @@ const MainRouter = (
                    component={PaginationComponent}/>
             <Route path="checkbox"
                    component={CheckboxComponent}/>
+            <Route path="radio"
+                   component={RadioComponent}/>
         </Route>
     </Router>
 )

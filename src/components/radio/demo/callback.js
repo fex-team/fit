@@ -1,5 +1,5 @@
 import React from 'react'
-import Checkbox from 'tb-checkbox'
+import Radio from 'tb-radio'
 
 export default class Demo extends React.Component {
     constructor(props) {
@@ -18,8 +18,8 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Checkbox onChange={this.handleCheck.bind(this)}
-                          style={{marginRight:10}}>回调函数</Checkbox>
+                <Radio onChange={this.handleCheck.bind(this)}
+                          style={{marginRight:10}}>回调函数</Radio>
                 {this.state.checked ? '已选中' : '未选中'}
             </div>
         )

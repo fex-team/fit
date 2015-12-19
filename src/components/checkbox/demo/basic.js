@@ -6,7 +6,8 @@ export default class Demo extends React.Component {
         return (
             <div>
                 <Checkbox/>
-                <Checkbox label="点击选中"/>
+                <Checkbox checked/>
+                <Checkbox>点击选中</Checkbox>
             </div>
         )
     }

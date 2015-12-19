@@ -29,6 +29,10 @@ import Size from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo
 import sizeCode from 'text!./demo/size.js'
 import sizeMarkdown from './demo/size.md'
 
+import Active from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/active.js'
+import activeCode from 'text!./demo/active.js'
+import activeMarkdown from './demo/active.md'
+
 const colStyle = {
     padding: 10
 }
@@ -61,6 +65,11 @@ export default class Layout extends React.Component {
                                   code={sizeCode}
                                   style={{marginTop:10}}>
                             <Size/>
+                        </CodeView>
+                        <CodeView md={activeMarkdown}
+                                  code={activeCode}
+                                  style={{marginTop:10}}>
+                            <Active/>
                         </CodeView>
                     </Col>
                     <Col span="12"

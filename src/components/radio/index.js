@@ -26,6 +26,14 @@ import Custom from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./de
 import customCode from 'text!./demo/custom.js'
 import customMarkdown from './demo/custom.md'
 
+import Group from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/group.js'
+import groupCode from 'text!./demo/group.js'
+import groupMarkdown from './demo/group.md'
+
+import Button from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/button.js'
+import buttonCode from 'text!./demo/button.js'
+import buttonMarkdown from './demo/button.md'
+
 const colStyle = {
     padding: 10
 }
@@ -34,7 +42,7 @@ export default class Layout extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        document.title = '多选框'
+        document.title = '单选框'
     }
 
     render() {
@@ -61,6 +69,12 @@ export default class Layout extends React.Component {
                                   style={{marginTop:10}}>
                             <Custom/>
                         </CodeView>
+
+                        <CodeView md={buttonMarkdown}
+                                  code={buttonCode}
+                                  style={{marginTop:10}}>
+                            <Button/>
+                        </CodeView>
                     </Col>
 
                     <Col style={colStyle}
@@ -74,6 +88,12 @@ export default class Layout extends React.Component {
                                   code={disableCode}
                                   style={{marginTop:10}}>
                             <Disable/>
+                        </CodeView>
+
+                        <CodeView md={groupMarkdown}
+                                  code={groupCode}
+                                  style={{marginTop:10}}>
+                            <Group/>
                         </CodeView>
                     </Col>
                 </Row>

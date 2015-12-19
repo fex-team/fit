@@ -1,4 +1,5 @@
 import React from 'react'
+import Radio from 'tb-radio'
 import Checkbox from 'tb-checkbox'
 
 export default class Demo extends React.Component {
@@ -25,9 +26,9 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Checkbox checked={this.state.checked}
-                          disabled={this.state.disabled}
-                          style={{marginBottom:10}}>可受外部控制</Checkbox>
+                <Radio checked={this.state.checked}
+                       disabled={this.state.disabled}
+                       style={{marginBottom:10}}>可受外部控制</Radio>
                 <br/>
                 <Checkbox onChange={this.handleCheck.bind(this)}>选中</Checkbox>
                 <Checkbox style={{marginLeft:10}}

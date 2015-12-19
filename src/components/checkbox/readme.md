@@ -1,7 +1,7 @@
-# 全屏布局
+# 多选框
 
 ---
 
 ````jsx
-import { Header, Sidebar, Footer, Section } from 'tb-layout-global'
+import Checkbox from 'tb-checkbox'
 ````
