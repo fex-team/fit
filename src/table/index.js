@@ -7,6 +7,7 @@ import dateFormat from 'dateformat'
 import Pagination from 'tb-pagination'
 import Checkbox from 'tb-checkbox'
 import Radio from 'tb-radio'
+import Finder from './finder'
 import './index.scss'
 
 // 判断当前行是否在选择的行信息里
@@ -214,10 +215,6 @@ export default class Table extends React.Component {
             )
         })
 
-        let SearchBar = this.props.search.map((item, index)=> {
-
-        })
-
         return (
             <div className="_namespace">
                 <div className="panel">
@@ -225,9 +222,7 @@ export default class Table extends React.Component {
                         {this.props.title}
                     </div>
 
-                    {_.isEmpty(this.props.search) ? null : <div className="search-bar">
-                        {SearchBar}
-                    </div>}
+                    {_.isEmpty(this.props.finder) ? null : <Finder finder={this.props.finder}/>}
 
                     <table className="table table-striped">
                         <thead>
@@ -314,5 +309,8 @@ Table.defaultProps = {
     search: [],
 
     // 行选择
-    selector: {}
+    selector: {},
+
+    // 条件查询
+    finder: {}
 }
