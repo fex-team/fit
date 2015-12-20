@@ -10,6 +10,7 @@ module.exports = {
         'tb-radio': path.join(__dirname, 'lib/radio/src'),
         'tb-datepicker': path.join(__dirname, 'lib/datepicker/src'),
         'tb-table': path.join(__dirname, 'lib/table/src'),
-        'tb-pagination': path.join(__dirname, 'lib/pagination/src')
+        'tb-pagination': path.join(__dirname, 'lib/pagination/src'),
+        'tb-input': path.join(__dirname, 'lib/input/src')
     }
 }
