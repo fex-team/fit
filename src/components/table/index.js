@@ -32,6 +32,22 @@ import Select from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./de
 import selectCode from 'text!./demo/select.js'
 import selectMarkdown from './demo/select.md'
 
+import Find from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/find.js'
+import findCode from 'text!./demo/find.js'
+import findMarkdown from './demo/find.md'
+
+import Sort from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/sort.js'
+import sortCode from 'text!./demo/sort.js'
+import sortMarkdown from './demo/sort.md'
+
+import Custom from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/custom.js'
+import customCode from 'text!./demo/custom.js'
+import customMarkdown from './demo/custom.md'
+
+import Sortable from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/sortable.js'
+import sortableCode from 'text!./demo/sortable.js'
+import sortableMarkdown from './demo/sortable.md'
+
 const colStyle = {
     padding: 10
 }
@@ -83,6 +99,30 @@ export default class Layout extends React.Component {
                                   code={selectCode}
                                   style={{marginTop:10}}>
                             <Select/>
+                        </CodeView>
+
+                        <CodeView md={findMarkdown}
+                                  code={findCode}
+                                  style={{marginTop:10}}>
+                            <Find/>
+                        </CodeView>
+
+                        <CodeView md={sortMarkdown}
+                                  code={sortCode}
+                                  style={{marginTop:10}}>
+                            <Sort/>
+                        </CodeView>
+
+                        <CodeView md={customMarkdown}
+                                  code={customCode}
+                                  style={{marginTop:10}}>
+                            <Custom/>
+                        </CodeView>
+
+                        <CodeView md={sortableMarkdown}
+                                  code={sortableCode}
+                                  style={{marginTop:10}}>
+                            <Sortable/>
                         </CodeView>
                     </Col>
                 </Row>
