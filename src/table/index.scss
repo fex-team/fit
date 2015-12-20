@@ -29,6 +29,11 @@ table {
 }
 
 .table > thead > tr > th {
+  padding: 10px 15px !important;
+  white-space: nowrap;
+}
+
+.table > thead > tr > th {
   padding: 6px 15px;
   border-bottom: 1px solid #eaeff0;
   line-height: 1.42857143;
