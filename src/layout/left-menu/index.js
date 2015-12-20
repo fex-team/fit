@@ -16,10 +16,6 @@ const menuBase = [{
     title: '按钮 Button',
     path: '/button',
     icon: 'square-o'
-}, {
-    title: '日期 Datepiacker',
-    path: '/datepicker',
-    icon: 'calendar'
 }]
 
 const menuShow = [{
@@ -33,13 +29,29 @@ const menuShow = [{
 }]
 
 const menuForm = [{
+    title: '输入框 Input',
+    path: '/input',
+    icon: 'font'
+}, {
+    title: '选择框 Select',
+    path: '/select',
+    icon: 'navicon'
+}, {
+    title: '开关 Switch',
+    path: '/switch',
+    icon: 'toggle-off'
+}, {
     title: '多选框 Checkbox',
     path: '/checkbox',
     icon: 'check-square'
-},{
+}, {
     title: '单选框 Radio',
     path: '/radio',
     icon: 'check-circle'
+}, {
+    title: '日期 Datepiacker',
+    path: '/datepicker',
+    icon: 'calendar'
 }]
 
 const menuFactory = (data)=> {

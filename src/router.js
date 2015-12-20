@@ -12,6 +12,9 @@ import TableComponent from './components/table'
 import CheckboxComponent from './components/checkbox'
 import RadioComponent from './components/radio'
 import PaginationComponent from './components/pagination'
+import SwitchComponent from './components/switch'
+import InputComponent from './components/input'
+import SelectComponent from './components/select'
 
 const MainRouter = (
     <Router>
@@ -34,6 +37,12 @@ const MainRouter = (
                    component={CheckboxComponent}/>
             <Route path="radio"
                    component={RadioComponent}/>
+            <Route path="switch"
+                   component={SwitchComponent}/>
+            <Route path="input"
+                   component={InputComponent}/>
+            <Route path="select"
+                   component={SelectComponent}/>
         </Route>
     </Router>
 )

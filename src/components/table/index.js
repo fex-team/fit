@@ -101,29 +101,7 @@ export default class Layout extends React.Component {
                             <Select/>
                         </CodeView>
 
-                        <CodeView md={findMarkdown}
-                                  code={findCode}
-                                  style={{marginTop:10}}>
-                            <Find/>
-                        </CodeView>
 
-                        <CodeView md={sortMarkdown}
-                                  code={sortCode}
-                                  style={{marginTop:10}}>
-                            <Sort/>
-                        </CodeView>
-
-                        <CodeView md={customMarkdown}
-                                  code={customCode}
-                                  style={{marginTop:10}}>
-                            <Custom/>
-                        </CodeView>
-
-                        <CodeView md={sortableMarkdown}
-                                  code={sortableCode}
-                                  style={{marginTop:10}}>
-                            <Sortable/>
-                        </CodeView>
                     </Col>
                 </Row>
 
@@ -131,3 +109,27 @@ export default class Layout extends React.Component {
         )
     }
 }
+
+//<CodeView md={findMarkdown}
+//          code={findCode}
+//          style={{marginTop:10}}>
+//    <Find/>
+//</CodeView>
+//
+//<CodeView md={sortMarkdown}
+//code={sortCode}
+//style={{marginTop:10}}>
+//<Sort/>
+//</CodeView>
+//
+//<CodeView md={customMarkdown}
+//code={customCode}
+//style={{marginTop:10}}>
+//<Custom/>
+//</CodeView>
+//
+//<CodeView md={sortableMarkdown}
+//code={sortableCode}
+//style={{marginTop:10}}>
+//<Sortable/>
+//</CodeView>

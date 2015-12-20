@@ -30,7 +30,7 @@ export default class Layout extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        document.title = '整体布局'
+        document.title = '全屏布局'
     }
 
     render() {

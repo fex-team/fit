@@ -25,7 +25,7 @@ export default class Datepicker extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        document.title = '布局'
+        document.title = '日期'
     }
 
     render() {

@@ -11,6 +11,8 @@ module.exports = {
         'tb-datepicker': path.join(__dirname, 'lib/datepicker/src'),
         'tb-table': path.join(__dirname, 'lib/table/src'),
         'tb-pagination': path.join(__dirname, 'lib/pagination/src'),
-        'tb-input': path.join(__dirname, 'lib/input/src')
+        'tb-input': path.join(__dirname, 'lib/input/src'),
+        'tb-select': path.join(__dirname, 'lib/select/src'),
+        'tb-switch': path.join(__dirname, 'lib/switch/src')
     }
 }
