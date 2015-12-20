@@ -1,13 +1,13 @@
 import React from 'react'
-import { Layout, Header, Sidebar, Section } from 'tb-layout-global'
+import { Layout, Sidebar, Section, Footer } from 'tb-layout-global'
 
 export default class Demo extends React.Component {
     render() {
         return (
             <Layout>
-                <Header height="60">导航条</Header>
-                <Sidebar width="60">侧边栏</Sidebar>
+                <Sidebar width="60" bottom="0">侧边栏</Sidebar>
                 <Section>主体</Section>
+                <Footer height="60" left="60">页尾</Footer>
             </Layout>
         )
     }

@@ -1,7 +1,7 @@
 $inverse-bg-color: #3a3f51;
 $inverse-font-color: #b4b6bd;
 $inverse-bg-active-color: #32374a;
-$bg-active-color: #3a3f51;
+$bg-active-color: #f6f8f8;
 
 @mixin inverse {
   background-color: $inverse-bg-color;
@@ -13,7 +13,6 @@ $bg-active-color: #3a3f51;
   &:hover {
     color: white;
     background-color: $inverse-bg-active-color;
-    transition: background-color 0.2s ease-in-out 0s
   }
 }
 
@@ -39,5 +38,8 @@ $bg-active-color: #3a3f51;
   }
   &.inverse.brand {
     color: #eaebed;
+  }
+  &.vertical {
+    padding: 10px 15px;
   }
 }
