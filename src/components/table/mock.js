@@ -1,8 +1,15 @@
 import regexData from './regexData'
 import $ from 'jquery'
 import mock from 'jquery-mockjax'
+import names from './names'
 
 let mockjax = mock($, window)
+
+const getRandomRange = (min, max)=> {
+    var Range = max - min
+    var Rand = Math.random()
+    return (min + Math.round(Rand * Range))
+}
 
 mockjax({
     url: "/api/table/member",
@@ -58,6 +65,30 @@ mockjax({
             ok: true,
             data: infoArray,
             all_page: 45000
+        }
+    }
+})
+
+mockjax({
+    url: "/api/table/all",
+    contentType: "application/json",
+    response: function (settings) {
+        let weekRand = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日']
+
+        let infoArray = []
+        for (let i = (settings.data.page - 1) * 10; i < settings.data.page * 10; i++) {
+            let random = Math.floor(Math.random() * 10000)
+            infoArray.push({
+                id: i,
+                name: names[getRandomRange(0, names.length - 1)],
+                free: weekRand[getRandomRange(0, 6)],
+                age: getRandomRange(19, 32)
+            })
+        }
+        this.responseText = {
+            ok: true,
+            data: infoArray,
+            all_page: 6350
         }
     }
 })
