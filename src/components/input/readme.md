@@ -1,7 +1,7 @@
-# 分页
+# 输入框
 
 ---
 
 ````jsx
-import Pagination from 'tb-pagination'
+import Input from 'tb-input'
 ````

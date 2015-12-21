@@ -1,7 +1,7 @@
-# 分页
+# 开关
 
 ---
 
 ````jsx
-import Pagination from 'tb-pagination'
+import Switch from 'tb-switch'
 ````

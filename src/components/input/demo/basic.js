@@ -1,26 +1,17 @@
 import React from 'react'
-import Pagination from 'tb-pagination'
+import Input from 'tb-input'
 
 export default class Demo extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            page: 1
-        }
-    }
-
-    handleChange(page) {
-        this.setState({
-            page: page
-        })
-    }
-
     render() {
         return (
             <div>
-                <Pagination onChange={this.handleChange.bind(this)}
-                            next={true}/>
-                {this.state.page}
+                <Input/>
+                <Input label="姓名"
+                       label-width={60}
+                       style={{marginTop:10}}/>
+                <Input addon-left="高度"
+                       addon-right="%"
+                       style={{marginTop:10}}/>
             </div>
         )
     }

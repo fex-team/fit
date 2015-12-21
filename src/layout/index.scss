@@ -32,6 +32,13 @@ html {
 .g-sd {
   bottom: 0;
   padding-top: 15px;
+  // 滚动条
+  &::-webkit-scrollbar {
+    background-color: #3a3f51;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #32374a;
+  }
 }
 
 .g-hd {

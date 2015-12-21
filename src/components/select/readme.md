@@ -1,7 +1,7 @@
-# 分页
+# 选择框
 
 ---
 
 ````jsx
-import Pagination from 'tb-pagination'
+import Select from 'tb-select'
 ````

@@ -101,7 +101,11 @@ export default class Layout extends React.Component {
                             <Select/>
                         </CodeView>
 
-
+                        <CodeView md={findMarkdown}
+                                  code={findCode}
+                                  style={{marginTop:10}}>
+                            <Find/>
+                        </CodeView>
                     </Col>
                 </Row>
 
@@ -110,11 +114,7 @@ export default class Layout extends React.Component {
     }
 }
 
-//<CodeView md={findMarkdown}
-//          code={findCode}
-//          style={{marginTop:10}}>
-//    <Find/>
-//</CodeView>
+
 //
 //<CodeView md={sortMarkdown}
 //code={sortCode}

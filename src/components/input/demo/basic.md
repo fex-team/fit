@@ -1,5 +1,5 @@
-# 基础回调
+# 基本用法
 
-基础模式,传入`next`（bool值）表示是否有下一页
+`label` 设置标题, `label-width` 设置标题的宽度,例如 `label-width="100"`
 
-回调函数`onChange`返回当前页数
+`addon-left` 设置左侧小标题, `addon-right` 设置右侧小标题 
