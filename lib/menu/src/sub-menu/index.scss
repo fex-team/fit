@@ -18,7 +18,7 @@
     @include inverse-hover;
   }
 
-  .title {
+  .icon {
     display: block;
     padding-left: 24px;
     line-height: 42px;
@@ -55,5 +55,4 @@
     transition: height 0.2s ease-in-out 0s;
     overflow: hidden;
   }
-
 }

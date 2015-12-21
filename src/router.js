@@ -15,6 +15,7 @@ import PaginationComponent from './components/pagination'
 import SwitchComponent from './components/switch'
 import InputComponent from './components/input'
 import SelectComponent from './components/select'
+import MenuComponent from './components/menu'
 
 const MainRouter = (
     <Router>
@@ -43,6 +44,8 @@ const MainRouter = (
                    component={InputComponent}/>
             <Route path="select"
                    component={SelectComponent}/>
+            <Route path="menu"
+                   component={MenuComponent}></Route>
         </Route>
     </Router>
 )
