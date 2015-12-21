@@ -9,6 +9,14 @@ import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import basicCode from 'text!./demo/basic.js'
 import basicMarkdown from './demo/basic.md'
 
+import Group from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/group.js'
+import groupCode from 'text!./demo/group.js'
+import groupMarkdown from './demo/group.md'
+
+import Search from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/search.js'
+import searchCode from 'text!./demo/search.js'
+import searchMarkdown from './demo/search.md'
+
 const colStyle = {
     padding: 10
 }
@@ -26,17 +34,20 @@ export default class Layout extends React.Component {
                 <Title>{readme}</Title>
 
                 <Row style={colStyle}>
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
+                    <Col style={colStyle} span="12">
+                        <CodeView md={basicMarkdown} code={basicCode}>
                             <Basic/>
+                        </CodeView>
+
+                        <CodeView md={searchMarkdown} code={searchCode} style={{marginTop:10}}>
+                            <Search/>
                         </CodeView>
                     </Col>
 
-                    <Col style={colStyle}
-                         span="12">
-
+                    <Col style={colStyle} span="12">
+                        <CodeView md={groupMarkdown} code={groupCode}>
+                            <Group/>
+                        </CodeView>
                     </Col>
                 </Row>
 

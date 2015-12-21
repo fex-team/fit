@@ -1,0 +1,10 @@
+& {
+  display: inline-block;
+  .chosen-single {
+    transition: border linear .2s, box-shadow linear .2s;
+    &.active {
+      border: 1px solid #66afe9 !important;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .075) inset, 0 0 8px rgba(82, 168, 236, .6) !important;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "tb-select",
+  "version": "1.0.0",
+  "description": "选择框",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.1",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1"
+  }
+}

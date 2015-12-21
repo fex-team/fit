@@ -2,7 +2,7 @@
 
 tb-component 贴吧组件化开发流程，致力于打造一套完全前端模块化、真正意义上的组件即插即用的生态圈。
 
-您可以[移步这里浏览所有组件实例](http://fedev.baidu.com:8236)。
+您可以[移步这里浏览所有组件实例](http://fedev.baidu.com:8329)。
 
 - react + redux + webpack
 - 一个组件包含（html+js+css），一行引入代码便引入了全部
