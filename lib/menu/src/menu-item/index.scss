@@ -2,14 +2,27 @@
 
 & {
   @include menu-button;
-}
+  padding-left: 58px;
+  position: relative;
 
-a {
-  color: inherit;
+  &.active {
+    background: #2db7f5;
+    color: #fff;
+  }
 
-  &:hover {
+  &.active:hover {
+    background: #2db7f5;
+    color: #fff;
+  }
+
+  & a {
+    display: block;
+    height: 42px;
+    line-height:42px;
     color: inherit;
     text-decoration: none;
+    &:hover {
+      color: inherit;
+    }
   }
 }
-

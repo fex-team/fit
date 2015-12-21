@@ -64,6 +64,7 @@ checkChange
 checkWhoami
 
 if test `npm whoami` = tieba; then
+    echo "starting pack:$1"
     node webpack.publish.js $1
     echo "pack:$1 success"
     update $1
