@@ -8,3 +8,16 @@
     }
   }
 }
+
+.search-input {
+  padding: 2px 10px !important;
+  &:focus {
+    border-color: #66afe9 !important;
+  }
+}
+
+.group-option {
+  .active {
+    color: #f05050;
+  }
+}
