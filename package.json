@@ -1,0 +1,14 @@
+{
+  "name": "tb-switch",
+  "version": "1.0.0",
+  "description": "开关",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.1"
+  }
+}
