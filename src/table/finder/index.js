@@ -1,4 +1,6 @@
 import React from 'react'
+import Input from 'tb-input'
+import Button from 'tb-button'
 import './index.scss'
 
 export default class Finder extends React.Component {
@@ -10,11 +12,17 @@ export default class Finder extends React.Component {
     }
 
     render() {
-        let Finders = this.props.finder.map((item)=> {
+        let Finders = this.props.finder.map((item, index)=> {
+            let itemStyle = {
+                flexGrow: 1,
+                marginLeft: index === 0 ? null : 10
+            }
             switch (item.type) {
             case 'text':
                 return (
-                    <div>123</div>
+                    <Input key={index}
+                           style={itemStyle}
+                           label={item.label}/>
                 )
             }
         })
@@ -22,6 +30,9 @@ export default class Finder extends React.Component {
         return (
             <div className="_namespace">
                 {Finders}
+                <Button style={{marginLeft:10}}
+                        addon-left="search"
+                        type="primary">查询</Button>
             </div>
         )
     }
