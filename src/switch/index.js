@@ -45,7 +45,9 @@ export default class Switch extends React.Component {
             '_namespace': true,
             [className]: !!className,
             [`checked`]: checked,
-            [`disabled`]: disabled
+            [`disabled`]: disabled,
+            [this.props.type || 'info']: true,
+            [`size-${this.props.size || 'normal'}`]: true
         })
         return (
             <span className={switchClassName}
