@@ -12,10 +12,8 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Button style={style}
-                        onClick={this.handleClick.bind(this)}>Default</Button>
-                <Button disabled
-                        style={style}>Disabled</Button>
+                <Button style={style} onClick={this.handleClick.bind(this)}>Default</Button>
+                <Button disabled style={style}>Disabled</Button>
             </div>
         )
     }

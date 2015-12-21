@@ -34,6 +34,7 @@ html {
   padding-top: 15px;
   // 滚动条
   &::-webkit-scrollbar {
+    width: 10px;
     background-color: #3a3f51;
   }
   &::-webkit-scrollbar-thumb {

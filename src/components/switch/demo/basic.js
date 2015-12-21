@@ -2,9 +2,13 @@ import React from 'react'
 import Switch from 'tb-switch'
 
 export default class Demo extends React.Component {
+    handleChange(checked) {
+        console.log('基础回调', checked)
+    }
+
     render() {
         return (
-            <Switch/>
+            <Switch onChange={this.handleChange.bind(this)}/>
         )
     }
 }

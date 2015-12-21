@@ -7,10 +7,10 @@ export default class Demo extends React.Component {
             <div>
                 <Input/>
                 <Input label="姓名"
-                       label-width={60}
+                       labelWidth={60}
                        style={{marginTop:10}}/>
-                <Input addon-left="高度"
-                       addon-right="%"
+                <Input addonLeft="高度"
+                       addonRight="%"
                        style={{marginTop:10}}/>
             </div>
         )

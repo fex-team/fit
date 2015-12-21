@@ -9,6 +9,18 @@ import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import basicCode from 'text!./demo/basic.js'
 import basicMarkdown from './demo/basic.md'
 
+import Type from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/type.js'
+import typeCode from 'text!./demo/type.js'
+import typeMarkdown from './demo/type.md'
+
+import Control from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/control.js'
+import controlCode from 'text!./demo/control.js'
+import controlMarkdown from './demo/control.md'
+
+import Size from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/size.js'
+import sizeCode from 'text!./demo/size.js'
+import sizeMarkdown from './demo/size.md'
+
 const colStyle = {
     padding: 10
 }
@@ -32,11 +44,26 @@ export default class Layout extends React.Component {
                                   code={basicCode}>
                             <Basic/>
                         </CodeView>
+
+                        <CodeView md={controlMarkdown}
+                                  code={controlCode}
+                                  style={{marginTop:10}}>
+                            <Control/>
+                        </CodeView>
                     </Col>
 
                     <Col style={colStyle}
                          span="12">
+                        <CodeView md={typeMarkdown}
+                                  code={typeCode}>
+                            <Type/>
+                        </CodeView>
 
+                        <CodeView md={sizeMarkdown}
+                                  code={sizeCode}
+                                  style={{marginTop:10}}>
+                            <Size/>
+                        </CodeView>
                     </Col>
                 </Row>
 
