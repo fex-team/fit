@@ -9,6 +9,24 @@ var modules = fs.readdirSync('./lib').filter((name) => {
 
 var dependencesMap = {}
 
+function parseVersion (version) {
+    version = version.replace(/[\>]/, '')
+
+    var versionArr = version.split('.')
+}
+
 function getModuleDepences (name) {
-    var moduleJSON = path.resolve('lib', name, 'package.json')
+    var moduleJSON = require(path.resolve('lib', name, 'package.json'))
+    var moduleDepences = moduleJSON.dependencies
+
+    for (var dependence of moduleDepences) {
+        if (!dependencesMap[dependence]) {
+            dependencesMap[dependence] = moduleDepences
+        }
+        else if (dependencesMap[dependence] < moduleDepences[dependence]) {
+
+        }
+    }
+
+
 }
