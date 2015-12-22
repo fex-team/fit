@@ -1,6 +1,10 @@
 {
   "name": "tb-pagination",
+<<<<<<< HEAD
   "version": "1.0.6",
+=======
+  "version": "1.0.5",
+>>>>>>> 1b0e6a388be09e7a96d0fd3d6ed89811ae2531d0
   "description": "分页",
   "main": "dist/index.js",
   "scripts": {
