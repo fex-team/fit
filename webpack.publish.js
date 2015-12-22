@@ -1,5 +1,7 @@
 var webpack = require('webpack')
 var path = require('path')
+var resolve = require('./resolve.js')
+var _ = require('lodash')
 
 var treeName = process.argv.slice(2)[0]
 
@@ -15,14 +17,18 @@ webpack({
         libraryTarget: 'umd'
     },
 
-    externals: {
+    externals: Object.assign({
         'react': true,
         'jquery': true,
         'classnames': true,
+        'lodash': true,
         'bootstrap/dist/css/bootstrap.css': true,
+        'bootstrap': true,
         'react-router': true,
         'flux': true
-    },
+    }, _.map(resolve.alias, (value, key) => {
+        return { [key]: true }
+    })),
 
     module: {
         loaders: [

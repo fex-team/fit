@@ -9,10 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.2",
     "classnames": "^2.2.1",
-    "dateformat": "^1.0.12",
     "jquery": "^2.1.4",
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "tb-checkbox": "^1.0.13",
+    "tb-pagination": "^1.0.8",
+    "tb-radio": "^1.0.2",
+    "tb-style": "^1.0.6"
   }
 }

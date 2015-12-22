@@ -2,20 +2,11 @@
 
 & {
   display: block;
-  transition: background-color 0.2s ease-in-out 0s;
   cursor: pointer;
 
   a {
     color: inherit;
     text-decoration: none;
-  }
-  
-  &:hover .title, &:hover li {
-    background-color: $bg-active-color;
-  }
-
-  &.inverse .title, &:hover li {
-    @include inverse-hover;
   }
 
   .icon {
@@ -25,6 +16,15 @@
     font-size: 14px;
     color: inherit;
     text-decoration: none;
+    transition: background-color 0.2s ease-in-out 0s;
+
+    &:hover {
+      background-color: $bg-active-color;
+    }
+
+    //&.inverse{
+    //  @include inverse-hover;
+    //}
 
     &.active {
       background: #2db7f5;
