@@ -2,9 +2,9 @@
 
 & {
   @include menu-button;
-  display: block;
-
-  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
 
   &.active {
     background: #2db7f5;
@@ -18,8 +18,6 @@
 
   & a {
     display: block;
-    height: 42px;
-    line-height:42px;
     color: inherit;
     text-decoration: none;
     &:hover {
