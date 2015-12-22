@@ -1,4 +1,6 @@
-@import "bootstrap/bootstrap";
-@import "reset";
-@import "buttons";
-@import "common";
+._global {
+  @import "bootstrap/bootstrap";
+  @import "reset";
+  @import "buttons";
+  @import "common";
+}
