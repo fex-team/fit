@@ -1,6 +1,6 @@
 {
   "name": "tb-switch",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "开关",
   "main": "dist/index.js",
   "scripts": {
