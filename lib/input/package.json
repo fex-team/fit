@@ -1,6 +1,6 @@
 {
   "name": "tb-input",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "输入框",
   "main": "dist/index.js",
   "scripts": {
