@@ -10,7 +10,7 @@ var modules = fs.readdirSync('./lib').filter((name) => {
 var dependencesMap = {}
 
 function parseVersion (version) {
-    version = version.replace(/[\>]/, '')
+    version = version.replace(/[~><=\^]/, '')
 
     var versionArr = version.split('.')
 }
