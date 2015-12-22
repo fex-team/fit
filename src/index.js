@@ -17,4 +17,6 @@ import './all.scss'
 
 document.title = '贴吧Mis组件库'
 
+__webpack_public_path__ = window.resourceBaseUrl
+
 ReactDOM.render(routes, document.getElementById('react-dom'))

@@ -10,7 +10,7 @@ module.exports = `
 <body>
 <div id='react-dom'></div>
 </body>
-
+<script> window.resourceBaseUrl = '/tb/static/'</script>
 <script src="/output/cdn/React.js"></script>
 <script src="/output/cdn/ReactDOM.js"></script>
 <script src="/output/cdn/ReactRouter.js"></script>
