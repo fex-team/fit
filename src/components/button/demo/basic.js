@@ -7,6 +7,7 @@ const style = {
 
 export default class Demo extends React.Component {
     handleClick() {
+        console.log('基本用法 点击')
     }
 
     render() {
