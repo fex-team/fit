@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.2"
+    "bootstrap": "^4.0.0-alpha.2",
+    "font-awesome": "^4.5.0"
   }
 }
