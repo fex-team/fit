@@ -1,4 +1,6 @@
-@import "reset";
-@import "mixins";
-@import "components/buttons";
-@import "components/checkbox";
+._global {
+  @import "reset";
+  @import "mixins";
+  @import "components/buttons";
+  @import "components/checkbox";
+}
