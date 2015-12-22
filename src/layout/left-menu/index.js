@@ -26,6 +26,10 @@ const menuShow = [{
     title: '表格 Table',
     path: '/table',
     icon: 'table'
+}, {
+    title: '菜单 Menu',
+    path: '/menu',
+    icon: 'bars'
 }]
 
 const menuForm = [{
@@ -52,12 +56,6 @@ const menuForm = [{
     title: '日期 Datepiacker',
     path: '/datepicker',
     icon: 'calendar'
-}]
-
-const menuNav = [{
-    title: '导航菜单 Menu',
-    path: '/menu',
-    icon: 'bars'
 }]
 
 const menuFactory = (data)=> {
@@ -93,7 +91,6 @@ export default class Layout extends React.Component {
         let MenuBase = menuFactory(menuBase)
         let MenuShow = menuFactory(menuShow)
         let MenuTable = menuFactory(menuForm)
-        let MenuNavigate = menuFactory(menuNav)
 
         return (
             <div className="_namespace">
@@ -103,8 +100,6 @@ export default class Layout extends React.Component {
                 {MenuShow}
                 <div className="title">表单</div>
                 {MenuTable}
-                <div className="title">导航</div>
-                {MenuNavigate}
             </div>
         )
     }

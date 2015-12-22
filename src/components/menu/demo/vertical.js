@@ -4,8 +4,8 @@ import { Menu, SubMenu, MenuItem } from 'tb-menu'
 export default class Demo extends React.Component {
     render() {
         return (
-            <Menu>
-                <MenuItem brand style={{width:100}}>管理系统</MenuItem>
+            <Menu inverse vertical style={{width:150}}>
+                <MenuItem brand>管理系统</MenuItem>
                 <MenuItem>菜单项</MenuItem>
                 <MenuItem>菜单项</MenuItem>
             </Menu>
