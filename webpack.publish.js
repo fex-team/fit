@@ -5,6 +5,12 @@ var _ = require('lodash')
 
 var treeName = process.argv.slice(2)[0]
 
+var alias = {}
+
+for (var key in resolve.alias) {
+    alias[key] = true
+}
+
 webpack({
     entry: [
         './lib/' + treeName + '/src' + '/index.js'
@@ -26,9 +32,7 @@ webpack({
         'bootstrap': true,
         'react-router': true,
         'flux': true
-    }, _.map(resolve.alias, (value, key) => {
-        return { [key]: true }
-    })),
+    }, alias),
 
     module: {
         loaders: [
