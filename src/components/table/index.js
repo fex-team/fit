@@ -48,6 +48,10 @@ import Sortable from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./
 import sortableCode from 'text!./demo/sortable.js'
 import sortableMarkdown from './demo/sortable.md'
 
+import Delete from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/delete.js'
+import deleteCode from 'text!./demo/delete.js'
+import deleteMarkdown from './demo/delete.md'
+
 const colStyle = {
     padding: 10
 }
@@ -101,6 +105,18 @@ export default class Layout extends React.Component {
                             <Select/>
                         </CodeView>
 
+                        <CodeView md={customMarkdown}
+                                  code={customCode}
+                                  style={{marginTop:10}}>
+                            <Custom/>
+                        </CodeView>
+
+                        <CodeView md={deleteMarkdown}
+                                  code={deleteCode}
+                                  style={{marginTop:10}}>
+                            <Delete/>
+                        </CodeView>
+
                         <CodeView md={findMarkdown}
                                   code={findCode}
                                   style={{marginTop:10}}>
@@ -122,11 +138,7 @@ export default class Layout extends React.Component {
 //<Sort/>
 //</CodeView>
 //
-//<CodeView md={customMarkdown}
-//code={customCode}
-//style={{marginTop:10}}>
-//<Custom/>
-//</CodeView>
+
 //
 //<CodeView md={sortableMarkdown}
 //code={sortableCode}

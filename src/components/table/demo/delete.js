@@ -1,6 +1,5 @@
 import React from 'react'
 import Table from 'tb-table'
-import Button from 'tb-button'
 
 const info = {
     fields: [{
@@ -21,25 +20,6 @@ const info = {
             pagination.next = res['has_next']
             return res['data']
         }
-    },
-    selector: {
-        type: 'checkbox'
-    },
-    extend: (table)=> {
-        const handleClick = ()=> {
-            console.log(table.getCurrentSelectRows())
-        }
-
-        const jumpHome = ()=> {
-            table.jump(table.currentPage())
-        }
-
-        return (
-            <div>
-                <Button type="success" onClick={handleClick}>获取选中</Button>
-                <Button style={{marginLeft:10}} type="primary" onClick={jumpHome}>刷新</Button>
-            </div>
-        )
     }
 }
 
