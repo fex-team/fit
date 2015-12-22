@@ -27,12 +27,23 @@ export default class Table extends React.Component {
             datas: [],
             paginOpts: {},
             currentPage: 1,
+<<<<<<< HEAD
             loading: false,
             fields: _.cloneDeep(this.props.fields),
 
             // 行选择模式下选择的行信息
             selectRowList: []
         }
+=======
+            loading: false
+        }
+    }
+
+    componentWillMount() {
+        this.searchOpts = {}
+        this.prevRes = null
+        this.updateTable()
+>>>>>>> bd323e3dc5db1c55798145f9189678ba4d3a1588
     }
 
     componentWillReceiveProps(nextProps) {
@@ -96,14 +107,22 @@ export default class Table extends React.Component {
                         loading: true
                     })
                 },
+<<<<<<< HEAD
                 data: this.props.get.beforeSend(this.searchOpts, page || this.state.currentPage, this.prevResponse)
+=======
+                data: this.props.get.beforeSend(this.searchOpts, page || this.state.currentPage, this.prevRes)
+>>>>>>> bd323e3dc5db1c55798145f9189678ba4d3a1588
             }).done((res)=> {
                 if (typeof res === 'string') {
                     res = JSON.parse(res)
                 }
 
                 // 保存当前返回值
+<<<<<<< HEAD
                 this.prevResponse = res
+=======
+                this.prevRes = res
+>>>>>>> bd323e3dc5db1c55798145f9189678ba4d3a1588
 
                 let newPaginOpts = this.state.paginOpts
                 let newDatas = this.props.get.success(res, newPaginOpts)
@@ -112,8 +131,12 @@ export default class Table extends React.Component {
                     datas: newDatas,
                     paginOpts: newPaginOpts,
                     currentPage: page || this.state.currentPage,
+<<<<<<< HEAD
                     loading: false,
                     selectRowList: []
+=======
+                    loading: false
+>>>>>>> bd323e3dc5db1c55798145f9189678ba4d3a1588
                 })
             })
         }
@@ -124,6 +147,7 @@ export default class Table extends React.Component {
         this.updateTable(page)
     }
 
+<<<<<<< HEAD
     // radio行选择点击
     onTrRadioClick(info, index) {
         this.setState({
@@ -131,6 +155,13 @@ export default class Table extends React.Component {
                 info: info,
                 index: index
             }]
+=======
+    render() {
+        let Th = this.props.fields.map((item, index)=> {
+            return (
+                <th key={index}>{item.value}</th>
+            )
+>>>>>>> bd323e3dc5db1c55798145f9189678ba4d3a1588
         })
     }
 
@@ -265,9 +296,13 @@ export default class Table extends React.Component {
 
                     {_.isEmpty(this.state.paginOpts) ? null :
                         <div className="pagination-container">
+<<<<<<< HEAD
                             <div
                                 style={{flexGrow:1,paddingLeft:15}}>{this.props.extend(this.extendInfo)}</div>
                             <Pagination style={{flexGrow:1}} onChange={this.handleChangePage.bind(this)}
+=======
+                            <Pagination onChange={this.handleChangePage.bind(this)}
+>>>>>>> bd323e3dc5db1c55798145f9189678ba4d3a1588
                                 {...this.state.paginOpts}
                                         loading={this.state.loading}/>
                         </div>
