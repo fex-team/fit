@@ -40,6 +40,7 @@
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.1",
     "sass-loader": "^3.1.1",
+    "semver": "^5.1.0",
     "style-loader": "^0.13.0",
     "text-loader": "0.0.1",
     "url-loader": "^0.5.6",

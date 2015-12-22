@@ -2,6 +2,7 @@
 
 var fs = require('fs')
 var path = require('path')
+var semver = require('semver')
 
 var modules = fs.readdirSync('./lib').filter((name) => {
     return name.substring(0, 1) !== '.'
@@ -9,7 +10,7 @@ var modules = fs.readdirSync('./lib').filter((name) => {
 
 var dependencesMap = {}
 
-function parseVersion (version) {
+function compareVersion (version) {
     version = version.replace(/[~><=\^]/, '')
 
     var versionArr = version.split('.')
