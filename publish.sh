@@ -26,12 +26,12 @@ update() {
     if test -d `pwd`/lib/$1; then
         cd ./lib/$1
         if test -f package.json; then
+            git subtree pull --prefix=lib/$1 $1 master 2>/dev/null || exit 1
             npm version patch
             npm publish
             git add ./package.json
             git commit -m "upgrade package: $1"
             cd $ROOT
-            git subtree pull --prefix=lib/$1 $1 master 2>/dev/null || exit 1
             git subtree push --prefix=lib/$1 $1 master 2>/dev/null
             echo "subtree:$1 push success"
         else
