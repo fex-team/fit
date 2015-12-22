@@ -11,6 +11,9 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "jquery": "^2.1.4",
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "tb-style": "^1.0.6"
   }
 }

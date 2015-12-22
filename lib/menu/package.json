@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
-    "redux": "^3.0.5"
+    "redux": "^3.0.5",
+    "tb-style": "^1.0.6"
   }
 }

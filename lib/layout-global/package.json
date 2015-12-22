@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^2.1.4",
-    "tb-style": "^1.0.5"
+    "redux": "^3.0.5",
+    "tb-style": "^1.0.6"
   },
   "peerDependencies": {
     "redux": "^3.0.5"
