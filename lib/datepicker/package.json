@@ -20,6 +20,6 @@
   "dependencies": {
     "antd": "^0.10.4",
     "react": "^0.14.3",
-    "tb-style": "^1.0.12"
+    "tb-style": "^1.0.13"
   }
 }

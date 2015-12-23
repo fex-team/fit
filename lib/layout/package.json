@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^0.10.4",
-    "tb-style": "^1.0.12"
+    "tb-style": "^1.0.13"
   }
 }
