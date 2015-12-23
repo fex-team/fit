@@ -30,7 +30,7 @@ function commandFactory (command) {
                 callback(error, stderr)
             }
 
-            callback(null, stdout)
+            callback(null, stdout, stderr)
         })
     }
 }
@@ -177,19 +177,19 @@ function buildModules (modules) {
 }
 
 function upgradeModules (modules) {
-    checkGitStatus((error, output) => {
+    checkGitStatus((error, stdout, stderr) => {
         if (error) {
-            console.error(output)
+            console.error(stdout)
             process.exit(1)
         }
 
-        console.log(error, output)
+        console.log(error, stdout)
 
         var result
         let reg = /lib\/(\w+)\//g
         let moduleChanges = []
 
-        while ((result = reg.exec(output)) !== null) {
+        while ((result = reg.exec(stdout)) !== null) {
             moduleChanges.push(result[1])
         }
 
