@@ -17,6 +17,10 @@ import Search from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./de
 import searchCode from 'text!./demo/search.js'
 import searchMarkdown from './demo/search.md'
 
+import Label from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/label.js'
+import labelCode from 'text!./demo/label.js'
+import labelMarkdown from './demo/label.md'
+
 const colStyle = {
     padding: 10
 }
@@ -47,6 +51,10 @@ export default class Layout extends React.Component {
                     <Col style={colStyle} span="12">
                         <CodeView md={groupMarkdown} code={groupCode}>
                             <Group/>
+                        </CodeView>
+
+                        <CodeView md={labelMarkdown} code={labelCode} style={{marginTop:10}}>
+                            <Label/>
                         </CodeView>
                     </Col>
                 </Row>
