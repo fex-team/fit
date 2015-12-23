@@ -82,3 +82,27 @@ th {
   border-top: 1px solid #eaeff0;
   height: 50px;
 }
+
+// 删除
+.remove {
+  height: 100%;
+  width: 50px;
+  color: #f05050;
+  transition: all 0.2s;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background: #f05050;
+    color: white;
+  }
+}
+
+.pull-right {
+  float: right;
+  &.danger {
+    color: #f05050;
+  }
+  &.success {
+    color: #23ad44;
+  }
+}
