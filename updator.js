@@ -183,6 +183,8 @@ function upgradeModules (modules) {
             process.exit(1)
         }
 
+        console.log(output)
+
         var result
         let reg = /lib\/(\w+)\//g
         let moduleChanges = []
