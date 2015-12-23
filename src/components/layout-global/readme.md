@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import { Header, Sidebar, Footer, Section } from 'tb-layout-global'
+import { Header, Sidebar, Footer, Section } from 'fit-layout-global'
 ````

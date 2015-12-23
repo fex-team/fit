@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Checkbox from 'tb-checkbox'
+import Checkbox from 'fit-checkbox'
 ````

@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Select from 'tb-select'
+import Select from 'fit-select'
 ````

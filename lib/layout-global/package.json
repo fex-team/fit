@@ -1,5 +1,5 @@
 {
-  "name": "tb-layout-global",
+  "name": "fit-layout-global",
   "version": "0.1.22",
   "description": "全局布局",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
   "dependencies": {
     "jquery": "^2.1.4",
     "redux": "^3.0.5",
-    "tb-style": "^1.0.14"
+    "fit-style": "^1.0.14"
   },
   "peerDependencies": {
     "redux": "^3.0.5"

@@ -1,5 +1,5 @@
 import React from 'react'
-import Datepicker from 'tb-datepicker'
+import Datepicker from 'fit-datepicker'
 
 export default class formatDemo extends React.Component {
     render () {

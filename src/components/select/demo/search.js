@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select, Option, OptGroup } from 'tb-select'
+import { Select, Option, OptGroup } from 'fit-select'
 
 export default class Demo extends React.Component {
     render() {

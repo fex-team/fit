@@ -1,5 +1,5 @@
 {
-  "name": "tb-menu",
+  "name": "fit-menu",
   "version": "1.0.18",
   "description": "",
   "main": "dist/index.js",
@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
-    "tb-style": "^1.0.14"
+    "fit-style": "^1.0.14"
   }
 }

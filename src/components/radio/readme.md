@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Radio from 'tb-radio'
+import Radio from 'fit-radio'
 ````

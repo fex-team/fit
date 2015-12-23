@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from 'tb-input'
+import Input from 'fit-input'
 
 export default class Demo extends React.Component {
     constructor(props) {

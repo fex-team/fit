@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Switch from 'tb-switch'
+import Switch from 'fit-switch'
 ````

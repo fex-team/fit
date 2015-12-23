@@ -1,5 +1,5 @@
 import React from 'react'
-import { Radio, RadioGroup } from 'tb-radio'
+import { Radio, RadioGroup } from 'fit-radio'
 
 export default class Demo extends React.Component {
     render() {

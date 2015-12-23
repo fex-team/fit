@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Input from 'tb-input'
+import Input from 'fit-input'
 ````

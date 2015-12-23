@@ -1,5 +1,5 @@
 import React from 'react'
-import Checkbox from 'tb-checkbox'
+import Checkbox from 'fit-checkbox'
 
 export default class Demo extends React.Component {
     render() {
