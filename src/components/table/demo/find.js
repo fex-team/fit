@@ -62,7 +62,43 @@ const info = {
             key: 7,
             value: '星期日'
         }],
-        defaultValue: '2'
+        defaultValue: 2
+    }, {
+        type: 'enum',
+        enum: [{
+            label: '年龄',
+            key: 'age',
+            type: 'text',
+            placeholder: ''
+        }, {
+            label: '可选日期',
+            key: 'date',
+            type: 'select',
+            select: [{
+                key: 1,
+                value: '星期一'
+            }, {
+                key: 2,
+                value: '星期二'
+            }, {
+                key: 3,
+                value: '星期三'
+            }, {
+                key: 4,
+                value: '星期四'
+            }, {
+                key: 5,
+                value: '星期五'
+            }, {
+                key: 6,
+                value: '星期六'
+            }, {
+                key: 7,
+                value: '星期日'
+            }],
+            defaultValue: 3
+        }],
+        defaultValue: 'date'
     }]
 }
 
