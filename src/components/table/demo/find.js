@@ -69,6 +69,7 @@ const info = {
             label: '年龄',
             key: 'age',
             type: 'text',
+            width: 50,
             placeholder: ''
         }, {
             label: '可选日期',

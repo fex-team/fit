@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Button from 'tb-button'
+npm install tb-button /* or */ fis3 install tb-button 
 ````
