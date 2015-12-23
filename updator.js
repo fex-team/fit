@@ -183,7 +183,7 @@ function upgradeModules (modules) {
             process.exit(1)
         }
 
-        console.log(output)
+        console.log(error, output)
 
         var result
         let reg = /lib\/(\w+)\//g
