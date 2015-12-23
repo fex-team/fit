@@ -9,9 +9,7 @@ var modules = fs.readdirSync('./lib').filter((name) => {
     return name.substring(0, 1) !== '.'
 })
 
-var dependencesMap = {}
 var packageVersion = {}
-
 
 function compareVersion (pre, next) {
     pre = pre.replace(/^[\^~]/, '')
