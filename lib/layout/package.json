@@ -1,6 +1,6 @@
 {
   "name": "tb-layout",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "布局组件",
   "main": "dist/index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^0.10.4",
-    "tb-style": "^1.0.12"
+    "tb-style": "^1.0.14"
   }
 }
