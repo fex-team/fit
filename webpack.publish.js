@@ -32,7 +32,8 @@ webpack({
         'font-awesome/css/font-awesome.css': true,
         'bootstrap': true,
         'react-router': true,
-        'flux': true
+        'flux': true,
+        'antd': true
     }, alias),
 
     module: {
