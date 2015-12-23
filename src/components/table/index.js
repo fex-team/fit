@@ -52,6 +52,10 @@ import Delete from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./de
 import deleteCode from 'text!./demo/delete.js'
 import deleteMarkdown from './demo/delete.md'
 
+import CustomCol from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/custom-col.js'
+import customColCode from 'text!./demo/custom-col.js'
+import customColMarkdown from './demo/custom-col.md'
+
 const colStyle = {
     padding: 10
 }
@@ -109,6 +113,12 @@ export default class Layout extends React.Component {
                                   code={customCode}
                                   style={{marginTop:10}}>
                             <Custom/>
+                        </CodeView>
+
+                        <CodeView md={customColMarkdown}
+                                  code={customColCode}
+                                  style={{marginTop:10}}>
+                            <CustomCol/>
                         </CodeView>
 
                         <CodeView md={deleteMarkdown}

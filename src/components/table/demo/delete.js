@@ -20,6 +20,18 @@ const info = {
             pagination.next = res['has_next']
             return res['data']
         }
+    },
+    del: {
+        url: '/api/table/regex',
+        method: 'delete',
+        beforeSend: (colInfo)=> {
+            return {
+                id: colInfo.value
+            }
+        },
+        success: (res)=> {
+            return res.ok === false
+        }
     }
 }
 
