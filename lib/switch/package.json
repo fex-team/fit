@@ -1,5 +1,5 @@
 {
-  "name": "tb-switch",
+  "name": "fit-switch",
   "version": "1.0.2",
   "description": "开关",
   "main": "dist/index.js",
@@ -11,6 +11,6 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "react": "^0.14.3",
-    "tb-style": "^1.0.14"
+    "fit-style": "^1.0.14"
   }
 }

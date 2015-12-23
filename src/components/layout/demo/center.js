@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'tb-layout'
+import { Row, Col } from 'fit-layout'
 
 const DemoBox = React.createClass({
     render() {

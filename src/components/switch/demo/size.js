@@ -1,5 +1,5 @@
 import React from 'react'
-import Switch from 'tb-switch'
+import Switch from 'fit-switch'
 
 const style = {
     marginRight: 10

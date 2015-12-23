@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Pagination from 'tb-pagination'
+import Pagination from 'fit-pagination'
 ````

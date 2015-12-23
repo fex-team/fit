@@ -1,5 +1,5 @@
 {
-  "name": "tb-button",
+  "name": "fit-button",
   "version": "1.1.20",
   "description": "按钮",
   "main": "dist/index.js",
@@ -11,6 +11,6 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "react": "^0.14.3",
-    "tb-style": "^1.0.14"
+    "fit-style": "^1.0.14"
   }
 }

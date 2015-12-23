@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Button from 'tb-button'
+npm install fit-button /* or */ fis3 install fit-button 
 ````

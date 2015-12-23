@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Button from 'tb-datepicker'
+import Button from 'fit-datepicker'
 ````

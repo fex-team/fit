@@ -1,5 +1,5 @@
 {
-  "name": "tb-select",
+  "name": "fit-select",
   "version": "1.0.1",
   "description": "选择框",
   "main": "dist/index.js",
@@ -14,6 +14,6 @@
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "tb-style": "^1.0.14"
+    "fit-style": "^1.0.14"
   }
 }

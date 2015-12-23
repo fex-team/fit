@@ -1,5 +1,5 @@
 import React from 'react'
-import Switch from 'tb-switch'
+import Switch from 'fit-switch'
 
 export default class Demo extends React.Component {
     handleChange(checked) {

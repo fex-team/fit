@@ -1,6 +1,6 @@
 import React from 'react'
-import Radio from 'tb-radio'
-import Checkbox from 'tb-checkbox'
+import Radio from 'fit-radio'
+import Checkbox from 'fit-checkbox'
 
 export default class Demo extends React.Component {
     constructor(props) {

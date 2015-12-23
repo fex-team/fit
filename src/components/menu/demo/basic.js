@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, SubMenu, MenuItem } from 'tb-menu'
+import { Menu, SubMenu, MenuItem } from 'fit-menu'
 
 export default class Demo extends React.Component {
     handleClick() {

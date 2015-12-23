@@ -1,26 +1,25 @@
 import React from 'react'
-import Pagination from 'fit-pagination'
+import Input from 'fit-input'
 
 export default class Demo extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            page: 1
+            value: null
         }
     }
 
-    handleChange(page) {
+    handleChange(value) {
         this.setState({
-            page: page
+            value: value
         })
     }
 
     render() {
         return (
             <div>
-                <Pagination onChange={this.handleChange.bind(this)}
-                            next={true}/>
-                {this.state.page}
+                <Input value={this.state.value} onChange={this.handleChange.bind(this)}/>
+                {this.state.value}
             </div>
         )
     }

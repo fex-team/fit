@@ -1,5 +1,5 @@
 import React from 'react'
-import Radio from 'tb-radio'
+import Radio from 'fit-radio'
 
 export default class Demo extends React.Component {
     constructor(props) {

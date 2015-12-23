@@ -1,5 +1,5 @@
 import React from 'react'
-import Table from 'tb-table'
+import Table from 'fit-table'
 
 const info = {
     fields: [{

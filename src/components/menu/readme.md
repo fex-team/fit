@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Button from 'tb-menu'
+import Button from 'fit-menu'
 ````

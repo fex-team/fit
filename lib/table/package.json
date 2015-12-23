@@ -1,5 +1,5 @@
 {
-  "name": "tb-table",
+  "name": "fit-table",
   "version": "1.0.10",
   "description": "",
   "main": "dist/index.js",
@@ -14,11 +14,11 @@
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
-    "tb-button": "^1.1.20",
-    "tb-checkbox": "^1.0.14",
-    "tb-input": "^1.0.3",
-    "tb-pagination": "^1.0.9",
-    "tb-radio": "^1.0.3",
-    "tb-style": "^1.0.14"
+    "fit-button": "^1.1.20",
+    "fit-checkbox": "^1.0.14",
+    "fit-input": "^1.0.3",
+    "fit-pagination": "^1.0.9",
+    "fit-radio": "^1.0.3",
+    "fit-style": "^1.0.14"
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
-import Table from 'tb-table'
-import Button from 'tb-button'
+import Table from 'fit-table'
+import Button from 'fit-button'
 
 const info = {
     fields: [{

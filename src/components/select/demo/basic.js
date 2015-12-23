@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select, Option } from 'tb-select'
+import { Select, Option } from 'fit-select'
 
 export default class Demo extends React.Component {
     handleChange(value) {
