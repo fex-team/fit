@@ -11,7 +11,7 @@
   "dependencies": {
     "jquery": "^2.1.4",
     "redux": "^3.0.5",
-    "tb-style": "^1.0.10"
+    "tb-style": "^1.0.12"
   },
   "peerDependencies": {
     "redux": "^3.0.5"

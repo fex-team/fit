@@ -29,6 +29,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "css-loader": "^0.23.0",
     "file-loader": "^0.8.4",
+    "format-json": "^1.0.3",
     "json-loader": "^0.5.3",
     "koa": "^1.1.2",
     "koa-static-cache": "^3.1.3",
