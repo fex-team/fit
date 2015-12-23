@@ -14,11 +14,11 @@
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
-    "tb-button": "^1.1.19",
-    "tb-checkbox": "^1.0.13",
-    "tb-input": "^1.0.1",
-    "tb-pagination": "^1.0.8",
-    "tb-radio": "^1.0.2",
-    "tb-style": "^1.0.6"
+    "tb-button": "^1.1.20",
+    "tb-checkbox": "^1.0.14",
+    "tb-input": "^1.0.3",
+    "tb-pagination": "^1.0.9",
+    "tb-radio": "^1.0.3",
+    "tb-style": "^1.0.10"
   }
 }
