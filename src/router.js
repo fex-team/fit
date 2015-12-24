@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route, IndexRoute } from 'react-router'
+import { Router, Route, IndexRoute, Redirect} from 'react-router'
 
 import Layout from './layout'
 import Home from './home'
@@ -19,7 +19,8 @@ import MenuComponent from './components/menu'
 
 const MainRouter = (
     <Router>
-        <Route path="/"
+        <Redirect from="/" to="pc"></Redirect>
+        <Route path="/pc"
                component={Layout}>
             <IndexRoute component={Home}/>
             <Route path="layout-global"
@@ -46,6 +47,10 @@ const MainRouter = (
                    component={SelectComponent}/>
             <Route path="menu"
                    component={MenuComponent}></Route>
+        </Route>
+        <Route path="/mobile"
+               component={Layout}>
+            <IndexRoute component={Home} />
         </Route>
     </Router>
 )
