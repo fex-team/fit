@@ -1,3 +1,3 @@
 # 挂件
 
-给按钮添加图片，`addon-left`添加在左侧，`addon-right`添加在右侧
+给按钮添加图片，`addonLeft`添加在左侧，`addonRight`添加在右侧

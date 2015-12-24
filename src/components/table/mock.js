@@ -92,3 +92,13 @@ mockjax({
         }
     }
 })
+
+mockjax({
+    url: "/api/table/regex/add",
+    contentType: "application/json",
+    response: function (settings) {
+        this.responseText = {
+            ok: false
+        }
+    }
+})

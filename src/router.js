@@ -16,6 +16,7 @@ import SwitchComponent from './components/switch'
 import InputComponent from './components/input'
 import SelectComponent from './components/select'
 import MenuComponent from './components/menu'
+import ModalComponent from './components/modal'
 
 const MainRouter = (
     <Router>
@@ -45,7 +46,9 @@ const MainRouter = (
             <Route path="select"
                    component={SelectComponent}/>
             <Route path="menu"
-                   component={MenuComponent}></Route>
+                   component={MenuComponent}/>
+            <Route path="modal"
+                   component={ModalComponent}/>
         </Route>
     </Router>
 )
