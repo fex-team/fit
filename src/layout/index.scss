@@ -51,6 +51,10 @@ html {
   width: 200px;
   background-color: $bg-color-dark;
   z-index: 1;
+
+  &.white {
+    background: $bg-color-light;
+  }
 }
 
 .g-mn {
@@ -85,6 +89,7 @@ html {
     background: $bg-color-dark;
     color: $font-color-dark;
     .navbar-brand {
+      position: relative;
       margin-right: 0;
       height: auto;
       width: 200px;
@@ -93,8 +98,97 @@ html {
       font-weight: 700;
       line-height: 50px;
       text-align: left;
-      color: $font-color-dark;
-      text-decoration: none;
+      transition: background 0.3s ease-in-out;
+
+      &.white {
+        background: #fff;
+
+        > a {
+          color: lighten(#000000, 5%);
+        }
+
+        > span {
+          color: #888888;
+          
+          &:hover {
+            color: darken(#888888, 30%);
+          }
+        }
+      }
+
+      &.ligten {
+
+      }
+
+      > a {
+        display: inline-block;
+        color: $font-color-dark;
+        text-decoration: none;
+        line-height: 50px;
+        transition: color 0.3s ease-in-out;
+
+
+        > .en {
+          display: inline-block;
+          transform: translate(20px, 30px) rotate(180deg);
+          transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+          opacity: 0;
+
+          &.active {
+            transform: translate(0px, 0px) rotate(0deg);
+            opacity: 1;
+          }
+        }
+
+        > .en-mobile {
+          display: inline-block;
+          transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+          transform: translate(0px, 0px) rotate(0deg);
+          opacity: 1;
+
+          &.active {
+            transform: translate(20px, 30px) rotate(180deg);
+            opacity: 0;
+          }
+        }
+
+
+        > .move {
+          position: relative;
+          transition: left 0.4s ease-out;
+          left: -20px;
+
+          &.active {
+            left: 0;
+          }
+        }
+
+        > .move-mobile {
+          position: relative;
+          transition: left 0.4s ease-in;
+          left: 0;
+
+          &.active {
+            left: -20px;
+          }
+        }
+      }
+
+      > span {
+        position: absolute;
+        bottom: 2px;
+        right: 21px;
+        font-size: 13px;
+        line-height: normal;
+        color: darken(rgb(234, 235, 237), 20%);
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          transition: color 0.2s ease-in-out;
+          color: rgb(234, 235, 237);
+        }
+      }
     }
     .navbar-right {
       flex-grow: 1;

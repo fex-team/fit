@@ -1,0 +1,15 @@
+{
+  "name": "fit-layout",
+  "version": "1.0.15",
+  "description": "布局组件",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^0.10.4",
+    "fit-style": "^1.0.14"
+  }
+}

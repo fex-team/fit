@@ -1,0 +1,16 @@
+{
+  "name": "fit-pagination",
+  "version": "1.0.13",
+  "description": "分页",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.1",
+    "react": "^0.14.3",
+    "fit-style": "^1.0.14"
+  }
+}

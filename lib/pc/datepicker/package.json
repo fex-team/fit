@@ -1,0 +1,25 @@
+{
+  "name": "fit-datepicker",
+  "version": "0.1.19",
+  "description": "tb react datapicker",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/datepicker.git"
+  },
+  "keywords": [
+    "react",
+    "antd",
+    "datapicker"
+  ],
+  "author": "tieba",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^0.10.4",
+    "react": "^0.14.3",
+    "fit-style": "^1.0.14"
+  }
+}

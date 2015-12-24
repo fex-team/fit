@@ -1,0 +1,18 @@
+{
+  "name": "fit-captcha",
+  "version": "1.0.5",
+  "description": "贴吧验证码",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.1",
+    "lodash": "^3.10.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "fit-style": "^1.0.14"
+  }
+}
