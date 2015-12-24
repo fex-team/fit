@@ -1,0 +1,16 @@
+{
+  "name": "fit-switch",
+  "version": "1.0.7",
+  "description": "开关",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.1",
+    "react": "^0.14.3",
+    "fit-style": "^1.0.14"
+  }
+}

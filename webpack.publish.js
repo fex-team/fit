@@ -25,6 +25,7 @@ webpack({
 
     externals: Object.assign({
         'react': true,
+        'react-dom': true,
         'jquery': true,
         'classnames': true,
         'lodash': true,

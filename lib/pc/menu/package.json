@@ -1,0 +1,15 @@
+{
+  "name": "fit-menu",
+  "version": "1.0.23",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.1",
+    "fit-style": "^1.0.14"
+  }
+}
