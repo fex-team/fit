@@ -32,7 +32,7 @@ const menuShow = [{
     icon: 'bars'
 }, {
     title: '模态框 Modal',
-    path: '/modal',
+    path: '/pc/modal',
     icon: 'list-alt'
 }]
 
