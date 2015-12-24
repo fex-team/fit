@@ -30,6 +30,10 @@ const menuShow = [{
     title: '菜单 Menu',
     path: '/pc/menu',
     icon: 'bars'
+}, {
+    title: '模态框 Modal',
+    path: '/pc/modal',
+    icon: 'list-alt'
 }]
 
 const menuForm = [{
