@@ -23,3 +23,12 @@ html, body {
 label {
   margin: 0;
 }
+
+.form-container {
+  display: flex;
+  align-items: center;
+}
+
+.form-container label {
+  white-space: nowrap;
+}
