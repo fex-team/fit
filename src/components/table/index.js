@@ -56,6 +56,10 @@ import CustomCol from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!.
 import customColCode from 'text!./demo/custom-col.js'
 import customColMarkdown from './demo/custom-col.md'
 
+import Add from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/add.js'
+import addCode from 'text!./demo/add.js'
+import addMarkdown from './demo/add.md'
+
 const colStyle = {
     padding: 10
 }
@@ -125,6 +129,12 @@ export default class Layout extends React.Component {
                                   code={deleteCode}
                                   style={{marginTop:10}}>
                             <Delete/>
+                        </CodeView>
+
+                        <CodeView md={addMarkdown}
+                                  code={addCode}
+                                  style={{marginTop:10}}>
+                            <Add/>
                         </CodeView>
 
                         <CodeView md={findMarkdown}
