@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import { Row, Col } from 'antd'
 
 const menuBase = [{
-    title: '全屏布局 Layouts',
+    title: '贴吧基础样式',
     path: '/mobile/layout-global',
     icon: 'columns'
 }]

@@ -4,18 +4,19 @@ import { Router, Route, IndexRoute, Redirect} from 'react-router'
 import Layout from './layout'
 import Home from './home'
 
-import ButtonComponent from './components/button'
-import LayoutComponent from './components/layout'
-import LayoutGlobalComponent from './components/layout-global'
-import DatepickerComponent from './components/datepicker'
-import TableComponent from './components/table'
-import CheckboxComponent from './components/checkbox'
-import RadioComponent from './components/radio'
-import PaginationComponent from './components/pagination'
-import SwitchComponent from './components/switch'
-import InputComponent from './components/input'
-import SelectComponent from './components/select'
-import MenuComponent from './components/menu'
+import ButtonComponent from './components/pc/button'
+import LayoutComponent from './components/pc/layout'
+import LayoutGlobalComponent from './components/pc/layout-global'
+import DatepickerComponent from './components/pc/datepicker'
+import TableComponent from './components/pc/table'
+import CheckboxComponent from './components/pc/checkbox'
+import RadioComponent from './components/pc/radio'
+import PaginationComponent from './components/pc/pagination'
+import SwitchComponent from './components/pc/switch'
+import InputComponent from './components/pc/input'
+import SelectComponent from './components/pc/select'
+import MenuComponent from './components/pc/menu'
+import ModalComponent from './components/pc/modal'
 
 const MainRouter = (
     <Router>
@@ -46,7 +47,9 @@ const MainRouter = (
             <Route path="select"
                    component={SelectComponent}/>
             <Route path="menu"
-                   component={MenuComponent}></Route>
+                   component={MenuComponent}/>
+            <Route path="modal"
+                   component={ModalComponent}/>
         </Route>
         <Route path="/mobile"
                component={Layout}>

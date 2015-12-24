@@ -14,6 +14,12 @@ module.exports = {
         'fit-input': path.join(__dirname, 'lib/pc/input/src'),
         'fit-select': path.join(__dirname, 'lib/pc/select/src'),
         'fit-switch': path.join(__dirname, 'lib/pc/switch/src'),
-        'fit-menu': path.join(__dirname, 'lib/pc/menu/src')
+        'fit-menu': path.join(__dirname, 'lib/pc/menu/src'),
+        'fit-modal': path.join(__dirname, 'lib/pc/modal/src'),
+
+
+
+
+        'fiten-style': path.join(__dirname, 'lib/mobile/style/src')
     }
 }

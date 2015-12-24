@@ -83,7 +83,7 @@ export default class Layout extends React.Component {
                             <div className={navBrand}>
                                 <Link to="/"
                                       >Fit<span className={logoClass}>en</span> <span className={textClass}>Design</span></Link>
-                                <span onClick={this.onSwitchStart.bind(this)} onMouseOut={this.onSwitchMouseOut.bind(this)} onMouseOver={this.onSwitchMouseOver.bind(this)} className="switch">Switch</span>
+                                <span onClick={this.onSwitchStart.bind(this)} className="switch">Switch</span>
                             </div>
                             <div className="navbar-right">
                                 <a className="item"
