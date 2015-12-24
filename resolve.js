@@ -14,6 +14,7 @@ module.exports = {
         'fit-input': path.join(__dirname, 'lib/input/src'),
         'fit-select': path.join(__dirname, 'lib/select/src'),
         'fit-switch': path.join(__dirname, 'lib/switch/src'),
-        'fit-menu': path.join(__dirname, 'lib/menu/src')
+        'fit-menu': path.join(__dirname, 'lib/menu/src'),
+        'fit-modal': path.join(__dirname, 'lib/modal/src')
     }
 }
