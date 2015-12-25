@@ -18,11 +18,14 @@ const info = {
     edit: {
         url: '/api/table/regex/edit',
         method: 'post',
-        beforeSend: (params)=> {
-            return params
+        beforeSend: (rowInfo, key)=> {
+            return rowInfo
         },
         success: (res)=> {
-            return res.ok === true
+            return {
+                ok: res.ok === true,
+                message: res.errmsg
+            }
         }
     },
     get: {

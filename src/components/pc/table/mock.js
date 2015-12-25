@@ -98,7 +98,7 @@ mockjax({
     contentType: "application/json",
     response: function (settings) {
         this.responseText = {
-            ok: false
+            ok: true
         }
     }
 })
@@ -108,7 +108,8 @@ mockjax({
     contentType: "application/json",
     response: function (settings) {
         this.responseText = {
-            ok: false
+            ok: false,
+            errmsg: '自定义的错误提示'
         }
     }
 })

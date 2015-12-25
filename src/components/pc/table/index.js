@@ -64,6 +64,10 @@ import Edit from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo
 import editCode from 'text!./demo/edit.js'
 import editMarkdown from './demo/edit.md'
 
+import Responsive from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/responsive.js'
+import responsiveCode from 'text!./demo/responsive.js'
+import responsiveMarkdown from './demo/responsive.md'
+
 const colStyle = {
     padding: 10
 }
@@ -157,6 +161,12 @@ export default class Layout extends React.Component {
                                   code={editCode}
                                   style={{marginTop:10}}>
                             <Edit/>
+                        </CodeView>
+
+                        <CodeView md={responsiveMarkdown}
+                                  code={responsiveCode}
+                                  style={{marginTop:10}}>
+                            <Responsive/>
                         </CodeView>
                     </Col>
                 </Row>

@@ -68,7 +68,10 @@ const customAddInfo = {
             }
         },
         success: (res)=> {
-            return res.ok === true
+            return {
+                ok: res.ok,
+                message: res.errmsg
+            }
         },
         render: ()=> {
             return (
