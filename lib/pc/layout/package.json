@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "antd": "^0.10.4",
+    "classnames": "^2.2.1",
     "fit-style": "^1.0.14"
   }
 }

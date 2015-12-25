@@ -109,3 +109,27 @@ th {
     color: #23ad44;
   }
 }
+
+.sort-arrow {
+  margin-left: 5px;
+  &:hover {
+
+  }
+}
+
+.table-th {
+  user-select: none;
+  &.sortable {
+    cursor: pointer;
+    &:hover {
+      color: #333;
+    }
+    .sort-can-use {
+      margin-left: 5px;
+      color: #ddd;
+    }
+  }
+  .fa-sort-asc, .fa-sort-desc {
+    margin-left: 5px;
+  }
+}
