@@ -30,7 +30,10 @@ const info = {
             }
         },
         success: (res)=> {
-            return res.ok === false
+            return {
+                ok: res.ok === false,
+                message: 'oh!! no'
+            }
         }
     }
 }

@@ -5,18 +5,27 @@ const info = {
     fields: [{
         key: 'id',
         value: '产品编号',
-        sort: true
+        edit: true
     }, {
         key: 'yesterday',
         value: '昨日数据',
-        sort: true
+        edit: true
     }, {
         key: 'today',
-        value: '今日数据'
+        value: '今日数据',
+        edit: true
     }],
-    onSort: (key)=> {
-        return {
-            'sort_by': key
+    edit: {
+        url: '/api/table/regex/edit',
+        method: 'post',
+        beforeSend: (rowInfo, key)=> {
+            return rowInfo
+        },
+        success: (res)=> {
+            return {
+                ok: res.ok === true,
+                message: res.errmsg
+            }
         }
     },
     get: {

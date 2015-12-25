@@ -98,7 +98,18 @@ mockjax({
     contentType: "application/json",
     response: function (settings) {
         this.responseText = {
-            ok: false
+            ok: true
+        }
+    }
+})
+
+mockjax({
+    url: "/api/table/regex/edit",
+    contentType: "application/json",
+    response: function (settings) {
+        this.responseText = {
+            ok: false,
+            errmsg: '自定义的错误提示'
         }
     }
 })

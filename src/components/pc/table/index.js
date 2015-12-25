@@ -60,6 +60,14 @@ import Add from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/
 import addCode from 'text!./demo/add.js'
 import addMarkdown from './demo/add.md'
 
+import Edit from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/edit.js'
+import editCode from 'text!./demo/edit.js'
+import editMarkdown from './demo/edit.md'
+
+import Responsive from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/responsive.js'
+import responsiveCode from 'text!./demo/responsive.js'
+import responsiveMarkdown from './demo/responsive.md'
+
 const colStyle = {
     padding: 10
 }
@@ -142,6 +150,24 @@ export default class Layout extends React.Component {
                                   style={{marginTop:10}}>
                             <Find/>
                         </CodeView>
+
+                        <CodeView md={sortMarkdown}
+                                  code={sortCode}
+                                  style={{marginTop:10}}>
+                            <Sort/>
+                        </CodeView>
+
+                        <CodeView md={editMarkdown}
+                                  code={editCode}
+                                  style={{marginTop:10}}>
+                            <Edit/>
+                        </CodeView>
+
+                        <CodeView md={responsiveMarkdown}
+                                  code={responsiveCode}
+                                  style={{marginTop:10}}>
+                            <Responsive/>
+                        </CodeView>
                     </Col>
                 </Row>
 
@@ -150,14 +176,6 @@ export default class Layout extends React.Component {
     }
 }
 
-
-//
-//<CodeView md={sortMarkdown}
-//code={sortCode}
-//style={{marginTop:10}}>
-//<Sort/>
-//</CodeView>
-//
 
 //
 //<CodeView md={sortableMarkdown}
