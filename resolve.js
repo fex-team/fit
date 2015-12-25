@@ -1,4 +1,5 @@
 var path = require('path')
+var reactNativeWeb = require('react-native-web')
 
 module.exports = {
     alias: {
@@ -20,6 +21,7 @@ module.exports = {
 
 
 
-        'fiten-style': path.join(__dirname, 'lib/mobile/style/src')
+        'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
+        'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src')
     }
 }

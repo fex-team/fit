@@ -18,6 +18,8 @@ import SelectComponent from './components/pc/select'
 import MenuComponent from './components/pc/menu'
 import ModalComponent from './components/pc/modal'
 
+import MobileColor from './components/mobile/color'
+
 const MainRouter = (
     <Router>
         <Redirect from="/" to="pc"></Redirect>
@@ -54,6 +56,10 @@ const MainRouter = (
         <Route path="/mobile"
                component={Layout}>
             <IndexRoute component={Home} />
+            <Route path="color"
+                   component={MobileColor}>
+
+            </Route>
         </Route>
     </Router>
 )

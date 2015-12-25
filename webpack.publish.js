@@ -2,24 +2,63 @@ var webpack = require('webpack')
 var path = require('path')
 var resolve = require('./resolve.js')
 var _ = require('lodash')
+var fs = require('fs')
+var args = process.argv.slice(2)
 
-var treeName = process.argv.slice(2)[0]
+if (args.length === 0) {
+    console.error(
+        'you did not pass any commands, did you mean to run `updator push` ?'
+    )
+    process.exit(1)
+}
+
+var moduleName = process.argv.slice(2)[1]
+var platform = process.argv.slice(2)[0]
+var mobilePrefix
+if (platform === '-w') {
+    mobilePrefix = 'mobile'
+    platform = 'web'
+}
+else if (platform === '-p') {
+    platform = 'pc'
+}
+else if (platform === '-n') {
+    mobilePrefix = 'mobile'
+    platform = 'native'
+}
+else {
+    console.error('Uncaught param type', platform)
+    process.exit(1)
+}
 
 var alias = {}
-
 for (var key in resolve.alias) {
     alias[key] = true
 }
 
+var entry = []
+var outputPath
+
+if (platform === 'pc') {
+    entry.push(path.resolve(__dirname, 'lib', platform, moduleName, 'src', 'index.js'))
+    outputPath = path.join(__dirname, 'lib', platform, moduleName, 'dist')
+}
+else if (platform === 'web') {
+    entry.push(path.resolve(__dirname, 'lib', mobilePrefix, moduleName, 'web', 'src', 'index.js'))
+    outputPath = path.join(__dirname, 'lib', mobilePrefix, moduleName, 'web', 'dist')
+}
+else if (platform === 'native') {
+    entry.push(path.resolve(__dirname, 'lib', mobilePrefix, moduleName, 'native', 'src', 'index.js'))
+    outputPath = path.join(__dirname, 'lib', mobilePrefix, moduleName, 'native', 'dist')
+}
+
 webpack({
-    entry: [
-        './lib/' + treeName + '/src' + '/index.js'
-    ],
+    entry: entry,
 
     output: {
-        path: path.join(__dirname, 'lib/' + treeName + '/dist'),
+        path: outputPath,
         filename: 'index.js',
-        library: treeName + '/src',
+        library: moduleName + '/src',
         libraryTarget: 'umd'
     },
 
@@ -45,11 +84,11 @@ webpack({
                 loaders: ['babel?presets[]=react,presets[]=es2015', 'html-path-loader']
             }, {
                 test: /\.(scss|css)/,
-                exclude: [/node_modules/, /lib\/pc\/style/],
+                exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
                 loaders: ['style', 'css', 'autoprefixer', 'sass', 'css-path-loader']
             }, {
                 test: /\.(scss|css)/,
-                include: [/node_modules/, /lib\/pc\/style/],
+                include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
                 loaders: ['style', 'css', 'autoprefixer', 'sass']
             }, {
                 test: /\.(png|jpg)$/,

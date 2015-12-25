@@ -59,6 +59,7 @@
     "highlight.js": "^8.9.1",
     "history": "^1.13.1",
     "html-path-loader": "^0.1.10",
+    "humps": "^1.0.0",
     "jquery": "^2.1.4",
     "jquery-mockjax": "git+https://github.com/andycall/jquery-mockjax",
     "lodash": "^3.10.1",

@@ -5,8 +5,8 @@ import classnames from 'classnames'
 import { Row, Col } from 'antd'
 
 const menuBase = [{
-    title: '贴吧基础样式',
-    path: '/mobile/layout-global',
+    title: '颜色',
+    path: '/mobile/color',
     icon: 'columns'
 }]
 
