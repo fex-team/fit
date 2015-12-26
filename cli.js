@@ -359,7 +359,7 @@ function addModule (type, name) {
     let remotePrefix = 'ssh://g@gitlab.baidu.com:8022/tb-component'
 
     try {
-        execSync('git remote add ' + type + '/' + name + ' ' + remotePrefix)
+        execSync('git remote add ' + type + '/' + name + ' ' + remotePrefix + '/' + type + '-' + name)
         console.log('Add remote: ' + type + '/' + name)
     }
     catch(e){}
@@ -371,6 +371,7 @@ function pullModule (modules) {
         try {
             execSync('git subtree pull prefix=')
         }
+        catch(e){}
     }
 }
 
