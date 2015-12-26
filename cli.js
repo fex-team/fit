@@ -61,6 +61,7 @@ Usage:
     cli pull     <type> <name>           更新 subtree
     cli patch    <type> <name>           升级版本
     cli add      <type> <name>           添加模块到 git remote
+    cli updatesubtree                    更新 subtree 分支列表
     cli update   <type> <name>           集更新,清除,编译,发布,升级于一体的一键脚本
 `
     )
@@ -134,6 +135,12 @@ switch (args[0]) {
     case 'gitpatch':
 
         patchModulesSync(getProjectStatus(), pcModules.concat(webModules).concat(nativeModules))
+
+        break
+
+    case 'updatesubtree':
+
+        updateSubTreeInfo()
 
         break
 
@@ -373,6 +380,48 @@ function pullModule (modules) {
         }
         catch(e){}
     }
+}
+
+function updateSubTreeInfo (callback) {
+    process.chdir(root)
+    let subtreeList = []
+    let moduleList = fs.readdirSync('./lib/mobile').filter((name) => {
+        return name.substring(0, 1) !== '.'
+    }).map((value) => {
+        return 'mobile/' + value
+    }).concat(fs.readdirSync('./lib/pc').filter((name) => {
+        return name.substring(0, 1) !== '.'
+    }).map((value) => {
+        return 'pc/' + value
+    }))
+
+    try {
+        execSync('cp -r ./lib /tmp/___temp___lib')
+        execSync('rm -r ./lib')
+    }
+    catch(e){}
+
+    moduleList.forEach((module, index) => {
+        subtreeList.push(new Promise((resolve, reject) => {
+            let gitlabBranch = module.split('/').join('-')
+            exec(`sh ./stree.sh add ${module} -P lib/${module} ssh://g@gitlab.baidu.com:8022/tb-component/${gitlabBranch}`, (error, stdout, stderr) => {
+                console.log(error, stdout)
+                if (error) {
+                    reject(error)
+                }
+
+
+                resolve(stdout, stderr)
+            })
+        }))
+    })
+
+    Promise.all(subtreeList).then((values) => {
+        console.log(123)
+        execSync('cp -r /tmp/awesome/lib ./lib')
+
+        console.log('success')
+    })
 }
 
 function patchModulesSync (modules, allModules) {
