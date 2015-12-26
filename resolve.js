@@ -3,6 +3,7 @@ var reactNativeWeb = require('react-native-web')
 
 module.exports = {
     alias: {
+        // pc
         'fit-style': path.join(__dirname, 'lib/pc/style/src'),
         'fit-button': path.join(__dirname, 'lib/pc/button/src'),
         'fit-layout': path.join(__dirname, 'lib/pc/layout/src'),
@@ -17,10 +18,8 @@ module.exports = {
         'fit-switch': path.join(__dirname, 'lib/pc/switch/src'),
         'fit-menu': path.join(__dirname, 'lib/pc/menu/src'),
         'fit-modal': path.join(__dirname, 'lib/pc/modal/src'),
-
-
-
-
+        'fit-message': path.join(__dirname, 'lib/pc/message/src'),
+        // mobile
         'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
         'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src')
     }

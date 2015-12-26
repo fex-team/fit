@@ -34,6 +34,10 @@ const menuShow = [{
     title: '模态框 Modal',
     path: '/pc/modal',
     icon: 'list-alt'
+}, {
+    title: '提示 Message',
+    path: '/pc/message',
+    icon: 'exclamation-circle'
 }]
 
 const menuForm = [{
