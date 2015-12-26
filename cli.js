@@ -110,8 +110,8 @@ switch (args[0]) {
 
     case 'patch':
         if (!moduleType && !moduleName) {
-//            patchModulesSync(pcModules.concat(webModules).concat(nativeModules))
-            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
+            patchModulesSync(pcModules.concat(webModules).concat(nativeModules), pcModules.concat(webModules).concat(nativeModules))
+//            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
         }
         else if (moduleType && !moduleName) {
 //            patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules))
@@ -125,7 +125,12 @@ switch (args[0]) {
 
     case 'gitpatch':
 
-        patchModulesSync(getProjectStatus(), pcModules.concat(webModules).concat(nativeModules))
+        let diffModules = getProjectStatus()
+        patchModulesSync(diffModules, pcModules.concat(webModules).concat(nativeModules))
+        cleanModulesSync(diffModules)
+        buildModules(diffModules).then(() => {
+            publishModules(diffModules)
+        })
 
         break
 
