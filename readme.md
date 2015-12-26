@@ -1,15 +1,22 @@
 ### 前言
 
-tb-component 贴吧组件化开发流程，致力于打造一套完全前端模块化、真正意义上的组件即插即用的生态圈。
+fit-component 组件化开发流程，致力于打造一套完全前端模块化、真正意义上的组件即插即用的生态圈。
 
 您可以[移步这里浏览所有组件实例](http://fedev.baidu.com:8329)。
 
-- react + redux + webpack
+- react + redux + fis3|webpack
 - 一个组件包含（html+js+css），一行引入代码便引入了全部
 - 首屏、后端渲染
 - sass模块化
+- react-native支持
 
+### 贴吧
 
+本组件将在2016年初完成对react-native支持,所有组件全部抽离到npm&gitlab,加上@学芝提供的全新fis3编译脚本,完成了贴吧纯前端模块化开发的闭环
+
+预计2016年上半年将贴吧前端ui层改为node服务,使用@方石的yog2,从bigpipe切换为react后端渲染,提升用户体验到极致
+
+svn->git仓库管理,纯gitlab项目开发,一个git仓库即一个项目,免去申请svn模块的麻烦以及项目下装载n个子项目的烦恼,上线只会编译当前修改的项目,编译速度得到极大提升
 
 ### 环境要求
 
@@ -96,8 +103,3 @@ git push origin master
 ### 组件发布
 
 [组件如何发布到npm](doc/publish.md)
-
-### 组件索引
-
-captcha 验证码
-mis-react mis 平台
