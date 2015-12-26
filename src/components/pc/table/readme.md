@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Table from 'fit-table'
+npm install fit-table /* or */ fis3 install fit-table 
 ````

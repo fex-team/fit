@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Input from 'fit-input'
+npm install fit-input /* or */ fis3 install fit-input
 ````

@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import { Row, Col } from 'fit-layout'
+npm install fit-layout /* or */ fis3 install fit-layout
 ````

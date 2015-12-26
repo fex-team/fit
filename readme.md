@@ -1,22 +1,36 @@
 ### 前言
 
-fit-component 组件化开发流程，致力于打造一套完全前端模块化、真正意义上的组件即插即用的生态圈。
+fit-component 组件化开发流程，致力于打造一套先进的前端模块化、真正意义上的组件即插即用的生态圈。（所有组件都提供npm和fis3两种安装方式,其中业务机密组件仅提供fis3方式安装,所有组件都支持fis3和webpack两种编译方式）
+
+所有npm+fis3组件源码都在这里:gitlab.baidu.com/groups/tb-component
 
 您可以[移步这里浏览所有组件实例](http://fedev.baidu.com:8329)。
 
-- react + redux + fis3|webpack
-- 一个组件包含（html+js+css），一行引入代码便引入了全部
-- 首屏、后端渲染
+特性:
+
+- react + react-native + redux + fis3&webpack
+- 完全组件化
+- 后端渲染
 - sass模块化
-- react-native支持
 
 ### 贴吧
 
-本组件将在2016年初完成对react-native支持,所有组件全部抽离到npm&gitlab,加上@学芝提供的全新fis3编译脚本,完成了贴吧纯前端模块化开发的闭环
+贴吧前端开发可以从php中解放出来了,我们一起推动贴吧打造一套 `node+react` js生态圈,将前端开发体验提升到极致,并为用户提供更加稳定,高效的服务
 
-预计2016年上半年将贴吧前端ui层改为node服务,使用@方石的yog2,从bigpipe切换为react后端渲染,提升用户体验到极致
+发展历史:
 
-svn->git仓库管理,纯gitlab项目开发,一个git仓库即一个项目,免去申请svn模块的麻烦以及项目下装载n个子项目的烦恼,上线只会编译当前修改的项目,编译速度得到极大提升
+1. 2015-12-1 修改贴吧老编译脚本,删除了template widget static三个文件夹,angular->react,同一项目的所有代码都集中在一个子项目文件夹中方便管理
+2. 2015-12-2 贴吧react组件库项目开启,代号为fit,力求打造不输于阿里前端的react组件库
+3. 2015-12-4 与@张涛沟通开发流程,建立贴吧前端gitlab开发群,正式将 svn+icafe+全流程 的上线流程改造为 gitlab+agile 部署只需要 `git push` ,触发hi群机器人提醒并触发agile构建,大大简化了上线流程
+4. 2015-12-14 删除control文件夹,并将入口php文件改为index.html,自动将script标签转化为php对应函数
+5. 2015-12-21 感谢@学芝为贴吧重写了一套fis3编译脚本 http://gitlab.baidu.com/tb-component/build ,切换到fis集群编译,大大提高了编译效率
+6. 2015-12-25 贴吧react开发规范商讨完毕,一个git仓库即一个完整项目,仓库里不再有多个子项目（避免了以往项目文件夹过多,其他项目的无关依赖库过多,申请新模块延时等不必要的麻烦）,再次调整项目结构,支持本地开发（webpack或fis3任选）,沙盒开发（仅fis3）,上线编译三套完整开发方案,项目运行不再依赖bash脚本（windows也支持了）
+
+待续:
+
+- 在@方石的推动下,预计2016年上半年将贴吧前端ui层改为node服务（先小范围试点）,所有node项目将启用后端渲染,届时无论pc还是h5都将同时拥有mis的单页体验与pc的首屏加载的速度!
+- @天成 react移动端组件启动,项目代号为fiten,会同时支持react-native技术,最快在2016下半年将客户端页面部分改为react-native,一个h5+android+ios的项目只需要用h5开发一次,也会大大减少pm的沟通成本与项目维护成本
+
 
 ### 环境要求
 

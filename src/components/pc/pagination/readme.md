@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Pagination from 'fit-pagination'
+npm install fit-pagination /* or */ fis3 install fit-pagination
 ````

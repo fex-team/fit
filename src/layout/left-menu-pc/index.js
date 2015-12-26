@@ -66,6 +66,12 @@ const menuForm = [{
     icon: 'calendar'
 }]
 
+const menuTieba = [{
+    title: '验证码 captcha',
+    path: '/pc/captcha',
+    icon: 'bullseye'
+}]
+
 const menuFactory = (data)=> {
     return data.map((item, index)=> {
         let iconClass = classnames(['fa', 'fa-' + item.icon])
@@ -99,6 +105,7 @@ export default class Layout extends React.Component {
         let MenuBase = menuFactory(menuBase)
         let MenuShow = menuFactory(menuShow)
         let MenuTable = menuFactory(menuForm)
+        let MenuTieba = menuFactory(menuTieba)
 
         return (
             <div className="_namespace">
@@ -108,6 +115,8 @@ export default class Layout extends React.Component {
                 {MenuShow}
                 <div className="title">表单</div>
                 {MenuTable}
+                <div className="title">贴吧专属</div>
+                {MenuTieba}
             </div>
         )
     }

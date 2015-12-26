@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Radio from 'fit-radio'
+npm install fit-radio /* or */ fis3 install fit-radio 
 ````

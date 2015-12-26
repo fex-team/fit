@@ -19,6 +19,7 @@ module.exports = {
         'fit-menu': path.join(__dirname, 'lib/pc/menu/src'),
         'fit-modal': path.join(__dirname, 'lib/pc/modal/src'),
         'fit-message': path.join(__dirname, 'lib/pc/message/src'),
+        'fit-captcha': path.join(__dirname, 'lib/pc/captcha/src'),
         // mobile
         'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
         'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src')
