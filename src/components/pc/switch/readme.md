@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Switch from 'fit-switch'
+npm install fit-switch /* or */ fis3 install fit-switch
 ````

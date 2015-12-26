@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import { Header, Sidebar, Footer, Section } from 'fit-layout-global'
+npm install fit-layout-global /* or */ fis3 install fit-layout-global
 ````

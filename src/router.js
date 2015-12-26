@@ -17,6 +17,8 @@ import InputComponent from './components/pc/input'
 import SelectComponent from './components/pc/select'
 import MenuComponent from './components/pc/menu'
 import ModalComponent from './components/pc/modal'
+import MessageComponent from './components/pc/message'
+import CaptchaComponent from './components/pc/captcha'
 
 import MobileColor from './components/mobile/color'
 
@@ -52,10 +54,14 @@ const MainRouter = (
                    component={MenuComponent}/>
             <Route path="modal"
                    component={ModalComponent}/>
+            <Route path="message"
+                   component={MessageComponent}/>
+            <Route path="captcha"
+                   component={CaptchaComponent}/>
         </Route>
         <Route path="/mobile"
                component={Layout}>
-            <IndexRoute component={Home} />
+            <IndexRoute component={Home}/>
             <Route path="color"
                    component={MobileColor}>
 

@@ -34,6 +34,10 @@ const menuShow = [{
     title: '模态框 Modal',
     path: '/pc/modal',
     icon: 'list-alt'
+}, {
+    title: '提示 Message',
+    path: '/pc/message',
+    icon: 'exclamation-circle'
 }]
 
 const menuForm = [{
@@ -60,6 +64,12 @@ const menuForm = [{
     title: '日期 Datepiacker',
     path: '/pc/datepicker',
     icon: 'calendar'
+}]
+
+const menuTieba = [{
+    title: '验证码 captcha',
+    path: '/pc/captcha',
+    icon: 'bullseye'
 }]
 
 const menuFactory = (data)=> {
@@ -95,6 +105,7 @@ export default class Layout extends React.Component {
         let MenuBase = menuFactory(menuBase)
         let MenuShow = menuFactory(menuShow)
         let MenuTable = menuFactory(menuForm)
+        let MenuTieba = menuFactory(menuTieba)
 
         return (
             <div className="_namespace">
@@ -104,6 +115,8 @@ export default class Layout extends React.Component {
                 {MenuShow}
                 <div className="title">表单</div>
                 {MenuTable}
+                <div className="title">贴吧专属</div>
+                {MenuTieba}
             </div>
         )
     }

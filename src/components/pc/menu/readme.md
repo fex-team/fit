@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Button from 'fit-menu'
+npm install fit-menu /* or */ fis3 install fit-menu
 ````

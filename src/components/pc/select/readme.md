@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Select from 'fit-select'
+npm install fit-select /* or */ fis3 install fit-select
 ````

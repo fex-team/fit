@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-import Checkbox from 'fit-checkbox'
+npm install fit-checkbox /* or */ fis3 install fit-checkbox
 ````
