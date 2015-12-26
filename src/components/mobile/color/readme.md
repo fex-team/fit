@@ -3,7 +3,7 @@
 ---
 
 ````jsx
-npm install fiten-style /* or */ fis3 install fiten-button 
+npm install fiten-color /* or */ fis3 install fiten-color 
 ````
 
 贴吧颜色规范版本 6.7

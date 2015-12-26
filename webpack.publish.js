@@ -12,53 +12,60 @@ if (args.length === 0) {
     process.exit(1)
 }
 
-var moduleName = process.argv.slice(2)[1]
-var platform = process.argv.slice(2)[0]
-var mobilePrefix
-if (platform === '-w') {
-    mobilePrefix = 'mobile'
-    platform = 'web'
-}
-else if (platform === '-p') {
-    platform = 'pc'
-}
-else if (platform === '-n') {
-    mobilePrefix = 'mobile'
-    platform = 'native'
-}
-else {
-    console.error('Uncaught param type', platform)
-    process.exit(1)
-}
+var modulePath = args[0]
+
+var modulePackageJSON = JSON.parse(fs.readFileSync(path.resolve(modulePath, 'package.json')).toString())
+
+//var moduleName = process.argv.slice(2)[1]
+//var platform = process.argv.slice(2)[0]
+//var mobilePrefix
+//if (platform === '-w') {
+//    mobilePrefix = 'mobile'
+//    platform = 'web'
+//}
+//else if (platform === '-p') {
+//    platform = 'pc'
+//}
+//else if (platform === '-n') {
+//    mobilePrefix = 'mobile'
+//    platform = 'native'
+//}
+//else {
+//    console.error('Uncaught param type', platform)
+//    process.exit(1)
+//}
 
 var alias = {}
 for (var key in resolve.alias) {
     alias[key] = true
 }
 
-var entry = []
-var outputPath
+//var entry = []
+var outputPath = path.resolve(modulePath, 'dist')
 
-if (platform === 'pc') {
-    entry.push(path.resolve(__dirname, 'lib', platform, moduleName, 'src', 'index.js'))
-    outputPath = path.join(__dirname, 'lib', platform, moduleName, 'dist')
-}
-else if (platform === 'web') {
-    entry.push(path.resolve(__dirname, 'lib', mobilePrefix, moduleName, 'web', 'src', 'index.js'))
-    outputPath = path.join(__dirname, 'lib', mobilePrefix, moduleName, 'web', 'dist')
-}
-else if (platform === 'native') {
-    entry.push(path.resolve(__dirname, 'lib', mobilePrefix, moduleName, 'native', 'src', 'index.js'))
-    outputPath = path.join(__dirname, 'lib', mobilePrefix, moduleName, 'native', 'dist')
-}
+
+//if (platform === 'pc') {
+//    entry.push(path.resolve(__dirname, 'lib', platform, moduleName, 'src', 'index.js'))
+//    outputPath = path.join(__dirname, 'lib', platform, moduleName, 'dist')
+//}
+//else if (platform === 'web') {
+//    entry.push(path.resolve(__dirname, 'lib', mobilePrefix, moduleName, 'web', 'src', 'index.js'))
+//    outputPath = path.join(__dirname, 'lib', mobilePrefix, moduleName, 'web', 'dist')
+//}
+//else if (platform === 'native') {
+//    entry.push(path.resolve(__dirname, 'lib', mobilePrefix, moduleName, 'native', 'src', 'index.js'))
+//    outputPath = path.join(__dirname, 'lib', mobilePrefix, moduleName, 'native', 'dist')
+//}
 
 webpack({
-    entry: entry,
+    entry: [
+        path.resolve(modulePath, 'src', 'index.js')
+    ],
 
     output: {
         path: outputPath,
         filename: 'index.js',
-        library: moduleName + '/src',
+        library: modulePackageJSON.name,
         libraryTarget: 'umd'
     },
 

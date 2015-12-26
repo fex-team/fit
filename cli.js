@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --harmony
 "use strict";
 
 
@@ -7,108 +7,187 @@ var path = require('path')
 var semver = require('semver')
 var format = require('format-json')
 var exec = require('child_process').exec
+var execSync = require('child_process').execSync
+var spawn = require('child_process').spawn
 var root = process.cwd()
 var os = require('os')
 var _ = require('lodash')
 
 var packageVersion = {}
+var moduleGlobal = {}
 
-var modules = fs.readdirSync('./lib').filter((name) => {
+var pcModules = moduleGlobal.pcModules = fs.readdirSync('./lib/pc').filter((name) => {
     return name.substring(0, 1) !== '.'
+}).map((module, index) => {
+    return path.resolve(__dirname, 'lib', 'pc', module)
+})
+
+var webModules = moduleGlobal.webModules = fs.readdirSync('./lib/mobile').filter((name) => {
+    return name.substring(0, 1) !== '.'
+}).map((module) => {
+    return path.resolve(__dirname, 'lib', 'mobile', module, 'web')
+})
+
+var nativeModules = moduleGlobal.nativeModules = fs.readdirSync('./lib/mobile').filter((name) => {
+    return name.substring(0, 1) !== '.'
+}).map((module) => {
+    return path.resolve(__dirname, 'lib', 'mobile', module, 'native')
 })
 
 var args = process.argv.slice(2)
+var moduleType = args[1]
+var moduleName = args[2]
+var modulePath
+
+if (moduleName && moduleType === 'pc') {
+    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'pc', moduleName)
+}
+else if (moduleName && (moduleType === 'web' || moduleType === 'native')) {
+    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'mobile', moduleName, type)
+}
 
 if (args.length === 0) {
     console.error(
-        'you did not pass any commands, did you mean to run `updator push` ?'
+`
+fit cli tools
+
+type: pc|web|native
+
+Usage:
+    cli build    <type> <name>           编译模块
+    cli clean    <type> <name>           清除 dist
+    cli publish  <type> <name>           模块发布
+    cli push     <type> <name>           提交subtree
+    cli pull     <type> <name>           更新 subtree
+    cli patch    <type> <name>           升级版本
+    cli add      <type> <name>           添加模块到 git remote
+    cli update   <type> <name>           集更新,清除,编译,发布,升级于一体的一键脚本
+`
     )
     process.exit(1)
 }
 
-function commandFactory (command) {
-    return function (callback, ...params) {
-        exec(command + ' ' + params.join(' '), (error, stdout, stderr) => {
-            if (error) {
-                console.error('ERROR: ', command, stderr)
-                process.exit(1)
-            }
-
-            callback(stdout, stderr)
-        })
-    }
-}
-
-function commandFactorySync (command) {
-    return function (...params) {
-        return execSync(command + ' ' + params.join(' '))
-    }
-}
-
-var checkGitStatus = commandFactorySync('git status')
-var checkWhoAmi = commandFactorySync('npm whoami')
-var npmPublish = commandFactorySync('npm publish')
-var versionPatch = commandFactorySync('npm version patch')
-var addAndCommit = commandFactorySync('git commit -am')
-var removeDir = commandFactorySync('rm -r')
-var buildModule = commandFactorySync('node webpack.publish.js')
-
-
-var isSingle = process.argv.indexOf('-s') >= 0
-var moduleName
-
-if (isSingle) {
-    moduleName = args[2]
-}
-
 switch (args[0]) {
     case 'build':
-
-        // node updator.js -s button
-        if (isSingle) {
-            cleanModules([moduleName])
-            buildModules([moduleName])
+        // build all
+        if (!moduleType && !moduleName) {
+            buildModules(pcModules.concat(webModules).concat(nativeModules), function () {
+                console.log('INFO: All Modules Build Success')
+            })
         }
-        else {
-            // build all modules
-            cleanModules(modules)
-            buildModules(modules)
+        else if (moduleType && !moduleName) {
+            buildModules(moduleGlobal[moduleType + 'Modules'], function () {
+                console.log('INFO: All Modules Build Success')
+            })
+        }
+        else if (moduleType && moduleName) {
+            buildModules([moduleGlobal.modulePath], function () {
+                console.log('INFO: All Modules Build Success')
+            })
         }
 
         break
 
     case 'clean':
 
-        if (isSingle) {
-            cleanModules([moduleName])
+        if (!moduleType && !moduleName) {
+            cleanModulesSync(pcModules.concat(webModules).concat(nativeModules))
+        }
+        else if (moduleType && !moduleName) {
+            cleanModulesSync(moduleGlobal[moduleType + 'Modules'])
+        }
+        else if (moduleType && moduleName) {
+            cleanModulesSync([moduleGlobal.modulePath])
+        }
+
+        break
+
+    case 'publish':
+        // push modules to gitlab
+        if (!moduleType && !moduleName) {
+            publishModules(pcModules.concat(webModules).concat(nativeModules))
+        }
+        else if (moduleType) {
+            publishModules(moduleGlobal[moduleType + 'Modules'])
+        }
+        else if (moduleType && moduleName) {
+            publishModules([moduleGlobal.modulePath])
+        }
+
+        break
+
+    case 'patch':
+        if (!moduleType && !moduleName) {
+//            patchModulesSync(pcModules.concat(webModules).concat(nativeModules))
+            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
+        }
+        else if (moduleType && !moduleName) {
+//            patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules))
+            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
+        }
+        else if (moduleType && moduleName) {
+            patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules))
+        }
+
+        break
+
+    case 'gitpatch':
+
+        patchModulesSync(getProjectStatus(), pcModules.concat(webModules).concat(nativeModules))
+
+        break
+
+    case 'add':
+
+        if (moduleType && moduleName) {
+            addModule(moduleType, moduleName)
         }
         else {
-            cleanModules(modules)
+            console.error('ERROR: missing moduleType and moduleName')
         }
 
         break
 
     case 'push':
-        // push modules to gitlab
-        if (isSingle) {
-
+        // update all modules version
+        if (!type && !name) {
+            pushModules(pcModules.concat(webModules).concat(nativeModules))
         }
-        else {
-
+        else if (type) {
+            pushModules(moduleGlobal[type + 'Modules'])
+        }
+        else if (type && name) {
+            pushModules([moduleGlobal.modulePath])
         }
 
         break
+
+    case 'pull':
+
+        if (!type && !name) {
+            pullModules(pcModules.concat(webModules).concat(nativeModules))
+        }
+        else if (type) {
+            pullModules(moduleGlobal[type + 'Modules'])
+        }
+        else if (type && name) {
+            pullModules([moduleGlobal.modulePath])
+        }
+
+        break
+
 
     case 'update':
-        // update all modules version
-        getModuleVersion(modules)
-        updateModuleVersion(modules)
 
-        break
-
-    case 'upgrade':
-
-        upgradeModules()
+        if (!type && !name) {
+            updateModules(pcModules.concat(webModules).concat(nativeModules))
+        }
+        else if (type) {
+            updateModules(moduleGlobal[type + 'Modules'])
+        }
+        else if (type && name) {
+            updateModules([moduleGlobal.modulePath])
+        }
 
         break
 
@@ -120,27 +199,27 @@ switch (args[0]) {
         break
 }
 
-
 function compareVersion (pre, next) {
     pre = pre.replace(/^[\^~]/, '')
     next = next.replace(/^[\^~]/, '')
     return semver.compare(pre, next)
 }
 
-function getModulePath (name, type) {
-    if (type === 'pc') {
-        return {
-            pc: path.resolve('lib', 'pc', name)
-        }
+function getProjectStatus () {
+    try {
+        let output = execSync('git status --porcelain').toString().replace(/\s\w\s/g, '').split('\n')
+        let subReg = /^lib/
+
+        output = output.filter((value, index) => {
+            return subReg.test(value)
+        }).map((value) => {
+            value = value.split('/').slice(0, -1).join('/')
+            return path.resolve(__dirname, value)
+        })
+
+        return output
     }
-    else if (type === 'mobile') {
-        return {
-            mobile: {
-                web: path.resolve('lib', 'mobile', name, 'web'),
-                native: path.resolve('lib', 'mobile', name, 'native')
-            }
-        }
-    }
+    catch(e){console.log(e)}
 }
 
 function getModuleVersion (modules, type) {
@@ -221,51 +300,117 @@ function updateModuleVersion (modules, type) {
     }
 }
 
-function cleanModules (modules, type) {
-    for (let name of modules) {
-        let modulePath = getModulePath(name, type)[type]
+function cleanModulesSync (modules) {
+    process.chdir(root)
 
-        if (type === 'pc' && fs.existsSync(modulePath)) {
-            execSync('rm -r ' + modulePath)
-            console.info('INFO: ', 'clean ' + name + ' dist')
+    for (var modulePath of modules) {
+        try {
+            execSync('rm -r ' + path.resolve(modulePath, 'dist'))
+            console.log('INFO: ', 'Remove ' + modulePath + ' dist')
         }
-        else if (type === 'mobile') {
-            for (var type in modulePath) {
-                execSync('rm -r ' + modulePath[type])
-                console.info('INFO: ', 'clean ' + name + ' ' + type + ' dist')
-            }
+        catch (e) {}
+    }
+}
+
+function buildModules (modules, callback) {
+    var moduleCopy = _.cloneDeep(modules)
+    var cpus = os.cpus()
+    var runChildInstance = []
+    process.chdir(root)
+
+    function onClose (successPath) {
+        console.info('INFO: ', successPath, ' build success')
+        let modulePath = moduleCopy.pop()
+        _.pull(runChildInstance, this)
+
+        if (modulePath) {
+            let childInstance = spawn('node', ['webpack.publish.js', modulePath])
+            runChildInstance.push(childInstance)
+
+            childInstance.on('close', onClose.bind(childInstance, modulePath))
+        }
+        else if (!runChildInstance.length) {
+            callback()
+        }
+    }
+
+    if (modules.length > cpus.length) {
+        for (let cpu of cpus) {
+            let modulePath = moduleCopy.pop()
+            let childInstance = spawn('node', ['webpack.publish.js', modulePath])
+            runChildInstance.push(childInstance)
+
+            childInstance.on('close', onClose.bind(childInstance, modulePath))
+        }
+    }
+    else {
+        for (let module of modules) {
+            let modulePath = moduleCopy.pop()
+            let childInstance = spawn('node', ['webpack.publish.js', modulePath])
+
+            runChildInstance.push(childInstance)
+
+            childInstance.on('close', onClose.bind(childInstance, modulePath))
         }
     }
 }
 
-function buildModules (modules, type) {
-    var moduleCopy = _.cloneDeep(modules)
-    var cpus = os.cpus()
-    var freeCpus = cpus.length
-    process.chdir(root)
+function addModule (type, name) {
+    let remotePrefix = 'ssh://g@gitlab.baidu.com:8022/tb-component'
 
-    for (let cpu of cpus) {
-        if (freeCpus > 0 && modules.length > 0) {
-            let name = moduleCopy.pop()
-            if (type === 'pc') {
-                exec('node webpack.publish.js -p ' + name, (error, stdout, stderr) => {
-                    if (error) {
-                        console.error(error)
-                    }
-                    console.info('INFO: ', 'module ' + name + ' build success')
-                    freeCpus++
-                })
-            }
-            else if (type === 'mobile') {
-
-            }
-
-            freeCpus--;
-        }
-//        buildModule((stdout, stderr) => {
-//            console.info('INFO: ', 'module ' + name + ' build success')
-//        }, name)
+    try {
+        execSync('git remote add ' + type + '/' + name + ' ' + remotePrefix)
+        console.log('Add remote: ' + type + '/' + name)
     }
+    catch(e){}
+
+}
+
+function pullModule (modules) {
+    for (let module of modules) {
+        try {
+            execSync('git subtree pull prefix=')
+        }
+    }
+}
+
+function patchModulesSync (modules, allModules) {
+    for (let module of modules) {
+        try {
+            process.chdir(module)
+            execSync('npm version patch')
+        }
+        catch(e){}
+
+        let packageJSON = JSON.parse(fs.readFileSync(path.resolve(module, 'package.json')).toString())
+        let moduleName = packageJSON.name
+        let moduleDepenence = packageJSON.dependecies
+        let moduleVersion = packageJSON.version
+
+        for (let all of allModules) {
+            let allJSON = JSON.parse(fs.readFileSync(path.resolve(all, 'package.json')).toString())
+            let allDependencies = allJSON.dependencies
+
+            for (let dependence in allDependencies) {
+                if (dependence === moduleName && compareVersion(allDependencies[dependence], moduleVersion)) {
+                    console.log('Update ' + allJSON.name + '\'s ' +  moduleName + ':', allDependencies[dependence], '====>', '^' + moduleVersion)
+                    allDependencies[dependence] = '^' + moduleVersion
+                    fs.writeFileSync(path.resolve(all, 'package.json'), format.plain(allJSON), 'utf8')
+                }
+            }
+
+
+        }
+    }
+
+    process.chdir(root)
+}
+
+function publishModules () {
+
+}
+
+function pullModules (modules) {
 
 }
 
