@@ -1,6 +1,6 @@
 {
-  "name": "conic-style",
-  "version": "1.0.5",
+  "name": "fit-style",
+  "version": "1.0.20",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.2"
+    "bootstrap": "^4.0.0-alpha.2",
+    "font-awesome": "^4.5.0"
   }
 }
