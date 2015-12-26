@@ -46,6 +46,11 @@ else if (moduleName && (moduleType === 'web' || moduleType === 'native')) {
     modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'mobile', moduleName, type)
 }
 
+// 抓住未捕获的错误
+process.on('uncaughtException', function (err) {
+    console.error(err)
+})
+
 if (args.length === 0) {
     console.error(
 `
@@ -103,20 +108,6 @@ switch (args[0]) {
 
         break
 
-    case 'publish':
-        // push modules to gitlab
-        if (!moduleType && !moduleName) {
-            publishModules(pcModules.concat(webModules).concat(nativeModules))
-        }
-        else if (moduleType) {
-            publishModules(moduleGlobal[moduleType + 'Modules'])
-        }
-        else if (moduleType && moduleName) {
-            publishModules([moduleGlobal.modulePath])
-        }
-
-        break
-
     case 'patch':
         if (!moduleType && !moduleName) {
 //            patchModulesSync(pcModules.concat(webModules).concat(nativeModules))
@@ -138,65 +129,80 @@ switch (args[0]) {
 
         break
 
-    case 'updatesubtree':
-
-        updateSubTreeInfo()
-
-        break
-
-    case 'add':
-
-        if (moduleType && moduleName) {
-            addModule(moduleType, moduleName)
+    case 'publish':
+        // push modules to gitlab
+        if (!moduleType && !moduleName) {
+            publishModules(pcModules.concat(webModules).concat(nativeModules))
         }
-        else {
-            console.error('ERROR: missing moduleType and moduleName')
+        else if (moduleType) {
+            publishModules(moduleGlobal[moduleType + 'Modules'])
+        }
+        else if (moduleType && moduleName) {
+            publishModules([moduleGlobal.modulePath])
         }
 
         break
 
-    case 'push':
-        // update all modules version
-        if (!type && !name) {
-            pushModules(pcModules.concat(webModules).concat(nativeModules))
-        }
-        else if (type) {
-            pushModules(moduleGlobal[type + 'Modules'])
-        }
-        else if (type && name) {
-            pushModules([moduleGlobal.modulePath])
-        }
-
-        break
-
-    case 'pull':
-
-        if (!type && !name) {
-            pullModules(pcModules.concat(webModules).concat(nativeModules))
-        }
-        else if (type) {
-            pullModules(moduleGlobal[type + 'Modules'])
-        }
-        else if (type && name) {
-            pullModules([moduleGlobal.modulePath])
-        }
-
-        break
-
-
-    case 'update':
-
-        if (!type && !name) {
-            updateModules(pcModules.concat(webModules).concat(nativeModules))
-        }
-        else if (type) {
-            updateModules(moduleGlobal[type + 'Modules'])
-        }
-        else if (type && name) {
-            updateModules([moduleGlobal.modulePath])
-        }
-
-        break
+//    case 'updatesubtree':
+//
+//        updateSubTreeInfo()
+//
+//        break
+//
+//    case 'add':
+//
+//        console.log('暂不支持此功能')
+////        if (moduleType && moduleName) {
+////            addModule(moduleType, moduleName)
+////        }
+////        else {
+////            console.error('ERROR: missing moduleType and moduleName')
+////        }
+//
+//        break
+//
+//    case 'push':
+//        // update all modules version
+//        if (!type && !name) {
+//            pushModules(pcModules.concat(webModules).concat(nativeModules))
+//        }
+//        else if (type) {
+//            pushModules(moduleGlobal[type + 'Modules'])
+//        }
+//        else if (type && name) {
+//            pushModules([moduleGlobal.modulePath])
+//        }
+//
+//        break
+//
+//    case 'pull':
+//
+//        if (!type && !name) {
+//            pullModules(pcModules.concat(webModules).concat(nativeModules))
+//        }
+//        else if (type) {
+//            pullModules(moduleGlobal[type + 'Modules'])
+//        }
+//        else if (type && name) {
+//            pullModules([moduleGlobal.modulePath])
+//        }
+//
+//        break
+//
+//
+//    case 'update':
+//
+//        if (!type && !name) {
+//            updateModules(pcModules.concat(webModules).concat(nativeModules))
+//        }
+//        else if (type) {
+//            updateModules(moduleGlobal[type + 'Modules'])
+//        }
+//        else if (type && name) {
+//            updateModules([moduleGlobal.modulePath])
+//        }
+//
+//        break
 
     default:
         console.error(
@@ -319,47 +325,53 @@ function cleanModulesSync (modules) {
     }
 }
 
-function buildModules (modules, callback) {
-    var moduleCopy = _.cloneDeep(modules)
-    var cpus = os.cpus()
-    var runChildInstance = []
-    process.chdir(root)
+function buildModules (modules) {
+    return new Promise((resolve, reject) => {
+        var moduleCopy = _.cloneDeep(modules)
+        var cpus = os.cpus()
+        var runChildInstance = []
+        process.chdir(root)
 
-    function onClose (successPath) {
-        console.info('INFO: ', successPath, ' build success')
-        let modulePath = moduleCopy.pop()
-        _.pull(runChildInstance, this)
-
-        if (modulePath) {
-            let childInstance = spawn('node', ['webpack.publish.js', modulePath])
-            runChildInstance.push(childInstance)
-
-            childInstance.on('close', onClose.bind(childInstance, modulePath))
-        }
-        else if (!runChildInstance.length) {
-            callback()
-        }
-    }
-
-    if (modules.length > cpus.length) {
-        for (let cpu of cpus) {
+        function onClose (successPath) {
+            console.info('INFO: ', successPath, ' build success')
             let modulePath = moduleCopy.pop()
-            let childInstance = spawn('node', ['webpack.publish.js', modulePath])
-            runChildInstance.push(childInstance)
+            _.pull(runChildInstance, this)
 
-            childInstance.on('close', onClose.bind(childInstance, modulePath))
+            if (modulePath) {
+                let childInstance = spawn('node', ['webpack.publish.js', modulePath])
+                runChildInstance.push(childInstance)
+
+                childInstance.on('close', onClose.bind(childInstance, modulePath))
+            }
+            else if (!runChildInstance.length) {
+                resolve()
+            }
         }
-    }
-    else {
-        for (let module of modules) {
-            let modulePath = moduleCopy.pop()
-            let childInstance = spawn('node', ['webpack.publish.js', modulePath])
 
-            runChildInstance.push(childInstance)
-
-            childInstance.on('close', onClose.bind(childInstance, modulePath))
+        function onError (error) {
+            reject(error)
         }
-    }
+
+        if (modules.length > cpus.length) {
+            for (let cpu of cpus) {
+                let modulePath = moduleCopy.pop()
+                let childInstance = spawn('node', ['webpack.publish.js', modulePath])
+                runChildInstance.push(childInstance)
+
+                childInstance.on('close', onClose.bind(childInstance, modulePath))
+            }
+        }
+        else {
+            for (let module of modules) {
+                let modulePath = moduleCopy.pop()
+                let childInstance = spawn('node', ['webpack.publish.js', modulePath])
+
+                runChildInstance.push(childInstance)
+
+                childInstance.on('close', onClose.bind(childInstance, modulePath))
+            }
+        }
+    })
 }
 
 function addModule (type, name) {
@@ -456,8 +468,67 @@ function patchModulesSync (modules, allModules) {
     process.chdir(root)
 }
 
-function publishModules () {
+function publishModules (modules) {
+    return new Promise((resolve, reject) => {
+        var moduleCopy = _.cloneDeep(modules)
+        var cpus = os.cpus()
+        var runChildInstance = []
 
+        function onClose () {
+            let modulePath = moduleCopy.pop()
+            _.pull(runChildInstance, this)
+
+            if (modulePath) {
+                let childInstance = spawn('npm', ['publish'], {
+                    cwd: modulePath
+                })
+
+                childInstance.stdout.on('data', (data) => {
+                    console.log(data.toString())
+                })
+
+                childInstance.on('close', onClose)
+
+                runChildInstance.push(childInstance)
+            }
+            else if (!runChildInstance.length) {
+                resolve()
+            }
+        }
+
+        if (modules.length > cpus.length) {
+            for (let cpu of cpus) {
+                let modulePath = moduleCopy.pop()
+                let childInstance = spawn('npm', ['publish'], {
+                    cwd: modulePath
+                })
+
+                childInstance.stdout.on('data', (data) => {
+                    console.log(data.toString())
+                })
+
+                runChildInstance.push(childInstance)
+
+                childInstance.on('close', onClose)
+            }
+        }
+        else {
+            for (let module of modules) {
+                let modulePath = moduleCopy.pop()
+                let childInstance = spawn('npm', ['publish'], {
+                    cwd: modulePath
+                })
+
+                runChildInstance.push(childInstance)
+
+                childInstance.stdout.on('data', (data) => {
+                    console.log(data.toString())
+                })
+
+                childInstance.on('close', onClose.bind(childInstance, modulePath))
+            }
+        }
+    })
 }
 
 function pullModules (modules) {
