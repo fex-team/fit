@@ -48,7 +48,7 @@ html {
 }
 
 .g-sd {
-  width: 200px;
+  width: 250px;
   background-color: $bg-color-dark;
   z-index: 1;
 
@@ -59,11 +59,11 @@ html {
 
 .g-mn {
   _position: relative;
-  left: 200px;
+  left: 250px;
   right: 0;
   _top: 0;
   _left: 0;
-  _margin-left: 200px;
+  _margin-left: 250px;
   background-color: #f0f3f4;
 }
 
@@ -74,7 +74,7 @@ html {
   box-sizing: border-box;
   bottom: 0;
   height: 30px;
-  padding-left: 200px;
+  padding-left: 250px;
   background-color: $bg-color-light;
   z-index: 0;
   color: #999;
@@ -92,7 +92,7 @@ html {
       position: relative;
       margin-right: 0;
       height: auto;
-      width: 200px;
+      width: 250px;
       padding: 0 20px;
       font-size: 18px;
       font-weight: 700;
