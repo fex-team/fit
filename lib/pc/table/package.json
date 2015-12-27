@@ -1,6 +1,6 @@
 {
   "name": "fit-table",
-  "version": "1.0.15",
+  "version": "1.0.17",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -14,12 +14,12 @@
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
-    "fit-button": "^1.1.20",
-    "fit-checkbox": "^1.0.14",
-    "fit-input": "^1.0.3",
-    "fit-pagination": "^1.0.9",
-    "fit-radio": "^1.0.3",
-    "fit-style": "^1.0.14",
-    "fit-modal": "^1.0.0"
+    "fit-button": "^1.1.27",
+    "fit-checkbox": "^1.0.21",
+    "fit-input": "^1.0.14",
+    "fit-pagination": "^1.0.15",
+    "fit-radio": "^1.0.9",
+    "fit-style": "^1.0.22",
+    "fit-modal": "^1.0.5"
   }
 }
