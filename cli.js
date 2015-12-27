@@ -139,7 +139,7 @@ switch (args[0]) {
         if (!moduleType && !moduleName) {
             publishModules(pcModules.concat(webModules).concat(nativeModules))
         }
-        else if (moduleType) {
+        else if (moduleType && !moduleName) {
             publishModules(moduleGlobal[moduleType + 'Modules'])
         }
         else if (moduleType && moduleName) {
@@ -494,11 +494,17 @@ function publishModules (modules) {
 
                 childInstance.on('close', onClose)
 
+                childInstance.stderr.on('data', onError)
+
                 runChildInstance.push(childInstance)
             }
             else if (!runChildInstance.length) {
                 resolve()
             }
+        }
+
+        function onError (data) {
+            console.error(data.toString())
         }
 
         if (modules.length > cpus.length) {
@@ -515,6 +521,8 @@ function publishModules (modules) {
                 runChildInstance.push(childInstance)
 
                 childInstance.on('close', onClose)
+
+                childInstance.stderr.on('data', onError)
             }
         }
         else {
@@ -531,6 +539,8 @@ function publishModules (modules) {
                 })
 
                 childInstance.on('close', onClose.bind(childInstance, modulePath))
+
+                childInstance.stderr.on('data', onError)
             }
         }
     })
