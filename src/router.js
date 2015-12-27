@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route, IndexRoute, Redirect} from 'react-router'
+import { Router, Route, IndexRoute, Redirect } from 'react-router'
 
 import Layout from './layout'
 import Home from './home'
@@ -19,6 +19,8 @@ import MenuComponent from './components/pc/menu'
 import ModalComponent from './components/pc/modal'
 import MessageComponent from './components/pc/message'
 import CaptchaComponent from './components/pc/captcha'
+import CollapseComponent from './components/pc/collapse'
+import TabsComponent from './components/pc/tabs'
 
 import MobileColor from './components/mobile/color'
 
@@ -58,6 +60,10 @@ const MainRouter = (
                    component={MessageComponent}/>
             <Route path="captcha"
                    component={CaptchaComponent}/>
+            <Route path="collapse"
+                   component={CollapseComponent}/>
+            <Route path="tabs"
+                   component={TabsComponent}/>
         </Route>
         <Route path="/mobile"
                component={Layout}>

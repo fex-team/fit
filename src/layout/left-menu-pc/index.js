@@ -116,6 +116,7 @@ export default class Layout extends React.Component {
         let MenuShow = menuFactory(menuShow)
         let MenuTable = menuFactory(menuForm)
         let MenuTieba = menuFactory(menuTieba)
+        let MenuNavigation = menuFactory(menuNavigation)
 
         return (
             <div className="_namespace">
@@ -126,7 +127,7 @@ export default class Layout extends React.Component {
                 <div className="title">表单</div>
                 {MenuTable}
                 <div className="title">导航</div>
-                {menuNavigation}
+                {MenuNavigation}
                 <div className="title">贴吧内部</div>
                 {MenuTieba}
             </div>
