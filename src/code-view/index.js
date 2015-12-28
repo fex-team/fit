@@ -1,10 +1,8 @@
 import React from 'react'
 import Highlight from 'react-highlight'
-import { Collapse } from 'antd'
+import { Collapse, CollPanel } from 'fit-collapse'
 import marked from 'marked'
 import './index.scss'
-
-const Panel = Collapse.Panel
 
 export default class Layout extends React.Component {
     constructor(props) {
@@ -46,13 +44,13 @@ export default class Layout extends React.Component {
                     <div className="example-container">
                         {this.props.children}
                     </div>
-                    <div className="code">
+                    <div className="code custom">
                         <Collapse onChange={this.handleCollapseChange.bind(this)}>
-                            <Panel header={title[1]}>
+                            <CollPanel style={{padding:'0 10px'}} header={title[1]}>
                                 <div className="description"
                                      dangerouslySetInnerHTML={{__html: marked(content)}}></div>
                                 {codeDetail ? codeDetail : null}
-                            </Panel>
+                            </CollPanel>
                         </Collapse>
                     </div>
                 </div>

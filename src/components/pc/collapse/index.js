@@ -9,15 +9,15 @@ import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import basicCode from 'text!./demo/basic.js'
 import basicMarkdown from './demo/basic.md'
 
-import Callback from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/callback.js'
-import callbackCode from 'text!./demo/callback.js'
-import callbackMarkdown from './demo/callback.md'
+import Accordion from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/accordion.js'
+import accordionCode from 'text!./demo/accordion.js'
+import accordionMarkdown from './demo/accordion.md'
 
 const colStyle = {
     padding: 10
 }
 
-export default class Layout extends React.Component {
+export default class CollapseExamples extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -40,9 +40,9 @@ export default class Layout extends React.Component {
 
                     <Col style={colStyle}
                          span="12">
-                        <CodeView md={callbackMarkdown}
-                                  code={callbackCode}>
-                            <Callback/>
+                        <CodeView md={accordionMarkdown}
+                                  code={accordionCode}>
+                            <Accordion/>
                         </CodeView>
                     </Col>
                 </Row>
