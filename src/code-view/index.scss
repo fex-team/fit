@@ -2,7 +2,7 @@
   border: 1px solid #eee;
   background: white;
   .example-container {
-    padding: 15px;
+    padding: 15px 0;
   }
   .description {
     code {
@@ -23,18 +23,20 @@
   }
 }
 
-// reset antd
-.ant-collapse {
-  border-radius: 0;
-}
+// reset
+.custom {
+  .container {
+    padding: 0;
+  }
 
-.ant-collapse {
-  border: none;
-  background-color: white;
-}
+  .panel-default {
+    border: none;
+  }
 
-.ant-collapse-content > .ant-collapse-content-box {
-  padding-top: 0;
+  .panel-heading {
+    border: none;
+    background-color: white;
+  }
 }
 
 ul, ol {

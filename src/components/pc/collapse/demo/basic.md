@@ -1,5 +1,8 @@
 # 基本用法
 
-`label` 设置标题, `labelWidth` 设置标题的宽度,例如 `labelWidth="100"`
+`defaultActiveKey` 设置默认展开的key,传参为数组时可以默认展开多个,`onChange`是点击后回调,第一个参数为点击的key
 
-`addonLeft` 设置左侧小标题, `addonRight` 设置右侧小标题 
+`CollPanel`的参数有:
+
+- `header` 折叠面板标题
+- `key` 折叠面板标志符

@@ -40,10 +40,7 @@ export default class Layout extends React.Component {
 
                     <Col style={colStyle}
                          span="12">
-                        <CodeView md={callbackMarkdown}
-                                  code={callbackCode}>
-                            <Callback/>
-                        </CodeView>
+
                     </Col>
                 </Row>
 

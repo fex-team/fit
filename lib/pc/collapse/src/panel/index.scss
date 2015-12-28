@@ -1,0 +1,28 @@
+& {
+  background-color: #fff;
+  border: 1px solid #dee5e7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  &.panel-default:not(:first-child) {
+    border-top: none;
+  }
+}
+
+.panel-collapse {
+  transition: all .3s ease-in-out;
+  overflow: hidden;
+  height: 0;
+}
+
+.panel-heading {
+  border-color: #edf1f2;
+  padding: 10px;
+  background-color: #f6f8f8;
+  cursor: pointer;
+}
+
+.rotate-pre {
+  transition: all .3s;
+  &.rotate {
+    transform: rotate(90deg);
+  }
+}
