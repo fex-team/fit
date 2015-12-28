@@ -62,12 +62,11 @@ Usage:
     cli build    <type> <name>           编译模块
     cli clean    <type> <name>           清除 dist
     cli publish  <type> <name>           模块发布
-    cli push     <type> <name>           提交subtree
-    cli pull     <type> <name>           更新 subtree
+    cli push     <type> <name>           提交subtree (不可用)
+    cli pull     <type> <name>           更新 subtree (不可用)
     cli patch    <type> <name>           升级版本
-    cli add      <type> <name>           添加模块到 git remote
-    cli updatesubtree                    更新 subtree 分支列表
-    cli update   <type> <name>           集更新,清除,编译,发布,升级于一体的一键脚本
+    cli add      <type> <name>           添加模块到 git remote (不可用)
+    cli updatesubtree                    更新 subtree 分支列表 (beta)
 `
     )
     process.exit(1)
