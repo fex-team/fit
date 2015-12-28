@@ -2,7 +2,7 @@ import React from 'react'
 import './index.scss'
 import {Link} from 'react-router'
 import classnames from 'classnames'
-import { Row, Col } from 'antd'
+import { Row, Col } from 'fit-layout'
 
 const menuBase = [{
     title: '颜色',

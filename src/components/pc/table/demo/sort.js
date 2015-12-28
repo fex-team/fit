@@ -14,9 +14,10 @@ const info = {
         key: 'today',
         value: '今日数据'
     }],
-    onSort: (key)=> {
+    onSort: (key, type)=> {
         return {
-            'sort_by': key
+            'sort_by': key,
+            'type': type
         }
     },
     get: {

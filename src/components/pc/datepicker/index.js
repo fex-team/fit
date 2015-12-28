@@ -3,7 +3,7 @@ import CodeView from '../../../code-view'
 import Highlight from 'react-highlight'
 import Title from '../../title.js'
 import readme from './readme.md'
-import { Row, Col } from 'antd'
+import { Row, Col } from 'fit-layout'
 
 const colStyle = {
     padding: 10

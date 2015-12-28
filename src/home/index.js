@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'antd'
+import { Row, Col } from 'fit-layout'
 import marked from 'marked'
 import readme from '../../readme.md'
 

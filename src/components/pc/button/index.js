@@ -1,7 +1,7 @@
 import React from 'react'
 import CodeView from '../../../code-view/index'
 import Highlight from 'react-highlight'
-import { Row, Col } from 'antd'
+import { Row, Col } from 'fit-layout'
 import Title from '../../title.js'
 import readme from './readme.md'
 

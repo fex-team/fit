@@ -1,11 +1,11 @@
 import React from 'react'
-import Datepicker from 'fit-datepicker'
+import Captcha from 'fit-captcha'
 
-export default class DatepickerDemo extends React.Component {
+export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Datepicker/>
+                <Captcha/>
             </div>
         )
     }

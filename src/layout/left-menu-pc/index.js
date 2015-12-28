@@ -2,7 +2,7 @@ import React from 'react'
 import './index.scss'
 import {Link} from 'react-router'
 import classnames from 'classnames'
-import { Row, Col } from 'antd'
+import { Row, Col } from 'fit-layout'
 
 const menuBase = [{
     title: '全屏布局 Layouts',
@@ -27,10 +27,6 @@ const menuShow = [{
     path: '/pc/table',
     icon: 'table'
 }, {
-    title: '菜单 Menu',
-    path: '/pc/menu',
-    icon: 'bars'
-}, {
     title: '模态框 Modal',
     path: '/pc/modal',
     icon: 'list-alt'
@@ -38,6 +34,10 @@ const menuShow = [{
     title: '提示 Message',
     path: '/pc/message',
     icon: 'exclamation-circle'
+}, {
+    title: '折叠面板 Collapse',
+    path: '/pc/collapse',
+    icon: 'plus-square'
 }]
 
 const menuForm = [{
@@ -64,6 +64,16 @@ const menuForm = [{
     title: '日期 Datepiacker',
     path: '/pc/datepicker',
     icon: 'calendar'
+}]
+
+const menuNavigation = [{
+    title: '菜单 Menu',
+    path: '/pc/menu',
+    icon: 'bars'
+}, {
+    title: '标签页 Tabs',
+    path: '/pc/tabs',
+    icon: 'clone'
 }]
 
 const menuTieba = [{
@@ -106,6 +116,7 @@ export default class Layout extends React.Component {
         let MenuShow = menuFactory(menuShow)
         let MenuTable = menuFactory(menuForm)
         let MenuTieba = menuFactory(menuTieba)
+        let MenuNavigation = menuFactory(menuNavigation)
 
         return (
             <div className="_namespace">
@@ -115,7 +126,9 @@ export default class Layout extends React.Component {
                 {MenuShow}
                 <div className="title">表单</div>
                 {MenuTable}
-                <div className="title">贴吧专属</div>
+                <div className="title">导航</div>
+                {MenuNavigation}
+                <div className="title">贴吧内部</div>
                 {MenuTieba}
             </div>
         )

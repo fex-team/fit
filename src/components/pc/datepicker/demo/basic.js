@@ -1,11 +1,11 @@
 import React from 'react'
-import Datepicker from 'fit-datepicker'
+import { Calendar } from 'react-date-range'
 
 export default class DatepickerDemo extends React.Component {
     render() {
         return (
             <div>
-                <Datepicker/>
+                <Calendar/>
             </div>
         )
     }
