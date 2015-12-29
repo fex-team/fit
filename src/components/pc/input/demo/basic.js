@@ -5,7 +5,7 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Input/>
+                <Input width="150"/>
                 <Input label="姓名"
                        labelWidth={60}
                        style={{marginTop:10}}/>

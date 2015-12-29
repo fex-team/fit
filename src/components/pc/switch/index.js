@@ -21,6 +21,10 @@ import Size from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo
 import sizeCode from 'text!./demo/size.js'
 import sizeMarkdown from './demo/size.md'
 
+import Label from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/label.js'
+import labelCode from 'text!./demo/label.js'
+import labelMarkdown from './demo/label.md'
+
 const colStyle = {
     padding: 10
 }
@@ -49,6 +53,12 @@ export default class Layout extends React.Component {
                                   code={controlCode}
                                   style={{marginTop:10}}>
                             <Control/>
+                        </CodeView>
+
+                        <CodeView md={labelMarkdown}
+                                  code={labelCode}
+                                  style={{marginTop:10}}>
+                            <Label/>
                         </CodeView>
                     </Col>
 
