@@ -62,12 +62,11 @@ Usage:
     cli build    <type> <name>           编译模块
     cli clean    <type> <name>           清除 dist
     cli publish  <type> <name>           模块发布
-    cli push     <type> <name>           提交subtree
-    cli pull     <type> <name>           更新 subtree
+    cli push     <type> <name>           提交subtree (不可用)
+    cli pull     <type> <name>           更新 subtree (不可用)
     cli patch    <type> <name>           升级版本
-    cli add      <type> <name>           添加模块到 git remote
-    cli updatesubtree                    更新 subtree 分支列表
-    cli update   <type> <name>           集更新,清除,编译,发布,升级于一体的一键脚本
+    cli add      <type> <name>           添加模块到 git remote (不可用)
+    cli updatesubtree                    更新 subtree 分支列表 (beta)
 `
     )
     process.exit(1)
@@ -139,7 +138,7 @@ switch (args[0]) {
         if (!moduleType && !moduleName) {
             publishModules(pcModules.concat(webModules).concat(nativeModules))
         }
-        else if (moduleType) {
+        else if (moduleType && !moduleName) {
             publishModules(moduleGlobal[moduleType + 'Modules'])
         }
         else if (moduleType && moduleName) {
@@ -494,11 +493,17 @@ function publishModules (modules) {
 
                 childInstance.on('close', onClose)
 
+                childInstance.stderr.on('data', onError)
+
                 runChildInstance.push(childInstance)
             }
             else if (!runChildInstance.length) {
                 resolve()
             }
+        }
+
+        function onError (data) {
+            console.error(data.toString())
         }
 
         if (modules.length > cpus.length) {
@@ -515,6 +520,8 @@ function publishModules (modules) {
                 runChildInstance.push(childInstance)
 
                 childInstance.on('close', onClose)
+
+                childInstance.stderr.on('data', onError)
             }
         }
         else {
@@ -531,6 +538,8 @@ function publishModules (modules) {
                 })
 
                 childInstance.on('close', onClose.bind(childInstance, modulePath))
+
+                childInstance.stderr.on('data', onError)
             }
         }
     })

@@ -24,6 +24,8 @@ module.exports = {
         'fit-tabs': path.join(__dirname, 'lib/pc/tabs/src'),
         // mobile
         'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
-        'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src')
+        'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src'),
+        'fiten-bluekit': path.join(__dirname, 'lib/mobile/bluekit/web/src'),
+        'fiten-bluekit-native': path.join(__dirname, 'lib/mobile/bluekit/native/src')
     }
 }

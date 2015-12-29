@@ -8,6 +8,10 @@ const menuBase = [{
     title: '颜色',
     path: '/mobile/color',
     icon: 'columns'
+}, {
+    title: '顶部蓝条',
+    path: '/mobile/bluekit',
+    icon: 'bars'
 }]
 
 const menuFactory = (data)=> {
