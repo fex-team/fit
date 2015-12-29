@@ -25,7 +25,7 @@ fit-component 组件化开发流程，致力于打造一套先进的前端模块
 
 **使用gitlab进行版本控制**，代码地址：http://gitlab.baidu.com/groups/tb
 
-## 初始化 (在 http://gitlab.baidu.com/groups/tb 新建一个项目)
+### 初始化 (在 http://gitlab.baidu.com/groups/tb 新建一个项目)
 
 ```bash
 $ git clone http://gitlab.baidu.com/tb/your-project.git
