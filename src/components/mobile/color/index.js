@@ -32,7 +32,6 @@ import Button from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./de
 import ButtonCode from 'text!./demo/button.js'
 import ButtonMarkdown from './demo/button.md'
 
-
 const colStyle = {
     padding: 10
 }
@@ -50,7 +49,7 @@ export default class Layout extends React.Component {
                 <Title>{readme}</Title>
 
                 <Row>
-                    <Col span="18"
+                    <Col span="22"
                          style={colStyle}>
                         <CodeView md={basicMarkdown}
                                   code={basicCode}>
@@ -60,14 +59,14 @@ export default class Layout extends React.Component {
 
                 </Row>
                 <Row>
-                    <Col span="18" style={colStyle}>
+                    <Col span="22" style={colStyle}>
                         <CodeView md={NightMarkdown} code={NightCode}>
                             <Night />
                         </CodeView>
                     </Col>
                 </Row>
                 <Row>
-                    <Col span="18" style={colStyle}>
+                    <Col span="22" style={colStyle}>
                         <CodeView md={CarrierMarkdown}
                                   code={CarrierCode}>
                             <Carrier />
@@ -75,7 +74,7 @@ export default class Layout extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col span="18" style={colStyle}>
+                    <Col span="22" style={colStyle}>
                         <CodeView md={NightCarrierMarkdown}
                                   code={NightCarrierCode}>
                             <NightCarrier />
@@ -83,7 +82,7 @@ export default class Layout extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col span="18" style={colStyle}>
+                    <Col span="22" style={colStyle}>
                         <CodeView md={AssitMarkdown}
                                   code={AssitCode}>
                             <Assit />
@@ -92,7 +91,7 @@ export default class Layout extends React.Component {
                 </Row>
 
                 <Row>
-                    <Col span="18" style={colStyle}>
+                    <Col span="22" style={colStyle}>
                         <CodeView md={NightAssitMarkdown}
                                   code={NightAssitCode}>
                             <NightAssit />
@@ -100,7 +99,7 @@ export default class Layout extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col span="18" style={colStyle}>
+                    <Col span="22" style={colStyle}>
                         <CodeView md={ButtonMarkdown}
                                   code={ButtonCode}>
                             <Button />
