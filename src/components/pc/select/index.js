@@ -21,6 +21,10 @@ import Label from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import labelCode from 'text!./demo/label.js'
 import labelMarkdown from './demo/label.md'
 
+import Simple from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/simple.js'
+import simpleCode from 'text!./demo/simple.js'
+import simpleMarkdown from './demo/simple.md'
+
 const colStyle = {
     padding: 10
 }
@@ -45,6 +49,10 @@ export default class Layout extends React.Component {
 
                         <CodeView md={searchMarkdown} code={searchCode} style={{marginTop:10}}>
                             <Search/>
+                        </CodeView>
+
+                        <CodeView md={simpleMarkdown} code={simpleCode} style={{marginTop:10}}>
+                            <Simple/>
                         </CodeView>
                     </Col>
 

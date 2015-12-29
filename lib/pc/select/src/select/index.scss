@@ -21,3 +21,18 @@
     color: #f05050;
   }
 }
+
+.chosen-container {
+  cursor: pointer;
+}
+
+// 极简模式
+.simple {
+  .chosen-single {
+    border: none !important;
+    box-shadow:none !important;
+  }
+  .chosen-drop{
+    border: none !important;
+  }
+}

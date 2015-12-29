@@ -15,8 +15,8 @@ fit-component 组件化开发流程，致力于打造一套先进的前端模块
 
 ### 环境要求
 
-+ node v4.x
-+ fis3 v3.3.9
++ node `v4.x`
++ fis3 `v3.3.9`
 + webpack
 
 针对 windows 机器 npm install 出现 node-gyp安装出错的情况请安装 node-gyp[这里](https://github.com/nodejs/node-gyp)
@@ -33,25 +33,38 @@ $ cd your-project
 $ fis3 init gitlab:tb-component/scaffold
 ```
 
-Run `npm install`? n
-Run `fis install`? y
-Run `.build.sh`?   y
+`Run npm install`? n
+
+`Run fis install`? y
+
+`Run .build.sh`?   y
 
 ### 运行 & 预览
 
-```bash
 #### 本机开发模式
+
+```bash
 $ npm start
+```
 
 #### 本机开发模式 (webpack版,打开8090开发)
+
+```bash
 $ npm run webpack
+```
 
 #### 沙盒开发
+
+```bash
 $ npm run dev
+```
 
 #### 沙盒开发，开启压缩与预览 (与上线编译一样,用于qa测试)
+
+```bash
 $ npm run preview
 ```
+
 
 ### 上线
 
