@@ -34,9 +34,9 @@ fit-component 组件化开发流程，致力于打造一套先进的前端模块
 
 ### 环境要求
 
-+ node
++ node v4.x
++ fis3 v3.3.9
 + webpack
-+ 支持 node-gyp
 
 针对 windows 机器 npm install 出现 node-gyp安装出错的情况请安装 node-gyp[这里](https://github.com/nodejs/node-gyp)
 
@@ -44,51 +44,33 @@ fit-component 组件化开发流程，致力于打造一套先进的前端模块
 
 **使用gitlab进行版本控制**，代码地址：http://gitlab.baidu.com/groups/tb
 
-在已有的模块中进行开发，无论是修改还是新增子模块，先clone代码到本地（下面以captcha模块为例）
+## 初始化 (在 http://gitlab.baidu.com/groups/tb 新建一个项目)
 
-````
-git clone http://gitlab.baidu.com/tb/captcha.git # 替换项目地址为你的项目地址
-cd captcha
-git clone http://gitlab.baidu.com/tb-component/build.git _build 
-````
-
-再安装编译所需的`npm`依赖包
-
-````
-npm install
-````
-
-没有代理的同学可以添加参数`--registry=https://registry.npm.taobao.org`，从淘宝的npm镜像进行安装
-
-最后，需要配置项目信息，修改 `deploy-conf.js` 文件中配置项：
-
-- host: 沙盒地址
-- modName: 模块名，此项目为captcha
-- webpackProject: 需要打包的项目名，一个project下面可能存放多个子项目，这个字段标识了当前打包哪一个项目。参数名需要与`src/项目名`中 『项目名』 一致
-
-然后执行
-
-```
-npm start
+```bash
+$ git clone http://gitlab.baidu.com/tb/your-project.git
+$ cd your-project
+$ fis3 init gitlab:tb-component/scaffold
 ```
 
-就可以本地开发了：
+Run `npm install`? n
+Run `fis install`? y
+Run `.build.sh`?   y
 
-本地开发需要占用8080和8090端口，被占用的话，请到_build/server.js 和 _build/webpack.js 更改所有的8080和8090
+### 运行 & 预览
 
-对于某些可能出现 npm start 依然失败的情况，请开2个命令行窗口，并分别运行 node _build/server.js 和 node _build/wepack.js
+```bash
+#### 本机开发模式
+$ npm start
 
-- node版本 4+
-- 打开 localhost:8090 进行调试（小甜点：支持代码热更新）
-- 因为mac权限问题，本地server端口开在高位的8080，webpack服务开在8090并代理到8080端口
+#### 本机开发模式 (webpack版,打开8090开发)
+$ npm run webpack
 
-### 部署到沙盒
+#### 沙盒开发
+$ npm run dev
 
-联调的时候需要将代码部署到沙盒，执行下面一条命令即可：
-
-````
-npm run build
-````
+#### 沙盒开发，开启压缩与预览 (与上线编译一样,用于qa测试)
+$ npm run preview
+```
 
 ### 上线
 
@@ -106,9 +88,13 @@ git push origin master
 
 这时候hi群里的机器人会发来一条消息，告诉你同步成功，并给出一条agile链接，进入以后点击右侧的发布就可以发布代码了，然后就可以orp上线了。
 
-### 新建模块
+### 旧项目如何维护
 
-[新模块如何初始化](doc/newProject.md)
+````
+$ npm install
+````
+
+之后流程见 运行 & 预览
 
 ### 代码结构
 

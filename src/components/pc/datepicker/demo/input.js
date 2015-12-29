@@ -1,5 +1,5 @@
 import React from 'react'
-import { DateRange } from 'fit-datepicker'
+import { DateInput } from 'fit-datepicker'
 
 export default class Demo extends React.Component {
     handleChange(date) {
@@ -9,7 +9,7 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <DateRange onChange={this.handleChange.bind(this)}/>
+                <DateInput onChange={this.handleChange.bind(this)}/>
             </div>
         )
     }
