@@ -195,7 +195,7 @@ function htmlPathLoader (jspaths) {
 
 function parseEs6 (jsPaths) {
     jsPaths.forEach((filepath) => {
-        let jsFile = fs.readFileSync(filepath).toString().replace('.scss', '.css')
+        let jsFile = fs.readFileSync(filepath).toString().replace(/\.scss/g, '.css')
 
         let result = babel.transform(jsFile, {
             extends: path.resolve(__dirname, '.babelrc')

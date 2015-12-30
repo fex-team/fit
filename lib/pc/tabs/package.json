@@ -1,6 +1,6 @@
 {
   "name": "fit-tabs",
-  "version": "0.1.20",
+  "version": "0.1.23",
   "description": "tbas",
   "main": "dist/index.js",
   "scripts": {

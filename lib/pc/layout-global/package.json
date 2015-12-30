@@ -1,6 +1,6 @@
 {
   "name": "fit-layout-global",
-  "version": "0.1.46",
+  "version": "0.1.49",
   "description": "全局布局",
   "main": "lib/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "dependencies": {
     "jquery": "^2.1.4",
     "redux": "^3.0.5",
-    "fit-style": "^1.0.45"
+    "fit-style": "^1.0.48"
   },
   "peerDependencies": {
     "redux": "^3.0.5"
