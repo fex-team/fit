@@ -1,6 +1,6 @@
 {
   "name": "fiten-bluekit",
-  "version": "0.1.10",
+  "version": "0.1.12",
   "description": "mobile bluekit",
   "main": "dist/index.js",
   "scripts": {

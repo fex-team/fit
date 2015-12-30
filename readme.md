@@ -65,7 +65,6 @@ $ npm run dev
 $ npm run preview
 ```
 
-
 ### 上线
 
 ````
@@ -81,6 +80,13 @@ git push origin master
 对，这是提交代码到master分支，因为项目集成了fisCI钩子，会自动同步到svn主干并在agile平台执行编译。
 
 这时候hi群里的机器人会发来一条消息，告诉你同步成功，并给出一条agile链接，进入以后点击右侧的发布就可以发布代码了，然后就可以orp上线了。
+
+### 额外
+
+#### 将项目打包成一个文件,可以直接发给rd运行(index.html + index.jsx)
+```
+$ npm run bundle
+```
 
 ### 旧项目如何维护
 
