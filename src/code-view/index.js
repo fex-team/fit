@@ -2,6 +2,7 @@ import React from 'react'
 import Highlight from 'react-highlight'
 import { Collapse, CollPanel } from 'fit-collapse'
 import marked from 'marked'
+
 import './index.scss'
 
 export default class Layout extends React.Component {

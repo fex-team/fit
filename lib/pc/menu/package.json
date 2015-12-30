@@ -1,8 +1,8 @@
 {
   "name": "fit-menu",
-  "version": "1.0.39",
+  "version": "1.0.50",
   "description": "",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
-    "fit-style": "^1.0.37"
+    "fit-style": "^1.0.48"
   }
 }

@@ -1,8 +1,8 @@
 {
   "name": "fit-table",
-  "version": "1.0.40",
+  "version": "1.0.42",
   "description": "",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,12 +14,12 @@
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
-    "fit-button": "^1.1.43",
-    "fit-checkbox": "^1.0.35",
-    "fit-input": "^1.0.28",
-    "fit-pagination": "^1.0.29",
-    "fit-radio": "^1.0.23",
-    "fit-style": "^1.0.37",
-    "fit-modal": "^1.0.19"
+    "fit-button": "^1.1.54",
+    "fit-checkbox": "^1.0.46",
+    "fit-input": "^1.0.39",
+    "fit-pagination": "^1.0.40",
+    "fit-radio": "^1.0.34",
+    "fit-style": "^1.0.48",
+    "fit-modal": "^1.0.30"
   }
 }

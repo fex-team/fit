@@ -1,4 +1,4 @@
 node_modules
 .idea
-dist
+lib/**/lib
 npm-debug.log

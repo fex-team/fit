@@ -1,8 +1,8 @@
 {
   "name": "fit-input",
-  "version": "1.0.28",
+  "version": "1.0.39",
   "description": "输入框",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,6 @@
     "classnames": "^2.2.1",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
-    "fit-style": "^1.0.37"
+    "fit-style": "^1.0.48"
   }
 }

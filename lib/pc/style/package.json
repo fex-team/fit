@@ -1,8 +1,8 @@
 {
   "name": "fit-style",
-  "version": "1.0.37",
+  "version": "1.0.48",
   "description": "",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

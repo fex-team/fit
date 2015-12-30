@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var path = require('path')
 var resolve = require('./resolve.js')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var _ = require('lodash')
 var fs = require('fs')
 var args = process.argv.slice(2)
@@ -75,8 +76,8 @@ webpack({
         'jquery': true,
         'classnames': true,
         'lodash': true,
-        'bootstrap/dist/css/bootstrap.css': true,
-        'font-awesome/css/font-awesome.css': true,
+//        'bootstrap/dist/css/bootstrap.css': true,
+//        'font-awesome/css/font-awesome.css': true,
         'bootstrap': true,
         'react-router': true,
         'flux': true,
@@ -90,13 +91,11 @@ webpack({
                 exclude: /node_modules/,
                 loaders: ['babel?presets[]=react,presets[]=es2015', 'html-path-loader']
             }, {
-                test: /\.(scss|css)/,
-                exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
-                loaders: ['style', 'css', 'autoprefixer', 'sass', 'css-path-loader']
+                test: /\.(css)$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             }, {
-                test: /\.(scss|css)/,
-                include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
-                loaders: ['style', 'css', 'autoprefixer', 'sass']
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
             }, {
                 test: /\.(png|jpg)$/,
                 exclude: /node_modules/,
@@ -109,6 +108,10 @@ webpack({
                 loader: 'json-loader'
             }
         ]
-    }
+    },
+
+    plugins: [
+        new ExtractTextPlugin('style.css')
+    ]
 }, function (err, stats) {
 })
