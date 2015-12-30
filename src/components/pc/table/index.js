@@ -68,6 +68,12 @@ import Responsive from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!
 import responsiveCode from 'text!./demo/responsive.js'
 import responsiveMarkdown from './demo/responsive.md'
 
+import Outside from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/outside.js'
+import outsideCode from 'text!./demo/outside.js'
+import outsideMarkdown from './demo/outside.md'
+
+console.log(Outside)
+
 const colStyle = {
     padding: 10
 }
@@ -167,6 +173,11 @@ export default class Layout extends React.Component {
                                   code={responsiveCode}
                                   style={{marginTop:10}}>
                             <Responsive/>
+                        </CodeView>
+
+                        <CodeView md={outsideMarkdown}
+                                  code={outsideCode}>
+                            <Outside />
                         </CodeView>
                     </Col>
                 </Row>

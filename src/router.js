@@ -23,7 +23,6 @@ import CollapseComponent from './components/pc/collapse'
 import TabsComponent from './components/pc/tabs'
 
 import MobileColor from './components/mobile/color'
-import MobileBluekit from './components/mobile/bluekit'
 
 const MainRouter = (
     <Router>
@@ -71,8 +70,6 @@ const MainRouter = (
             <IndexRoute component={Home}/>
             <Route path="color"
                    component={MobileColor} />
-            <Route path="bluekit"
-                   component={MobileBluekit}/>
         </Route>
     </Router>
 )
