@@ -20,6 +20,7 @@
     "fit-pagination": "^1.0.17",
     "fit-radio": "^1.0.11",
     "fit-style": "^1.0.25",
-    "fit-modal": "^1.0.7"
+    "fit-modal": "^1.0.7",
+
   }
 }

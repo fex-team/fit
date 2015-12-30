@@ -230,8 +230,17 @@ function getProjectStatus () {
         output = output.filter((value, index) => {
             return subReg.test(value)
         }).map((value) => {
-            value = value.split('/').slice(0, -1).join('/')
-            return path.resolve(__dirname, value)
+            let mobileReg = /^lib\/mobile/
+            let pcReg = /^lib\/pc/
+
+            if (mobileReg.test(value)) {
+                let directory = value.split('/').slice(0, 4).join('/')
+                return path.resolve(__dirname, directory)
+            }
+            else if (pcReg.test(value)) {
+                let directory = value.split('/').slice(0, 3).join('/')
+                return path.resolve(__dirname, directory)
+            }
         })
 
         return output
