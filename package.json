@@ -10,7 +10,7 @@
   "scripts": {
     "server": "node server.js",
     "webpack-dev": "node webpack.js",
-    "webpack-dist": "webpack -p --profile --display-modules --config webpack.config.js",
+    "webpack-dist": "webpack --profile --display-modules --optimize-minimize --optimize-occurence-order --optimize-dedupe --config webpack.config.js",
     "cdn": "webpack -p --profile --config webpack.config.cdn.js",
     "start": "npm run cdn && npm run server & npm run webpack-dev",
     "build": "npm run cdn && npm run webpack-dist",
