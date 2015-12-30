@@ -1,8 +1,8 @@
 {
   "name": "fit-radio",
-  "version": "1.0.21",
+  "version": "1.0.31",
   "description": "单选框",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "react": "^0.14.3",
-    "fit-button": "^1.1.41",
-    "fit-style": "^1.0.35"
+    "fit-button": "^1.1.51",
+    "fit-style": "^1.0.45"
   }
 }

@@ -18,7 +18,7 @@ var moduleGlobal = {}
 
 var pcModules = moduleGlobal.pcModules = fs.readdirSync('./lib/pc').filter((name) => {
     return name.substring(0, 1) !== '.'
-}).map((module, index) => {
+}).map((module, index)  => {
     return path.resolve(__dirname, 'lib', 'pc', module)
 })
 
@@ -113,8 +113,8 @@ switch (args[0]) {
 //            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
         }
         else if (moduleType && !moduleName) {
-//            patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules))
-            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
+            patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules))
+//            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
         }
         else if (moduleType && moduleName) {
             patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules))
@@ -331,8 +331,9 @@ function cleanModulesSync (modules) {
 
     for (var modulePath of modules) {
         try {
-            execSync('rm -r ' + path.resolve(modulePath, 'dist'))
-            console.log('INFO: ', 'Remove ' + modulePath + ' dist')
+            execSync('rm -r ' + path.resolve(modulePath, 'lib'))
+            execSync('rm ' + path.resolve(modulePath, 'npm-debug.log'))
+            console.log('INFO: ', 'Remove ' + modulePath + ' lib')
         }
         catch (e) {}
     }
@@ -341,6 +342,7 @@ function cleanModulesSync (modules) {
 function buildModules (modules) {
     return new Promise((resolve, reject) => {
         var moduleCopy = _.cloneDeep(modules)
+
         var cpus = os.cpus()
         var runChildInstance = []
         process.chdir(root)
@@ -351,7 +353,7 @@ function buildModules (modules) {
             _.pull(runChildInstance, this)
 
             if (modulePath) {
-                let childInstance = spawn('node', ['webpack.publish.js', modulePath])
+                let childInstance = spawn('node', ['build.js', modulePath])
                 runChildInstance.push(childInstance)
 
                 childInstance.on('close', onClose.bind(childInstance, modulePath))
@@ -368,7 +370,10 @@ function buildModules (modules) {
         if (modules.length > cpus.length) {
             for (let cpu of cpus) {
                 let modulePath = moduleCopy.pop()
-                let childInstance = spawn('node', ['webpack.publish.js', modulePath])
+                let childInstance = spawn('node', ['build.js', modulePath])
+                childInstance.stderr.on('data', (err) => {
+                    console.log(err.toString())
+                })
                 runChildInstance.push(childInstance)
 
                 childInstance.on('close', onClose.bind(childInstance, modulePath))
@@ -377,7 +382,7 @@ function buildModules (modules) {
         else {
             for (let module of modules) {
                 let modulePath = moduleCopy.pop()
-                let childInstance = spawn('node', ['webpack.publish.js', modulePath])
+                let childInstance = spawn('node', ['build.js', modulePath])
 
                 runChildInstance.push(childInstance)
 
