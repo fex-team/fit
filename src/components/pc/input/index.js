@@ -13,6 +13,10 @@ import Callback from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./
 import callbackCode from 'text!./demo/callback.js'
 import callbackMarkdown from './demo/callback.md'
 
+import Disabled from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/disabled.js'
+import disabledCode from 'text!./demo/disabled.js'
+import disabledMarkdown from './demo/disabled.md'
+
 const colStyle = {
     padding: 10
 }
@@ -43,6 +47,12 @@ export default class Layout extends React.Component {
                         <CodeView md={callbackMarkdown}
                                   code={callbackCode}>
                             <Callback/>
+                        </CodeView>
+
+                        <CodeView md={disabledMarkdown}
+                                  code={disabledCode}
+                                  style={{marginTop:10}}>
+                            <Disabled/>
                         </CodeView>
                     </Col>
                 </Row>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Calendar } from 'react-date-range'
+import Calendar from 'fit-datepicker'
 
 export default class Demo extends React.Component {
     handleChange(date) {

@@ -26,6 +26,10 @@ import Custom from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./de
 import customCode from 'text!./demo/custom.js'
 import customMarkdown from './demo/custom.md'
 
+import Label from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/label.js'
+import labelCode from 'text!./demo/label.js'
+import labelMarkdown from './demo/label.md'
+
 const colStyle = {
     padding: 10
 }
@@ -74,6 +78,12 @@ export default class Layout extends React.Component {
                                   code={disableCode}
                                   style={{marginTop:10}}>
                             <Disable/>
+                        </CodeView>
+
+                        <CodeView md={labelMarkdown}
+                                  code={labelCode}
+                                  style={{marginTop:10}}>
+                            <Label/>
                         </CodeView>
                     </Col>
                 </Row>

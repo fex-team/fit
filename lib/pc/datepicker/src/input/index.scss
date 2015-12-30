@@ -1,0 +1,20 @@
+& {
+  position: relative;
+  .addon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .calendar-container {
+    position: absolute;
+    left: 0;
+    border: 1px solid #dee5e7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    &.top {
+      top: -303px;
+    }
+    &.bottom {
+      top: 34px;
+    }
+  }
+}

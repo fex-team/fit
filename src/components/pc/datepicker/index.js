@@ -17,6 +17,14 @@ import Range from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import rangeCode from 'text!./demo/range.js'
 import rangeMarkdown from './demo/range.md'
 
+import Toolbar from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/toolbar.js'
+import toolbarCode from 'text!./demo/toolbar.js'
+import toolbarMarkdown from './demo/toolbar.md'
+
+import Input from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/input.js'
+import inputCode from 'text!./demo/input.js'
+import inputMarkdown from './demo/input.md'
+
 export default class Datepicker extends React.Component {
     constructor(props) {
         super(props)
@@ -37,6 +45,14 @@ export default class Datepicker extends React.Component {
 
                         <CodeView md={rangeMarkdown} code={rangeCode} style={{marginTop:10}}>
                             <Range />
+                        </CodeView>
+
+                        <CodeView md={toolbarMarkdown} code={toolbarCode} style={{marginTop:10}}>
+                            <Toolbar />
+                        </CodeView>
+
+                        <CodeView md={inputMarkdown} code={inputCode} style={{marginTop:10}}>
+                            <Input />
                         </CodeView>
                     </Col>
                 </Row>

@@ -1,0 +1,23 @@
+{
+  "name": "fiten-bluekit",
+  "version": "0.1.8",
+  "description": "mobile bluekit",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.baidu.com/tb-component/mobile-bluekit"
+  },
+  "keywords": [
+    "tieba"
+  ],
+  "author": "tieba",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-native-web": "0.0.13"
+  }
+}

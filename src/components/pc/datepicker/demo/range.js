@@ -1,7 +1,7 @@
 import React from 'react'
-import { DateRange } from 'react-date-range'
+import { DateRange } from 'fit-datepicker'
 
-export default class formatDemo extends React.Component {
+export default class Demo extends React.Component {
     handleChange(date) {
         console.log(date.startDate.format('YYYY MM DD'), date.endDate.format('YYYY MM DD'))
     }
