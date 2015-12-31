@@ -104,6 +104,10 @@ function outputDist(moduleRoot, src, dist) {
 
 function cssPathLoader(scsspaths) {
     scsspaths.forEach((filepath) => {
+        if (filepath.indexOf('mixins.scss') > 0) {
+            return
+        }
+
         let source = fs.readFileSync(filepath).toString()
 
         var global = parseCss(source)
@@ -140,11 +144,11 @@ function cssPathLoader(scsspaths) {
 
 function parseSass(scsspaths) {
     scsspaths.forEach((scsspath) => {
-        let scssFile = fs.readFileSync(scsspath).toString()
         let cssPath = scsspath.replace('.scss', '.css')
 
         let result = sass.renderSync({
-            file: scsspath
+            file: scsspath,
+            sourceMap: true,
         }).css.toString()
 
         postcss([autoprefixer])
