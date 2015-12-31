@@ -33,7 +33,7 @@ export default class Datepicker extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        document.title = '日期'
+        document.title = '日期选择'
     }
 
     render() {

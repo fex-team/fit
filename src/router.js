@@ -21,12 +21,14 @@ import MessageComponent from './components/pc/message'
 import CaptchaComponent from './components/pc/captcha'
 import CollapseComponent from './components/pc/collapse'
 import TabsComponent from './components/pc/tabs'
+import TimepickerComponent from './components/pc/timepicker'
 
 import MobileColor from './components/mobile/color'
 
 const MainRouter = (
     <Router>
-        <Redirect from="/" to="pc"></Redirect>
+        <Redirect from="/"
+                  to="pc"></Redirect>
         <Route path="/pc"
                component={Layout}>
             <IndexRoute component={Home}/>
@@ -64,12 +66,14 @@ const MainRouter = (
                    component={CollapseComponent}/>
             <Route path="tabs"
                    component={TabsComponent}/>
+            <Route path="timepicker"
+                   component={TimepickerComponent}/>
         </Route>
         <Route path="/mobile"
                component={Layout}>
             <IndexRoute component={Home}/>
             <Route path="color"
-                   component={MobileColor} />
+                   component={MobileColor}/>
         </Route>
     </Router>
 )

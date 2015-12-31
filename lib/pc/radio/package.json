@@ -1,6 +1,6 @@
 {
   "name": "fit-radio",
-  "version": "1.0.34",
+  "version": "1.0.36",
   "description": "单选框",
   "main": "lib/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "react": "^0.14.3",
-    "fit-button": "^1.1.54",
-    "fit-style": "^1.0.48"
+    "fit-button": "^1.1.56",
+    "fit-style": "^1.0.50"
   }
 }
