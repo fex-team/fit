@@ -25,11 +25,15 @@ import Input from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import inputCode from 'text!./demo/input.js'
 import inputMarkdown from './demo/input.md'
 
+import ShowTime from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/show-time.js'
+import showTimeCode from 'text!./demo/show-time.js'
+import showTimeMarkdown from './demo/show-time.md'
+
 export default class Datepicker extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        document.title = '日期'
+        document.title = '日期选择'
     }
 
     render() {
@@ -38,21 +42,35 @@ export default class Datepicker extends React.Component {
                 <Title>{readme}</Title>
 
                 <Row>
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={basicMarkdown} code={basicCode}>
+                    <Col span="24"
+                         style={colStyle}>
+                        <CodeView md={basicMarkdown}
+                                  code={basicCode}>
                             <Basic />
                         </CodeView>
 
-                        <CodeView md={rangeMarkdown} code={rangeCode} style={{marginTop:10}}>
+                        <CodeView md={rangeMarkdown}
+                                  code={rangeCode}
+                                  style={{marginTop:10}}>
                             <Range />
                         </CodeView>
 
-                        <CodeView md={toolbarMarkdown} code={toolbarCode} style={{marginTop:10}}>
+                        <CodeView md={toolbarMarkdown}
+                                  code={toolbarCode}
+                                  style={{marginTop:10}}>
                             <Toolbar />
                         </CodeView>
 
-                        <CodeView md={inputMarkdown} code={inputCode} style={{marginTop:10}}>
+                        <CodeView md={inputMarkdown}
+                                  code={inputCode}
+                                  style={{marginTop:10}}>
                             <Input />
+                        </CodeView>
+
+                        <CodeView md={showTimeMarkdown}
+                                  code={showTimeCode}
+                                  style={{marginTop:10}}>
+                            <ShowTime />
                         </CodeView>
                     </Col>
                 </Row>

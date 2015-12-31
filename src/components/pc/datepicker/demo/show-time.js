@@ -3,13 +3,6 @@ import { DateInput } from 'fit-datepicker'
 import Button from 'fit-button'
 
 export default class Demo extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            date: ''
-        }
-    }
-
     handleCalendarChange(date) {
         return date.format('YYYY-MM-DD')
     }
@@ -21,12 +14,6 @@ export default class Demo extends React.Component {
         }
     }
 
-    getDate() {
-        this.setState({
-            date: this.dateRangeRef.state.startDate
-        })
-    }
-
     render() {
         return (
             <div style={{display:'flex'}}>
@@ -35,13 +22,7 @@ export default class Demo extends React.Component {
                 <DateInput style={{marginLeft:10}}
                            type="dateRange"
                            width="300"
-                           ref={(ref)=>{
-                                this.dateRangeRef = ref
-                           }}
                            onChange={this.handleDateRangeChange.bind(this)}/>
-                <Button onClick={this.getDate.bind(this)}
-                        style={{marginLeft:10}}>获取日期</Button>
-                <span style={{marginLeft:10}}>{this.state.date}</span>
             </div>
         )
     }

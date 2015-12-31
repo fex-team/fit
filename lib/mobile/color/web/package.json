@@ -1,6 +1,6 @@
 {
   "name": "fiten-color",
-  "version": "1.0.16",
+  "version": "1.0.18",
   "description": "样式",
   "main": "dist/index.js",
   "scripts": {

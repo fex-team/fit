@@ -72,8 +72,6 @@ import Outside from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./d
 import outsideCode from 'text!./demo/outside.js'
 import outsideMarkdown from './demo/outside.md'
 
-console.log(Outside)
-
 const colStyle = {
     padding: 10
 }

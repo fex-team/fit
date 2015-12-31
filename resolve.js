@@ -22,6 +22,7 @@ module.exports = {
         'fit-captcha': path.join(__dirname, 'lib/pc/captcha/src'),
         'fit-collapse': path.join(__dirname, 'lib/pc/collapse/src'),
         'fit-tabs': path.join(__dirname, 'lib/pc/tabs/src'),
+        'fit-timepicker': path.join(__dirname, 'lib/pc/timepicker/src'),
         // mobile
         'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
         'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src'),

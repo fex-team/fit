@@ -61,7 +61,11 @@ const menuForm = [{
     path: '/pc/radio',
     icon: 'check-circle'
 }, {
-    title: '日期 Datepiacker',
+    title: '时间选择器 Timepicker',
+    path: '/pc/timepicker',
+    icon: 'clock-o'
+}, {
+    title: '日期选择器 Datepiacker',
     path: '/pc/datepicker',
     icon: 'calendar'
 }]

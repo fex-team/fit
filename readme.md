@@ -41,13 +41,13 @@ $ fis3 init gitlab:tb-component/scaffold
 
 ### 运行 & 预览
 
-#### 本机开发模式
+#### 本机开发模式 (fis3版,打开localhost:8080,编译速度快)
 
 ```bash
 $ npm start
 ```
 
-#### 本机开发模式 (webpack版,打开8090开发)
+#### 本机开发模式 (webpack版,打开localhost:8090,支持代码热更新)
 
 ```bash
 $ npm run webpack
@@ -65,7 +65,6 @@ $ npm run dev
 $ npm run preview
 ```
 
-
 ### 上线
 
 ````
@@ -81,6 +80,13 @@ git push origin master
 对，这是提交代码到master分支，因为项目集成了fisCI钩子，会自动同步到svn主干并在agile平台执行编译。
 
 这时候hi群里的机器人会发来一条消息，告诉你同步成功，并给出一条agile链接，进入以后点击右侧的发布就可以发布代码了，然后就可以orp上线了。
+
+### 额外
+
+#### 将项目打包成一个文件,可以直接发给rd运行(index.html + index.jsx)
+```
+$ npm run bundle
+```
 
 ### 旧项目如何维护
 
@@ -110,6 +116,8 @@ $ npm install
 4. 2015-12-14 删除control文件夹,并将入口php文件改为index.html,自动将script标签转化为php对应函数
 5. 2015-12-21 @学芝为贴吧重写了一套fis3编译脚本 http://gitlab.baidu.com/tb-component/build ,切换到fis集群编译,大大提高了编译效率
 6. 2015-12-25 贴吧react开发规范商讨完毕,一个git仓库即一个完整项目,仓库里不再有多个子项目（避免了以往项目文件夹过多,其他项目的无关依赖库过多,申请新模块延时等不必要的麻烦）,再次调整项目结构,支持本地开发（webpack或fis3任选）,沙盒开发（仅fis3）,上线编译三套完整开发方案,项目运行不再依赖bash脚本（windows也支持了）
+7. 2015-12-30 同时支持webpack编译,与fis3编译效果完全一样,支持代码热更新
+8. 2015-12-31 fis3项目上线流程跑通
 
 待续:
 
