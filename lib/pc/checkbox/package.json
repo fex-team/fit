@@ -1,6 +1,6 @@
 {
   "name": "fit-checkbox",
-  "version": "1.0.50",
+  "version": "1.1.0",
   "description": "多选框",
   "main": "lib/index.js",
   "scripts": {
@@ -11,6 +11,6 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "react": "^0.14.3",
-    "fit-style": "^1.0.55"
+    "fit-style": "^1.1.0"
   }
 }
