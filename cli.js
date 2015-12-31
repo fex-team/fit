@@ -47,9 +47,9 @@ else if (moduleName && (moduleType === 'web' || moduleType === 'native')) {
 }
 
 // 抓住未捕获的错误
-process.on('uncaughtException', function (err) {
-    console.error(err)
-})
+//process.on('uncaughtException', function (err) {
+//    console.error(err)
+//})
 
 if (args.length === 0) {
     console.error(
@@ -109,23 +109,40 @@ switch (args[0]) {
 
     case 'patch':
         if (!moduleType && !moduleName) {
-            patchModulesSync(pcModules.concat(webModules).concat(nativeModules), pcModules.concat(webModules).concat(nativeModules))
+            patchModulesSync(pcModules.concat(webModules).concat(nativeModules), pcModules.concat(webModules).concat(nativeModules), 'patch')
 //            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
         }
         else if (moduleType && !moduleName) {
-            patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules))
+            patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules), 'patch')
 //            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
         }
         else if (moduleType && moduleName) {
-            patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules))
+            patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules), 'patch')
         }
+
+        break
+
+    case 'minor':
+        if (!moduleType && !moduleName) {
+            patchModulesSync(pcModules.concat(webModules).concat(nativeModules), pcModules.concat(webModules).concat(nativeModules), 'minor')
+//            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
+        }
+        else if (moduleType && !moduleName) {
+            patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules), 'minor')
+//            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
+        }
+        else if (moduleType && moduleName) {
+            patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules), 'minor')
+        }
+
+        break
 
         break
 
     case 'gitpatch':
 
         let diffModules = getProjectStatus()
-        patchModulesSync(diffModules, pcModules.concat(webModules).concat(nativeModules))
+        patchModulesSync(diffModules, pcModules.concat(webModules).concat(nativeModules), 'patch')
         cleanModulesSync(diffModules)
         buildModules(diffModules).then(() => {
             publishModules(diffModules)
@@ -460,34 +477,94 @@ function updateSubTreeInfo (callback) {
     })
 }
 
-function patchModulesSync (modules, allModules) {
-    for (let module of modules) {
-        try {
-            process.chdir(module)
-            execSync('npm version patch')
+function patchModulesSync (modules, allModules, type) {
+    let changeModules = {}
+    let moduleMaps = {}
+
+    function updateModuleVirtual (modulePath, name, version) {
+        if (! changeModules[modulePath]) {
+            changeModules[modulePath] = {
+                modulePath: modulePath,
+                name: name,
+                version: semver.inc(version, type)
+            }
         }
-        catch(e){}
+    }
 
-        let packageJSON = JSON.parse(fs.readFileSync(path.resolve(module, 'package.json')).toString())
-        let moduleName = packageJSON.name
-        let moduleDepenence = packageJSON.dependecies
-        let moduleVersion = packageJSON.version
-
+    function buildModuleMap () {
         for (let all of allModules) {
-            let allJSON = JSON.parse(fs.readFileSync(path.resolve(all, 'package.json')).toString())
-            let allDependencies = allJSON.dependencies
+            let moduleObj = getModuleObj(all)
+            moduleMaps[moduleObj.name] = {
+                version: moduleObj.version,
+                name: moduleObj.name,
+                modulePath: all,
+                dependencies: []
+            }
+            for (var dependence in moduleObj.dependencies) {
+                moduleMaps[moduleObj.name].dependencies.push({
+                    [dependence]: moduleObj.dependencies[dependence]
+                })
+            }
+        }
+    }
 
-            for (let dependence in allDependencies) {
-                if (dependence === moduleName && compareVersion(allDependencies[dependence], moduleVersion)) {
-                    console.log('Update ' + allJSON.name + '\'s ' +  moduleName + ':', allDependencies[dependence], '====>', '^' + moduleVersion)
-                    allDependencies[dependence] = '^' + moduleVersion
-                    fs.writeFileSync(path.resolve(all, 'package.json'), format.plain(allJSON), 'utf8')
+    function getModuleObj (module) {
+        return JSON.parse(fs.readFileSync(path.resolve(module, 'package.json')).toString())
+    }
+
+    function whoIsNeedMe (moduleObj) {
+        let modules = []
+        let moduleName = moduleObj.name
+        for (let module in moduleMaps) {
+            for (let dep of moduleMaps[module].dependencies) {
+                if (dep[moduleName]) {
+                    modules.push({
+                        modulePath: moduleMaps[module].modulePath,
+                        moduleName: moduleMaps[module].name,
+                        moduleVersion: moduleMaps[module].version
+                    })
+                }
+            }
+        }
+
+        return modules
+    }
+
+    function updateModule (module) {
+        let moduleObj = changeModules[module] || getModuleObj(module)
+        updateModuleVirtual(module, moduleObj.name, moduleObj.version)
+
+        let dependences = whoIsNeedMe(moduleObj)
+
+        for (let dep of dependences) {
+            updateModule(dep.modulePath)
+        }
+    }
+
+    function writeChanges () {
+        for (let change in changeModules) {
+            let moduleObj = getModuleObj(changeModules[change].modulePath)
+            console.log(`INFO: Update ${changeModules[change].name} version ${moduleObj.version} ==> ${changeModules[change].version}`)
+            moduleObj.version = changeModules[change].version
+
+            for (let dep in moduleObj.dependencies) {
+                if (moduleMaps[dep] && changeModules[moduleMaps[dep].modulePath] &&  (changeModules[moduleMaps[dep].modulePath].name === dep)) {
+                    console.log(`INFO: Update ${changeModules[change].name}'s Dependencies [${dep}] version ${moduleObj.dependencies[dep]} ==> ${changeModules[moduleMaps[dep].modulePath].version}`)
+                    moduleObj.dependencies[dep] = '^' + changeModules[moduleMaps[dep].modulePath].version
                 }
             }
 
-
+            fs.writeFileSync(path.join(changeModules[change].modulePath, 'package.json'), format.plain(moduleObj), 'utf-8')
         }
     }
+
+    buildModuleMap()
+
+    for (let module of modules) {
+        updateModule(module)
+    }
+
+    writeChanges()
 
     process.chdir(root)
 }
