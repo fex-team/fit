@@ -9,4 +9,5 @@
 - `defaultValue` 默认值
 - `width` 控制输入框的宽度
 - `select` 当 `type` 为 `select` 时, 此参数为选择数组,每一项分别有 `key` `value` 两个属性
+- `beforeSend` 发送请求之前的回调,返回值是一个对象,会与发送参数做merge,第一个传参是`key`,第二个传参是`value`.默认返回值是`{[key]:value}`
 - `enum` 当 `type` 为 `enum` 时,此参数为数组,表示从多个选项中选出一项填写过滤内容, 每一项都分别有如上所有属性,但是`type`不能再为`enum`

@@ -35,7 +35,12 @@ const info = {
         label: 'ID',
         key: 'id',
         type: 'text',
-        placeholder: '用户id'
+        placeholder: '用户id',
+        beforeSend: (key, value)=> {
+            return {
+                [key]: '_' + value
+            }
+        }
     }, {
         label: '休假日期',
         key: 'free',
@@ -70,7 +75,13 @@ const info = {
             key: 'age',
             type: 'text',
             width: 50,
-            placeholder: ''
+            placeholder: '',
+            beforeSend: (key, value)=> {
+                return {
+                    [key]: '_' + value,
+                    'age_mount': 1
+                }
+            }
         }, {
             label: '可选日期',
             key: 'date',
