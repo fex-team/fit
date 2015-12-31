@@ -354,6 +354,9 @@ function buildModules (modules) {
 
             if (modulePath) {
                 let childInstance = spawn('node', ['build.js', modulePath])
+                childInstance.stderr.on('data', (err) => {
+                    console.log(err.toString())
+                })
                 runChildInstance.push(childInstance)
 
                 childInstance.on('close', onClose.bind(childInstance, modulePath))
@@ -383,6 +386,9 @@ function buildModules (modules) {
             for (let module of modules) {
                 let modulePath = moduleCopy.pop()
                 let childInstance = spawn('node', ['build.js', modulePath])
+                childInstance.stderr.on('data', (err) => {
+                    console.log(err.toString())
+                })
 
                 runChildInstance.push(childInstance)
 
