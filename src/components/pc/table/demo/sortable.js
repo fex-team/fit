@@ -2,7 +2,7 @@ import React from 'react'
 import Table from 'fit-table'
 
 const info = {
-    fields:[{
+    fields: [{
         key: 'id',
         value: 'ID'
     }, {

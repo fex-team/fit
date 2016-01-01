@@ -55,7 +55,6 @@
   }
 }
 
-
 @mixin button-outline-variant($color) {
   color: $color;
   background-image: none;
@@ -69,12 +68,12 @@
   .open > &.dropdown-toggle {
     color: #fff;
     background-color: $color;
-        border-color: $color;
+    border-color: $color;
   }
   @include hover {
     color: #fff;
     background-color: $color;
-        border-color: $color;
+    border-color: $color;
   }
 
   &.disabled,

@@ -6,7 +6,7 @@ import classnames from 'classnames'
 import LeftMenuPC from './left-menu-pc'
 import LeftMenuMobile from './left-menu-mobile'
 
-function getPageType () {
+function getPageType() {
     var url = location.hash.replace(/#\/|\?.+/g, '').split('/')
 
     return {
@@ -24,31 +24,31 @@ export default class Layout extends React.Component {
         }
     }
 
-    componentWillMount () {
+    componentWillMount() {
         this.setState({
             type: getPageType().base
         })
     }
 
-    componentWillReceiveProps () {
+    componentWillReceiveProps() {
         this.setState({
             type: getPageType().base
         })
     }
 
-    onSwitchMouseOver () {
+    onSwitchMouseOver() {
         this.setState({
             logoligten: true
         })
     }
 
-    onSwitchMouseOut () {
+    onSwitchMouseOut() {
         this.setState({
             logoligten: false
         })
     }
 
-    onSwitchStart () {
+    onSwitchStart() {
         location.hash = this.state.type === 'pc' ? '#/mobile' : '#/pc'
     }
 
@@ -82,8 +82,10 @@ export default class Layout extends React.Component {
                         <div className="navbar-header">
                             <div className={navBrand}>
                                 <Link to="/"
-                                      >Fit<span className={logoClass}>en</span> <span className={textClass}>Design</span></Link>
-                                <span onClick={this.onSwitchStart.bind(this)} className="switch">Switch</span>
+                                >Fit<span className={logoClass}>en</span>
+                                    <span className={textClass}>Design</span></Link>
+                                <span onClick={this.onSwitchStart.bind(this)}
+                                      className="switch">Switch</span>
                             </div>
                             <div className="navbar-right">
                                 <a className="item"

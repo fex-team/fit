@@ -10,8 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
+    "fit-style": "^1.1.0",
+    "jquery": "^2.1.4",
     "lodash": "^3.10.1",
-    "react": "^0.14.3",
-    "fit-style": "^1.1.0"
+    "react": "^0.14.3"
   }
 }

@@ -18,7 +18,8 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Input value={this.state.value} onChange={this.handleChange.bind(this)}/>
+                <Input value={this.state.value}
+                       onChange={this.handleChange.bind(this)}/>
                 {this.state.value}
             </div>
         )

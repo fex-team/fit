@@ -26,8 +26,10 @@ export default class Datepicker extends React.Component {
                 <Title>{readme}</Title>
 
                 <Row>
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={basicMarkdown} code={basicCode}>
+                    <Col span="24"
+                         style={colStyle}>
+                        <CodeView md={basicMarkdown}
+                                  code={basicCode}>
                             <Basic />
                         </CodeView>
                     </Col>

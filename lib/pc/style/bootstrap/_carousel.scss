@@ -81,7 +81,6 @@
   }
 }
 
-
 //
 // Left/right controls for nav
 //
@@ -102,12 +101,12 @@
 
   // Set gradients for backgrounds
   &.left {
-    @include gradient-horizontal($start-color: rgba(0,0,0,.5), $end-color: rgba(0,0,0,.0001));
+    @include gradient-horizontal($start-color: rgba(0, 0, 0, .5), $end-color: rgba(0, 0, 0, .0001));
   }
   &.right {
     right: 0;
     left: auto;
-    @include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.5));
+    @include gradient-horizontal($start-color: rgba(0, 0, 0, .0001), $end-color: rgba(0, 0, 0, .5));
   }
 
   // Hover/focus state
@@ -142,16 +141,15 @@
 
   .icon-prev {
     &::before {
-      content: "\2039";// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
+      content: "\2039"; // SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
     }
   }
   .icon-next {
     &::before {
-      content: "\203a";// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
+      content: "\203a"; // SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
     }
   }
 }
-
 
 // Optional indicator pips
 //
@@ -181,7 +179,7 @@
     // Internet Explorer 9 does not properly handle clicks on elements with a `background-color` of `transparent`,
     // so we use `rgba(0,0,0,0)` instead since it's a non-buggy equivalent.
     // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
-    background-color: rgba(0,0,0,0); // IE9
+    background-color: rgba(0, 0, 0, 0); // IE9
     border: 1px solid $carousel-indicator-border-color;
     border-radius: 10px;
   }
@@ -192,7 +190,6 @@
     background-color: $carousel-indicator-active-bg;
   }
 }
-
 
 // Optional captions
 //
@@ -214,7 +211,6 @@
     text-shadow: none; // No shadow for button elements in carousel-caption
   }
 }
-
 
 //
 // Responsive variations

@@ -6,16 +6,77 @@
     top: 10px;
   }
   .container {
-    z-index: 9;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 9;
+    background: white;
     left: 0;
     border: 1px solid #dee5e7;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    width: 230px;
+    height: 320px;
+    padding: 15px;
     &.top {
-      top: -303px;
+      top: -230px;
     }
     &.bottom {
       top: 34px;
+    }
+    .toolbar {
+      width: 200px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .time-select-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .clock {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-image: url(./image/clock.png);
+      background-size: cover;
+      .hour {
+        position: absolute;
+        left: 100px;
+        top: 97px;
+        height: 4px;
+        width: 65px;
+        background: #333;
+        transform: rotate(30deg);
+        transform-origin: 0 50%;
+      }
+      .minute {
+        position: absolute;
+        left: 100px;
+        top: 98px;
+        height: 2px;
+        width: 85px;
+        background: #333;
+        transform: rotate(60deg);
+        transform-origin: 0 50%;
+      }
+      .second {
+        position: absolute;
+        left: 100px;
+        top: 99px;
+        height: 1px;
+        width: 100px;
+        background: #333;
+        transform: rotate(90deg);
+        transform-origin: 0 50%;
+      }
+      .hour, .minute, .second {
+        cursor: move;
+        &:hover {
+          background: #666;
+        }
+      }
     }
   }
 }

@@ -29,7 +29,6 @@
   }
 }
 
-
 //
 // Condensed table w/ half padding
 //
@@ -40,7 +39,6 @@
     padding: $table-sm-cell-padding;
   }
 }
-
 
 // Bordered version
 //
@@ -62,7 +60,6 @@
   }
 }
 
-
 // Zebra-striping
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
@@ -72,7 +69,6 @@
     background-color: $table-bg-accent;
   }
 }
-
 
 // Hover effect
 //
@@ -86,7 +82,6 @@
   }
 }
 
-
 // Table backgrounds
 //
 // Exact selectors below required to override `.table-striped` and prevent
@@ -98,7 +93,6 @@
 @include table-row-variant(info, $state-info-bg);
 @include table-row-variant(warning, $state-warning-bg);
 @include table-row-variant(danger, $state-danger-bg);
-
 
 // Responsive tables
 //
@@ -118,13 +112,13 @@
   // -ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
 }
 
-
 .thead-inverse {
   th {
     color: #fff;
     background-color: $gray-dark;
   }
 }
+
 .thead-default {
   th {
     color: $gray;
@@ -146,7 +140,6 @@
     border-color: $gray;
   }
 }
-
 
 .table-reflow {
   thead {

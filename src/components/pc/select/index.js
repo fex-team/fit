@@ -42,26 +42,36 @@ export default class Layout extends React.Component {
                 <Title>{readme}</Title>
 
                 <Row style={colStyle}>
-                    <Col style={colStyle} span="12">
-                        <CodeView md={basicMarkdown} code={basicCode}>
+                    <Col style={colStyle}
+                         span="12">
+                        <CodeView md={basicMarkdown}
+                                  code={basicCode}>
                             <Basic/>
                         </CodeView>
 
-                        <CodeView md={searchMarkdown} code={searchCode} style={{marginTop:10}}>
+                        <CodeView md={searchMarkdown}
+                                  code={searchCode}
+                                  style={{marginTop:10}}>
                             <Search/>
                         </CodeView>
 
-                        <CodeView md={simpleMarkdown} code={simpleCode} style={{marginTop:10}}>
+                        <CodeView md={simpleMarkdown}
+                                  code={simpleCode}
+                                  style={{marginTop:10}}>
                             <Simple/>
                         </CodeView>
                     </Col>
 
-                    <Col style={colStyle} span="12">
-                        <CodeView md={groupMarkdown} code={groupCode}>
+                    <Col style={colStyle}
+                         span="12">
+                        <CodeView md={groupMarkdown}
+                                  code={groupCode}>
                             <Group/>
                         </CodeView>
 
-                        <CodeView md={labelMarkdown} code={labelCode} style={{marginTop:10}}>
+                        <CodeView md={labelMarkdown}
+                                  code={labelCode}
+                                  style={{marginTop:10}}>
                             <Label/>
                         </CodeView>
                     </Col>

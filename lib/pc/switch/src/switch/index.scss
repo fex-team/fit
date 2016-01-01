@@ -68,21 +68,21 @@
     }
   }
   &.checked {
-    &.size-normal{
+    &.size-normal {
       .inner {
         &:after {
           left: 25px;
         }
       }
     }
-    &.size-small{
+    &.size-small {
       .inner {
         &:after {
           left: 17px;
         }
       }
     }
-    &.size-large{
+    &.size-large {
       .inner {
         &:after {
           left: 33px;

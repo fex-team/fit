@@ -6,14 +6,21 @@ const text = `百度百科是百度公司推出的一部内容开放、自由的
 export default class Demo extends React.Component {
     render() {
         return (
-            <Collapse defaultActiveKey={'2'} accordion>
-                <CollPanel style={{padding:10}} header="panel header 1" key="1">
+            <Collapse defaultActiveKey={'2'}
+                      accordion>
+                <CollPanel style={{padding:10}}
+                           header="panel header 1"
+                           key="1">
                     {text}
                 </CollPanel>
-                <CollPanel style={{padding:10}} header="panel header 2" key="2">
+                <CollPanel style={{padding:10}}
+                           header="panel header 2"
+                           key="2">
                     {text}
                 </CollPanel>
-                <CollPanel style={{padding:10}} header="panel header 3" key="3">
+                <CollPanel style={{padding:10}}
+                           header="panel header 3"
+                           key="3">
                     {text}
                 </CollPanel>
             </Collapse>

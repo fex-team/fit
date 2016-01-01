@@ -27,10 +27,14 @@ export default class Demo extends React.Component {
         return (
             <div>
                 <Button onClick={this.onClick.bind(this,'info')}>默认</Button>
-                <Button onClick={this.onClick.bind(this,'success')} style={{marginLeft:10}}>成功</Button>
-                <Button onClick={this.onClick.bind(this,'error')} style={{marginLeft:10}}>错误</Button>
-                <Button onClick={this.onClick.bind(this,'warning')} style={{marginLeft:10}}>警告</Button>
-                <Button onClick={this.onClick.bind(this,'loading')} style={{marginLeft:10}}>加载</Button>
+                <Button onClick={this.onClick.bind(this,'success')}
+                        style={{marginLeft:10}}>成功</Button>
+                <Button onClick={this.onClick.bind(this,'error')}
+                        style={{marginLeft:10}}>错误</Button>
+                <Button onClick={this.onClick.bind(this,'warning')}
+                        style={{marginLeft:10}}>警告</Button>
+                <Button onClick={this.onClick.bind(this,'loading')}
+                        style={{marginLeft:10}}>加载</Button>
             </div>
         )
     }

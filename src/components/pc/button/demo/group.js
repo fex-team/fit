@@ -11,7 +11,8 @@ export default class Demo extends React.Component {
                     <Button>Right</Button>
                 </ButtonGroup>
 
-                <ButtonGroup vertical style={{marginLeft:10}}>
+                <ButtonGroup vertical
+                             style={{marginLeft:10}}>
                     <Button>Left</Button>
                     <Button>Middle</Button>
                     <Button>Right</Button>

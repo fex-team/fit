@@ -61,13 +61,11 @@
   }
 }
 
-
 // Make file inputs better match text inputs by forcing them to new lines.
 .form-control-file,
 .form-control-range {
   display: block;
 }
-
 
 //
 // Labels
@@ -79,7 +77,6 @@
   padding: $input-padding-y $input-padding-x;
   margin-bottom: 0; // Override the `<label>` default
 }
-
 
 // Todo: clear this up
 
@@ -113,7 +110,6 @@
   }
 }
 
-
 // Static form control text
 //
 // Apply class to an element to make any string of text align with labels in a
@@ -133,7 +129,6 @@
     padding-left: 0;
   }
 }
-
 
 // Form control sizing
 //
@@ -159,7 +154,6 @@
   @include border-radius($input-border-radius-lg);
 }
 
-
 // Form groups
 //
 // Designed to help with the organization and spacing of vertical forms. For
@@ -168,7 +162,6 @@
 .form-group {
   margin-bottom: $form-group-margin-bottom;
 }
-
 
 // Checkboxes and radios
 //
@@ -193,6 +186,7 @@
     }
   }
 }
+
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
@@ -220,6 +214,7 @@
   vertical-align: middle;
   cursor: pointer;
 }
+
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
@@ -237,6 +232,7 @@ input[type="checkbox"] {
     cursor: $cursor-disabled;
   }
 }
+
 // These classes are used directly on <label>s
 .radio-inline,
 .checkbox-inline {
@@ -244,6 +240,7 @@ input[type="checkbox"] {
     cursor: $cursor-disabled;
   }
 }
+
 // These classes are used on elements with <label> descendants
 .radio,
 .checkbox {
@@ -253,7 +250,6 @@ input[type="checkbox"] {
     }
   }
 }
-
 
 // Form control feedback states
 //
@@ -293,9 +289,6 @@ input[type="checkbox"] {
   }
 }
 
-
-
-
 // .form-control-success {
 //   background-image: url("#{$form-icon-success}");
 //   border-color: $brand-success;
@@ -310,7 +303,6 @@ input[type="checkbox"] {
 //   background-image: url("#{$form-icon-danger}");
 //   border-color: $brand-danger;
 // }
-
 
 // .has-feedback {
 //   // Enable absolute positioning
@@ -370,7 +362,6 @@ input[type="checkbox"] {
 //     top: 0;
 //   }
 // }
-
 
 // Inline forms
 //

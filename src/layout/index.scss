@@ -109,7 +109,7 @@ html {
 
         > span {
           color: #888888;
-          
+
           &:hover {
             color: darken(#888888, 30%);
           }
@@ -126,7 +126,6 @@ html {
         text-decoration: none;
         line-height: 50px;
         transition: color 0.3s ease-in-out;
-
 
         > .en {
           display: inline-block;
@@ -151,7 +150,6 @@ html {
             opacity: 0;
           }
         }
-
 
         > .move {
           position: relative;

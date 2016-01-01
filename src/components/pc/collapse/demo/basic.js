@@ -10,14 +10,21 @@ export default class Demo extends React.Component {
 
     render() {
         return (
-            <Collapse defaultActiveKey={['1','2']} onChange={this.callback.bind(this)}>
-                <CollPanel style={{padding:10}} header="panel header 1" key="1">
+            <Collapse defaultActiveKey={['1','2']}
+                      onChange={this.callback.bind(this)}>
+                <CollPanel style={{padding:10}}
+                           header="panel header 1"
+                           key="1">
                     {text}
                 </CollPanel>
-                <CollPanel style={{padding:10}} header="panel header 2" key="2">
+                <CollPanel style={{padding:10}}
+                           header="panel header 2"
+                           key="2">
                     {text}
                 </CollPanel>
-                <CollPanel style={{padding:10}} header="panel header 3" key="3">
+                <CollPanel style={{padding:10}}
+                           header="panel header 3"
+                           key="3">
                     {text}
                 </CollPanel>
             </Collapse>

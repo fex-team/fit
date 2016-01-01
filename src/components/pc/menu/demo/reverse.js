@@ -6,26 +6,33 @@ export default class Demo extends React.Component {
         return (
             <div>
                 <Menu>
-                    <MenuItem brand style={{width:200}}>管理系统</MenuItem>
-                    <MenuItem>菜单项</MenuItem>
-                    <MenuItem>菜单项</MenuItem>
-                </Menu>
-
-                <Menu style={{marginTop:10}}>
-                    <MenuItem brand inverse style={{width:200}}>管理系统</MenuItem>
-                    <MenuItem>菜单项</MenuItem>
-                    <MenuItem>菜单项</MenuItem>
-                </Menu>
-
-                <Menu inverse style={{marginTop:10}}>
                     <MenuItem brand
                               style={{width:200}}>管理系统</MenuItem>
                     <MenuItem>菜单项</MenuItem>
                     <MenuItem>菜单项</MenuItem>
                 </Menu>
 
-                <Menu inverse style={{marginTop:10}}>
-                    <MenuItem brand inverse style={{width:200}}>管理系统</MenuItem>
+                <Menu style={{marginTop:10}}>
+                    <MenuItem brand
+                              inverse
+                              style={{width:200}}>管理系统</MenuItem>
+                    <MenuItem>菜单项</MenuItem>
+                    <MenuItem>菜单项</MenuItem>
+                </Menu>
+
+                <Menu inverse
+                      style={{marginTop:10}}>
+                    <MenuItem brand
+                              style={{width:200}}>管理系统</MenuItem>
+                    <MenuItem>菜单项</MenuItem>
+                    <MenuItem>菜单项</MenuItem>
+                </Menu>
+
+                <Menu inverse
+                      style={{marginTop:10}}>
+                    <MenuItem brand
+                              inverse
+                              style={{width:200}}>管理系统</MenuItem>
                     <MenuItem>菜单项</MenuItem>
                     <MenuItem>菜单项</MenuItem>
                 </Menu>

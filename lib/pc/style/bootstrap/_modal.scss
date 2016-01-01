@@ -3,7 +3,6 @@
 // .modal-dialog    - positioning shell for the actual modal
 // .modal-content   - actual modal w/ bg and corners and shit
 
-
 // Kill the scroll on the body
 .modal-open {
   overflow: hidden;
@@ -29,8 +28,11 @@
     transition: transform .3s ease-out;
     transform: translate(0, -25%);
   }
-  &.in .modal-dialog { transform: translate(0, 0); }
+  &.in .modal-dialog {
+    transform: translate(0, 0);
+  }
 }
+
 .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;
@@ -50,7 +52,7 @@
   background-clip: padding-box;
   border: 1px solid $modal-content-border-color;
   border-radius: $border-radius-lg;
-  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  @include box-shadow(0 3px 9px rgba(0, 0, 0, .5));
   // Remove focus outline from opened modal
   outline: 0;
 }
@@ -66,8 +68,12 @@
   background-color: $modal-backdrop-bg;
 
   // Fade for backdrop
-  &.fade { opacity: 0; }
-  &.in { opacity: $modal-backdrop-opacity; }
+  &.fade {
+    opacity: 0;
+  }
+  &.in {
+    opacity: $modal-backdrop-opacity;
+  }
 }
 
 // Modal header
@@ -77,6 +83,7 @@
   border-bottom: 1px solid $modal-header-border-color;
   @include clearfix;
 }
+
 // Close icon
 .modal-header .close {
   margin-top: -2px;
@@ -134,13 +141,17 @@
     margin: 30px auto;
   }
   .modal-content {
-    @include box-shadow(0 5px 15px rgba(0,0,0,.5));
+    @include box-shadow(0 5px 15px rgba(0, 0, 0, .5));
   }
 
   // Modal sizes
-  .modal-sm { width: $modal-sm; }
+  .modal-sm {
+    width: $modal-sm;
+  }
 }
 
 @include media-breakpoint-up(md) {
-  .modal-lg { width: $modal-lg; }
+  .modal-lg {
+    width: $modal-lg;
+  }
 }

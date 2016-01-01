@@ -2,7 +2,8 @@ import React from 'react'
 import { Radio, RadioGroup } from 'fit-radio'
 
 export default class Demo extends React.Component {
-    handleChange(value) {}
+    handleChange(value) {
+    }
 
     render() {
         return (
@@ -18,7 +19,8 @@ export default class Demo extends React.Component {
                             vertical
                             value="b"
                             style={{marginTop:10}}>
-                    <Radio disabled value="a">AAAAAAAA</Radio>
+                    <Radio disabled
+                           value="a">AAAAAAAA</Radio>
                     <Radio value="b">BBBBBBBB</Radio>
                     <Radio value="c">CCCCCCCC</Radio>
                 </RadioGroup>

@@ -53,7 +53,7 @@
   background-clip: padding-box;
   border: $dropdown-border-width solid $dropdown-border-color;
   @include border-radius($border-radius);
-  @include box-shadow(0 6px 12px rgba(0,0,0,.175));
+  @include box-shadow(0 6px 12px rgba(0, 0, 0, .175));
 }
 
 // Dividers (basically an `<hr>`) within the dropdown
@@ -133,6 +133,7 @@
   right: 0;
   left: auto; // Reset the default from `.dropdown-menu`
 }
+
 // With v3, we enabled auto-flipping if you have a dropdown within a right
 // aligned nav component. To enable the undoing of that, we provide an override
 // to restore the default dropdown menu alignment.

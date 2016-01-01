@@ -13,7 +13,6 @@
   }
 }
 
-
 // Navbar alignment options
 //
 // Display the navbar across the entirety of the page or fixed it to the top or
@@ -62,14 +61,13 @@
   }
 }
 
-
 //
 // Brand/project name
 //
 
 .navbar-brand {
   float: left;
-  padding-top:    .25rem;
+  padding-top: .25rem;
   padding-bottom: .25rem;
   margin-right: 1rem;
   font-size: $font-size-lg;
@@ -83,21 +81,19 @@
   }
 }
 
-
 .navbar-divider {
   float: left;
   width: 1px;
   padding-top: .425rem;
   padding-bottom: .425rem;
   margin-right: $navbar-padding-horizontal;
-  margin-left:  $navbar-padding-horizontal;
+  margin-left: $navbar-padding-horizontal;
   overflow: hidden;
 
   &::before {
     content: "\00a0";
   }
 }
-
 
 // Navbar toggle
 //
@@ -136,7 +132,6 @@
   }
 }
 
-
 // Navigation
 //
 // Custom navbar navigation built on the base `.nav` styles.
@@ -148,7 +143,7 @@
 
   .nav-link {
     display: block;
-    padding-top:    .425rem;
+    padding-top: .425rem;
     padding-bottom: .425rem;
 
     + .nav-link {
@@ -191,7 +186,7 @@
   }
 
   .navbar-divider {
-    background-color: rgba(0,0,0,.075);
+    background-color: rgba(0, 0, 0, .075);
   }
 }
 
@@ -225,6 +220,6 @@
   }
 
   .navbar-divider {
-    background-color: rgba(255,255,255,.075);
+    background-color: rgba(255, 255, 255, .075);
   }
 }

@@ -3,10 +3,13 @@
 //
 
 @keyframes progress-bar-stripes {
-  from  { background-position: $spacer-y 0; }
-  to    { background-position: 0 0; }
+  from {
+    background-position: $spacer-y 0;
+  }
+  to {
+    background-position: 0 0;
+  }
 }
-
 
 //
 // Basic progress bar
@@ -18,6 +21,7 @@
   height: $spacer-y; // todo: make a new var for this
   margin-bottom: $spacer-y;
 }
+
 .progress[value] {
   // IE10 uses `color` to set the bar background-color
   color: #0074d9;
@@ -26,19 +30,23 @@
   // Reset the default appearance
   appearance: none;
 }
+
 .progress[value]::-webkit-progress-bar {
   background-color: #eee;
   @include border-radius($border-radius);
-  @include box-shadow(inset 0 .1rem .1rem rgba(0,0,0,.1));
+  @include box-shadow(inset 0 .1rem .1rem rgba(0, 0, 0, .1));
 }
+
 .progress[value]::-webkit-progress-value::before {
   content: attr(value);
 }
+
 .progress[value]::-webkit-progress-value {
   background-color: #0074d9;
   border-top-left-radius: $border-radius;
   border-bottom-left-radius: $border-radius;
 }
+
 .progress[value="100"]::-webkit-progress-value {
   border-top-right-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
@@ -72,11 +80,12 @@
 // }
 
 // IE9 hacks to accompany custom markup. We don't need to scope this via media queries, but I feel better doing it anyway.
-@media screen and (min-width:0\0) {
+@media screen and (min-width: 0 \0
+) {
   .progress {
     background-color: #eee;
     @include border-radius($border-radius);
-    @include box-shadow(inset 0 .1rem .1rem rgba(0,0,0,.1));
+    @include box-shadow(inset 0 .1rem .1rem rgba(0, 0, 0, .1));
   }
   .progress-bar {
     display: inline-block;
@@ -98,7 +107,6 @@
   }
 }
 
-
 //
 // Striped
 //
@@ -107,18 +115,20 @@
   @include gradient-striped();
   background-size: $spacer-y $spacer-y;
 }
+
 .progress-striped[value]::-moz-progress-bar {
   @include gradient-striped();
   background-size: $spacer-y $spacer-y;
 }
+
 // IE9
-@media screen and (min-width:0\0) {
+@media screen and (min-width: 0 \0
+) {
   .progress-bar-striped {
     @include gradient-striped();
     background-size: $spacer-y $spacer-y;
   }
 }
-
 
 //
 // Animated
@@ -127,16 +137,18 @@
 .progress-animated[value]::-webkit-progress-value {
   animation: progress-bar-stripes 2s linear infinite;
 }
+
 .progress-animated[value]::-moz-progress-bar {
   animation: progress-bar-stripes 2s linear infinite;
 }
+
 // IE9
-@media screen and (min-width:0\0) {
+@media screen and (min-width: 0 \0
+) {
   .progress-animated .progress-bar-striped {
     animation: progress-bar-stripes 2s linear infinite;
   }
 }
-
 
 //
 // Variations
@@ -145,12 +157,15 @@
 .progress-success {
   @include progress-variant($progress-bar-success-bg);
 }
+
 .progress-info {
   @include progress-variant($progress-bar-info-bg);
 }
+
 .progress-warning {
   @include progress-variant($progress-bar-warning-bg);
 }
+
 .progress-danger {
   @include progress-variant($progress-bar-danger-bg);
 }

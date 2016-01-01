@@ -36,8 +36,11 @@ const info = {
 
         return (
             <div>
-                <Button type="success" onClick={handleClick}>获取选中</Button>
-                <Button style={{marginLeft:10}} type="primary" onClick={jumpHome}>刷新</Button>
+                <Button type="success"
+                        onClick={handleClick}>获取选中</Button>
+                <Button style={{marginLeft:10}}
+                        type="primary"
+                        onClick={jumpHome}>刷新</Button>
             </div>
         )
     }

@@ -32,7 +32,9 @@ export default class Demo extends React.Component {
         return (
             <div>
                 <Button onClick={this.handleShowModal.bind(this)}>点我弹出模态框</Button>
-                <Modal show={this.state.show} onOk={this.handleOk.bind(this)} onCancel={this.handleCancel.bind(this)}>
+                <Modal show={this.state.show}
+                       onOk={this.handleOk.bind(this)}
+                       onCancel={this.handleCancel.bind(this)}>
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
                 </Modal>
             </div>

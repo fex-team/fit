@@ -9,8 +9,10 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Switch checked style={style}/>
-                <Switch disabled style={style}/>
+                <Switch checked
+                        style={style}/>
+                <Switch disabled
+                        style={style}/>
             </div>
         )
     }

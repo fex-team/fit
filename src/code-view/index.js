@@ -47,7 +47,8 @@ export default class Layout extends React.Component {
                     </div>
                     <div className="code custom">
                         <Collapse onChange={this.handleCollapseChange.bind(this)}>
-                            <CollPanel style={{padding:'0 10px'}} header={title[1]}>
+                            <CollPanel style={{padding:'0 10px'}}
+                                       header={title[1]}>
                                 <div className="description"
                                      dangerouslySetInnerHTML={{__html: marked(content)}}></div>
                                 {codeDetail ? codeDetail : null}

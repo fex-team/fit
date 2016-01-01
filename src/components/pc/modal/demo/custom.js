@@ -32,8 +32,12 @@ export default class Demo extends React.Component {
         return (
             <div>
                 <Button onClick={this.handleClick.bind(this)}>点我弹出自定义模态框</Button>
-                <Modal title="custom title" okText="好的" cancelText="算了"
-                       show={this.state.show} onOk={this.handleOk.bind(this)} onCancel={this.handleCancel.bind(this)}>
+                <Modal title="custom title"
+                       okText="好的"
+                       cancelText="算了"
+                       show={this.state.show}
+                       onOk={this.handleOk.bind(this)}
+                       onCancel={this.handleCancel.bind(this)}>
                     <h4>Text in a modal</h4>
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
 

@@ -16,7 +16,8 @@ export default class Demo extends React.Component {
                             vertical
                             value="b"
                             style={{marginLeft:10}}>
-                    <Radio disabled value="a">AAAAAAAA</Radio>
+                    <Radio disabled
+                           value="a">AAAAAAAA</Radio>
                     <Radio value="b">BBBBBBBB</Radio>
                     <Radio value="c">CCCCCCCC</Radio>
                 </RadioGroup>

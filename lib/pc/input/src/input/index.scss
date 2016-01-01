@@ -1,5 +1,6 @@
 & {
   display: flex;
+  position: relative;
 }
 
 .form-control {
@@ -39,4 +40,14 @@
   .input-group {
     width: 100%;
   }
+}
+
+.flex-textarea {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  resize: none;
+  transition: all .3s;
+  display: none;
 }

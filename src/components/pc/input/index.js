@@ -21,6 +21,10 @@ import Textarea from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./
 import textareaCode from 'text!./demo/textarea.js'
 import textareaMarkdown from './demo/textarea.md'
 
+import Flex from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/flex.js'
+import flexCode from 'text!./demo/flex.js'
+import flexMarkdown from './demo/flex.md'
+
 const colStyle = {
     padding: 10
 }
@@ -63,6 +67,12 @@ export default class Layout extends React.Component {
                                   code={disabledCode}
                                   style={{marginTop:10}}>
                             <Disabled/>
+                        </CodeView>
+
+                        <CodeView md={flexMarkdown}
+                                  code={flexCode}
+                                  style={{marginTop:10}}>
+                            <Flex/>
                         </CodeView>
                     </Col>
                 </Row>

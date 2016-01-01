@@ -33,11 +33,11 @@ const info = {
 }
 
 export default class Demo extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props)
     }
 
-    refreshTable () {
+    refreshTable() {
         tableInstance.extendInfo.jump(tableInstance.extendInfo.currentPage())
     }
 

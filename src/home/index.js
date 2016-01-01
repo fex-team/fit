@@ -22,7 +22,8 @@ export default class Layout extends React.Component {
             <div className="_namespace">
                 <Row>
                     <Col span="24">
-                        <div className="markdown-body" style={colStyle}
+                        <div className="markdown-body"
+                             style={colStyle}
                              dangerouslySetInnerHTML={{__html: marked(readme)}}></div>
                     </Col>
                 </Row>

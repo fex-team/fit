@@ -34,16 +34,22 @@ export default class Menu extends React.Component {
                 <Title>{readme}</Title>
 
                 <Row>
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={basicMarkdown} code={basicCode}>
+                    <Col span="24"
+                         style={colStyle}>
+                        <CodeView md={basicMarkdown}
+                                  code={basicCode}>
                             <Basic />
                         </CodeView>
 
-                        <CodeView style={{marginTop:10}} md={reverseMarkdown} code={reverseCode}>
+                        <CodeView style={{marginTop:10}}
+                                  md={reverseMarkdown}
+                                  code={reverseCode}>
                             <Reverse />
                         </CodeView>
 
-                        <CodeView style={{marginTop:10}} md={verticalMarkdown} code={verticalCode}>
+                        <CodeView style={{marginTop:10}}
+                                  md={verticalMarkdown}
+                                  code={verticalCode}>
                             <Vertical />
                         </CodeView>
                     </Col>

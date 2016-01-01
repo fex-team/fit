@@ -77,8 +77,10 @@ const customAddInfo = {
             return (
                 <div>
                     <Input label="姓名"/>
-                    <Input label="年龄" style={{marginTop:10}}/>
-                    <Input label="职业" style={{marginTop:10}}/>
+                    <Input label="年龄"
+                           style={{marginTop:10}}/>
+                    <Input label="职业"
+                           style={{marginTop:10}}/>
                 </div>
             )
         }
