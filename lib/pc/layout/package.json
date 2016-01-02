@@ -1,6 +1,6 @@
 {
   "name": "fit-layout",
-  "version": "1.1.4",
+  "version": "1.1.7",
   "description": "布局组件",
   "main": "lib/index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
-    "fit-style": "^1.1.4"
+    "fit-style": "^1.1.7"
   }
 }

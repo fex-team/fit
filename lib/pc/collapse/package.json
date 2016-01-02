@@ -1,6 +1,6 @@
 {
   "name": "fit-collapse",
-  "version": "0.2.4",
+  "version": "0.2.7",
   "description": "collapse panel",
   "main": "lib/index.js",
   "scripts": {
