@@ -69,17 +69,25 @@ const info = {
         }],
         defaultValue: 2
     }, {
+        label: '时间',
+        key: 'free',
+        type: 'time',
+        format: 'YYYY-MM-DD'
+    }, {
         type: 'enum',
         enum: [{
-            label: '年龄',
-            key: 'age',
-            type: 'text',
-            width: 50,
-            placeholder: '',
+            label: '时间',
+            key: 'time',
+            type: 'date',
+            format: 'YYYY/MM/DD HH:mm:ss',
+            props: {
+                showTime: true,
+                type: 'dateRange'
+            },
             beforeSend: (key, value)=> {
                 return {
-                    [key]: '_' + value,
-                    'age_mount': 1
+                    [key + '_start']: value.start,
+                    [key + '_end']: value.end
                 }
             }
         }, {

@@ -25,6 +25,10 @@ import Flex from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo
 import flexCode from 'text!./demo/flex.js'
 import flexMarkdown from './demo/flex.md'
 
+import Icon from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/icon.js'
+import iconCode from 'text!./demo/icon.js'
+import iconMarkdown from './demo/icon.md'
+
 const colStyle = {
     padding: 10
 }
@@ -53,6 +57,12 @@ export default class Layout extends React.Component {
                                   code={textareaCode}
                                   style={{marginTop:10}}>
                             <Textarea/>
+                        </CodeView>
+
+                        <CodeView md={iconMarkdown}
+                                  code={iconCode}
+                                  style={{marginTop:10}}>
+                            <Icon/>
                         </CodeView>
                     </Col>
 

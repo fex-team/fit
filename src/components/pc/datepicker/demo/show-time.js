@@ -4,24 +4,23 @@ import Button from 'fit-button'
 
 export default class Demo extends React.Component {
     handleCalendarChange(date) {
-        return date.format('YYYY-MM-DD')
+        console.log(date.format('YYYY-MM-DD'))
     }
 
     handleDateRangeChange(date) {
-        return {
-            start: date.startDate.format('YYYY-MM-DD'),
-            end: date.endDate.format('YYYY-MM-DD')
-        }
+        console.log(date.startDate.format('YYYY-MM-DD'), date.endDate.format('YYYY-MM-DD'))
     }
 
     render() {
         return (
             <div style={{display:'flex'}}>
                 <DateInput type="calendar"
+                           showTime
                            onChange={this.handleCalendarChange.bind(this)}/>
                 <DateInput style={{marginLeft:10}}
                            type="dateRange"
-                           width="300"
+                           width="400"
+                           showTime
                            onChange={this.handleDateRangeChange.bind(this)}/>
             </div>
         )

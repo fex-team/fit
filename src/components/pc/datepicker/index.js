@@ -29,6 +29,10 @@ import ShowTime from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./
 import showTimeCode from 'text!./demo/show-time.js'
 import showTimeMarkdown from './demo/show-time.md'
 
+import Label from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/label.js'
+import labelCode from 'text!./demo/label.js'
+import labelMarkdown from './demo/label.md'
+
 export default class Datepicker extends React.Component {
     constructor(props) {
         super(props)
@@ -71,6 +75,12 @@ export default class Datepicker extends React.Component {
                                   code={showTimeCode}
                                   style={{marginTop:10}}>
                             <ShowTime />
+                        </CodeView>
+
+                        <CodeView md={labelMarkdown}
+                                  code={labelCode}
+                                  style={{marginTop:10}}>
+                            <Label />
                         </CodeView>
                     </Col>
                 </Row>

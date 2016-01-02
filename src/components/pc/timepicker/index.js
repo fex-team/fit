@@ -17,6 +17,10 @@ import Limit from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import limitCode from 'text!./demo/limit.js'
 import limitMarkdown from './demo/limit.md'
 
+import Label from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/label.js'
+import labelCode from 'text!./demo/label.js'
+import labelMarkdown from './demo/label.md'
+
 export default class TimePickerDemo extends React.Component {
     constructor(props) {
         super(props)
@@ -35,6 +39,12 @@ export default class TimePickerDemo extends React.Component {
                         <CodeView md={basicMarkdown}
                                   code={basicCode}>
                             <Basic />
+                        </CodeView>
+
+                        <CodeView md={labelMarkdown}
+                                  code={labelCode}
+                                  style={{marginTop:10}}>
+                            <Label />
                         </CodeView>
                     </Col>
 

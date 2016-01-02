@@ -1,13 +1,7 @@
 & {
   position: relative;
-  .addon {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-  }
   .container {
     position: absolute;
-    display: flex;
     flex-direction: column;
     z-index: 9;
     background: white;
@@ -17,6 +11,12 @@
     width: 230px;
     height: 320px;
     padding: 15px;
+    &.hide {
+      display: none;
+    }
+    &.show {
+      display: flex;
+    }
     &.top {
       top: -230px;
     }

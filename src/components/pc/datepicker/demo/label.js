@@ -1,15 +1,11 @@
 import React from 'react'
-import TimePicker from 'fit-timepicker'
+import { DateInput } from 'fit-datepicker'
 
 export default class Demo extends React.Component {
-    handleChange(moment) {
-
-    }
-
     render() {
         return (
             <div>
-                <TimePicker onChange={this.handleChange.bind(this)}/>
+                <DateInput input={{label:'输入框有的我也有'}}/>
             </div>
         )
     }
