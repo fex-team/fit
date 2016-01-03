@@ -22,6 +22,7 @@ import CaptchaComponent from './components/pc/captcha'
 import CollapseComponent from './components/pc/collapse'
 import TabsComponent from './components/pc/tabs'
 import TimepickerComponent from './components/pc/timepicker'
+import NumberComponent from './components/pc/number'
 
 import MobileColor from './components/mobile/color'
 
@@ -68,6 +69,8 @@ const MainRouter = (
                    component={TabsComponent}/>
             <Route path="timepicker"
                    component={TimepickerComponent}/>
+            <Route path="number"
+                   component={NumberComponent}/>
         </Route>
         <Route path="/mobile"
                component={Layout}>

@@ -1,0 +1,26 @@
+& {
+  position: relative;
+  .addon {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 34px;
+    width: 25px;
+    z-index: 4;
+  }
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 17px;
+    cursor: pointer;
+    transition: transform .2s;
+    font-size: 12px;
+    &:hover {
+      transform: scale(1.8, 1.8);
+    }
+  }
+}
