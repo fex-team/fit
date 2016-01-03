@@ -57,4 +57,7 @@
   resize: none;
   transition: all .3s;
   display: none;
+  &:focus {
+    z-index: 4;
+  }
 }
