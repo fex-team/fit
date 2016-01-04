@@ -17,7 +17,7 @@ fit-component 组件化开发流程，致力于打造一套先进的前端模块
 ### 环境要求
 
 + node `v4.x`
-+ fis3 `v3.3.9`
++ fis3 `v3.3.11`
 + webpack
 
 ### 快速上手 & 新项目初始化
@@ -149,7 +149,7 @@ $ npm install
 > 最新版fis3怎么装?
 
 ````
-npm install fis3@3.3.9 -g
+npm install fis3@3.3.11 -g
 ````
 
 > 为什么不用node5.x?
