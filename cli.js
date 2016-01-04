@@ -43,7 +43,7 @@ if (moduleName && moduleType === 'pc') {
     modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'pc', moduleName)
 }
 else if (moduleName && (moduleType === 'web' || moduleType === 'native')) {
-    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'mobile', moduleName, type)
+    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'mobile', moduleName, moduleType)
 }
 
 // 抓住未捕获的错误
@@ -233,12 +233,6 @@ switch (args[0]) {
         break
 }
 
-function compareVersion (pre, next) {
-    pre = pre.replace(/^[\^~]/, '')
-    next = next.replace(/^[\^~]/, '')
-    return semver.compare(pre, next)
-}
-
 function getProjectStatus () {
     try {
         let output = execSync('git status --porcelain').toString().replace(/\s\w\s/g, '').split('\n')
@@ -263,84 +257,6 @@ function getProjectStatus () {
         return output
     }
     catch(e){console.log(e)}
-}
-
-function getModuleVersion (modules, type) {
-    packageVersion = {}
-    for (var name of modules) {
-        var modulePath = getModulePath(name, type)[type]
-        var moduleJSON
-        var moduleVersion
-        var moduleName
-
-        if (type === 'pc') {
-            moduleJSON = JSON.parse(fs.readFileSync(modulePath, 'package.json').toString())
-            moduleVersion = moduleJSON.version
-            moduleName = moduleJSON.name
-            packageVersion[moduleName] = moduleVersion
-        }
-        else if (type === 'mobile') {
-            moduleJSON = {
-                web: JSON.parse(fs.readFileSync(modulePath.web, 'package.json').toString()),
-                native: JSON.parse(fs.readFileSync(modulePath.native, 'package.json').toString())
-            }
-            for (var type in moduleJSON) {
-                let moduleName = moduleJSON[type].name
-                let moduleVersion = moduleJSON[type].version
-                packageVersion[moduleName] = moduleVersion
-            }
-        }
-    }
-}
-
-function updateModuleVersion (modules, type) {
-    for (let name of modules) {
-        let modulePath = getModulePath(name, type)[type]
-        var moduleJSON
-        var moduleDepences
-
-        if (type === 'pc') {
-            moduleJSON =  JSON.parse(fs.readFileSync(modulePath, 'package.json').toString())
-            moduleDepences = moduleJSON.dependencies
-
-            for (let dependence in moduleDepences) {
-                if (packageVersion[dependence] && compareVersion(moduleDepences[dependence], packageVersion[dependence])) {
-                    console.log('Update ' + dependence + ':', moduleDepences[dependence], '====>', '^' + packageVersion[dependence])
-                    moduleDepences[dependence] = '^' + packageVersion[dependence]
-                }
-            }
-
-            fs.writeFileSync(modulePath, format.plain(moduleJSON), 'utf8')
-
-            process.chdir(modulePath)
-            execSync('npm version patch')
-            console.log('INFO: patch module: ', name)
-            process.chdir(root)
-        }
-        else if (type === 'mobile') {
-            moduleJSON = {
-                web: JSON.parse(fs.readFileSync(modulePath.web, 'package.json').toString()),
-                native: JSON.parse(fs.readFileSync(modulePath.native, 'package.json').toString())
-            }
-
-            for (var type in moduleJSON) {
-                moduleDepences = moduleJSON[type].dependencies
-                for (let dependence in moduleDepences) {
-                    if (packageVersion[dependence] && compareVersion(moduleDepences[dependence], packageVersion[dependence])) {
-                        console.log('Update ' + dependence + ':', moduleDepences[dependence], '====>', '^' + packageVersion[dependence])
-                        moduleDepences[dependence] = '^' + packageVersion[dependence]
-                    }
-                }
-
-                process.chdir(modulePath[type])
-                fs.writeFileSync(modulePath[type], format.plain(moduleJSON), 'utf8')
-                execSync('npm version patch')
-                console.log('INFO: patch module: ', name)
-            }
-
-            process.chdir(root)
-        }
-    }
 }
 
 function cleanModulesSync (modules) {
@@ -413,26 +329,6 @@ function buildModules (modules) {
             }
         }
     })
-}
-
-function addModule (type, name) {
-    let remotePrefix = 'ssh://g@gitlab.baidu.com:8022/tb-component'
-
-    try {
-        execSync('git remote add ' + type + '/' + name + ' ' + remotePrefix + '/' + type + '-' + name)
-        console.log('Add remote: ' + type + '/' + name)
-    }
-    catch(e){}
-
-}
-
-function pullModule (modules) {
-    for (let module of modules) {
-        try {
-            execSync('git subtree pull prefix=')
-        }
-        catch(e){}
-    }
 }
 
 function updateSubTreeInfo (callback) {
@@ -641,78 +537,3 @@ function publishModules (modules) {
         }
     })
 }
-
-function pullModules (modules) {
-
-}
-
-function upgradeModules () {
-    // find changes
-    checkGitStatus((stdout, stderr) => {
-        if (stdout.length === 0) {
-            console.info('INFO: ', 'nothing to commit, working directory clean')
-        }
-
-        var result
-        let reg = /lib\/(\w+)\//g
-        let moduleChanges = []
-
-        while ((result = reg.exec(stdout)) !== null) {
-            moduleChanges.push(result[1])
-        }
-
-        // patch changes
-        for (let name of moduleChanges) {
-            let modulePath = path.resolve(root, 'lib', name)
-            process.chdir(modulePath)
-
-            versionPatch((error, output) => {
-                if (error) {
-
-                }
-            })
-        }
-        process.chdir(root)
-
-        // clean changes
-        cleanModules(moduleChanges)
-
-        // build changes
-        buildModules(moduleChanges)
-
-        // upgrade other packages and patch other packages
-//        getModuleVersion(modules)
-//        updateModuleVersion(modules, moduleChanges)
-
-        // commit all changes
-//        addAndCommit((error, output) => {
-//            console.info('INFO: ', 'git commit all')
-//        }, 'quick push')
-//
-//         npm publish all changes
-//
-//        for (let change of moduleChanges) {
-//            let modulePath = path.resolve(root, 'lib', change)
-//            process.chdir(modulePath)
-//            npmPublish((stdout, stderr) => {
-//                console.info("INFO:", 'package ', change, ' had been updated')
-//            })
-//            process.chdir(root)
-//        }
-
-        // pull master branch
-
-        // pull subtree branch
-
-        // push master branch
-
-        // push subtree branch
-
-    }, '--short')
-}
-
-/* update all package */
-
-// have changes
-
-// node cli upgrade
