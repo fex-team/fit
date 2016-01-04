@@ -6,8 +6,8 @@ import classnames from 'classnames'
 import LeftMenuPC from './left-menu-pc'
 import LeftMenuMobile from './left-menu-mobile'
 
-function getPageType() {
-    var url = location.hash.replace(/#\/|\?.+/g, '').split('/')
+function getPageType(scope) {
+    var url = scope.props.location.pathname.split('/')
 
     return {
         base: url[0],
@@ -26,13 +26,13 @@ export default class Layout extends React.Component {
 
     componentWillMount() {
         this.setState({
-            type: getPageType().base
+            type: getPageType(this).base
         })
     }
 
     componentWillReceiveProps() {
         this.setState({
-            type: getPageType().base
+            type: getPageType(this).base
         })
     }
 
@@ -49,7 +49,7 @@ export default class Layout extends React.Component {
     }
 
     onSwitchStart() {
-        location.hash = this.state.type === 'pc' ? '#/mobile' : '#/pc'
+        this.context.history.pushState(null, this.state.type === 'pc' ? 'mobile' : 'pc')
     }
 
     render() {
@@ -107,4 +107,8 @@ export default class Layout extends React.Component {
             </div>
         )
     }
+}
+
+Layout.contextTypes = {
+    history: React.PropTypes.object
 }

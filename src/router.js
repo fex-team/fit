@@ -1,5 +1,6 @@
 import React from 'react'
 import { Router, Route, IndexRoute, Redirect } from 'react-router'
+import { createHistory, useBasename } from 'history'
 
 import Layout from './layout'
 import Home from './home'
@@ -26,8 +27,12 @@ import NumberComponent from './components/pc/number'
 
 import MobileColor from './components/mobile/color'
 
+const history = useBasename(createHistory)({
+    basename: '/'
+})
+
 const MainRouter = (
-    <Router>
+    <Router history={history}>
         <Redirect from="/"
                   to="pc"></Redirect>
         <Route path="/pc"
@@ -74,7 +79,7 @@ const MainRouter = (
         </Route>
         <Route path="/mobile"
                component={Layout}>
-            <IndexRoute component={Home}/>
+            <IndexRoute component={MobileColor}/>
             <Route path="color"
                    component={MobileColor}/>
         </Route>
