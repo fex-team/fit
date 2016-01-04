@@ -12,7 +12,7 @@ fit-component 组件化开发流程，致力于打造一套先进的前端模块
 - nodejs + es6 前后端语言统一
 - 组件化
 - 后端渲染
-- sass模块化
+- sass less模块化
 
 ### 环境要求
 
