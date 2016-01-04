@@ -3,6 +3,7 @@ import TimePicker from 'fit-timepicker'
 
 export default class Demo extends React.Component {
     handleChange(moment) {
+
     }
 
     render() {

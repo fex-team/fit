@@ -1,6 +1,6 @@
 {
   "name": "fit-menu",
-  "version": "1.1.0",
+  "version": "1.1.7",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
-    "fit-style": "^1.1.0"
+    "fit-style": "^1.1.7"
   }
 }

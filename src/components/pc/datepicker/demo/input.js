@@ -11,14 +11,11 @@ export default class Demo extends React.Component {
     }
 
     handleCalendarChange(date) {
-        return date.format('YYYY-MM-DD')
+        console.log(date.format('YYYY-MM-DD'))
     }
 
     handleDateRangeChange(date) {
-        return {
-            start: date.startDate.format('YYYY-MM-DD'),
-            end: date.endDate.format('YYYY-MM-DD')
-        }
+        console.log(date.startDate.format('YYYY-MM-DD'), date.endDate.format('YYYY-MM-DD'))
     }
 
     getDate() {

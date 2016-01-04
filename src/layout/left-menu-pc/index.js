@@ -44,6 +44,10 @@ const menuForm = [{
     title: '输入框 Input',
     path: '/pc/input',
     icon: 'font'
+},{
+    title: '数字框 Number',
+    path: '/pc/number',
+    icon: 'chevron-up'
 }, {
     title: '选择框 Select',
     path: '/pc/select',
