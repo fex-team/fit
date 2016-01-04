@@ -66,17 +66,31 @@ $ npm run preview
 
 ### 上线
 
+#### 准备工作
+
+没有接入gitlab开发流程的同学，[点击链接](http://solar.baidu.com/ci/platform/#/gitlab)进入绑定帐号。
+
+你没看错，先要加入 贴吧前端Gitlab hi群，群号：1493692
+
+#### 添加 webhook
+
+在 git 项目中添加 webhook地址 `http://solar.baidu.com/ci/webhook` 以后master的 push 和 merge request请求将自动通知FIS CI进行 svn 同步、代码检查、自动部署、自动测试等自动化服务。
+
+方法:
+
+- 在gitlab项目找到 Web Hooks
+- URL 填写 http://solar.baidu.com/ci/webhook
+- 勾选 Push events , Issues events , Merge Request events
+
+#### 提交代码
+
 ````
 git add -A
 git commit -m "ISSUE=yourCode"
 git push origin master
 ````
 
-没有接入gitlab开发流程的同学，[点击链接](http://solar.baidu.com/ci/platform/#/gitlab)进入绑定帐号。
-
-你没看错，先要加入 贴吧前端Gitlab hi群，群号：1493692
-
-对，这是提交代码到master分支，因为项目集成了fisCI钩子，会自动同步到svn主干并在agile平台执行编译。
+提交代码到master分支，因为项目集成了fisCI钩子，会自动同步到svn主干并在agile平台执行编译。
 
 这时候hi群里的机器人会发来一条消息，告诉你同步成功，并给出一条agile链接，进入以后点击右侧的发布就可以发布代码了，然后就可以orp上线了。
 
