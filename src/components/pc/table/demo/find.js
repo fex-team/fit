@@ -91,6 +91,15 @@ const info = {
                 }
             }
         }, {
+            label: '描述',
+            key: 'aaa',
+            type: 'text',
+            beforeSend: (key, value)=> {
+                return {
+                    [key]: value
+                }
+            }
+        }, {
             label: '可选日期',
             key: 'date',
             type: 'select',
