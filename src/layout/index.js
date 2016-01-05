@@ -31,8 +31,10 @@ export default class Layout extends React.Component {
     }
 
     componentWillReceiveProps() {
-        this.setState({
-            type: getPageType(this).base
+        setTimeout(() => {
+            this.setState({
+                type: getPageType(this).base
+            })
         })
     }
 
