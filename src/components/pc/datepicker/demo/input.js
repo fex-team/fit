@@ -20,7 +20,7 @@ export default class Demo extends React.Component {
 
     getDate() {
         this.setState({
-            date: this.dateRangeRef.state.startDate
+            date: this.dateRangeRef.state.startDateMoment.format('YYYY-MM-DD')
         })
     }
 
