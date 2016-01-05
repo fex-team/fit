@@ -150,6 +150,15 @@ switch (args[0]) {
 
         break
 
+    case 'autopub':
+        cleanModulesSync([moduleGlobal.modulePath])
+        buildModules([moduleGlobal.modulePath]).then(() => {
+            patchModulesSync([moduleGlobal.modulePath])
+            publishModules([moduleGlobal.modulePath])
+        })
+
+        break
+
     case 'publish':
         // push modules to gitlab
         if (!moduleType && !moduleName) {
