@@ -189,6 +189,24 @@ html {
         }
       }
     }
+    .navbar-left {
+      flex-grow: 1;
+      background: white;
+      z-index: 1;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      .item {
+        font-size: 16px;
+        line-height: 50px;
+        padding: 0 30px;
+        color: #666;
+        text-decoration: none;
+        &:hover {
+          color: #1c9aa0;
+        }
+      }
+    }
     .navbar-right {
       flex-grow: 1;
       background: white;

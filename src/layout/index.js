@@ -89,6 +89,11 @@ export default class Layout extends React.Component {
                                 <span onClick={this.onSwitchStart.bind(this)}
                                       className="switch">Switch</span>
                             </div>
+                            <div className="navbar-left">
+                                <a className="item"
+                                   href="/gaea"
+                                   target="_blank">Fit-Plus</a>
+                            </div>
                             <div className="navbar-right">
                                 <a className="item"
                                    href="http://gitlab.baidu.com/tb-component/awesome"
