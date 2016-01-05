@@ -153,7 +153,7 @@ switch (args[0]) {
     case 'autopub':
         cleanModulesSync([moduleGlobal.modulePath])
         buildModules([moduleGlobal.modulePath]).then(() => {
-            patchModulesSync([moduleGlobal.modulePath])
+            patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules), 'patch')
             publishModules([moduleGlobal.modulePath])
         })
 
