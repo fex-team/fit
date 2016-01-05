@@ -92,7 +92,7 @@ export default class Layout extends React.Component {
                             <div className="navbar-left">
                                 <a className="item"
                                    href="/gaea"
-                                   target="_blank">Fit-Plus</a>
+                                   target="_blank">Fit-Pro</a>
                             </div>
                             <div className="navbar-right">
                                 <a className="item"
