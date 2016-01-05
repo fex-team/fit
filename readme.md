@@ -140,12 +140,18 @@ $ npm install
 - 在@方石的推动下,预计2016年上半年将贴吧前端ui层改为node服务（先小范围试点）,所有node项目将启用后端渲染,届时无论pc还是h5都将同时拥有mis的单页体验与pc的首屏加载的速度!而对我们前端的福利是,代码只需要开发一套,前后端通用的逻辑可以复用了
 - @天成 react移动端组件启动,项目代号为fiten,会同时支持react-native技术,最快在2016下半年将客户端页面部分改为react-native,一个h5+android+ios的项目只需要用h5开发一次,也会大大减少pm的沟通成本与项目维护成本
 
+### Fit-Pro
+
+`fit-pro` 是一个流式布局+绝对布局的可视化网站编辑平台,后续会陆续整合`fit`和`fiten`的组件,大部分代码由拖拽完成,代码只需要写在部分核心逻辑中
+
+http://fit.baidu.com/gaea
+
 ### Q & A
 
 > 最新版fis3怎么装?
 
 ````
-npm install fis3@3.3.11 -g
+npm install fis3@3.3.12 -g
 ````
 
 > 为什么不用node5.x?

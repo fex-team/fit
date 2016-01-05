@@ -35,7 +35,7 @@ const info = {
         label: 'ID',
         key: 'id',
         type: 'text',
-        placeholder: '用户id',
+        defaultValue: '3',
         beforeSend: (key, value)=> {
             return {
                 [key]: '_' + value
