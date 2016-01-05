@@ -4,7 +4,7 @@ fit-component 组件化开发流程，致力于打造一套先进的前端模块
 
 所有npm+fis3组件源码都在这里: http://gitlab.baidu.com/groups/tb-component
 
-您可以[移步这里浏览所有组件实例](http://fedev.baidu.com:8329)。
+您可以[移步这里浏览所有组件实例](http://fit.baidu.com)。
 
 特性:
 
