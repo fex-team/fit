@@ -1,0 +1,10 @@
+&.disabled {
+  cursor: not-allowed !important;
+  background-color: #eceeef;
+  color: #bbb;
+  &:hover {
+    cursor: not-allowed !important;
+    background-color: #eceeef !important;
+    color: #bbb !important;
+  }
+}

@@ -25,6 +25,10 @@ import Simple from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./de
 import simpleCode from 'text!./demo/simple.js'
 import simpleMarkdown from './demo/simple.md'
 
+import Disabled from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/disabled.js'
+import disabledCode from 'text!./demo/disabled.js'
+import disabledMarkdown from './demo/disabled.md'
+
 const colStyle = {
     padding: 10
 }
@@ -73,6 +77,12 @@ export default class Layout extends React.Component {
                                   code={labelCode}
                                   style={{marginTop:10}}>
                             <Label/>
+                        </CodeView>
+
+                        <CodeView md={disabledMarkdown}
+                                  code={disabledCode}
+                                  style={{marginTop:10}}>
+                            <Disabled/>
                         </CodeView>
                     </Col>
                 </Row>
