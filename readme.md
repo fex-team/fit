@@ -185,3 +185,7 @@ npm install fis3@3.3.12 -g
 > 代码规范提示错误咋办?
 
 所有js后缀名改为`jsx`,就可以通过百度代码规范了,目前还没有针对次的代码规范出台,继续关注中
+
+> 如何以 `GBK` 编码上线?
+
+`index.html` 中 `charset` 改为 `gbk` ,同时 `fis-conf.js` 中设置 `charset: 'gbk'`
