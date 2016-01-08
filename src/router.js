@@ -29,6 +29,7 @@ import NumberComponent from './components/pc/number'
 import MobileColor from './components/mobile/color'
 
 // tb
+import TbComponentIndex from './components/tb'
 import CaptchaComponent from './components/tb/captcha'
 import TrackComponent from './components/tb/track'
 
@@ -88,6 +89,7 @@ const MainRouter = (
         </Route>
         <Route path="/tb"
                component={Layout}>
+            <IndexRoute component={TbComponentIndex}/>
             <Route path="captcha"
                    component={CaptchaComponent}/>
             <Route path="track"
