@@ -154,6 +154,12 @@ http://fit.baidu.com/gaea
 npm install fis3@3.3.12 -g
 ````
 
+> fis 上面没有 npm 组件?
+
+到[https://github.com/fis-components/components/blob/master/task.yml](https://github.com/fis-components/components/blob/master/task.yml)
+ 
+ 去提交pull request, 之后会自动将 npm 组件转成 fis 组件(转化会有点慢..得等个几分钟)
+
 > 为什么不用node5.x?
 
 4.x是stable版,而且node5.x的npm3.x将node_modules打平,与node4.x的npm2.x嵌套node_modules项目结构上存在一定差异,建议node5.x稳定后再使用
