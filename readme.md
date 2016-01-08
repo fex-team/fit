@@ -155,8 +155,10 @@ npm install fis3@3.3.12 -g
 ````
 
 > fis 上面没有 npm 组件?
-到[https://github.com/fis-components/components/blob/master/task.yml](https://github.com/fis-components/components/blob/master/task.yml) 去提交pull request, 之后会自动将 npm 组件转成 fis 组件(转化会有点慢..得等个几分钟)
 
+到[https://github.com/fis-components/components/blob/master/task.yml](https://github.com/fis-components/components/blob/master/task.yml)
+ 
+ 去提交pull request, 之后会自动将 npm 组件转成 fis 组件(转化会有点慢..得等个几分钟)
 
 > 为什么不用node5.x?
 
