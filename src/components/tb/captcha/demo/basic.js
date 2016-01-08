@@ -5,7 +5,7 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Captcha mock="1"/>
+                <Captcha/>
             </div>
         )
     }
