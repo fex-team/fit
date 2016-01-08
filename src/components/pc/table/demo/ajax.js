@@ -12,7 +12,7 @@ const info = {
     get: {
         url: '/api/table/regex',
         method: 'get',
-        beforeSend: (info, currentPage)=> {
+        beforeSend: (info, currentPage, prevResponse, table)=> {
             info.page = currentPage
             return info
         },

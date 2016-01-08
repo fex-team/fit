@@ -1,6 +1,6 @@
 {
   "name": "fit-modal",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "模态框",
   "main": "lib/index.js",
   "scripts": {
@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fit-style": "^1.1.9"
+    "fit-style": "^1.1.10"
   }
 }

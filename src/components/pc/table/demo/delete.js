@@ -12,11 +12,11 @@ const info = {
     get: {
         url: '/api/table/regex',
         method: 'get',
-        beforeSend: (info, currentPage)=> {
+        beforeSend: (info, currentPage, prevResponse, table)=> {
             info.page = currentPage
             return info
         },
-        success: (res, pagination)=> {
+        success: (res, pagination, table)=> {
             pagination.next = res['has_next']
             return res['data']
         }
