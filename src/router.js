@@ -31,6 +31,7 @@ import MobileColor from './components/mobile/color'
 // tb
 import CaptchaComponent from './components/tb/captcha'
 import TrackComponent from './components/tb/track'
+import TimeComponent from './components/tb/time'
 
 const history = useBasename(createHistory)({
     basename: '/'
@@ -92,6 +93,8 @@ const MainRouter = (
                    component={CaptchaComponent}/>
             <Route path="track"
                    component={TrackComponent}/>
+            <Route path="time"
+                   component={TimeComponent}/>
         </Route>
     </Router>
 )
