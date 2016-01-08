@@ -8,3 +8,4 @@
 - `table.currentPage()` 获取当前页数
 - `table.jump(page)` 跳转到某一页
 - `table.info(message, type)` 显示表格级别提示,第一个参数为提示内容,第二个为类型,可选项为 `success` `danger`
+- `table.setColDeleteButtonVisible(isShow)` 显示/隐藏列删除按钮

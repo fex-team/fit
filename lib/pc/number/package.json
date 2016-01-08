@@ -1,8 +1,8 @@
 {
   "name": "fit-number",
-  "version": "1.0.4",
+  "version": "1.0.10",
   "description": "数字选择器",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
-    "fit-input": "^1.1.11",
+    "fit-input": "^1.1.12",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1"
   }
