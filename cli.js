@@ -40,6 +40,12 @@ var tbModules = moduleGlobal.tbModules = fs.readdirSync('./lib/tb').filter((name
     return path.resolve(__dirname, 'lib', 'tb', module)
 })
 
+var oxpModules = moduleGlobal.oxpModules = fs.readdirSync('./lib/oxp').filter((name) => {
+    return name.substring(0, 1) !== '.'
+}).map((module) => {
+    return path.resolve(__dirname, 'lib', 'oxp', module)
+})
+
 var args = process.argv.slice(2)
 var moduleType = args[1]
 var moduleName = args[2]
@@ -53,6 +59,9 @@ else if (moduleName && (moduleType === 'web' || moduleType === 'native')) {
 }
 else if (moduleName && moduleType === 'tb') {
     modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'tb', moduleName)
+}
+else if (moduleName && moduleType === 'oxp') {
+    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'oxp', moduleName)
 }
 
 // 抓住未捕获的错误
@@ -85,7 +94,7 @@ switch (args[0]) {
     case 'build':
         // build all
         if (!moduleType && !moduleName) {
-            buildModules(pcModules.concat(webModules).concat(nativeModules).concat(tbModules), function () {
+            buildModules(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), function () {
                 console.log('INFO: All Modules Build Success')
             })
         }
