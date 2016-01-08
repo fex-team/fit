@@ -34,6 +34,12 @@ var nativeModules = moduleGlobal.nativeModules = fs.readdirSync('./lib/mobile').
     return path.resolve(__dirname, 'lib', 'mobile', module, 'native')
 })
 
+var tbModules = moduleGlobal.tbModules = fs.readdirSync('./lib/tb').filter((name) => {
+    return name.substring(0, 1) !== '.'
+}).map((module) => {
+    return path.resolve(__dirname, 'lib', 'tb', module)
+})
+
 var args = process.argv.slice(2)
 var moduleType = args[1]
 var moduleName = args[2]
@@ -44,6 +50,9 @@ if (moduleName && moduleType === 'pc') {
 }
 else if (moduleName && (moduleType === 'web' || moduleType === 'native')) {
     modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'mobile', moduleName, moduleType)
+}
+else if (moduleName && moduleType === 'tb') {
+    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'tb', moduleName)
 }
 
 // 抓住未捕获的错误
@@ -76,7 +85,7 @@ switch (args[0]) {
     case 'build':
         // build all
         if (!moduleType && !moduleName) {
-            buildModules(pcModules.concat(webModules).concat(nativeModules), function () {
+            buildModules(pcModules.concat(webModules).concat(nativeModules).concat(tbModules), function () {
                 console.log('INFO: All Modules Build Success')
             })
         }
