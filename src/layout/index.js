@@ -1,10 +1,11 @@
 import React from 'react'
 import './index.scss'
-import {Link} from 'react-router'
+import { Link } from 'react-router'
 import classnames from 'classnames'
 
 import LeftMenuPC from './left-menu-pc'
 import LeftMenuMobile from './left-menu-mobile'
+import LeftMenuTb from './left-menu-tb'
 
 function getPageType(scope) {
     var url = scope.props.location.pathname.split('/')
@@ -77,6 +78,25 @@ export default class Layout extends React.Component {
             'white': this.state.type === 'mobile'
         })
 
+        let LeftMenu = null
+        switch (this.state.type) {
+        case 'pc':
+            LeftMenu = (
+                <LeftMenuPC />
+            )
+            break
+        case 'mobile':
+            LeftMenu = (
+                <LeftMenuMobile />
+            )
+            break
+        case 'tb':
+            LeftMenu = (
+                <LeftMenuTb />
+            )
+            break
+        }
+
         return (
             <div className="_namespace">
                 <div className="g-hd">
@@ -90,11 +110,15 @@ export default class Layout extends React.Component {
                                       className="switch">Switch</span>
                             </div>
                             <div className="navbar-left">
+                                <Link className="item"
+                                      to="/tb">Tieba</Link>
+                                <Link className="item"
+                                      to="/oxp">Oxp</Link>
+                            </div>
+                            <div className="navbar-right">
                                 <a className="item"
                                    href="/gaea"
                                    target="_blank">Fit-Pro</a>
-                            </div>
-                            <div className="navbar-right">
                                 <a className="item"
                                    href="http://gitlab.baidu.com/tb-component/awesome"
                                    target="_blank">Gitlab</a>
@@ -103,13 +127,13 @@ export default class Layout extends React.Component {
                     </div>
                 </div>
                 <div className={menuColor}>
-                    { this.state.type === 'pc' ? <LeftMenuPC /> : <LeftMenuMobile /> }
+                    {LeftMenu ? LeftMenu : null}
                 </div>
                 <div className="g-mn">
                     {this.props.children}
                 </div>
                 <div className="g-ft">
-                    { this.state.type === 'pc' ? 'Fit Design' : 'Fiten Design' }
+                    {this.state.type === 'mobile' ? 'Fiten Design' : 'Fit Design'}
                 </div>
             </div>
         )

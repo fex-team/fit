@@ -1,12 +1,15 @@
 import React from 'react'
-import classnames from 'classnames'
 import menuFactory from '../menu-factory'
 import './index.scss'
 
 const menuBase = [{
-    title: '颜色',
-    path: '/mobile/color',
-    icon: 'columns'
+    title: '日志请求 Track',
+    path: '/tb/track',
+    icon: 'send'
+}, {
+    title: '验证码 Captcha',
+    path: '/tb/captcha',
+    icon: 'bullseye'
 }]
 
 export default class Layout extends React.Component {

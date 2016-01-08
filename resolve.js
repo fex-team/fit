@@ -19,7 +19,6 @@ module.exports = {
         'fit-menu': path.join(__dirname, 'lib/pc/menu/src'),
         'fit-modal': path.join(__dirname, 'lib/pc/modal/src'),
         'fit-message': path.join(__dirname, 'lib/pc/message/src'),
-        'fit-captcha': path.join(__dirname, 'lib/pc/captcha/src'),
         'fit-collapse': path.join(__dirname, 'lib/pc/collapse/src'),
         'fit-tabs': path.join(__dirname, 'lib/pc/tabs/src'),
         'fit-timepicker': path.join(__dirname, 'lib/pc/timepicker/src'),
@@ -28,6 +27,9 @@ module.exports = {
         'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
         'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src'),
         'fiten-bluekit': path.join(__dirname, 'lib/mobile/bluekit/web/src'),
-        'fiten-bluekit-native': path.join(__dirname, 'lib/mobile/bluekit/native/src')
+        'fiten-bluekit-native': path.join(__dirname, 'lib/mobile/bluekit/native/src'),
+        // tb
+        'tb-track': path.join(__dirname, 'lib/tb/track/src'),
+        'tb-captcha': path.join(__dirname, 'lib/tb/captcha/src')
     }
 }

@@ -5,6 +5,7 @@ import { createHistory, useBasename } from 'history'
 import Layout from './layout'
 import Home from './home'
 
+// pc
 import ButtonComponent from './components/pc/button'
 import LayoutComponent from './components/pc/layout'
 import LayoutGlobalComponent from './components/pc/layout-global'
@@ -19,13 +20,17 @@ import SelectComponent from './components/pc/select'
 import MenuComponent from './components/pc/menu'
 import ModalComponent from './components/pc/modal'
 import MessageComponent from './components/pc/message'
-import CaptchaComponent from './components/pc/captcha'
 import CollapseComponent from './components/pc/collapse'
 import TabsComponent from './components/pc/tabs'
 import TimepickerComponent from './components/pc/timepicker'
 import NumberComponent from './components/pc/number'
 
+// mobile
 import MobileColor from './components/mobile/color'
+
+// tb
+import CaptchaComponent from './components/tb/captcha'
+import TrackComponent from './components/tb/track'
 
 const history = useBasename(createHistory)({
     basename: '/'
@@ -66,8 +71,6 @@ const MainRouter = (
                    component={ModalComponent}/>
             <Route path="message"
                    component={MessageComponent}/>
-            <Route path="captcha"
-                   component={CaptchaComponent}/>
             <Route path="collapse"
                    component={CollapseComponent}/>
             <Route path="tabs"
@@ -82,6 +85,13 @@ const MainRouter = (
             <IndexRoute component={MobileColor}/>
             <Route path="color"
                    component={MobileColor}/>
+        </Route>
+        <Route path="/tb"
+               component={Layout}>
+            <Route path="captcha"
+                   component={CaptchaComponent}/>
+            <Route path="track"
+                   component={TrackComponent}/>
         </Route>
     </Router>
 )

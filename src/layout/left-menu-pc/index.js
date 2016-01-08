@@ -1,8 +1,6 @@
 import React from 'react'
 import './index.scss'
-import {Link} from 'react-router'
-import classnames from 'classnames'
-import { Row, Col } from 'fit-layout'
+import menuFactory from '../menu-factory'
 
 const menuBase = [{
     title: '全屏布局 Layouts',
@@ -84,35 +82,6 @@ const menuNavigation = [{
     icon: 'clone'
 }]
 
-const menuTieba = [{
-    title: '验证码 captcha',
-    path: '/pc/captcha',
-    icon: 'bullseye'
-}]
-
-const menuFactory = (data)=> {
-    return data.map((item, index)=> {
-        let iconClass = classnames(['fa', 'fa-' + item.icon])
-        return (
-            <Link key={index}
-                  className="item"
-                  activeClassName="active"
-                  to={item.path}>
-                <Row>
-                    <Col span="6"
-                         style={{paddingLeft:10}}>
-                        <i style={{marginRight:10}}
-                           className={iconClass}></i>
-                    </Col>
-                    <Col span="18">
-                        {item.title}
-                    </Col>
-                </Row>
-            </Link>
-        )
-    })
-}
-
 export default class Layout extends React.Component {
     constructor(props) {
         super(props)
@@ -123,7 +92,6 @@ export default class Layout extends React.Component {
         let MenuBase = menuFactory(menuBase)
         let MenuShow = menuFactory(menuShow)
         let MenuTable = menuFactory(menuForm)
-        let MenuTieba = menuFactory(menuTieba)
         let MenuNavigation = menuFactory(menuNavigation)
 
         return (
@@ -136,8 +104,6 @@ export default class Layout extends React.Component {
                 {MenuTable}
                 <div className="title">导航</div>
                 {MenuNavigation}
-                <div className="title">贴吧内部</div>
-                {MenuTieba}
             </div>
         )
     }

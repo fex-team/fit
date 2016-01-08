@@ -6,6 +6,7 @@ module.exports = `
       content="IE=edge">
 <meta name="format-detection"
       content="telephone=no">
+<title>Fit Design</title>
 
 <body>
 <div id='react-dom'></div>
