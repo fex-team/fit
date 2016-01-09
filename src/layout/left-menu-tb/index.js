@@ -10,10 +10,6 @@ const menuBase = [{
     title: '验证码 Captcha',
     path: '/tb/captcha',
     icon: 'bullseye'
-}, {
-    title: '时间转化 Time',
-    path: '/tb/time',
-    icon: 'clock-o'
 }]
 
 export default class Layout extends React.Component {
