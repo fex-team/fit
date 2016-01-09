@@ -33,6 +33,10 @@ import Active from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./de
 import activeCode from 'text!./demo/active.js'
 import activeMarkdown from './demo/active.md'
 
+import Loading from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/loading.js'
+import loadingCode from 'text!./demo/loading.js'
+import loadingMarkdown from './demo/loading.md'
+
 const colStyle = {
     padding: 10
 }
@@ -87,6 +91,11 @@ export default class Layout extends React.Component {
                                   code={groupCode}
                                   style={{marginTop:10}}>
                             <Group/>
+                        </CodeView>
+                        <CodeView md={loadingMarkdown}
+                                  code={loadingCode}
+                                  style={{marginTop:10}}>
+                            <Loading/>
                         </CodeView>
                     </Col>
                 </Row>
