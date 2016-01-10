@@ -72,6 +72,11 @@ import Outside from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./d
 import outsideCode from 'text!./demo/outside.js'
 import outsideMarkdown from './demo/outside.md'
 
+import Mockdelete from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/mockdelete.js'
+import mockdeleteCode from 'text!./demo/mockdelete.js'
+import mockdeleteMarkdown from './demo/mockdelete.md'
+
+
 const colStyle = {
     padding: 10
 }
@@ -176,6 +181,11 @@ export default class Layout extends React.Component {
                         <CodeView md={outsideMarkdown}
                                   code={outsideCode}>
                             <Outside />
+                        </CodeView>
+
+                        <CodeView md={mockdeleteMarkdown}
+                                  code={mockdeleteCode}>
+                            <Mockdelete />
                         </CodeView>
                     </Col>
                 </Row>

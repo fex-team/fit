@@ -34,6 +34,15 @@ const info = {
             table.jump(table.currentPage())
         }
 
+        function Delete() {
+            let currentSelectRows = table.getCurrentSelectRows()
+            table.mockDeleteData(currentSelectRows)
+
+            setTimeout(() => {
+                console.log(table.getData())
+            })
+        }
+
         return (
             <div>
                 <Button type="success"
@@ -41,6 +50,7 @@ const info = {
                 <Button style={{marginLeft:10}}
                         type="primary"
                         onClick={jumpHome}>刷新</Button>
+                <Button onClick={Delete}>模拟删除</Button>
             </div>
         )
     }

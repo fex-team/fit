@@ -1,6 +1,6 @@
 {
   "name": "fit-table",
-  "version": "1.1.35",
+  "version": "1.1.37",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
