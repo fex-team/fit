@@ -9,6 +9,10 @@ import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import basicCode from 'text!./demo/basic.js'
 import basicMarkdown from './demo/basic.md'
 
+import ExpendAll from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/expend-all.js'
+import expendAllCode from 'text!./demo/expend-all.js'
+import expendAllMarkdown from './demo/expend-all.md'
+
 const colStyle = {
     padding: 10
 }
@@ -36,7 +40,10 @@ export default class Layout extends React.Component {
 
                     <Col style={colStyle}
                          span="12">
-
+                        <CodeView md={expendAllMarkdown}
+                                  code={expendAllCode}>
+                            <ExpendAll/>
+                        </CodeView>
                     </Col>
                 </Row>
 
