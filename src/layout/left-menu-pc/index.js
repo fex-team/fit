@@ -36,17 +36,25 @@ const menuShow = [{
     title: '折叠面板 Collapse',
     path: '/pc/collapse',
     icon: 'plus-square'
+}, {
+    title: '树形控件 Tree',
+    path: '/pc/tree',
+    icon: 'tree'
+}, {
+    title: 'JSON树 JsonTree',
+    path: '/pc/json-tree',
+    icon: 'tree'
 }]
 
 const menuForm = [{
     title: '输入框 Input',
     path: '/pc/input',
     icon: 'font'
-},{
+}, {
     title: '数字框 Number',
     path: '/pc/number',
     icon: 'chevron-up'
-},{
+}, {
     title: '自动完成 Auto-Complete',
     path: '/pc/auto-complete',
     icon: 'angle-double-down'

@@ -25,6 +25,8 @@ import TabsComponent from './components/pc/tabs'
 import TimepickerComponent from './components/pc/timepicker'
 import NumberComponent from './components/pc/number'
 import AutoCompleteComponent from './components/pc/auto-complete'
+import TreeComponent from './components/pc/tree'
+import JsonTreeComponent from './components/pc/json-tree'
 
 // mobile
 import MobileColor from './components/mobile/color'
@@ -84,6 +86,10 @@ const MainRouter = (
                    component={NumberComponent}/>
             <Route path="auto-complete"
                    component={AutoCompleteComponent}/>
+            <Route path="tree"
+                   component={TreeComponent}/>
+            <Route path="json-tree"
+                   component={JsonTreeComponent}/>
         </Route>
         <Route path="/mobile"
                component={Layout}>

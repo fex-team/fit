@@ -24,6 +24,8 @@ module.exports = {
         'fit-timepicker': path.join(__dirname, 'lib/pc/timepicker/src'),
         'fit-number': path.join(__dirname, 'lib/pc/number/src'),
         'fit-auto-complete': path.join(__dirname, 'lib/pc/auto-complete/src'),
+        'fit-tree': path.join(__dirname, 'lib/pc/tree/src'),
+        'fit-json-tree': path.join(__dirname, 'lib/pc/json-tree/src'),
         // mobile
         'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
         'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src'),

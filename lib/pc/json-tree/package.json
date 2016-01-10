@@ -1,0 +1,18 @@
+{
+  "name": "fit-json-tree",
+  "version": "0.2.10",
+  "description": "json-tree",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/pc-json-tree.git"
+  },
+  "keywords": [
+    "tieba"
+  ],
+  "author": "tieba",
+  "license": "ISC"
+}
