@@ -1,18 +1,24 @@
 import React from 'react'
-import Input from 'fit-input'
+import AutoComplete from 'fit-auto-complete'
+
+const opts = {
+    url: '/api/auto-complete/basic',
+    method: 'get',
+    beforeSend: (value)=> {
+        return {
+            search: value
+        }
+    },
+    complete: (res)=> {
+        return res
+    },
+    delay: 200
+}
 
 export default class Demo extends React.Component {
     render() {
         return (
-            <div>
-                <Input/>
-                <Input label="姓名"
-                       labelWidth={60}
-                       style={{marginTop:10}}/>
-                <Input addonLeft="高度"
-                       addonRight="%"
-                       style={{marginTop:10}}/>
-            </div>
+            <AutoComplete {...opts}/>
         )
     }
 }

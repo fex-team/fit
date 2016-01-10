@@ -11,12 +11,12 @@ const menuFactory = (data)=> {
                   activeClassName="active"
                   to={item.path}>
                 <Row>
-                    <Col span="6"
+                    <Col span="5"
                          style={{paddingLeft:10}}>
                         <i style={{marginRight:10}}
                            className={iconClass}></i>
                     </Col>
-                    <Col span="18">
+                    <Col span="19">
                         {item.title}
                     </Col>
                 </Row>

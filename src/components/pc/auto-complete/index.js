@@ -4,6 +4,7 @@ import Highlight from 'react-highlight'
 import Title from '../../title.js'
 import readme from './readme.md'
 import { Row, Col } from 'fit-layout'
+import './mock'
 
 import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
 import basicCode from 'text!./demo/basic.js'

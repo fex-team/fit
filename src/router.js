@@ -24,6 +24,7 @@ import CollapseComponent from './components/pc/collapse'
 import TabsComponent from './components/pc/tabs'
 import TimepickerComponent from './components/pc/timepicker'
 import NumberComponent from './components/pc/number'
+import AutoCompleteComponent from './components/pc/auto-complete'
 
 // mobile
 import MobileColor from './components/mobile/color'
@@ -81,6 +82,8 @@ const MainRouter = (
                    component={TimepickerComponent}/>
             <Route path="number"
                    component={NumberComponent}/>
+            <Route path="auto-complete"
+                   component={AutoCompleteComponent}/>
         </Route>
         <Route path="/mobile"
                component={Layout}>

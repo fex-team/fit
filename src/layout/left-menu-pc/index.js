@@ -46,6 +46,10 @@ const menuForm = [{
     title: '数字框 Number',
     path: '/pc/number',
     icon: 'chevron-up'
+},{
+    title: '自动完成 Auto-Complete',
+    path: '/pc/auto-complete',
+    icon: 'angle-double-down'
 }, {
     title: '选择框 Select',
     path: '/pc/select',
