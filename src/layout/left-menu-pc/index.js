@@ -82,6 +82,10 @@ const menuForm = [{
     title: '日期选择器 Datepiacker',
     path: '/pc/datepicker',
     icon: 'calendar'
+}, {
+    title: '上传 Upload',
+    path: '/pc/upload',
+    icon: 'upload'
 }]
 
 const menuNavigation = [{

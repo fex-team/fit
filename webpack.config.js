@@ -17,11 +17,15 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js?$/,
+                test: /\.(tsx|ts)?$/,
+                exclude: [/node_modules/, /demo/],
+                loaders: ['react-hot-loader', 'ts-loader', 'html-path-loader']
+            }, {
+                test: /\.(jsx|js|es6)?$/,
                 exclude: [/node_modules/, /demo/],
                 loaders: ['react-hot-loader', 'babel?presets[]=react,presets[]=es2015', 'html-path-loader']
             }, {
-                test: /\.js?$/,
+                test: /\.(jsx|js|es6)?$/,
                 include: [/demo/],
                 loaders: ['html-path-loader']
             }, {

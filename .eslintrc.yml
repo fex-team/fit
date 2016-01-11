@@ -1,0 +1,19 @@
+parser: 'babel-eslint'
+rules:
+  indent:
+    - 2
+    - 4
+  linebreak-style:
+    - 2
+    - unix
+  strict: 0
+env:
+  es6: true
+  node: true
+  browser: true
+extends: 'eslint:recommended'
+ecmaFeatures:
+  jsx: true
+  experimentalObjectRestSpread: true
+plugins:
+  - react
