@@ -161,6 +161,7 @@ switch (args[0]) {
 
         let diffModules = getProjectStatus()
         patchModulesSync(diffModules, pcModules.concat(webModules).concat(nativeModules), 'patch')
+        diffModules = getProjectStatus()
         cleanModulesSync(diffModules)
         buildModules(diffModules).then(() => {
             publishModules(diffModules)
