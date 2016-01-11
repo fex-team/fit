@@ -1,6 +1,6 @@
 {
   "name": "fit-number",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "数字选择器",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
-    "fit-input": "^1.1.13",
+    "fit-input": "^1.1.14",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1"
   }
