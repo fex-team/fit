@@ -24,6 +24,11 @@ const info = {
     del: {
         url: '/api/table/regex',
         method: 'delete',
+        alert: (colInfo)=> {
+            return (
+                <div>想删除{colInfo.value}吗?</div>
+            )
+        },
         beforeSend: (colInfo)=> {
             return {
                 id: colInfo.value
