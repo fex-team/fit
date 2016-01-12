@@ -27,6 +27,7 @@ import NumberComponent from './components/pc/number'
 import AutoCompleteComponent from './components/pc/auto-complete'
 import TreeComponent from './components/pc/tree'
 import JsonTreeComponent from './components/pc/json-tree'
+import PhoneComponent from './components/pc/phone'
 import UploadComponent from './components/pc/upload'
 
 // mobile
@@ -91,6 +92,8 @@ const MainRouter = (
                    component={TreeComponent}/>
             <Route path="json-tree"
                    component={JsonTreeComponent}/>
+            <Route path="phone"
+                   component={PhoneComponent}/>
             <Route path="upload"
                    component={UploadComponent}/>
         </Route>

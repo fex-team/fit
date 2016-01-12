@@ -98,6 +98,12 @@ const menuNavigation = [{
     icon: 'clone'
 }]
 
+const menuStyle = [{
+    title: '手机壳 Phone',
+    path: '/pc/phone',
+    icon: 'mobile'
+}]
+
 export default class Layout extends React.Component {
     constructor(props) {
         super(props)
@@ -109,6 +115,7 @@ export default class Layout extends React.Component {
         let MenuShow = menuFactory(menuShow)
         let MenuTable = menuFactory(menuForm)
         let MenuNavigation = menuFactory(menuNavigation)
+        let MenuStyle = menuFactory(menuStyle)
 
         return (
             <div className="_namespace">
@@ -120,6 +127,8 @@ export default class Layout extends React.Component {
                 {MenuTable}
                 <div className="title">导航</div>
                 {MenuNavigation}
+                <div className="title">样式</div>
+                {MenuStyle}
             </div>
         )
     }

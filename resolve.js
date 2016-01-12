@@ -26,6 +26,7 @@ module.exports = {
         'fit-auto-complete': path.join(__dirname, 'lib/pc/auto-complete/src'),
         'fit-tree': path.join(__dirname, 'lib/pc/tree/src'),
         'fit-json-tree': path.join(__dirname, 'lib/pc/json-tree/src'),
+        'fit-phone': path.join(__dirname, 'lib/pc/phone/src'),
         'fit-upload': path.join(__dirname, 'lib/pc/upload/src'),
         // mobile
         'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
