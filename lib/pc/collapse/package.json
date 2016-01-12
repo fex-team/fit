@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/collapse.git"
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/pc-collapse.git"
   },
   "keywords": [
     "tieba"

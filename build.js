@@ -36,7 +36,7 @@ function circleDirectory(root) {
 }
 
 function findJsFile(filepaths) {
-    var jsReg = /\.js$/
+    var jsReg = /\.(js|jsx)$/
 
     return filepaths.filter((name) => {
         return jsReg.test(name)
