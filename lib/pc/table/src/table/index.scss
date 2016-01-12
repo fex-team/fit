@@ -29,6 +29,8 @@ table {
   padding: 6px 15px;
   border-top: 1px solid #eaeff0;
   vertical-align: middle;
+  max-width: 250px;
+  word-break: break-all;
 }
 
 .table > thead > tr > th {
