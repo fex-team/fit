@@ -192,6 +192,21 @@ switch (args[0]) {
 
         break
 
+    case 'force':
+
+        if (!moduleType && !moduleName) {
+            forcePublish(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules))
+        }
+        else if (moduleType && !moduleName) {
+            forcePublish(moduleGlobal[moduleType + 'Modules'])
+        }
+        else if (moduleType && moduleName) {
+            forcePublish([moduleGlobal.modulePath])
+        }
+
+
+        break
+
 //    case 'updatesubtree':
 //
 //        updateSubTreeInfo()
@@ -259,6 +274,10 @@ switch (args[0]) {
         )
         process.exit(1)
         break
+}
+
+function forcePublish () {
+
 }
 
 function getProjectStatus () {
