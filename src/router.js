@@ -28,6 +28,7 @@ import AutoCompleteComponent from './components/pc/auto-complete'
 import TreeComponent from './components/pc/tree'
 import JsonTreeComponent from './components/pc/json-tree'
 import PhoneComponent from './components/pc/phone'
+import UploadComponent from './components/pc/upload'
 
 // mobile
 import MobileColor from './components/mobile/color'
@@ -93,6 +94,8 @@ const MainRouter = (
                    component={JsonTreeComponent}/>
             <Route path="phone"
                    component={PhoneComponent}/>
+            <Route path="upload"
+                   component={UploadComponent}/>
         </Route>
         <Route path="/mobile"
                component={Layout}>

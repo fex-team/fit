@@ -1,6 +1,6 @@
 {
   "name": "fit-auto-complete",
-  "version": "0.2.10",
+  "version": "0.2.12",
   "description": "auto-complete",
   "main": "lib/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.3",
-    "fit-input": "^1.1.12",
+    "fit-input": "^1.1.14",
     "jquery": "^2.2.0"
   }
 }
