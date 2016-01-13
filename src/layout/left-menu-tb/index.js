@@ -10,6 +10,10 @@ const menuBase = [{
     title: '验证码 Captcha',
     path: '/tb/captcha',
     icon: 'bullseye'
+}, {
+    title: '发帖 Submit',
+    path: '/tb/submit',
+    icon: 'comment'
 }]
 
 export default class Layout extends React.Component {

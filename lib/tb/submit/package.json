@@ -1,0 +1,14 @@
+{
+  "name": "tb-submit",
+  "version": "1.0.0",
+  "description": "贴吧发帖框",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "huangziyi01",
+  "license": "ISC",
+  "dependencies": {
+    "superagent": "^1.6.1"
+  }
+}

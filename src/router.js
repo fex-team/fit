@@ -29,6 +29,7 @@ import TreeComponent from './components/pc/tree'
 import JsonTreeComponent from './components/pc/json-tree'
 import PhoneComponent from './components/pc/phone'
 import UploadComponent from './components/pc/upload'
+import TbSubmitComponent from './components/tb/submit'
 
 // mobile
 import MobileColor from './components/mobile/color'
@@ -112,6 +113,8 @@ const MainRouter = (
                    component={TrackComponent}/>
             <Route path="time"
                    component={TimeComponent}/>
+            <Route path="submit"
+                   component={TbSubmitComponent}/>
         </Route>
     </Router>
 )
