@@ -7,6 +7,10 @@ const menuBase = [{
     title: '颜色',
     path: '/mobile/color',
     icon: 'columns'
+},{
+    title: '页面缩放',
+    path: '/mobile/scale',
+    icon: 'modx'
 }]
 
 export default class Layout extends React.Component {
