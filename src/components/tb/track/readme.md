@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-fis3 install gitlab:tb-components/tb-track
+fis3 install gitlab:tb-component/tb-track
 ````

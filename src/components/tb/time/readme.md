@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-fis3 install gitlab:tb-components/tb-time
+fis3 install gitlab:tb-component/tb-time
 ````
