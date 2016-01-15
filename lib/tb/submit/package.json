@@ -1,6 +1,6 @@
 {
   "name": "tb-submit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "贴吧发帖框",
   "main": "lib/index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "huangziyi01",
   "license": "ISC",
   "dependencies": {
-    "superagent": "^1.6.1"
+    "superagent": "^1.6.1",
+    "tb-emoji": "^0.0.1"
   }
 }

@@ -1,0 +1,8 @@
+.lib-pc-select-lib-option.disabled {
+  cursor: not-allowed !important;
+  background-color: #eceeef;
+  color: #bbb; }
+  .lib-pc-select-lib-option.disabled:hover {
+    cursor: not-allowed !important;
+    background-color: #eceeef !important;
+    color: #bbb !important; }

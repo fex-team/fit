@@ -20,6 +20,10 @@ import Comment from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./d
 import commentCode from 'text!./demo/comment.js'
 import commentMarkdown from './demo/comment.md'
 
+import Single from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/single.js'
+import singleCode from 'text!./demo/single.js'
+import singleMarkdown from './demo/single.md'
+
 const colStyle = {
     padding: 10
 }
@@ -61,6 +65,12 @@ export default class Layout extends React.Component {
                         <CodeView md={replyMarkdown}
                                   code={replyCode}>
                             <Reply/>
+                        </CodeView>
+
+                        <CodeView md={singleMarkdown}
+                                  style={{marginTop:10}}
+                                  code={singleCode}>
+                            <Single/>
                         </CodeView>
                     </Col>
                 </Row>
