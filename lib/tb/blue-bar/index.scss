@@ -1,0 +1,76 @@
+& {
+  width: 100%;
+  height: 45px;
+  background: #262b42;
+  line-height: 44px;
+  font-size: 18px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+
+  &.hide {
+    display: none;
+  }
+
+  a {
+    color: #cfd8e5;
+  }
+
+  > .blue-kit-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    a.blue-kit-btn {
+      float: left;
+      height: 44px;
+      position: relative;
+      padding: 0 18px;
+      color: #d1daea;
+      font-size: 16px;
+      -webkit-tap-highlight-color: transparent;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        border: 2px solid #a3b4cc;
+        border-width: 2px 0 0 2px;
+        width: 8px;
+        height: 8px;
+        margin: -5px 0 0 0;
+        -webkit-transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
+        transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
+      }
+
+      > .blue-kit-btn-logo {
+        height: 36px;
+        width: 28px;
+        font-size: 28px;
+        padding-top: 8px;
+      }
+
+      > .blue-kit-text {
+        vertical-align: top;
+        display: inline-block;
+        font-size: 18px;
+        margin-left: 8px;
+        line-height: 48px;
+      }
+    }
+  }
+
+  > .blue-kit-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+
+    &:active {
+      background: #191F29;
+    }
+  }
+}
