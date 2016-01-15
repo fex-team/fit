@@ -41,6 +41,7 @@ import TbComponentIndex from './components/tb'
 import CaptchaComponent from './components/tb/captcha'
 import TrackComponent from './components/tb/track'
 import TimeComponent from './components/tb/time'
+import BlueBarComponent from './components/tb/bluebar'
 
 const history = useBasename(createHistory)({
     basename: '/'
@@ -121,6 +122,8 @@ const MainRouter = (
                    component={TbSubmitComponent}/>
             <Route path="emoji"
                    component={TbEmojiComponent}/>
+            <Route path="bluebar"
+                   component={BlueBarComponent}/>
         </Route>
     </Router>
 )

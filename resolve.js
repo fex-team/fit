@@ -39,7 +39,8 @@ module.exports = {
         'tb-captcha': path.join(__dirname, 'lib/tb/captcha/src'),
         'tb-time': path.join(__dirname, 'lib/tb/time/src'),
         'tb-submit': path.join(__dirname, 'lib/tb/submit/src'),
-        'tb-emoji': path.join(__dirname, 'lib/tb/emoji/src')
+        'tb-emoji': path.join(__dirname, 'lib/tb/emoji/src'),
+        'tb-bluebar': path.join(__dirname, 'lib/tb/bluebar/src')
     },
     extensions: ['', '.js', '.jsx', '.tsx', '.ts', 'coffee', '.cjsx', '.es6']
 }

@@ -13,6 +13,10 @@ const menuBase = [{
     title: '发帖 Submit',
     path: '/tb/submit',
     icon: 'comment'
+}, {
+    title: '顶部蓝条 BlueBar',
+    path: '/tb/bluebar',
+    icon: 'bars'
 }]
 
 const menuShow = [{

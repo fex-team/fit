@@ -159,9 +159,9 @@ switch (args[0]) {
 
     case 'gitpatch':
 
-        let diffModules = getProjectStatus()
+        let diffModules = _.uniq(getProjectStatus())
         patchModulesSync(diffModules, pcModules.concat(webModules).concat(nativeModules), 'patch')
-        diffModules = getProjectStatus()
+        diffModules = _.uniq(getProjectStatus())
         cleanModulesSync(diffModules)
         buildModules(diffModules).then(() => {
             publishModules(diffModules)
