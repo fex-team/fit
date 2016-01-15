@@ -113,7 +113,7 @@ export default class Layout extends React.Component {
                             <div className="navbar-left">
                                 <Link className="item"
                                       activeClassName="active"
-                                      to="/">Pc</Link>
+                                      to="/pc">Pc</Link>
                                 <Link className="item"
                                       activeClassName="active"
                                       to="/mobile">Mobile</Link>
