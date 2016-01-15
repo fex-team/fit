@@ -33,7 +33,8 @@ import TbSubmitComponent from './components/tb/submit'
 import TbEmojiComponent from './components/tb/emoji'
 
 // mobile
-import MobileColor from './components/mobile/color'
+import MobileColorComponent from './components/mobile/color'
+import MobileScaleComponent from './components/mobile/scale'
 
 // tb
 import TbComponentIndex from './components/tb'
@@ -102,9 +103,11 @@ const MainRouter = (
         </Route>
         <Route path="/mobile"
                component={Layout}>
-            <IndexRoute component={MobileColor}/>
+            <IndexRoute component={MobileColorComponent}/>
             <Route path="color"
-                   component={MobileColor}/>
+                   component={MobileColorComponent}/>
+            <Route path="scale"
+                   component={MobileScaleComponent}/>
         </Route>
         <Route path="/tb"
                component={Layout}>
