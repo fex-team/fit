@@ -30,6 +30,7 @@ import JsonTreeComponent from './components/pc/json-tree'
 import PhoneComponent from './components/pc/phone'
 import UploadComponent from './components/pc/upload'
 import TbSubmitComponent from './components/tb/submit'
+import TbEmojiComponent from './components/tb/emoji'
 
 // mobile
 import MobileColor from './components/mobile/color'
@@ -115,6 +116,8 @@ const MainRouter = (
                    component={TimeComponent}/>
             <Route path="submit"
                    component={TbSubmitComponent}/>
+            <Route path="emoji"
+                   component={TbEmojiComponent}/>
         </Route>
     </Router>
 )

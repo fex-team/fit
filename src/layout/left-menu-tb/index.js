@@ -16,6 +16,12 @@ const menuBase = [{
     icon: 'comment'
 }]
 
+const menuShow = [{
+    title: '表情库 Emoji',
+    path: '/tb/emoji',
+    icon: 'fonticons'
+}]
+
 export default class Layout extends React.Component {
     constructor(props) {
         super(props)
@@ -24,11 +30,14 @@ export default class Layout extends React.Component {
 
     render() {
         let MenuBase = menuFactory(menuBase)
+        let MenuShow = menuFactory(menuShow)
 
         return (
             <div className="_namespace">
                 <div className="title">基本</div>
                 {MenuBase}
+                <div className="title">展示</div>
+                {MenuShow}
             </div>
         )
     }
