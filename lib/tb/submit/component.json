@@ -1,0 +1,12 @@
+{
+  "name": "tb-submit",
+  "version": "1.0.0",
+  "description": "发帖",
+  "main": "lib/index.js",
+  "author": "huangziyi01",
+  "license": "ISC",
+  "dependencies": {
+    "superagent": "^1.6.1",
+    "tb-emoji": "^1.0.0"
+  }
+}
