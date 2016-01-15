@@ -1,7 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
 import menuFactory from '../menu-factory'
-import './index.scss'
 
 const menuBase = [{
     title: '颜色',

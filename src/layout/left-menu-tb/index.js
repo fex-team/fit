@@ -1,6 +1,5 @@
 import React from 'react'
 import menuFactory from '../menu-factory'
-import './index.scss'
 
 const menuBase = [{
     title: '日志请求 Track',

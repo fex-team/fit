@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.scss'
+import './theme.scss'
 import { Link } from 'react-router'
 import classnames from 'classnames'
 
@@ -70,12 +71,12 @@ export default class Layout extends React.Component {
 
         let navBrand = classnames({
             'navbar-brand': true,
-            'white': this.state.type === 'mobile'
+            [this.state.type]: true
         })
 
         let menuColor = classnames({
             'g-sd': true,
-            'white': this.state.type === 'mobile'
+            [this.state.type]: true
         })
 
         let LeftMenu = null
@@ -111,8 +112,16 @@ export default class Layout extends React.Component {
                             </div>
                             <div className="navbar-left">
                                 <Link className="item"
+                                      activeClassName="active"
+                                      to="/">Pc</Link>
+                                <Link className="item"
+                                      activeClassName="active"
+                                      to="/mobile">Mobile</Link>
+                                <Link className="item"
+                                      activeClassName="active"
                                       to="/tb">Tieba</Link>
                                 <Link className="item"
+                                      activeClassName="active"
                                       to="/oxp">Oxp</Link>
                             </div>
                             <div className="navbar-right">

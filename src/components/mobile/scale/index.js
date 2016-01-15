@@ -17,7 +17,7 @@ export default class Layout extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        document.title = '也i慢缩放'
+        document.title = '页面缩放'
     }
 
     render() {
