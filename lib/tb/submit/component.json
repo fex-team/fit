@@ -6,7 +6,6 @@
   "author": "huangziyi01",
   "license": "ISC",
   "dependencies": {
-    "superagent": "^1.6.1",
-    "tb-emoji": "gitlab:tb-component/tb-emoji@latest"
+    "superagent": "^1.6.1"
   }
 }
