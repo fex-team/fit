@@ -1,6 +1,6 @@
 {
   "name": "fiten-scale",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "页面缩放",
   "main": "lib/index.js",
   "scripts": {

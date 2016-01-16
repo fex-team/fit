@@ -170,12 +170,34 @@ switch (args[0]) {
         break
 
     case 'autopub':
-        cleanModulesSync([moduleGlobal.modulePath])
-        buildModules([moduleGlobal.modulePath]).then(() => {
-            patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules), 'patch')
-            publishModules([moduleGlobal.modulePath])
-        })
+        if (!moduleType && !moduleName) {
+            cleanModulesSync(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules))
+            buildModules(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules)).then(() => {
+                patchModulesSync(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), pcModules.concat(webModules).concat(nativeModules), 'patch')
+                publishModules(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules))
+            }).catch((e) => {
+                console.log(e)
+            })
+        }
+        else if (moduleType && !moduleName) {
+            cleanModulesSync(moduleGlobal[moduleType + 'Modules'])
+            buildModules(moduleGlobal[moduleType + 'Modules']).then(() => {
+                patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules), 'patch')
+                publishModules(moduleGlobal[moduleType + 'Modules'])
+            }).catch((e) => {
+                console.log(e)
+            })
+        }
+        else if (moduleType && moduleName) {
+            cleanModulesSync([moduleGlobal.modulePath])
+            buildModules([moduleGlobal.modulePath]).then(() => {
+                patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules), 'patch')
+                publishModules([moduleGlobal.modulePath])
+            }).catch((e) => {
+                console.log(e)
+            })
 
+        }
         break
 
     case 'publish':
@@ -452,7 +474,10 @@ function patchModulesSync (modules, allModules, type) {
     }
 
     function getModuleObj (module) {
-        return JSON.parse(fs.readFileSync(path.resolve(module, 'package.json')).toString())
+        if (fs.existsSync(module, 'package.json')) {
+            return JSON.parse(fs.readFileSync(path.resolve(module, 'package.json')).toString())
+        }
+        return {}
     }
 
     function whoIsNeedMe (moduleObj) {
