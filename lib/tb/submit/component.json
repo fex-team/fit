@@ -7,6 +7,6 @@
   "license": "ISC",
   "dependencies": {
     "superagent": "^1.6.1",
-    "tb-emoji": "gitlab:tb-component/tb-emoji"
+    "tb-emoji": "gitlab:tb-component/tb-emoji@latest"
   }
 }
