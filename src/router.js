@@ -29,8 +29,7 @@ import TreeComponent from './components/pc/tree'
 import JsonTreeComponent from './components/pc/json-tree'
 import PhoneComponent from './components/pc/phone'
 import UploadComponent from './components/pc/upload'
-import TbSubmitComponent from './components/tb/submit'
-import TbEmojiComponent from './components/tb/emoji'
+import IframeComponent from './components/pc/iframe'
 
 // mobile
 import MobileColorComponent from './components/mobile/color'
@@ -42,6 +41,8 @@ import CaptchaComponent from './components/tb/captcha'
 import TrackComponent from './components/tb/track'
 import TimeComponent from './components/tb/time'
 import BlueBarComponent from './components/tb/bluebar'
+import TbSubmitComponent from './components/tb/submit'
+import TbEmojiComponent from './components/tb/emoji'
 
 const history = useBasename(createHistory)({
     basename: '/'
@@ -100,6 +101,8 @@ const MainRouter = (
                    component={PhoneComponent}/>
             <Route path="upload"
                    component={UploadComponent}/>
+            <Route path="iframe"
+                   component={IframeComponent}/>
         </Route>
         <Route path="/mobile"
                component={Layout}>

@@ -103,6 +103,12 @@ const menuStyle = [{
     icon: 'mobile'
 }]
 
+const menuOther = [{
+    title: '内嵌网页 Iframe',
+    path: '/pc/iframe',
+    icon: 'sticky-note'
+}]
+
 export default class Layout extends React.Component {
     constructor(props) {
         super(props)
@@ -115,6 +121,7 @@ export default class Layout extends React.Component {
         let MenuTable = menuFactory(menuForm)
         let MenuNavigation = menuFactory(menuNavigation)
         let MenuStyle = menuFactory(menuStyle)
+        let MenuOther = menuFactory(menuOther)
 
         return (
             <div className="_namespace">
@@ -128,6 +135,8 @@ export default class Layout extends React.Component {
                 {MenuNavigation}
                 <div className="title">样式</div>
                 {MenuStyle}
+                <div className="title">其他</div>
+                {MenuOther}
             </div>
         )
     }
