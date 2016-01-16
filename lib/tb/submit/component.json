@@ -6,7 +6,6 @@
   "author": "huangziyi01",
   "license": "ISC",
   "dependencies": {
-    "superagent": "^1.6.1",
-    "tb-emoji": "^1.0.0"
+    "superagent": "^1.6.1"
   }
 }

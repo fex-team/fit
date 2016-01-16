@@ -25,6 +25,7 @@
     "fit-radio": "^1.1.19",
     "fit-style": "^1.1.10",
     "fit-modal": "^1.1.10",
-    "fit-timepicker": "^0.2.25"
+    "fit-timepicker": "^0.2.25",
+    "fit-datepicker": "^0.0.1"
   }
 }
