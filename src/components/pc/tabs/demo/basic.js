@@ -1,18 +1,22 @@
 import React from 'react'
-import Input from 'fit-input'
+import { Tabs, TabPanel } from 'fit-tabs'
 
 export default class Demo extends React.Component {
+    handleChange(value) {
+        console.log('回调', value)
+    }
+
     render() {
         return (
-            <div>
-                <Input/>
-                <Input label="姓名"
-                       labelWidth={60}
-                       style={{marginTop:10}}/>
-                <Input addonLeft="高度"
-                       addonRight="%"
-                       style={{marginTop:10}}/>
-            </div>
+            <Tabs defaultActiveKey="1"
+                  onChange={this.handleChange.bind(this)}>
+                <TabPanel tab="选项卡一"
+                          key="1">选项卡一内容</TabPanel>
+                <TabPanel tab="选项卡二"
+                          key="2">选项卡二内容</TabPanel>
+                <TabPanel tab="选项卡三"
+                          key="3">选项卡三内容</TabPanel>
+            </Tabs>
         )
     }
 }
