@@ -9,7 +9,10 @@ export default class CodeDoc extends React.Component {
     }
 
     render() {
+        const title = this.props.code.match(/(\w*).defaultProps/g)[0]
+
         let tableInfo = {
+            title: title.replace(/.defaultProps/g, ''),
             fields: [{
                 key: 'infoParam',
                 value: '参数'

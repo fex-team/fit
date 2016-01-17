@@ -4,6 +4,9 @@ import Highlight from 'react-highlight'
 import { Row, Col } from 'fit-layout'
 import Title from '../../title.js'
 import readme from './readme.md'
+import CodeDoc from '../../../code-doc/index'
+
+import EmojiSourceCode from 'text!../../../../lib/tb/emoji/src/emoji/index'
 
 import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
 import basicCode from 'text!./demo/basic.js'
@@ -15,6 +18,12 @@ import controlMarkdown from './demo/control.md'
 
 const colStyle = {
     padding: 10
+}
+
+const docStyle = {
+    margin: 10,
+    padding: 10,
+    background: 'white'
 }
 
 export default class Layout extends React.Component {
@@ -45,6 +54,10 @@ export default class Layout extends React.Component {
                         </CodeView>
                     </Col>
                 </Row>
+
+                <div style={docStyle}>
+                    <CodeDoc code={EmojiSourceCode}/>
+                </div>
 
             </div>
         )
