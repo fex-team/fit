@@ -35,6 +35,7 @@ module.exports = {
         'fiten-bluekit': path.join(__dirname, 'lib/mobile/bluekit/web/src'),
         'fiten-bluekit-native': path.join(__dirname, 'lib/mobile/bluekit/native/src'),
         'fiten-scale': path.join(__dirname, 'lib/mobile/scale/web/src'),
+        'fiten-chat': path.join(__dirname, 'lib/mobile/chat/web/src'),
         // tb
         'tb-track': path.join(__dirname, 'lib/tb/track/src'),
         'tb-captcha': path.join(__dirname, 'lib/tb/captcha/src'),

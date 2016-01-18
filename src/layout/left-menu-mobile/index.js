@@ -10,6 +10,10 @@ const menuBase = [{
     title: '页面缩放',
     path: '/mobile/scale',
     icon: 'modx'
+},{
+    title: '聊天气泡',
+    path: '/mobile/chat',
+    icon: 'comments'
 }]
 
 export default class Layout extends React.Component {
