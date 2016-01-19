@@ -10,7 +10,7 @@
     font-style: normal;
   }
 
-  i {
+  [class^="tf-"], [class*=" tf-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'TiebaIcon' !important;
     speak: none;
