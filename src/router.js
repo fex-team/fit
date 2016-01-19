@@ -39,12 +39,13 @@ import MobileChatBoxComponent from './components/mobile/chat-box'
 
 // tb
 import TbComponentIndex from './components/tb'
-import CaptchaComponent from './components/tb/captcha'
+import TbCaptchaComponent from './components/tb/captcha'
 import TrackComponent from './components/tb/track'
 import TimeComponent from './components/tb/time'
-import BlueBarComponent from './components/tb/bluebar'
+import TbBlueBarComponent from './components/tb/bluebar'
 import TbSubmitComponent from './components/tb/submit'
 import TbEmojiComponent from './components/tb/emoji'
+import TbIconComponent from './components/tb/icon'
 
 const history = useBasename(createHistory)({
     basename: '/'
@@ -122,7 +123,7 @@ const MainRouter = (
                component={Layout}>
             <IndexRoute component={TbComponentIndex}/>
             <Route path="captcha"
-                   component={CaptchaComponent}/>
+                   component={TbCaptchaComponent}/>
             <Route path="track"
                    component={TrackComponent}/>
             <Route path="time"
@@ -132,7 +133,9 @@ const MainRouter = (
             <Route path="emoji"
                    component={TbEmojiComponent}/>
             <Route path="bluebar"
-                   component={BlueBarComponent}/>
+                   component={TbBlueBarComponent}/>
+            <Route path="icon"
+                   component={TbIconComponent}/>
         </Route>
     </Router>
 )

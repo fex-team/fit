@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="发帖" unicode="&#xe800;" d="m838 80c0-20-16-36-36-36h-590c-19 0-35 16-35 36v572c0 20 16 36 35 36h358v36h-393c-20 0-36-16-36-36v-644c0-19 16-35 36-35h661c20 0 36 16 36 35v322h-36v-286z m50 625l-16 15c-4 4-11 4-15 0l-470-472c-4-5-4-11 0-16l15-15c5-4 11-4 16 0l470 473c4 4 4 11 0 15z" horiz-adv-x="1000" />
+<glyph glyph-name="回复" unicode="&#xe801;" d="m832 741h-634c-32 0-58-25-58-57v-491c0-32 26-58 58-58h174l143-143 143 143h174c32 0 58 26 58 58v491c0 32-26 57-58 57z m1-546h-203l-115-116-116 116h-201v491h635v-491z m-288 261h-58v-58h58v58z m-174 0h-57v-58h57v58z m347 0h-58v-58h58v58z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

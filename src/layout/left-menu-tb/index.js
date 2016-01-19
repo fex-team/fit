@@ -20,6 +20,10 @@ const menuBase = [{
 }]
 
 const menuShow = [{
+    title: '字体图标 Icon',
+    path: '/tb/icon',
+    icon: 'fonticons'
+}, {
     title: '表情库 Emoji',
     path: '/tb/emoji',
     icon: 'fonticons'
