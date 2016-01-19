@@ -1,7 +1,0 @@
-.lib-pc-modal-lib-modal {
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.35); }
-
-.lib-pc-modal-lib-modal button.close {
-  outline: none; }
