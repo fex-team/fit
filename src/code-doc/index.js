@@ -32,7 +32,9 @@ export default class CodeDoc extends React.Component {
             datas: []
         }
 
-        const match = this.props.code.match(/defaultProps(?:\s)+?=(?:\s)+?\{\n([\w\W]*)\n\};/g)[0]
+        const matchArr = this.props.code.match(/defaultProps(?:\s)+?=(?:\s)+?\{\n([\w\W]*)\n\};/g)
+        if (!matchArr) return null
+        const match = matchArr[0]
         let matchArray = match.split('\n')
         matchArray.shift()
         matchArray.pop()

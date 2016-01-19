@@ -1,27 +1,26 @@
-.lib-pc-table-lib-table {
-  margin: 20px; }
-  .lib-pc-table-lib-table .panel {
-    border-radius: 2px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px solid #dee5e7;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
-  .lib-pc-table-lib-table .panel-heading {
-    border-color: #edf1f2;
-    background-color: #f6f8f8;
-    color: #333;
-    border-radius: 2px 2px 0 0;
-    padding: 0 15px;
-    height: 40px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    border-bottom: 1px solid transparent; }
+.lib-pc-table-lib-table .panel {
+  border-radius: 2px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #dee5e7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+
+.lib-pc-table-lib-table .panel-heading {
+  border-color: #edf1f2;
+  background-color: #f6f8f8;
+  color: #333;
+  border-radius: 2px 2px 0 0;
+  padding: 0 15px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid transparent; }
 
 .lib-pc-table-lib-table table {
   border-collapse: collapse; }
@@ -29,7 +28,9 @@
 .lib-pc-table-lib-table .table > thead > tr > th, .lib-pc-table-lib-table .table > tbody > tr > td, .lib-pc-table-lib-table .table > tfoot > tr > td {
   padding: 6px 15px;
   border-top: 1px solid #eaeff0;
-  vertical-align: middle; }
+  vertical-align: middle;
+  max-width: 250px;
+  word-break: break-all; }
 
 .lib-pc-table-lib-table .table > thead > tr > th {
   padding: 10px 15px !important;

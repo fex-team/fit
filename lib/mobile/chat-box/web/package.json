@@ -1,0 +1,14 @@
+{
+  "name": "fiten-chat-box",
+  "version": "1.0.2",
+  "description": "聊天盒子",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "huangziyi01",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.3"
+  }
+}

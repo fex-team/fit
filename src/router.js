@@ -35,6 +35,7 @@ import IframeComponent from './components/pc/iframe'
 import MobileColorComponent from './components/mobile/color'
 import MobileScaleComponent from './components/mobile/scale'
 import MobileChatComponent from './components/mobile/chat'
+import MobileChatBoxComponent from './components/mobile/chat-box'
 
 // tb
 import TbComponentIndex from './components/tb'
@@ -114,6 +115,8 @@ const MainRouter = (
                    component={MobileScaleComponent}/>
             <Route path="chat"
                    component={MobileChatComponent}/>
+            <Route path="chat-box"
+                   component={MobileChatBoxComponent}/>
         </Route>
         <Route path="/tb"
                component={Layout}>

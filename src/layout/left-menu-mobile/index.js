@@ -14,6 +14,10 @@ const menuBase = [{
     title: '聊天气泡',
     path: '/mobile/chat',
     icon: 'comments'
+},{
+    title: '聊天盒子',
+    path: '/mobile/chat-box',
+    icon: 'list-alt'
 }]
 
 export default class Layout extends React.Component {

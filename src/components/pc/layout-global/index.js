@@ -18,6 +18,10 @@ import Footer from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./de
 import footerCode from 'text!./demo/footer.js'
 import footerMarkdown from './demo/footer.md'
 
+import HeaderSection from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/header-section.js'
+import headerSectionCode from 'text!./demo/header-section.js'
+import headerSectionMarkdown from './demo/header-section.md'
+
 import All from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/all.js'
 import allCode from 'text!./demo/all.js'
 import allMarkdown from './demo/all.md'
@@ -51,6 +55,12 @@ export default class Layout extends React.Component {
                                   style={{marginTop:10}}>
                             <Footer/>
                         </CodeView>
+
+                        <CodeView md={allMarkdown}
+                                  code={allCode}
+                                  style={{marginTop:10}}>
+                            <All/>
+                        </CodeView>
                     </Col>
 
                     <Col style={colStyle}
@@ -59,10 +69,11 @@ export default class Layout extends React.Component {
                                   code={headerCode}>
                             <Header/>
                         </CodeView>
-                        <CodeView md={allMarkdown}
-                                  code={allCode}
+
+                        <CodeView md={headerSectionMarkdown}
+                                  code={headerSectionCode}
                                   style={{marginTop:10}}>
-                            <All/>
+                            <HeaderSection/>
                         </CodeView>
                     </Col>
                 </Row>
