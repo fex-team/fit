@@ -46,6 +46,7 @@ import TbBlueBarComponent from './components/tb/bluebar'
 import TbSubmitComponent from './components/tb/submit'
 import TbEmojiComponent from './components/tb/emoji'
 import TbIconComponent from './components/tb/icon'
+import TbImageComponent from './components/tb/image'
 
 const history = useBasename(createHistory)({
     basename: '/'
@@ -136,6 +137,8 @@ const MainRouter = (
                    component={TbBlueBarComponent}/>
             <Route path="icon"
                    component={TbIconComponent}/>
+            <Route path="image"
+                   component={TbImageComponent} />
         </Route>
     </Router>
 )
