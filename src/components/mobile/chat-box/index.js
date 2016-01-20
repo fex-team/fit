@@ -12,6 +12,10 @@ import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./dem
 import basicCode from 'text!./demo/basic.js'
 import basicMarkdown from './demo/basic.md'
 
+import Reverse from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/reverse.js'
+import reverseCode from 'text!./demo/reverse.js'
+import reverseMarkdown from './demo/reverse.md'
+
 const colStyle = {
     padding: 10
 }
@@ -44,7 +48,10 @@ export default class Layout extends React.Component {
                     </Col>
                     <Col span="12"
                          style={colStyle}>
-
+                        <CodeView md={reverseMarkdown}
+                                  code={reverseCode}>
+                            <Reverse/>
+                        </CodeView>
                     </Col>
                 </Row>
 

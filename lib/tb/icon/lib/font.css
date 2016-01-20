@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'TiebaIcon';
+  src: url("./font/TiebaIcon.eot?uwzsyt");
+  src: url("./font/TiebaIcon.eot?uwzsyt#iefix") format("embedded-opentype"), url("./font/TiebaIcon.ttf?uwzsyt") format("truetype"), url("./font/TiebaIcon.woff?uwzsyt") format("woff"), url("./font/TiebaIcon.svg?uwzsyt#TiebaIcon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="tf-"], [class*=" tf-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'TiebaIcon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.tf-post:before {
+  content: "\e900"; }
+
+.tf-reply:before {
+  content: "\e901"; }
