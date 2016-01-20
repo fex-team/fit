@@ -25,6 +25,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .tf-smile:before {
+    content: "\e902";
+  }
   .tf-post:before {
     content: "\e900";
   }
