@@ -49,6 +49,7 @@ export default class CodeDoc extends React.Component {
         for (let value of matchArray) {
             value = value.trim(' ')
             if (value === '')continue
+            if (value === '}')continue
 
             if (value.indexOf('@') > -1) {
                 // 注释
@@ -72,6 +73,20 @@ export default class CodeDoc extends React.Component {
                 defaultValue = _.trimRight(defaultValue, ',')
                 infoParam = code
                 infoDefault = defaultValue
+
+                if (infoDefault.indexOf('function') > -1) {
+                    infoDefault = 'null'
+                }
+
+                if (infoType === 'string') {
+                    infoDefault = _.trimLeft(infoDefault, '\'')
+                    infoDefault = _.trimRight(infoDefault, '\'')
+                    infoDefault = infoDefault.trim()
+                    if (_.isEmpty(infoDefault)) {
+                        infoDefault = 'null'
+                    }
+                }
+
                 tableInfo.datas.push({infoParam, infoDesc, infoType, infoEnum, infoDefault})
                 infoParam = infoDesc = infoType = infoEnum = infoDefault = ''
             }

@@ -65,7 +65,8 @@ export default class Demo extends React.Component {
                     isFixBottom={this.state.toBottom}
                     height="300"
                     count={this.state.datas.length}
-                    renderItem={this.renderItem.bind(this)}/>
+                    renderItem={this.renderItem.bind(this)}
+                    direction="column-reverse"/>
 
                 <ButtonGroup>
                     <Button onClick={this.handleAdd.bind(this,false)}

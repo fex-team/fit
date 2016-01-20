@@ -23,6 +23,7 @@ export default class Demo extends React.Component {
             <div style={{display:'flex'}}>
                 <Box type="post"/>
                 <Box type="reply"/>
+                <Box type="smile"/>
             </div>
         )
     }

@@ -48,7 +48,7 @@ var config = {
                 exclude: /node_modules/,
                 loaders: ['url?limit=3000&name=img/[hash:8].[name].[ext]']
             }, {
-                test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test: /\.(woff|woff2|ttf|eot|svg)/,
                 loaders: ['url?limit=3000&name=font/[hash:8].[name].[ext]']
             }, {
                 test: /\.json$/,

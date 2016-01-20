@@ -1,4 +1,17 @@
 & {
+  position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+  .fixed-number {
+    position: absolute;
+    right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
