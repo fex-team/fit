@@ -43,6 +43,14 @@ const menuShow = [{
     title: 'JSON树 JsonTree',
     path: '/pc/json-tree',
     icon: 'tree'
+}, {
+    title: '图片容器 Image',
+    path: '/pc/image',
+    icon: 'picture-o'
+}, {
+    title: '组件嵌入 Render-to',
+    path: '/pc/render-to',
+    icon: 'life-ring'
 }]
 
 const menuForm = [{

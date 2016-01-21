@@ -29,6 +29,8 @@ module.exports = {
         'fit-phone': path.join(__dirname, 'lib/pc/phone/src'),
         'fit-upload': path.join(__dirname, 'lib/pc/upload/src'),
         'fit-iframe': path.join(__dirname, 'lib/pc/iframe/src'),
+        'fit-image': path.join(__dirname, 'lib/pc/image/src'),
+        'fit-render-to': path.join(__dirname, 'lib/pc/render-to/src'),
         // mobile
         'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
         'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src'),
