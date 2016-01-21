@@ -6,6 +6,7 @@
   "author": "huangziyi01",
   "license": "ISC",
   "dependencies": {
-    "superagent": "^1.6.1"
+    "superagent": "^1.6.1",
+    "gitlab:tb-component/tb-icon": "^1.0.2"
   }
 }
