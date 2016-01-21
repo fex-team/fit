@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-fis3 install gitlab:tb-component/tb-emoji
+fis3 install tb-emoji
 ````

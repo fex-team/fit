@@ -4,5 +4,5 @@
 ---
 
 ````jsx
-fis3 install gitlab:tb-component/tb-image
+fis3 install tb-image
 ````

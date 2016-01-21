@@ -5,5 +5,5 @@
 ---
 
 ````jsx
-fis3 install gitlab:tb-component/tb-bluebar
+fis3 install tb-bluebar
 ````

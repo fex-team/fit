@@ -3,5 +3,5 @@
 ---
 
 ````jsx
-fis3 install gitlab:tb-component/tb-icon
+fis3 install tb-icon
 ````
