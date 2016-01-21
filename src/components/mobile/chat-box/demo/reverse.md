@@ -1,3 +1,3 @@
-# 内容倒序
+# 显示完全模式
 
-只要设置 `direction` 为 `column-reverse`
+只要设置 `fullScreen` 为 `true`

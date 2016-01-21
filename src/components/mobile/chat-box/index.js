@@ -48,6 +48,10 @@ export default class Layout extends React.Component {
                     </Col>
                     <Col span="12"
                          style={colStyle}>
+                        <CodeView md={reverseMarkdown}
+                                  code={reverseCode}>
+                            <Reverse/>
+                        </CodeView>
                     </Col>
                 </Row>
 
