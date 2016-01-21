@@ -1,6 +1,6 @@
 {
   "name": "tb-emoji",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "表情库",
   "main": "lib/index.js",
   "author": "huangziyi01",

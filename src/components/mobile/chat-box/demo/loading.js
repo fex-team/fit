@@ -12,7 +12,7 @@ export default class Demo extends React.Component {
         this.index = 0
     }
 
-    handleAdd(toBottom) {
+    createDatas() {
         let datas = []
         let count = Math.round(Math.random() * 50) + 50
         while (count > 0) {
@@ -27,7 +27,11 @@ export default class Demo extends React.Component {
             })
             count--
         }
+        return datas
+    }
 
+    handleAdd(toBottom) {
+        let datas = this.createDatas()
         this.refs['chatBox'].append(datas, toBottom)
     }
 
@@ -41,7 +45,8 @@ export default class Demo extends React.Component {
     }
 
     handleHitTop() {
-        console.log('hit top')
+        let datas = this.createDatas()
+        this.refs['chatBox'].prepend(datas)
     }
 
     render() {
