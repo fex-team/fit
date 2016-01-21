@@ -29,6 +29,8 @@ module.exports = {
         'fit-phone': path.join(__dirname, 'lib/pc/phone/src'),
         'fit-upload': path.join(__dirname, 'lib/pc/upload/src'),
         'fit-iframe': path.join(__dirname, 'lib/pc/iframe/src'),
+        'fit-image': path.join(__dirname, 'lib/pc/image/src'),
+        'fit-render-to': path.join(__dirname, 'lib/pc/render-to/src'),
         // mobile
         'fiten-style': path.join(__dirname, 'lib/mobile/color/web/src'),
         'fiten-style-native': path.join(__dirname, 'lib/mobile/color/native/src'),
@@ -44,8 +46,7 @@ module.exports = {
         'tb-submit': path.join(__dirname, 'lib/tb/submit/src'),
         'tb-emoji': path.join(__dirname, 'lib/tb/emoji/src'),
         'tb-bluebar': path.join(__dirname, 'lib/tb/bluebar/src'),
-        'tb-icon': path.join(__dirname, 'lib/tb/icon/src'),
-        'tb-image': path.join(__dirname, 'lib/tb/image/src')
+        'tb-icon': path.join(__dirname, 'lib/tb/icon/src')
     },
     extensions: ['', '.js', '.jsx', '.tsx', '.ts', 'coffee', '.cjsx', '.es6']
 }

@@ -30,6 +30,8 @@ import JsonTreeComponent from './components/pc/json-tree'
 import PhoneComponent from './components/pc/phone'
 import UploadComponent from './components/pc/upload'
 import IframeComponent from './components/pc/iframe'
+import ImageComponent from './components/pc/image'
+import RenderToComponent from './components/pc/render-to'
 
 // mobile
 import MobileColorComponent from './components/mobile/color'
@@ -46,7 +48,6 @@ import TbBlueBarComponent from './components/tb/bluebar'
 import TbSubmitComponent from './components/tb/submit'
 import TbEmojiComponent from './components/tb/emoji'
 import TbIconComponent from './components/tb/icon'
-import TbImageComponent from './components/tb/image'
 
 const history = useBasename(createHistory)({
     basename: '/'
@@ -107,6 +108,10 @@ const MainRouter = (
                    component={UploadComponent}/>
             <Route path="iframe"
                    component={IframeComponent}/>
+            <Route path="image"
+                   component={ImageComponent} />
+            <Route path="render-to"
+                   component={RenderToComponent} />
         </Route>
         <Route path="/mobile"
                component={Layout}>
@@ -137,8 +142,6 @@ const MainRouter = (
                    component={TbBlueBarComponent}/>
             <Route path="icon"
                    component={TbIconComponent}/>
-            <Route path="image"
-                   component={TbImageComponent} />
         </Route>
     </Router>
 )

@@ -18,7 +18,7 @@ export default class Demo extends React.Component {
 
     handleAdd(toBottom) {
         let newDatas = this.state.datas
-        let count = Math.round(Math.random() * 1000) + 1
+        let count = Math.round(Math.random() * 100) + 1
         while (count > 0) {
             let random = Math.round(Math.random() * 20) + 1
             let str = 'asd'
@@ -31,6 +31,8 @@ export default class Demo extends React.Component {
             })
             count--
         }
+
+        console.log(newDatas, toBottom)
 
         this.setState({
             datas: newDatas,
@@ -69,7 +71,7 @@ export default class Demo extends React.Component {
 
                 <ButtonGroup>
                     <Button onClick={this.handleAdd.bind(this,false)}
-                            style={{marginTop:10}}>新增1~1000个</Button>
+                            style={{marginTop:10}}>新增1~100个</Button>
                     <Button onClick={this.handleAdd.bind(this,true)}
                             style={{marginTop:10}}>新增（滚到底部）</Button>
                 </ButtonGroup>

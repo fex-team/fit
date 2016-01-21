@@ -17,10 +17,6 @@ const menuBase = [{
     title: '顶部蓝条 BlueBar',
     path: '/tb/bluebar',
     icon: 'bars'
-}, {
-    title: '图片容器 Image',
-    path: '/tb/image',
-    icon: 'picture-o'
 }]
 
 const menuShow = [{
