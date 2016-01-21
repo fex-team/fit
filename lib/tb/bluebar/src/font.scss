@@ -1,153 +1,151 @@
-._global {
-  @font-face {
-    font-family: "moicon";
-    src: url("font/icons.eot");
-    src: url("font/icons.eot?#iefix") format("embedded-opentype"), url("font/icons.woff") format("woff"), url("font/icons.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: "moicon";
+  src: url("font/icons.eot");
+  src: url("font/icons.eot?#iefix") format("embedded-opentype"), url("font/icons.woff") format("woff"), url("font/icons.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  [class^="icon_"]:before,
-  [class*=" icon_"]:before,
-  [class^="icon-"]:before,
-  [class*=" icon-"]:before {
-    font-family: moicon;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1;
-    font-weight: normal;
-    font-style: normal;
-    speak: none;
-    text-decoration: inherit;
-    text-transform: none;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+[class^="icon_"]:before,
+[class*=" icon_"]:before,
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: moicon;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .icon_check_outline:before,
-  .icon-check-outline:before,
-  .icon_check:before,
-  .icon-check:before,
-  .icon_cog:before,
-  .icon-cog:before,
-  .icon_menu:before,
-  .icon-menu:before,
-  .icon_phone:before,
-  .icon-phone:before,
-  .icon_plus:before,
-  .icon-plus:before,
-  .icon_police:before,
-  .icon-police:before,
-  .icon_reply:before,
-  .icon-reply:before,
-  .icon_search:before,
-  .icon-search:before,
-  .icon_sign:before,
-  .icon-sign:before,
-  .icon_sort:before,
-  .icon-sort:before,
-  .icon_star_outline:before,
-  .icon-star-outline:before,
-  .icon_star:before,
-  .icon-star:before,
-  .icon_thumb_outline:before,
-  .icon-thumb-outline:before,
-  .icon_thumb:before,
-  .icon-thumb:before,
-  .icon_tieba_logo:before,
-  .icon-tieba-logo:before,
-  .icon_transfer:before,
-  .icon-transfer:before {
-    font-family: "moicon";
-    display: inline-block;
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: inherit;
-  }
+.icon_check_outline:before,
+.icon-check-outline:before,
+.icon_check:before,
+.icon-check:before,
+.icon_cog:before,
+.icon-cog:before,
+.icon_menu:before,
+.icon-menu:before,
+.icon_phone:before,
+.icon-phone:before,
+.icon_plus:before,
+.icon-plus:before,
+.icon_police:before,
+.icon-police:before,
+.icon_reply:before,
+.icon-reply:before,
+.icon_search:before,
+.icon-search:before,
+.icon_sign:before,
+.icon-sign:before,
+.icon_sort:before,
+.icon-sort:before,
+.icon_star_outline:before,
+.icon-star-outline:before,
+.icon_star:before,
+.icon-star:before,
+.icon_thumb_outline:before,
+.icon-thumb-outline:before,
+.icon_thumb:before,
+.icon-thumb:before,
+.icon_tieba_logo:before,
+.icon-tieba-logo:before,
+.icon_transfer:before,
+.icon-transfer:before {
+  font-family: "moicon";
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
 
-  .icon_check_outline:before,
-  .icon-check-outline:before {
-    content: "\f101";
-  }
+.icon_check_outline:before,
+.icon-check-outline:before {
+  content: "\f101";
+}
 
-  .icon_check:before,
-  .icon-check:before {
-    content: "\f102";
-  }
+.icon_check:before,
+.icon-check:before {
+  content: "\f102";
+}
 
-  .icon_cog:before,
-  .icon-cog:before {
-    content: "\f103";
-  }
+.icon_cog:before,
+.icon-cog:before {
+  content: "\f103";
+}
 
-  .icon_menu:before,
-  .icon-menu:before {
-    content: "\f104";
-  }
+.icon_menu:before,
+.icon-menu:before {
+  content: "\f104";
+}
 
-  .icon_phone:before,
-  .icon-phone:before {
-    content: "\f105";
-  }
+.icon_phone:before,
+.icon-phone:before {
+  content: "\f105";
+}
 
-  .icon_plus:before,
-  .icon-plus:before {
-    content: "\f106";
-  }
+.icon_plus:before,
+.icon-plus:before {
+  content: "\f106";
+}
 
-  .icon_police:before,
-  .icon-police:before {
-    content: "\f107";
-  }
+.icon_police:before,
+.icon-police:before {
+  content: "\f107";
+}
 
-  .icon_reply:before,
-  .icon-reply:before {
-    content: "\f108";
-  }
+.icon_reply:before,
+.icon-reply:before {
+  content: "\f108";
+}
 
-  .icon_search:before,
-  .icon-search:before {
-    content: "\f109";
-  }
+.icon_search:before,
+.icon-search:before {
+  content: "\f109";
+}
 
-  .icon_sign:before,
-  .icon-sign:before {
-    content: "\f10a";
-  }
+.icon_sign:before,
+.icon-sign:before {
+  content: "\f10a";
+}
 
-  .icon_sort:before,
-  .icon-sort:before {
-    content: "\f10b";
-  }
+.icon_sort:before,
+.icon-sort:before {
+  content: "\f10b";
+}
 
-  .icon_star_outline:before,
-  .icon-star-outline:before {
-    content: "\f10c";
-  }
+.icon_star_outline:before,
+.icon-star-outline:before {
+  content: "\f10c";
+}
 
-  .icon_star:before,
-  .icon-star:before {
-    content: "\f10d";
-  }
+.icon_star:before,
+.icon-star:before {
+  content: "\f10d";
+}
 
-  .icon_thumb_outline:before,
-  .icon-thumb-outline:before {
-    content: "\f10e";
-  }
+.icon_thumb_outline:before,
+.icon-thumb-outline:before {
+  content: "\f10e";
+}
 
-  .icon_thumb:before,
-  .icon-thumb:before {
-    content: "\f10f";
-  }
+.icon_thumb:before,
+.icon-thumb:before {
+  content: "\f10f";
+}
 
-  .icon_tieba_logo:before,
-  .icon-tieba-logo:before {
-    content: "\f110";
-  }
+.icon_tieba_logo:before,
+.icon-tieba-logo:before {
+  content: "\f110";
+}
 
-  .icon_transfer:before,
-  .icon-transfer:before {
-    content: "\f111";
-  }
+.icon_transfer:before,
+.icon-transfer:before {
+  content: "\f111";
 }
