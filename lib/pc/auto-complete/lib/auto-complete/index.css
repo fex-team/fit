@@ -1,0 +1,21 @@
+.lib-pc-auto-complete-lib-auto-complete {
+  position: relative; }
+
+.lib-pc-auto-complete-lib-auto-complete .complete-container {
+  position: absolute;
+  background: white;
+  z-index: 1;
+  left: 0;
+  top: 33px;
+  display: none;
+  border: 1px solid #cfdadd; }
+  .lib-pc-auto-complete-lib-auto-complete .complete-container .item {
+    padding: 5px 10px;
+    cursor: pointer; }
+    .lib-pc-auto-complete-lib-auto-complete .complete-container .item:hover {
+      background: whitesmoke; }
+    .lib-pc-auto-complete-lib-auto-complete .complete-container .item.active {
+      background: #5AA3E2;
+      color: white; }
+    .lib-pc-auto-complete-lib-auto-complete .complete-container .item:not(.active) .highlight {
+      color: red; }

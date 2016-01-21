@@ -2,7 +2,7 @@
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  .child-container{
+  .child-container {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
@@ -10,6 +10,7 @@
   .fixed-number {
     position: absolute;
     right: 20px;
+    bottom: 30px;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -18,5 +19,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: white;
   }
 }

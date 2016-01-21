@@ -40,6 +40,10 @@ export default class Demo extends React.Component {
         )
     }
 
+    handleHitTop() {
+        console.log('hit top')
+    }
+
     render() {
         return (
             <div>
@@ -48,6 +52,7 @@ export default class Demo extends React.Component {
                     renderItem={this.renderItem.bind(this)}
                     backBottom={true}
                     fullScreen={true}
+                    onHitTop={this.handleHitTop.bind(this)}
                     ref="chatBox"/>
 
                 <ButtonGroup>
