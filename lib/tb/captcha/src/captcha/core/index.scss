@@ -1,3 +1,7 @@
+& {
+  background: white;
+}
+
 // 输入框标题
 .input-label {
   height: 30px;
@@ -7,7 +11,7 @@
   line-height: 30px;
   color: #999;
   font-size: 20px;
-  margin-top: 5px;
+  padding-top: 5px;
 }
 
 // 显示已输入汉字的4个格子
