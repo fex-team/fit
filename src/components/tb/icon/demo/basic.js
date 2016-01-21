@@ -8,7 +8,7 @@ const fontStyle = {
 class Box extends React.Component {
     render() {
         return (
-            <div style={{display:'flex',flexDirection:'column',alignItems:'center',margin:'0 5px',width:60}}>
+            <div style={{display:'flex',flexDirection:'column',alignItems:'center',margin:'0 5px',width:80}}>
                 <Icon type={this.props.type}
                       style={fontStyle}/>
                 <p>{this.props.type}</p>
