@@ -2,6 +2,11 @@
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
+  .child-container{
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   .fixed-number {
     position: absolute;
     right: 20px;

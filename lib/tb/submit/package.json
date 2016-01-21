@@ -9,6 +9,9 @@
   "author": "huangziyi01",
   "license": "ISC",
   "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-tappable": "^0.8.0",
     "superagent": "^1.6.1",
     "tb-emoji": "^0.0.1"
   }

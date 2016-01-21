@@ -16,6 +16,14 @@ import Reverse from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./d
 import reverseCode from 'text!./demo/reverse.js'
 import reverseMarkdown from './demo/reverse.md'
 
+import BackBottom from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/back-bottom.js'
+import backBottomCode from 'text!./demo/back-bottom.js'
+import backBottomMarkdown from './demo/back-bottom.md'
+
+import Loading from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/loading.js'
+import loadingCode from 'text!./demo/loading.js'
+import loadingMarkdown from './demo/loading.md'
+
 const colStyle = {
     padding: 10
 }
@@ -45,12 +53,24 @@ export default class Layout extends React.Component {
                                   code={basicCode}>
                             <Basic/>
                         </CodeView>
+
+                        <CodeView md={backBottomMarkdown}
+                                  code={backBottomCode}
+                                  style={{marginTop:10}}>
+                            <BackBottom/>
+                        </CodeView>
                     </Col>
                     <Col span="12"
                          style={colStyle}>
                         <CodeView md={reverseMarkdown}
                                   code={reverseCode}>
                             <Reverse/>
+                        </CodeView>
+
+                        <CodeView md={loadingMarkdown}
+                                  code={loadingCode}
+                                  style={{marginTop:10}}>
+                            <Loading/>
                         </CodeView>
                     </Col>
                 </Row>
