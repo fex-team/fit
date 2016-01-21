@@ -53,7 +53,7 @@ webpack({
             {
                 test: /\.js?$/,
                 exclude: /node_modules/,
-                loaders: ['babel?presets[]=react,presets[]=es2015,presets[]=stage0', 'html-path-loader']
+                loaders: ['babel?presets[]=react,presets[]=es2015', 'html-path-loader']
             }, {
                 test: /\.(css)$/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader')

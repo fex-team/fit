@@ -1,0 +1,3 @@
+[submodule "pc-button"]
+	path = pc-button
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-button.git
