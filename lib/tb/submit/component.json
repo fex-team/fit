@@ -7,6 +7,7 @@
   "license": "ISC",
   "dependencies": {
     "superagent": "^1.6.1",
+    "classnames": "^2.2.3",
     "gitlab:tb-component/tb-icon": "^1.0.2"
   }
 }

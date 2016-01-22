@@ -1,6 +1,6 @@
 {
   "name": "fiten-chat-box",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "聊天盒子",
   "main": "lib/index.js",
   "scripts": {
