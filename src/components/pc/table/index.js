@@ -5,6 +5,7 @@ import Title from '../../title.js'
 import readme from './readme.md'
 import { Row, Col } from 'fit-layout'
 import $ from 'jquery'
+
 import './mock'
 import './index.scss'
 

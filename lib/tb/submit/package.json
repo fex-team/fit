@@ -8,6 +8,10 @@
   },
   "author": "huangziyi01",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/tb-submit.git"
+  },
   "dependencies": {
     "classnames": "^2.2.3",
     "react": "^0.14.6",

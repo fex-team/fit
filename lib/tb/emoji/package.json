@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/tb-emoji.git"
+  },
   "author": "huangziyi01",
   "license": "ISC",
   "dependencies": {

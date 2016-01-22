@@ -1,17 +1,17 @@
 {
-  "name": "tb-icon",
-  "version": "1.0.2",
-  "description": "字体图标",
+  "name": "tb-share",
+  "version": "1.0.0",
+  "description": "tieba share component",
   "main": "lib/index.js",
   "scripts": {
     "test": "npm test"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/tb-icon.git"
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/tb-share.git"
   },
   "keywords": [
-    "icon"
+    "tieba"
   ],
   "author": "tieba",
   "license": "ISC"

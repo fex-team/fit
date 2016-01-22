@@ -14,6 +14,7 @@ const getRandomRange = (min, max)=> {
 mockjax({
     url: "/api/table/member",
     contentType: "application/json",
+    dataType: 'json',
     responseText: {
         ok: true,
         data: [{
