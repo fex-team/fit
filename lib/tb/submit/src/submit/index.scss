@@ -1,5 +1,7 @@
 & {
   position: relative;
+  display: flex;
+  flex-direction: column-reverse;
   &.container-bottom {
     position: fixed;
     bottom: 0;

@@ -1,5 +1,14 @@
 .lib-tb-submit-lib-submit {
-  position: relative; }
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
   .lib-tb-submit-lib-submit.container-bottom {
     position: fixed;
     bottom: 0;
