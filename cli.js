@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony
+#!/usr/bin/env node --harmony --harmony_default_parameters
 "use strict";
 
 
@@ -64,6 +64,22 @@ else if (moduleName && moduleType === 'oxp') {
     modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'oxp', moduleName)
 }
 
+function moduleDistribute (fn, params=null, context=null) {
+    let allModules = pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules).filter((p) => {
+        return fs.existsSync(p)
+    })
+
+    if (!moduleType && !moduleName) {
+        return fn.call(context, allModules, allModules, params)
+    }
+    else if (moduleType && !moduleName) {
+        return fn.call(context, moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), params)
+    }
+    else if (moduleType && moduleName) {
+        return fn.call(context, [moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), params)
+    }
+}
+
 // 抓住未捕获的错误
 //process.on('uncaughtException', function (err) {
 //    console.error(err)
@@ -93,67 +109,27 @@ Usage:
 switch (args[0]) {
     case 'build':
         // build all
-        if (!moduleType && !moduleName) {
-            buildModules(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), function () {
-                console.log('INFO: All Modules Build Success')
-            })
-        }
-        else if (moduleType && !moduleName) {
-            buildModules(moduleGlobal[moduleType + 'Modules'], function () {
-                console.log('INFO: All Modules Build Success')
-            })
-        }
-        else if (moduleType && moduleName) {
-            buildModules([moduleGlobal.modulePath], function () {
-                console.log('INFO: All Modules Build Success')
-            })
-        }
+        moduleDistribute(buildModules).then(() => {
+            console.log("All Module build success")
+        })
 
         break
 
     case 'clean':
 
-        if (!moduleType && !moduleName) {
-            cleanModulesSync(pcModules.concat(webModules).concat(nativeModules))
-        }
-        else if (moduleType && !moduleName) {
-            cleanModulesSync(moduleGlobal[moduleType + 'Modules'])
-        }
-        else if (moduleType && moduleName) {
-            cleanModulesSync([moduleGlobal.modulePath])
-        }
+        moduleDistribute(cleanModulesSync)
 
         break
 
     case 'patch':
-        if (!moduleType && !moduleName) {
-            patchModulesSync(pcModules.concat(webModules).concat(nativeModules), pcModules.concat(webModules).concat(nativeModules), 'patch')
-//            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
-        }
-        else if (moduleType && !moduleName) {
-            patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules), 'patch')
-//            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
-        }
-        else if (moduleType && moduleName) {
-            patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules), 'patch')
-        }
+
+        moduleDistribute(patchModulesSync, 'patch')
 
         break
 
     case 'minor':
-        if (!moduleType && !moduleName) {
-            patchModulesSync(pcModules.concat(webModules).concat(nativeModules), pcModules.concat(webModules).concat(nativeModules), 'minor')
-//            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
-        }
-        else if (moduleType && !moduleName) {
-            patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules), 'minor')
-//            console.log('不推荐直接使用 cli patch, 可以尝试 cli gitpatch')
-        }
-        else if (moduleType && moduleName) {
-            patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules), 'minor')
-        }
 
-        break
+        moduleDistribute(patchModulesSync, 'minor')
 
         break
 
@@ -202,30 +178,18 @@ switch (args[0]) {
 
     case 'publish':
         // push modules to gitlab
-        if (!moduleType && !moduleName) {
-            publishModules(pcModules.concat(webModules).concat(nativeModules))
-        }
-        else if (moduleType && !moduleName) {
-            publishModules(moduleGlobal[moduleType + 'Modules'])
-        }
-        else if (moduleType && moduleName) {
-            publishModules([moduleGlobal.modulePath])
-        }
-
+        moduleDistribute(publishModules)
         break
 
     case 'force':
 
-        if (!moduleType && !moduleName) {
-            forcePublish(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules))
-        }
-        else if (moduleType && !moduleName) {
-            forcePublish(moduleGlobal[moduleType + 'Modules'])
-        }
-        else if (moduleType && moduleName) {
-            forcePublish([moduleGlobal.modulePath])
-        }
+        moduleDistribute(forcePublish)
 
+        break
+
+    case '__initgit':
+
+        moduleDistribute(__initGit)
 
         break
 
@@ -300,6 +264,31 @@ switch (args[0]) {
 
 function forcePublish () {
 
+}
+
+function __initGit (modules) {
+    modules.forEach((filePath) => {
+        let result = checkGitInPackageJSON(filePath)
+        if (!result) {
+            console.log(filePath)
+        }
+    })
+}
+
+function checkPackageJSON (filePath) {
+    return fs.existsSync(path.join(filePath, 'package.json'))
+}
+
+function checkGitInPackageJSON (filePath) {
+    if (checkPackageJSON(filePath)) {
+        let packagePath = path.join(filePath, 'package.json')
+        let packageJSON = JSON.parse(fs.readFileSync(packagePath))
+        if (!packageJSON.repository) {
+            return false
+        }
+        return true
+    }
+    return false
 }
 
 function getProjectStatus () {
