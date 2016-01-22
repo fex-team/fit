@@ -267,12 +267,19 @@ function forcePublish () {
 }
 
 function __initGit (modules) {
-    modules.forEach((filePath) => {
-        let result = checkGitInPackageJSON(filePath)
-        if (!result) {
-            console.log(filePath)
+    modules.filter(checkGitInPackageJSON).forEach((filePath) => {
+        if (!checkGitInPackageJSON(filePath)) {
+            console.warn(`The direction path: ${filePath} did't have package.json or git repository path`)
         }
+
+        let gitRemote = getPackageJSON(filePath).repository.url
+
+        execSync(`cd ${filePath} && git init && git remote add origin ${gitRemote}`)
     })
+}
+
+function getPackageJSON (filePath) {
+    return JSON.parse(fs.readFile(path.join(filePath, 'package.json')))
 }
 
 function checkPackageJSON (filePath) {
@@ -281,14 +288,17 @@ function checkPackageJSON (filePath) {
 
 function checkGitInPackageJSON (filePath) {
     if (checkPackageJSON(filePath)) {
-        let packagePath = path.join(filePath, 'package.json')
-        let packageJSON = JSON.parse(fs.readFileSync(packagePath))
+        let packageJSON = getPackageJSON(filePath)
         if (!packageJSON.repository) {
             return false
         }
         return true
     }
     return false
+}
+
+function checkGit (filePath) {
+    return fs.existsSync(path.join(filePath, '.git'))
 }
 
 function getProjectStatus () {
