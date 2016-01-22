@@ -1,5 +1,6 @@
 .lib-tb-captcha-lib-captcha-core {
-  background: white; }
+  background: white;
+  position: relative; }
 
 .lib-tb-captcha-lib-captcha-core .input-label {
   height: 30px;
