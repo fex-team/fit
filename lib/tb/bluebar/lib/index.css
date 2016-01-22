@@ -1,4 +1,4 @@
-& {
+.lib-tb-bluebar-lib {
   width: 100%;
   height: 45px;
   background: #262b42;
@@ -6,31 +6,24 @@
   font-size: 18px;
   text-align: center;
   position: relative;
-  z-index: 1;
-
-  &.hide {
-    display: none;
-  }
-
-  a {
-    color: #cfd8e5;
-  }
-
-  > .blue-kit-left {
+  z-index: 1; }
+  .lib-tb-bluebar-lib.hide {
+    display: none; }
+  .lib-tb-bluebar-lib a {
+    color: #cfd8e5; }
+  .lib-tb-bluebar-lib > .blue-kit-left {
     position: absolute;
     top: 0;
-    left: 0;
-
-    a.blue-kit-btn {
+    left: 0; }
+    .lib-tb-bluebar-lib > .blue-kit-left a.blue-kit-btn {
       float: left;
       height: 44px;
       position: relative;
       padding: 0 18px;
       color: #d1daea;
       font-size: 16px;
-      -webkit-tap-highlight-color: transparent;
-
-      &:before {
+      -webkit-tap-highlight-color: transparent; }
+      .lib-tb-bluebar-lib > .blue-kit-left a.blue-kit-btn:before {
         content: '';
         position: absolute;
         top: 50%;
@@ -41,40 +34,26 @@
         height: 8px;
         margin: -5px 0 0 0;
         -webkit-transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
-        transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
-      }
-
-      > .blue-kit-btn-logo {
-        font-size: 28px;
-      }
-
-      > .blue-kit-text {
+        transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0); }
+      .lib-tb-bluebar-lib > .blue-kit-left a.blue-kit-btn > .blue-kit-btn-logo {
+        font-size: 28px; }
+      .lib-tb-bluebar-lib > .blue-kit-left a.blue-kit-btn > .blue-kit-text {
         vertical-align: top;
         display: inline-block;
         font-size: 18px;
         margin-left: 8px;
-        line-height: 48px;
-      }
-    }
-  }
-
-  > .blue-kit-right {
+        line-height: 48px; }
+  .lib-tb-bluebar-lib > .blue-kit-right {
     position: absolute;
     top: 0;
     right: 0;
     width: 45px;
-    height: 45px;
-
-    &.active {
-      background: #191F29;
-    }
-
-    img {
+    height: 45px; }
+    .lib-tb-bluebar-lib > .blue-kit-right.active {
+      background: #191F29; }
+    .lib-tb-bluebar-lib > .blue-kit-right img {
       display: block;
       margin-top: 15px;
       margin-left: 15px;
       width: 20px;
-      height: 20px;
-    }
-  }
-}
+      height: 20px; }
