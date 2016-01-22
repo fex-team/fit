@@ -1,6 +1,6 @@
 {
-  "name": "tb-component-upload",
-  "version": "v0.0.1",
+  "name": "fit-upload",
+  "version": "0.0.3",
   "description": "贴吧React上传组件",
   "main": "lib/upload.js",
   "scripts": {

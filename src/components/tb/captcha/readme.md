@@ -5,5 +5,5 @@
 ---
 
 ````jsx
-fis3 install gitlab:tb-component/tb-captcha
+fis3 install tb-captcha
 ````

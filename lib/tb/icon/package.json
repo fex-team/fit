@@ -1,7 +1,7 @@
 {
   "name": "tb-icon",
-  "version": "1.0.0",
-  "description": "tieba icon",
+  "version": "1.0.2",
+  "description": "字体图标",
   "main": "lib/index.js",
   "scripts": {
     "test": "npm test"

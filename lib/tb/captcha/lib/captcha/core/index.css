@@ -1,3 +1,6 @@
+.lib-tb-captcha-lib-captcha-core {
+  background: white; }
+
 .lib-tb-captcha-lib-captcha-core .input-label {
   height: 30px;
   width: 100%;
@@ -6,7 +9,7 @@
   line-height: 30px;
   color: #999;
   font-size: 20px;
-  margin-top: 5px; }
+  padding-top: 5px; }
 
 .lib-tb-captcha-lib-captcha-core .input-container {
   display: -webkit-box;

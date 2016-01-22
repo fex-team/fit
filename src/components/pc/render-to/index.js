@@ -34,7 +34,7 @@ export default class Layout extends React.Component {
                 <Title>{readme}</Title>
 
                 <Row>
-                    <Col span="8"
+                    <Col span="24"
                          style={colStyle}>
                         <CodeView md={basicMarkdown}
                                   code={basicCode}>
