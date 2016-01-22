@@ -4,10 +4,20 @@ import Highlight from 'react-highlight'
 import Title from '../../title.js'
 import readme from './readme.md'
 import { Row, Col } from 'fit-layout'
+import CodeDoc from '../../../code-doc/index'
 
 const colStyle = {
     padding: 10
 }
+
+const docStyle = {
+    margin: 10,
+    padding: 10,
+    background: 'white'
+}
+
+import BluebarSourceCode from 'text!../../../../lib/tb/bluebar/src/index'
+
 
 import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
 import basicCode from 'text!./demo/basic.js'
@@ -48,6 +58,10 @@ export default class Datepicker extends React.Component {
                         </CodeView>
                     </Col>
                 </Row>
+
+                <div style={docStyle}>
+                    <CodeDoc code={BluebarSourceCode} />
+                </div>
             </div>
         )
     }
