@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony --harmony_default_parameters
+#!/usr/bin/env node --harmony
 "use strict";
 
 
@@ -64,7 +64,9 @@ else if (moduleName && moduleType === 'oxp') {
     modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'oxp', moduleName)
 }
 
-function moduleDistribute (fn, params=null, context=null) {
+function moduleDistribute (fn, params, context) {
+    params = params || null
+    context = context || null
     let allModules = pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules).filter((p) => {
         return fs.existsSync(p)
     })
