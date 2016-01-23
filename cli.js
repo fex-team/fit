@@ -77,7 +77,72 @@ function moduleDistribute (fn, params=null, context=null) {
     }
     else if (moduleType && moduleName) {
         return fn.call(context, [moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), params)
+}
+}
+
+function multiProcessAsync (mission, params) {
+    return function (jobs) {
+        return new Promise((resolve, reject) => {
+            var jobCopy = _.cloneDeep(jobs)
+            var cpus = os.cpus()
+            var runChildInstance = []
+            var hasError = false
+            var errorMsg = []
+
+            process.chdir(root)
+
+            function onClose (successJob) {
+                console.info('INFO: ', successJob, ' build success')
+                let job = jobCopy.pop()
+                _.pull(runChildInstance, this)
+
+                if (job) {
+                    let childInstance = createWorkInstance(mission, params.concat([job]))
+                    distributeTask(childInstance, job)
+                }
+                else if (!runChildInstance.length && !hasError) {
+                    resolve()
+                }
+                else if (!runChildInstance.length && hasError) {
+                    reject(errorMsg.join('\n'))
+                }
+            }
+
+            function distributeTask (instance, job) {
+                instance.stderr.on('data', (err) => {
+                    hasError = true
+                    errorMsg.push(err.toString())
+                })
+
+                instance.stdout.on('data', (data) => {
+                    console.log(data.toString())
+                })
+
+                instance.on('close', onClose.bind(instance, job))
+
+                runChildInstance.push(instance)
+            }
+
+            if (jobs.length > cpus.length) {
+                cpus.forEach(() => {
+                    let job = jobCopy.pop()
+                    let childInstance = createWorkInstance(mission, params.concat([job]))
+                    distributeTask(childInstance, job)
+                })
+            }
+            else {
+                jobs.forEach(() => {
+                    let job = jobCopy.pop()
+                    let childInstance = createWorkInstance(mission, params.concat([job]))
+                    distributeTask(childInstance, job)
+                })
+            }
+        })
     }
+}
+
+function createWorkInstance (job, params) {
+    return spawn(job, params)
 }
 
 // 抓住未捕获的错误
@@ -109,8 +174,11 @@ Usage:
 switch (args[0]) {
     case 'build':
         // build all
-        moduleDistribute(buildModules).then(() => {
+        moduleDistribute(cleanModulesSync)
+        moduleDistribute(multiProcessAsync('node', ['build.js'])).then(() => {
             console.log("All Module build success")
+        }).catch((err) => {
+            console.log(err)
         })
 
         break
@@ -183,7 +251,11 @@ switch (args[0]) {
 
     case 'force':
 
-        moduleDistribute(forcePublish)
+        moduleDistribute(multiProcessAsync('git', ['push', '-f', 'origin', 'master'])).then(() => {
+            console.log('force complete')
+        }).catch((err) => {
+            console.log(err)
+        })
 
         break
 
@@ -262,16 +334,14 @@ switch (args[0]) {
         break
 }
 
-function forcePublish () {
+function forcePublish (modules) {
+    modules.filter(checkGitInPackageJSON).forEach((filePath) => {
 
+    })
 }
 
 function __initGit (modules) {
     modules.filter(checkGitInPackageJSON).forEach((filePath) => {
-        if (!checkGitInPackageJSON(filePath)) {
-            console.warn(`The direction path: ${filePath} did't have package.json or git repository path`)
-        }
-
         let gitRemote = getPackageJSON(filePath).repository.url
 
         execSync(`cd ${filePath} && git init && git remote add origin ${gitRemote}`)
@@ -332,8 +402,8 @@ function cleanModulesSync (modules) {
 
     for (var modulePath of modules) {
         try {
-            execSync('rm -r ' + path.resolve(modulePath, 'lib'))
-            execSync('rm ' + path.resolve(modulePath, 'npm-debug.log'))
+            execSync('rm -r ' + path.resolve(modulePath, 'lib') + ' > /dev/null 2>&1')
+            execSync('rm ' + path.resolve(modulePath, 'npm-debug.log > /dev/null 2>&1'))
             console.log('INFO: ', 'Remove ' + modulePath + ' lib')
         }
         catch (e) {}
