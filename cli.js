@@ -80,7 +80,21 @@ function moduleDistribute (fn, params=null, context=null) {
 }
 }
 
-function multiProcessAsync (mission, params) {
+function multiProcessAsync (mission, params, beforeRun = () => {}) {
+    function createWorkInstance (mission, params, job) {
+        beforeRun(mission, params, job)
+        return spawn(mission, params.map((val) => {
+            if (val === '${modulePath}') {
+                return job
+            }
+            else {
+                return val
+            }
+        }))
+
+    }
+
+
     return function (jobs) {
         return new Promise((resolve, reject) => {
             var jobCopy = _.cloneDeep(jobs)
@@ -92,12 +106,12 @@ function multiProcessAsync (mission, params) {
             process.chdir(root)
 
             function onClose (successJob) {
-                console.info('INFO: ', successJob, ' build success')
+                console.info(`INFO: ${mission} ${params.join(' ')} run success`)
                 let job = jobCopy.pop()
                 _.pull(runChildInstance, this)
 
                 if (job) {
-                    let childInstance = createWorkInstance(mission, params.concat([job]))
+                    let childInstance = createWorkInstance(mission, params, job)
                     distributeTask(childInstance, job)
                 }
                 else if (!runChildInstance.length && !hasError) {
@@ -126,25 +140,20 @@ function multiProcessAsync (mission, params) {
             if (jobs.length > cpus.length) {
                 cpus.forEach(() => {
                     let job = jobCopy.pop()
-                    let childInstance = createWorkInstance(mission, params.concat([job]))
+                    let childInstance = createWorkInstance(mission, params, job)
                     distributeTask(childInstance, job)
                 })
             }
             else {
                 jobs.forEach(() => {
                     let job = jobCopy.pop()
-                    let childInstance = createWorkInstance(mission, params.concat([job]))
+                    let childInstance = createWorkInstance(mission, params, job)
                     distributeTask(childInstance, job)
                 })
             }
         })
     }
 }
-
-function createWorkInstance (job, params) {
-    return spawn(job, params)
-}
-
 // 抓住未捕获的错误
 //process.on('uncaughtException', function (err) {
 //    console.error(err)
@@ -175,7 +184,7 @@ switch (args[0]) {
     case 'build':
         // build all
         moduleDistribute(cleanModulesSync)
-        moduleDistribute(multiProcessAsync('node', ['build.js'])).then(() => {
+        moduleDistribute(multiProcessAsync('node', ['build.js', '${modulePath}'])).then(() => {
             console.log("All Module build success")
         }).catch((err) => {
             console.log(err)
@@ -250,8 +259,10 @@ switch (args[0]) {
         break
 
     case 'force':
-
-        moduleDistribute(multiProcessAsync('git', ['push', '-f', 'origin', 'master'])).then(() => {
+        moduleDistribute(multiProcessAsync('git', ['push', '-f', 'origin', 'master'], (mission, params, job) => {
+            process.chdir(job)
+        })).then(() => {
+            process.chdir(root)
             console.log('force complete')
         }).catch((err) => {
             console.log(err)
@@ -259,9 +270,20 @@ switch (args[0]) {
 
         break
 
+    case 'commit':
+        moduleDistribute(commitGit)
+
+        break
+
     case '__initgit':
 
         moduleDistribute(__initGit)
+
+        break
+
+    case '__cleangit':
+
+        moduleDistribute(__cleanGit)
 
         break
 
@@ -343,9 +365,33 @@ function forcePublish (modules) {
 function __initGit (modules) {
     modules.filter(checkGitInPackageJSON).forEach((filePath) => {
         let gitRemote = getPackageJSON(filePath).repository.url
-
-        execSync(`cd ${filePath} && git init && git remote add origin ${gitRemote}`)
+        process.chdir(filePath)
+        execSync(`git init && git remote add origin ${gitRemote}`)
     })
+    process.chdir(root)
+}
+
+function __cleanGit (modules) {
+    modules.filter(checkGitInPackageJSON).forEach((filePath) => {
+        process.chdir(filePath)
+        execSync(`rm -rf .git`)
+    })
+    process.chdir(root)
+}
+
+function commitGit (modules) {
+    modules.filter(checkGitInPackageJSON).forEach((filePath) => {
+        process.chdir(filePath)
+        try {
+            execSync('git add -A')
+            execSync('git commit -m "quick push"')
+        }
+        catch(e) {
+            console.log(e.toString())
+        }
+
+    })
+    process.chdir(root)
 }
 
 function getPackageJSON (filePath) {
