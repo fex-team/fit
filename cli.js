@@ -279,7 +279,7 @@ function __initGit (modules) {
 }
 
 function getPackageJSON (filePath) {
-    return JSON.parse(fs.readFile(path.join(filePath, 'package.json')))
+    return JSON.parse(fs.readFileSync(path.join(filePath, 'package.json')))
 }
 
 function checkPackageJSON (filePath) {

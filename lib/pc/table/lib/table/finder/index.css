@@ -1,0 +1,7 @@
+.lib-pc-table-lib-table-finder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #edf1f2; }

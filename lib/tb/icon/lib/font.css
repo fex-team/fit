@@ -18,6 +18,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.tf-good:before {
+  content: "\e903"; }
+
+.tf-image:before {
+  content: "\e904"; }
+
+.tf-sign-done:before {
+  content: "\e905"; }
+
+.tf-sign:before {
+  content: "\e906"; }
+
+.tf-at:before {
+  content: "\e907"; }
+
 .tf-smile:before {
   content: "\e902"; }
 
