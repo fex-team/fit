@@ -80,10 +80,11 @@ function moduleDistribute (fn, params=null, context=null) {
 }
 }
 
-function multiProcessAsync (run = () => {}, beforeRun = () => {}) {
+function multiProcessAsync (run = () => {}, beforeRun = () => {}, afterRun = () => {}) {
     function createWorkInstance (job) {
+        let packageJSON = getPackageJSON(job)
         beforeRun(job)
-        return run(job)
+        return run(job, packageJSON)
     }
 
 
@@ -98,7 +99,7 @@ function multiProcessAsync (run = () => {}, beforeRun = () => {}) {
             process.chdir(root)
 
             function onClose (successJob) {
-                console.info(`INFO: ${mission} ${params.join(' ')} run success`)
+                afterRun(successJob)
                 let job = jobCopy.pop()
                 _.pull(runChildInstance, this)
 
@@ -286,8 +287,8 @@ switch (args[0]) {
         moduleDistribute(__cleanGit)
         moduleDistribute(__initGit)
         moduleDistribute(commitGit)
-        moduleDistribute(multiProcessAsync((mission, params) => {
-            return spawn(mission, params)
+        moduleDistribute(multiProcessAsync((job) => {
+            return spawn('git', ['push', '-f', 'origin', 'master'])
         }, (job) => {
             process.chdir(job)
         })).then(() => {
@@ -300,14 +301,14 @@ switch (args[0]) {
         break
 
     case 'initsubmodule':
-        moduleDistribute(multiProcessAsync((job) => {
-            console.log(getPackageJSON(job))
+        moduleDistribute(multiProcessAsync((job, packageJSON) => {
             let path = job.replace(__dirname, '.')
-            console.log(url, path)
-//            return spawn('git', ['submodule', 'add', url, path])
+            return spawn('git', ['submodule', 'add', packageJSON.repository.url, path])
         }, (job) => {
-            console.log(job)
-//            execSync(`rm -rf ${job}`)
+            execSync(`rm -rf ${job}`)
+        }, (job) => {
+            let path = job.replace(__dirname, '')
+            console.log(`INFO: ${path} init success`)
         })).catch((e) => {
             console.log(e)
         })
