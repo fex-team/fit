@@ -167,14 +167,12 @@ fit cli tools
 type: pc|web|native
 
 Usage:
-    cli build    <type> <name>           编译模块
-    cli clean    <type> <name>           清除 dist
-    cli publish  <type> <name>           模块发布
-    cli push     <type> <name>           提交subtree (不可用)
-    cli pull     <type> <name>           更新 subtree (不可用)
-    cli patch    <type> <name>           升级版本
-    cli add      <type> <name>           添加模块到 git remote (不可用)
-    cli updatesubtree                    更新 subtree 分支列表 (beta)
+    cli build     <type> <name>         compile modules
+    cli clean     <type> <name>         clean build dist
+    cli publish   <type> <name>         publish module
+    cli patch     <type> <name>         patch module version
+    cli minor     <type> <name>         minor module version
+    cli autopub   <type> <name>         clean + build + patch + publish
 `
     )
     process.exit(1)
@@ -258,7 +256,7 @@ switch (args[0]) {
         moduleDistribute(publishModules)
         break
 
-    case 'force':
+    case '_force':
         moduleDistribute(multiProcessAsync('git', ['push', '-f', 'origin', 'master'], (mission, params, job) => {
             process.chdir(job)
         })).then(() => {
@@ -284,6 +282,28 @@ switch (args[0]) {
     case '__cleangit':
 
         moduleDistribute(__cleanGit)
+
+        break
+
+    case '__reinit':
+
+        moduleDistribute(__cleanGit)
+        moduleDistribute(__initGit)
+        moduleDistribute(commitGit)
+        moduleDistribute(multiProcessAsync('git', ['push', '-f', 'origin', 'master'], (mission, params, job) => {
+            process.chdir(job)
+        })).then(() => {
+            process.chdir(root)
+            console.log('force complete')
+        }).catch((err) => {
+            console.log(err)
+        })
+
+        break
+
+    case '__writeSubmodule':
+        moduleDistribute(__writeSubmodule)
+
 
         break
 
@@ -392,6 +412,22 @@ function commitGit (modules) {
 
     })
     process.chdir(root)
+}
+
+function __writeSubmodule (modules) {
+    modules.forEach((filePath) => {
+        let packageJSON = getPackageJSON(filePath)
+        let url = packageJSON.repository.url
+        let relativePath = filePath.replace(__dirname, '')
+        let string = `[submodule "${relativePath}"]
+	path = ${relativePath}
+	url = ${url}
+`
+        fs.writeFileSync(path.join(__dirname, '.gitmodules'), string, {
+            flag: 'a',
+            encoding: 'utf-8'
+        })
+    })
 }
 
 function getPackageJSON (filePath) {
