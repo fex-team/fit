@@ -302,7 +302,7 @@ switch (args[0]) {
         break
 
     case '__writeSubmodule':
-        moduleDistribute(__writeSubmodule)
+        moduleDistribute(multiProcessAsync('git', ['submodule', 'add']))
 
 
         break
@@ -415,18 +415,14 @@ function commitGit (modules) {
 }
 
 function __writeSubmodule (modules) {
+    process.chdir(root)
+    execSync('mv lib /tmp/lib')
     modules.forEach((filePath) => {
         let packageJSON = getPackageJSON(filePath)
         let url = packageJSON.repository.url
-        let relativePath = filePath.replace(__dirname, '')
-        let string = `[submodule "${relativePath}"]
-	path = ${relativePath}
-	url = ${url}
-`
-        fs.writeFileSync(path.join(__dirname, '.gitmodules'), string, {
-            flag: 'a',
-            encoding: 'utf-8'
-        })
+
+
+        execSync('git submodule add')
     })
 }
 
