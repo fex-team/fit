@@ -299,7 +299,7 @@ switch (args[0]) {
 
         break
 
-    case '__writeSubmodule':
+    case 'initsubmodule':
         moduleDistribute(multiProcessAsync((job) => {
             let url = getPackageJSON(job).repository.url
             let path = job.replace(__dirname, '.')
