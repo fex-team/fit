@@ -301,13 +301,16 @@ switch (args[0]) {
 
     case 'initsubmodule':
         moduleDistribute(multiProcessAsync((job) => {
-            let url = getPackageJSON(job).repository.url
+            console.log(getPackageJSON(job))
             let path = job.replace(__dirname, '.')
-
-            return spawn('git', ['submodule', 'add', url, path])
+            console.log(url, path)
+//            return spawn('git', ['submodule', 'add', url, path])
         }, (job) => {
-            execSync(`rm -rf ${job}`)
-        }))
+            console.log(job)
+//            execSync(`rm -rf ${job}`)
+        })).catch((e) => {
+            console.log(e)
+        })
 
         break
 
