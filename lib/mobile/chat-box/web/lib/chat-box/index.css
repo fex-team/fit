@@ -1,0 +1,30 @@
+.lib-mobile-chat-box-web-lib-chat-box {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto; }
+  .lib-mobile-chat-box-web-lib-chat-box .child-container {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto; }
+  .lib-mobile-chat-box-web-lib-chat-box .fixed-number {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: white; }

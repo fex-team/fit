@@ -1,0 +1,16 @@
+.rdr-PredefinedRanges {
+  width: 70px !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+}
+
+.rdr-DateRange {
+  display: flex !important;
+}
+
+.rdr-PredefinedRangeItem {
+  &:hover {
+    background: #ddd !important;
+  }
+}

@@ -1,0 +1,24 @@
+.caret-left {
+
+}
+
+.title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  .title-caret {
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .empty-caret {
+    width: 25px;
+  }
+}
+
+.children {
+  display: none;
+  padding-left: 10px;
+}

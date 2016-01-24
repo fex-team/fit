@@ -1,0 +1,125 @@
+& {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border: 1px solid #eee;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  user-select: none;
+  .inner {
+    color: #fff;
+    position: absolute;
+    left: 0;
+    &:after {
+      position: absolute;
+      border-radius: 100%;
+      background-color: #fff;
+      content: " ";
+      cursor: pointer;
+      transition: left 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+    }
+  }
+  &.size-normal {
+    width: 44px;
+    height: 22px;
+    line-height: 20px;
+    border-radius: 20px 20px;
+    .inner {
+      font-size: 12px;
+      &:after {
+        width: 18px;
+        height: 18px;
+        left: 0;
+        top: 1px;
+      }
+    }
+  }
+  &.size-small {
+    width: 30px;
+    height: 15px;
+    line-height: 15px;
+    border-radius: 15px 15px;
+    .inner {
+      font-size: 10px;
+      &:after {
+        width: 12px;
+        height: 12px;
+        left: 0px;
+        top: 0px;
+      }
+    }
+  }
+  &.size-large {
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px 30px;
+    .inner {
+      font-size: 10px;
+      &:after {
+        width: 26px;
+        height: 26px;
+        left: 0;
+        top: 1px;
+      }
+    }
+  }
+  &.checked {
+    &.size-normal {
+      .inner {
+        &:after {
+          left: 25px;
+        }
+      }
+    }
+    &.size-small {
+      .inner {
+        &:after {
+          left: 17px;
+        }
+      }
+    }
+    &.size-large {
+      .inner {
+        &:after {
+          left: 33px;
+        }
+      }
+    }
+    &.info {
+      background-color: #23b7e5;
+      border-color: #23b7e5;
+    }
+    &.success {
+      background-color: #27c24c;
+      border-color: #27c24c;
+    }
+    &.primary {
+      background-color: #7266ba;
+      border-color: #7266ba;
+    }
+    &.danger {
+      background-color: #f05050;
+      border-color: #f05050;
+    }
+    &.warning {
+      background-color: #fad733;
+      border-color: #fad733;
+    }
+    &.dark {
+      background-color: #3a3f51;
+      border-color: #3a3f51;
+    }
+  }
+  &.disabled {
+    background: #eee;
+    .inner {
+      &:after {
+        background-color: #eee;
+      }
+    }
+  }
+}
