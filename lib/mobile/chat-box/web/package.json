@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/mobile-scale.git"
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/mobile-chat-box.git"
   },
   "author": "huangziyi01",
   "license": "ISC",

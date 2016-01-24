@@ -1,0 +1,145 @@
+.lib-pc-table-lib-table .panel {
+  border-radius: 2px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #dee5e7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+
+.lib-pc-table-lib-table .panel-heading {
+  border-color: #edf1f2;
+  background-color: #f6f8f8;
+  color: #333;
+  border-radius: 2px 2px 0 0;
+  padding: 0 15px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid transparent; }
+
+.lib-pc-table-lib-table table {
+  border-collapse: collapse; }
+
+.lib-pc-table-lib-table .table > thead > tr > th, .lib-pc-table-lib-table .table > tbody > tr > td, .lib-pc-table-lib-table .table > tfoot > tr > td {
+  padding: 6px 15px;
+  border-top: 1px solid #eaeff0;
+  vertical-align: middle;
+  max-width: 250px;
+  word-break: break-all; }
+
+.lib-pc-table-lib-table .table > thead > tr > th {
+  padding: 10px 15px !important;
+  white-space: nowrap; }
+
+.lib-pc-table-lib-table .table > thead > tr > th {
+  padding: 6px 15px;
+  border-bottom: 1px solid #eaeff0;
+  line-height: 1.42857143; }
+
+.lib-pc-table-lib-table th {
+  text-align: left; }
+
+.lib-pc-table-lib-table .table-striped {
+  margin: 0; }
+
+.lib-pc-table-lib-table .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9; }
+
+.lib-pc-table-lib-table .panel {
+  margin: 0; }
+
+.lib-pc-table-lib-table .search-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #eaeff0;
+  padding: 15px; }
+  .lib-pc-table-lib-table .search-bar .flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+.lib-pc-table-lib-table .empty-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 150px; }
+
+.lib-pc-table-lib-table .pagination-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding-right: 20px;
+  border-top: 1px solid #eaeff0;
+  height: 50px; }
+
+.lib-pc-table-lib-table .remove {
+  height: 100%;
+  width: 50px;
+  color: #f05050;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  text-align: center;
+  cursor: pointer; }
+  .lib-pc-table-lib-table .remove:hover {
+    background: #f05050;
+    color: white; }
+
+.lib-pc-table-lib-table .pull-right {
+  float: right; }
+  .lib-pc-table-lib-table .pull-right.danger {
+    color: #f05050; }
+  .lib-pc-table-lib-table .pull-right.success {
+    color: #23ad44; }
+
+.lib-pc-table-lib-table .sort-arrow {
+  margin-left: 5px; }
+
+.lib-pc-table-lib-table .table-th {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .lib-pc-table-lib-table .table-th.sortable {
+    cursor: pointer; }
+    .lib-pc-table-lib-table .table-th.sortable:hover {
+      color: #333; }
+    .lib-pc-table-lib-table .table-th.sortable .sort-can-use {
+      margin-left: 5px;
+      color: #ddd; }
+  .lib-pc-table-lib-table .table-th .fa-sort-asc, .lib-pc-table-lib-table .table-th .fa-sort-desc {
+    margin-left: 5px; }

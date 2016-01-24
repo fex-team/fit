@@ -5,7 +5,7 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Bluebar />
+                <Bluebar title="顶部蓝条" />
             </div>
         )
     }

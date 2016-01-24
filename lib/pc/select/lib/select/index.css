@@ -1,0 +1,26 @@
+.lib-pc-select-lib-select {
+  display: inline-block; }
+  .lib-pc-select-lib-select .chosen-single {
+    -webkit-transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s; }
+    .lib-pc-select-lib-select .chosen-single.active {
+      border: 1px solid #66afe9 !important;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6) !important; }
+
+.lib-pc-select-lib-select .search-input {
+  padding: 2px 10px !important; }
+  .lib-pc-select-lib-select .search-input:focus {
+    border-color: #66afe9 !important; }
+
+.lib-pc-select-lib-select .group-option .active {
+  color: #f05050; }
+
+.lib-pc-select-lib-select .chosen-container {
+  cursor: pointer; }
+
+.lib-pc-select-lib-select .simple .chosen-single {
+  border: none !important;
+  box-shadow: none !important; }
+
+.lib-pc-select-lib-select .simple .chosen-drop {
+  border: none !important; }

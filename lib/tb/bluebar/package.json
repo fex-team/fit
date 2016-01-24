@@ -1,6 +1,6 @@
 {
-  "name": "fit-bluebar",
-  "version": "1.0.0",
+  "name": "tb-bluebar",
+  "version": "1.0.2",
   "description": "贴吧顶部蓝条",
   "main": "lib/index.js",
   "scripts": {

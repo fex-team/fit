@@ -79,9 +79,76 @@ function moduleDistribute (fn, params, context) {
     }
     else if (moduleType && moduleName) {
         return fn.call(context, [moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), params)
-    }
+}
 }
 
+function multiProcessAsync (run = () => {}, beforeRun = () => {}, afterRun = () => {}) {
+    function createWorkInstance (job) {
+        let packageJSON = getPackageJSON(job)
+        beforeRun(job)
+        return run(job, packageJSON)
+    }
+
+
+    return function (jobs) {
+        return new Promise((resolve, reject) => {
+            var jobCopy = _.cloneDeep(jobs)
+            var cpus = os.cpus()
+            var runChildInstance = []
+            var hasError = false
+            var errorMsg = []
+
+            process.chdir(root)
+
+            function onClose (successJob) {
+                afterRun(successJob)
+                let job = jobCopy.pop()
+                _.pull(runChildInstance, this)
+
+                if (job) {
+                    let childInstance = createWorkInstance(job)
+                    distributeTask(childInstance, job)
+                }
+                else if (!runChildInstance.length && !hasError) {
+                    resolve()
+                }
+                else if (!runChildInstance.length && hasError) {
+                    reject(errorMsg.join('\n'))
+                }
+            }
+
+            function distributeTask (instance, job) {
+                instance.stderr.on('data', (err) => {
+                    hasError = true
+                    errorMsg.push(err.toString())
+                })
+
+                instance.stdout.on('data', (data) => {
+                    console.log(data.toString())
+                })
+
+                instance.on('close', onClose.bind(instance, job))
+
+                runChildInstance.push(instance)
+            }
+
+            if (jobs.length > cpus.length) {
+                cpus.forEach(() => {
+                    let job = jobCopy.pop()
+                    let childInstance = createWorkInstance(job)
+                    distributeTask(childInstance, job)
+                })
+            }
+            else {
+                jobs.forEach(() => {
+                    let job = jobCopy.pop()
+                    let childInstance = createWorkInstance(job)
+                    distributeTask(childInstance, job)
+                })
+            }
+        })
+    }
+}
 // 抓住未捕获的错误
 //process.on('uncaughtException', function (err) {
 //    console.error(err)
@@ -95,14 +162,12 @@ fit cli tools
 type: pc|web|native
 
 Usage:
-    cli build    <type> <name>           编译模块
-    cli clean    <type> <name>           清除 dist
-    cli publish  <type> <name>           模块发布
-    cli push     <type> <name>           提交subtree (不可用)
-    cli pull     <type> <name>           更新 subtree (不可用)
-    cli patch    <type> <name>           升级版本
-    cli add      <type> <name>           添加模块到 git remote (不可用)
-    cli updatesubtree                    更新 subtree 分支列表 (beta)
+    cli build     <type> <name>         compile modules
+    cli clean     <type> <name>         clean build dist
+    cli publish   <type> <name>         publish module
+    cli patch     <type> <name>         patch module version
+    cli minor     <type> <name>         minor module version
+    cli autopub   <type> <name>         clean + build + patch + publish
 `
     )
     process.exit(1)
@@ -111,8 +176,13 @@ Usage:
 switch (args[0]) {
     case 'build':
         // build all
-        moduleDistribute(buildModules).then(() => {
+        moduleDistribute(cleanModulesSync)
+        moduleDistribute(multiProcessAsync((job) => {
+            return spawn('node', ['build.js', job])
+        })).then(() => {
             console.log("All Module build success")
+        }).catch((err) => {
+            console.log(err)
         })
 
         break
@@ -183,15 +253,67 @@ switch (args[0]) {
         moduleDistribute(publishModules)
         break
 
-    case 'force':
+    case '_force':
+        moduleDistribute(multiProcessAsync((job) => {
+            return spawn('git', ['push', '-f', 'origin', 'master'])
+        }, (job) => {
+            process.chdir(job)
+        })).then(() => {
+            process.chdir(root)
+            console.log('force complete')
+        }).catch((err) => {
+            console.log(err)
+        })
 
-        moduleDistribute(forcePublish)
+        break
+
+    case 'commit':
+        moduleDistribute(commitGit)
 
         break
 
     case '__initgit':
 
         moduleDistribute(__initGit)
+
+        break
+
+    case '__cleangit':
+
+        moduleDistribute(__cleanGit)
+
+        break
+
+    case '__reinit':
+
+        moduleDistribute(__cleanGit)
+        moduleDistribute(__initGit)
+        moduleDistribute(commitGit)
+        moduleDistribute(multiProcessAsync((job) => {
+            return spawn('git', ['push', '-f', 'origin', 'master'])
+        }, (job) => {
+            process.chdir(job)
+        })).then(() => {
+            process.chdir(root)
+            console.log('force complete')
+        }).catch((err) => {
+            console.log(err)
+        })
+
+        break
+
+    case 'initsubmodule':
+        moduleDistribute(multiProcessAsync((job, packageJSON) => {
+            let path = job.replace(__dirname, '.')
+            return spawn('git', ['submodule', 'add', '--force', packageJSON.repository.url, path])
+        }, (job) => {
+            execSync(`rm -rf ${job}`)
+        }, (job) => {
+            let path = job.replace(__dirname, '')
+            console.log(`INFO: ${path} init success`)
+        })).catch((e) => {
+            console.log(e)
+        })
 
         break
 
@@ -264,24 +386,58 @@ switch (args[0]) {
         break
 }
 
-function forcePublish () {
+function forcePublish (modules) {
+    modules.filter(checkGitInPackageJSON).forEach((filePath) => {
 
+    })
 }
 
 function __initGit (modules) {
     modules.filter(checkGitInPackageJSON).forEach((filePath) => {
-        if (!checkGitInPackageJSON(filePath)) {
-            console.warn(`The direction path: ${filePath} did't have package.json or git repository path`)
+        let gitRemote = getPackageJSON(filePath).repository.url
+        process.chdir(filePath)
+        execSync(`git init && git remote add origin ${gitRemote}`)
+    })
+    process.chdir(root)
+}
+
+function __cleanGit (modules) {
+    modules.filter(checkGitInPackageJSON).forEach((filePath) => {
+        process.chdir(filePath)
+        execSync(`rm -rf .git`)
+    })
+    process.chdir(root)
+}
+
+function commitGit (modules) {
+    modules.filter(checkGitInPackageJSON).forEach((filePath) => {
+        process.chdir(filePath)
+        try {
+            execSync('git add -A')
+            execSync('git commit -m "quick push"')
+        }
+        catch(e) {
+            console.log(e.toString())
         }
 
-        let gitRemote = getPackageJSON(filePath).repository.url
+    })
+    process.chdir(root)
+}
 
-        execSync(`cd ${filePath} && git init && git remote add origin ${gitRemote}`)
+function __writeSubmodule (modules) {
+    process.chdir(root)
+    execSync('mv lib /tmp/lib')
+    modules.forEach((filePath) => {
+        let packageJSON = getPackageJSON(filePath)
+        let url = packageJSON.repository.url
+
+
+        execSync('git submodule add')
     })
 }
 
 function getPackageJSON (filePath) {
-    return JSON.parse(fs.readFile(path.join(filePath, 'package.json')))
+    return JSON.parse(fs.readFileSync(path.join(filePath, 'package.json')))
 }
 
 function checkPackageJSON (filePath) {
@@ -334,8 +490,8 @@ function cleanModulesSync (modules) {
 
     for (var modulePath of modules) {
         try {
-            execSync('rm -r ' + path.resolve(modulePath, 'lib'))
-            execSync('rm ' + path.resolve(modulePath, 'npm-debug.log'))
+            execSync('rm -r ' + path.resolve(modulePath, 'lib') + ' > /dev/null 2>&1')
+            execSync('rm ' + path.resolve(modulePath, 'npm-debug.log > /dev/null 2>&1'))
             console.log('INFO: ', 'Remove ' + modulePath + ' lib')
         }
         catch (e) {}

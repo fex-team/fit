@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/pc-auto-complete.git"
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/pc-autocomplete.git"
   },
   "keywords": [
     "tieba"
