@@ -21,6 +21,14 @@ import Vertical from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./
 import verticalCode from 'text!./demo/vertical.js'
 import verticalMarkdown from './demo/vertical.md'
 
+import SubTree from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/sub-tree.js'
+import subTreeCode from 'text!./demo/sub-tree.js'
+import subTreeMarkdown from './demo/sub-tree.md'
+
+import SubTreeVertical from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/sub-tree-vertical.js'
+import subTreeVerticalCode from 'text!./demo/sub-tree-vertical.js'
+import subTreeVerticalMarkdown from './demo/sub-tree-vertical.md'
+
 export default class Menu extends React.Component {
     constructor(props) {
         super(props)
@@ -51,6 +59,18 @@ export default class Menu extends React.Component {
                                   md={verticalMarkdown}
                                   code={verticalCode}>
                             <Vertical />
+                        </CodeView>
+
+                        <CodeView style={{marginTop:10}}
+                                  md={subTreeMarkdown}
+                                  code={subTreeCode}>
+                            <SubTree />
+                        </CodeView>
+
+                        <CodeView style={{marginTop:10}}
+                                  md={subTreeVerticalMarkdown}
+                                  code={subTreeVerticalCode}>
+                            <SubTreeVertical />
                         </CodeView>
                     </Col>
                 </Row>

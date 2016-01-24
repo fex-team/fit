@@ -12,7 +12,6 @@ $bg-active-color: #f6f8f8;
   @include inverse;
   &:hover {
     color: white;
-    background-color: $inverse-bg-active-color;
   }
 }
 
@@ -25,9 +24,6 @@ $bg-active-color: #f6f8f8;
   transition: background-color 0.2s ease-in-out 0s;
   background: white;
   color: initial;
-  &:hover {
-    background-color: $bg-active-color;
-  }
   &.brand {
     font-size: 16px;
     font-weight: bold;

@@ -4,35 +4,25 @@
   @include menu-button;
   display: flex;
   align-items: center;
+  transition: color .2s;
 
   &.active {
-    background: #2db7f5;
-    color: #fff;
+    color: #1c9aa0;
   }
 
   &.active:hover {
-    background: #2db7f5;
-    color: #fff;
+    color: #1c9aa0;
   }
 
-  .text-label {
+  &.text-label {
     display: flex;
     align-items: center;
-    height: 100%;
-    width: 100%;
     padding: 0 15px;
-  }
-
-  & a {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 0 15px;
-    color: inherit;
+    white-space: nowrap;
     text-decoration: none;
     &:hover {
-      color: inherit;
+      color: #1c9aa0;
+      text-decoration: none;
     }
   }
 }
