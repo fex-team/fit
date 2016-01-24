@@ -303,7 +303,7 @@ switch (args[0]) {
     case 'initsubmodule':
         moduleDistribute(multiProcessAsync((job, packageJSON) => {
             let path = job.replace(__dirname, '.')
-            return spawn('git', ['submodule', 'add', packageJSON.repository.url, path])
+            return spawn('git', ['submodule', 'add', '--force', packageJSON.repository.url, path])
         }, (job) => {
             execSync(`rm -rf ${job}`)
         }, (job) => {
