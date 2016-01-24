@@ -48,7 +48,7 @@ const menuShow = [{
     path: '/pc/image',
     icon: 'picture-o'
 }, {
-    title: '组件嵌入 Render-to',
+    title: '组件嵌入 Render-To',
     path: '/pc/render-to',
     icon: 'life-ring'
 }]

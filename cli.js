@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony
+#!/usr/bin/env node --harmony --harmony_default_parameters
 "use strict";
 
 
