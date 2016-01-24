@@ -1,0 +1,37 @@
+.pager {
+  display: flex;
+  & > li > span {
+    user-select: none;
+    color: #23527c;
+    cursor: pointer;
+    &:hover {
+      background-color: #eee;
+    }
+    &.disabled {
+      color: #818a91;
+      cursor: not-allowed;
+      background-color: #fff;
+    }
+  }
+  .loading {
+    width: 14px;
+    height: 14px;
+  }
+  .before {
+    display: flex;
+    align-items: center;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    .loading {
+      margin-right: 5px;
+    }
+  }
+  .after {
+    display: flex;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+    .loading {
+      margin-left: 5px;
+    }
+  }
+}

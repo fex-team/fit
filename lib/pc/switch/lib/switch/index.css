@@ -1,0 +1,91 @@
+.lib-pc-switch-lib-switch {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border: 1px solid #eee;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .lib-pc-switch-lib-switch .inner {
+    color: #fff;
+    position: absolute;
+    left: 0; }
+    .lib-pc-switch-lib-switch .inner:after {
+      position: absolute;
+      border-radius: 100%;
+      background-color: #fff;
+      content: " ";
+      cursor: pointer;
+      -webkit-transition: left 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      transition: left 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25); }
+  .lib-pc-switch-lib-switch.size-normal {
+    width: 44px;
+    height: 22px;
+    line-height: 20px;
+    border-radius: 20px 20px; }
+    .lib-pc-switch-lib-switch.size-normal .inner {
+      font-size: 12px; }
+      .lib-pc-switch-lib-switch.size-normal .inner:after {
+        width: 18px;
+        height: 18px;
+        left: 0;
+        top: 1px; }
+  .lib-pc-switch-lib-switch.size-small {
+    width: 30px;
+    height: 15px;
+    line-height: 15px;
+    border-radius: 15px 15px; }
+    .lib-pc-switch-lib-switch.size-small .inner {
+      font-size: 10px; }
+      .lib-pc-switch-lib-switch.size-small .inner:after {
+        width: 12px;
+        height: 12px;
+        left: 0px;
+        top: 0px; }
+  .lib-pc-switch-lib-switch.size-large {
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px 30px; }
+    .lib-pc-switch-lib-switch.size-large .inner {
+      font-size: 10px; }
+      .lib-pc-switch-lib-switch.size-large .inner:after {
+        width: 26px;
+        height: 26px;
+        left: 0;
+        top: 1px; }
+  .lib-pc-switch-lib-switch.checked.size-normal .inner:after {
+    left: 25px; }
+  .lib-pc-switch-lib-switch.checked.size-small .inner:after {
+    left: 17px; }
+  .lib-pc-switch-lib-switch.checked.size-large .inner:after {
+    left: 33px; }
+  .lib-pc-switch-lib-switch.checked.info {
+    background-color: #23b7e5;
+    border-color: #23b7e5; }
+  .lib-pc-switch-lib-switch.checked.success {
+    background-color: #27c24c;
+    border-color: #27c24c; }
+  .lib-pc-switch-lib-switch.checked.primary {
+    background-color: #7266ba;
+    border-color: #7266ba; }
+  .lib-pc-switch-lib-switch.checked.danger {
+    background-color: #f05050;
+    border-color: #f05050; }
+  .lib-pc-switch-lib-switch.checked.warning {
+    background-color: #fad733;
+    border-color: #fad733; }
+  .lib-pc-switch-lib-switch.checked.dark {
+    background-color: #3a3f51;
+    border-color: #3a3f51; }
+  .lib-pc-switch-lib-switch.disabled {
+    background: #eee; }
+    .lib-pc-switch-lib-switch.disabled .inner:after {
+      background-color: #eee; }

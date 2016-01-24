@@ -1,0 +1,29 @@
+& {
+  position: relative;
+}
+
+.complete-container {
+  position: absolute;
+  background: white;
+  z-index: 1;
+  left: 0;
+  top: 33px;
+  display: none;
+  border: 1px solid #cfdadd;
+  .item {
+    padding: 5px 10px;
+    cursor: pointer;
+    &:hover {
+      background: whitesmoke;
+    }
+    &.active {
+      background: #5AA3E2;
+      color: white;
+    }
+    &:not(.active) {
+      .highlight {
+        color: red;
+      }
+    }
+  }
+}

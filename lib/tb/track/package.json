@@ -1,0 +1,18 @@
+{
+  "name": "tb-track",
+  "version": "1.0.0",
+  "description": "发日志",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/tb-track.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "platform": "^1.3.1"
+  }
+}

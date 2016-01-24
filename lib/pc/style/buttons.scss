@@ -1,0 +1,213 @@
+@import "variables";
+@import "mixins";
+
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  border-radius: $btn-border-radius;
+  outline: 0 !important;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  white-space: nowrap;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  &.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: .65;
+  }
+}
+
+.btn-lg {
+  padding: 0.65rem 1.05rem;
+}
+
+.btn-xs {
+  padding: 0.15rem .75rem;
+}
+
+.btn-sm {
+  padding: 0 .65rem;
+}
+
+.btn-link {
+  color: $text-color;
+  &.active {
+    box-shadow: none;
+  }
+}
+
+.btn-default {
+  @include button-variant($text-color, $btn-default-bg, $btn-default-border);
+  background-color: #fff;
+  border-bottom-color: darken($btn-default-border, 2%);
+  box-shadow: (0 1px 1px rgba(90, 90, 90, 0.1));
+  &.btn-bg {
+    border-color: rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+  }
+}
+
+.btn-primary {
+  @include button-variant(#fff, $brand-primary, $brand-primary);
+}
+
+.btn-success {
+  @include button-variant(#fff, $brand-success, $brand-success);
+}
+
+.btn-info {
+  @include button-variant(#fff, $brand-info, $brand-info);
+}
+
+.btn-warning {
+  @include button-variant(#fff, $brand-warning, $brand-warning);
+  &:hover, &:active, &.active {
+    color: #ffffff !important;
+    background-color: #f9d21a;
+    border-color: #f9cf0b;
+  }
+}
+
+.btn-danger {
+  @include button-variant(#fff, $brand-danger, $brand-danger);
+}
+
+.btn-dark {
+  @include button-variant(#fff, $brand-dark, $brand-dark);
+}
+
+.btn-black {
+  @include button-variant(#fff, $brand-black, $brand-black);
+}
+
+.btn-icon {
+  padding: 0 !important;
+  text-align: center;
+  width: 34px;
+  height: 34px;
+  i {
+    top: -1px;
+    position: relative;
+    line-height: 34px;
+  }
+}
+
+.btn-sm {
+  line-height: 1.5rem;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  &.btn-lg {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.btn {
+  > i {
+    &.pull-left,
+    &.pull-right {
+      line-height: 2.5rem;
+    }
+  }
+}
+
+.btn-block {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-top-right-radius: $border-radius-base;
+}
+
+.btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-bottom-left-radius: $border-radius-base;
+}
+
+.btn-addon {
+  i {
+    margin: -.4rem -1rem;
+    margin-right: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 2.3rem;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    text-align: center;
+    position: relative;
+    border-radius: $btn-border-radius 0 0 $btn-border-radius;
+    &.pull-right {
+      margin-right: -1rem;
+      margin-left: 1rem;
+      border-radius: 0 $btn-border-radius $btn-border-radius 0;
+    }
+  }
+  &.btn-sm {
+    i {
+      margin: -6px -10px;
+      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      &.pull-right {
+        margin-right: -10px;
+        margin-left: 10px;
+      }
+    }
+  }
+  &.btn-lg {
+    i {
+      margin: -0.7rem -1.2rem;
+      margin-right: 1rem;
+      width: 3.3rem;
+      height: 3.3rem;
+      line-height: 3.3rem;
+      &.pull-right {
+        margin-right: -1.2rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+  &.btn-xs {
+    i {
+      width: 1.8rem;
+      height: 1.8rem;
+      line-height: 1.8rem;
+      margin: -.2rem -.85rem;
+      margin-right: 1.1rem;
+      &.pull-right {
+        margin-left: 1.1rem;
+        margin-right: -.8rem;
+      }
+    }
+  }
+  &.btn-sm {
+    i {
+      width: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      margin: -0.4rem -.7rem;
+      margin-right: .5rem;
+      margin-top: 0;
+      &.pull-right {
+        margin-right: -.7rem;
+      }
+    }
+  }
+  &.btn-default {
+    i {
+      background-color: transparent;
+      border-right: 1px solid $border-color;
+    }
+  }
+}
+
+.btn-groups .btn {
+  margin-bottom: 5px;
+}

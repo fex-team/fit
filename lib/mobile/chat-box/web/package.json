@@ -1,0 +1,24 @@
+{
+  "name": "fiten-chat-box",
+  "version": "1.0.6",
+  "description": "聊天盒子",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/mobile-chat-box.git"
+  },
+  "author": "huangziyi01",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "jquery": "^2.2.0",
+    "lodash": "^4.0.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-list": "^0.7.11",
+    "react-tappable": "^0.8.0"
+  }
+}
