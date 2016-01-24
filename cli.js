@@ -80,18 +80,10 @@ function moduleDistribute (fn, params=null, context=null) {
 }
 }
 
-function multiProcessAsync (mission, params, beforeRun = () => {}) {
-    function createWorkInstance (mission, params, job) {
-        beforeRun(mission, params, job)
-        return spawn(mission, params.map((val) => {
-            if (val === '${modulePath}') {
-                return job
-            }
-            else {
-                return val
-            }
-        }))
-
+function multiProcessAsync (run = () => {}, beforeRun = () => {}) {
+    function createWorkInstance (job) {
+        beforeRun(job)
+        return run(job)
     }
 
 
@@ -111,7 +103,7 @@ function multiProcessAsync (mission, params, beforeRun = () => {}) {
                 _.pull(runChildInstance, this)
 
                 if (job) {
-                    let childInstance = createWorkInstance(mission, params, job)
+                    let childInstance = createWorkInstance(job)
                     distributeTask(childInstance, job)
                 }
                 else if (!runChildInstance.length && !hasError) {
@@ -140,14 +132,14 @@ function multiProcessAsync (mission, params, beforeRun = () => {}) {
             if (jobs.length > cpus.length) {
                 cpus.forEach(() => {
                     let job = jobCopy.pop()
-                    let childInstance = createWorkInstance(mission, params, job)
+                    let childInstance = createWorkInstance(job)
                     distributeTask(childInstance, job)
                 })
             }
             else {
                 jobs.forEach(() => {
                     let job = jobCopy.pop()
-                    let childInstance = createWorkInstance(mission, params, job)
+                    let childInstance = createWorkInstance(job)
                     distributeTask(childInstance, job)
                 })
             }
@@ -182,7 +174,9 @@ switch (args[0]) {
     case 'build':
         // build all
         moduleDistribute(cleanModulesSync)
-        moduleDistribute(multiProcessAsync('node', ['build.js', '${modulePath}'])).then(() => {
+        moduleDistribute(multiProcessAsync((job) => {
+            return spawn('node', ['build.js', job])
+        })).then(() => {
             console.log("All Module build success")
         }).catch((err) => {
             console.log(err)
@@ -257,7 +251,9 @@ switch (args[0]) {
         break
 
     case '_force':
-        moduleDistribute(multiProcessAsync('git', ['push', '-f', 'origin', 'master'], (mission, params, job) => {
+        moduleDistribute(multiProcessAsync((job) => {
+            return spawn('git', ['push', '-f', 'origin', 'master'])
+        }, (job) => {
             process.chdir(job)
         })).then(() => {
             process.chdir(root)
@@ -290,7 +286,9 @@ switch (args[0]) {
         moduleDistribute(__cleanGit)
         moduleDistribute(__initGit)
         moduleDistribute(commitGit)
-        moduleDistribute(multiProcessAsync('git', ['push', '-f', 'origin', 'master'], (mission, params, job) => {
+        moduleDistribute(multiProcessAsync((mission, params) => {
+            return spawn(mission, params)
+        }, (job) => {
             process.chdir(job)
         })).then(() => {
             process.chdir(root)
@@ -302,8 +300,14 @@ switch (args[0]) {
         break
 
     case '__writeSubmodule':
-        moduleDistribute(multiProcessAsync('git', ['submodule', 'add']))
+        moduleDistribute(multiProcessAsync((job) => {
+            let url = getPackageJSON(job).repository.url
+            let path = job.replace(__dirname, '.')
 
+            return spawn('git', ['submodule', 'add', url, path])
+        }, (job) => {
+            execSync(`rm -rf ${job}`)
+        }))
 
         break
 
