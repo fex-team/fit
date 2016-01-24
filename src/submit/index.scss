@@ -1,0 +1,43 @@
+& {
+  position: relative;
+  &.container-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    background: whitesmoke;
+  }
+
+  // 输入框
+  .input {
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+    background: whitesmoke;
+    outline: none;
+    flex-grow: 1;
+  }
+
+  // 发帖按钮
+  .submit {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 60px;
+    height: 30px;
+  }
+
+  // 字体图标
+  .font {
+    font-size: 35px;
+  }
+}
