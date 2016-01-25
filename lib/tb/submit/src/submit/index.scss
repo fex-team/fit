@@ -22,6 +22,9 @@
     background: whitesmoke;
     outline: none;
     flex-grow: 1;
+    &[disabled] {
+      color: #aaa;
+    }
   }
 
   // 发帖按钮
