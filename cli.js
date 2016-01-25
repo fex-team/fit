@@ -296,6 +296,8 @@ switch (args[0]) {
         })).then(() => {
             process.chdir(root)
             console.log('force complete')
+        }, (job) => {
+            console.log(`INFO: ${job} success`)
         }).catch((err) => {
             console.log(err)
         })
