@@ -16,7 +16,7 @@ const docStyle = {
     background: 'white'
 }
 
-import BluebarSourceCode from 'text!../../../../lib/tb/bluebar/src/index'
+import BluebarSourceCode from 'text!../../../../lib/tb/blue-bar/src/index'
 
 
 import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'

@@ -1,5 +1,5 @@
 import React from 'react'
-import color from 'fiten-style'
+import color from 'fiten-color'
 
 
 const blockStyle = {

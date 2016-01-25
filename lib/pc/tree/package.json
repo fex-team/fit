@@ -14,5 +14,8 @@
     "tieba"
   ],
   "author": "tieba",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.3"
+  }
 }

@@ -1,39 +1,53 @@
-import React from 'react'
-import classnames from 'classnames'
-import menuFactory from '../menu-factory'
 
-const menuBase = [{
-    title: '颜色',
-    path: '/mobile/color',
-    icon: 'columns'
-},{
-    title: '页面缩放',
-    path: '/mobile/scale',
-    icon: 'modx'
-},{
-    title: '聊天气泡',
-    path: '/mobile/chat',
-    icon: 'comments'
-},{
-    title: '聊天盒子',
-    path: '/mobile/chat-box',
-    icon: 'list-alt'
-}]
+        import React from 'react'
+        import menuFactory from '../menu-factory'
 
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-    }
+        
+const menu4092ed98e9035652d4c9ca9441701ed7 = [
+                {
+                    title: '颜色 Color',
+                    path: '/mobile/color',
+                    icon: 'columns'
+                },
+                
+                {
+                    title: '页面缩放 Scale',
+                    path: '/mobile/scale',
+                    icon: 'modx'
+                },
+                
+                {
+                    title: '聊天气泡 Chat',
+                    path: '/mobile/chat',
+                    icon: 'comments'
+                },
+                
+                {
+                    title: '聊天盒子 ChatBox',
+                    path: '/mobile/chat-box',
+                    icon: 'list-alt'
+                },
+                ]
 
-    render() {
-        let MenuBase = menuFactory(menuBase)
+        export default class Layout extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {}
+            }
 
-        return (
-            <div className="_namespace">
-                <div className="title">基本</div>
-                {MenuBase}
-            </div>
-        )
-    }
-}
+            render() {
+                
+            let Menu4092ed98e9035652d4c9ca9441701ed7 = menuFactory(menu4092ed98e9035652d4c9ca9441701ed7)
+            
+
+                return (
+                    <div className="_namespace">
+                        
+            <div className="title">基本</div>
+            {Menu4092ed98e9035652d4c9ca9441701ed7}
+            
+                    </div>
+                )
+            }
+        }
+        

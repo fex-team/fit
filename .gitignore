@@ -2,7 +2,4 @@ node_modules
 .idea
 npm-debug.log
 lib/**/node_modules
-lib/pc/upload/test
-lib/pc/upload/test.js
-lib/pc/upload/webpack.test.js
-lib/pc/upload/typings
+scripts-babel

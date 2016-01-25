@@ -1,0 +1,225 @@
+{
+  "categorys": {
+    "pc": {
+      "prefix": "fit",
+      "components": {
+        "基本": [
+          {
+            "name": "全屏布局",
+            "path": "layout-global",
+            "icon": "columns"
+          },
+          {
+            "name": "布局",
+            "path": "layout",
+            "icon": "th"
+          },
+          {
+            "name": "按钮",
+            "path": "button",
+            "icon": "square-o"
+          }
+        ],
+        "展示": [
+          {
+            "name": "分页",
+            "path": "pagination",
+            "icon": "sticky-note-o"
+          },
+          {
+            "name": "表格",
+            "path": "table",
+            "icon": "table"
+          },
+          {
+            "name": "模态框",
+            "path": "modal",
+            "icon": "list-alt"
+          },
+          {
+            "name": "提示",
+            "path": "message",
+            "icon": "exclamation-circle"
+          },
+          {
+            "name": "折叠面板",
+            "path": "collapse",
+            "icon": "plus-square"
+          },
+          {
+            "name": "树形控件",
+            "path": "tree",
+            "icon": "tree"
+          },
+          {
+            "name": "JSON树",
+            "path": "json-tree",
+            "icon": "tree"
+          },
+          {
+            "name": "图片容器",
+            "path": "image",
+            "icon": "picture-o"
+          },
+          {
+            "name": "组件嵌入",
+            "path": "render-to",
+            "icon": "life-ring"
+          }
+        ],
+        "表单": [
+          {
+            "name": "输入框",
+            "path": "input",
+            "icon": "font"
+          },
+          {
+            "name": "数字框",
+            "path": "number",
+            "icon": "chevron-up"
+          },
+          {
+            "name": "自动完成",
+            "path": "auto-complete",
+            "icon": "angle-double-down"
+          },
+          {
+            "name": "选择框",
+            "path": "select",
+            "icon": "navicon"
+          },
+          {
+            "name": "开关",
+            "path": "switch",
+            "icon": "toggle-off"
+          },
+          {
+            "name": "多选框",
+            "path": "checkbox",
+            "icon": "check-square"
+          },
+          {
+            "name": "单选框",
+            "path": "radio",
+            "icon": "check-circle"
+          },
+          {
+            "name": "时间选择器",
+            "path": "timepicker",
+            "icon": "clock-o"
+          },
+          {
+            "name": "日期选择器",
+            "path": "datepicker",
+            "icon": "calendar"
+          },
+          {
+            "name": "上传",
+            "path": "upload",
+            "icon": "upload"
+          }
+        ],
+        "导航": [
+          {
+            "name": "菜单",
+            "path": "menu",
+            "icon": "bars"
+          },
+          {
+            "name": "标签页",
+            "path": "tabs",
+            "icon": "clone"
+          }
+        ],
+        "样式": [
+          {
+            "name": "手机壳",
+            "path": "phone",
+            "icon": "mobile"
+          }
+        ],
+        "其它": [
+          {
+            "name": "内嵌网页",
+            "path": "iframe",
+            "icon": "sticky-note"
+          }
+        ]
+      }
+    },
+    "mobile": {
+      "prefix": "fiten",
+      "components": {
+        "基本": [
+          {
+            "name": "颜色",
+            "path": "color",
+            "icon": "columns"
+          },
+          {
+            "name": "页面缩放",
+            "path": "scale",
+            "icon": "modx"
+          },
+          {
+            "name": "聊天气泡",
+            "path": "chat",
+            "icon": "comments"
+          },
+          {
+            "name": "聊天盒子",
+            "path": "chat-box",
+            "icon": "list-alt"
+          }
+        ]
+      }
+    },
+    "tb": {
+      "prefix": "tb",
+      "components": {
+        "基本": [
+          {
+            "name": "日志请求",
+            "path": "track",
+            "icon": "send"
+          },
+          {
+            "name": "验证码",
+            "path": "captcha",
+            "icon": "bullseye"
+          },
+          {
+            "name": "发帖",
+            "path": "submit",
+            "icon": "comment"
+          },
+          {
+            "name": "顶部蓝条",
+            "path": "blue-bar",
+            "icon": "bars"
+          }
+        ],
+        "展示": [
+          {
+            "name": "字体图标",
+            "path": "icon",
+            "icon": "fonticons"
+          },
+          {
+            "name": "表情库",
+            "path": "emoji",
+            "icon": "fonticons"
+          }
+        ]
+      }
+    },
+    "oxp": {}
+  },
+  "resolve": [
+    {
+      "dir": "pc",
+      "prefix": "fit",
+      "path": "style"
+    }
+  ]
+}
