@@ -131,6 +131,12 @@ export default class Layout extends React.Component {
                                 <a className="item"
                                    href="http://gitlab.baidu.com/tb-component/awesome"
                                    target="_blank">Gitlab</a>
+                                <a className="item"
+                                   href="http://fis.baidu.com/"
+                                   target="_blank">FIS</a>
+                                <a className="item"
+                                    href="http://fex.baidu.com"
+                                    target="_blank">FEX</a>
                             </div>
                         </div>
                     </div>
@@ -142,7 +148,7 @@ export default class Layout extends React.Component {
                     {this.props.children}
                 </div>
                 <div className="g-ft">
-                    {this.state.type === 'mobile' ? 'Fiten Design' : 'Fit Design'}
+                    联系我们: fex@baidu.com
                 </div>
             </div>
         )
