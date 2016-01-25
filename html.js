@@ -19,6 +19,14 @@ module.exports = `
 <script src="/output/cdn/_.js"></script>
 <script src="/output/cdn/$.js"></script>
 <script src="/output/index.js"></script>
-
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7a3e50ea957bf0abf70578d83749ebc5";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </html>
 `
