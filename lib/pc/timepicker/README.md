@@ -1,4 +1,7 @@
-datepikcer
-================
+# 日期选择
 
-helloworld
+---
+
+````jsx
+npm install fit-datepicker /* or */ fis3 install fit-datepicker
+````

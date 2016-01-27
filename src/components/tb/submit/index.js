@@ -1,85 +1,76 @@
-import React from 'react'
-import CodeView from '../../../code-view/index'
-import Highlight from 'react-highlight'
-import CodeDoc from '../../../code-doc/index'
-import { Row, Col } from 'fit-layout'
-import Title from '../../title.js'
-import readme from './readme.md'
 
-import SubmitSourceCode from 'text!../../../../lib/tb/submit/src/submit/index'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/tb/submit/readme.md'
+                import '../../../../lib/tb/submit/demo'
 
-import Post from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/post.js'
-import postCode from 'text!./demo/post.js'
-import postMarkdown from './demo/post.md'
+                
+                    import PostComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/submit/demo/lists/post.js'
+                    import PostCode from 'text!../../../../lib/tb/submit/demo/lists/post.js'
+                    import PostMarkdown from '../../../../lib/tb/submit/demo/lists/post.md'
+                    
+                    import ReplyComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/submit/demo/lists/reply.js'
+                    import ReplyCode from 'text!../../../../lib/tb/submit/demo/lists/reply.js'
+                    import ReplyMarkdown from '../../../../lib/tb/submit/demo/lists/reply.md'
+                    
+                    import CommentComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/submit/demo/lists/comment.js'
+                    import CommentCode from 'text!../../../../lib/tb/submit/demo/lists/comment.js'
+                    import CommentMarkdown from '../../../../lib/tb/submit/demo/lists/comment.md'
+                    
+                    import SingleComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/submit/demo/lists/single.js'
+                    import SingleCode from 'text!../../../../lib/tb/submit/demo/lists/single.js'
+                    import SingleMarkdown from '../../../../lib/tb/submit/demo/lists/single.md'
+                    
 
-import Reply from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/reply.js'
-import replyCode from 'text!./demo/reply.js'
-import replyMarkdown from './demo/reply.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import Comment from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/comment.js'
-import commentCode from 'text!./demo/comment.js'
-import commentMarkdown from './demo/comment.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '发帖'
+                    }
 
-import Single from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/single.js'
-import singleCode from 'text!./demo/single.js'
-import singleMarkdown from './demo/single.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-const colStyle = {
-    padding: 10
-}
-
-const docStyle = {
-    margin: 10,
-    padding: 10,
-    background: 'white'
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '发帖'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row>
-                    <Col span="12"
-                         style={colStyle}>
-                        <CodeView md={postMarkdown}
-                                  code={postCode}>
-                            <Post/>
-                        </CodeView>
-
-                        <CodeView md={commentMarkdown}
-                                  style={{marginTop:10}}
-                                  code={commentCode}>
-                            <Comment/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={PostMarkdown} code={PostCode}>
+                            <PostComponent/>
                         </CodeView>
                     </Col>
-                    <Col span="12"
-                         style={colStyle}>
-                        <CodeView md={replyMarkdown}
-                                  code={replyCode}>
-                            <Reply/>
-                        </CodeView>
-
-                        <CodeView md={singleMarkdown}
-                                  style={{marginTop:10}}
-                                  code={singleCode}>
-                            <Single/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={ReplyMarkdown} code={ReplyCode}>
+                            <ReplyComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={CommentMarkdown} code={CommentCode}>
+                            <CommentComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={SingleMarkdown} code={SingleCode}>
+                            <SingleComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-                <div style={docStyle}>
-                    <CodeDoc code={SubmitSourceCode}/>
-                </div>
-
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

@@ -18,11 +18,11 @@ module.exports = {
         loaders: [
             {
                 test: /\.(tsx|ts)?$/,
-                exclude: [/node_modules/, /demo/],
+                exclude: [/node_modules/, /demo\/lists/],
                 loaders: ['react-hot-loader', 'ts-loader', 'html-path-loader']
             }, {
                 test: /\.(jsx|js|es6)?$/,
-                exclude: [/node_modules/, /demo/],
+                exclude: [/node_modules/, /demo\/lists/],
                 loaders: ['react-hot-loader', 'babel?presets[]=react,presets[]=es2015', 'html-path-loader']
             }, {
                 test: /\.(jsx|js|es6)?$/,
@@ -30,12 +30,12 @@ module.exports = {
                 loaders: ['html-path-loader']
             }, {
                 test: /\.(scss|css)/,
-                exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
+                exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
                 loaders: ['style', 'css', 'autoprefixer', 'sass', 'css-path-loader']
             },
             {
                 test: /\.(scss|css)/,
-                include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
+                include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
                 loaders: ['style', 'css', 'autoprefixer', 'sass']
             }, {
                 test: /\.(png|jpg)$/,

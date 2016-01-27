@@ -13,7 +13,9 @@ import mkdirp from 'mkdirp'
 import mkResolve from './mk-resolve'
 import mkRouter from './mk-router'
 import mkLayout from './mk-layout'
+import mkComponents from './mk-components'
 
 mkResolve(config)
 mkRouter(config.categorys)
 mkLayout(config.categorys)
+mkComponents(config)

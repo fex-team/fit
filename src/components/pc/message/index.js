@@ -1,74 +1,76 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
-import './index.scss'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/message/readme.md'
+                import '../../../../lib/pc/message/demo'
 
-import Duration from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/duration.js'
-import durationCode from 'text!./demo/duration.js'
-import durationMarkdown from './demo/duration.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/message/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/message/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/message/demo/lists/basic.md'
+                    
+                    import CallbackComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/message/demo/lists/callback.js'
+                    import CallbackCode from 'text!../../../../lib/pc/message/demo/lists/callback.js'
+                    import CallbackMarkdown from '../../../../lib/pc/message/demo/lists/callback.md'
+                    
+                    import DurationComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/message/demo/lists/duration.js'
+                    import DurationCode from 'text!../../../../lib/pc/message/demo/lists/duration.js'
+                    import DurationMarkdown from '../../../../lib/pc/message/demo/lists/duration.md'
+                    
+                    import TypeComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/message/demo/lists/type.js'
+                    import TypeCode from 'text!../../../../lib/pc/message/demo/lists/type.js'
+                    import TypeMarkdown from '../../../../lib/pc/message/demo/lists/type.md'
+                    
 
-import Type from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/type.js'
-import typeCode from 'text!./demo/type.js'
-import typeMarkdown from './demo/type.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import Callback from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/callback.js'
-import callbackCode from 'text!./demo/callback.js'
-import callbackMarkdown from './demo/callback.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '提示'
+                    }
 
-const colStyle = {
-    padding: 10
-}
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '提示'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row style={colStyle}>
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
-                        </CodeView>
-
-                        <CodeView md={typeMarkdown}
-                                  code={typeCode}
-                                  style={{marginTop:10}}>
-                            <Type/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={durationMarkdown}
-                                  code={durationCode}>
-                            <Duration/>
-                        </CodeView>
-
-                        <CodeView md={callbackMarkdown}
-                                  code={callbackCode}
-                                  style={{marginTop:10}}>
-                            <Callback/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={CallbackMarkdown} code={CallbackCode}>
+                            <CallbackComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={DurationMarkdown} code={DurationCode}>
+                            <DurationComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={TypeMarkdown} code={TypeCode}>
+                            <TypeComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

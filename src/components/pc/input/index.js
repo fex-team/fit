@@ -1,93 +1,96 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/input/readme.md'
+                import '../../../../lib/pc/input/demo'
 
-import Callback from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/callback.js'
-import callbackCode from 'text!./demo/callback.js'
-import callbackMarkdown from './demo/callback.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/input/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/input/demo/lists/basic.md'
+                    
+                    import CallbackComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/callback.js'
+                    import CallbackCode from 'text!../../../../lib/pc/input/demo/lists/callback.js'
+                    import CallbackMarkdown from '../../../../lib/pc/input/demo/lists/callback.md'
+                    
+                    import DisabledComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/disabled.js'
+                    import DisabledCode from 'text!../../../../lib/pc/input/demo/lists/disabled.js'
+                    import DisabledMarkdown from '../../../../lib/pc/input/demo/lists/disabled.md'
+                    
+                    import FlexComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/flex.js'
+                    import FlexCode from 'text!../../../../lib/pc/input/demo/lists/flex.js'
+                    import FlexMarkdown from '../../../../lib/pc/input/demo/lists/flex.md'
+                    
+                    import IconComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/icon.js'
+                    import IconCode from 'text!../../../../lib/pc/input/demo/lists/icon.js'
+                    import IconMarkdown from '../../../../lib/pc/input/demo/lists/icon.md'
+                    
+                    import TextareaComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/textarea.js'
+                    import TextareaCode from 'text!../../../../lib/pc/input/demo/lists/textarea.js'
+                    import TextareaMarkdown from '../../../../lib/pc/input/demo/lists/textarea.md'
+                    
 
-import Disabled from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/disabled.js'
-import disabledCode from 'text!./demo/disabled.js'
-import disabledMarkdown from './demo/disabled.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import Textarea from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/textarea.js'
-import textareaCode from 'text!./demo/textarea.js'
-import textareaMarkdown from './demo/textarea.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '输入框'
+                    }
 
-import Flex from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/flex.js'
-import flexCode from 'text!./demo/flex.js'
-import flexMarkdown from './demo/flex.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-import Icon from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/icon.js'
-import iconCode from 'text!./demo/icon.js'
-import iconMarkdown from './demo/icon.md'
-
-const colStyle = {
-    padding: 10
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '输入框'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row style={colStyle}>
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
-                        </CodeView>
-
-                        <CodeView md={textareaMarkdown}
-                                  code={textareaCode}
-                                  style={{marginTop:10}}>
-                            <Textarea/>
-                        </CodeView>
-
-                        <CodeView md={iconMarkdown}
-                                  code={iconCode}
-                                  style={{marginTop:10}}>
-                            <Icon/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={callbackMarkdown}
-                                  code={callbackCode}>
-                            <Callback/>
-                        </CodeView>
-
-                        <CodeView md={disabledMarkdown}
-                                  code={disabledCode}
-                                  style={{marginTop:10}}>
-                            <Disabled/>
-                        </CodeView>
-
-                        <CodeView md={flexMarkdown}
-                                  code={flexCode}
-                                  style={{marginTop:10}}>
-                            <Flex/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={CallbackMarkdown} code={CallbackCode}>
+                            <CallbackComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={DisabledMarkdown} code={DisabledCode}>
+                            <DisabledComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={FlexMarkdown} code={FlexCode}>
+                            <FlexComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={IconMarkdown} code={IconCode}>
+                            <IconComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={TextareaMarkdown} code={TextareaCode}>
+                            <TextareaComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

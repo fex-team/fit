@@ -1,83 +1,86 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/pagination/readme.md'
+                import '../../../../lib/pc/pagination/demo'
 
-import Loading from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/loading.js'
-import loadingCode from 'text!./demo/loading.js'
-import loadingMarkdown from './demo/loading.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/pagination/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/pagination/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/pagination/demo/lists/basic.md'
+                    
+                    import AllPageComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/pagination/demo/lists/all-page.js'
+                    import AllPageCode from 'text!../../../../lib/pc/pagination/demo/lists/all-page.js'
+                    import AllPageMarkdown from '../../../../lib/pc/pagination/demo/lists/all-page.md'
+                    
+                    import LoadingComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/pagination/demo/lists/loading.js'
+                    import LoadingCode from 'text!../../../../lib/pc/pagination/demo/lists/loading.js'
+                    import LoadingMarkdown from '../../../../lib/pc/pagination/demo/lists/loading.md'
+                    
+                    import LoadingAllComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/pagination/demo/lists/loading-all.js'
+                    import LoadingAllCode from 'text!../../../../lib/pc/pagination/demo/lists/loading-all.js'
+                    import LoadingAllMarkdown from '../../../../lib/pc/pagination/demo/lists/loading-all.md'
+                    
+                    import SizeComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/pagination/demo/lists/size.js'
+                    import SizeCode from 'text!../../../../lib/pc/pagination/demo/lists/size.js'
+                    import SizeMarkdown from '../../../../lib/pc/pagination/demo/lists/size.md'
+                    
 
-import AllPage from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/all-page.js'
-import allPageCode from 'text!./demo/all-page.js'
-import allPageMarkdown from './demo/all-page.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import Size from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/size.js'
-import sizeCode from 'text!./demo/size.js'
-import sizeMarkdown from './demo/size.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '分页'
+                    }
 
-import LoadingAll from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/loading-all.js'
-import loadingAllCode from 'text!./demo/loading-all.js'
-import loadingAllMarkdown from './demo/loading-all.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-const colStyle = {
-    padding: 10
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '分页'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row style={colStyle}>
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
-                        </CodeView>
-
-                        <CodeView md={allPageMarkdown}
-                                  code={allPageCode}
-                                  style={{marginTop:10}}>
-                            <AllPage/>
-                        </CodeView>
-
-                        <CodeView md={loadingAllMarkdown}
-                                  code={loadingAllCode}
-                                  style={{marginTop:10}}>
-                            <LoadingAll/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={loadingMarkdown}
-                                  code={loadingCode}>
-                            <Loading/>
-                        </CodeView>
-
-                        <CodeView md={sizeMarkdown}
-                                  code={sizeCode}
-                                  style={{marginTop:10}}>
-                            <Size/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={AllPageMarkdown} code={AllPageCode}>
+                            <AllPageComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={LoadingMarkdown} code={LoadingCode}>
+                            <LoadingComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={LoadingAllMarkdown} code={LoadingAllCode}>
+                            <LoadingAllComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={SizeMarkdown} code={SizeCode}>
+                            <SizeComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

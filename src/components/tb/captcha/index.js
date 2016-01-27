@@ -1,40 +1,46 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
 
-const colStyle = {
-    padding: 10
-}
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/tb/captcha/readme.md'
+                import '../../../../lib/tb/captcha/demo'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/captcha/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/tb/captcha/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/tb/captcha/demo/lists/basic.md'
+                    
 
-export default class Datepicker extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '验证码'
-    }
+                const colStyle = {
+                    padding: 10
+                }
 
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '验证码'
+                    }
 
-                <Row>
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic />
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
+
+                                <Row>
+                                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-                </Row>
-            </div>
-        )
-    }
-}
+                    
+                                </Row>
+
+                            </div>
+                        )
+                    }
+                }
+                

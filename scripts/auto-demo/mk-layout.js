@@ -2,6 +2,7 @@ import fs from 'fs'
 import md5 from 'md5'
 import _ from 'lodash'
 import mkdirp from 'mkdirp'
+import getDemoArray from './untils/get-demo-array'
 
 const mkLayout = (categorys)=> {
     for (let categoryKey in categorys) {
@@ -27,15 +28,20 @@ const mkLayout = (categorys)=> {
             {Menu${nameMd5}}
             `
 
-            for (let component of categorys[categoryKey]['components'][item]) {
-                menus += `
-                {
-                    title: '${component.name} ${_.capitalize(_.camelCase(component.path))}',
-                    path: '/${categoryKey}/${component.path}',
-                    icon: '${component.icon}'
-                },
-                `
-            }
+            categorys[categoryKey]['components'][item].map((component)=> {
+                // 跳过没有demo的组件
+                let demoArray = getDemoArray(`lib/${categoryKey}/${component.path}/demo/index.js`)
+
+                if (demoArray.length>0) {
+                    menus += `
+                    {
+                        title: '${component.name} ${_.capitalize(_.camelCase(component.path))}',
+                        path: '/${categoryKey}/${component.path}',
+                        icon: '${component.icon}'
+                    },
+                    `
+                }
+            })
 
             menus += `]`
         })

@@ -1,90 +1,96 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
 
-const colStyle = {
-    padding: 10
-}
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/datepicker/readme.md'
+                import '../../../../lib/pc/datepicker/demo'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/datepicker/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/datepicker/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/datepicker/demo/lists/basic.md'
+                    
+                    import RangeComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/datepicker/demo/lists/range.js'
+                    import RangeCode from 'text!../../../../lib/pc/datepicker/demo/lists/range.js'
+                    import RangeMarkdown from '../../../../lib/pc/datepicker/demo/lists/range.md'
+                    
+                    import ToolbarComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/datepicker/demo/lists/toolbar.js'
+                    import ToolbarCode from 'text!../../../../lib/pc/datepicker/demo/lists/toolbar.js'
+                    import ToolbarMarkdown from '../../../../lib/pc/datepicker/demo/lists/toolbar.md'
+                    
+                    import InputComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/datepicker/demo/lists/input.js'
+                    import InputCode from 'text!../../../../lib/pc/datepicker/demo/lists/input.js'
+                    import InputMarkdown from '../../../../lib/pc/datepicker/demo/lists/input.md'
+                    
+                    import LabelComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/datepicker/demo/lists/label.js'
+                    import LabelCode from 'text!../../../../lib/pc/datepicker/demo/lists/label.js'
+                    import LabelMarkdown from '../../../../lib/pc/datepicker/demo/lists/label.md'
+                    
+                    import ShowTimeComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/datepicker/demo/lists/show-time.js'
+                    import ShowTimeCode from 'text!../../../../lib/pc/datepicker/demo/lists/show-time.js'
+                    import ShowTimeMarkdown from '../../../../lib/pc/datepicker/demo/lists/show-time.md'
+                    
 
-import Range from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/range.js'
-import rangeCode from 'text!./demo/range.js'
-import rangeMarkdown from './demo/range.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import Toolbar from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/toolbar.js'
-import toolbarCode from 'text!./demo/toolbar.js'
-import toolbarMarkdown from './demo/toolbar.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '日期选择器'
+                    }
 
-import Input from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/input.js'
-import inputCode from 'text!./demo/input.js'
-import inputMarkdown from './demo/input.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-import ShowTime from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/show-time.js'
-import showTimeCode from 'text!./demo/show-time.js'
-import showTimeMarkdown from './demo/show-time.md'
-
-import Label from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/label.js'
-import labelCode from 'text!./demo/label.js'
-import labelMarkdown from './demo/label.md'
-
-export default class Datepicker extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '日期选择'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row>
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic />
-                        </CodeView>
-
-                        <CodeView md={rangeMarkdown}
-                                  code={rangeCode}
-                                  style={{marginTop:10}}>
-                            <Range />
-                        </CodeView>
-
-                        <CodeView md={toolbarMarkdown}
-                                  code={toolbarCode}
-                                  style={{marginTop:10}}>
-                            <Toolbar />
-                        </CodeView>
-
-                        <CodeView md={inputMarkdown}
-                                  code={inputCode}
-                                  style={{marginTop:10}}>
-                            <Input />
-                        </CodeView>
-
-                        <CodeView md={showTimeMarkdown}
-                                  code={showTimeCode}
-                                  style={{marginTop:10}}>
-                            <ShowTime />
-                        </CodeView>
-
-                        <CodeView md={labelMarkdown}
-                                  code={labelCode}
-                                  style={{marginTop:10}}>
-                            <Label />
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-                </Row>
-            </div>
-        )
-    }
-}
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={RangeMarkdown} code={RangeCode}>
+                            <RangeComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={ToolbarMarkdown} code={ToolbarCode}>
+                            <ToolbarComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={InputMarkdown} code={InputCode}>
+                            <InputComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={LabelMarkdown} code={LabelCode}>
+                            <LabelComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={ShowTimeMarkdown} code={ShowTimeCode}>
+                            <ShowTimeComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
+
+                            </div>
+                        )
+                    }
+                }
+                

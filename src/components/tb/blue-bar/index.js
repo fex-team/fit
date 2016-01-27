@@ -1,68 +1,56 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
-import CodeDoc from '../../../code-doc/index'
 
-const colStyle = {
-    padding: 10
-}
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/tb/blue-bar/readme.md'
+                import '../../../../lib/tb/blue-bar/demo'
 
-const docStyle = {
-    margin: 10,
-    padding: 10,
-    background: 'white'
-}
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/blue-bar/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/tb/blue-bar/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/tb/blue-bar/demo/lists/basic.md'
+                    
+                    import ShareComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/blue-bar/demo/lists/share.js'
+                    import ShareCode from 'text!../../../../lib/tb/blue-bar/demo/lists/share.js'
+                    import ShareMarkdown from '../../../../lib/tb/blue-bar/demo/lists/share.md'
+                    
 
-import BluebarSourceCode from 'text!../../../../lib/tb/blue-bar/src/index'
+                const colStyle = {
+                    padding: 10
+                }
 
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '顶部蓝条'
+                    }
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-import Share from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/share.js'
-import shareCode from 'text!./demo/share.js'
-import shareMarkdown from './demo/share.md'
-
-export default class Datepicker extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '顶部蓝条'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row>
-                    <Col span="18"
-                         style={colStyle}>
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic />
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-                </Row>
-
-                <Row>
-                    <Col span="18"
-                         style={colStyle}>
-                        <CodeView md={shareMarkdown}
-                                  code={shareCode}>
-                            <Share />
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={ShareMarkdown} code={ShareCode}>
+                            <ShareComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                                </Row>
 
-                <div style={docStyle}>
-                    <CodeDoc code={BluebarSourceCode} />
-                </div>
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

@@ -1,115 +1,116 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
-import './index.scss'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/radio/readme.md'
+                import '../../../../lib/pc/radio/demo'
 
-import Size from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/size.js'
-import sizeCode from 'text!./demo/size.js'
-import sizeMarkdown from './demo/size.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/radio/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/radio/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/radio/demo/lists/basic.md'
+                    
+                    import ButtonComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/radio/demo/lists/button.js'
+                    import ButtonCode from 'text!../../../../lib/pc/radio/demo/lists/button.js'
+                    import ButtonMarkdown from '../../../../lib/pc/radio/demo/lists/button.md'
+                    
+                    import CallbackComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/radio/demo/lists/callback.js'
+                    import CallbackCode from 'text!../../../../lib/pc/radio/demo/lists/callback.js'
+                    import CallbackMarkdown from '../../../../lib/pc/radio/demo/lists/callback.md'
+                    
+                    import CustomComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/radio/demo/lists/custom.js'
+                    import CustomCode from 'text!../../../../lib/pc/radio/demo/lists/custom.js'
+                    import CustomMarkdown from '../../../../lib/pc/radio/demo/lists/custom.md'
+                    
+                    import DisableComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/radio/demo/lists/disable.js'
+                    import DisableCode from 'text!../../../../lib/pc/radio/demo/lists/disable.js'
+                    import DisableMarkdown from '../../../../lib/pc/radio/demo/lists/disable.md'
+                    
+                    import GroupComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/radio/demo/lists/group.js'
+                    import GroupCode from 'text!../../../../lib/pc/radio/demo/lists/group.js'
+                    import GroupMarkdown from '../../../../lib/pc/radio/demo/lists/group.md'
+                    
+                    import LabelComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/radio/demo/lists/label.js'
+                    import LabelCode from 'text!../../../../lib/pc/radio/demo/lists/label.js'
+                    import LabelMarkdown from '../../../../lib/pc/radio/demo/lists/label.md'
+                    
+                    import SizeComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/radio/demo/lists/size.js'
+                    import SizeCode from 'text!../../../../lib/pc/radio/demo/lists/size.js'
+                    import SizeMarkdown from '../../../../lib/pc/radio/demo/lists/size.md'
+                    
 
-import Callback from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/callback.js'
-import callbackCode from 'text!./demo/callback.js'
-import callbackMarkdown from './demo/callback.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import Disable from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/disable.js'
-import disableCode from 'text!./demo/disable.js'
-import disableMarkdown from './demo/disable.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '单选框'
+                    }
 
-import Custom from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/custom.js'
-import customCode from 'text!./demo/custom.js'
-import customMarkdown from './demo/custom.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-import Group from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/group.js'
-import groupCode from 'text!./demo/group.js'
-import groupMarkdown from './demo/group.md'
-
-import Button from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/button.js'
-import buttonCode from 'text!./demo/button.js'
-import buttonMarkdown from './demo/button.md'
-
-
-import Label from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/label.js'
-import labelCode from 'text!./demo/label.js'
-import labelMarkdown from './demo/label.md'
-
-const colStyle = {
-    padding: 10
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '单选框'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row style={colStyle}>
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
-                        </CodeView>
-
-                        <CodeView md={callbackMarkdown}
-                                  code={callbackCode}
-                                  style={{marginTop:10}}>
-                            <Callback/>
-                        </CodeView>
-
-                        <CodeView md={customMarkdown}
-                                  code={customCode}
-                                  style={{marginTop:10}}>
-                            <Custom/>
-                        </CodeView>
-
-                        <CodeView md={buttonMarkdown}
-                                  code={buttonCode}
-                                  style={{marginTop:10}}>
-                            <Button/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={sizeMarkdown}
-                                  code={sizeCode}>
-                            <Size/>
-                        </CodeView>
-
-                        <CodeView md={disableMarkdown}
-                                  code={disableCode}
-                                  style={{marginTop:10}}>
-                            <Disable/>
-                        </CodeView>
-
-                        <CodeView md={groupMarkdown}
-                                  code={groupCode}
-                                  style={{marginTop:10}}>
-                            <Group/>
-                        </CodeView>
-
-                        <CodeView md={labelMarkdown}
-                                  code={labelCode}
-                                  style={{marginTop:10}}>
-                            <Label/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={ButtonMarkdown} code={ButtonCode}>
+                            <ButtonComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={CallbackMarkdown} code={CallbackCode}>
+                            <CallbackComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={CustomMarkdown} code={CustomCode}>
+                            <CustomComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={DisableMarkdown} code={DisableCode}>
+                            <DisableComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={GroupMarkdown} code={GroupCode}>
+                            <GroupComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={LabelMarkdown} code={LabelCode}>
+                            <LabelComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={SizeMarkdown} code={SizeCode}>
+                            <SizeComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

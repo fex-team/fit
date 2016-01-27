@@ -1,1 +1,7 @@
-树形控件
+# 树型控件
+
+---
+
+````jsx
+npm install fit-tree /* or */ fis3 install fit-tree
+````

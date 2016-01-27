@@ -25,15 +25,15 @@ var config = {
         loaders: [
             {
                 test: /\.(tsx|ts)?$/,
-                exclude: [/node_modules/, /demo/],
+                exclude: [/node_modules/, /demo\/lists/],
                 loaders: ['react-hot-loader', 'ts-loader', 'html-path-loader']
             }, {
                 test: /\.(jsx|js|es6)?$/,
-                exclude: [/node_modules/, /demo/],
+                exclude: [/node_modules/, /demo\/lists/],
                 loaders: ['react-hot-loader', 'babel?presets[]=react,presets[]=es2015', 'html-path-loader']
             }, {
                 test: /\.(jsx|js|es6)?$/,
-                include: [/demo/],
+                include: [/node_modules/, /demo\/lists/],
                 loaders: ['html-path-loader']
             }, {
                 test: /\.(scss|css)/,

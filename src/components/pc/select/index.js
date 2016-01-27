@@ -1,93 +1,96 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/select/readme.md'
+                import '../../../../lib/pc/select/demo'
 
-import Group from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/group.js'
-import groupCode from 'text!./demo/group.js'
-import groupMarkdown from './demo/group.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/select/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/select/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/select/demo/lists/basic.md'
+                    
+                    import DisabledComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/select/demo/lists/disabled.js'
+                    import DisabledCode from 'text!../../../../lib/pc/select/demo/lists/disabled.js'
+                    import DisabledMarkdown from '../../../../lib/pc/select/demo/lists/disabled.md'
+                    
+                    import GroupComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/select/demo/lists/group.js'
+                    import GroupCode from 'text!../../../../lib/pc/select/demo/lists/group.js'
+                    import GroupMarkdown from '../../../../lib/pc/select/demo/lists/group.md'
+                    
+                    import LabelComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/select/demo/lists/label.js'
+                    import LabelCode from 'text!../../../../lib/pc/select/demo/lists/label.js'
+                    import LabelMarkdown from '../../../../lib/pc/select/demo/lists/label.md'
+                    
+                    import SearchComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/select/demo/lists/search.js'
+                    import SearchCode from 'text!../../../../lib/pc/select/demo/lists/search.js'
+                    import SearchMarkdown from '../../../../lib/pc/select/demo/lists/search.md'
+                    
+                    import SimpleComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/select/demo/lists/simple.js'
+                    import SimpleCode from 'text!../../../../lib/pc/select/demo/lists/simple.js'
+                    import SimpleMarkdown from '../../../../lib/pc/select/demo/lists/simple.md'
+                    
 
-import Search from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/search.js'
-import searchCode from 'text!./demo/search.js'
-import searchMarkdown from './demo/search.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import Label from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/label.js'
-import labelCode from 'text!./demo/label.js'
-import labelMarkdown from './demo/label.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '选择框'
+                    }
 
-import Simple from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/simple.js'
-import simpleCode from 'text!./demo/simple.js'
-import simpleMarkdown from './demo/simple.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-import Disabled from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/disabled.js'
-import disabledCode from 'text!./demo/disabled.js'
-import disabledMarkdown from './demo/disabled.md'
-
-const colStyle = {
-    padding: 10
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '选择框'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row style={colStyle}>
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
-                        </CodeView>
-
-                        <CodeView md={searchMarkdown}
-                                  code={searchCode}
-                                  style={{marginTop:10}}>
-                            <Search/>
-                        </CodeView>
-
-                        <CodeView md={simpleMarkdown}
-                                  code={simpleCode}
-                                  style={{marginTop:10}}>
-                            <Simple/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={groupMarkdown}
-                                  code={groupCode}>
-                            <Group/>
-                        </CodeView>
-
-                        <CodeView md={labelMarkdown}
-                                  code={labelCode}
-                                  style={{marginTop:10}}>
-                            <Label/>
-                        </CodeView>
-
-                        <CodeView md={disabledMarkdown}
-                                  code={disabledCode}
-                                  style={{marginTop:10}}>
-                            <Disabled/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={DisabledMarkdown} code={DisabledCode}>
+                            <DisabledComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={GroupMarkdown} code={GroupCode}>
+                            <GroupComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={LabelMarkdown} code={LabelCode}>
+                            <LabelComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={SearchMarkdown} code={SearchCode}>
+                            <SearchComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={SimpleMarkdown} code={SimpleCode}>
+                            <SimpleComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

@@ -12,19 +12,11 @@ const mkResolve = (config)=> {
         let categoryInfo = categorys[categoryKey]
         let componentsInfo = categorys[categoryKey].components || []
         Object.keys(componentsInfo).map((item)=> {
-            for (let component of categorys[categoryKey]['components'][item]) {
-                switch (categoryKey) {
-                case 'mobile':
-                    resolvePath += `
-                    '${categoryInfo.prefix}-${component.path}': path.join(__dirname, 'lib/${categoryKey}/${component.path}/web/src'),
+            categorys[categoryKey]['components'][item].map((component)=> {
+                resolvePath += `
+                '${categoryInfo.prefix}-${component.path}': path.join(__dirname, 'lib/${categoryKey}/${component.path}/src'),
                 `
-                    break
-                default:
-                    resolvePath += `
-                    '${categoryInfo.prefix}-${component.path}': path.join(__dirname, 'lib/${categoryKey}/${component.path}/src'),
-                `
-                }
-            }
+            })
         })
     }
 

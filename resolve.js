@@ -6,81 +6,81 @@
             
         // pc
         
-                    'fit-layout-global': path.join(__dirname, 'lib/pc/layout-global/src'),
+                'fit-layout-global': path.join(__dirname, 'lib/pc/layout-global/src'),
                 
-                    'fit-layout': path.join(__dirname, 'lib/pc/layout/src'),
+                'fit-layout': path.join(__dirname, 'lib/pc/layout/src'),
                 
-                    'fit-button': path.join(__dirname, 'lib/pc/button/src'),
+                'fit-button': path.join(__dirname, 'lib/pc/button/src'),
                 
-                    'fit-pagination': path.join(__dirname, 'lib/pc/pagination/src'),
+                'fit-pagination': path.join(__dirname, 'lib/pc/pagination/src'),
                 
-                    'fit-table': path.join(__dirname, 'lib/pc/table/src'),
+                'fit-table': path.join(__dirname, 'lib/pc/table/src'),
                 
-                    'fit-modal': path.join(__dirname, 'lib/pc/modal/src'),
+                'fit-modal': path.join(__dirname, 'lib/pc/modal/src'),
                 
-                    'fit-message': path.join(__dirname, 'lib/pc/message/src'),
+                'fit-message': path.join(__dirname, 'lib/pc/message/src'),
                 
-                    'fit-collapse': path.join(__dirname, 'lib/pc/collapse/src'),
+                'fit-collapse': path.join(__dirname, 'lib/pc/collapse/src'),
                 
-                    'fit-tree': path.join(__dirname, 'lib/pc/tree/src'),
+                'fit-tree': path.join(__dirname, 'lib/pc/tree/src'),
                 
-                    'fit-json-tree': path.join(__dirname, 'lib/pc/json-tree/src'),
+                'fit-json-tree': path.join(__dirname, 'lib/pc/json-tree/src'),
                 
-                    'fit-image': path.join(__dirname, 'lib/pc/image/src'),
+                'fit-image': path.join(__dirname, 'lib/pc/image/src'),
                 
-                    'fit-render-to': path.join(__dirname, 'lib/pc/render-to/src'),
+                'fit-render-to': path.join(__dirname, 'lib/pc/render-to/src'),
                 
-                    'fit-input': path.join(__dirname, 'lib/pc/input/src'),
+                'fit-input': path.join(__dirname, 'lib/pc/input/src'),
                 
-                    'fit-number': path.join(__dirname, 'lib/pc/number/src'),
+                'fit-number': path.join(__dirname, 'lib/pc/number/src'),
                 
-                    'fit-auto-complete': path.join(__dirname, 'lib/pc/auto-complete/src'),
+                'fit-auto-complete': path.join(__dirname, 'lib/pc/auto-complete/src'),
                 
-                    'fit-select': path.join(__dirname, 'lib/pc/select/src'),
+                'fit-select': path.join(__dirname, 'lib/pc/select/src'),
                 
-                    'fit-switch': path.join(__dirname, 'lib/pc/switch/src'),
+                'fit-switch': path.join(__dirname, 'lib/pc/switch/src'),
                 
-                    'fit-checkbox': path.join(__dirname, 'lib/pc/checkbox/src'),
+                'fit-checkbox': path.join(__dirname, 'lib/pc/checkbox/src'),
                 
-                    'fit-radio': path.join(__dirname, 'lib/pc/radio/src'),
+                'fit-radio': path.join(__dirname, 'lib/pc/radio/src'),
                 
-                    'fit-timepicker': path.join(__dirname, 'lib/pc/timepicker/src'),
+                'fit-timepicker': path.join(__dirname, 'lib/pc/timepicker/src'),
                 
-                    'fit-datepicker': path.join(__dirname, 'lib/pc/datepicker/src'),
+                'fit-datepicker': path.join(__dirname, 'lib/pc/datepicker/src'),
                 
-                    'fit-upload': path.join(__dirname, 'lib/pc/upload/src'),
+                'fit-upload': path.join(__dirname, 'lib/pc/upload/src'),
                 
-                    'fit-menu': path.join(__dirname, 'lib/pc/menu/src'),
+                'fit-menu': path.join(__dirname, 'lib/pc/menu/src'),
                 
-                    'fit-tabs': path.join(__dirname, 'lib/pc/tabs/src'),
+                'fit-tabs': path.join(__dirname, 'lib/pc/tabs/src'),
                 
-                    'fit-phone': path.join(__dirname, 'lib/pc/phone/src'),
+                'fit-phone': path.join(__dirname, 'lib/pc/phone/src'),
                 
-                    'fit-iframe': path.join(__dirname, 'lib/pc/iframe/src'),
+                'fit-iframe': path.join(__dirname, 'lib/pc/iframe/src'),
                 
         // mobile
         
-                    'fiten-color': path.join(__dirname, 'lib/mobile/color/web/src'),
+                'fiten-color': path.join(__dirname, 'lib/mobile/color/src'),
                 
-                    'fiten-scale': path.join(__dirname, 'lib/mobile/scale/web/src'),
+                'fiten-scale': path.join(__dirname, 'lib/mobile/scale/src'),
                 
-                    'fiten-chat': path.join(__dirname, 'lib/mobile/chat/web/src'),
+                'fiten-chat': path.join(__dirname, 'lib/mobile/chat/src'),
                 
-                    'fiten-chat-box': path.join(__dirname, 'lib/mobile/chat-box/web/src'),
+                'fiten-chat-box': path.join(__dirname, 'lib/mobile/chat-box/src'),
                 
         // tb
         
-                    'tb-track': path.join(__dirname, 'lib/tb/track/src'),
+                'tb-track': path.join(__dirname, 'lib/tb/track/src'),
                 
-                    'tb-captcha': path.join(__dirname, 'lib/tb/captcha/src'),
+                'tb-captcha': path.join(__dirname, 'lib/tb/captcha/src'),
                 
-                    'tb-submit': path.join(__dirname, 'lib/tb/submit/src'),
+                'tb-submit': path.join(__dirname, 'lib/tb/submit/src'),
                 
-                    'tb-blue-bar': path.join(__dirname, 'lib/tb/blue-bar/src'),
+                'tb-blue-bar': path.join(__dirname, 'lib/tb/blue-bar/src'),
                 
-                    'tb-icon': path.join(__dirname, 'lib/tb/icon/src'),
+                'tb-icon': path.join(__dirname, 'lib/tb/icon/src'),
                 
-                    'tb-emoji': path.join(__dirname, 'lib/tb/emoji/src'),
+                'tb-emoji': path.join(__dirname, 'lib/tb/emoji/src'),
                 
         // oxp
         

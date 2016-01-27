@@ -4,8 +4,9 @@
         import { createHistory, useBasename } from 'history'
 
         import Layout from './layout'
-        import pcHome from './home'
-        import tbHome from './components/tb'
+        import pcHome from '../lib/pc'
+        import tbHome from '../lib/tb'
+        import mobileHome from '../lib/mobile'
 
 
         
@@ -185,7 +186,7 @@
         
         <Route path="/mobile"
                component={Layout}>
-            <IndexRoute component={fitenColorComponent}/>
+            <IndexRoute component={mobileHome}/>
         
                 <Route path="color"
                        component={fitenColorComponent}/>

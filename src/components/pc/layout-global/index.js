@@ -1,84 +1,86 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
-import './index.scss'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/layout-global/readme.md'
+                import '../../../../lib/pc/layout-global/demo'
 
-import Header from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/header.js'
-import headerCode from 'text!./demo/header.js'
-import headerMarkdown from './demo/header.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/layout-global/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/layout-global/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/layout-global/demo/lists/basic.md'
+                    
+                    import HeaderComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/layout-global/demo/lists/header.js'
+                    import HeaderCode from 'text!../../../../lib/pc/layout-global/demo/lists/header.js'
+                    import HeaderMarkdown from '../../../../lib/pc/layout-global/demo/lists/header.md'
+                    
+                    import RightFooterComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/layout-global/demo/lists/right-footer.js'
+                    import RightFooterCode from 'text!../../../../lib/pc/layout-global/demo/lists/right-footer.js'
+                    import RightFooterMarkdown from '../../../../lib/pc/layout-global/demo/lists/right-footer.md'
+                    
+                    import HeaderSectionComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/layout-global/demo/lists/header-section.js'
+                    import HeaderSectionCode from 'text!../../../../lib/pc/layout-global/demo/lists/header-section.js'
+                    import HeaderSectionMarkdown from '../../../../lib/pc/layout-global/demo/lists/header-section.md'
+                    
+                    import AllComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/layout-global/demo/lists/all.js'
+                    import AllCode from 'text!../../../../lib/pc/layout-global/demo/lists/all.js'
+                    import AllMarkdown from '../../../../lib/pc/layout-global/demo/lists/all.md'
+                    
 
-import Footer from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/footer.js'
-import footerCode from 'text!./demo/footer.js'
-import footerMarkdown from './demo/footer.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import HeaderSection from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/header-section.js'
-import headerSectionCode from 'text!./demo/header-section.js'
-import headerSectionMarkdown from './demo/header-section.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '全屏布局'
+                    }
 
-import All from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/all.js'
-import allCode from 'text!./demo/all.js'
-import allMarkdown from './demo/all.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-const colStyle = {
-    padding: 10
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '全屏布局'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row style={colStyle}>
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
-                        </CodeView>
-
-                        <CodeView md={footerMarkdown}
-                                  code={footerCode}
-                                  style={{marginTop:10}}>
-                            <Footer/>
-                        </CodeView>
-
-                        <CodeView md={allMarkdown}
-                                  code={allCode}
-                                  style={{marginTop:10}}>
-                            <All/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={headerMarkdown}
-                                  code={headerCode}>
-                            <Header/>
-                        </CodeView>
-
-                        <CodeView md={headerSectionMarkdown}
-                                  code={headerSectionCode}
-                                  style={{marginTop:10}}>
-                            <HeaderSection/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={HeaderMarkdown} code={HeaderCode}>
+                            <HeaderComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={RightFooterMarkdown} code={RightFooterCode}>
+                            <RightFooterComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={HeaderSectionMarkdown} code={HeaderSectionCode}>
+                            <HeaderSectionComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={AllMarkdown} code={AllCode}>
+                            <AllComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

@@ -1,65 +1,56 @@
-import React from 'react'
-import CodeView from '../../../code-view/index'
-import Highlight from 'react-highlight'
-import { Row, Col } from 'fit-layout'
-import Title from '../../title.js'
-import readme from './readme.md'
-import CodeDoc from '../../../code-doc/index'
 
-import EmojiSourceCode from 'text!../../../../lib/tb/emoji/src/emoji/index'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/tb/emoji/readme.md'
+                import '../../../../lib/tb/emoji/demo'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/emoji/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/tb/emoji/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/tb/emoji/demo/lists/basic.md'
+                    
+                    import ControlComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/emoji/demo/lists/control.js'
+                    import ControlCode from 'text!../../../../lib/tb/emoji/demo/lists/control.js'
+                    import ControlMarkdown from '../../../../lib/tb/emoji/demo/lists/control.md'
+                    
 
-import Control from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/control.js'
-import controlCode from 'text!./demo/control.js'
-import controlMarkdown from './demo/control.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-const colStyle = {
-    padding: 10
-}
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '表情库'
+                    }
 
-const docStyle = {
-    margin: 10,
-    padding: 10,
-    background: 'white'
-}
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '表情库'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row>
-                    <Col span="12"
-                         style={colStyle}>
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-                    <Col span="12"
-                         style={colStyle}>
-                        <CodeView md={controlMarkdown}
-                                  code={controlCode}>
-                            <Control/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={ControlMarkdown} code={ControlCode}>
+                            <ControlComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                                </Row>
 
-                <div style={docStyle}>
-                    <CodeDoc code={EmojiSourceCode}/>
-                </div>
-
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

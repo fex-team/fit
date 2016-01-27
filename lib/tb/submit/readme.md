@@ -1,1 +1,7 @@
-贴吧发帖框
+# 发帖框
+
+---
+
+````jsx
+fis3 install gitlab:tb-submit 
+````

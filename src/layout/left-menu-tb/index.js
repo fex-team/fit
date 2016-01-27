@@ -4,43 +4,43 @@
 
         
 const menu4092ed98e9035652d4c9ca9441701ed7 = [
-                {
-                    title: '日志请求 Track',
-                    path: '/tb/track',
-                    icon: 'send'
-                },
-                
-                {
-                    title: '验证码 Captcha',
-                    path: '/tb/captcha',
-                    icon: 'bullseye'
-                },
-                
-                {
-                    title: '发帖 Submit',
-                    path: '/tb/submit',
-                    icon: 'comment'
-                },
-                
-                {
-                    title: '顶部蓝条 BlueBar',
-                    path: '/tb/blue-bar',
-                    icon: 'bars'
-                },
-                ]
+                    {
+                        title: '日志请求 Track',
+                        path: '/tb/track',
+                        icon: 'send'
+                    },
+                    
+                    {
+                        title: '验证码 Captcha',
+                        path: '/tb/captcha',
+                        icon: 'bullseye'
+                    },
+                    
+                    {
+                        title: '发帖 Submit',
+                        path: '/tb/submit',
+                        icon: 'comment'
+                    },
+                    
+                    {
+                        title: '顶部蓝条 BlueBar',
+                        path: '/tb/blue-bar',
+                        icon: 'bars'
+                    },
+                    ]
 const menu027446c2f9070b0f5b16a18208bf5fc7 = [
-                {
-                    title: '字体图标 Icon',
-                    path: '/tb/icon',
-                    icon: 'fonticons'
-                },
-                
-                {
-                    title: '表情库 Emoji',
-                    path: '/tb/emoji',
-                    icon: 'fonticons'
-                },
-                ]
+                    {
+                        title: '字体图标 Icon',
+                        path: '/tb/icon',
+                        icon: 'fonticons'
+                    },
+                    
+                    {
+                        title: '表情库 Emoji',
+                        path: '/tb/emoji',
+                        icon: 'fonticons'
+                    },
+                    ]
 
         export default class Layout extends React.Component {
             constructor(props) {

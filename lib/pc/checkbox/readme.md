@@ -1,1 +1,7 @@
-多选框
+# 多选框
+
+---
+
+````jsx
+npm install fit-checkbox /* or */ fis3 install fit-checkbox
+````

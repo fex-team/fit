@@ -1,106 +1,116 @@
-import React from 'react'
-import CodeView from '../../../code-view/index'
-import Highlight from 'react-highlight'
-import { Row, Col } from 'fit-layout'
-import Title from '../../title.js'
-import readme from './readme.md'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/button/readme.md'
+                import '../../../../lib/pc/button/demo'
 
-import Color from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/color.js'
-import colorCode from 'text!./demo/color.js'
-import colorMarkdown from './demo/color.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/button/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/button/demo/lists/basic.md'
+                    
+                    import ActiveComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/active.js'
+                    import ActiveCode from 'text!../../../../lib/pc/button/demo/lists/active.js'
+                    import ActiveMarkdown from '../../../../lib/pc/button/demo/lists/active.md'
+                    
+                    import AddonComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/addon.js'
+                    import AddonCode from 'text!../../../../lib/pc/button/demo/lists/addon.js'
+                    import AddonMarkdown from '../../../../lib/pc/button/demo/lists/addon.md'
+                    
+                    import ColorComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/color.js'
+                    import ColorCode from 'text!../../../../lib/pc/button/demo/lists/color.js'
+                    import ColorMarkdown from '../../../../lib/pc/button/demo/lists/color.md'
+                    
+                    import GroupComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/group.js'
+                    import GroupCode from 'text!../../../../lib/pc/button/demo/lists/group.js'
+                    import GroupMarkdown from '../../../../lib/pc/button/demo/lists/group.md'
+                    
+                    import LoadingComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/loading.js'
+                    import LoadingCode from 'text!../../../../lib/pc/button/demo/lists/loading.js'
+                    import LoadingMarkdown from '../../../../lib/pc/button/demo/lists/loading.md'
+                    
+                    import RoundedComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/rounded.js'
+                    import RoundedCode from 'text!../../../../lib/pc/button/demo/lists/rounded.js'
+                    import RoundedMarkdown from '../../../../lib/pc/button/demo/lists/rounded.md'
+                    
+                    import SizeComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/size.js'
+                    import SizeCode from 'text!../../../../lib/pc/button/demo/lists/size.js'
+                    import SizeMarkdown from '../../../../lib/pc/button/demo/lists/size.md'
+                    
 
-import Addon from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/addon.js'
-import addonCode from 'text!./demo/addon.js'
-import addonMarkdown from './demo/addon.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import Rounded from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/rounded.js'
-import roundedCode from 'text!./demo/rounded.js'
-import roundedMarkdown from './demo/rounded.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '按钮'
+                    }
 
-import Group from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/group.js'
-import groupCode from 'text!./demo/group.js'
-import groupMarkdown from './demo/group.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-import Size from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/size.js'
-import sizeCode from 'text!./demo/size.js'
-import sizeMarkdown from './demo/size.md'
-
-import Active from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/active.js'
-import activeCode from 'text!./demo/active.js'
-import activeMarkdown from './demo/active.md'
-
-import Loading from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/loading.js'
-import loadingCode from 'text!./demo/loading.js'
-import loadingMarkdown from './demo/loading.md'
-
-const colStyle = {
-    padding: 10
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '按钮'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row>
-                    <Col span="12"
-                         style={colStyle}>
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
-                        </CodeView>
-                        <CodeView md={addonMarkdown}
-                                  code={addonCode}
-                                  style={{marginTop:10}}>
-                            <Addon/>
-                        </CodeView>
-                        <CodeView md={sizeMarkdown}
-                                  code={sizeCode}
-                                  style={{marginTop:10}}>
-                            <Size/>
-                        </CodeView>
-                        <CodeView md={activeMarkdown}
-                                  code={activeCode}
-                                  style={{marginTop:10}}>
-                            <Active/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-                    <Col span="12"
-                         style={colStyle}>
-                        <CodeView md={colorMarkdown}
-                                  code={colorCode}>
-                            <Color/>
-                        </CodeView>
-                        <CodeView md={roundedMarkdown}
-                                  style={{marginTop:10}}
-                                  code={roundedCode}>
-                            <Rounded/>
-                        </CodeView>
-                        <CodeView md={groupMarkdown}
-                                  code={groupCode}
-                                  style={{marginTop:10}}>
-                            <Group/>
-                        </CodeView>
-                        <CodeView md={loadingMarkdown}
-                                  code={loadingCode}
-                                  style={{marginTop:10}}>
-                            <Loading/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={ActiveMarkdown} code={ActiveCode}>
+                            <ActiveComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={AddonMarkdown} code={AddonCode}>
+                            <AddonComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={ColorMarkdown} code={ColorCode}>
+                            <ColorComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={GroupMarkdown} code={GroupCode}>
+                            <GroupComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={LoadingMarkdown} code={LoadingCode}>
+                            <LoadingComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={RoundedMarkdown} code={RoundedCode}>
+                            <RoundedComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={SizeMarkdown} code={SizeCode}>
+                            <SizeComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

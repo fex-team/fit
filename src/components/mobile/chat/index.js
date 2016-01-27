@@ -1,58 +1,46 @@
-import React from 'react'
-import CodeView from '../../../code-view/index'
-import CodeDoc from '../../../code-doc/index'
-import Highlight from 'react-highlight'
-import { Row, Col } from 'fit-layout'
-import Title from '../../title.js'
-import readme from './readme.md'
 
-import ChatSourceCode from 'text!../../../../lib/mobile/chat/web/src/chat/index.js'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/mobile/chat/readme.md'
+                import '../../../../lib/mobile/chat/demo'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/mobile/chat/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/mobile/chat/demo/lists/basic.md'
+                    
 
-const colStyle = {
-    padding: 10
-}
+                const colStyle = {
+                    padding: 10
+                }
 
-const docStyle = {
-    margin: 10,
-    padding: 10,
-    background: 'white'
-}
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '聊天气泡'
+                    }
 
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '聊天气泡'
-    }
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row>
-                    <Col span="12"
-                         style={colStyle}>
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-                    <Col span="12"
-                         style={colStyle}>
+                    
+                                </Row>
 
-                    </Col>
-                </Row>
-
-                <div style={docStyle}>
-                    <CodeDoc code={ChatSourceCode}/>
-                </div>
-
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

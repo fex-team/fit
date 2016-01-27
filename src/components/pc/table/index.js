@@ -1,205 +1,206 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
-import $ from 'jquery'
 
-import './mock'
-import './index.scss'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/table/readme.md'
+                import '../../../../lib/pc/table/demo'
 
-import Fields from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/fields.js'
-import fieldsCode from 'text!./demo/fields.js'
-import fieldsMarkdown from './demo/fields.md'
+                
+                    import DataComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/data.js'
+                    import DataCode from 'text!../../../../lib/pc/table/demo/lists/data.js'
+                    import DataMarkdown from '../../../../lib/pc/table/demo/lists/data.md'
+                    
+                    import AjaxComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/ajax.js'
+                    import AjaxCode from 'text!../../../../lib/pc/table/demo/lists/ajax.js'
+                    import AjaxMarkdown from '../../../../lib/pc/table/demo/lists/ajax.md'
+                    
+                    import AddComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/add.js'
+                    import AddCode from 'text!../../../../lib/pc/table/demo/lists/add.js'
+                    import AddMarkdown from '../../../../lib/pc/table/demo/lists/add.md'
+                    
+                    import CustomComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/custom.js'
+                    import CustomCode from 'text!../../../../lib/pc/table/demo/lists/custom.js'
+                    import CustomMarkdown from '../../../../lib/pc/table/demo/lists/custom.md'
+                    
+                    import CustomColComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/custom-col.js'
+                    import CustomColCode from 'text!../../../../lib/pc/table/demo/lists/custom-col.js'
+                    import CustomColMarkdown from '../../../../lib/pc/table/demo/lists/custom-col.md'
+                    
+                    import DeleteComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/delete.js'
+                    import DeleteCode from 'text!../../../../lib/pc/table/demo/lists/delete.js'
+                    import DeleteMarkdown from '../../../../lib/pc/table/demo/lists/delete.md'
+                    
+                    import EditComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/edit.js'
+                    import EditCode from 'text!../../../../lib/pc/table/demo/lists/edit.js'
+                    import EditMarkdown from '../../../../lib/pc/table/demo/lists/edit.md'
+                    
+                    import FieldsComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/fields.js'
+                    import FieldsCode from 'text!../../../../lib/pc/table/demo/lists/fields.js'
+                    import FieldsMarkdown from '../../../../lib/pc/table/demo/lists/fields.md'
+                    
+                    import FindComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/find.js'
+                    import FindCode from 'text!../../../../lib/pc/table/demo/lists/find.js'
+                    import FindMarkdown from '../../../../lib/pc/table/demo/lists/find.md'
+                    
+                    import MockDeleteComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/mock-delete.js'
+                    import MockDeleteCode from 'text!../../../../lib/pc/table/demo/lists/mock-delete.js'
+                    import MockDeleteMarkdown from '../../../../lib/pc/table/demo/lists/mock-delete.md'
+                    
+                    import OutsideComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/outside.js'
+                    import OutsideCode from 'text!../../../../lib/pc/table/demo/lists/outside.js'
+                    import OutsideMarkdown from '../../../../lib/pc/table/demo/lists/outside.md'
+                    
+                    import PaginationComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/pagination.js'
+                    import PaginationCode from 'text!../../../../lib/pc/table/demo/lists/pagination.js'
+                    import PaginationMarkdown from '../../../../lib/pc/table/demo/lists/pagination.md'
+                    
+                    import ResponsiveComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/responsive.js'
+                    import ResponsiveCode from 'text!../../../../lib/pc/table/demo/lists/responsive.js'
+                    import ResponsiveMarkdown from '../../../../lib/pc/table/demo/lists/responsive.md'
+                    
+                    import SelectComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/select.js'
+                    import SelectCode from 'text!../../../../lib/pc/table/demo/lists/select.js'
+                    import SelectMarkdown from '../../../../lib/pc/table/demo/lists/select.md'
+                    
+                    import SimpleAjaxComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/simple-ajax.js'
+                    import SimpleAjaxCode from 'text!../../../../lib/pc/table/demo/lists/simple-ajax.js'
+                    import SimpleAjaxMarkdown from '../../../../lib/pc/table/demo/lists/simple-ajax.md'
+                    
+                    import SortComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/sort.js'
+                    import SortCode from 'text!../../../../lib/pc/table/demo/lists/sort.js'
+                    import SortMarkdown from '../../../../lib/pc/table/demo/lists/sort.md'
+                    
+                    import SortableComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/sortable.js'
+                    import SortableCode from 'text!../../../../lib/pc/table/demo/lists/sortable.js'
+                    import SortableMarkdown from '../../../../lib/pc/table/demo/lists/sortable.md'
+                    
 
-import Data from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/data.js'
-import dataCode from 'text!./demo/data.js'
-import dataMarkdown from './demo/data.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import SimpleAjax from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/simple-ajax.js'
-import simpleAjaxCode from 'text!./demo/simple-ajax.js'
-import simpleAjaxMarkdown from './demo/simple-ajax.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '表格'
+                    }
 
-import Ajax from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/ajax.js'
-import ajaxCode from 'text!./demo/ajax.js'
-import ajaxMarkdown from './demo/ajax.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-import Pagination from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/pagination.js'
-import paginationCode from 'text!./demo/pagination.js'
-import paginationMarkdown from './demo/pagination.md'
-
-import Select from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/select.js'
-import selectCode from 'text!./demo/select.js'
-import selectMarkdown from './demo/select.md'
-
-import Find from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/find.js'
-import findCode from 'text!./demo/find.js'
-import findMarkdown from './demo/find.md'
-
-import Sort from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/sort.js'
-import sortCode from 'text!./demo/sort.js'
-import sortMarkdown from './demo/sort.md'
-
-import Custom from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/custom.js'
-import customCode from 'text!./demo/custom.js'
-import customMarkdown from './demo/custom.md'
-
-import Sortable from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/sortable.js'
-import sortableCode from 'text!./demo/sortable.js'
-import sortableMarkdown from './demo/sortable.md'
-
-import Delete from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/delete.js'
-import deleteCode from 'text!./demo/delete.js'
-import deleteMarkdown from './demo/delete.md'
-
-import CustomCol from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/custom-col.js'
-import customColCode from 'text!./demo/custom-col.js'
-import customColMarkdown from './demo/custom-col.md'
-
-import Add from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/add.js'
-import addCode from 'text!./demo/add.js'
-import addMarkdown from './demo/add.md'
-
-import Edit from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/edit.js'
-import editCode from 'text!./demo/edit.js'
-import editMarkdown from './demo/edit.md'
-
-import Responsive from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/responsive.js'
-import responsiveCode from 'text!./demo/responsive.js'
-import responsiveMarkdown from './demo/responsive.md'
-
-import Outside from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/outside.js'
-import outsideCode from 'text!./demo/outside.js'
-import outsideMarkdown from './demo/outside.md'
-
-import Mockdelete from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/mockdelete.js'
-import mockdeleteCode from 'text!./demo/mockdelete.js'
-import mockdeleteMarkdown from './demo/mockdelete.md'
-
-
-const colStyle = {
-    padding: 10
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '表格'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row style={colStyle}>
-                    <Col span="24">
-                        <CodeView md={fieldsMarkdown}
-                                  code={fieldsCode}>
-                            <Fields/>
-                        </CodeView>
-
-                        <CodeView md={dataMarkdown}
-                                  code={dataCode}
-                                  style={{marginTop:10}}>
-                            <Data/>
-                        </CodeView>
-
-                        <CodeView md={simpleAjaxMarkdown}
-                                  code={simpleAjaxCode}
-                                  style={{marginTop:10}}>
-                            <SimpleAjax/>
-                        </CodeView>
-
-                        <CodeView md={ajaxMarkdown}
-                                  code={ajaxCode}
-                                  style={{marginTop:10}}>
-                            <Ajax/>
-                        </CodeView>
-
-                        <CodeView md={paginationMarkdown}
-                                  code={paginationCode}
-                                  style={{marginTop:10}}>
-                            <Pagination/>
-                        </CodeView>
-
-                        <CodeView md={selectMarkdown}
-                                  code={selectCode}
-                                  style={{marginTop:10}}>
-                            <Select/>
-                        </CodeView>
-
-                        <CodeView md={customMarkdown}
-                                  code={customCode}
-                                  style={{marginTop:10}}>
-                            <Custom/>
-                        </CodeView>
-
-                        <CodeView md={customColMarkdown}
-                                  code={customColCode}
-                                  style={{marginTop:10}}>
-                            <CustomCol/>
-                        </CodeView>
-
-                        <CodeView md={deleteMarkdown}
-                                  code={deleteCode}
-                                  style={{marginTop:10}}>
-                            <Delete/>
-                        </CodeView>
-
-                        <CodeView md={addMarkdown}
-                                  code={addCode}
-                                  style={{marginTop:10}}>
-                            <Add/>
-                        </CodeView>
-
-                        <CodeView md={findMarkdown}
-                                  code={findCode}
-                                  style={{marginTop:10}}>
-                            <Find/>
-                        </CodeView>
-
-                        <CodeView md={sortMarkdown}
-                                  code={sortCode}
-                                  style={{marginTop:10}}>
-                            <Sort/>
-                        </CodeView>
-
-                        <CodeView md={editMarkdown}
-                                  code={editCode}
-                                  style={{marginTop:10}}>
-                            <Edit/>
-                        </CodeView>
-
-                        <CodeView md={responsiveMarkdown}
-                                  code={responsiveCode}
-                                  style={{marginTop:10}}>
-                            <Responsive/>
-                        </CodeView>
-
-                        <CodeView md={outsideMarkdown}
-                                  code={outsideCode}>
-                            <Outside />
-                        </CodeView>
-
-                        <CodeView md={mockdeleteMarkdown}
-                                  code={mockdeleteCode}>
-                            <Mockdelete />
+                                <Row>
+                                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={DataMarkdown} code={DataCode}>
+                            <DataComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={AjaxMarkdown} code={AjaxCode}>
+                            <AjaxComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={AddMarkdown} code={AddCode}>
+                            <AddComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={CustomMarkdown} code={CustomCode}>
+                            <CustomComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={CustomColMarkdown} code={CustomColCode}>
+                            <CustomColComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={DeleteMarkdown} code={DeleteCode}>
+                            <DeleteComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={EditMarkdown} code={EditCode}>
+                            <EditComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={FieldsMarkdown} code={FieldsCode}>
+                            <FieldsComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={FindMarkdown} code={FindCode}>
+                            <FindComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={MockDeleteMarkdown} code={MockDeleteCode}>
+                            <MockDeleteComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={OutsideMarkdown} code={OutsideCode}>
+                            <OutsideComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={PaginationMarkdown} code={PaginationCode}>
+                            <PaginationComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={ResponsiveMarkdown} code={ResponsiveCode}>
+                            <ResponsiveComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={SelectMarkdown} code={SelectCode}>
+                            <SelectComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={SimpleAjaxMarkdown} code={SimpleAjaxCode}>
+                            <SimpleAjaxComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={SortMarkdown} code={SortCode}>
+                            <SortComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="24" style={colStyle}>
+                        <CodeView md={SortableMarkdown} code={SortableCode}>
+                            <SortableComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-            </div>
-        )
-    }
-}
-
-
-//
-//<CodeView md={sortableMarkdown}
-//code={sortableCode}
-//style={{marginTop:10}}>
-//<Sortable/>
-//</CodeView>
+                            </div>
+                        )
+                    }
+                }
+                

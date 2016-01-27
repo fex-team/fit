@@ -1,85 +1,76 @@
-import React from 'react'
-import CodeView from '../../../code-view/index'
-import CodeDoc from '../../../code-doc/index'
-import Highlight from 'react-highlight'
-import { Row, Col } from 'fit-layout'
-import Title from '../../title.js'
-import readme from './readme.md'
 
-import ChatBoxSourceCode from 'text!../../../../lib/mobile/chat-box/web/src/chat-box/index.js'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/mobile/chat-box/readme.md'
+                import '../../../../lib/mobile/chat-box/demo'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat-box/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/mobile/chat-box/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/mobile/chat-box/demo/lists/basic.md'
+                    
+                    import ReverseComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat-box/demo/lists/reverse.js'
+                    import ReverseCode from 'text!../../../../lib/mobile/chat-box/demo/lists/reverse.js'
+                    import ReverseMarkdown from '../../../../lib/mobile/chat-box/demo/lists/reverse.md'
+                    
+                    import BackBottomComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat-box/demo/lists/back-bottom.js'
+                    import BackBottomCode from 'text!../../../../lib/mobile/chat-box/demo/lists/back-bottom.js'
+                    import BackBottomMarkdown from '../../../../lib/mobile/chat-box/demo/lists/back-bottom.md'
+                    
+                    import LoadingComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat-box/demo/lists/loading.js'
+                    import LoadingCode from 'text!../../../../lib/mobile/chat-box/demo/lists/loading.js'
+                    import LoadingMarkdown from '../../../../lib/mobile/chat-box/demo/lists/loading.md'
+                    
 
-import Reverse from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/reverse.js'
-import reverseCode from 'text!./demo/reverse.js'
-import reverseMarkdown from './demo/reverse.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import BackBottom from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/back-bottom.js'
-import backBottomCode from 'text!./demo/back-bottom.js'
-import backBottomMarkdown from './demo/back-bottom.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '聊天盒子'
+                    }
 
-import Loading from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/loading.js'
-import loadingCode from 'text!./demo/loading.js'
-import loadingMarkdown from './demo/loading.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-const colStyle = {
-    padding: 10
-}
-
-const docStyle = {
-    margin: 10,
-    padding: 10,
-    background: 'white'
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '聊天盒子'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row>
-                    <Col span="12"
-                         style={colStyle}>
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
-                        </CodeView>
-
-                        <CodeView md={backBottomMarkdown}
-                                  code={backBottomCode}
-                                  style={{marginTop:10}}>
-                            <BackBottom/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-                    <Col span="12"
-                         style={colStyle}>
-                        <CodeView md={reverseMarkdown}
-                                  code={reverseCode}>
-                            <Reverse/>
-                        </CodeView>
-
-                        <CodeView md={loadingMarkdown}
-                                  code={loadingCode}
-                                  style={{marginTop:10}}>
-                            <Loading/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={ReverseMarkdown} code={ReverseCode}>
+                            <ReverseComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BackBottomMarkdown} code={BackBottomCode}>
+                            <BackBottomComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={LoadingMarkdown} code={LoadingCode}>
+                            <LoadingComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-                <div style={docStyle}>
-                    <CodeDoc code={ChatBoxSourceCode}/>
-                </div>
-
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                

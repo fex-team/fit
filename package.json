@@ -86,6 +86,7 @@
     "react-router": "^1.0.2",
     "react-style": "^0.5.5",
     "react-tappable": "^0.8.0",
+    "read-dir-files": "^0.1.1",
     "redux": "^3.0.5",
     "superagent": "^1.6.1"
   }

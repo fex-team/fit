@@ -1,93 +1,96 @@
-import React from 'react'
-import CodeView from '../../../code-view'
-import Highlight from 'react-highlight'
-import Title from '../../title.js'
-import readme from './readme.md'
-import { Row, Col } from 'fit-layout'
 
-import Basic from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/basic.js'
-import basicCode from 'text!./demo/basic.js'
-import basicMarkdown from './demo/basic.md'
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { Row, Col } from 'fit-layout'
+                import Title from '../../../../components/title'
+                import readme from '../../../../lib/pc/number/readme.md'
+                import '../../../../lib/pc/number/demo'
 
-import Limit from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/limit.js'
-import limitCode from 'text!./demo/limit.js'
-import limitMarkdown from './demo/limit.md'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/number/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/number/demo/lists/basic.md'
+                    
+                    import CallbackComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/callback.js'
+                    import CallbackCode from 'text!../../../../lib/pc/number/demo/lists/callback.js'
+                    import CallbackMarkdown from '../../../../lib/pc/number/demo/lists/callback.md'
+                    
+                    import FloatComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/float.js'
+                    import FloatCode from 'text!../../../../lib/pc/number/demo/lists/float.js'
+                    import FloatMarkdown from '../../../../lib/pc/number/demo/lists/float.md'
+                    
+                    import LimitComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/limit.js'
+                    import LimitCode from 'text!../../../../lib/pc/number/demo/lists/limit.js'
+                    import LimitMarkdown from '../../../../lib/pc/number/demo/lists/limit.md'
+                    
+                    import SpeedComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/speed.js'
+                    import SpeedCode from 'text!../../../../lib/pc/number/demo/lists/speed.js'
+                    import SpeedMarkdown from '../../../../lib/pc/number/demo/lists/speed.md'
+                    
+                    import StepComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/step.js'
+                    import StepCode from 'text!../../../../lib/pc/number/demo/lists/step.js'
+                    import StepMarkdown from '../../../../lib/pc/number/demo/lists/step.md'
+                    
 
-import Float from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/float.js'
-import floatCode from 'text!./demo/float.js'
-import floatMarkdown from './demo/float.md'
+                const colStyle = {
+                    padding: 10
+                }
 
-import Step from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/step.js'
-import stepCode from 'text!./demo/step.js'
-import stepMarkdown from './demo/step.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {}
+                        document.title = '数字框'
+                    }
 
-import Callback from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/callback.js'
-import callbackCode from 'text!./demo/callback.js'
-import callbackMarkdown from './demo/callback.md'
+                    render() {
+                        return (
+                            <div className="_namespace">
+                                <Title>{readme}</Title>
 
-import Speed from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!./demo/speed.js'
-import speedCode from 'text!./demo/speed.js'
-import speedMarkdown from './demo/speed.md'
-
-const colStyle = {
-    padding: 10
-}
-
-export default class Layout extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-        document.title = '数字框'
-    }
-
-    render() {
-        return (
-            <div className="_namespace">
-                <Title>{readme}</Title>
-
-                <Row style={colStyle}>
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={basicMarkdown}
-                                  code={basicCode}>
-                            <Basic/>
-                        </CodeView>
-
-                        <CodeView md={floatMarkdown}
-                                  code={floatCode}
-                                  style={{marginTop:10}}>
-                            <Float/>
-                        </CodeView>
-
-                        <CodeView md={speedMarkdown}
-                                  code={speedCode}
-                                  style={{marginTop:10}}>
-                            <Speed/>
+                                <Row>
+                                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={BasicMarkdown} code={BasicCode}>
+                            <BasicComponent/>
                         </CodeView>
                     </Col>
-
-                    <Col style={colStyle}
-                         span="12">
-                        <CodeView md={limitMarkdown}
-                                  code={limitCode}>
-                            <Limit/>
-                        </CodeView>
-
-                        <CodeView md={stepMarkdown}
-                                  code={stepCode}
-                                  style={{marginTop:10}}>
-                            <Step/>
-                        </CodeView>
-
-                        <CodeView md={callbackMarkdown}
-                                  code={callbackCode}
-                                  style={{marginTop:10}}>
-                            <Callback/>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={CallbackMarkdown} code={CallbackCode}>
+                            <CallbackComponent/>
                         </CodeView>
                     </Col>
-                </Row>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={FloatMarkdown} code={FloatCode}>
+                            <FloatComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={LimitMarkdown} code={LimitCode}>
+                            <LimitComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={SpeedMarkdown} code={SpeedCode}>
+                            <SpeedComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                    <Col span="12" style={colStyle}>
+                        <CodeView md={StepMarkdown} code={StepCode}>
+                            <StepComponent/>
+                        </CodeView>
+                    </Col>
+                    
+                                </Row>
 
-            </div>
-        )
-    }
-}
+                            </div>
+                        )
+                    }
+                }
+                
