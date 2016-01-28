@@ -5,12 +5,6 @@
         
 const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     {
-                        title: '全屏布局 LayoutGlobal',
-                        path: '/pc/layout-global',
-                        icon: 'columns'
-                    },
-                    
-                    {
                         title: '布局 Layout',
                         path: '/pc/layout',
                         icon: 'th'
