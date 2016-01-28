@@ -1,0 +1,3 @@
+[submodule "lib/pc/layout-global"]
+	path = lib/pc/layout-global
+	url = http://gitlab.baidu.com/tb-component/pc-layout-global.git

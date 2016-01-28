@@ -1,5 +1,5 @@
-"use strict";
-var React = require('react');
+import React from 'react';
+
 class UploadFileList extends React.Component {
     constructor(...args) {
         super(...args);
@@ -26,23 +26,26 @@ class UploadFileList extends React.Component {
                 width: 40,
                 height: 40
             };
-            return (<div key={info.name} style={picItemStyle}>
-                    <div style={closeBtnStyle}>x</div>
+            return (
+                <div key={ info.name }
+                    style={ picItemStyle } >
+                    <div style={ closeBtnStyle }>x</div>
                     <div style={{ display: 'table' }}>
                         <div style={{
-                display: 'table-cell',
-                border: '1px solid #edf1f2'
-            }}>
-                            <div style={picItemImageStyle}/>
+                            display: 'table-cell',
+                            border: '1px solid #edf1f2'
+                        }}>
+                            <div style={ picItemImageStyle }/>
                         </div>
                         <div style={{
-                display: 'table-cell',
-                verticalAlign: 'middle',
-                fontSize: 12,
-                padding: '0 5px'
-            }}>{info.name}</div>
+                            display: 'table-cell',
+                            verticalAlign: 'middle',
+                            fontSize: 12,
+                            padding: '0 5px'
+                        }}>{ info.name }</div>
                     </div>
-                </div>);
+                </div>
+            );
         }
         var textItemStyle = {
             color: '#333',
@@ -51,21 +54,29 @@ class UploadFileList extends React.Component {
             padding: '5px 8px 5px 8px',
             backgroundColor: '#edf1f2',
             borderRadius: 50,
-            margin: '10px 5px',
+            margin: '10px 5px'
         };
-        return (<div style={textItemStyle} key={info.name}>
-                <div style={closeBtnStyle}>x</div>
-                {info.name}
-            </div>);
+        return (
+            <div style={ textItemStyle }
+                key={ info.name }>
+                <div style={ closeBtnStyle }>x</div>
+                { info.name }
+            </div>
+        );
     }
     render() {
-        return (<div>
-            {this.props.list.map((info) => this.textItemRender(info))}
-            </div>);
+        return (
+            <div>
+            {
+                this.props.list.map((info) => this.textItemRender(info))
+            }
+            < /div>
+        );
     }
 }
+
 UploadFileList.defaultProps = {
     type: 'text'
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = UploadFileList;
+
+export default UploadFileList;
