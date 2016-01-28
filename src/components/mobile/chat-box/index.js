@@ -3,9 +3,15 @@
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/mobile/chat-box/readme.md'
                 import '../../../../lib/mobile/chat-box/demo'
+
+                
+                        import ChatBoxSource from '../../../../lib/mobile/chat-box/src/chat-box'
+                        import ChatBoxSourceCode from 'text!../../../../lib/mobile/chat-box/src/chat-box'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat-box/demo/lists/basic.js'
@@ -27,6 +33,11 @@
 
                 const colStyle = {
                     padding: 10
+                }
+
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
                 }
 
                 export default class DemoBox extends React.Component {
@@ -68,6 +79,12 @@
                     </Col>
                     
                                 </Row>
+
+                                
+                        <div style={docStyle}>
+                            <CodeDoc code={ChatBoxSourceCode} instance={ChatBoxSource} />
+                        </div>
+                        
 
                             </div>
                         )

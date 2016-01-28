@@ -1,6 +1,6 @@
 {
   "name": "fit-upload",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "贴吧React上传组件",
   "main": "lib/upload.js",
   "scripts": {

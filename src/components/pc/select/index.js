@@ -3,9 +3,21 @@
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/select/readme.md'
                 import '../../../../lib/pc/select/demo'
+
+                
+                        import SelectSource from '../../../../lib/pc/select/src/select'
+                        import SelectSourceCode from 'text!../../../../lib/pc/select/src/select'
+                        
+                        import OptionSource from '../../../../lib/pc/select/src/option'
+                        import OptionSourceCode from 'text!../../../../lib/pc/select/src/option'
+                        
+                        import OptGroupSource from '../../../../lib/pc/select/src/opt-group'
+                        import OptGroupSourceCode from 'text!../../../../lib/pc/select/src/opt-group'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/select/demo/lists/basic.js'
@@ -35,6 +47,11 @@
 
                 const colStyle = {
                     padding: 10
+                }
+
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
                 }
 
                 export default class DemoBox extends React.Component {
@@ -88,6 +105,20 @@
                     </Col>
                     
                                 </Row>
+
+                                
+                        <div style={docStyle}>
+                            <CodeDoc code={SelectSourceCode} instance={SelectSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={OptionSourceCode} instance={OptionSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={OptGroupSourceCode} instance={OptGroupSource} />
+                        </div>
+                        
 
                             </div>
                         )

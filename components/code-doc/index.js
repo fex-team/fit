@@ -1,6 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 import Table from 'fit-table'
+import JsonTree from 'fit-json-tree'
 
 export default class CodeDoc extends React.Component {
     constructor(props) {
@@ -9,7 +10,9 @@ export default class CodeDoc extends React.Component {
     }
 
     render() {
-        const title = this.props.code.match(/(\w*).defaultProps/g)[0]
+        const titleArray = this.props.code.match(/(\w*).defaultProps/g)
+        if (!titleArray)return null
+        const title = titleArray[0]
 
         let tableInfo = {
             title: title.replace(/.defaultProps/g, ''),
@@ -17,17 +20,71 @@ export default class CodeDoc extends React.Component {
                 key: 'infoParam',
                 value: '参数'
             }, {
-                key: 'infoDesc',
-                value: '说明'
-            }, {
                 key: 'infoType',
-                value: '类型'
+                value: '类型',
+                render: (value)=> {
+                    return (
+                        <span style={{color:'#881280'}}>{value.infoType}</span>
+                    )
+                }
+            }, {
+                key: 'instanceValue',
+                value: '默认值',
+                render: (value)=> {
+                    let child
+                    switch (value.infoType) {
+                    case 'string':
+                        child = (
+                            <span style={{color:'#C41A16'}}>'{value.instanceValue}'</span>
+                        )
+                        break
+                    case 'boolean':
+                        child = (
+                            <span style={{color:'#1C00CF'}}>{value.instanceValue.toString()}</span>
+                        )
+                        break
+                    case 'number':
+                        child = (
+                            <span style={{color:'#1C00CF'}}>{value.instanceValue}</span>
+                        )
+                        break
+                    case 'array':
+                        child = (
+                            <JsonTree json={value.instanceValue}/>
+                        )
+                        break
+                    case 'object':
+                        child = (
+                            <JsonTree json={value.instanceValue}/>
+                        )
+                        break
+                    case 'null':
+                        child = (
+                            <span style={{color:'#1C00CF'}}>null</span>
+                        )
+                        break
+                    case 'function':
+                        child = (
+                            <span>[function]</span>
+                        )
+                        break
+                    case 'undefined':
+                        child = (
+                            <span style={{color:'#ccc'}}>undefined</span>
+                        )
+                        break
+                    }
+
+                    return (
+                        <div>{child}</div>
+                    )
+                }
             }, {
                 key: 'infoEnum',
                 value: '可选值'
             }, {
-                key: 'infoDefault',
-                value: '默认值'
+                key: 'infoDesc',
+                value: '说明'
             }],
             datas: []
         }
@@ -44,8 +101,8 @@ export default class CodeDoc extends React.Component {
         let infoDesc = ''
         let infoType = ''
         let infoEnum = ''
-        let infoDefault = ''
 
+        let findStatus = 0
         for (let value of matchArray) {
             value = value.trim(' ')
             if (value === '')continue
@@ -54,11 +111,8 @@ export default class CodeDoc extends React.Component {
             if (value.indexOf('@') > -1) {
                 // 注释
                 if (value.indexOf('@desc') > -1) {
+                    findStatus = 1
                     infoDesc = value.split('@desc')[1].trim(' ')
-                    continue
-                }
-                if (value.indexOf('@type') > -1) {
-                    infoType = value.split('@type')[1].trim(' ')
                     continue
                 }
                 if (value.indexOf('@enum') > -1) {
@@ -67,33 +121,41 @@ export default class CodeDoc extends React.Component {
                 }
             } else {
                 // 代码
+                if (findStatus !== 1) {
+                    continue
+                }
+                findStatus = 2
                 let codeArray = value.split(':')
-                let code = codeArray[0].trim(' ')
-                let defaultValue = codeArray[1].trim(' ')
-                defaultValue = _.trimRight(defaultValue, ',')
-                infoParam = code
-                infoDefault = defaultValue
+                let codeKey = codeArray[0].trim(' ')
+                infoParam = codeKey
 
-                if (infoDefault.indexOf('function') > -1) {
-                    infoDefault = 'null'
+                // 自动检测类型
+                let instanceValue = this.props.instance.defaultProps[codeKey]
+                if (_.isString(instanceValue)) {
+                    infoType = 'string'
+                } else if (_.isBoolean(instanceValue)) {
+                    infoType = 'boolean'
+                } else if (_.isNumber(instanceValue)) {
+                    infoType = 'number'
+                } else if (_.isArray(instanceValue)) {
+                    infoType = 'array'
+                } else if (_.isFunction(instanceValue)) {
+                    infoType = 'function'
+                } else if (_.isObject(instanceValue)) {
+                    infoType = 'object'
+                } else if (_.isNull(instanceValue)) {
+                    infoType = 'null'
+                } else {
+                    infoType = 'undefined'
                 }
 
-                if (infoType === 'string') {
-                    infoDefault = _.trimLeft(infoDefault, '\'')
-                    infoDefault = _.trimRight(infoDefault, '\'')
-                    infoDefault = infoDefault.trim()
-                    if (_.isEmpty(infoDefault)) {
-                        infoDefault = 'null'
-                    }
-                }
-
-                tableInfo.datas.push({infoParam, infoDesc, infoType, infoEnum, infoDefault})
-                infoParam = infoDesc = infoType = infoEnum = infoDefault = ''
+                tableInfo.datas.push({infoParam, infoDesc, infoType, infoEnum, instanceValue})
+                infoParam = infoDesc = infoType = infoEnum = ''
             }
         }
 
         return (
-            <div>
+            <div style={{padding:10}}>
                 <Table {...tableInfo}/>
             </div>
         )
@@ -101,5 +163,6 @@ export default class CodeDoc extends React.Component {
 }
 
 CodeDoc.defaultProps = {
-    code: ''
+    code: '',
+    instance: null
 }

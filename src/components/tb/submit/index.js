@@ -3,9 +3,18 @@
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/tb/submit/readme.md'
                 import '../../../../lib/tb/submit/demo'
+
+                
+                        import SubmitSource from '../../../../lib/tb/submit/src/submit'
+                        import SubmitSourceCode from 'text!../../../../lib/tb/submit/src/submit'
+                        
+                        import sendSource from '../../../../lib/tb/submit/src/send'
+                        import sendSourceCode from 'text!../../../../lib/tb/submit/src/send'
+                        
 
                 
                     import PostComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/submit/demo/lists/post.js'
@@ -27,6 +36,11 @@
 
                 const colStyle = {
                     padding: 10
+                }
+
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
                 }
 
                 export default class DemoBox extends React.Component {
@@ -68,6 +82,16 @@
                     </Col>
                     
                                 </Row>
+
+                                
+                        <div style={docStyle}>
+                            <CodeDoc code={SubmitSourceCode} instance={SubmitSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={sendSourceCode} instance={sendSource} />
+                        </div>
+                        
 
                             </div>
                         )

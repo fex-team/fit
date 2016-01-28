@@ -3,9 +3,18 @@
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/tree/readme.md'
                 import '../../../../lib/pc/tree/demo'
+
+                
+                        import TreeSource from '../../../../lib/pc/tree/src/tree'
+                        import TreeSourceCode from 'text!../../../../lib/pc/tree/src/tree'
+                        
+                        import TreeNodeSource from '../../../../lib/pc/tree/src/tree-node'
+                        import TreeNodeSourceCode from 'text!../../../../lib/pc/tree/src/tree-node'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tree/demo/lists/basic.js'
@@ -19,6 +28,11 @@
 
                 const colStyle = {
                     padding: 10
+                }
+
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
                 }
 
                 export default class DemoBox extends React.Component {
@@ -48,6 +62,16 @@
                     </Col>
                     
                                 </Row>
+
+                                
+                        <div style={docStyle}>
+                            <CodeDoc code={TreeSourceCode} instance={TreeSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={TreeNodeSourceCode} instance={TreeNodeSource} />
+                        </div>
+                        
 
                             </div>
                         )

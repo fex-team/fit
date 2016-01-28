@@ -3,9 +3,12 @@
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/table/readme.md'
                 import '../../../../lib/pc/table/demo'
+
+                
 
                 
                     import DataComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/data.js'
@@ -79,6 +82,11 @@
 
                 const colStyle = {
                     padding: 10
+                }
+
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
                 }
 
                 export default class DemoBox extends React.Component {
@@ -198,6 +206,8 @@
                     </Col>
                     
                                 </Row>
+
+                                
 
                             </div>
                         )

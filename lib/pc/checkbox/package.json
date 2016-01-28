@@ -1,6 +1,6 @@
 {
   "name": "fit-checkbox",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "多选框",
   "main": "lib/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
-    "fit-style": "^1.1.12",
+    "fit-style": "^1.1.13",
     "lodash": "^3.10.1",
     "react": "^0.14.3"
   }

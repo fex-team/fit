@@ -3,9 +3,18 @@
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/layout/readme.md'
                 import '../../../../lib/pc/layout/demo'
+
+                
+                        import RowSource from '../../../../lib/pc/layout/src/row'
+                        import RowSourceCode from 'text!../../../../lib/pc/layout/src/row'
+                        
+                        import ColSource from '../../../../lib/pc/layout/src/col'
+                        import ColSourceCode from 'text!../../../../lib/pc/layout/src/col'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/layout/demo/lists/basic.js'
@@ -31,6 +40,11 @@
 
                 const colStyle = {
                     padding: 10
+                }
+
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
                 }
 
                 export default class DemoBox extends React.Component {
@@ -78,6 +92,16 @@
                     </Col>
                     
                                 </Row>
+
+                                
+                        <div style={docStyle}>
+                            <CodeDoc code={RowSourceCode} instance={RowSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={ColSourceCode} instance={ColSource} />
+                        </div>
+                        
 
                             </div>
                         )

@@ -3,9 +3,15 @@
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/timepicker/readme.md'
                 import '../../../../lib/pc/timepicker/demo'
+
+                
+                        import TimepickerSource from '../../../../lib/pc/timepicker/src/timepicker'
+                        import TimepickerSourceCode from 'text!../../../../lib/pc/timepicker/src/timepicker'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/timepicker/demo/lists/basic.js'
@@ -23,6 +29,11 @@
 
                 const colStyle = {
                     padding: 10
+                }
+
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
                 }
 
                 export default class DemoBox extends React.Component {
@@ -58,6 +69,12 @@
                     </Col>
                     
                                 </Row>
+
+                                
+                        <div style={docStyle}>
+                            <CodeDoc code={TimepickerSourceCode} instance={TimepickerSource} />
+                        </div>
+                        
 
                             </div>
                         )

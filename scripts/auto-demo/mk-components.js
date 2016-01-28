@@ -3,6 +3,7 @@ import mkdirp from 'mkdirp'
 import readDirFiles from 'read-dir-files'
 import _ from 'lodash'
 import getDemoArray from './untils/get-demo-array'
+import getDocArray from './untils/get-doc-array'
 
 const mkComponents = (config)=> {
     const categorys = config.categorys
@@ -18,46 +19,76 @@ const mkComponents = (config)=> {
                 // 创建此demo的文件夹 eg: lib/pc/layout
                 mkdirp.sync(`src/components/${categoryKey}/${component.path}`)
 
-                // 最后要用到的代码块
+                // 引用demo
                 let demoImport = ''
-                // 最后要用到的布局块
+                // 引用doc源码
+                let sourceImport = ''
+                // doc布局块
+                let sourceString = ''
+                // demo布局块
                 let layoutString = ''
 
-                // 跳过没有demo的组件
+                // demo相关
                 let demoArray = getDemoArray(`lib/${categoryKey}/${component.path}/demo/index.js`)
-                if (demoArray.length === 0)return
-
-                demoArray.map((demoItem)=> {
-                    // 首字母大写demo名
-                    const camelDemoName = _.capitalize(_.camelCase(demoItem.name))
-                    demoImport += `
+                if (demoArray.length > 0) {
+                    demoArray.map((demoItem)=> {
+                        // 首字母大写demo名
+                        const camelDemoName = _.capitalize(_.camelCase(demoItem.name))
+                        demoImport += `
                     import ${camelDemoName}Component from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.js'
                     import ${camelDemoName}Code from 'text!../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.js'
                     import ${camelDemoName}Markdown from '../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.md'
                     `
 
-                    layoutString += `
+                        layoutString += `
                     <Col span="${demoItem.row}" style={colStyle}>
                         <CodeView md={${camelDemoName}Markdown} code={${camelDemoName}Code}>
                             <${camelDemoName}Component/>
                         </CodeView>
                     </Col>
                     `
-                })
+                    })
+                }
+
+                // 源码文档相关
+                let sourceArray = getDocArray(`lib/${categoryKey}/${component.path}/src/index.js`)
+                if (sourceArray.length > 0) {
+                    sourceArray.map((sourceItem)=>{
+                        let sourceItemFileName = _.kebabCase(sourceItem)
+                        sourceImport += `
+                        import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
+                        import ${sourceItem}SourceCode from 'text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
+                        `
+
+                        sourceString+=`
+                        <div style={docStyle}>
+                            <CodeDoc code={${sourceItem}SourceCode} instance={${sourceItem}Source} />
+                        </div>
+                        `
+                    })
+                }
 
                 let text = `
                 import React from 'react'
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/${categoryKey}/${component.path}/readme.md'
                 import '../../../../lib/${categoryKey}/${component.path}/demo'
+
+                ${sourceImport}
 
                 ${demoImport}
 
                 const colStyle = {
                     padding: 10
+                }
+
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
                 }
 
                 export default class DemoBox extends React.Component {
@@ -75,6 +106,8 @@ const mkComponents = (config)=> {
                                 <Row>
                                     ${layoutString}
                                 </Row>
+
+                                ${sourceString}
 
                             </div>
                         )

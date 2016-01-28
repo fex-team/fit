@@ -61,7 +61,6 @@ const mkRouter = (categorys)=> {
         import tbHome from '../lib/tb'
         import mobileHome from '../lib/mobile'
 
-
         ${routerPath}
 
         const history = useBasename(createHistory)({

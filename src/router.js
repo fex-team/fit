@@ -8,10 +8,11 @@
         import tbHome from '../lib/tb'
         import mobileHome from '../lib/mobile'
 
-
         
         // pc
         
+                import fitLayoutGlobalComponent from './components/pc/layout-global'
+                
                 import fitLayoutComponent from './components/pc/layout'
                 
                 import fitButtonComponent from './components/pc/button'
@@ -102,6 +103,9 @@
                component={Layout}>
             <IndexRoute component={pcHome}/>
         
+                <Route path="layout-global"
+                       component={fitLayoutGlobalComponent}/>
+                
                 <Route path="layout"
                        component={fitLayoutComponent}/>
                 

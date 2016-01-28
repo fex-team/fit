@@ -3,9 +3,18 @@
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/button/readme.md'
                 import '../../../../lib/pc/button/demo'
+
+                
+                        import ButtonSource from '../../../../lib/pc/button/src/button'
+                        import ButtonSourceCode from 'text!../../../../lib/pc/button/src/button'
+                        
+                        import ButtonGroupSource from '../../../../lib/pc/button/src/button-group'
+                        import ButtonGroupSourceCode from 'text!../../../../lib/pc/button/src/button-group'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/basic.js'
@@ -43,6 +52,11 @@
 
                 const colStyle = {
                     padding: 10
+                }
+
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
                 }
 
                 export default class DemoBox extends React.Component {
@@ -108,6 +122,16 @@
                     </Col>
                     
                                 </Row>
+
+                                
+                        <div style={docStyle}>
+                            <CodeDoc code={ButtonSourceCode} instance={ButtonSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={ButtonGroupSourceCode} instance={ButtonGroupSource} />
+                        </div>
+                        
 
                             </div>
                         )
