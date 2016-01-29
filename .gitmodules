@@ -1,3 +1,108 @@
 [submodule "lib/pc/layout-global"]
 	path = lib/pc/layout-global
 	url = http://gitlab.baidu.com/tb-component/pc-layout-global.git
+[submodule "lib/pc/auto-complete"]
+	path = lib/pc/auto-complete
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-autocomplete.git
+[submodule "lib/pc/button"]
+	path = lib/pc/button
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-button.git
+[submodule "lib/pc/checkbox"]
+	path = lib/pc/checkbox
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-checkbox.git
+[submodule "lib/pc/collapse"]
+	path = lib/pc/collapse
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-collapse.git
+[submodule "lib/pc/datepicker"]
+	path = lib/pc/datepicker
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-datepicker.git
+[submodule "lib/pc/iframe"]
+	path = lib/pc/iframe
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-iframe.git
+[submodule "lib/pc/image"]
+	path = lib/pc/image
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-image.git
+[submodule "lib/pc/input"]
+	path = lib/pc/input
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-input.git
+[submodule "lib/pc/json-tree"]
+	path = lib/pc/json-tree
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-json-tree.git
+[submodule "lib/pc/layout"]
+	path = lib/pc/layout
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-layout.git
+[submodule "lib/pc/menu"]
+	path = lib/pc/menu
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-menu.git
+[submodule "lib/pc/message"]
+	path = lib/pc/message
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-message.git
+[submodule "lib/pc/modal"]
+	path = lib/pc/modal
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-modal.git
+[submodule "lib/pc/number"]
+	path = lib/pc/number
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-number.git
+[submodule "lib/pc/pagination"]
+	path = lib/pc/pagination
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-pagination.git
+[submodule "lib/pc/phone"]
+	path = lib/pc/phone
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-phone.git
+[submodule "lib/pc/radio"]
+	path = lib/pc/radio
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-radio.git
+[submodule "lib/pc/render-to"]
+	path = lib/pc/render-to
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-render-to.git
+[submodule "lib/pc/select"]
+	path = lib/pc/select
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-select.git
+[submodule "lib/pc/style"]
+	path = lib/pc/style
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-style.git
+[submodule "lib/pc/switch"]
+	path = lib/pc/switch
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-switch.git
+[submodule "lib/pc/table"]
+	path = lib/pc/table
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-table.git
+[submodule "lib/pc/tabs"]
+	path = lib/pc/tabs
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-tabs.git
+[submodule "lib/pc/timepicker"]
+	path = lib/pc/timepicker
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-timepicker.git
+[submodule "lib/pc/tree"]
+	path = lib/pc/tree
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-tree.git
+[submodule "lib/pc/upload"]
+	path = lib/pc/upload
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-upload.git
+[submodule "lib/mobile/chat"]
+	path = lib/mobile/chat
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/mobile-chat.git
+[submodule "lib/mobile/chat-box"]
+	path = lib/mobile/chat-box
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/mobile-chat-box.git
+[submodule "lib/mobile/color"]
+	path = lib/mobile/color
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/mobile-color.git
+[submodule "lib/mobile/scale"]
+	path = lib/mobile/scale
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/mobile-scale.git
+[submodule "lib/tb/icon"]
+	path = lib/tb/icon
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-icon.git
+[submodule "lib/tb/share"]
+	path = lib/tb/share
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-share.git
+[submodule "lib/tb/submit"]
+	path = lib/tb/submit
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-submit.git
+[submodule "lib/tb/time"]
+	path = lib/tb/time
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-time.git
+[submodule "lib/tb/track"]
+	path = lib/tb/track
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-track.git
