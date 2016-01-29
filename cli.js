@@ -271,6 +271,12 @@ switch (args[0]) {
             })
         })
 
+        // this is dangers
+        process.chdir(root)
+        execSync('mv lib /tmp/__lib')
+        execSync('npm run push')
+        execSync('sh initsubmodule.sh')
+
         break
 
     default:
