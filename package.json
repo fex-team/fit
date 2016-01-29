@@ -18,7 +18,8 @@
     "cli": "node --harmony cli.js",
     "babel-scripts": "babel scripts/ --out-dir scripts-babel/",
     "demo-init": "npm run babel-scripts && node scripts-babel/auto-demo/index.js",
-    "submodule-init": "git submodule init && git submodule update"
+    "submodule-init": "git submodule init && git submodule update",
+    "submodule-update": "git submodule foreach 'git pull origin master'"
   },
   "author": "",
   "license": "ISC",
