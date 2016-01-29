@@ -1,0 +1,661 @@
+#!/usr/bin/env node --harmony --harmony_default_parameters
+
+"use strict";
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+
+var fs = require('fs');
+var path = require('path');
+var semver = require('semver');
+var format = require('format-json');
+var exec = require('child_process').exec;
+var execSync = require('child_process').execSync;
+var spawn = require('child_process').spawn;
+var root = process.cwd();
+var os = require('os');
+var _ = require('lodash');
+
+var packageVersion = {};
+var moduleGlobal = {};
+var registedType = ['pc', 'mobile', 'tb'];
+
+function getPathModules(type) {
+    return moduleGlobal[type + 'Modules'] = fs.readdirSync(path.join(root, 'lib', type)).filter(function (name) {
+        return fs.lstatSync(path.join(root, 'lib', type, name)).isDirectory();
+    }).map(function (module) {
+        return path.resolve(root, 'lib', type, module);
+    });
+}
+
+function getConfigModules(type) {
+    var allComponents = getAllComponentJSON();
+    var componentConfig = allComponents.categorys[type];
+    var componentPath = [];
+
+    _.each(componentConfig.components, function (types, index) {
+        types.forEach(function (conf) {
+            var relPath = conf.path;
+            componentPath.push(path.resolve(root, 'lib', type, relPath));
+        });
+    });
+
+    return componentPath;
+}
+
+function getAllPathModules() {
+    return registedType.reduce(function (total, next) {
+        if (typeof total === 'string') {
+            return getPathModules(total).concat(getPathModules(next));
+        }
+        return total.concat(getPathModules(next));
+    });
+}
+
+function getAllConfigModules() {
+    return registedType.reduce(function (total, next) {
+        if (typeof total === 'string') {
+            return getConfigModules(total).concat(getConfigModules(next));
+        }
+        return total.concat(getConfigModules(next));
+    });
+}
+
+function getModulePath(name, type) {
+    if (name && type) {
+        return moduleGlobal.modulePath = path.resolve(root, 'lib', type, name);
+    } else {
+        return null;
+    }
+}
+
+var pcModules = getPathModules('pc');
+var mobileModules = getPathModules('mobile');
+var tbModules = getPathModules('tb');
+
+var args = process.argv.slice(2);
+var moduleType = args[1];
+var moduleName = args[2];
+var modulePath = getModulePath(moduleName, moduleType);
+
+function moduleDistribute(fn, params, context) {
+    params = params || null;
+    context = context || null;
+    var allModules = pcModules.concat(mobileModules).concat(tbModules).filter(function (p) {
+        return fs.existsSync(p);
+    });
+
+    if (!moduleType && !moduleName) {
+        return fn.call(context, allModules, allModules, params);
+    } else if (moduleType && !moduleName) {
+        return fn.call(context, moduleGlobal[moduleType + 'Modules'], pcModules.concat(mobileModules).concat(tbModules), params);
+    } else if (moduleType && moduleName) {
+        return fn.call(context, [moduleGlobal.modulePath], pcModules.concat(mobileModules).concat(tbModules), params);
+    }
+}
+
+function multiProcessAsync() {
+    var run = arguments.length <= 0 || arguments[0] === undefined ? function () {} : arguments[0];
+    var beforeRun = arguments.length <= 1 || arguments[1] === undefined ? function () {} : arguments[1];
+    var afterRun = arguments.length <= 2 || arguments[2] === undefined ? function () {} : arguments[2];
+
+    function createWorkInstance(job) {
+        var packageJSON = getPackageJSON(job);
+        beforeRun(job);
+        return run(job, packageJSON);
+    }
+
+    return function (jobs) {
+        return new Promise(function (resolve, reject) {
+            var jobCopy = _.cloneDeep(jobs);
+            var cpus = os.cpus();
+            var runChildInstance = [];
+            var hasError = false;
+            var errorMsg = [];
+
+            process.chdir(root);
+
+            function onClose(successJob) {
+                afterRun(successJob);
+                var job = jobCopy.pop();
+                _.pull(runChildInstance, this);
+
+                if (job) {
+                    var childInstance = createWorkInstance(job);
+                    distributeTask(childInstance, job);
+                } else if (!runChildInstance.length && !hasError) {
+                    resolve();
+                } else if (!runChildInstance.length && hasError) {
+                    reject(errorMsg.join('\n'));
+                }
+            }
+
+            function distributeTask(instance, job) {
+                instance.stderr.on('data', function (err) {
+                    hasError = true;
+                    errorMsg.push(err.toString());
+                    console.log(err.toString());
+                });
+
+                instance.stdout.on('data', function (data) {
+                    console.log(data.toString());
+                });
+
+                instance.on('close', onClose.bind(instance, job));
+
+                runChildInstance.push(instance);
+            }
+
+            if (jobs.length > cpus.length) {
+                cpus.forEach(function () {
+                    var job = jobCopy.pop();
+                    var childInstance = createWorkInstance(job);
+                    distributeTask(childInstance, job);
+                });
+            } else {
+                jobs.forEach(function () {
+                    var job = jobCopy.pop();
+                    var childInstance = createWorkInstance(job);
+                    distributeTask(childInstance, job);
+                });
+            }
+        });
+    };
+}
+// 抓住未捕获的错误
+//process.on('uncaughtException', function (err) {
+//    console.error(err)
+//    console.trace()
+//})
+
+if (args.length === 0) {
+    console.error('\nfit cli tools\n\ntype: pc|web|native\n\nUsage:\n    cli build     <type> <name>         compile modules\n    cli clean     <type> <name>         clean build dist\n    cli publish   <type> <name>         publish module\n    cli patch     <type> <name>         patch module version\n    cli minor     <type> <name>         minor module version\n    cli autopub   <type> <name>         clean + build + patch + publish\n');
+    process.exit(1);
+}
+
+switch (args[0]) {
+    case 'init':
+        moduleDistribute(initPrepare)
+
+        break;
+    case 'build':
+        // build all
+        moduleDistribute(cleanModulesSync);
+        moduleDistribute(buildModules).then(function () {
+            console.log("All Module build success");
+        }).catch(function (err) {
+            console.log(err);
+        });
+
+        break;
+
+    case 'clean':
+
+        moduleDistribute(cleanModulesSync);
+
+        break;
+
+    case 'patch':
+
+        moduleDistribute(patchModulesSync, 'patch');
+
+        break;
+
+    case 'minor':
+
+        moduleDistribute(patchModulesSync, 'minor');
+
+        break;
+
+    case 'autopub':
+
+        moduleDistribute(function (modules, allModules, params) {
+            cleanModulesSync(modules, allModules, params);
+            buildModules(modules).then(function () {
+                patchModulesSync(modules, allModules, params);
+                var diff = _.uniq(modules.concat(getProjectStatus()));
+                publishModules(diff).then(function () {
+                    commitGit(diff);
+                }).catch(function (e) {
+                    console.log(e.toString());
+                });
+            });
+        }, 'patch');
+
+        break;
+
+    case 'publish':
+        // push modules to gitlabn
+        moduleDistribute(publishModules);
+        break;
+
+    case '__force':
+        moduleDistribute(__forcePush).then(function () {
+            process.chdir(root);
+            console.log('force complete');
+        }).catch(function (err) {
+            console.log(err);
+        });
+
+        break;
+
+    case 'commit':
+        moduleDistribute(commitGit);
+
+        break;
+
+    case '__initgit':
+
+        moduleDistribute(__initGit);
+
+        break;
+
+    case '__cleangit':
+
+        moduleDistribute(__cleanGit);
+
+        break;
+
+    case '__reinit':
+
+        moduleDistribute(__cleanGit);
+        moduleDistribute(__initGit);
+        moduleDistribute(commitGit);
+        moduleDistribute(multiProcessAsync(function (job) {
+            return spawn('git', ['push', '-f', 'origin', 'master']);
+        }, function (job) {
+            process.chdir(job);
+        }, function (job) {
+            console.log('INFO: ' + job + ' success');
+        })).then(function () {
+            process.chdir(root);
+            console.log('force complete');
+        }).catch(function (err) {
+            console.log(err);
+        });
+
+        break;
+
+    case 'addsubmodule':
+
+        moduleDistribute(addSubModule);
+
+        break;
+
+    case 'initsubmodule':
+
+        fs.writeFileSync('./initsubmodule.sh', '# this shell script was generated by cli.js \n');
+        moduleDistribute(function (modules) {
+            modules.map(function (abPath) {
+                var subPath = abPath.replace(root, '.');
+                var url = getPackageJSON(abPath).repository.url;
+                var command = 'git submodule add ' + url + ' ' + subPath + ' \n';
+                fs.writeFileSync('./initsubmodule.sh', command, {
+                    flag: 'a'
+                });
+            });
+        });
+
+        // this is dangers
+        process.chdir(root);
+        execSync('mv lib /tmp/__lib');
+        execSync('npm run push');
+        execSync('sh scripts/initsubmodule.sh');
+
+        break;
+
+    default:
+        console.error('Command `%s` unrecognized.');
+        process.exit(1);
+        break;
+}
+
+function getAllComponentJSON() {
+    return JSON.parse(fs.readFileSync(path.join(root, 'all-component.json')).toString());
+}
+
+function initPrepare() {
+    console.log('checking missing submodules...');
+    var allConfigModules = getAllConfigModules();
+    var allPathModules = getAllPathModules();
+    var difference = _.difference(allConfigModules, allPathModules);
+
+    if (difference.length > 0) {
+        addSubModule(difference);
+    } else {
+        console.log('all modules had added');
+    }
+}
+
+function addSubModule(modules) {
+    process.chdir(root);
+    modules.forEach(function (val) {
+        var splits = val.split('/');
+        var moduleName = splits.pop();
+        var moduleType = splits.pop();
+        var componentJSON = getAllComponentJSON();
+        var gitlabPrefix = componentJSON.categorys[moduleType].gitlabPrefix;
+        var repoPath = 'ssh://g@gitlab.baidu.com:8022/tb-component/' + gitlabPrefix + '-' + moduleName + '.git';
+
+        try {
+            execSync('git submodule add ' + repoPath + ' ./lib/' + moduleType + '/' + moduleName);
+        } catch (e) {
+            console.log(e.toString());
+        }
+    });
+}
+
+function __initGit(modules) {
+    modules.filter(checkGitInPackageJSON).forEach(function (filePath) {
+        var gitRemote = getPackageJSON(filePath).repository.url;
+        process.chdir(filePath);
+        execSync('git init && git remote add origin ' + gitRemote);
+        console.log('INIT: git ' + filePath + ' success');
+    });
+    process.chdir(root);
+}
+
+function __cleanGit(modules) {
+    modules.filter(checkGitInPackageJSON).forEach(function (filePath) {
+        process.chdir(filePath);
+        execSync('rm -rf .git');
+        console.log('CLEAN: git directory ' + filePath + ' cleaned');
+    });
+    process.chdir(root);
+}
+
+function commitGit(modules) {
+    modules.filter(checkGitInPackageJSON).forEach(function (filePath) {
+        process.chdir(filePath);
+        try {
+            execSync('git add -A');
+            execSync('git commit -m "quick push"');
+        } catch (e) {
+            console.log(e.toString());
+        }
+        console.log('COMMIT: quick commit ' + filePath);
+    });
+    process.chdir(root);
+}
+
+function __forcePush(modules) {
+    return multiProcessAsync(function () {
+        return spawn('git', ['push', '-f', 'origin', 'master']);
+    }, function (job) {
+        process.chdir(job);
+    }, function (job) {
+        console.log('INFO: ' + job + ' force push complete');
+    })(modules);
+}
+
+function getPackageJSON(filePath) {
+    return JSON.parse(fs.readFileSync(path.join(filePath, 'package.json')));
+}
+
+function checkPackageJSON(filePath) {
+    return fs.existsSync(path.join(filePath, 'package.json'));
+}
+
+function checkGitInPackageJSON(filePath) {
+    if (checkPackageJSON(filePath)) {
+        var packageJSON = getPackageJSON(filePath);
+        if (!packageJSON.repository) {
+            return false;
+        }
+        return true;
+    }
+    return false;
+}
+
+function getProjectStatus() {
+    try {
+        var _ret = (function () {
+            var output = execSync('git status --porcelain').toString().replace(/\s\w\s/g, '').split('\n');
+            var subReg = /^lib/;
+            var tester = [/^lib\/mobile\/[a-z\-A-Z]+\//, /^lib\/pc\/[a-z\-A-Z]+\//, /^lib\/tb\/[a-z\-A-Z]+\//];
+
+            return {
+                v: output.filter(function (value, index) {
+                    return subReg.test(value);
+                }).filter(function (value) {
+                    return tester.filter(function (val) {
+                        return val.test(value);
+                    }).length > 0;
+                }).map(function (value) {
+                    return path.resolve(root, value.split('/').slice(0, 3).join('/'));
+                })
+            };
+        })();
+
+        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+function cleanModulesSync(modules) {
+    process.chdir(root);
+
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = modules[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var modulePath = _step.value;
+
+            try {
+                execSync('rm -r ' + path.resolve(modulePath, 'lib') + ' > /dev/null 2>&1');
+                execSync('rm ' + path.resolve(modulePath, 'npm-debug.log > /dev/null 2>&1'));
+                console.log('INFO: ', 'Remove ' + modulePath + ' lib');
+            } catch (e) {}
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+}
+
+function buildModules(modules) {
+    return multiProcessAsync(function (job) {
+        return spawn('node', ['build.js', job]);
+    }, function () {}, function (job) {
+        console.log('INFO: ' + job + ' build success');
+    })(modules);
+}
+
+function patchModulesSync(modules, allModules, type) {
+    var changeModules = {};
+    var moduleMaps = {};
+
+    function updateModuleVirtual(modulePath, name, version) {
+        if (!changeModules[modulePath]) {
+            changeModules[modulePath] = {
+                modulePath: modulePath,
+                name: name,
+                version: semver.inc(version, type)
+            };
+        }
+    }
+
+    function buildModuleMap() {
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
+
+        try {
+            for (var _iterator2 = allModules[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                var all = _step2.value;
+
+                var moduleObj = getModuleObj(all);
+                moduleMaps[moduleObj.name] = {
+                    version: moduleObj.version,
+                    name: moduleObj.name,
+                    modulePath: all,
+                    dependencies: []
+                };
+                for (var dependence in moduleObj.dependencies) {
+                    moduleMaps[moduleObj.name].dependencies.push(_defineProperty({}, dependence, moduleObj.dependencies[dependence]));
+                }
+            }
+        } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                    _iterator2.return();
+                }
+            } finally {
+                if (_didIteratorError2) {
+                    throw _iteratorError2;
+                }
+            }
+        }
+    }
+
+    function getModuleObj(module) {
+        if (fs.existsSync(module, 'package.json')) {
+            return JSON.parse(fs.readFileSync(path.resolve(module, 'package.json')).toString());
+        }
+        return {};
+    }
+
+    function whoIsNeedMe(moduleObj) {
+        var modules = [];
+        var moduleName = moduleObj.name;
+        for (var module in moduleMaps) {
+            var _iteratorNormalCompletion3 = true;
+            var _didIteratorError3 = false;
+            var _iteratorError3 = undefined;
+
+            try {
+                for (var _iterator3 = moduleMaps[module].dependencies[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                    var dep = _step3.value;
+
+                    if (dep[moduleName]) {
+                        modules.push({
+                            modulePath: moduleMaps[module].modulePath,
+                            moduleName: moduleMaps[module].name,
+                            moduleVersion: moduleMaps[module].version
+                        });
+                    }
+                }
+            } catch (err) {
+                _didIteratorError3 = true;
+                _iteratorError3 = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion3 && _iterator3.return) {
+                        _iterator3.return();
+                    }
+                } finally {
+                    if (_didIteratorError3) {
+                        throw _iteratorError3;
+                    }
+                }
+            }
+        }
+
+        return modules;
+    }
+
+    function updateModule(module) {
+        var moduleObj = changeModules[module] || getModuleObj(module);
+        updateModuleVirtual(module, moduleObj.name, moduleObj.version);
+
+        var dependences = whoIsNeedMe(moduleObj);
+
+        var _iteratorNormalCompletion4 = true;
+        var _didIteratorError4 = false;
+        var _iteratorError4 = undefined;
+
+        try {
+            for (var _iterator4 = dependences[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+                var dep = _step4.value;
+
+                updateModule(dep.modulePath);
+            }
+        } catch (err) {
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion4 && _iterator4.return) {
+                    _iterator4.return();
+                }
+            } finally {
+                if (_didIteratorError4) {
+                    throw _iteratorError4;
+                }
+            }
+        }
+    }
+
+    function writeChanges() {
+        for (var change in changeModules) {
+            var moduleObj = getModuleObj(changeModules[change].modulePath);
+            console.log('INFO: Update ' + changeModules[change].name + ' version ' + moduleObj.version + ' ==> ' + changeModules[change].version);
+            moduleObj.version = changeModules[change].version;
+
+            for (var dep in moduleObj.dependencies) {
+                if (moduleMaps[dep] && changeModules[moduleMaps[dep].modulePath] && changeModules[moduleMaps[dep].modulePath].name === dep) {
+                    console.log('INFO: Update ' + changeModules[change].name + '\'s Dependencies [' + dep + '] version ' + moduleObj.dependencies[dep] + ' ==> ' + changeModules[moduleMaps[dep].modulePath].version);
+                    moduleObj.dependencies[dep] = '^' + changeModules[moduleMaps[dep].modulePath].version;
+                }
+            }
+
+            fs.writeFileSync(path.join(changeModules[change].modulePath, 'package.json'), format.plain(moduleObj), 'utf-8');
+        }
+    }
+
+    buildModuleMap();
+
+    var _iteratorNormalCompletion5 = true;
+    var _didIteratorError5 = false;
+    var _iteratorError5 = undefined;
+
+    try {
+        for (var _iterator5 = modules[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+            var module = _step5.value;
+
+            updateModule(module);
+        }
+    } catch (err) {
+        _didIteratorError5 = true;
+        _iteratorError5 = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion5 && _iterator5.return) {
+                _iterator5.return();
+            }
+        } finally {
+            if (_didIteratorError5) {
+                throw _iteratorError5;
+            }
+        }
+    }
+
+    writeChanges();
+
+    process.chdir(root);
+}
+
+function publishModules(modules) {
+    return multiProcessAsync(function () {
+        return spawn('npm', ['publish']);
+    }, function (job) {
+        process.chdir(job);
+    })(modules);
+}
