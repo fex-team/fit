@@ -193,10 +193,7 @@ switch (args[0]) {
                 patchModulesSync(modules, allModules, params)
                 let diff = _.uniq(modules.concat(getProjectStatus()))
                 publishModules(diff).then(() => {
-                    __cleanGit(diff)
-                    __initGit(diff)
                     commitGit(diff)
-                    __forcePush(diff)
                 }).catch((e) => {
                     console.log(e.toString())
                 })
@@ -319,6 +316,15 @@ function commitGit(modules) {
         console.log(`COMMIT: quick commit ${filePath}`)
     })
     process.chdir(root)
+}
+
+function __submodulePull(modules) {
+    modules.forEach((filePath) => {
+        process.chdir(filePath)
+        try {
+            execSync('git fetch && git m')
+        }
+    })
 }
 
 function __forcePush(modules) {

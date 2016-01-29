@@ -1,6 +1,6 @@
 [submodule "lib/pc/layout-global"]
 	path = lib/pc/layout-global
-	url = http://gitlab.baidu.com/tb-component/pc-layout-global.git
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-layout-global.git
 [submodule "lib/pc/auto-complete"]
 	path = lib/pc/auto-complete
 	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-autocomplete.git
