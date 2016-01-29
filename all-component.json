@@ -2,6 +2,7 @@
   "categorys": {
     "pc": {
       "prefix": "fit",
+      "gitlabPrefix": "pc",
       "components": {
         "基本": [
           {
@@ -149,6 +150,7 @@
     },
     "mobile": {
       "prefix": "fiten",
+      "gitlabPrefix": "mobile",
       "components": {
         "基本": [
           {
@@ -176,6 +178,7 @@
     },
     "tb": {
       "prefix": "tb",
+      "gitlabPrefix": "tb",
       "components": {
         "基本": [
           {
