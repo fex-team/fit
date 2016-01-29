@@ -106,3 +106,9 @@
 [submodule "lib/tb/track"]
 	path = lib/tb/track
 	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-track.git
+[submodule "lib/tb/captcha"]
+	path = lib/tb/captcha
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-captcha.git
+[submodule "lib/tb/emoji"]
+	path = lib/tb/emoji
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-emoji.git
