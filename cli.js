@@ -131,10 +131,10 @@ function multiProcessAsync(run = () => {
     }
 }
 // 抓住未捕获的错误
-process.on('uncaughtException', function (err) {
-    console.error(err)
-    console.trace()
-})
+//process.on('uncaughtException', function (err) {
+//    console.error(err)
+//    console.trace()
+//})
 
 if (args.length === 0) {
     console.error(
@@ -318,14 +318,6 @@ function commitGit(modules) {
     process.chdir(root)
 }
 
-function __submodulePull(modules) {
-    modules.forEach((filePath) => {
-        process.chdir(filePath)
-        try {
-            execSync('git fetch && git m')
-        }
-    })
-}
 
 function __forcePush(modules) {
     return multiProcessAsync(() => {
