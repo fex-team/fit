@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony --harmony_default_parameters
+#!/usr/bin/env node --harmony
 
 "use strict";
 
@@ -176,7 +176,7 @@ if (args.length === 0) {
 
 switch (args[0]) {
     case 'init':
-        moduleDistribute(initPrepare)
+        moduleDistribute(initPrepare);
 
         break;
     case 'build':

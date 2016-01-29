@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony --harmony_default_parameters
+#!/usr/bin/env node --harmony
 "use strict";
 
 var fs = require('fs')
