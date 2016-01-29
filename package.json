@@ -17,7 +17,8 @@
     "push": "git add -A && git commit -m \"quick push\" && git push",
     "cli": "node --harmony cli.js",
     "babel-scripts": "babel scripts/ --out-dir scripts-babel/",
-    "demo-init": "npm run babel-scripts && node scripts-babel/auto-demo/index.js"
+    "demo-init": "npm run babel-scripts && node scripts-babel/auto-demo/index.js",
+    "submodule-init": "git submodule init && git submodule update"
   },
   "author": "",
   "license": "ISC",
