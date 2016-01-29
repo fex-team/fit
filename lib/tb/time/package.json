@@ -1,6 +1,6 @@
 {
   "name": "tb-time",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "转换时间",
   "main": "lib/index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "tb-icon",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "字体图标",
   "main": "lib/index.js",
   "scripts": {

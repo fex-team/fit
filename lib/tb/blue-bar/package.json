@@ -1,6 +1,6 @@
 {
   "name": "tb-bluebar",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "description": "贴吧顶部蓝条",
   "main": "lib/index.js",
   "scripts": {

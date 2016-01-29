@@ -1,6 +1,6 @@
 {
   "name": "tb-share",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "tieba share component",
   "main": "lib/index.js",
   "scripts": {

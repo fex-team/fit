@@ -1,6 +1,6 @@
 {
   "name": "fit-input",
-  "version": "1.1.18",
+  "version": "1.1.20",
   "description": "输入框",
   "main": "lib/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.1",
-    "fit-style": "^1.1.13",
+    "fit-style": "^1.1.15",
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "react": "^0.14.3"

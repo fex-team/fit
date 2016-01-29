@@ -1,26 +1,26 @@
-.lib-mobile-chat-web-lib-chat {
+.lib-mobile-chat-lib-chat {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   padding: 10px; }
-  .lib-mobile-chat-web-lib-chat.left {
+  .lib-mobile-chat-lib-chat.left {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row; }
-  .lib-mobile-chat-web-lib-chat.right {
+  .lib-mobile-chat-lib-chat.right {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
     -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse; }
-  .lib-mobile-chat-web-lib-chat .portrait {
+  .lib-mobile-chat-lib-chat .portrait {
     width: 50px;
     height: 50px;
     border-radius: 25px; }
-  .lib-mobile-chat-web-lib-chat .right-content {
+  .lib-mobile-chat-lib-chat .right-content {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -35,28 +35,30 @@
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1; }
-    .lib-mobile-chat-web-lib-chat .right-content.left {
+    .lib-mobile-chat-lib-chat .right-content.left {
       -webkit-box-align: start;
       -webkit-align-items: flex-start;
           -ms-flex-align: start;
+                  -ms-grid-row-align: flex-start;
               align-items: flex-start; }
-    .lib-mobile-chat-web-lib-chat .right-content.right {
+    .lib-mobile-chat-lib-chat .right-content.right {
       -webkit-box-align: end;
       -webkit-align-items: flex-end;
           -ms-flex-align: end;
+                  -ms-grid-row-align: flex-end;
               align-items: flex-end; }
-  .lib-mobile-chat-web-lib-chat .name {
+  .lib-mobile-chat-lib-chat .name {
     padding: 5px;
     margin: 0 8px;
     font-size: 16px; }
-  .lib-mobile-chat-web-lib-chat .text-content {
+  .lib-mobile-chat-lib-chat .text-content {
     padding: 10px;
     background: whitesmoke;
     border-radius: 10px;
     word-break: break-all; }
-    .lib-mobile-chat-web-lib-chat .text-content.left {
+    .lib-mobile-chat-lib-chat .text-content.left {
       margin-left: 10px;
       margin-right: 60px; }
-    .lib-mobile-chat-web-lib-chat .text-content.right {
+    .lib-mobile-chat-lib-chat .text-content.right {
       margin-right: 10px;
       margin-left: 60px; }

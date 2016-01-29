@@ -16,58 +16,37 @@ var _ = require('lodash')
 var packageVersion = {}
 var moduleGlobal = {}
 
-var pcModules = moduleGlobal.pcModules = fs.readdirSync('./lib/pc').filter((name) => {
-    return name.substring(0, 1) !== '.'
-}).map((module, index)  => {
-    return path.resolve(__dirname, 'lib', 'pc', module)
-})
+function getPathModules (type) {
+    return moduleGlobal[type + 'Modules'] = fs.readdirSync(`./lib/${type}`).filter((name) => {
+        return fs.lstatSync(path.join(__dirname, 'lib', type, name)).isDirectory()
+    }).map((module) => {
+        return path.resolve(__dirname, 'lib', type, module)
+    })
+}
 
-var webModules = moduleGlobal.webModules = fs.readdirSync('./lib/mobile').filter((name) => {
-    return name.substring(0, 1) !== '.'
-}).map((module) => {
-    return path.resolve(__dirname, 'lib', 'mobile', module, 'web')
-})
+function getModulePath (name, type) {
+    if (name && type) {
+        return moduleGlobal.modulePath = path.resolve(__dirname, 'lib', type, name)
+    }
+    else {
+        return null
+    }
 
-var nativeModules = moduleGlobal.nativeModules = fs.readdirSync('./lib/mobile').filter((name) => {
-    return name.substring(0, 1) !== '.'
-}).map((module) => {
-    return path.resolve(__dirname, 'lib', 'mobile', module, 'native')
-})
+}
 
-var tbModules = moduleGlobal.tbModules = fs.readdirSync('./lib/tb').filter((name) => {
-    return name.substring(0, 1) !== '.'
-}).map((module) => {
-    return path.resolve(__dirname, 'lib', 'tb', module)
-})
-
-var oxpModules = moduleGlobal.oxpModules = fs.readdirSync('./lib/oxp').filter((name) => {
-    return name.substring(0, 1) !== '.'
-}).map((module) => {
-    return path.resolve(__dirname, 'lib', 'oxp', module)
-})
+var pcModules = getPathModules('pc')
+var mobileModules = getPathModules('mobile')
+var tbModules = getPathModules('tb')
 
 var args = process.argv.slice(2)
 var moduleType = args[1]
 var moduleName = args[2]
-var modulePath
+var modulePath = getModulePath(moduleName, moduleType)
 
-if (moduleName && moduleType === 'pc') {
-    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'pc', moduleName)
-}
-else if (moduleName && (moduleType === 'web' || moduleType === 'native')) {
-    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'mobile', moduleName, moduleType)
-}
-else if (moduleName && moduleType === 'tb') {
-    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'tb', moduleName)
-}
-else if (moduleName && moduleType === 'oxp') {
-    modulePath = moduleGlobal.modulePath = path.resolve(__dirname, 'lib', 'oxp', moduleName)
-}
-
-function moduleDistribute (fn, params, context) {
+function moduleDistribute(fn, params, context) {
     params = params || null
     context = context || null
-    let allModules = pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules).filter((p) => {
+    let allModules = pcModules.concat(mobileModules).concat(tbModules).filter((p) => {
         return fs.existsSync(p)
     })
 
@@ -75,15 +54,16 @@ function moduleDistribute (fn, params, context) {
         return fn.call(context, allModules, allModules, params)
     }
     else if (moduleType && !moduleName) {
-        return fn.call(context, moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), params)
+        return fn.call(context, moduleGlobal[moduleType + 'Modules'], pcModules.concat(mobileModules).concat(tbModules), params)
     }
     else if (moduleType && moduleName) {
-        return fn.call(context, [moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), params)
-}
+        return fn.call(context, [moduleGlobal.modulePath], pcModules.concat(mobileModules).concat(tbModules), params)
+    }
 }
 
-function multiProcessAsync (run = () => {}, beforeRun = () => {}, afterRun = () => {}) {
-    function createWorkInstance (job) {
+function multiProcessAsync(run = () => {
+}, beforeRun = () => {}, afterRun = () => {}) {
+    function createWorkInstance(job) {
         let packageJSON = getPackageJSON(job)
         beforeRun(job)
         return run(job, packageJSON)
@@ -100,7 +80,7 @@ function multiProcessAsync (run = () => {}, beforeRun = () => {}, afterRun = () 
 
             process.chdir(root)
 
-            function onClose (successJob) {
+            function onClose(successJob) {
                 afterRun(successJob)
                 let job = jobCopy.pop()
                 _.pull(runChildInstance, this)
@@ -117,10 +97,11 @@ function multiProcessAsync (run = () => {}, beforeRun = () => {}, afterRun = () 
                 }
             }
 
-            function distributeTask (instance, job) {
+            function distributeTask(instance, job) {
                 instance.stderr.on('data', (err) => {
                     hasError = true
                     errorMsg.push(err.toString())
+                    console.log(err.toString())
                 })
 
                 instance.stdout.on('data', (data) => {
@@ -150,13 +131,14 @@ function multiProcessAsync (run = () => {}, beforeRun = () => {}, afterRun = () 
     }
 }
 // 抓住未捕获的错误
-//process.on('uncaughtException', function (err) {
-//    console.error(err)
-//})
+process.on('uncaughtException', function (err) {
+    console.error(err)
+    console.trace()
+})
 
 if (args.length === 0) {
     console.error(
-`
+        `
 fit cli tools
 
 type: pc|web|native
@@ -177,9 +159,7 @@ switch (args[0]) {
     case 'build':
         // build all
         moduleDistribute(cleanModulesSync)
-        moduleDistribute(multiProcessAsync((job) => {
-            return spawn('node', ['build.js', job])
-        })).then(() => {
+        moduleDistribute(buildModules).then(() => {
             console.log("All Module build success")
         }).catch((err) => {
             console.log(err)
@@ -205,60 +185,33 @@ switch (args[0]) {
 
         break
 
-    case 'gitpatch':
-
-        let diffModules = _.uniq(getProjectStatus())
-        patchModulesSync(diffModules, pcModules.concat(webModules).concat(nativeModules), 'patch')
-        diffModules = _.uniq(getProjectStatus())
-        cleanModulesSync(diffModules)
-        buildModules(diffModules).then(() => {
-            publishModules(diffModules)
-        })
-
-        break
-
     case 'autopub':
-        if (!moduleType && !moduleName) {
-            cleanModulesSync(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules))
-            buildModules(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules)).then(() => {
-                patchModulesSync(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules), pcModules.concat(webModules).concat(nativeModules), 'patch')
-                publishModules(pcModules.concat(webModules).concat(nativeModules).concat(tbModules).concat(oxpModules))
-            }).catch((e) => {
-                console.log(e)
-            })
-        }
-        else if (moduleType && !moduleName) {
-            cleanModulesSync(moduleGlobal[moduleType + 'Modules'])
-            buildModules(moduleGlobal[moduleType + 'Modules']).then(() => {
-                patchModulesSync(moduleGlobal[moduleType + 'Modules'], pcModules.concat(webModules).concat(nativeModules), 'patch')
-                publishModules(moduleGlobal[moduleType + 'Modules'])
-            }).catch((e) => {
-                console.log(e)
-            })
-        }
-        else if (moduleType && moduleName) {
-            cleanModulesSync([moduleGlobal.modulePath])
-            buildModules([moduleGlobal.modulePath]).then(() => {
-                patchModulesSync([moduleGlobal.modulePath], pcModules.concat(webModules).concat(nativeModules), 'patch')
-                publishModules([moduleGlobal.modulePath])
-            }).catch((e) => {
-                console.log(e)
-            })
 
-        }
+        moduleDistribute((modules, allModules, params) => {
+            cleanModulesSync(modules, allModules, params)
+            buildModules(modules).then(() => {
+                patchModulesSync(modules, allModules, params)
+                let diff = _.uniq(modules.concat(getProjectStatus()))
+                publishModules(diff).then(() => {
+                    __cleanGit(diff)
+                    __initGit(diff)
+                    commitGit(diff)
+                    __forcePush(diff)
+                }).catch((e) => {
+                    console.log(e.toString())
+                })
+            })
+        }, 'patch')
+
         break
 
     case 'publish':
-        // push modules to gitlab
+        // push modules to gitlabn
         moduleDistribute(publishModules)
         break
 
-    case '_force':
-        moduleDistribute(multiProcessAsync((job) => {
-            return spawn('git', ['push', '-f', 'origin', 'master'])
-        }, (job) => {
-            process.chdir(job)
-        })).then(() => {
+    case '__force':
+        moduleDistribute(__forcePush).then(() => {
             process.chdir(root)
             console.log('force complete')
         }).catch((err) => {
@@ -293,11 +246,11 @@ switch (args[0]) {
             return spawn('git', ['push', '-f', 'origin', 'master'])
         }, (job) => {
             process.chdir(job)
+        }, (job) => {
+            console.log(`INFO: ${job} success`)
         })).then(() => {
             process.chdir(root)
             console.log('force complete')
-        }, (job) => {
-            console.log(`INFO: ${job} success`)
         }).catch((err) => {
             console.log(err)
         })
@@ -305,80 +258,20 @@ switch (args[0]) {
         break
 
     case 'initsubmodule':
-        moduleDistribute(multiProcessAsync((job, packageJSON) => {
-            let path = job.replace(__dirname, '.')
-            return spawn('git', ['submodule', 'add', '--force', packageJSON.repository.url, path])
-        }, (job) => {
-            execSync(`rm -rf ${job}`)
-        }, (job) => {
-            let path = job.replace(__dirname, '')
-            console.log(`INFO: ${path} init success`)
-        })).catch((e) => {
-            console.log(e)
+
+        fs.writeFileSync('./initsubmodule.sh', '# this shell script was generated by cli.js \n')
+        moduleDistribute((modules) => {
+            modules.map((abPath) => {
+                let subPath = abPath.replace(__dirname, '.')
+                let url = getPackageJSON(abPath).repository.url
+                let command = `git submodule add ${url} ${subPath} \n`
+                fs.writeFileSync('./initsubmodule.sh', command, {
+                    flag: 'a'
+                })
+            })
         })
 
         break
-
-//    case 'updatesubtree':
-//
-//        updateSubTreeInfo()
-//
-//        break
-//
-//    case 'add':
-//
-//        console.log('暂不支持此功能')
-////        if (moduleType && moduleName) {
-////            addModule(moduleType, moduleName)
-////        }
-////        else {
-////            console.error('ERROR: missing moduleType and moduleName')
-////        }
-//
-//        break
-//
-//    case 'push':
-//        // update all modules version
-//        if (!type && !name) {
-//            pushModules(pcModules.concat(webModules).concat(nativeModules))
-//        }
-//        else if (type) {
-//            pushModules(moduleGlobal[type + 'Modules'])
-//        }
-//        else if (type && name) {
-//            pushModules([moduleGlobal.modulePath])
-//        }
-//
-//        break
-//
-//    case 'pull':
-//
-//        if (!type && !name) {
-//            pullModules(pcModules.concat(webModules).concat(nativeModules))
-//        }
-//        else if (type) {
-//            pullModules(moduleGlobal[type + 'Modules'])
-//        }
-//        else if (type && name) {
-//            pullModules([moduleGlobal.modulePath])
-//        }
-//
-//        break
-//
-//
-//    case 'update':
-//
-//        if (!type && !name) {
-//            updateModules(pcModules.concat(webModules).concat(nativeModules))
-//        }
-//        else if (type) {
-//            updateModules(moduleGlobal[type + 'Modules'])
-//        }
-//        else if (type && name) {
-//            updateModules([moduleGlobal.modulePath])
-//        }
-//
-//        break
 
     default:
         console.error(
@@ -388,65 +281,59 @@ switch (args[0]) {
         break
 }
 
-function forcePublish (modules) {
-    modules.filter(checkGitInPackageJSON).forEach((filePath) => {
-
-    })
-}
-
-function __initGit (modules) {
+function __initGit(modules) {
     modules.filter(checkGitInPackageJSON).forEach((filePath) => {
         let gitRemote = getPackageJSON(filePath).repository.url
         process.chdir(filePath)
         execSync(`git init && git remote add origin ${gitRemote}`)
+        console.log(`INIT: git ${filePath} success`)
     })
     process.chdir(root)
 }
 
-function __cleanGit (modules) {
+function __cleanGit(modules) {
     modules.filter(checkGitInPackageJSON).forEach((filePath) => {
         process.chdir(filePath)
         execSync(`rm -rf .git`)
+        console.log(`CLEAN: git directory ${filePath} cleaned`)
     })
     process.chdir(root)
 }
 
-function commitGit (modules) {
+function commitGit(modules) {
     modules.filter(checkGitInPackageJSON).forEach((filePath) => {
         process.chdir(filePath)
         try {
             execSync('git add -A')
             execSync('git commit -m "quick push"')
         }
-        catch(e) {
+        catch (e) {
             console.log(e.toString())
         }
-
+        console.log(`COMMIT: quick commit ${filePath}`)
     })
     process.chdir(root)
 }
 
-function __writeSubmodule (modules) {
-    process.chdir(root)
-    execSync('mv lib /tmp/lib')
-    modules.forEach((filePath) => {
-        let packageJSON = getPackageJSON(filePath)
-        let url = packageJSON.repository.url
-
-
-        execSync('git submodule add')
-    })
+function __forcePush(modules) {
+    return multiProcessAsync(() => {
+        return spawn('git', ['push', '-f', 'origin', 'master'])
+    }, (job) => {
+        process.chdir(job)
+    }, (job) => {
+        console.log(`INFO: ${job} force push complete`)
+    })(modules)
 }
 
-function getPackageJSON (filePath) {
+function getPackageJSON(filePath) {
     return JSON.parse(fs.readFileSync(path.join(filePath, 'package.json')))
 }
 
-function checkPackageJSON (filePath) {
+function checkPackageJSON(filePath) {
     return fs.existsSync(path.join(filePath, 'package.json'))
 }
 
-function checkGitInPackageJSON (filePath) {
+function checkGitInPackageJSON(filePath) {
     if (checkPackageJSON(filePath)) {
         let packageJSON = getPackageJSON(filePath)
         if (!packageJSON.repository) {
@@ -457,37 +344,28 @@ function checkGitInPackageJSON (filePath) {
     return false
 }
 
-function checkGit (filePath) {
-    return fs.existsSync(path.join(filePath, '.git'))
-}
-
-function getProjectStatus () {
+function getProjectStatus() {
     try {
         let output = execSync('git status --porcelain').toString().replace(/\s\w\s/g, '').split('\n')
         let subReg = /^lib/
+        let tester = [/^lib\/mobile\/[a-z\-A-Z]+\//, /^lib\/pc\/[a-z\-A-Z]+\//, /^lib\/tb\/[a-z\-A-Z]+\//]
 
-        output = output.filter((value, index) => {
+        return output.filter((value, index) => {
             return subReg.test(value)
+        }).filter((value) => {
+            return tester.filter((val) => {
+                return val.test(value)
+            }).length > 0
         }).map((value) => {
-            let mobileReg = /^lib\/mobile/
-            let pcReg = /^lib\/pc/
-
-            if (mobileReg.test(value)) {
-                let directory = value.split('/').slice(0, 4).join('/')
-                return path.resolve(__dirname, directory)
-            }
-            else if (pcReg.test(value)) {
-                let directory = value.split('/').slice(0, 3).join('/')
-                return path.resolve(__dirname, directory)
-            }
+            return path.resolve(__dirname, value.split('/').slice(0, 3).join('/'))
         })
-
-        return output
     }
-    catch(e){console.log(e)}
+    catch (e) {
+        console.log(e)
+    }
 }
 
-function cleanModulesSync (modules) {
+function cleanModulesSync(modules) {
     process.chdir(root)
 
     for (var modulePath of modules) {
@@ -496,117 +374,26 @@ function cleanModulesSync (modules) {
             execSync('rm ' + path.resolve(modulePath, 'npm-debug.log > /dev/null 2>&1'))
             console.log('INFO: ', 'Remove ' + modulePath + ' lib')
         }
-        catch (e) {}
+        catch (e) {
+        }
     }
 }
 
-function buildModules (modules) {
-    return new Promise((resolve, reject) => {
-        var moduleCopy = _.cloneDeep(modules)
-
-        var cpus = os.cpus()
-        var runChildInstance = []
-        process.chdir(root)
-
-        function onClose (successPath) {
-            console.info('INFO: ', successPath, ' build success')
-            let modulePath = moduleCopy.pop()
-            _.pull(runChildInstance, this)
-
-            if (modulePath) {
-                let childInstance = spawn('node', ['build.js', modulePath])
-                childInstance.stderr.on('data', (err) => {
-                    console.log(err.toString())
-                })
-                runChildInstance.push(childInstance)
-
-                childInstance.on('close', onClose.bind(childInstance, modulePath))
-            }
-            else if (!runChildInstance.length) {
-                resolve()
-            }
-        }
-
-        function onError (error) {
-            reject(error)
-        }
-
-        if (modules.length > cpus.length) {
-            for (let cpu of cpus) {
-                let modulePath = moduleCopy.pop()
-                let childInstance = spawn('node', ['build.js', modulePath])
-                childInstance.stderr.on('data', (err) => {
-                    console.log(err.toString())
-                })
-                runChildInstance.push(childInstance)
-
-                childInstance.on('close', onClose.bind(childInstance, modulePath))
-            }
-        }
-        else {
-            for (let module of modules) {
-                let modulePath = moduleCopy.pop()
-                let childInstance = spawn('node', ['build.js', modulePath])
-                childInstance.stderr.on('data', (err) => {
-                    console.log(err.toString())
-                })
-
-                runChildInstance.push(childInstance)
-
-                childInstance.on('close', onClose.bind(childInstance, modulePath))
-            }
-        }
-    })
+function buildModules(modules) {
+    return multiProcessAsync((job) => {
+        return spawn('node', ['build.js', job])
+    }, () => {
+    }, (job) => {
+        console.log(`INFO: ${job} build success`)
+    })(modules)
 }
 
-function updateSubTreeInfo (callback) {
-    process.chdir(root)
-    let subtreeList = []
-    let moduleList = fs.readdirSync('./lib/mobile').filter((name) => {
-        return name.substring(0, 1) !== '.'
-    }).map((value) => {
-        return 'mobile/' + value
-    }).concat(fs.readdirSync('./lib/pc').filter((name) => {
-        return name.substring(0, 1) !== '.'
-    }).map((value) => {
-        return 'pc/' + value
-    }))
-
-    try {
-        execSync('cp -r ./lib /tmp/___temp___lib')
-        execSync('rm -r ./lib')
-    }
-    catch(e){}
-
-    moduleList.forEach((module, index) => {
-        subtreeList.push(new Promise((resolve, reject) => {
-            let gitlabBranch = module.split('/').join('-')
-            exec(`sh ./stree.sh add ${module} -P lib/${module} ssh://g@gitlab.baidu.com:8022/tb-component/${gitlabBranch}`, (error, stdout, stderr) => {
-                console.log(error, stdout)
-                if (error) {
-                    reject(error)
-                }
-
-
-                resolve(stdout, stderr)
-            })
-        }))
-    })
-
-    Promise.all(subtreeList).then((values) => {
-        console.log(123)
-        execSync('cp -r /tmp/awesome/lib ./lib')
-
-        console.log('success')
-    })
-}
-
-function patchModulesSync (modules, allModules, type) {
+function patchModulesSync(modules, allModules, type) {
     let changeModules = {}
     let moduleMaps = {}
 
-    function updateModuleVirtual (modulePath, name, version) {
-        if (! changeModules[modulePath]) {
+    function updateModuleVirtual(modulePath, name, version) {
+        if (!changeModules[modulePath]) {
             changeModules[modulePath] = {
                 modulePath: modulePath,
                 name: name,
@@ -615,7 +402,7 @@ function patchModulesSync (modules, allModules, type) {
         }
     }
 
-    function buildModuleMap () {
+    function buildModuleMap() {
         for (let all of allModules) {
             let moduleObj = getModuleObj(all)
             moduleMaps[moduleObj.name] = {
@@ -632,14 +419,14 @@ function patchModulesSync (modules, allModules, type) {
         }
     }
 
-    function getModuleObj (module) {
+    function getModuleObj(module) {
         if (fs.existsSync(module, 'package.json')) {
             return JSON.parse(fs.readFileSync(path.resolve(module, 'package.json')).toString())
         }
         return {}
     }
 
-    function whoIsNeedMe (moduleObj) {
+    function whoIsNeedMe(moduleObj) {
         let modules = []
         let moduleName = moduleObj.name
         for (let module in moduleMaps) {
@@ -657,7 +444,7 @@ function patchModulesSync (modules, allModules, type) {
         return modules
     }
 
-    function updateModule (module) {
+    function updateModule(module) {
         let moduleObj = changeModules[module] || getModuleObj(module)
         updateModuleVirtual(module, moduleObj.name, moduleObj.version)
 
@@ -668,14 +455,14 @@ function patchModulesSync (modules, allModules, type) {
         }
     }
 
-    function writeChanges () {
+    function writeChanges() {
         for (let change in changeModules) {
             let moduleObj = getModuleObj(changeModules[change].modulePath)
             console.log(`INFO: Update ${changeModules[change].name} version ${moduleObj.version} ==> ${changeModules[change].version}`)
             moduleObj.version = changeModules[change].version
 
             for (let dep in moduleObj.dependencies) {
-                if (moduleMaps[dep] && changeModules[moduleMaps[dep].modulePath] &&  (changeModules[moduleMaps[dep].modulePath].name === dep)) {
+                if (moduleMaps[dep] && changeModules[moduleMaps[dep].modulePath] && (changeModules[moduleMaps[dep].modulePath].name === dep)) {
                     console.log(`INFO: Update ${changeModules[change].name}'s Dependencies [${dep}] version ${moduleObj.dependencies[dep]} ==> ${changeModules[moduleMaps[dep].modulePath].version}`)
                     moduleObj.dependencies[dep] = '^' + changeModules[moduleMaps[dep].modulePath].version
                 }
@@ -696,75 +483,10 @@ function patchModulesSync (modules, allModules, type) {
     process.chdir(root)
 }
 
-function publishModules (modules) {
-    return new Promise((resolve, reject) => {
-        var moduleCopy = _.cloneDeep(modules)
-        var cpus = os.cpus()
-        var runChildInstance = []
-
-        function onClose () {
-            let modulePath = moduleCopy.pop()
-            _.pull(runChildInstance, this)
-
-            if (modulePath) {
-                let childInstance = spawn('npm', ['publish'], {
-                    cwd: modulePath
-                })
-
-                childInstance.stdout.on('data', (data) => {
-                    console.log(data.toString())
-                })
-
-                childInstance.on('close', onClose)
-
-                childInstance.stderr.on('data', onError)
-
-                runChildInstance.push(childInstance)
-            }
-            else if (!runChildInstance.length) {
-                resolve()
-            }
-        }
-
-        function onError (data) {
-            console.error(data.toString())
-        }
-
-        if (modules.length > cpus.length) {
-            for (let cpu of cpus) {
-                let modulePath = moduleCopy.pop()
-                let childInstance = spawn('npm', ['publish'], {
-                    cwd: modulePath
-                })
-
-                childInstance.stdout.on('data', (data) => {
-                    console.log(data.toString())
-                })
-
-                runChildInstance.push(childInstance)
-
-                childInstance.on('close', onClose)
-
-                childInstance.stderr.on('data', onError)
-            }
-        }
-        else {
-            for (let module of modules) {
-                let modulePath = moduleCopy.pop()
-                let childInstance = spawn('npm', ['publish'], {
-                    cwd: modulePath
-                })
-
-                runChildInstance.push(childInstance)
-
-                childInstance.stdout.on('data', (data) => {
-                    console.log(data.toString())
-                })
-
-                childInstance.on('close', onClose.bind(childInstance, modulePath))
-
-                childInstance.stderr.on('data', onError)
-            }
-        }
-    })
+function publishModules(modules) {
+    return multiProcessAsync(() => {
+        return spawn('npm', ['publish'])
+    }, (job) => {
+        process.chdir(job)
+    })(modules)
 }

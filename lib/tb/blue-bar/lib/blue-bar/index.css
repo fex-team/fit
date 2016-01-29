@@ -1,4 +1,4 @@
-.lib-tb-blue-bar-lib {
+.lib-tb-blue-bar-lib-blue-bar {
   width: 100%;
   height: 45px;
   background: #262b42;
@@ -7,15 +7,15 @@
   text-align: center;
   position: relative;
   z-index: 1; }
-  .lib-tb-blue-bar-lib.hide {
+  .lib-tb-blue-bar-lib-blue-bar.hide {
     display: none; }
-  .lib-tb-blue-bar-lib a {
+  .lib-tb-blue-bar-lib-blue-bar a {
     color: #cfd8e5; }
-  .lib-tb-blue-bar-lib > .blue-kit-left {
+  .lib-tb-blue-bar-lib-blue-bar > .blue-kit-left {
     position: absolute;
     top: 0;
     left: 0; }
-    .lib-tb-blue-bar-lib > .blue-kit-left a.blue-kit-btn {
+    .lib-tb-blue-bar-lib-blue-bar > .blue-kit-left a.blue-kit-btn {
       float: left;
       height: 44px;
       position: relative;
@@ -23,7 +23,7 @@
       color: #d1daea;
       font-size: 16px;
       -webkit-tap-highlight-color: transparent; }
-      .lib-tb-blue-bar-lib > .blue-kit-left a.blue-kit-btn:before {
+      .lib-tb-blue-bar-lib-blue-bar > .blue-kit-left a.blue-kit-btn:before {
         content: '';
         position: absolute;
         top: 50%;
@@ -35,23 +35,23 @@
         margin: -5px 0 0 0;
         -webkit-transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
         transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0); }
-      .lib-tb-blue-bar-lib > .blue-kit-left a.blue-kit-btn > .blue-kit-btn-logo {
+      .lib-tb-blue-bar-lib-blue-bar > .blue-kit-left a.blue-kit-btn > .blue-kit-btn-logo {
         font-size: 28px; }
-      .lib-tb-blue-bar-lib > .blue-kit-left a.blue-kit-btn > .blue-kit-text {
+      .lib-tb-blue-bar-lib-blue-bar > .blue-kit-left a.blue-kit-btn > .blue-kit-text {
         vertical-align: top;
         display: inline-block;
         font-size: 18px;
         margin-left: 8px;
         line-height: 48px; }
-  .lib-tb-blue-bar-lib > .blue-kit-right {
+  .lib-tb-blue-bar-lib-blue-bar > .blue-kit-right {
     position: absolute;
     top: 0;
     right: 0;
     width: 45px;
     height: 45px; }
-    .lib-tb-blue-bar-lib > .blue-kit-right.active {
+    .lib-tb-blue-bar-lib-blue-bar > .blue-kit-right.active {
       background: #191F29; }
-    .lib-tb-blue-bar-lib > .blue-kit-right img {
+    .lib-tb-blue-bar-lib-blue-bar > .blue-kit-right img {
       display: block;
       margin-top: 15px;
       margin-left: 15px;

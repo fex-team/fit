@@ -1,9 +1,9 @@
-.lib-pc-radio-lib-group {
+.lib-pc-radio-lib-radio-group {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
-  .lib-pc-radio-lib-group.vertical {
+  .lib-pc-radio-lib-radio-group.vertical {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;

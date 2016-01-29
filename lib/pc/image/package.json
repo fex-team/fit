@@ -1,6 +1,6 @@
 {
   "name": "fit-image",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "tb image wrapper",
   "main": "lib/index.js",
   "scripts": {
