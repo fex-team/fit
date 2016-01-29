@@ -112,3 +112,6 @@
 [submodule "lib/tb/emoji"]
 	path = lib/tb/emoji
 	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-emoji.git
+[submodule "lib/tb/blue-bar"]
+	path = lib/tb/blue-bar
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-blue-bar.git
