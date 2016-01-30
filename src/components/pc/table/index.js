@@ -4,7 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
-                import { Tabs, TabPanel } from 'fit-tabs'
+                import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/table/readme.md'
                 import '../../../../lib/pc/table/demo'
@@ -93,20 +93,26 @@
                 export default class DemoBox extends React.Component {
                     constructor(props) {
                         super(props)
-                        this.state = {}
+                        this.state = {
+                            page: 'demo'
+                        }
                         document.title = '表格'
                     }
 
-                    render() {
-                        return (
-                            <div className="_namespace">
-                                <Title>{readme}</Title>
+                    handlePageChange(value) {
+                        this.setState({
+                            page: value
+                        })
+                    }
 
-                                <Tabs defaultActiveKey="1">
-                                    <TabPanel tab="演示"
-                                              key="1">
-                                    <Row>
-                                        
+                    render() {
+                        let Content = null
+
+                        switch (this.state.page) {
+                        case 'demo':
+                            Content = (
+                                <Row>
+                                    
                     <Col span="24" style={colStyle}>
                         <CodeView md={DataMarkdown} code={DataCode}>
                             <DataComponent/>
@@ -209,13 +215,34 @@
                         </CodeView>
                     </Col>
                     
-                                    </Row>
-                                </TabPanel>
-                                <TabPanel tab="文档"
-                                          key="2">
+                                </Row>
+                            )
+                            break
+                        case 'document':
+                            Content = (
+                                <div>
                                     
-                                    </TabPanel>
-                                </Tabs>
+                                </div>
+                            )
+                            break
+                        }
+
+                        return (
+                            <div className="_namespace">
+                                <Layout>
+                                    <Header>
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/pc-table/tree/master"
+                                               onChange={this.handlePageChange.bind(this)}>{readme}</Title>
+                                    </Header>
+
+                                    <Section>
+                                        {Content}
+                                    </Section>
+                                    <Sidebar direction="right"
+                                             width="120">
+                                        5555555
+                                    </Sidebar>
+                                </Layout>
                             </div>
                         )
                     }

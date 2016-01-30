@@ -81,6 +81,8 @@
                 
                 import tbSubmitComponent from './components/tb/submit'
                 
+                import tbBlueBarComponent from './components/tb/blue-bar'
+                
                 import tbIconComponent from './components/tb/icon'
                 
                 import tbEmojiComponent from './components/tb/emoji'
@@ -211,6 +213,9 @@
                 
                 <Route path="submit"
                        component={tbSubmitComponent}/>
+                
+                <Route path="blue-bar"
+                       component={tbBlueBarComponent}/>
                 
                 <Route path="icon"
                        component={tbIconComponent}/>

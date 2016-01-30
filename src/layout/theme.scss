@@ -43,7 +43,7 @@ $theme-color: (
         transition: background-color 0.2s ease-in-out 0s;
         color: map-get(map-get($theme-color, $them-name), font-color);
         text-decoration: none;
-        font-size: 12px;
+        font-size: 13px;
         &:hover, &.active {
           color: map-get(map-get($theme-color, $them-name), font-active-color);
         }

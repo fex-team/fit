@@ -5,3 +5,38 @@ code {
 pre {
   margin: 0;
 }
+
+.bar-header {
+  display: flex;
+  .bar-header-left {
+    padding: 20px;
+    width: 0;
+    flex-grow: 1;
+    height: 100px;
+    overflow-y: auto;
+  }
+}
+
+.right-tab-content {
+  display: flex;
+  flex-direction: column;
+  width: 121px;
+  div, a {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+    background: #FBFBFB;
+    border-left: 1px solid #ddd;
+    &:hover {
+      color: #1c9aa0;
+    }
+    &.active {
+      background: #efefef;
+      color: #1c9aa0;
+    }
+  }
+}
