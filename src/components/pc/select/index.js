@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Tabs, TabPanel } from 'fit-tabs'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/select/readme.md'
                 import '../../../../lib/pc/select/demo'
@@ -66,47 +67,52 @@
                             <div className="_namespace">
                                 <Title>{readme}</Title>
 
-                                <Row>
-                                    
-                    <Col span="12" style={colStyle}>
+                                <Tabs defaultActiveKey="1">
+                                    <TabPanel tab="演示"
+                                              key="1">
+                                    <Row>
+                                        
+                    <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
                             <BasicComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={DisabledMarkdown} code={DisabledCode}>
                             <DisabledComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={GroupMarkdown} code={GroupCode}>
                             <GroupComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={LabelMarkdown} code={LabelCode}>
                             <LabelComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={SearchMarkdown} code={SearchCode}>
                             <SearchComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={SimpleMarkdown} code={SimpleCode}>
                             <SimpleComponent/>
                         </CodeView>
                     </Col>
                     
-                                </Row>
-
-                                
+                                    </Row>
+                                </TabPanel>
+                                <TabPanel tab="文档"
+                                          key="2">
+                                    
                         <div style={docStyle}>
                             <CodeDoc code={SelectSourceCode} instance={SelectSource} />
                         </div>
@@ -119,7 +125,8 @@
                             <CodeDoc code={OptGroupSourceCode} instance={OptGroupSource} />
                         </div>
                         
-
+                                    </TabPanel>
+                                </Tabs>
                             </div>
                         )
                     }

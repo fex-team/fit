@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Tabs, TabPanel } from 'fit-tabs'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/layout-global/readme.md'
                 import '../../../../lib/pc/layout-global/demo'
@@ -68,41 +69,46 @@
                             <div className="_namespace">
                                 <Title>{readme}</Title>
 
-                                <Row>
-                                    
-                    <Col span="12" style={colStyle}>
+                                <Tabs defaultActiveKey="1">
+                                    <TabPanel tab="演示"
+                                              key="1">
+                                    <Row>
+                                        
+                    <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
                             <BasicComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={HeaderMarkdown} code={HeaderCode}>
                             <HeaderComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={RightFooterMarkdown} code={RightFooterCode}>
                             <RightFooterComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={HeaderSectionMarkdown} code={HeaderSectionCode}>
                             <HeaderSectionComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={AllMarkdown} code={AllCode}>
                             <AllComponent/>
                         </CodeView>
                     </Col>
                     
-                                </Row>
-
-                                
+                                    </Row>
+                                </TabPanel>
+                                <TabPanel tab="文档"
+                                          key="2">
+                                    
                         <div style={docStyle}>
                             <CodeDoc code={LayoutSourceCode} instance={LayoutSource} />
                         </div>
@@ -123,7 +129,8 @@
                             <CodeDoc code={FooterSourceCode} instance={FooterSource} />
                         </div>
                         
-
+                                    </TabPanel>
+                                </Tabs>
                             </div>
                         )
                     }

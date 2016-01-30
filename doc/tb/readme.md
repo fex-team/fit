@@ -114,6 +114,8 @@ $ npm install
 
 先启动一个全局的yog2,所有的项目都会部署到这个根项目下
 
+注意,这个是真正的后端服务根目录,所有node项目想要本地开发,都需要在本地先启动它
+
 ```bash
 git clone http://gitlab.baidu.com/tb/node.git
 cd node

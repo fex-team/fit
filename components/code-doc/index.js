@@ -155,9 +155,7 @@ export default class CodeDoc extends React.Component {
         }
 
         return (
-            <div style={{padding:10}}>
-                <Table {...tableInfo}/>
-            </div>
+            <Table {...tableInfo}/>
         )
     }
 }

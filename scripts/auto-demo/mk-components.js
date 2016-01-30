@@ -41,7 +41,7 @@ const mkComponents = (config)=> {
                     `
 
                         layoutString += `
-                    <Col span="${demoItem.row}" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={${camelDemoName}Markdown} code={${camelDemoName}Code}>
                             <${camelDemoName}Component/>
                         </CodeView>
@@ -53,14 +53,14 @@ const mkComponents = (config)=> {
                 // 源码文档相关
                 let sourceArray = getDocArray(`lib/${categoryKey}/${component.path}/src/index.js`)
                 if (sourceArray.length > 0) {
-                    sourceArray.map((sourceItem)=>{
+                    sourceArray.map((sourceItem)=> {
                         let sourceItemFileName = _.kebabCase(sourceItem)
                         sourceImport += `
                         import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
                         import ${sourceItem}SourceCode from 'text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
                         `
 
-                        sourceString+=`
+                        sourceString += `
                         <div style={docStyle}>
                             <CodeDoc code={${sourceItem}SourceCode} instance={${sourceItem}Source} />
                         </div>
@@ -74,6 +74,7 @@ const mkComponents = (config)=> {
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Tabs, TabPanel } from 'fit-tabs'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/${categoryKey}/${component.path}/readme.md'
                 import '../../../../lib/${categoryKey}/${component.path}/demo'
@@ -103,12 +104,18 @@ const mkComponents = (config)=> {
                             <div className="_namespace">
                                 <Title>{readme}</Title>
 
-                                <Row>
-                                    ${layoutString}
-                                </Row>
-
-                                ${sourceString}
-
+                                <Tabs defaultActiveKey="1">
+                                    <TabPanel tab="演示"
+                                              key="1">
+                                    <Row>
+                                        ${layoutString}
+                                    </Row>
+                                </TabPanel>
+                                <TabPanel tab="文档"
+                                          key="2">
+                                    ${sourceString}
+                                    </TabPanel>
+                                </Tabs>
                             </div>
                         )
                     }

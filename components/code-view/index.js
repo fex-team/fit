@@ -41,6 +41,7 @@ export default class Layout extends React.Component {
 
         return (
             <div className="_namespace" {...this.props}>
+                <div className="demo-title">{title[1]}</div>
                 <div className="container">
                     <div className="example-container">
                         {this.props.children}
@@ -48,7 +49,7 @@ export default class Layout extends React.Component {
                     <div className="code custom">
                         <Collapse onChange={this.handleCollapseChange.bind(this)}>
                             <CollPanel style={{padding:'0 10px'}}
-                                       header={title[1]}>
+                                       header="源码">
                                 <div className="description"
                                      dangerouslySetInnerHTML={{__html: marked(content)}}></div>
                                 {codeDetail ? codeDetail : null}

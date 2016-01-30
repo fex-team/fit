@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Tabs, TabPanel } from 'fit-tabs'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/table/readme.md'
                 import '../../../../lib/pc/table/demo'
@@ -101,8 +102,11 @@
                             <div className="_namespace">
                                 <Title>{readme}</Title>
 
-                                <Row>
-                                    
+                                <Tabs defaultActiveKey="1">
+                                    <TabPanel tab="演示"
+                                              key="1">
+                                    <Row>
+                                        
                     <Col span="24" style={colStyle}>
                         <CodeView md={DataMarkdown} code={DataCode}>
                             <DataComponent/>
@@ -205,10 +209,13 @@
                         </CodeView>
                     </Col>
                     
-                                </Row>
-
-                                
-
+                                    </Row>
+                                </TabPanel>
+                                <TabPanel tab="文档"
+                                          key="2">
+                                    
+                                    </TabPanel>
+                                </Tabs>
                             </div>
                         )
                     }

@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Tabs, TabPanel } from 'fit-tabs'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/tb/icon/readme.md'
                 import '../../../../lib/tb/icon/demo'
@@ -48,34 +49,40 @@
                             <div className="_namespace">
                                 <Title>{readme}</Title>
 
-                                <Row>
-                                    
+                                <Tabs defaultActiveKey="1">
+                                    <TabPanel tab="演示"
+                                              key="1">
+                                    <Row>
+                                        
                     <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
                             <BasicComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={ColorMarkdown} code={ColorCode}>
                             <ColorComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={SizeMarkdown} code={SizeCode}>
                             <SizeComponent/>
                         </CodeView>
                     </Col>
                     
-                                </Row>
-
-                                
+                                    </Row>
+                                </TabPanel>
+                                <TabPanel tab="文档"
+                                          key="2">
+                                    
                         <div style={docStyle}>
                             <CodeDoc code={IconSourceCode} instance={IconSource} />
                         </div>
                         
-
+                                    </TabPanel>
+                                </Tabs>
                             </div>
                         )
                     }

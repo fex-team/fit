@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Tabs, TabPanel } from 'fit-tabs'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/tb/submit/readme.md'
                 import '../../../../lib/tb/submit/demo'
@@ -55,35 +56,40 @@
                             <div className="_namespace">
                                 <Title>{readme}</Title>
 
-                                <Row>
-                                    
-                    <Col span="12" style={colStyle}>
+                                <Tabs defaultActiveKey="1">
+                                    <TabPanel tab="演示"
+                                              key="1">
+                                    <Row>
+                                        
+                    <Col span="24" style={colStyle}>
                         <CodeView md={PostMarkdown} code={PostCode}>
                             <PostComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={ReplyMarkdown} code={ReplyCode}>
                             <ReplyComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={CommentMarkdown} code={CommentCode}>
                             <CommentComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={SingleMarkdown} code={SingleCode}>
                             <SingleComponent/>
                         </CodeView>
                     </Col>
                     
-                                </Row>
-
-                                
+                                    </Row>
+                                </TabPanel>
+                                <TabPanel tab="文档"
+                                          key="2">
+                                    
                         <div style={docStyle}>
                             <CodeDoc code={SubmitSourceCode} instance={SubmitSource} />
                         </div>
@@ -92,7 +98,8 @@
                             <CodeDoc code={sendSourceCode} instance={sendSource} />
                         </div>
                         
-
+                                    </TabPanel>
+                                </Tabs>
                             </div>
                         )
                     }

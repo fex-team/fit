@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Tabs, TabPanel } from 'fit-tabs'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/input/readme.md'
                 import '../../../../lib/pc/input/demo'
@@ -57,48 +58,54 @@
                             <div className="_namespace">
                                 <Title>{readme}</Title>
 
-                                <Row>
-                                    
-                    <Col span="12" style={colStyle}>
+                                <Tabs defaultActiveKey="1">
+                                    <TabPanel tab="演示"
+                                              key="1">
+                                    <Row>
+                                        
+                    <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
                             <BasicComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={CallbackMarkdown} code={CallbackCode}>
                             <CallbackComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={DisabledMarkdown} code={DisabledCode}>
                             <DisabledComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={FlexMarkdown} code={FlexCode}>
                             <FlexComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={IconMarkdown} code={IconCode}>
                             <IconComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={TextareaMarkdown} code={TextareaCode}>
                             <TextareaComponent/>
                         </CodeView>
                     </Col>
                     
-                                </Row>
-
-                                
-
+                                    </Row>
+                                </TabPanel>
+                                <TabPanel tab="文档"
+                                          key="2">
+                                    
+                                    </TabPanel>
+                                </Tabs>
                             </div>
                         )
                     }

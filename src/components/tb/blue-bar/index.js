@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Tabs, TabPanel } from 'fit-tabs'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/tb/blue-bar/readme.md'
                 import '../../../../lib/tb/blue-bar/demo'
@@ -33,12 +34,18 @@
                             <div className="_namespace">
                                 <Title>{readme}</Title>
 
-                                <Row>
+                                <Tabs defaultActiveKey="1">
+                                    <TabPanel tab="演示"
+                                              key="1">
+                                    <Row>
+                                        
+                                    </Row>
+                                </TabPanel>
+                                <TabPanel tab="文档"
+                                          key="2">
                                     
-                                </Row>
-
-                                
-
+                                    </TabPanel>
+                                </Tabs>
                             </div>
                         )
                     }
