@@ -102,7 +102,10 @@ function multiProcessAsync() {
 
     function createWorkInstance(job) {
         var packageJSON = getPackageJSON(job);
-        beforeRun(job);
+        if (!beforeRun(job)) {
+            return null;
+        }
+
         return run(job, packageJSON);
     }
 
@@ -123,7 +126,9 @@ function multiProcessAsync() {
 
                 if (job) {
                     var childInstance = createWorkInstance(job);
-                    distributeTask(childInstance, job);
+                    if (childInstance) {
+                        distributeTask(childInstance, job);
+                    }
                 } else if (!runChildInstance.length && !hasError) {
                     resolve();
                 } else if (!runChildInstance.length && hasError) {
@@ -151,13 +156,17 @@ function multiProcessAsync() {
                 cpus.forEach(function () {
                     var job = jobCopy.pop();
                     var childInstance = createWorkInstance(job);
-                    distributeTask(childInstance, job);
+                    if (childInstance) {
+                        distributeTask(childInstance, job);
+                    }
                 });
             } else {
                 jobs.forEach(function () {
                     var job = jobCopy.pop();
                     var childInstance = createWorkInstance(job);
-                    distributeTask(childInstance, job);
+                    if (childInstance) {
+                        distributeTask(childInstance, job);
+                    }
                 });
             }
         });
@@ -217,6 +226,7 @@ switch (args[0]) {
                 var diff = _.uniq(modules.concat(getProjectStatus()));
                 publishModules(diff).then(function () {
                     commitGit(diff);
+                    pushSubModule(pullSubModule);
                 }).catch(function (e) {
                     console.log(e.toString());
                 });
@@ -277,9 +287,20 @@ switch (args[0]) {
 
         break;
 
-    case 'addsubmodule':
+    case 'add':
 
         moduleDistribute(addSubModule);
+
+        break;
+
+    case 'pull':
+
+        moduleDistribute(pullSubModule);
+
+        break;
+
+    case 'push':
+        moduleDistribute(pushSubModule);
 
         break;
 
@@ -344,6 +365,35 @@ function addSubModule(modules) {
             console.log(e.toString());
         }
     });
+}
+
+function pullSubModule(modules) {
+    var successed = [];
+    modules.forEach(function (filePath) {
+        process.chdir(filePath);
+        try {
+            execSync('git fetch');
+            execSync('git merge -m "quick merge"');
+            successed.push(filePath);
+        } catch (e) {
+            console.log(e.toString());
+            successed.pop();
+        }
+    });
+    process.chdir(root);
+    return successed;
+}
+
+function pushSubModule(modules) {
+    modules.forEach(function (filePath) {
+        process.chdir(filePath);
+        try {
+            execSync('git push origin master');
+        } catch (e) {
+            console.log(e.toString());
+        }
+    });
+    process.chdir(root);
 }
 
 function __initGit(modules) {
@@ -656,6 +706,9 @@ function publishModules(modules) {
     return multiProcessAsync(function () {
         return spawn('npm', ['publish']);
     }, function (job) {
+        if (/lib\/tb\/[a-z\-A-Z]+\//.test(job)) {
+            return false;
+        }
         process.chdir(job);
     })(modules);
 }

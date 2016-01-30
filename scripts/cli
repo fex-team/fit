@@ -98,7 +98,10 @@ function multiProcessAsync(run = () => {
 }, beforeRun = () => {}, afterRun = () => {}) {
     function createWorkInstance(job) {
         let packageJSON = getPackageJSON(job)
-        beforeRun(job)
+        if (!beforeRun(job)) {
+            return null
+        }
+
         return run(job, packageJSON)
     }
 
@@ -120,7 +123,9 @@ function multiProcessAsync(run = () => {
 
                 if (job) {
                     let childInstance = createWorkInstance(job)
-                    distributeTask(childInstance, job)
+                    if (childInstance) {
+                        distributeTask(childInstance, job)
+                    }
                 }
                 else if (!runChildInstance.length && !hasError) {
                     resolve()
@@ -150,14 +155,18 @@ function multiProcessAsync(run = () => {
                 cpus.forEach(() => {
                     let job = jobCopy.pop()
                     let childInstance = createWorkInstance(job)
-                    distributeTask(childInstance, job)
+                    if (childInstance) {
+                        distributeTask(childInstance, job)
+                    }
                 })
             }
             else {
                 jobs.forEach(() => {
                     let job = jobCopy.pop()
                     let childInstance = createWorkInstance(job)
-                    distributeTask(childInstance, job)
+                    if (childInstance) {
+                        distributeTask(childInstance, job)
+                    }
                 })
             }
         })
@@ -231,6 +240,7 @@ switch (args[0]) {
                 let diff = _.uniq(modules.concat(getProjectStatus()))
                 publishModules(diff).then(() => {
                     commitGit(diff)
+                    pushSubModule(pullSubModule)
                 }).catch((e) => {
                     console.log(e.toString())
                 })
@@ -291,10 +301,21 @@ switch (args[0]) {
 
         break
 
-    case 'addsubmodule':
+    case 'add':
 
         moduleDistribute(addSubModule)
 
+
+        break
+
+    case 'pull':
+
+        moduleDistribute(pullSubModule)
+
+        break
+
+    case 'push':
+        moduleDistribute(pushSubModule)
 
         break
 
@@ -363,6 +384,37 @@ function addSubModule (modules) {
             console.log(e.toString())
         }
     })
+}
+
+function pullSubModule (modules) {
+    let successed = []
+    modules.forEach((filePath) => {
+        process.chdir(filePath)
+        try {
+            execSync('git fetch 2>&1')
+            execSync('git merge -m "quick merge  2>&1"')
+            successed.push(filePath)
+        }
+        catch(e) {
+            console.log(e.toString())
+            successed.pop()
+        }
+    })
+    process.chdir(root)
+    return successed
+}
+
+function pushSubModule (modules) {
+    modules.forEach((filePath) => {
+        process.chdir(filePath)
+        try {
+            execSync('git push origin master')
+        }
+        catch (e) {
+            console.log(e.toString())
+        }
+    })
+    process.chdir(root)
 }
 
 function __initGit(modules) {
@@ -571,6 +623,9 @@ function publishModules(modules) {
     return multiProcessAsync(() => {
         return spawn('npm', ['publish'])
     }, (job) => {
+        if (/lib\/tb\/[a-z\-A-Z]+\//.test(job)) {
+            return false
+        }
         process.chdir(job)
     })(modules)
 }
