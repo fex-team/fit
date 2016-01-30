@@ -108,25 +108,38 @@ $ npm install
 
 [组件如何发布到npm](doc/publish.md)
 
-### 贴吧前端模块化
+## node 版开发流程
 
-贴吧前端开发可以从php中解放出来了,我们一起推动贴吧打造一套 `node+react` 生态圈,将前端开发体验提升到极致,并为用户提供更加稳定,高效的服务
+### yog2 project 
 
-发展历史:
+先启动一个全局的yog2,所有的项目都会部署到这个根项目下
 
-1. 2015-12-1 修改贴吧老编译脚本,删除了template widget static三个文件夹,angular->react,同一项目的所有代码都集中在一个子项目文件夹中方便管理
-2. 2015-12-2 贴吧react组件库项目开启,代号为fit,力求打造不输于阿里前端的react组件库
-3. 2015-12-4 与@张涛沟通开发流程,建立贴吧前端gitlab开发群,正式将 svn+icafe+全流程 的上线流程改造为 gitlab+agile 部署只需要 `git push` ,触发hi群机器人提醒并触发agile构建,大大简化了上线流程
-4. 2015-12-14 删除control文件夹,并将入口php文件改为index.html,自动将script标签转化为php对应函数
-5. 2015-12-21 @学芝为贴吧重写了一套fis3编译脚本 http://gitlab.baidu.com/tb-component/build ,切换到fis集群编译,大大提高了编译效率
-6. 2015-12-25 贴吧react开发规范商讨完毕,一个git仓库即一个完整项目,仓库里不再有多个子项目（避免了以往项目文件夹过多,其他项目的无关依赖库过多,申请新模块延时等不必要的麻烦）,再次调整项目结构,支持本地开发（webpack或fis3任选）,沙盒开发（仅fis3）,上线编译三套完整开发方案
-7. 2015-12-30 同时支持webpack编译,与fis3编译效果完全一样,支持代码热更新
-8. 2015-12-31 fis3项目上线流程跑通
+```bash
+git clone http://gitlab.baidu.com/tb/node.git
+cd node
+npm install
+yog2 run
+```
 
-待续:
+### 新建项目
 
-- 在@方石的推动下,预计2016年上半年将贴吧前端ui层改为node服务（先小范围试点）,所有node项目将启用后端渲染,届时无论pc还是h5都将同时拥有mis的单页体验与pc的首屏加载的速度!而对我们前端的福利是,代码只需要开发一套,前后端通用的逻辑可以复用了
-- @天成 react移动端组件启动,项目代号为fiten,会同时支持react-native技术,最快在2016下半年将客户端页面部分改为react-native,一个h5+android+ios的项目只需要用h5开发一次,也会大大减少pm的沟通成本与项目维护成本
+这一步在创建 yog2 的 app , app 就是业务项目
+
+```bash
+$ git clone http://gitlab.baidu.com/tb/your-project.git
+$ cd your-project
+$ fis3 init gitlab:tb-component/scaffold-node
+```
+
+### 运行 & 预览
+
+#### 本机开发模式
+
+```hash
+npm start
+```
+
+打开 `127.0.0.1:8080` 查看对应项目.路由是 `/项目名/[子路由]`,如果是home项目,可以省略 `/home`
 
 ### Q & A
 
