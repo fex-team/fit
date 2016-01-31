@@ -2,6 +2,7 @@
                 import React from 'react'
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
+                import { ScrollListenContainer, ScrollListenBox, ScrollListenNail , ScrollListen } from 'fit-scroll-listen'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
@@ -92,7 +93,7 @@
                         }
 
                         return (
-                            <div className="_namespace">
+                            <ScrollListenContainer className="_namespace">
                                 <Layout>
                                     <Header>
                                         <Title gitlabUrl="http://gitlab.baidu.com/tb-component/pc-tree/tree/master"
@@ -100,14 +101,16 @@
                                     </Header>
 
                                     <Section>
-                                        {Content}
+                                        <ScrollListenBox>
+                                            {Content}
+                                        </ScrollListenBox>
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        5555555
+                                        <ScrollListen/>
                                     </Sidebar>
                                 </Layout>
-                            </div>
+                            </ScrollListenContainer>
                         )
                     }
                 }

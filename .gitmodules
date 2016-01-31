@@ -115,3 +115,6 @@
 [submodule "lib/tb/blue-bar"]
 	path = lib/tb/blue-bar
 	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-blue-bar.git
+[submodule "lib/pc/scroll-listen"]
+	path = lib/pc/scroll-listen
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-scroll-listen.git

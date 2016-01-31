@@ -30,6 +30,8 @@
                 
                 'fit-render-to': path.join(__dirname, 'lib/pc/render-to/src'),
                 
+                'fit-scroll-listen': path.join(__dirname, 'lib/pc/scroll-listen/src'),
+                
                 'fit-input': path.join(__dirname, 'lib/pc/input/src'),
                 
                 'fit-number': path.join(__dirname, 'lib/pc/number/src'),

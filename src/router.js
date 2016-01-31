@@ -35,6 +35,8 @@
                 
                 import fitRenderToComponent from './components/pc/render-to'
                 
+                import fitScrollListenComponent from './components/pc/scroll-listen'
+                
                 import fitInputComponent from './components/pc/input'
                 
                 import fitNumberComponent from './components/pc/number'
@@ -138,6 +140,9 @@
                 
                 <Route path="render-to"
                        component={fitRenderToComponent}/>
+                
+                <Route path="scroll-listen"
+                       component={fitScrollListenComponent}/>
                 
                 <Route path="input"
                        component={fitInputComponent}/>
