@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/tb/submit/readme.md'
                 import '../../../../lib/tb/submit/demo'
@@ -46,44 +47,57 @@
                 export default class DemoBox extends React.Component {
                     constructor(props) {
                         super(props)
-                        this.state = {}
+                        this.state = {
+                            page: 'demo'
+                        }
                         document.title = '发帖'
                     }
 
-                    render() {
-                        return (
-                            <div className="_namespace">
-                                <Title>{readme}</Title>
+                    handlePageChange(value) {
+                        this.setState({
+                            page: value
+                        })
+                    }
 
+                    render() {
+                        let Content = null
+
+                        switch (this.state.page) {
+                        case 'demo':
+                            Content = (
                                 <Row>
                                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={PostMarkdown} code={PostCode}>
                             <PostComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={ReplyMarkdown} code={ReplyCode}>
                             <ReplyComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={CommentMarkdown} code={CommentCode}>
                             <CommentComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={SingleMarkdown} code={SingleCode}>
                             <SingleComponent/>
                         </CodeView>
                     </Col>
                     
                                 </Row>
-
-                                
+                            )
+                            break
+                        case 'document':
+                            Content = (
+                                <div>
+                                    
                         <div style={docStyle}>
                             <CodeDoc code={SubmitSourceCode} instance={SubmitSource} />
                         </div>
@@ -92,7 +106,27 @@
                             <CodeDoc code={sendSourceCode} instance={sendSource} />
                         </div>
                         
+                                </div>
+                            )
+                            break
+                        }
 
+                        return (
+                            <div className="_namespace">
+                                <Layout>
+                                    <Header>
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/tb-submit/tree/master"
+                                               onChange={this.handlePageChange.bind(this)}>{readme}</Title>
+                                    </Header>
+
+                                    <Section>
+                                        {Content}
+                                    </Section>
+                                    <Sidebar direction="right"
+                                             width="120">
+                                        5555555
+                                    </Sidebar>
+                                </Layout>
                             </div>
                         )
                     }

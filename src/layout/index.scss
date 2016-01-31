@@ -49,12 +49,12 @@ html {
 
 .g-mn {
   _position: relative;
-  left: 250px;
+  left: 220px;
   right: 0;
   _top: 0;
   _left: 0;
-  _margin-left: 250px;
-  background-color: #f0f3f4;
+  _margin-left: 220px;
+  background-color: white;
 }
 
 .g-ft {
@@ -64,7 +64,7 @@ html {
   box-sizing: border-box;
   bottom: 0;
   height: 30px;
-  padding-left: 250px;
+  padding-left: 220px;
   background-color: $bg-color-light;
   z-index: 0;
   color: #999;
@@ -82,7 +82,7 @@ html {
       position: relative;
       margin-right: 0;
       height: auto;
-      width: 250px;
+      width: 220px;
       padding: 0 20px;
       font-size: 18px;
       font-weight: 700;

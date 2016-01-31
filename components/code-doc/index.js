@@ -49,14 +49,22 @@ export default class CodeDoc extends React.Component {
                         )
                         break
                     case 'array':
-                        child = (
-                            <JsonTree json={value.instanceValue}/>
-                        )
+                        if (_.isEmpty(value.instanceValue)){
+                            child = null
+                        }else{
+                            child = (
+                                <JsonTree root={true} json={value.instanceValue}/>
+                            )
+                        }
                         break
                     case 'object':
-                        child = (
-                            <JsonTree json={value.instanceValue}/>
-                        )
+                        if (_.isEmpty(value.instanceValue)){
+                            child = null
+                        }else{
+                            child = (
+                                <JsonTree root={true} json={value.instanceValue}/>
+                            )
+                        }
                         break
                     case 'null':
                         child = (
@@ -155,9 +163,7 @@ export default class CodeDoc extends React.Component {
         }
 
         return (
-            <div style={{padding:10}}>
-                <Table {...tableInfo}/>
-            </div>
+            <Table {...tableInfo}/>
         )
     }
 }

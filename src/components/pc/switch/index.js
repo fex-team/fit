@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/switch/readme.md'
                 import '../../../../lib/pc/switch/demo'
@@ -44,51 +45,84 @@
                 export default class DemoBox extends React.Component {
                     constructor(props) {
                         super(props)
-                        this.state = {}
+                        this.state = {
+                            page: 'demo'
+                        }
                         document.title = '开关'
                     }
 
-                    render() {
-                        return (
-                            <div className="_namespace">
-                                <Title>{readme}</Title>
+                    handlePageChange(value) {
+                        this.setState({
+                            page: value
+                        })
+                    }
 
+                    render() {
+                        let Content = null
+
+                        switch (this.state.page) {
+                        case 'demo':
+                            Content = (
                                 <Row>
                                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
                             <BasicComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={ControlMarkdown} code={ControlCode}>
                             <ControlComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={LabelMarkdown} code={LabelCode}>
                             <LabelComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={SizeMarkdown} code={SizeCode}>
                             <SizeComponent/>
                         </CodeView>
                     </Col>
                     
-                    <Col span="12" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={TypeMarkdown} code={TypeCode}>
                             <TypeComponent/>
                         </CodeView>
                     </Col>
                     
                                 </Row>
+                            )
+                            break
+                        case 'document':
+                            Content = (
+                                <div>
+                                    
+                                </div>
+                            )
+                            break
+                        }
 
-                                
+                        return (
+                            <div className="_namespace">
+                                <Layout>
+                                    <Header>
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/pc-switch/tree/master"
+                                               onChange={this.handlePageChange.bind(this)}>{readme}</Title>
+                                    </Header>
 
+                                    <Section>
+                                        {Content}
+                                    </Section>
+                                    <Sidebar direction="right"
+                                             width="120">
+                                        5555555
+                                    </Sidebar>
+                                </Layout>
                             </div>
                         )
                     }

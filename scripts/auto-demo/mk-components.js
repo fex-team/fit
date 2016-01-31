@@ -41,7 +41,7 @@ const mkComponents = (config)=> {
                     `
 
                         layoutString += `
-                    <Col span="${demoItem.row}" style={colStyle}>
+                    <Col span="24" style={colStyle}>
                         <CodeView md={${camelDemoName}Markdown} code={${camelDemoName}Code}>
                             <${camelDemoName}Component/>
                         </CodeView>
@@ -53,14 +53,14 @@ const mkComponents = (config)=> {
                 // 源码文档相关
                 let sourceArray = getDocArray(`lib/${categoryKey}/${component.path}/src/index.js`)
                 if (sourceArray.length > 0) {
-                    sourceArray.map((sourceItem)=>{
+                    sourceArray.map((sourceItem)=> {
                         let sourceItemFileName = _.kebabCase(sourceItem)
                         sourceImport += `
                         import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
                         import ${sourceItem}SourceCode from 'text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
                         `
 
-                        sourceString+=`
+                        sourceString += `
                         <div style={docStyle}>
                             <CodeDoc code={${sourceItem}SourceCode} instance={${sourceItem}Source} />
                         </div>
@@ -74,6 +74,7 @@ const mkComponents = (config)=> {
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/${categoryKey}/${component.path}/readme.md'
                 import '../../../../lib/${categoryKey}/${component.path}/demo'
@@ -94,21 +95,54 @@ const mkComponents = (config)=> {
                 export default class DemoBox extends React.Component {
                     constructor(props) {
                         super(props)
-                        this.state = {}
+                        this.state = {
+                            page: 'demo'
+                        }
                         document.title = '${component.name}'
                     }
 
-                    render() {
-                        return (
-                            <div className="_namespace">
-                                <Title>{readme}</Title>
+                    handlePageChange(value) {
+                        this.setState({
+                            page: value
+                        })
+                    }
 
+                    render() {
+                        let Content = null
+
+                        switch (this.state.page) {
+                        case 'demo':
+                            Content = (
                                 <Row>
                                     ${layoutString}
                                 </Row>
+                            )
+                            break
+                        case 'document':
+                            Content = (
+                                <div>
+                                    ${sourceString}
+                                </div>
+                            )
+                            break
+                        }
 
-                                ${sourceString}
+                        return (
+                            <div className="_namespace">
+                                <Layout>
+                                    <Header>
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/${categoryKey}-${component.path}/tree/master"
+                                               onChange={this.handlePageChange.bind(this)}>{readme}</Title>
+                                    </Header>
 
+                                    <Section>
+                                        {Content}
+                                    </Section>
+                                    <Sidebar direction="right"
+                                             width="120">
+                                        5555555
+                                    </Sidebar>
+                                </Layout>
                             </div>
                         )
                     }

@@ -4,6 +4,7 @@
                 import Highlight from 'react-highlight'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
+                import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/menu/readme.md'
                 import '../../../../lib/pc/menu/demo'
@@ -53,15 +54,24 @@
                 export default class DemoBox extends React.Component {
                     constructor(props) {
                         super(props)
-                        this.state = {}
+                        this.state = {
+                            page: 'demo'
+                        }
                         document.title = '菜单'
                     }
 
-                    render() {
-                        return (
-                            <div className="_namespace">
-                                <Title>{readme}</Title>
+                    handlePageChange(value) {
+                        this.setState({
+                            page: value
+                        })
+                    }
 
+                    render() {
+                        let Content = null
+
+                        switch (this.state.page) {
+                        case 'demo':
+                            Content = (
                                 <Row>
                                     
                     <Col span="24" style={colStyle}>
@@ -95,8 +105,12 @@
                     </Col>
                     
                                 </Row>
-
-                                
+                            )
+                            break
+                        case 'document':
+                            Content = (
+                                <div>
+                                    
                         <div style={docStyle}>
                             <CodeDoc code={MenuSourceCode} instance={MenuSource} />
                         </div>
@@ -109,7 +123,27 @@
                             <CodeDoc code={SubMenuSourceCode} instance={SubMenuSource} />
                         </div>
                         
+                                </div>
+                            )
+                            break
+                        }
 
+                        return (
+                            <div className="_namespace">
+                                <Layout>
+                                    <Header>
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/pc-menu/tree/master"
+                                               onChange={this.handlePageChange.bind(this)}>{readme}</Title>
+                                    </Header>
+
+                                    <Section>
+                                        {Content}
+                                    </Section>
+                                    <Sidebar direction="right"
+                                             width="120">
+                                        5555555
+                                    </Sidebar>
+                                </Layout>
                             </div>
                         )
                     }

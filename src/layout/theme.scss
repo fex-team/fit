@@ -4,28 +4,25 @@ $theme-color: (
         pc: (
                 bg-color:$bg-color-dark,
                 font-color: #b4b6bd,
-                font-active-color: #fff,
-                font-active-bg-color: #32374a,
+                font-active-color: #1c9aa0,
                 title-color:#8b8e99
         ),
         mobile:(
                 bg-color:#7266ba,
                 font-color: whitesmoke,
                 font-active-color: #fff,
-                font-active-bg-color: #7748C1,
                 title-color:#7266ba
         ),
         tb: (
                 bg-color:#23b7e5,
                 font-color: whitesmoke,
                 font-active-color: #fff,
-                font-active-bg-color: #1C99BF,
                 title-color:#fff
         )
 );
 
 .g-sd {
-  width: 250px;
+  width: 220px;
   z-index: 1;
   transition: background 0.3s ease-in-out;
 
@@ -40,16 +37,15 @@ $theme-color: (
       .item {
         position: relative;
         display: block;
-        padding: 10px 10px 10px 20px;
+        padding: 8px 10px 8px 20px;
         font-weight: normal;
         text-transform: none;
         transition: background-color 0.2s ease-in-out 0s;
         color: map-get(map-get($theme-color, $them-name), font-color);
         text-decoration: none;
-        font-size: 14px;
+        font-size: 13px;
         &:hover, &.active {
           color: map-get(map-get($theme-color, $them-name), font-active-color);
-          background-color: map-get(map-get($theme-color, $them-name), font-active-bg-color);
         }
       }
     }
