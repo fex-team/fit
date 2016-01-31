@@ -97,7 +97,9 @@ function moduleDistribute(fn, params, context) {
 
 function multiProcessAsync() {
     var run = arguments.length <= 0 || arguments[0] === undefined ? function () {} : arguments[0];
-    var beforeRun = arguments.length <= 1 || arguments[1] === undefined ? function () {} : arguments[1];
+    var beforeRun = arguments.length <= 1 || arguments[1] === undefined ? function () {
+        return true;
+    } : arguments[1];
     var afterRun = arguments.length <= 2 || arguments[2] === undefined ? function () {} : arguments[2];
 
     function createWorkInstance(job) {
@@ -126,9 +128,7 @@ function multiProcessAsync() {
 
                 if (job) {
                     var childInstance = createWorkInstance(job);
-                    if (childInstance) {
-                        distributeTask(childInstance, job);
-                    }
+                    distributeTask(childInstance, job);
                 } else if (!runChildInstance.length && !hasError) {
                     resolve();
                 } else if (!runChildInstance.length && hasError) {
@@ -137,6 +137,10 @@ function multiProcessAsync() {
             }
 
             function distributeTask(instance, job) {
+                if (!instance) {
+                    instance = spawn('echo', ['skip process']);
+                }
+
                 instance.stderr.on('data', function (err) {
                     hasError = true;
                     errorMsg.push(err.toString());
@@ -156,17 +160,13 @@ function multiProcessAsync() {
                 cpus.forEach(function () {
                     var job = jobCopy.pop();
                     var childInstance = createWorkInstance(job);
-                    if (childInstance) {
-                        distributeTask(childInstance, job);
-                    }
+                    distributeTask(childInstance, job);
                 });
             } else {
                 jobs.forEach(function () {
                     var job = jobCopy.pop();
                     var childInstance = createWorkInstance(job);
-                    if (childInstance) {
-                        distributeTask(childInstance, job);
-                    }
+                    distributeTask(childInstance, job);
                 });
             }
         });
@@ -222,11 +222,12 @@ switch (args[0]) {
         moduleDistribute(function (modules, allModules, params) {
             cleanModulesSync(modules, allModules, params);
             buildModules(modules).then(function () {
+                console.log(123);
                 patchModulesSync(modules, allModules, params);
                 var diff = _.uniq(modules.concat(getProjectStatus()));
                 publishModules(diff).then(function () {
                     commitGit(diff);
-                    pushSubModule(pullSubModule);
+                    pushSubModule(pullSubModule(diff));
                 }).catch(function (e) {
                     console.log(e.toString());
                 });
@@ -276,6 +277,7 @@ switch (args[0]) {
             return spawn('git', ['push', '-f', 'origin', 'master']);
         }, function (job) {
             process.chdir(job);
+            return true;
         }, function (job) {
             console.log('INFO: ' + job + ' success');
         })).then(function () {
@@ -372,8 +374,8 @@ function pullSubModule(modules) {
     modules.forEach(function (filePath) {
         process.chdir(filePath);
         try {
-            execSync('git fetch');
-            execSync('git merge -m "quick merge"');
+            execSync('git fetch 2>&1');
+            execSync('git merge -m "quick merge  2>&1"');
             successed.push(filePath);
         } catch (e) {
             console.log(e.toString());
@@ -434,6 +436,7 @@ function __forcePush(modules) {
         return spawn('git', ['push', '-f', 'origin', 'master']);
     }, function (job) {
         process.chdir(job);
+        return true;
     }, function (job) {
         console.log('INFO: ' + job + ' force push complete');
     })(modules);
@@ -520,7 +523,9 @@ function cleanModulesSync(modules) {
 function buildModules(modules) {
     return multiProcessAsync(function (job) {
         return spawn('node', ['build.js', job]);
-    }, function () {}, function (job) {
+    }, function () {
+        return true;
+    }, function (job) {
         console.log('INFO: ' + job + ' build success');
     })(modules);
 }
@@ -706,9 +711,10 @@ function publishModules(modules) {
     return multiProcessAsync(function () {
         return spawn('npm', ['publish']);
     }, function (job) {
-        if (/lib\/tb\/[a-z\-A-Z]+\//.test(job)) {
+        if (/\/lib\/tb\/[a-z\-A-Z]+/.test(job.replace(root, ''))) {
             return false;
         }
         process.chdir(job);
+        return true;
     })(modules);
 }

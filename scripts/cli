@@ -95,7 +95,7 @@ function moduleDistribute(fn, params, context) {
 }
 
 function multiProcessAsync(run = () => {
-}, beforeRun = () => {}, afterRun = () => {}) {
+}, beforeRun = () => { return true}, afterRun = () => {}) {
     function createWorkInstance(job) {
         let packageJSON = getPackageJSON(job)
         if (!beforeRun(job)) {
@@ -123,9 +123,8 @@ function multiProcessAsync(run = () => {
 
                 if (job) {
                     let childInstance = createWorkInstance(job)
-                    if (childInstance) {
-                        distributeTask(childInstance, job)
-                    }
+                    distributeTask(childInstance, job)
+
                 }
                 else if (!runChildInstance.length && !hasError) {
                     resolve()
@@ -136,6 +135,10 @@ function multiProcessAsync(run = () => {
             }
 
             function distributeTask(instance, job) {
+                if (!instance) {
+                    instance = spawn('echo', [`skip process`])
+                }
+
                 instance.stderr.on('data', (err) => {
                     hasError = true
                     errorMsg.push(err.toString())
@@ -155,18 +158,14 @@ function multiProcessAsync(run = () => {
                 cpus.forEach(() => {
                     let job = jobCopy.pop()
                     let childInstance = createWorkInstance(job)
-                    if (childInstance) {
-                        distributeTask(childInstance, job)
-                    }
+                    distributeTask(childInstance, job)
                 })
             }
             else {
                 jobs.forEach(() => {
                     let job = jobCopy.pop()
                     let childInstance = createWorkInstance(job)
-                    if (childInstance) {
-                        distributeTask(childInstance, job)
-                    }
+                    distributeTask(childInstance, job)
                 })
             }
         })
@@ -236,11 +235,12 @@ switch (args[0]) {
         moduleDistribute((modules, allModules, params) => {
             cleanModulesSync(modules, allModules, params)
             buildModules(modules).then(() => {
+                console.log(123)
                 patchModulesSync(modules, allModules, params)
                 let diff = _.uniq(modules.concat(getProjectStatus()))
                 publishModules(diff).then(() => {
                     commitGit(diff)
-                    pushSubModule(pullSubModule)
+                    pushSubModule(pullSubModule(diff))
                 }).catch((e) => {
                     console.log(e.toString())
                 })
@@ -290,6 +290,7 @@ switch (args[0]) {
             return spawn('git', ['push', '-f', 'origin', 'master'])
         }, (job) => {
             process.chdir(job)
+            return true
         }, (job) => {
             console.log(`INFO: ${job} success`)
         })).then(() => {
@@ -456,6 +457,7 @@ function __forcePush(modules) {
         return spawn('git', ['push', '-f', 'origin', 'master'])
     }, (job) => {
         process.chdir(job)
+        return true
     }, (job) => {
         console.log(`INFO: ${job} force push complete`)
     })(modules)
@@ -519,6 +521,7 @@ function buildModules(modules) {
     return multiProcessAsync((job) => {
         return spawn('node', ['build.js', job])
     }, () => {
+        return true
     }, (job) => {
         console.log(`INFO: ${job} build success`)
     })(modules)
@@ -623,9 +626,10 @@ function publishModules(modules) {
     return multiProcessAsync(() => {
         return spawn('npm', ['publish'])
     }, (job) => {
-        if (/lib\/tb\/[a-z\-A-Z]+\//.test(job)) {
+        if (/\/lib\/tb\/[a-z\-A-Z]+/.test(job.replace(root, ''))) {
             return false
         }
         process.chdir(job)
+        return true
     })(modules)
 }
