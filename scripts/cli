@@ -507,7 +507,7 @@ function getProjectStatus() {
     try {
         let output = execSync('git status --porcelain').toString().replace(/\s\w\s/g, '').split('\n')
         let subReg = /^lib/
-        let tester = [/^lib\/mobile\/[a-z\-A-Z]+\//, /^lib\/pc\/[a-z\-A-Z]+\//, /^lib\/tb\/[a-z\-A-Z]+\//]
+        let tester = [/^lib\/mobile\/[a-z\-A-Z]+/, /^lib\/pc\/[a-z\-A-Z]+/, /^lib\/tb\/[a-z\-A-Z]+/]
 
         return output.filter((value, index) => {
             return subReg.test(value)

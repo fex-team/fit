@@ -484,7 +484,7 @@ function getProjectStatus() {
         var _ret = (function () {
             var output = execSync('git status --porcelain').toString().replace(/\s\w\s/g, '').split('\n');
             var subReg = /^lib/;
-            var tester = [/^lib\/mobile\/[a-z\-A-Z]+\//, /^lib\/pc\/[a-z\-A-Z]+\//, /^lib\/tb\/[a-z\-A-Z]+\//];
+            var tester = [/^lib\/mobile\/[a-z\-A-Z]+/, /^lib\/pc\/[a-z\-A-Z]+/, /^lib\/tb\/[a-z\-A-Z]+/];
 
             return {
                 v: output.filter(function (value, index) {
