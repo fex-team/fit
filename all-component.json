@@ -66,6 +66,11 @@
             "name": "组件嵌入",
             "path": "render-to",
             "icon": "life-ring"
+          },
+          {
+            "name": "滚动监听",
+            "path": "scroll-listen",
+            "icon": "recycle"
           }
         ],
         "表单": [
