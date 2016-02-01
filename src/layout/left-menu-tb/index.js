@@ -21,12 +21,6 @@ const menu4092ed98e9035652d4c9ca9441701ed7 = [
                         path: '/tb/submit',
                         icon: 'comment'
                     },
-                    
-                    {
-                        title: '顶部蓝条 BlueBar',
-                        path: '/tb/blue-bar',
-                        icon: 'bars'
-                    },
                     ]
 const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                     {
