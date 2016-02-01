@@ -252,9 +252,20 @@ switch (args[0]) {
 
         moduleDistribute((modules, allModules, params) => {
             let diff = getProjectStatus()
-            cleanModulesSync()
+            cleanModulesSync(diff, allModules, params)
+            buildModules(diff).then(() => {
+                patchModulesSync(diff, allModules, params)
+                let newDiff = _.uniq(diff.concat(getProjectStatus()))
+                publishModules(newDiff).then(() => {
+                    commitGit(newDiff)
+                    pushSubModule(pullSubModule(newDiff))
+                }).catch((e) => {
+                    console.log(e.toString())
+                })
+            })
 
-        })
+
+        }, 'patch')
 
 
         break

@@ -222,12 +222,30 @@ switch (args[0]) {
         moduleDistribute(function (modules, allModules, params) {
             cleanModulesSync(modules, allModules, params);
             buildModules(modules).then(function () {
-                console.log(123);
                 patchModulesSync(modules, allModules, params);
                 var diff = _.uniq(modules.concat(getProjectStatus()));
                 publishModules(diff).then(function () {
                     commitGit(diff);
                     pushSubModule(pullSubModule(diff));
+                }).catch(function (e) {
+                    console.log(e.toString());
+                });
+            });
+        }, 'patch');
+
+        break;
+
+    case 'diffpub':
+
+        moduleDistribute(function (modules, allModules, params) {
+            var diff = getProjectStatus();
+            cleanModulesSync(diff, allModules, params);
+            buildModules(diff).then(function () {
+                patchModulesSync(diff, allModules, params);
+                var newDiff = _.uniq(diff.concat(getProjectStatus()));
+                publishModules(newDiff).then(function () {
+                    commitGit(newDiff);
+                    pushSubModule(pullSubModule(newDiff));
                 }).catch(function (e) {
                     console.log(e.toString());
                 });
