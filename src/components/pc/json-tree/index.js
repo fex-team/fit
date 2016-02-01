@@ -11,9 +11,6 @@
                 import '../../../../lib/pc/json-tree/demo'
 
                 
-                        import JsonTreeSource from '../../../../lib/pc/json-tree/src/json-tree'
-                        import JsonTreeSourceCode from 'text!../../../../lib/pc/json-tree/src/json-tree'
-                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/json-tree/demo/lists/basic.js'
@@ -76,10 +73,6 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={JsonTreeSourceCode} instance={JsonTreeSource} />
-                        </div>
-                        
                                 </div>
                             )
                             break
