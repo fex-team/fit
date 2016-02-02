@@ -63,19 +63,25 @@
                                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <BasicComponent/>
+                            <ScrollListenNail>
+                                <BasicComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={ColorMarkdown} code={ColorCode}>
-                            <ColorComponent/>
+                            <ScrollListenNail>
+                                <ColorComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={SizeMarkdown} code={SizeCode}>
-                            <SizeComponent/>
+                            <ScrollListenNail>
+                                <SizeComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     

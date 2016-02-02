@@ -68,31 +68,41 @@
                                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <BasicComponent/>
+                            <ScrollListenNail>
+                                <BasicComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={ControlMarkdown} code={ControlCode}>
-                            <ControlComponent/>
+                            <ScrollListenNail>
+                                <ControlComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={LabelMarkdown} code={LabelCode}>
-                            <LabelComponent/>
+                            <ScrollListenNail>
+                                <LabelComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={SizeMarkdown} code={SizeCode}>
-                            <SizeComponent/>
+                            <ScrollListenNail>
+                                <SizeComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={TypeMarkdown} code={TypeCode}>
-                            <TypeComponent/>
+                            <ScrollListenNail>
+                                <TypeComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     

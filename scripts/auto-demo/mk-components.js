@@ -43,7 +43,9 @@ const mkComponents = (config)=> {
                         layoutString += `
                     <Col span="24" style={colStyle}>
                         <CodeView md={${camelDemoName}Markdown} code={${camelDemoName}Code}>
-                            <${camelDemoName}Component/>
+                            <ScrollListenNail>
+                                <${camelDemoName}Component/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     `

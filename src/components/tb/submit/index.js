@@ -70,25 +70,33 @@
                                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={PostMarkdown} code={PostCode}>
-                            <PostComponent/>
+                            <ScrollListenNail>
+                                <PostComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={ReplyMarkdown} code={ReplyCode}>
-                            <ReplyComponent/>
+                            <ScrollListenNail>
+                                <ReplyComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={CommentMarkdown} code={CommentCode}>
-                            <CommentComponent/>
+                            <ScrollListenNail>
+                                <CommentComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={SingleMarkdown} code={SingleCode}>
-                            <SingleComponent/>
+                            <ScrollListenNail>
+                                <SingleComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     

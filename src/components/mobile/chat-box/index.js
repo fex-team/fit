@@ -67,25 +67,33 @@
                                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <BasicComponent/>
+                            <ScrollListenNail>
+                                <BasicComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={ReverseMarkdown} code={ReverseCode}>
-                            <ReverseComponent/>
+                            <ScrollListenNail>
+                                <ReverseComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={BackBottomMarkdown} code={BackBottomCode}>
-                            <BackBottomComponent/>
+                            <ScrollListenNail>
+                                <BackBottomComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={LoadingMarkdown} code={LoadingCode}>
-                            <LoadingComponent/>
+                            <ScrollListenNail>
+                                <LoadingComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     

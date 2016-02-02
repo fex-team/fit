@@ -59,13 +59,17 @@
                                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <BasicComponent/>
+                            <ScrollListenNail>
+                                <BasicComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={CustomMarkdown} code={CustomCode}>
-                            <CustomComponent/>
+                            <ScrollListenNail>
+                                <CustomComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     

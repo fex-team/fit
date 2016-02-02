@@ -64,25 +64,33 @@
                                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <BasicComponent/>
+                            <ScrollListenNail>
+                                <BasicComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={CallbackMarkdown} code={CallbackCode}>
-                            <CallbackComponent/>
+                            <ScrollListenNail>
+                                <CallbackComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={DurationMarkdown} code={DurationCode}>
-                            <DurationComponent/>
+                            <ScrollListenNail>
+                                <DurationComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     
                     <Col span="24" style={colStyle}>
                         <CodeView md={TypeMarkdown} code={TypeCode}>
-                            <TypeComponent/>
+                            <ScrollListenNail>
+                                <TypeComponent/>
+                            </ScrollListenNail>
                         </CodeView>
                     </Col>
                     

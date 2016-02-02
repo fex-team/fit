@@ -1,12 +1,11 @@
 import React from 'react'
 import Highlight from 'react-highlight'
 import { Collapse, CollPanel } from 'fit-collapse'
-import { ScrollListenNail } from 'fit-scroll-listen'
 import marked from 'marked'
 
 import './index.scss'
 
-export default class Layout extends React.Component {
+export default class CodeView extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -42,8 +41,8 @@ export default class Layout extends React.Component {
 
         return (
             <div className="_namespace" {...this.props}>
-                <ScrollListenNail title={title[1]}
-                                  className="demo-title">{title[1]}</ScrollListenNail>
+                <div title={title[1]}
+                                  className="demo-title">{title[1]}</div>
                 <div className="container">
                     <div className="example-container">
                         {this.props.children}
