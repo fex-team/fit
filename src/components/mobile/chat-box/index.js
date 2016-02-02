@@ -65,37 +65,45 @@
                             Content = (
                                 <Row>
                                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <ScrollListenNail>
-                                <BasicComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={BasicMarkdown} code={BasicCode}>
+
+                                        <BasicComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={ReverseMarkdown} code={ReverseCode}>
-                            <ScrollListenNail>
-                                <ReverseComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(ReverseMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={ReverseMarkdown} code={ReverseCode}>
+
+                                        <ReverseComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={BackBottomMarkdown} code={BackBottomCode}>
-                            <ScrollListenNail>
-                                <BackBottomComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(BackBottomMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={BackBottomMarkdown} code={BackBottomCode}>
+
+                                        <BackBottomComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={LoadingMarkdown} code={LoadingCode}>
-                            <ScrollListenNail>
-                                <LoadingComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(LoadingMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={LoadingMarkdown} code={LoadingCode}>
+
+                                        <LoadingComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
                                 </Row>
                             )

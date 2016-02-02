@@ -159,6 +159,11 @@
       "components": {
         "基本": [
           {
+            "name": "样式重置",
+            "path": "reset",
+            "icon": "eject"
+          },
+          {
             "name": "颜色",
             "path": "color",
             "icon": "columns"

@@ -66,45 +66,55 @@
                             Content = (
                                 <Row>
                                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <ScrollListenNail>
-                                <BasicComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={BasicMarkdown} code={BasicCode}>
+
+                                        <BasicComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={ButtonMarkdown} code={ButtonCode}>
-                            <ScrollListenNail>
-                                <ButtonComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(ButtonMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={ButtonMarkdown} code={ButtonCode}>
+
+                                        <ButtonComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={FilesMarkdown} code={FilesCode}>
-                            <ScrollListenNail>
-                                <FilesComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(FilesMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={FilesMarkdown} code={FilesCode}>
+
+                                        <FilesComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={DragMarkdown} code={DragCode}>
-                            <ScrollListenNail>
-                                <DragComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(DragMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={DragMarkdown} code={DragCode}>
+
+                                        <DragComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={DemoMarkdown} code={DemoCode}>
-                            <ScrollListenNail>
-                                <DemoComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(DemoMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={DemoMarkdown} code={DemoCode}>
+
+                                        <DemoComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
                                 </Row>
                             )

@@ -41,13 +41,15 @@ const mkComponents = (config)=> {
                     `
 
                         layoutString += `
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={${camelDemoName}Markdown} code={${camelDemoName}Code}>
-                            <ScrollListenNail>
-                                <${camelDemoName}Component/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\\s(.*)/g.exec(${camelDemoName}Markdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={${camelDemoName}Markdown} code={${camelDemoName}Code}>
+
+                                        <${camelDemoName}Component/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     `
                     })
                 }

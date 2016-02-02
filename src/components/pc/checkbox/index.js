@@ -70,53 +70,65 @@
                             Content = (
                                 <Row>
                                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <ScrollListenNail>
-                                <BasicComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={BasicMarkdown} code={BasicCode}>
+
+                                        <BasicComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={CallbackMarkdown} code={CallbackCode}>
-                            <ScrollListenNail>
-                                <CallbackComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(CallbackMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={CallbackMarkdown} code={CallbackCode}>
+
+                                        <CallbackComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={CustomMarkdown} code={CustomCode}>
-                            <ScrollListenNail>
-                                <CustomComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(CustomMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={CustomMarkdown} code={CustomCode}>
+
+                                        <CustomComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={DisableMarkdown} code={DisableCode}>
-                            <ScrollListenNail>
-                                <DisableComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(DisableMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={DisableMarkdown} code={DisableCode}>
+
+                                        <DisableComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={LabelMarkdown} code={LabelCode}>
-                            <ScrollListenNail>
-                                <LabelComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(LabelMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={LabelMarkdown} code={LabelCode}>
+
+                                        <LabelComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={SizeMarkdown} code={SizeCode}>
-                            <ScrollListenNail>
-                                <SizeComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(SizeMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={SizeMarkdown} code={SizeCode}>
+
+                                        <SizeComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
                                 </Row>
                             )

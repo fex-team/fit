@@ -68,37 +68,45 @@
                             Content = (
                                 <Row>
                                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={PostMarkdown} code={PostCode}>
-                            <ScrollListenNail>
-                                <PostComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(PostMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={PostMarkdown} code={PostCode}>
+
+                                        <PostComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={ReplyMarkdown} code={ReplyCode}>
-                            <ScrollListenNail>
-                                <ReplyComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(ReplyMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={ReplyMarkdown} code={ReplyCode}>
+
+                                        <ReplyComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={CommentMarkdown} code={CommentCode}>
-                            <ScrollListenNail>
-                                <CommentComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(CommentMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={CommentMarkdown} code={CommentCode}>
+
+                                        <CommentComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={SingleMarkdown} code={SingleCode}>
-                            <ScrollListenNail>
-                                <SingleComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(SingleMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={SingleMarkdown} code={SingleCode}>
+
+                                        <SingleComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
                                 </Row>
                             )

@@ -56,13 +56,15 @@
                             Content = (
                                 <Row>
                                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <ScrollListenNail>
-                                <BasicComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={BasicMarkdown} code={BasicCode}>
+
+                                        <BasicComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
                                 </Row>
                             )

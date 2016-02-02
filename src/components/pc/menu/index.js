@@ -75,45 +75,55 @@
                             Content = (
                                 <Row>
                                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <ScrollListenNail>
-                                <BasicComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={BasicMarkdown} code={BasicCode}>
+
+                                        <BasicComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={ReverseMarkdown} code={ReverseCode}>
-                            <ScrollListenNail>
-                                <ReverseComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(ReverseMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={ReverseMarkdown} code={ReverseCode}>
+
+                                        <ReverseComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={VerticalMarkdown} code={VerticalCode}>
-                            <ScrollListenNail>
-                                <VerticalComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(VerticalMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={VerticalMarkdown} code={VerticalCode}>
+
+                                        <VerticalComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={SubTreeMarkdown} code={SubTreeCode}>
-                            <ScrollListenNail>
-                                <SubTreeComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(SubTreeMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={SubTreeMarkdown} code={SubTreeCode}>
+
+                                        <SubTreeComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={SubTreeVerticalMarkdown} code={SubTreeVerticalCode}>
-                            <ScrollListenNail>
-                                <SubTreeVerticalComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(SubTreeVerticalMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={SubTreeVerticalMarkdown} code={SubTreeVerticalCode}>
+
+                                        <SubTreeVerticalComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
                                 </Row>
                             )

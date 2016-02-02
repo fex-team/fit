@@ -79,53 +79,65 @@
                             Content = (
                                 <Row>
                                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <ScrollListenNail>
-                                <BasicComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={BasicMarkdown} code={BasicCode}>
+
+                                        <BasicComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={RangeMarkdown} code={RangeCode}>
-                            <ScrollListenNail>
-                                <RangeComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(RangeMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={RangeMarkdown} code={RangeCode}>
+
+                                        <RangeComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={ToolbarMarkdown} code={ToolbarCode}>
-                            <ScrollListenNail>
-                                <ToolbarComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(ToolbarMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={ToolbarMarkdown} code={ToolbarCode}>
+
+                                        <ToolbarComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={InputMarkdown} code={InputCode}>
-                            <ScrollListenNail>
-                                <InputComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(InputMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={InputMarkdown} code={InputCode}>
+
+                                        <InputComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={LabelMarkdown} code={LabelCode}>
-                            <ScrollListenNail>
-                                <LabelComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(LabelMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={LabelMarkdown} code={LabelCode}>
+
+                                        <LabelComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={ShowTimeMarkdown} code={ShowTimeCode}>
-                            <ScrollListenNail>
-                                <ShowTimeComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(ShowTimeMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={ShowTimeMarkdown} code={ShowTimeCode}>
+
+                                        <ShowTimeComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
                                 </Row>
                             )

@@ -81,45 +81,55 @@
                             Content = (
                                 <Row>
                                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <ScrollListenNail>
-                                <BasicComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={BasicMarkdown} code={BasicCode}>
+
+                                        <BasicComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={HeaderMarkdown} code={HeaderCode}>
-                            <ScrollListenNail>
-                                <HeaderComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(HeaderMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={HeaderMarkdown} code={HeaderCode}>
+
+                                        <HeaderComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={RightFooterMarkdown} code={RightFooterCode}>
-                            <ScrollListenNail>
-                                <RightFooterComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(RightFooterMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={RightFooterMarkdown} code={RightFooterCode}>
+
+                                        <RightFooterComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={HeaderSectionMarkdown} code={HeaderSectionCode}>
-                            <ScrollListenNail>
-                                <HeaderSectionComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(HeaderSectionMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={HeaderSectionMarkdown} code={HeaderSectionCode}>
+
+                                        <HeaderSectionComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={AllMarkdown} code={AllCode}>
-                            <ScrollListenNail>
-                                <AllComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(AllMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={AllMarkdown} code={AllCode}>
+
+                                        <AllComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
                                 </Row>
                             )

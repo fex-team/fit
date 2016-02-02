@@ -66,45 +66,55 @@
                             Content = (
                                 <Row>
                                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={BasicMarkdown} code={BasicCode}>
-                            <ScrollListenNail>
-                                <BasicComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={BasicMarkdown} code={BasicCode}>
+
+                                        <BasicComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={ControlMarkdown} code={ControlCode}>
-                            <ScrollListenNail>
-                                <ControlComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(ControlMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={ControlMarkdown} code={ControlCode}>
+
+                                        <ControlComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={LabelMarkdown} code={LabelCode}>
-                            <ScrollListenNail>
-                                <LabelComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(LabelMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={LabelMarkdown} code={LabelCode}>
+
+                                        <LabelComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={SizeMarkdown} code={SizeCode}>
-                            <ScrollListenNail>
-                                <SizeComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(SizeMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={SizeMarkdown} code={SizeCode}>
+
+                                        <SizeComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
-                    <Col span="24" style={colStyle}>
-                        <CodeView md={TypeMarkdown} code={TypeCode}>
-                            <ScrollListenNail>
-                                <TypeComponent/>
-                            </ScrollListenNail>
-                        </CodeView>
-                    </Col>
+                        <ScrollListenNail title={/^#\s(.*)/g.exec(TypeMarkdown)[1]}>
+                            <Col span="24" style={colStyle}>
+                                <CodeView md={TypeMarkdown} code={TypeCode}>
+
+                                        <TypeComponent/>
+
+                                </CodeView>
+                            </Col>
+                        </ScrollListenNail>
                     
                                 </Row>
                             )
