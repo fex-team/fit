@@ -2,13 +2,15 @@
                 import React from 'react'
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
-                import { ScrollListenContainer, ScrollListenBox, ScrollListenNail , ScrollListen } from 'fit-scroll-listen'
+                import { ScrollListenBox, ScrollListenNail , ScrollListen, createStore } from 'fit-scroll-listen'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/table/readme.md'
                 import '../../../../lib/pc/table/demo'
+
+                const store = createStore()
 
                 
 
@@ -114,175 +116,175 @@
                             Content = (
                                 <Row>
                                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(DataMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={DataMarkdown} code={DataCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={DataMarkdown}
+                                      code={DataCode}>
 
-                                        <DataComponent/>
+                                    <DataComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(AjaxMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={AjaxMarkdown} code={AjaxCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={AjaxMarkdown}
+                                      code={AjaxCode}>
 
-                                        <AjaxComponent/>
+                                    <AjaxComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(AddMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={AddMarkdown} code={AddCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={AddMarkdown}
+                                      code={AddCode}>
 
-                                        <AddComponent/>
+                                    <AddComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(CustomMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={CustomMarkdown} code={CustomCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={CustomMarkdown}
+                                      code={CustomCode}>
 
-                                        <CustomComponent/>
+                                    <CustomComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(CustomColMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={CustomColMarkdown} code={CustomColCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={CustomColMarkdown}
+                                      code={CustomColCode}>
 
-                                        <CustomColComponent/>
+                                    <CustomColComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(DeleteMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={DeleteMarkdown} code={DeleteCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={DeleteMarkdown}
+                                      code={DeleteCode}>
 
-                                        <DeleteComponent/>
+                                    <DeleteComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(EditMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={EditMarkdown} code={EditCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={EditMarkdown}
+                                      code={EditCode}>
 
-                                        <EditComponent/>
+                                    <EditComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(FieldsMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={FieldsMarkdown} code={FieldsCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={FieldsMarkdown}
+                                      code={FieldsCode}>
 
-                                        <FieldsComponent/>
+                                    <FieldsComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(FindMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={FindMarkdown} code={FindCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={FindMarkdown}
+                                      code={FindCode}>
 
-                                        <FindComponent/>
+                                    <FindComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(MockDeleteMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={MockDeleteMarkdown} code={MockDeleteCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={MockDeleteMarkdown}
+                                      code={MockDeleteCode}>
 
-                                        <MockDeleteComponent/>
+                                    <MockDeleteComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(OutsideMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={OutsideMarkdown} code={OutsideCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={OutsideMarkdown}
+                                      code={OutsideCode}>
 
-                                        <OutsideComponent/>
+                                    <OutsideComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(PaginationMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={PaginationMarkdown} code={PaginationCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={PaginationMarkdown}
+                                      code={PaginationCode}>
 
-                                        <PaginationComponent/>
+                                    <PaginationComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(ResponsiveMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={ResponsiveMarkdown} code={ResponsiveCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={ResponsiveMarkdown}
+                                      code={ResponsiveCode}>
 
-                                        <ResponsiveComponent/>
+                                    <ResponsiveComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(SelectMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={SelectMarkdown} code={SelectCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={SelectMarkdown}
+                                      code={SelectCode}>
 
-                                        <SelectComponent/>
+                                    <SelectComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(SimpleAjaxMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={SimpleAjaxMarkdown} code={SimpleAjaxCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={SimpleAjaxMarkdown}
+                                      code={SimpleAjaxCode}>
 
-                                        <SimpleAjaxComponent/>
+                                    <SimpleAjaxComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(SortMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={SortMarkdown} code={SortCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={SortMarkdown}
+                                      code={SortCode}>
 
-                                        <SortComponent/>
+                                    <SortComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(SortableMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={SortableMarkdown} code={SortableCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={SortableMarkdown}
+                                      code={SortableCode}>
 
-                                        <SortableComponent/>
+                                    <SortableComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
                                 </Row>
                             )
@@ -297,7 +299,7 @@
                         }
 
                         return (
-                            <ScrollListenContainer className="_namespace">
+                            <div className="_namespace">
                                 <Layout>
                                     <Header>
                                         <Title gitlabUrl="http://gitlab.baidu.com/tb-component/pc-table/tree/master"
@@ -305,16 +307,16 @@
                                     </Header>
 
                                     <Section>
-                                        <ScrollListenBox>
+                                        <ScrollListenBox store={store}>
                                             {Content}
                                         </ScrollListenBox>
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        <ScrollListen/>
+                                        <ScrollListen store={store}/>
                                     </Sidebar>
                                 </Layout>
-                            </ScrollListenContainer>
+                            </div>
                         )
                     }
                 }

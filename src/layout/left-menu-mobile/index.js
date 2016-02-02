@@ -5,6 +5,12 @@
         
 const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     {
+                        title: '样式重置 Reset',
+                        path: '/mobile/reset',
+                        icon: 'eject'
+                    },
+                    
+                    {
                         title: '颜色 Color',
                         path: '/mobile/color',
                         icon: 'columns'

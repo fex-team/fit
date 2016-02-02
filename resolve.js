@@ -62,6 +62,8 @@
                 
         // mobile
         
+                'fiten-reset': path.join(__dirname, 'lib/mobile/reset/src'),
+                
                 'fiten-color': path.join(__dirname, 'lib/mobile/color/src'),
                 
                 'fiten-scale': path.join(__dirname, 'lib/mobile/scale/src'),

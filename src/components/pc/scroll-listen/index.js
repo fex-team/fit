@@ -2,7 +2,7 @@
                 import React from 'react'
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
-                import { ScrollListenContainer, ScrollListenBox, ScrollListenNail , ScrollListen } from 'fit-scroll-listen'
+                import { ScrollListenBox, ScrollListenNail , ScrollListen, createStore } from 'fit-scroll-listen'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
@@ -10,10 +10,9 @@
                 import readme from '../../../../lib/pc/scroll-listen/readme.md'
                 import '../../../../lib/pc/scroll-listen/demo'
 
+                const store = createStore()
+
                 
-                        import ScrollListenContainerSource from '../../../../lib/pc/scroll-listen/src/scroll-listen-container'
-                        import ScrollListenContainerSourceCode from 'text!../../../../lib/pc/scroll-listen/src/scroll-listen-container'
-                        
                         import ScrollListenBoxSource from '../../../../lib/pc/scroll-listen/src/scroll-listen-box'
                         import ScrollListenBoxSourceCode from 'text!../../../../lib/pc/scroll-listen/src/scroll-listen-box'
                         
@@ -22,6 +21,9 @@
                         
                         import ScrollListenSource from '../../../../lib/pc/scroll-listen/src/scroll-listen'
                         import ScrollListenSourceCode from 'text!../../../../lib/pc/scroll-listen/src/scroll-listen'
+                        
+                        import createStoreSource from '../../../../lib/pc/scroll-listen/src/create-store'
+                        import createStoreSourceCode from 'text!../../../../lib/pc/scroll-listen/src/create-store'
                         
 
                 
@@ -62,15 +64,15 @@
                             Content = (
                                 <Row>
                                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={BasicMarkdown} code={BasicCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BasicMarkdown}
+                                      code={BasicCode}>
 
-                                        <BasicComponent/>
+                                    <BasicComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
                                 </Row>
                             )
@@ -79,10 +81,6 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={ScrollListenContainerSourceCode} instance={ScrollListenContainerSource} />
-                        </div>
-                        
                         <div style={docStyle}>
                             <CodeDoc code={ScrollListenBoxSourceCode} instance={ScrollListenBoxSource} />
                         </div>
@@ -95,13 +93,17 @@
                             <CodeDoc code={ScrollListenSourceCode} instance={ScrollListenSource} />
                         </div>
                         
+                        <div style={docStyle}>
+                            <CodeDoc code={createStoreSourceCode} instance={createStoreSource} />
+                        </div>
+                        
                                 </div>
                             )
                             break
                         }
 
                         return (
-                            <ScrollListenContainer className="_namespace">
+                            <div className="_namespace">
                                 <Layout>
                                     <Header>
                                         <Title gitlabUrl="http://gitlab.baidu.com/tb-component/pc-scroll-listen/tree/master"
@@ -109,16 +111,16 @@
                                     </Header>
 
                                     <Section>
-                                        <ScrollListenBox>
+                                        <ScrollListenBox store={store}>
                                             {Content}
                                         </ScrollListenBox>
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        <ScrollListen/>
+                                        <ScrollListen store={store}/>
                                     </Sidebar>
                                 </Layout>
-                            </ScrollListenContainer>
+                            </div>
                         )
                     }
                 }

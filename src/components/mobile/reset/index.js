@@ -7,17 +7,17 @@
                 import CodeDoc from '../../../../components/code-doc'
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
-                import readme from '../../../../lib/tb/track/readme.md'
-                import '../../../../lib/tb/track/demo'
+                import readme from '../../../../lib/mobile/reset/readme.md'
+                import '../../../../lib/mobile/reset/demo'
 
                 const store = createStore()
 
                 
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/track/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/tb/track/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/tb/track/demo/lists/basic.md'
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/reset/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/mobile/reset/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/mobile/reset/demo/lists/basic.md'
                     
 
                 const colStyle = {
@@ -35,7 +35,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = '日志请求'
+                        document.title = '样式重置'
                     }
 
                     handlePageChange(value) {
@@ -78,7 +78,7 @@
                             <div className="_namespace">
                                 <Layout>
                                     <Header>
-                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/tb-track/tree/master"
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/mobile-reset/tree/master"
                                                onChange={this.handlePageChange.bind(this)}>{readme}</Title>
                                     </Header>
 

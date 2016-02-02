@@ -67,6 +67,8 @@
                 
         // mobile
         
+                import fitenResetComponent from './components/mobile/reset'
+                
                 import fitenColorComponent from './components/mobile/color'
                 
                 import fitenScaleComponent from './components/mobile/scale'
@@ -190,6 +192,9 @@
                component={Layout}>
             <IndexRoute component={mobileHome}/>
         
+                <Route path="reset"
+                       component={fitenResetComponent}/>
+                
                 <Route path="color"
                        component={fitenColorComponent}/>
                 

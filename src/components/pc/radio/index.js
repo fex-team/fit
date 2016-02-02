@@ -2,13 +2,15 @@
                 import React from 'react'
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
-                import { ScrollListenContainer, ScrollListenBox, ScrollListenNail , ScrollListen } from 'fit-scroll-listen'
+                import { ScrollListenBox, ScrollListenNail , ScrollListen, createStore } from 'fit-scroll-listen'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/pc/radio/readme.md'
                 import '../../../../lib/pc/radio/demo'
+
+                const store = createStore()
 
                 
                         import RadioSource from '../../../../lib/pc/radio/src/radio'
@@ -87,85 +89,85 @@
                             Content = (
                                 <Row>
                                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={BasicMarkdown} code={BasicCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BasicMarkdown}
+                                      code={BasicCode}>
 
-                                        <BasicComponent/>
+                                    <BasicComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(ButtonMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={ButtonMarkdown} code={ButtonCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={ButtonMarkdown}
+                                      code={ButtonCode}>
 
-                                        <ButtonComponent/>
+                                    <ButtonComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(CallbackMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={CallbackMarkdown} code={CallbackCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={CallbackMarkdown}
+                                      code={CallbackCode}>
 
-                                        <CallbackComponent/>
+                                    <CallbackComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(CustomMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={CustomMarkdown} code={CustomCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={CustomMarkdown}
+                                      code={CustomCode}>
 
-                                        <CustomComponent/>
+                                    <CustomComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(DisableMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={DisableMarkdown} code={DisableCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={DisableMarkdown}
+                                      code={DisableCode}>
 
-                                        <DisableComponent/>
+                                    <DisableComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(GroupMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={GroupMarkdown} code={GroupCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={GroupMarkdown}
+                                      code={GroupCode}>
 
-                                        <GroupComponent/>
+                                    <GroupComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(LabelMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={LabelMarkdown} code={LabelCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={LabelMarkdown}
+                                      code={LabelCode}>
 
-                                        <LabelComponent/>
+                                    <LabelComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(SizeMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={SizeMarkdown} code={SizeCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={SizeMarkdown}
+                                      code={SizeCode}>
 
-                                        <SizeComponent/>
+                                    <SizeComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
                                 </Row>
                             )
@@ -192,7 +194,7 @@
                         }
 
                         return (
-                            <ScrollListenContainer className="_namespace">
+                            <div className="_namespace">
                                 <Layout>
                                     <Header>
                                         <Title gitlabUrl="http://gitlab.baidu.com/tb-component/pc-radio/tree/master"
@@ -200,16 +202,16 @@
                                     </Header>
 
                                     <Section>
-                                        <ScrollListenBox>
+                                        <ScrollListenBox store={store}>
                                             {Content}
                                         </ScrollListenBox>
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        <ScrollListen/>
+                                        <ScrollListen store={store}/>
                                     </Sidebar>
                                 </Layout>
-                            </ScrollListenContainer>
+                            </div>
                         )
                     }
                 }

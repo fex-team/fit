@@ -2,13 +2,15 @@
                 import React from 'react'
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
-                import { ScrollListenContainer, ScrollListenBox, ScrollListenNail , ScrollListen } from 'fit-scroll-listen'
+                import { ScrollListenBox, ScrollListenNail , ScrollListen, createStore } from 'fit-scroll-listen'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/tb/submit/readme.md'
                 import '../../../../lib/tb/submit/demo'
+
+                const store = createStore()
 
                 
                         import SubmitSource from '../../../../lib/tb/submit/src/submit'
@@ -68,45 +70,45 @@
                             Content = (
                                 <Row>
                                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(PostMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={PostMarkdown} code={PostCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={PostMarkdown}
+                                      code={PostCode}>
 
-                                        <PostComponent/>
+                                    <PostComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(ReplyMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={ReplyMarkdown} code={ReplyCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={ReplyMarkdown}
+                                      code={ReplyCode}>
 
-                                        <ReplyComponent/>
+                                    <ReplyComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(CommentMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={CommentMarkdown} code={CommentCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={CommentMarkdown}
+                                      code={CommentCode}>
 
-                                        <CommentComponent/>
+                                    <CommentComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(SingleMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={SingleMarkdown} code={SingleCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={SingleMarkdown}
+                                      code={SingleCode}>
 
-                                        <SingleComponent/>
+                                    <SingleComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
                                 </Row>
                             )
@@ -129,7 +131,7 @@
                         }
 
                         return (
-                            <ScrollListenContainer className="_namespace">
+                            <div className="_namespace">
                                 <Layout>
                                     <Header>
                                         <Title gitlabUrl="http://gitlab.baidu.com/tb-component/tb-submit/tree/master"
@@ -137,16 +139,16 @@
                                     </Header>
 
                                     <Section>
-                                        <ScrollListenBox>
+                                        <ScrollListenBox store={store}>
                                             {Content}
                                         </ScrollListenBox>
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        <ScrollListen/>
+                                        <ScrollListen store={store}/>
                                     </Sidebar>
                                 </Layout>
-                            </ScrollListenContainer>
+                            </div>
                         )
                     }
                 }

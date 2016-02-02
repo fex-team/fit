@@ -2,13 +2,15 @@
                 import React from 'react'
                 import CodeView from '../../../../components/code-view'
                 import Highlight from 'react-highlight'
-                import { ScrollListenContainer, ScrollListenBox, ScrollListenNail , ScrollListen } from 'fit-scroll-listen'
+                import { ScrollListenBox, ScrollListenNail , ScrollListen, createStore } from 'fit-scroll-listen'
                 import { Row, Col } from 'fit-layout'
                 import CodeDoc from '../../../../components/code-doc'
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import readme from '../../../../lib/mobile/chat-box/readme.md'
                 import '../../../../lib/mobile/chat-box/demo'
+
+                const store = createStore()
 
                 
                         import ChatBoxSource from '../../../../lib/mobile/chat-box/src/chat-box'
@@ -65,45 +67,45 @@
                             Content = (
                                 <Row>
                                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(BasicMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={BasicMarkdown} code={BasicCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BasicMarkdown}
+                                      code={BasicCode}>
 
-                                        <BasicComponent/>
+                                    <BasicComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(ReverseMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={ReverseMarkdown} code={ReverseCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={ReverseMarkdown}
+                                      code={ReverseCode}>
 
-                                        <ReverseComponent/>
+                                    <ReverseComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(BackBottomMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={BackBottomMarkdown} code={BackBottomCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BackBottomMarkdown}
+                                      code={BackBottomCode}>
 
-                                        <BackBottomComponent/>
+                                    <BackBottomComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
-                        <ScrollListenNail title={/^#\s(.*)/g.exec(LoadingMarkdown)[1]}>
-                            <Col span="24" style={colStyle}>
-                                <CodeView md={LoadingMarkdown} code={LoadingCode}>
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={LoadingMarkdown}
+                                      code={LoadingCode}>
 
-                                        <LoadingComponent/>
+                                    <LoadingComponent/>
 
-                                </CodeView>
-                            </Col>
-                        </ScrollListenNail>
+                            </CodeView>
+                        </Col>
                     
                                 </Row>
                             )
@@ -122,7 +124,7 @@
                         }
 
                         return (
-                            <ScrollListenContainer className="_namespace">
+                            <div className="_namespace">
                                 <Layout>
                                     <Header>
                                         <Title gitlabUrl="http://gitlab.baidu.com/tb-component/mobile-chat-box/tree/master"
@@ -130,16 +132,16 @@
                                     </Header>
 
                                     <Section>
-                                        <ScrollListenBox>
+                                        <ScrollListenBox store={store}>
                                             {Content}
                                         </ScrollListenBox>
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        <ScrollListen/>
+                                        <ScrollListen store={store}/>
                                     </Sidebar>
                                 </Layout>
-                            </ScrollListenContainer>
+                            </div>
                         )
                     }
                 }
