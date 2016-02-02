@@ -1,0 +1,25 @@
+body, dl, dd, dt, ul, div, html, p, form {
+  margin: 0;
+  padding: 0; }
+
+html {
+  background-color: #ffffff;
+  -webkit-text-size-adjust: none; }
+
+body {
+  line-height: 130%;
+  font-size: 14px;
+  font-family: arial;
+  word-wrap: break-word;
+  background: #fafbfc;
+  position: relative; }
+
+ul, li {
+  list-style: none; }
+
+a {
+  color: #3361a7;
+  text-decoration: none; }
+
+img {
+  border: none; }
