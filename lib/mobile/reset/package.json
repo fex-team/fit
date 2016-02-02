@@ -1,6 +1,6 @@
 {
   "name": "fiten-reset",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "样式重置",
   "main": "lib/index.js",
   "scripts": {
