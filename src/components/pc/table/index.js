@@ -79,10 +79,6 @@
                     import SortCode from 'text!../../../../lib/pc/table/demo/lists/sort.js'
                     import SortMarkdown from '../../../../lib/pc/table/demo/lists/sort.md'
                     
-                    import SortableComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/sortable.js'
-                    import SortableCode from 'text!../../../../lib/pc/table/demo/lists/sortable.js'
-                    import SortableMarkdown from '../../../../lib/pc/table/demo/lists/sortable.md'
-                    
 
                 const colStyle = {
                     padding: 10
@@ -272,16 +268,6 @@
                                       code={SortCode}>
 
                                     <SortComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={SortableMarkdown}
-                                      code={SortableCode}>
-
-                                    <SortableComponent/>
 
                             </CodeView>
                         </Col>
