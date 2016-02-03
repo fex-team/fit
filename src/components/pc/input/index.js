@@ -19,6 +19,10 @@
                     import BasicCode from 'text!../../../../lib/pc/input/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/input/demo/lists/basic.md'
                     
+                    import DefaultComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/default.js'
+                    import DefaultCode from 'text!../../../../lib/pc/input/demo/lists/default.js'
+                    import DefaultMarkdown from '../../../../lib/pc/input/demo/lists/default.md'
+                    
                     import CallbackComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/callback.js'
                     import CallbackCode from 'text!../../../../lib/pc/input/demo/lists/callback.js'
                     import CallbackMarkdown from '../../../../lib/pc/input/demo/lists/callback.md'
@@ -78,6 +82,16 @@
                                       code={BasicCode}>
 
                                     <BasicComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={DefaultMarkdown}
+                                      code={DefaultCode}>
+
+                                    <DefaultComponent/>
 
                             </CodeView>
                         </Col>

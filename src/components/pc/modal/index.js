@@ -22,6 +22,10 @@
                     import BasicCode from 'text!../../../../lib/pc/modal/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/modal/demo/lists/basic.md'
                     
+                    import RenderComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/modal/demo/lists/render.js'
+                    import RenderCode from 'text!../../../../lib/pc/modal/demo/lists/render.js'
+                    import RenderMarkdown from '../../../../lib/pc/modal/demo/lists/render.md'
+                    
                     import CustomComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/modal/demo/lists/custom.js'
                     import CustomCode from 'text!../../../../lib/pc/modal/demo/lists/custom.js'
                     import CustomMarkdown from '../../../../lib/pc/modal/demo/lists/custom.md'
@@ -65,6 +69,16 @@
                                       code={BasicCode}>
 
                                     <BasicComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={RenderMarkdown}
+                                      code={RenderCode}>
+
+                                    <RenderComponent/>
 
                             </CodeView>
                         </Col>
