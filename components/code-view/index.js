@@ -45,7 +45,7 @@ export default class CodeView extends React.Component {
                 <ScrollListenNail store={this.props.store}
                                   title={title[1]}
                                   className="demo-title">{title[1]}</ScrollListenNail>
-                <div className="container">
+                <div className="code-container">
                     <div className="example-container">
                         {this.props.children}
                     </div>
