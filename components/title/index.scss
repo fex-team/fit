@@ -23,6 +23,7 @@ pre {
   width: 121px;
   div, a {
     flex-grow: 1;
+    height: 0;
     display: flex;
     justify-content: center;
     align-items: center;

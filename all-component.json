@@ -149,6 +149,11 @@
             "name": "内嵌网页",
             "path": "iframe",
             "icon": "sticky-note"
+          },
+          {
+            "name": "图像裁剪",
+            "path": "cropper",
+            "icon": "cut"
           }
         ]
       }

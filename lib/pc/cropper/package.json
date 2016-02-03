@@ -1,0 +1,21 @@
+{
+  "name": "fit-cropper",
+  "version": "0.0.1",
+  "description": "cropper",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/pc-cropper.git"
+  },
+  "keywords": [
+    "tieba"
+  ],
+  "author": "tieba",
+  "license": "ISC",
+  "dependencies": {
+    "cropperjs": "^0.5.6"
+  }
+}

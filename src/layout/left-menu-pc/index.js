@@ -170,6 +170,12 @@ const menu5a0afc9dbd6c2e98769d4620d4fb5b13 = [
                         path: '/pc/iframe',
                         icon: 'sticky-note'
                     },
+                    
+                    {
+                        title: '图像裁剪 Cropper',
+                        path: '/pc/cropper',
+                        icon: 'cut'
+                    },
                     ]
 
         export default class Layout extends React.Component {

@@ -65,6 +65,8 @@
                 
                 import fitIframeComponent from './components/pc/iframe'
                 
+                import fitCropperComponent from './components/pc/cropper'
+                
         // mobile
         
                 import fitenResetComponent from './components/mobile/reset'
@@ -185,6 +187,9 @@
                 
                 <Route path="iframe"
                        component={fitIframeComponent}/>
+                
+                <Route path="cropper"
+                       component={fitCropperComponent}/>
                 
         </Route>
         

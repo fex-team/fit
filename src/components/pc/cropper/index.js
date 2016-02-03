@@ -7,24 +7,20 @@
                 import CodeDoc from '../../../../components/code-doc'
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
-                import readme from '../../../../lib/pc/json-tree/readme.md'
-                import '../../../../lib/pc/json-tree/demo'
+                import readme from '../../../../lib/pc/cropper/readme.md'
+                import '../../../../lib/pc/cropper/demo'
 
                 const store = createStore()
 
                 
-                        import JsonTreeSource from '../../../../lib/pc/json-tree/src/json-tree'
-                        import JsonTreeSourceCode from 'text!../../../../lib/pc/json-tree/src/json-tree'
+                        import CropperSource from '../../../../lib/pc/cropper/src/cropper'
+                        import CropperSourceCode from 'text!../../../../lib/pc/cropper/src/cropper'
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/json-tree/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/pc/json-tree/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/pc/json-tree/demo/lists/basic.md'
-                    
-                    import RootComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/json-tree/demo/lists/root.js'
-                    import RootCode from 'text!../../../../lib/pc/json-tree/demo/lists/root.js'
-                    import RootMarkdown from '../../../../lib/pc/json-tree/demo/lists/root.md'
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/cropper/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/cropper/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/cropper/demo/lists/basic.md'
                     
 
                 const colStyle = {
@@ -42,7 +38,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = 'JSON树'
+                        document.title = '图像裁剪'
                     }
 
                     handlePageChange(value) {
@@ -69,16 +65,6 @@
                             </CodeView>
                         </Col>
                     
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={RootMarkdown}
-                                      code={RootCode}>
-
-                                    <RootComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
                                 </Row>
                             )
                             break
@@ -87,7 +73,7 @@
                                 <div>
                                     
                         <div style={docStyle}>
-                            <CodeDoc code={JsonTreeSourceCode} instance={JsonTreeSource} />
+                            <CodeDoc code={CropperSourceCode} instance={CropperSource} />
                         </div>
                         
                                 </div>
@@ -99,7 +85,7 @@
                             <div className="_namespace">
                                 <Layout>
                                     <Header>
-                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/pc-json-tree/tree/master"
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/pc-cropper/tree/master"
                                                onChange={this.handlePageChange.bind(this)}>{readme}</Title>
                                     </Header>
 

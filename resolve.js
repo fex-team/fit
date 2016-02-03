@@ -60,6 +60,8 @@
                 
                 'fit-iframe': path.join(__dirname, 'lib/pc/iframe/src'),
                 
+                'fit-cropper': path.join(__dirname, 'lib/pc/cropper/src'),
+                
         // mobile
         
                 'fiten-reset': path.join(__dirname, 'lib/mobile/reset/src'),
