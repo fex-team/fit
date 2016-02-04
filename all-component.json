@@ -215,7 +215,13 @@
             "name": "顶部蓝条",
             "path": "blue-bar",
             "icon": "bars"
+          },
+          {
+            "name": "上传",
+            "path": "upload",
+            "icon": "upload"
           }
+
         ],
         "展示": [
           {
