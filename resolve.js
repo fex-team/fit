@@ -84,6 +84,8 @@
                 
                 'tb-blue-bar': path.join(__dirname, 'lib/tb/blue-bar/src'),
                 
+                'tb-upload': path.join(__dirname, 'lib/tb/upload/src'),
+                
                 'tb-icon': path.join(__dirname, 'lib/tb/icon/src'),
                 
                 'tb-emoji': path.join(__dirname, 'lib/tb/emoji/src'),

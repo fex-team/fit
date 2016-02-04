@@ -21,6 +21,12 @@ const menu4092ed98e9035652d4c9ca9441701ed7 = [
                         path: '/tb/submit',
                         icon: 'comment'
                     },
+                    
+                    {
+                        title: '上传 Upload',
+                        path: '/tb/upload',
+                        icon: 'upload'
+                    },
                     ]
 const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                     {

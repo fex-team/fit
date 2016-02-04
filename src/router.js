@@ -87,6 +87,8 @@
                 
                 import tbSubmitComponent from './components/tb/submit'
                 
+                import tbUploadComponent from './components/tb/upload'
+                
                 import tbIconComponent from './components/tb/icon'
                 
                 import tbEmojiComponent from './components/tb/emoji'
@@ -226,6 +228,9 @@
                 
                 <Route path="submit"
                        component={tbSubmitComponent}/>
+                
+                <Route path="upload"
+                       component={tbUploadComponent}/>
                 
                 <Route path="icon"
                        component={tbIconComponent}/>

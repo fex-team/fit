@@ -118,3 +118,6 @@
 [submodule "lib/pc/scroll-listen"]
 	path = lib/pc/scroll-listen
 	url = ssh://g@gitlab.baidu.com:8022/tb-component/pc-scroll-listen.git
+[submodule "lib/tb/upload"]
+	path = lib/tb/upload
+	url = ssh://g@gitlab.baidu.com:8022/tb-component/tb-upload.git
