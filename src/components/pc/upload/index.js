@@ -13,6 +13,9 @@
                 const store = createStore()
 
                 
+                        import UploadSource from '../../../../lib/pc/upload/src/upload'
+                        import UploadSourceCode from 'text!../../../../lib/pc/upload/src/upload'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/upload/demo/lists/basic.js'
@@ -125,6 +128,10 @@
                             Content = (
                                 <div>
                                     
+                        <div style={docStyle}>
+                            <CodeDoc code={UploadSourceCode} instance={UploadSource} />
+                        </div>
+                        
                                 </div>
                             )
                             break

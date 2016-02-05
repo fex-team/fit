@@ -2,9 +2,9 @@
 
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
-function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var fs = require('fs');
 var path = require('path');
@@ -481,7 +481,7 @@ function checkGitInPackageJSON(filePath) {
 
 function getProjectStatus() {
     try {
-        var _ret = (function () {
+        var _ret = function () {
             var output = execSync('git status --porcelain').toString().replace(/\s\w\s/g, '').split('\n');
             var subReg = /^lib/;
             var tester = [/^lib\/mobile\/[a-z\-A-Z]+/, /^lib\/pc\/[a-z\-A-Z]+/, /^lib\/tb\/[a-z\-A-Z]+/];
@@ -497,7 +497,7 @@ function getProjectStatus() {
                     return path.resolve(root, value.split('/').slice(0, 3).join('/'));
                 })
             };
-        })();
+        }();
 
         if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
     } catch (e) {
