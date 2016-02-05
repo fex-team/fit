@@ -1,0 +1,13 @@
+.lib-pc-button-lib-button {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s; }
+
+.lib-pc-button-lib-button .loading-container {
+  -webkit-transition: width .3s;
+  transition: width .3s;
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  overflow: hidden; }
+  .lib-pc-button-lib-button .loading-container.show {
+    width: 16px; }

@@ -1,0 +1,16 @@
+._global {
+  .src-components-pc-layout-global {
+    .example-container > div {
+      height: 400px;
+      position: relative;
+      & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(24, 115, 216, 0.7);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #fff;
+      }
+    }
+  }
+}

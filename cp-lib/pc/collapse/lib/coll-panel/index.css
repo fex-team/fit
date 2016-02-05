@@ -1,0 +1,25 @@
+.lib-pc-collapse-lib-coll-panel {
+  background-color: #fff;
+  border: 1px solid #dee5e7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+  .lib-pc-collapse-lib-coll-panel.panel-default:not(:first-child) {
+    border-top: none; }
+
+.lib-pc-collapse-lib-coll-panel .panel-collapse {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  overflow: hidden;
+  height: 0; }
+
+.lib-pc-collapse-lib-coll-panel .panel-heading {
+  border-color: #edf1f2;
+  padding: 10px;
+  background-color: #f6f8f8;
+  cursor: pointer; }
+
+.lib-pc-collapse-lib-coll-panel .rotate-pre {
+  -webkit-transition: all .3s;
+  transition: all .3s; }
+  .lib-pc-collapse-lib-coll-panel .rotate-pre.rotate {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }

@@ -1,0 +1,15 @@
+{
+  "name": "tb-time",
+  "version": "1.0.8",
+  "description": "转换时间",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/tb-time.git"
+  },
+  "author": "tieba",
+  "license": "ISC"
+}

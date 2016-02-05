@@ -1,0 +1,38 @@
+.lib-pc-phone-lib-phone {
+  position: relative;
+  overflow: hidden;
+  background: black;
+  border-radius: 55px;
+  box-shadow: 0 0 0 2px #333;
+  height: 700px;
+  padding: 105px 25px; }
+  .lib-pc-phone-lib-phone:before {
+    content: '';
+    width: 60px;
+    height: 10px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    background: #333;
+    top: 50px; }
+  .lib-pc-phone-lib-phone:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 20px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 5px solid #333; }
+  .lib-pc-phone-lib-phone .phone-content {
+    height: 460px;
+    background: whitesmoke;
+    overflow-y: auto;
+    overflow-x: hidden; }
+  .lib-pc-phone-lib-phone .status-bar {
+    width: 100%;
+    left: 50%;
+    top: 100px; }

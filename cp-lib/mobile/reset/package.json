@@ -1,0 +1,15 @@
+{
+  "name": "fiten-reset",
+  "version": "1.0.3",
+  "description": "样式重置",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/mobile-reset.git"
+  },
+  "author": "huangziyi01",
+  "license": "ISC"
+}

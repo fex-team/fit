@@ -1,0 +1,14 @@
+{
+  "name": "tb-share",
+  "version": "1.0.2",
+  "description": "字体图标",
+  "main": "lib/index.js",
+  "author": "huangziyi01",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.1",
+    "fit-render-to": "^1.0.0",
+    "tb-track": "^1.0.2",
+    "jquery": "^2.1.4"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "fit-tree",
+  "version": "0.0.21",
+  "description": "tree",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/pc-tree.git"
+  },
+  "keywords": [
+    "tieba"
+  ],
+  "author": "tieba",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.3"
+  }
+}

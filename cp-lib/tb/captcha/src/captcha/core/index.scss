@@ -1,0 +1,217 @@
+& {
+  background: white;
+  position: relative;
+}
+
+// 输入框标题
+.input-label {
+  height: 30px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+  color: #999;
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+// 显示已输入汉字的4个格子
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  .input-box {
+    width: 230px;
+    height: 45px;
+    border: 1px solid #cacbcc;
+    border-right: none;
+    background: #fff;
+    // 占位框
+    .placeholder {
+      float: left;
+      width: 45px;
+      height: 45px;
+      border-left: 1px solid #cacbcc;
+      &:first-child {
+        border: none;
+      }
+      &:last-child {
+        border-right: 1px solid #cacbcc;
+      }
+    }
+  }
+  // 撤销输入按钮
+  .delete-btn {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #f5f5f5;
+    .img {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: #cacbcc;
+      margin-top: 13px;
+      position: absolute;
+      right: 12px;
+      border-radius: 1px;
+      &:before {
+        content: "+";
+        left: 9px;
+        top: 0;
+        height: 0;
+        color: white;
+        font-size: 22px;
+        font-family: arial;
+        -webkit-transform: rotate(45deg);
+        position: absolute;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        left: -16px;
+        border: 8px solid;
+        border-color: transparent #cacbcc transparent transparent;
+      }
+    }
+  }
+}
+
+// 目标验证码图片
+.target-img {
+  width: 231px;
+  height: 60px;
+  margin: 10px auto 0 auto;
+  -webkit-tap-highlight-color: black;
+  background-position: 0px 0px;
+  background-color: #efefef;
+  background-size: 231px 280px;
+}
+
+// 九宫格
+.grid-conatiner {
+  margin-top: 20px;
+  clear: both;
+  // 行
+  .line {
+    display: flex;
+    &:first-child {
+      border-top: 1px solid #cfd2d8;
+    }
+  }
+  // 按键
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: 70px;
+    border: 1px solid #cfd2d8;
+    border-top: none;
+    text-align: center;
+    transition-duration: .3s;
+    &.active {
+      background: #F3F3F3;
+    }
+    &:not(:first-child) {
+      border-left: none;
+    }
+  }
+  // 图片
+  .img {
+    display: inline-block;
+    background-size: 240px 320px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+// 九宫格图片定位
+.vbp-0 {
+  background-position: -24px -77px;
+}
+
+.vbp-1 {
+  background-position: -111px -92px;
+}
+
+.vbp-2 {
+  background-position: -184px -90px;
+}
+
+.vbp-3 {
+  background-position: -19px -156px;
+}
+
+.vbp-4 {
+  background-position: -89px -168px;
+}
+
+.vbp-5 {
+  background-position: -179px -166px;
+}
+
+.vbp-6 {
+  background-position: -21px -246px;
+}
+
+.vbp-7 {
+  background-position: -96px -243px;
+}
+
+.vbp-8 {
+  background-position: -181px -247px;
+}
+
+// 缩略图九宫格定位
+.small-img {
+  background-size: 180px 240px;
+}
+
+.vbp-small-0 {
+  background-position: -18px -57px;
+}
+
+.vbp-small-1 {
+  background-position: -83px -69px;
+}
+
+.vbp-small-2 {
+  background-position: -137px -65px;
+}
+
+.vbp-small-3 {
+  background-position: -16px -118px;
+}
+
+.vbp-small-4 {
+  background-position: -67px -123px;
+}
+
+.vbp-small-5 {
+  background-position: -133px -125px;
+}
+
+.vbp-small-6 {
+  background-position: -15px -182px;
+}
+
+.vbp-small-7 {
+  background-position: -70px -183px;
+}
+
+.vbp-small-8 {
+  background-position: -135px -181px;
+}
+
+// 加载中
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 396px;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: white;
+  opacity: .6;
+}

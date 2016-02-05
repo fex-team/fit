@@ -1,0 +1,17 @@
+.lib-pc-menu-lib-menu {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05); }
+  .lib-pc-menu-lib-menu.inverse {
+    background-color: #3a3f51;
+    color: #b4b6bd; }
+  .lib-pc-menu-lib-menu.vertical {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }

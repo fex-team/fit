@@ -1,0 +1,11 @@
+{
+  "name": "tb-emoji",
+  "version": "1.0.2",
+  "description": "表情库",
+  "main": "lib/index.js",
+  "author": "huangziyi01",
+  "license": "ISC",
+  "dependencies": {
+    "superagent": "^1.6.1"
+  }
+}

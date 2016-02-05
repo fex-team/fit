@@ -1,0 +1,14 @@
+& {
+  transition: opacity .3s;
+}
+
+.loading-container {
+  transition: width .3s;
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  overflow: hidden;
+  &.show {
+    width: 16px;
+  }
+}
