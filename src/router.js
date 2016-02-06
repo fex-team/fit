@@ -4,9 +4,13 @@
         import { createHistory, useBasename } from 'history'
 
         import Layout from './layout'
-        import pcHome from '../lib/pc'
-        import tbHome from '../lib/tb'
-        import mobileHome from '../lib/mobile'
+        
+        import pcHome from '../category-home/pc.js'
+        
+        import mobileHome from '../category-home/mobile.js'
+        
+        import tbHome from '../category-home/tb.js'
+        
 
         
         // pc

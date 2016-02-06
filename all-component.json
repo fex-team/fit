@@ -139,6 +139,11 @@
         ],
         "样式": [
           {
+            "name": "基础样式库",
+            "path": "style",
+            "icon": "eject"
+          },
+          {
             "name": "手机壳",
             "path": "phone",
             "icon": "mobile"
@@ -238,12 +243,5 @@
       }
     },
     "oxp": {}
-  },
-  "resolve": [
-    {
-      "dir": "pc",
-      "prefix": "fit",
-      "path": "style"
-    }
-  ]
+  }
 }
