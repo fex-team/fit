@@ -1,6 +1,6 @@
 import fs from 'fs'
 import _ from 'lodash'
-import getDemoArray from './untils/get-demo-array'
+import getDemoArray from './utils/get-demo-array'
 
 const mkRouter = (categorys)=> {
     let routerPath = ''
@@ -16,7 +16,7 @@ const mkRouter = (categorys)=> {
         // oxp 暂时没有
         if (categoryKey === 'oxp')continue
 
-        homeImport += `import pcHome from '../lib/${categoryKey}'`
+        homeImport += `import ${categoryKey}Home from '../category-home/${categoryKey}.js'`
 
         routerComponent += `
         <Route path="/${categoryKey}"
@@ -57,9 +57,7 @@ const mkRouter = (categorys)=> {
         import { createHistory, useBasename } from 'history'
 
         import Layout from './layout'
-        import pcHome from '../lib/pc'
-        import tbHome from '../lib/tb'
-        import mobileHome from '../lib/mobile'
+        ${homeImport}
 
         ${routerPath}
 

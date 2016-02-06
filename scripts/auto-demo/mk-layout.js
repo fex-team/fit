@@ -2,7 +2,7 @@ import fs from 'fs'
 import md5 from 'md5'
 import _ from 'lodash'
 import mkdirp from 'mkdirp'
-import getDemoArray from './untils/get-demo-array'
+import getDemoArray from './utils/get-demo-array'
 
 const mkLayout = (categorys)=> {
     for (let categoryKey in categorys) {

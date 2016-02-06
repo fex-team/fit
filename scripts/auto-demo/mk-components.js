@@ -2,8 +2,8 @@ import fs from 'fs'
 import mkdirp from 'mkdirp'
 import readDirFiles from 'read-dir-files'
 import _ from 'lodash'
-import getDemoArray from './untils/get-demo-array'
-import getDocArray from './untils/get-doc-array'
+import getDemoArray from './utils/get-demo-array'
+import getDocArray from './utils/get-doc-array'
 
 const mkComponents = (config)=> {
     const categorys = config.categorys
