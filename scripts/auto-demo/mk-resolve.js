@@ -21,14 +21,16 @@ const mkResolve = (config)=> {
     }
 
     // 附加模块
-    resolvePath += `
-    // custom
-    `
-    config.resolve.map((item)=> {
+    if (config.resolve) {
         resolvePath += `
+        // custom
+        `
+        config.resolve.map((item)=> {
+            resolvePath += `
         '${item.prefix}-${item.path}': path.join(__dirname, 'lib/${item.dir}/${item.path}/src'),
                 `
-    })
+        })
+    }
 
     let text = `
     var path = require('path')

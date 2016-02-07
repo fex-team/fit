@@ -94,10 +94,6 @@
                 
         // oxp
         
-    // custom
-    
-        'fit-style': path.join(__dirname, 'lib/pc/style/src'),
-                
         },
         extensions: ['', '.js', '.jsx', '.tsx', '.ts', 'coffee', '.cjsx', '.es6']
     }
