@@ -1,5 +1,8 @@
+var webpack = require('webpack')
 var resolve = require('./resolve')
 var externals = require('./externals')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var extractSCSS = new ExtractTextPlugin('style.css')
 
 module.exports = {
     entry: [
@@ -31,12 +34,12 @@ module.exports = {
             }, {
                 test: /\.(scss|css)/,
                 exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
-                loaders: ['style', 'css', 'autoprefixer', 'sass', 'css-path-loader']
+                loader: extractSCSS.extract('style', 'css!autoprefixer!sass!css-path-loader')
             },
             {
                 test: /\.(scss|css)/,
                 include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
-                loaders: ['style', 'css', 'autoprefixer', 'sass']
+                loader: extractSCSS.extract('style', 'css!autoprefixer!sass')
             }, {
                 test: /\.(png|jpg)$/,
                 exclude: /node_modules/,
@@ -54,5 +57,14 @@ module.exports = {
         ]
     },
 
-    resolve: resolve
-};
+    resolve: resolve,
+
+    plugins: [
+        extractSCSS,
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify("production")
+            }
+        })
+    ]
+}

@@ -1,0 +1,130 @@
+.hero {
+  height: 480px;
+  background-image: linear-gradient(225deg, #3e5673, #1b2530 86%, #1a242e 0);
+  .nav-bar {
+    display: flex;
+    padding-top: 15px;
+    .item {
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.5);
+      padding: 0 15px;
+      transition: color .3s;
+      display: flex;
+      align-items: center;
+      &:hover {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      &.brand {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 20px;
+      }
+      &.disabled {
+
+      }
+    }
+  }
+  .super-content {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .brand {
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 45px;
+    }
+    .description {
+      margin-top: 10px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 25px;
+    }
+  }
+}
+
+.lists {
+  display: flex;
+  margin-top: 100px;
+  .left {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 0;
+    .title {
+      color: #333;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .description {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  }
+  .right {
+    flex-grow: 1;
+    width: 0;
+    &.demo {
+      height: 420px;
+      background-image: url(./images/demo.png);
+      background-size: cover;
+    }
+    &.source {
+      height: 450px;
+      background-image: url(./images/source.png);
+      background-size: cover;
+    }
+    &.doc {
+      height: 350px;
+      background-image: url(./images/doc.png);
+      background-size: cover;
+    }
+  }
+}
+
+.hr {
+  height: 1px;
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 100px 0;
+}
+
+.footer {
+  margin-top: 100px;
+  background-color: #333;
+  color: whitesmoke;
+  height: 300px;
+  padding: 0 100px;
+  .split {
+    padding-top: 50px;
+    display: flex;
+    height: 250px;
+    .item {
+      flex-grow: 1;
+      width: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .child {
+    padding: 10px 0;
+  }
+  a {
+    margin-left: 4px;
+    color: whitesmoke;
+    &:hover {
+      text-decoration: none;
+      color: #1c9aa0;
+    }
+  }
+}

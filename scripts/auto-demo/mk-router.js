@@ -59,6 +59,8 @@ const mkRouter = (categorys)=> {
         import { createHistory, useBasename } from 'history'
 
         import Layout from './layout'
+        import Home from './home'
+        import Components from './components'
         ${homeImport}
 
         ${routerPath}
@@ -69,8 +71,8 @@ const mkRouter = (categorys)=> {
 
         const MainRouter = (
             <Router history={history}>
-                <Redirect from="/"
-                          to="pc"></Redirect>
+                <Route path="/" component={Home}/>
+                <Route path="/components" component={Components}/>
                 ${routerComponent}
             </Router>
         )

@@ -17,6 +17,4 @@ import './all.scss'
 
 document.title = 'Fit Design'
 
-__webpack_public_path__ = window.resourceBaseUrl
-
 ReactDOM.render(routes, document.getElementById('react-dom'))

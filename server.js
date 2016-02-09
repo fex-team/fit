@@ -24,7 +24,9 @@ process.on('uncaughtException', function (err) {
 })
 
 // 入口文件
-var templateHtml = require('./html.js')
+var args = process.argv.slice(2)
+
+var templateHtml = require('./html.js')(args)
 app.use(function *() {
     this.type = 'text/html; charset=utf-8'
     this.body = templateHtml

@@ -9,12 +9,13 @@
   },
   "scripts": {
     "server": "node server.js",
+    "server-dev": "node server.js dev",
     "webpack-dev": "node webpack.js",
     "webpack-dist": "webpack --profile --display-modules --optimize-minimize --optimize-occurence-order --optimize-dedupe --config webpack.config.js",
     "cdn": "webpack -p --profile --config webpack.config.cdn.js",
     "start-old": "npm run submodule-init && npm run submodule-update && npm run demo-init && npm run babel-cli && npm run module-check && npm run cdn && npm run server & npm run webpack-dev",
     "update": "npm run babel-scripts && npm run module-manage-update && npm run demo-init",
-    "start": "npm run cdn && npm run server & npm run webpack-dev",
+    "start": "npm run cdn && npm run server-dev & npm run webpack-dev",
     "build": "npm run babel-scripts && npm run demo-init && npm run cdn && npm run webpack-dist",
     "push": "npm run babel-scripts && npm run module-manage-push",
     "push-old": "./cli diffpub && git add -A && git commit -m \"quick push\" && git push",
@@ -41,6 +42,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "css-loader": "^0.23.0",
     "eslint-plugin-react": "^3.14.0",
+    "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.4",
     "format-json": "^1.0.3",
     "json-loader": "^0.5.3",
@@ -61,8 +63,8 @@
     "ts-loader": "^0.7.2",
     "typescript": "^1.7.5",
     "url-loader": "^0.5.6",
-    "webpack": "^1.12.6",
-    "webpack-dev-server": "^1.14.0"
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "antd": "^0.10.4",

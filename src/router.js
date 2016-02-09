@@ -4,6 +4,8 @@
         import { createHistory, useBasename } from 'history'
 
         import Layout from './layout'
+        import Home from './home'
+        import Components from './components'
         
         import pcHome from '../category-home/pc.js'
         
@@ -106,8 +108,8 @@
 
         const MainRouter = (
             <Router history={history}>
-                <Redirect from="/"
-                          to="pc"></Redirect>
+                <Route path="/" component={Home}/>
+                <Route path="/components" component={Components}/>
                 
         <Route path="/pc"
                component={Layout}>

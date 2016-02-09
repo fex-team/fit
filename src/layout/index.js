@@ -52,10 +52,6 @@ export default class Layout extends React.Component {
         })
     }
 
-    onSwitchStart() {
-        this.context.history.pushState(null, this.state.type === 'pc' ? 'mobile' : 'pc')
-    }
-
     render() {
         let logoClass = classnames({
             en: this.state.type === 'pc',
@@ -104,11 +100,7 @@ export default class Layout extends React.Component {
                     <div className="tb-navbar">
                         <div className="navbar-header">
                             <div className={navBrand}>
-                                <Link to="/"
-                                >Fit<span className={logoClass}>en</span>
-                                    <span className={textClass}>Design</span></Link>
-                                <span onClick={this.onSwitchStart.bind(this)}
-                                      className="switch">Switch</span>
+                                <Link to="/">FIT</Link>
                             </div>
                             <div className="navbar-left">
                                 <Link className="item"
@@ -131,12 +123,6 @@ export default class Layout extends React.Component {
                                 <a className="item"
                                    href="http://gitlab.baidu.com/tb-component/awesome"
                                    target="_blank">Gitlab</a>
-                                <a className="item"
-                                   href="http://fis.baidu.com/"
-                                   target="_blank">FIS</a>
-                                <a className="item"
-                                    href="http://fex.baidu.com"
-                                    target="_blank">FEX</a>
                             </div>
                         </div>
                     </div>

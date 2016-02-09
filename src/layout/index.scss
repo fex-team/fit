@@ -1,4 +1,4 @@
-@import "../mixins";
+@import "../mixins.scss";
 
 // 全屏自适应布局
 html, body {
@@ -76,7 +76,6 @@ html {
   .navbar-header {
     display: flex;
     width: 100%;
-    background: $bg-color-dark;
     color: $font-color-dark;
     .navbar-brand {
       position: relative;
@@ -112,7 +111,7 @@ html {
 
       > a {
         display: inline-block;
-        color: $font-color-dark;
+        color: #333;
         text-decoration: none;
         line-height: 50px;
         transition: color 0.3s ease-in-out;

@@ -56,7 +56,7 @@ $theme-color: (
   .navbar-brand {
     @each $them-name in pc, mobile, tb {
       &.#{$them-name} {
-        background-color: map-get(map-get($theme-color, $them-name), bg-color);
+
       }
     }
   }
