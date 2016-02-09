@@ -1,17 +1,26 @@
 import React from 'react'
+import Menu from './layout/menu'
+
 import './index.scss'
 
-export default class Home extends React.Component {
+export default class Components extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        document.title = '组件库'
     }
 
     render() {
         return (
             <div className="_namespace">
-                123
+                <div className="g-hd">
+                    <Menu/>
+                </div>
+                <div className="g-mn">
+                    123123
+                </div>
+                <div className="g-ft">
+                    联系我们: fex@baidu.com
+                </div>
             </div>
         )
     }

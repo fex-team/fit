@@ -8,9 +8,11 @@
 
 ## 如果有`value`,必须包含`defaultValue`属性
 
-`value` 属性的含义是,这个组件的属性可以被外部定义,外部赋予的`value`被改变后,组件value属性请务必刷新,也就是说这是一个强约束.
+`value` 属性的含义是,这个组件的属性可以被外部定义,外部赋予的`value`被改变后,组件value属性请务必刷新,也就是说这是一个强约束
 
 `defaultValue` 是默认属性,初始化时如果没有定义 `value`,则它生效,并且后续 `props.value`被改变,组件请务必**不要刷新**其控制的值
+
+值得一提的是,把`value`从`props`放到`state`中管理,而不要直接从`props`中获取
 
 下面是一种实现通用的写法:
 
@@ -25,7 +27,7 @@ constructor(props) {
 componentWillReceiveProps(nextProps) {
     if ('value' in nextProps) {
         this.setState({
-            checked: nextProps.value
+            value: nextProps.value
         })
     }
 }
@@ -35,14 +37,9 @@ componentWillReceiveProps(nextProps) {
 
 ````js
 render() {
-    const {span, order, offset, push, pull, className, ...others} = this.props
+    const {className, ...others} = this.props
     const classes = classNames({
         '_namespace': true,
-        ['col-' + span]: span,
-        ['col-order-' + order]: order,
-        ['col-offset-' + offset]: offset,
-        ['col-push-' + push]: push,
-        ['col-pull-' + pull]: pull,
         [className]: className
     })
     return (
@@ -53,6 +50,6 @@ render() {
 }
 ````
 
-注意将用到的props内容先通过枚举的方式定义出来,带来的好处是可以通过`{...others}`将额外的props正确透传
+注意将用到的`props`内容先通过枚举的方式定义出来,带来的好处是可以通过`{...others}`将额外的props正确透传
 
 引用classnames,将className也透传到className中,这种组件被引用时,不但可以通过`style`标签定制最外层属性,还可以通过className定义额外的class属性

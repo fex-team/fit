@@ -9,7 +9,7 @@ const menuFactory = (data)=> {
             <Link key={index}
                   className="item"
                   activeClassName="active"
-                  to={item.path}>
+                  to={`components${item.path}`}>
                 <Row>
                     <Col span="5"
                          style={{paddingLeft:10}}>

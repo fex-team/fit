@@ -10,6 +10,10 @@ export default class Home extends React.Component {
         document.title = 'Fit Design'
     }
 
+    jumpComponents() {
+        this.context.history.pushState(null, '/components')
+    }
+
     render() {
         return (
             <div className="_namespace">
@@ -26,7 +30,8 @@ export default class Home extends React.Component {
                     <div className="super-content">
                         <div className="brand">FIT</div>
                         <div className="description">React 组件化解决方案</div>
-                        <Button style={{marginTop:30}}
+                        <Button onClick={this.jumpComponents.bind(this)}
+                                style={{marginTop:30}}
                                 size="lg"
                                 addonRight="chevron-right"
                                 type="info">了解更多</Button>
@@ -91,4 +96,8 @@ export default class Home extends React.Component {
             </div>
         )
     }
+}
+
+Home.contextTypes = {
+    history: React.PropTypes.object
 }

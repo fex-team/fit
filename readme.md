@@ -19,9 +19,3 @@ fit-component 组件化开发流程，致力于打造一套先进的前端模块
 + node `v4.x`
 + fis3 `v3.3.11`
 + webpack
-
-## Fit-Pro
-
-`fit-pro` 是一个流式布局+绝对布局的可视化网站编辑平台,后续会陆续整合`fit`和`fiten`的组件,大部分代码由拖拽完成,代码只需要写在部分核心逻辑中
-
-http://fit.baidu.com/gaea

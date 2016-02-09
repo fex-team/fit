@@ -3,9 +3,10 @@
         import { Router, Route, IndexRoute, Redirect } from 'react-router'
         import { createHistory, useBasename } from 'history'
 
-        import Layout from './layout'
+        import ComponentsLayout from './components/layout'
         import Home from './home'
         import Components from './components'
+        import WriteStandard from '../category-home/write-standard.js'
         
         import pcHome from '../category-home/pc.js'
         
@@ -110,10 +111,14 @@
             <Router history={history}>
                 <Route path="/" component={Home}/>
                 <Route path="/components" component={Components}/>
+                <Route path="/components" component={ComponentsLayout}>
+                    <Route path="write-standard" component={WriteStandard}/>
+                </Route>
                 
-        <Route path="/pc"
-               component={Layout}>
+        <Route path="/components/pc"
+               component={ComponentsLayout}>
             <IndexRoute component={pcHome}/>
+            <Route path="write-standard" component={WriteStandard}/>
         
                 <Route path="layout-global"
                        component={fitLayoutGlobalComponent}/>
@@ -201,9 +206,10 @@
                 
         </Route>
         
-        <Route path="/mobile"
-               component={Layout}>
+        <Route path="/components/mobile"
+               component={ComponentsLayout}>
             <IndexRoute component={mobileHome}/>
+            <Route path="write-standard" component={WriteStandard}/>
         
                 <Route path="reset"
                        component={fitenResetComponent}/>
@@ -222,9 +228,10 @@
                 
         </Route>
         
-        <Route path="/tb"
-               component={Layout}>
+        <Route path="/components/tb"
+               component={ComponentsLayout}>
             <IndexRoute component={tbHome}/>
+            <Route path="write-standard" component={WriteStandard}/>
         
                 <Route path="track"
                        component={tbTrackComponent}/>

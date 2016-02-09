@@ -21,9 +21,10 @@ const mkRouter = (categorys)=> {
         `
 
         routerComponent += `
-        <Route path="/${categoryKey}"
-               component={Layout}>
+        <Route path="/components/${categoryKey}"
+               component={ComponentsLayout}>
             <IndexRoute component={${categoryKey}Home}/>
+            <Route path="write-standard" component={WriteStandard}/>
         `
 
         let categoryInfo = categorys[categoryKey]
@@ -58,9 +59,10 @@ const mkRouter = (categorys)=> {
         import { Router, Route, IndexRoute, Redirect } from 'react-router'
         import { createHistory, useBasename } from 'history'
 
-        import Layout from './layout'
+        import ComponentsLayout from './components/layout'
         import Home from './home'
         import Components from './components'
+        import WriteStandard from '../category-home/write-standard.js'
         ${homeImport}
 
         ${routerPath}
@@ -73,6 +75,9 @@ const mkRouter = (categorys)=> {
             <Router history={history}>
                 <Route path="/" component={Home}/>
                 <Route path="/components" component={Components}/>
+                <Route path="/components" component={ComponentsLayout}>
+                    <Route path="write-standard" component={WriteStandard}/>
+                </Route>
                 ${routerComponent}
             </Router>
         )

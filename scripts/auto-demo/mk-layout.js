@@ -70,9 +70,9 @@ const mkLayout = (categorys)=> {
         }
         `
 
-        mkdirp(`src/layout/left-menu-${categoryKey}`, (err)=> {
+        mkdirp(`src/components/layout/left-menu-${categoryKey}`, (err)=> {
             if (err) {
-                return console.log(`mkdir src/layout/left-menu-${categoryKey} fail`, error)
+                return console.log(`mkdir src/components/layout/left-menu-${categoryKey} fail`, error)
             }
 
             fs.writeFile(`src/layout/left-menu-${categoryKey}/index.js`, text, (err)=> {
