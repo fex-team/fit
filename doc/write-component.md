@@ -6,7 +6,9 @@
 
 在`render`函数中,最外层`div`添加 `className="_namespace"`,就可以让当前目录引用的`scss`生效啦
 
-## 如果有`value`,必须包含`defaultValue`属性
+## `value`与`defaultValue`
+
+有`value`属性的组件,尽量包含`defaultValue`属性
 
 `value` 属性的含义是,这个组件的属性可以被外部定义,外部赋予的`value`被改变后,组件value属性请务必刷新,也就是说这是一个强约束
 
