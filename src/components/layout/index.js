@@ -5,7 +5,7 @@ import LeftMenuPC from './left-menu-pc'
 import LeftMenuMobile from './left-menu-mobile'
 import LeftMenuTb from './left-menu-tb'
 
-import Menu from './menu'
+import Menu from './top-menu'
 
 import './index.scss'
 import './theme.scss'

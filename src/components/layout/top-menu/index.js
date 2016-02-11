@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router'
+import './index.scss'
 
 export default class Menu extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        document.title = '组件库'
     }
 
     render() {
         return (
-            <div className="_namespace tb-navbar">
+            <div className="_namespace">
                 <div className="navbar-header">
                     <div className="navbar-brand">
                         <Link to="/">FIT</Link>
@@ -35,7 +35,13 @@ export default class Menu extends React.Component {
                     <div className="navbar-right">
                         <Link className="item"
                               activeClassName="active"
+                              to="/components/doc">贡献者文档</Link>
+                        <Link className="item"
+                              activeClassName="active"
                               to="/components/write-standard">编写规范</Link>
+                        <Link className="item"
+                              activeClassName="active"
+                              to="/components/change-log">ChangeLog</Link>
                         <a className="item"
                            href="http://gitlab.baidu.com/tb-component/awesome"
                            target="_blank">Gitlab</a>

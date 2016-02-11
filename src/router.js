@@ -6,7 +6,9 @@
         import ComponentsLayout from './components/layout'
         import Home from './home'
         import Components from './components'
-        import WriteStandard from '../category-home/write-standard.js'
+        import ComponentsWriteStandard from './components/write-standard'
+        import ComponentsChangeLog from './components/change-log'
+        import ComponentsDoc from './components/doc'
         
         import pcHome from '../category-home/pc.js'
         
@@ -111,14 +113,13 @@
             <Router history={history}>
                 <Route path="/" component={Home}/>
                 <Route path="/components" component={Components}/>
-                <Route path="/components" component={ComponentsLayout}>
-                    <Route path="write-standard" component={WriteStandard}/>
-                </Route>
+                <Route path="/components/write-standard" component={ComponentsWriteStandard}/>
+                <Route path="/components/doc" component={ComponentsDoc}/>
+                <Route path="/components/change-log" component={ComponentsChangeLog}/>
                 
         <Route path="/components/pc"
                component={ComponentsLayout}>
             <IndexRoute component={pcHome}/>
-            <Route path="write-standard" component={WriteStandard}/>
         
                 <Route path="layout-global"
                        component={fitLayoutGlobalComponent}/>
@@ -209,7 +210,6 @@
         <Route path="/components/mobile"
                component={ComponentsLayout}>
             <IndexRoute component={mobileHome}/>
-            <Route path="write-standard" component={WriteStandard}/>
         
                 <Route path="reset"
                        component={fitenResetComponent}/>
@@ -231,7 +231,6 @@
         <Route path="/components/tb"
                component={ComponentsLayout}>
             <IndexRoute component={tbHome}/>
-            <Route path="write-standard" component={WriteStandard}/>
         
                 <Route path="track"
                        component={tbTrackComponent}/>

@@ -1,14 +1,15 @@
 import React from 'react'
-import Menu from './layout/top-menu'
+import Menu from '../layout/top-menu'
 import marked from 'marked'
 import readme from './readme.md'
 
-import './index.scss'
+import '../index.scss'
 
-export default class Components extends React.Component {
+export default class WriteStandard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
+        document.title = '编写规范'
     }
 
     render() {
@@ -23,9 +24,6 @@ export default class Components extends React.Component {
                         <div className="markdown-body"
                              dangerouslySetInnerHTML={{__html: marked(readme)}}></div>
                     </div>
-                </div>
-                <div className="g-ft">
-                    联系我们: fex@baidu.com
                 </div>
             </div>
         )

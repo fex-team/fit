@@ -24,7 +24,6 @@ const mkRouter = (categorys)=> {
         <Route path="/components/${categoryKey}"
                component={ComponentsLayout}>
             <IndexRoute component={${categoryKey}Home}/>
-            <Route path="write-standard" component={WriteStandard}/>
         `
 
         let categoryInfo = categorys[categoryKey]
@@ -62,7 +61,9 @@ const mkRouter = (categorys)=> {
         import ComponentsLayout from './components/layout'
         import Home from './home'
         import Components from './components'
-        import WriteStandard from '../category-home/write-standard.js'
+        import ComponentsWriteStandard from './components/write-standard'
+        import ComponentsChangeLog from './components/change-log'
+        import ComponentsDoc from './components/doc'
         ${homeImport}
 
         ${routerPath}
@@ -75,9 +76,9 @@ const mkRouter = (categorys)=> {
             <Router history={history}>
                 <Route path="/" component={Home}/>
                 <Route path="/components" component={Components}/>
-                <Route path="/components" component={ComponentsLayout}>
-                    <Route path="write-standard" component={WriteStandard}/>
-                </Route>
+                <Route path="/components/write-standard" component={ComponentsWriteStandard}/>
+                <Route path="/components/doc" component={ComponentsDoc}/>
+                <Route path="/components/change-log" component={ComponentsChangeLog}/>
                 ${routerComponent}
             </Router>
         )
