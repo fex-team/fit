@@ -24,7 +24,7 @@ $ npm start
 提交代码:
 
 ~~~js
-$ npm run update
+$ npm run push
 ~~~
 
 #### 项目结构
