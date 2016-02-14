@@ -13,6 +13,9 @@
                 const store = createStore()
 
                 
+                        import TableSource from '../../../../lib/pc/table/src/table'
+                        import TableSourceCode from 'text!../../../../lib/pc/table/src/table'
+                        
 
                 
                     import DataComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/data.js'
@@ -279,6 +282,10 @@
                             Content = (
                                 <div>
                                     
+                        <div style={docStyle}>
+                            <CodeDoc code={TableSourceCode} instance={TableSource} />
+                        </div>
+                        
                                 </div>
                             )
                             break
