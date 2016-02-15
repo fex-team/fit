@@ -29,6 +29,6 @@ $ fis3 install fit-[components]
 
 [点击了解](/components/change-log) Fit组件库最新动态
 
+### 如何贡献
 
-如何贡献
 在任何形式的参与前，请先阅读 [贡献者文档](/components/doc) 与 [编写规范](/components/write-standard)。有任何建议或意见您可以 [Pull Request](http://gitlab.baidu.com/groups/tb-component)，给我们报告 [Bug](mailto:fex@baidu.com) 或[提问](http://gitlab.baidu.com/tb-component/awesome/issues)
