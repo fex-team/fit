@@ -115,3 +115,21 @@ this.unsubscribe = store.subscribe(() => {
     }
 })
 ~~~
+
+#### 9.正确使用路由外部跳转
+
+外部直接使用`react-router`跳转时,不要使用浏览器api,使用如下方法:
+
+先在class下面注册一个`history`:
+
+~~~js
+MyComponent.contextTypes = {
+    history: React.PropTypes.object
+}
+~~~
+
+再直接调用`history`的api:
+
+~~~js
+this.context.history.pushState(null, '/components')
+~~~
