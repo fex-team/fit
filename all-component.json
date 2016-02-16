@@ -1,7 +1,7 @@
 {
   "categorys": {
     "common": {
-      "prefix": "",
+      "prefix": "fit",
       "gitlabPrefix": "",
       "components": {
         "计算": [

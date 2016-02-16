@@ -1,9 +1,9 @@
 import { execSync } from 'child_process'
 
-const push = (prefix, moduleName)=> {
+const push = (dirPath, moduleName, gitlabPrefix)=> {
     // push一下
     try {
-        execSync(`cd lib/${prefix}/${moduleName};git add -A;git commit -m "quick push"; git push`)
+        execSync(`cd lib/${dirPath}/${moduleName};git add -A;git commit -m "quick push"; git push`)
     } catch (e) {
         console.log(e.toString())
     }
