@@ -18,7 +18,7 @@
 
 下面是一种实现通用的写法:
 
-````js
+~~~js
 constructor(props) {
     super(props)
     this.state = {
@@ -33,11 +33,11 @@ componentWillReceiveProps(nextProps) {
         })
     }
 }
-````
+~~~
 
 #### 3.在`render`中正确透传
 
-````js
+~~~js
 render() {
     const {className, ...others} = this.props
     const classes = classNames({
@@ -50,7 +50,7 @@ render() {
         </div>
     )
 }
-````
+~~~
 
 注意将用到的`props`内容先通过枚举的方式定义出来,带来的好处是可以通过`{...others}`将额外的props正确透传
 
@@ -133,3 +133,6 @@ MyComponent.contextTypes = {
 ~~~js
 this.context.history.pushState(null, '/components')
 ~~~
+
+#### 10.尽量不使用inline-style
+

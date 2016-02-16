@@ -1,5 +1,18 @@
 {
   "categorys": {
+    "common": {
+      "prefix": "",
+      "gitlabPrefix": "",
+      "components": {
+        "计算": [
+          {
+            "name": "友好时间",
+            "path": "timeago",
+            "icon": "time"
+          }
+        ]
+      }
+    },
     "pc": {
       "prefix": "fit",
       "gitlabPrefix": "pc",
@@ -226,7 +239,6 @@
             "path": "upload",
             "icon": "upload"
           }
-
         ],
         "展示": [
           {
