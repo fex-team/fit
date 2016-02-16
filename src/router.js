@@ -10,6 +10,8 @@
         import ComponentsChangeLog from './components/change-log'
         import ComponentsDoc from './components/doc'
         
+        import commonHome from '../category-home/common.js'
+        
         import pcHome from '../category-home/pc.js'
         
         import mobileHome from '../category-home/mobile.js'
@@ -18,6 +20,10 @@
         
 
         
+        // common
+        
+                import fitTimeagoComponent from './components/common/timeago'
+                
         // pc
         
                 import fitLayoutGlobalComponent from './components/pc/layout-global'
@@ -117,6 +123,15 @@
                 <Route path="/components/doc" component={ComponentsDoc}/>
                 <Route path="/components/change-log" component={ComponentsChangeLog}/>
                 
+        <Route path="/components/common"
+               component={ComponentsLayout}>
+            <IndexRoute component={commonHome}/>
+        
+                <Route path="timeago"
+                       component={fitTimeagoComponent}/>
+                
+        </Route>
+        
         <Route path="/components/pc"
                component={ComponentsLayout}>
             <IndexRoute component={pcHome}/>

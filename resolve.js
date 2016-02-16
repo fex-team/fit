@@ -4,6 +4,10 @@
     module.exports = {
         alias: {
             
+        // common
+        
+                'fit-timeago': path.join(__dirname, 'lib/common/timeago/src'),
+                
         // pc
         
                 'fit-layout-global': path.join(__dirname, 'lib/pc/layout-global/src'),

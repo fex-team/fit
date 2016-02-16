@@ -24,10 +24,13 @@ export default class Menu extends React.Component {
                               to="/components/pc">Pc</Link>
                         <Link className="item"
                               activeClassName="active"
-                              to="/components/mobile">Mobile</Link>
+                              to="/components/mobile">移动端</Link>
                         <Link className="item"
                               activeClassName="active"
-                              to="/components/tb">Tieba</Link>
+                              to="/components/common">通用</Link>
+                        <Link className="item"
+                              activeClassName="active"
+                              to="/components/tb">贴吧</Link>
                         <Link className="item"
                               activeClassName="active"
                               to="/components/oxp">Oxp</Link>

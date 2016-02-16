@@ -75,9 +75,9 @@ const mkLayout = (categorys)=> {
                 return console.log(`mkdir src/components/layout/left-menu-${categoryKey} fail`, error)
             }
 
-            fs.writeFile(`src/layout/left-menu-${categoryKey}/index.js`, text, (err)=> {
+            fs.writeFile(`src/components/layout/left-menu-${categoryKey}/index.js`, text, (err)=> {
                 if (!err)return
-                console.log(`mk src/layout/left-menu-${categoryKey}/index.js fail: ${err}`)
+                console.log(`mk src/components/layout/left-menu-${categoryKey}/index.js fail: ${err}`)
             })
         })
     }

@@ -8,7 +8,7 @@
           {
             "name": "友好时间",
             "path": "timeago",
-            "icon": "time"
+            "icon": "clock-o"
           }
         ]
       }
