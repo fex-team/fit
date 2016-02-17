@@ -1,7 +1,7 @@
 module.exports = function (args) {
     var bundleCss = ''
 
-    if (args[0]==='dev'){
+    if (args[0]!=='dev'){
         bundleCss = `
         <link rel="stylesheet" type="text/css" href="/output/style.css">
         `
