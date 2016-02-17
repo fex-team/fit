@@ -8,6 +8,8 @@
         
                 'fit-timeago': path.join(__dirname, 'lib/common/timeago/src'),
                 
+                'fit-badge': path.join(__dirname, 'lib/common/badge/src'),
+                
         // pc
         
                 'fit-layout-global': path.join(__dirname, 'lib/pc/layout-global/src'),

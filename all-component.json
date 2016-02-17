@@ -9,6 +9,11 @@
             "name": "友好时间",
             "path": "timeago",
             "icon": "clock-o"
+          },
+          {
+            "name": "徽标数",
+            "path": "badge",
+            "icon": "clock-o"
           }
         ]
       }

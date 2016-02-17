@@ -11,13 +11,13 @@ const args = process.argv.slice(2)
 switch (args[0]) {
 case 'update': // 更新
     // 1. 如果目录不存在则创建目录(clone下来),同时会pull保证代码最新
-    mapModule(config, (dirPath, moduleName, gitlabPrefix)=> {
-        createPath(dirPath, moduleName, gitlabPrefix)
+    mapModule(config, (dirPath, moduleName, gitlabPrefix, info, prefix)=> {
+        createPath(dirPath, moduleName, gitlabPrefix, info, prefix)
     })
     break
 case 'push': // 提交
-    mapModule(config, (dirPath, moduleName, gitlabPrefix)=> {
-        push(dirPath, moduleName, gitlabPrefix)
+    mapModule(config, (dirPath, moduleName, gitlabPrefix, info, prefix)=> {
+        push(dirPath, moduleName, gitlabPrefix, info, prefix)
     })
     // push一下根目录
     try {

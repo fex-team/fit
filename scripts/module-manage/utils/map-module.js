@@ -7,7 +7,7 @@ const mapModule = (config, callback)=> {
         let category = categorys[key]
         for (let componentsKey in category.components) {
             category.components[componentsKey].map((item)=> {
-                callback(key, item.path, category.gitlabPrefix)
+                callback(key, item.path, category.gitlabPrefix, item, category.prefix)
             })
         }
     })
