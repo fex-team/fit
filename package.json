@@ -26,7 +26,8 @@
     "demo-init": "node scripts-babel/auto-demo/index.js",
     "module-check": "./cli init",
     "submodule-init": "git submodule init",
-    "submodule-update": "git submodule update"
+    "submodule-update": "git submodule update",
+    "alone": "webpack -p --config webpack.config.alone.js"
   },
   "author": "",
   "license": "ISC",

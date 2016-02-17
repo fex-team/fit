@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Button from 'fit-button'
+import SearchComponent from '../../components/search-components'
 import './index.scss'
 
 export default class Home extends React.Component {
@@ -8,10 +9,6 @@ export default class Home extends React.Component {
         super(props)
         this.state = {}
         document.title = 'Fit Design'
-    }
-
-    jumpComponents() {
-        this.context.history.pushState(null, '/components')
     }
 
     render() {
@@ -29,12 +26,10 @@ export default class Home extends React.Component {
                     </div>
                     <div className="super-content">
                         <div className="brand">FIT</div>
-                        <div className="description">React 组件化解决方案</div>
-                        <Button onClick={this.jumpComponents.bind(this)}
-                                style={{marginTop:30}}
-                                size="lg"
-                                addonRight="chevron-right"
-                                type="info">了解更多</Button>
+                        <div className="description"
+                             style={{marginBottom:20}}>React 组件化解决方案
+                        </div>
+                        <SearchComponent/>
                     </div>
                 </div>
                 <div className="container">
