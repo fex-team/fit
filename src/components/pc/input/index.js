@@ -13,6 +13,9 @@
                 const store = createStore()
 
                 
+                        import InputSource from '../../../../lib/pc/input/src/input'
+                        import InputSourceCode from 'text!../../../../lib/pc/input/src/input'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/basic.js'
@@ -153,6 +156,10 @@
                             Content = (
                                 <div>
                                     
+                        <div style={docStyle}>
+                            <CodeDoc code={InputSourceCode} instance={InputSource} />
+                        </div>
+                        
                                 </div>
                             )
                             break

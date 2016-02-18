@@ -26,7 +26,8 @@
     "demo-init": "node scripts-babel/auto-demo/index.js",
     "module-check": "./cli init",
     "submodule-init": "git submodule init",
-    "submodule-update": "git submodule update"
+    "submodule-update": "git submodule update",
+    "alone": "webpack -p --config webpack.config.alone.js"
   },
   "author": "",
   "license": "ISC",
@@ -77,7 +78,7 @@
     "font-awesome": "^4.5.0",
     "highlight": "^0.2.4",
     "highlight.js": "^8.9.1",
-    "history": "^1.13.1",
+    "history": "^2.0.0",
     "html-path-loader": "^0.1.10",
     "humps": "^1.0.0",
     "jquery": "^2.1.4",
@@ -94,7 +95,7 @@
     "react-infinite": "^0.7.3",
     "react-native-web": "0.0.12",
     "react-redux": "^4.0.1",
-    "react-router": "^1.0.2",
+    "react-router": "^2.0.0",
     "react-style": "^0.5.5",
     "react-tappable": "^0.8.0",
     "read-dir-files": "^0.1.1",
