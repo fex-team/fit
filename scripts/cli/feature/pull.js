@@ -7,8 +7,7 @@ export default function pullSubModule (modules) {
 	modules.forEach((filePath) => {
 		process.chdir(filePath)
 		try {
-			execSync('git fetch 2>&1')
-			execSync('git merge -m "quick merge  2>&1"')
+			execSync('git pull origin master')
 			succesed.push(filePath)
 		}
 		catch(e) {

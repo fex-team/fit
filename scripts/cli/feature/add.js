@@ -13,7 +13,13 @@ export default function addModule (modules) {
 		let moduleType = splits.pop()
 		let componentJSON = getAllComponentJSON()
 		let gitlabPrefix = componentJSON.categorys[moduleType].gitlabPrefix
-		let repoPath = `http://gitlab.baidu.com/tb-component/${gitlabPrefix}-${moduleName}.git`
+		let repoPath
+		if (gitlabPrefix !== '') {
+			repoPath = `http://gitlab.baidu.com/tb-component/${gitlabPrefix}-${moduleName}.git`
+		}
+		else {
+			repoPath = `http://gitlab.baidu.com/tb-component/${moduleName}.git`
+		}
 
 		try {
 			let modulePath = path.join(root, 'lib', moduleType, moduleName)

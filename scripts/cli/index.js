@@ -36,6 +36,7 @@ import moduleDistribute from './utils/distribute'
 import multiProcessor from './utils/multi-processor'
 
 var args = process.argv.slice(2)
+var root = process.cwd()
 
 if (args.length === 0) {
 	console.error(
@@ -57,7 +58,8 @@ Usage:
 }
 switch (args[0]) {
 	case 'init':
-		moduleDistribute(initPrepare)
+
+		initPrepare()
 
 		break
 	case 'build':
@@ -123,9 +125,10 @@ switch (args[0]) {
 				patchModuleSync(diff, allModules, params)
 				let newDiff = _.uniq(diff.concat(moduleDistribute(getProjectStatus)))
 				publishModules(newDiff).then(() => {
+					cleanModulesSync(newDiff)
 					commitModules(newDiff)
 					pushModules(pullModules(newDiff))
-					cleanModulesSync(newDiff)
+					pushModules([root])
 				}).catch((e) => {
 					console.log(e.toString())
 					console.trace();
@@ -135,7 +138,6 @@ switch (args[0]) {
 				console.trace();
 			})
 		}, 'patch')
-
 
 		break
 

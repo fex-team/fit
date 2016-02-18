@@ -17,7 +17,7 @@
     "update": "npm run babel-scripts && ./cli pull && git pull && npm run demo-init",
     "start": "npm run cdn && npm run server-dev & npm run webpack-dev",
     "build": "npm run babel-scripts && npm run demo-init && npm run cdn && npm run webpack-dist",
-    "push": "npm run babel-scripts && ./cli diffpub && git add -A && git commit -m \"quick push\" && git push",
+    "push": "npm run babel-scripts && ./cli diffpub",
     "push-old": "./cli diffpub && git add -A && git commit -m \"quick push\" && git push",
     "babel-scripts": "babel scripts/ --out-dir scripts-babel/",
     "module-manage-update": "node scripts-babel/module-manage/index.js update",
