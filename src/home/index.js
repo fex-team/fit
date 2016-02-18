@@ -29,7 +29,7 @@ export default class Home extends React.Component {
                         <div className="description"
                              style={{marginBottom:20}}>React 组件化解决方案
                         </div>
-                        <SearchComponent/>
+                        <SearchComponent history={this.context.history}/>
                     </div>
                 </div>
                 <div className="container">

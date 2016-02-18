@@ -40,10 +40,10 @@ var config = {
             }, {
                 test: /\.(png|jpg)$/,
                 exclude: /node_modules/,
-                loaders: ['url?limit=3000000&name=img/[hash:8].[name].[ext]']
+                loaders: ['url?limit=3000&name=img/[hash:8].[name].[ext]']
             }, {
                 test: /\.(woff|woff2|ttf|eot|svg)/,
-                loaders: ['url?limit=3000000&name=font/[hash:8].[name].[ext]']
+                loaders: ['url?limit=3000&name=font/[hash:8].[name].[ext]']
             }, {
                 test: /\.json$/,
                 loader: 'json-loader'

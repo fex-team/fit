@@ -3,31 +3,33 @@ import AutoComplete from 'fit-auto-complete'
 import allComponents from '../../all-component.json'
 import mapModule from '../../scripts/module-manage/utils/map-module'
 
-const opts = {
-    datas: [],
-    autoFilter: true,
-    inputOpts: {
-        placeholder: '搜索组件..'
-    }
-}
-
-mapModule(allComponents, (dirPath, moduleName, gitlabPrefix, info, prefix)=> {
-    opts.datas.push({
-        text: info.name + ' ' + moduleName,
-        value: moduleName
-    })
-})
-
 export default class SearchComponents extends React.Component {
     constructor(props) {
         super(props)
+
+        this.autoCompleteOpts = {
+            datas: [],
+            autoFilter: true,
+            inputOpts: {
+                placeholder: '搜索组件..',
+                width: 200
+            },
+            onSelect: (value)=> {
+                this.props.history.pushState(null, `/components/${value}`)
+            }
+        }
+
+        mapModule(allComponents, (dirPath, moduleName, gitlabPrefix, info, prefix)=> {
+            this.autoCompleteOpts.datas.push({
+                text: info.name + ' ' + moduleName,
+                value: `${dirPath}/${moduleName}`
+            })
+        })
     }
 
     render() {
         return (
-            <AutoComplete {...opts}/>
+            <AutoComplete {...this.autoCompleteOpts}/>
         )
     }
 }
-
-SearchComponents.defaultProps = {}
