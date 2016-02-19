@@ -14,6 +14,7 @@ const mkComponents = (config)=> {
 
         let categoryInfo = categorys[categoryKey]
         let componentsInfo = categorys[categoryKey].components || []
+        let gitlabPrefix = categorys[categoryKey].gitlabPrefix
         Object.keys(componentsInfo).map((item)=> {
             categorys[categoryKey]['components'][item].map((component)=> {
                 // 创建此demo的文件夹 eg: lib/pc/layout
@@ -70,6 +71,11 @@ const mkComponents = (config)=> {
                         </div>
                         `
                     })
+                }
+
+                let gitlabPath = `${gitlabPrefix}-${component.path}`
+                if (gitlabPrefix === '') {
+                    gitlabPath = component.path
                 }
 
                 let text = `
@@ -138,7 +144,7 @@ const mkComponents = (config)=> {
                             <div className="_namespace">
                                 <Layout>
                                     <Header>
-                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/${categoryKey}-${component.path}/tree/master"
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/${gitlabPath}/tree/master"
                                                onChange={this.handlePageChange.bind(this)}>{readme}</Title>
                                     </Header>
 

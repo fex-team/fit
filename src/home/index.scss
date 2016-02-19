@@ -132,7 +132,8 @@
 // reset input样式
 .lib-pc-input-src-input .input {
   background-color: #303E58;
-  color: #799BD8;
+  text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #5aa3e2, 0 0 2px #5aa3e2;
+  color: #9ECCF3;
   border-color: #6B84B1;
 }
 
@@ -152,4 +153,10 @@
 
 .lib-pc-auto-complete-src-auto-complete .complete-container .item:not(.active) .highlight {
   color: #66E4A4;
+}
+
+.lib-pc-auto-complete-src-auto-complete .complete-container .item.active, .lib-pc-auto-complete-src-auto-complete .complete-container .item:hover, .lib-pc-auto-complete-src-auto-complete .complete-container .item:hover:not(.active) {
+  background-color: #303E58;
+  text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 15px #fff, 0 0 19px #5aa3e2, 0 0 5px #5aa3e2;
+  color: #B4D7F5;
 }
