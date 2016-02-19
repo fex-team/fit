@@ -64,7 +64,7 @@
                             <div className="_namespace">
                                 <Layout>
                                     <Header>
-                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/common-badge/tree/master"
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/badge/tree/master"
                                                onChange={this.handlePageChange.bind(this)}>{readme}</Title>
                                     </Header>
 

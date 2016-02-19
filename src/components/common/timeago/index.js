@@ -99,7 +99,7 @@
                             <div className="_namespace">
                                 <Layout>
                                     <Header>
-                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/common-timeago/tree/master"
+                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/timeago/tree/master"
                                                onChange={this.handlePageChange.bind(this)}>{readme}</Title>
                                     </Header>
 
