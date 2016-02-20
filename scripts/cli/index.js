@@ -117,6 +117,8 @@ switch (args[0]) {
 
 	case 'diffpub':
 
+		initPrepare();
+
 		moduleDistribute((modules, allModules, params) => {
 			checkModules(allModules);
 			let diff = moduleDistribute(getProjectStatus)
