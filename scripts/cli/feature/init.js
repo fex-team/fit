@@ -30,9 +30,11 @@ export default function initPrepare () {
 	if (difference.length > 0) {
 		addModules(difference)
 		commitModules(difference)
-		pushModules(pullModules(difference))
+		pullModules(difference)
+		return false;
 	}
 	else {
 		console.log('all modules had added')
+		return true;
 	}
 }

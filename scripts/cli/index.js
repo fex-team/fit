@@ -130,7 +130,6 @@ switch (args[0]) {
 					cleanModulesSync(newDiff)
 					commitModules(newDiff)
 					pushModules(pullModules(newDiff))
-					pushModules([root])
 				}).catch((e) => {
 					console.log(e.toString())
 					console.trace();
@@ -140,6 +139,19 @@ switch (args[0]) {
 				console.trace();
 			})
 		}, 'patch')
+
+		commitModules([root])
+		pushModules([root])
+
+		break
+
+	case 'update':
+
+		let flag = initPrepare();
+
+		if (flag) {
+			moduleDistribute(pullModules);
+		}
 
 		break
 
