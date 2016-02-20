@@ -153,6 +153,8 @@ switch (args[0]) {
 			moduleDistribute(pullModules);
 		}
 
+		pullModules([root])
+
 		break
 
 	case 'publish':
