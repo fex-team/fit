@@ -6,39 +6,33 @@
 const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     {
                         title: '日志请求 Track',
-                        path: '/tb/track',
-                        icon: 'send'
+                        path: '/tb/track'
                     },
                     
                     {
                         title: '验证码 Captcha',
-                        path: '/tb/captcha',
-                        icon: 'bullseye'
+                        path: '/tb/captcha'
                     },
                     
                     {
                         title: '发帖 Submit',
-                        path: '/tb/submit',
-                        icon: 'comment'
+                        path: '/tb/submit'
                     },
                     
                     {
                         title: '上传 Upload',
-                        path: '/tb/upload',
-                        icon: 'upload'
+                        path: '/tb/upload'
                     },
                     ]
 const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                     {
                         title: '字体图标 Icon',
-                        path: '/tb/icon',
-                        icon: 'fonticons'
+                        path: '/tb/icon'
                     },
                     
                     {
                         title: '表情库 Emoji',
-                        path: '/tb/emoji',
-                        icon: 'fonticons'
+                        path: '/tb/emoji'
                     },
                     ]
 

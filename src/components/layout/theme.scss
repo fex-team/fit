@@ -10,13 +10,13 @@ $theme-color: (
         mobile:(
                 bg-color:#7266ba,
                 font-color: whitesmoke,
-                font-active-color: #fff,
-                title-color:#7266ba
+                font-active-color: #7BDADE,
+                title-color:white
         ),
         tb: (
                 bg-color:#23b7e5,
                 font-color: whitesmoke,
-                font-active-color: #fff,
+                font-active-color: #B7FFAA,
                 title-color:#fff
         ),
         common: (
@@ -28,7 +28,7 @@ $theme-color: (
 );
 
 .g-sd {
-  width: 220px;
+  width: 200px;
   z-index: 1;
   transition: background 0.3s ease-in-out;
 

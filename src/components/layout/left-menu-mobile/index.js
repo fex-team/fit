@@ -6,32 +6,27 @@
 const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     {
                         title: '样式重置 Reset',
-                        path: '/mobile/reset',
-                        icon: 'eject'
+                        path: '/mobile/reset'
                     },
                     
                     {
                         title: '颜色 Color',
-                        path: '/mobile/color',
-                        icon: 'columns'
+                        path: '/mobile/color'
                     },
                     
                     {
                         title: '页面缩放 Scale',
-                        path: '/mobile/scale',
-                        icon: 'modx'
+                        path: '/mobile/scale'
                     },
                     
                     {
                         title: '聊天气泡 Chat',
-                        path: '/mobile/chat',
-                        icon: 'comments'
+                        path: '/mobile/chat'
                     },
                     
                     {
                         title: '聊天盒子 ChatBox',
-                        path: '/mobile/chat-box',
-                        icon: 'list-alt'
+                        path: '/mobile/chat-box'
                     },
                     ]
 

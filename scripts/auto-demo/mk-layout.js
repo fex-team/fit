@@ -36,8 +36,7 @@ const mkLayout = (categorys)=> {
                     menus += `
                     {
                         title: '${component.name} ${_.capitalize(_.camelCase(component.path))}',
-                        path: '/${categoryKey}/${component.path}',
-                        icon: '${component.icon}'
+                        path: '/${categoryKey}/${component.path}'
                     },
                     `
                 }

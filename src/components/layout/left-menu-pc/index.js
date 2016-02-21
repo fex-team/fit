@@ -6,175 +6,147 @@
 const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     {
                         title: '全屏布局 LayoutGlobal',
-                        path: '/pc/layout-global',
-                        icon: 'columns'
+                        path: '/pc/layout-global'
                     },
                     
                     {
                         title: '布局 Layout',
-                        path: '/pc/layout',
-                        icon: 'th'
+                        path: '/pc/layout'
                     },
                     
                     {
                         title: '按钮 Button',
-                        path: '/pc/button',
-                        icon: 'square-o'
+                        path: '/pc/button'
                     },
                     ]
 const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                     {
                         title: '分页 Pagination',
-                        path: '/pc/pagination',
-                        icon: 'sticky-note-o'
+                        path: '/pc/pagination'
                     },
                     
                     {
                         title: '表格 Table',
-                        path: '/pc/table',
-                        icon: 'table'
+                        path: '/pc/table'
                     },
                     
                     {
                         title: '模态框 Modal',
-                        path: '/pc/modal',
-                        icon: 'list-alt'
+                        path: '/pc/modal'
                     },
                     
                     {
                         title: '提示 Message',
-                        path: '/pc/message',
-                        icon: 'exclamation-circle'
+                        path: '/pc/message'
                     },
                     
                     {
                         title: '折叠面板 Collapse',
-                        path: '/pc/collapse',
-                        icon: 'plus-square'
+                        path: '/pc/collapse'
                     },
                     
                     {
                         title: '树形控件 Tree',
-                        path: '/pc/tree',
-                        icon: 'tree'
+                        path: '/pc/tree'
                     },
                     
                     {
                         title: 'JSON树 JsonTree',
-                        path: '/pc/json-tree',
-                        icon: 'tree'
+                        path: '/pc/json-tree'
                     },
                     
                     {
                         title: '图片容器 Image',
-                        path: '/pc/image',
-                        icon: 'picture-o'
+                        path: '/pc/image'
                     },
                     
                     {
                         title: '组件嵌入 RenderTo',
-                        path: '/pc/render-to',
-                        icon: 'life-ring'
+                        path: '/pc/render-to'
                     },
                     
                     {
                         title: '滚动监听 ScrollListen',
-                        path: '/pc/scroll-listen',
-                        icon: 'recycle'
+                        path: '/pc/scroll-listen'
                     },
                     ]
 const menueee1e2258d7ea163fec625ee44be9637 = [
                     {
                         title: '输入框 Input',
-                        path: '/pc/input',
-                        icon: 'font'
+                        path: '/pc/input'
                     },
                     
                     {
                         title: '数字框 Number',
-                        path: '/pc/number',
-                        icon: 'chevron-up'
+                        path: '/pc/number'
                     },
                     
                     {
                         title: '自动完成 AutoComplete',
-                        path: '/pc/auto-complete',
-                        icon: 'angle-double-down'
+                        path: '/pc/auto-complete'
                     },
                     
                     {
                         title: '选择框 Select',
-                        path: '/pc/select',
-                        icon: 'navicon'
+                        path: '/pc/select'
                     },
                     
                     {
                         title: '开关 Switch',
-                        path: '/pc/switch',
-                        icon: 'toggle-off'
+                        path: '/pc/switch'
                     },
                     
                     {
                         title: '多选框 Checkbox',
-                        path: '/pc/checkbox',
-                        icon: 'check-square'
+                        path: '/pc/checkbox'
                     },
                     
                     {
                         title: '单选框 Radio',
-                        path: '/pc/radio',
-                        icon: 'check-circle'
+                        path: '/pc/radio'
                     },
                     
                     {
                         title: '时间选择器 Timepicker',
-                        path: '/pc/timepicker',
-                        icon: 'clock-o'
+                        path: '/pc/timepicker'
                     },
                     
                     {
                         title: '日期选择器 Datepicker',
-                        path: '/pc/datepicker',
-                        icon: 'calendar'
+                        path: '/pc/datepicker'
                     },
                     
                     {
                         title: '上传 Upload',
-                        path: '/pc/upload',
-                        icon: 'upload'
+                        path: '/pc/upload'
                     },
                     ]
 const menu056f2d7df6e6b64625c3a2d27ce07b05 = [
                     {
                         title: '菜单 Menu',
-                        path: '/pc/menu',
-                        icon: 'bars'
+                        path: '/pc/menu'
                     },
                     
                     {
                         title: '标签页 Tabs',
-                        path: '/pc/tabs',
-                        icon: 'clone'
+                        path: '/pc/tabs'
                     },
                     ]
 const menu39003734d1d700d5bd97bf1e7a2fcf73 = [
                     {
                         title: '手机壳 Phone',
-                        path: '/pc/phone',
-                        icon: 'mobile'
+                        path: '/pc/phone'
                     },
                     ]
 const menu5a0afc9dbd6c2e98769d4620d4fb5b13 = [
                     {
                         title: '内嵌网页 Iframe',
-                        path: '/pc/iframe',
-                        icon: 'sticky-note'
+                        path: '/pc/iframe'
                     },
                     
                     {
                         title: '图像裁剪 Cropper',
-                        path: '/pc/cropper',
-                        icon: 'cut'
+                        path: '/pc/cropper'
                     },
                     ]
 

@@ -7,13 +7,11 @@
         "计算": [
           {
             "name": "友好时间",
-            "path": "timeago",
-            "icon": "clock-o"
+            "path": "timeago"
           },
           {
             "name": "徽标数",
-            "path": "badge",
-            "icon": "clock-o"
+            "path": "badge"
           }
         ]
       }
@@ -25,158 +23,129 @@
         "基本": [
           {
             "name": "全屏布局",
-            "path": "layout-global",
-            "icon": "columns"
+            "path": "layout-global"
           },
           {
             "name": "布局",
-            "path": "layout",
-            "icon": "th"
+            "path": "layout"
           },
           {
             "name": "按钮",
-            "path": "button",
-            "icon": "square-o"
+            "path": "button"
           }
         ],
         "展示": [
           {
             "name": "分页",
-            "path": "pagination",
-            "icon": "sticky-note-o"
+            "path": "pagination"
           },
           {
             "name": "表格",
-            "path": "table",
-            "icon": "table"
+            "path": "table"
           },
           {
             "name": "模态框",
-            "path": "modal",
-            "icon": "list-alt"
+            "path": "modal"
           },
           {
             "name": "提示",
-            "path": "message",
-            "icon": "exclamation-circle"
+            "path": "message"
           },
           {
             "name": "折叠面板",
-            "path": "collapse",
-            "icon": "plus-square"
+            "path": "collapse"
           },
           {
             "name": "树形控件",
-            "path": "tree",
-            "icon": "tree"
+            "path": "tree"
           },
           {
             "name": "JSON树",
-            "path": "json-tree",
-            "icon": "tree"
+            "path": "json-tree"
           },
           {
             "name": "图片容器",
-            "path": "image",
-            "icon": "picture-o"
+            "path": "image"
           },
           {
             "name": "组件嵌入",
-            "path": "render-to",
-            "icon": "life-ring"
+            "path": "render-to"
           },
           {
             "name": "滚动监听",
-            "path": "scroll-listen",
-            "icon": "recycle"
+            "path": "scroll-listen"
           }
         ],
         "表单": [
           {
             "name": "输入框",
-            "path": "input",
-            "icon": "font"
+            "path": "input"
           },
           {
             "name": "数字框",
-            "path": "number",
-            "icon": "chevron-up"
+            "path": "number"
           },
           {
             "name": "自动完成",
-            "path": "auto-complete",
-            "icon": "angle-double-down"
+            "path": "auto-complete"
           },
           {
             "name": "选择框",
-            "path": "select",
-            "icon": "navicon"
+            "path": "select"
           },
           {
             "name": "开关",
-            "path": "switch",
-            "icon": "toggle-off"
+            "path": "switch"
           },
           {
             "name": "多选框",
-            "path": "checkbox",
-            "icon": "check-square"
+            "path": "checkbox"
           },
           {
             "name": "单选框",
-            "path": "radio",
-            "icon": "check-circle"
+            "path": "radio"
           },
           {
             "name": "时间选择器",
-            "path": "timepicker",
-            "icon": "clock-o"
+            "path": "timepicker"
           },
           {
             "name": "日期选择器",
-            "path": "datepicker",
-            "icon": "calendar"
+            "path": "datepicker"
           },
           {
             "name": "上传",
-            "path": "upload",
-            "icon": "upload"
+            "path": "upload"
           }
         ],
         "导航": [
           {
             "name": "菜单",
-            "path": "menu",
-            "icon": "bars"
+            "path": "menu"
           },
           {
             "name": "标签页",
-            "path": "tabs",
-            "icon": "clone"
+            "path": "tabs"
           }
         ],
         "样式": [
           {
             "name": "基础样式库",
-            "path": "style",
-            "icon": "eject"
+            "path": "style"
           },
           {
             "name": "手机壳",
-            "path": "phone",
-            "icon": "mobile"
+            "path": "phone"
           }
         ],
         "其它": [
           {
             "name": "内嵌网页",
-            "path": "iframe",
-            "icon": "sticky-note"
+            "path": "iframe"
           },
           {
             "name": "图像裁剪",
-            "path": "cropper",
-            "icon": "cut"
+            "path": "cropper"
           }
         ]
       }
@@ -188,28 +157,23 @@
         "基本": [
           {
             "name": "样式重置",
-            "path": "reset",
-            "icon": "eject"
+            "path": "reset"
           },
           {
             "name": "颜色",
-            "path": "color",
-            "icon": "columns"
+            "path": "color"
           },
           {
             "name": "页面缩放",
-            "path": "scale",
-            "icon": "modx"
+            "path": "scale"
           },
           {
             "name": "聊天气泡",
-            "path": "chat",
-            "icon": "comments"
+            "path": "chat"
           },
           {
             "name": "聊天盒子",
-            "path": "chat-box",
-            "icon": "list-alt"
+            "path": "chat-box"
           }
         ]
       }
@@ -221,40 +185,33 @@
         "基本": [
           {
             "name": "日志请求",
-            "path": "track",
-            "icon": "send"
+            "path": "track"
           },
           {
             "name": "验证码",
-            "path": "captcha",
-            "icon": "bullseye"
+            "path": "captcha"
           },
           {
             "name": "发帖",
-            "path": "submit",
-            "icon": "comment"
+            "path": "submit"
           },
           {
             "name": "顶部蓝条",
-            "path": "blue-bar",
-            "icon": "bars"
+            "path": "blue-bar"
           },
           {
             "name": "上传",
-            "path": "upload",
-            "icon": "upload"
+            "path": "upload"
           }
         ],
         "展示": [
           {
             "name": "字体图标",
-            "path": "icon",
-            "icon": "fonticons"
+            "path": "icon"
           },
           {
             "name": "表情库",
-            "path": "emoji",
-            "icon": "fonticons"
+            "path": "emoji"
           }
         ]
       }
