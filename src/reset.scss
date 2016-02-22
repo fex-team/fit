@@ -1,3 +1,12 @@
+// 滚动条
+&::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f6f6f6;
+}
+&::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
 .src-layout .g-mn {
   // 头部的切换tabs
   .lib-pc-tabs-src-tabs .title-container {

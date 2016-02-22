@@ -10,19 +10,19 @@ $theme-color: (
         mobile:(
                 bg-color:#7266ba,
                 font-color: whitesmoke,
-                font-active-color: #7BDADE,
+                font-active-color: #1c9aa0,
                 title-color:white
         ),
         tb: (
                 bg-color:#23b7e5,
                 font-color: whitesmoke,
-                font-active-color: #B7FFAA,
+                font-active-color: #1c9aa0,
                 title-color:#fff
         ),
         common: (
                 bg-color:#23b7e5,
                 font-color: whitesmoke,
-                font-active-color: #fff,
+                font-active-color: #1c9aa0,
                 title-color:#fff
         )
 );
@@ -34,10 +34,10 @@ $theme-color: (
 
   @each $them-name in pc, mobile, tb, common {
     &.#{$them-name} {
-      background-color: map-get(map-get($theme-color, $them-name), bg-color);
+      background: #f6f6f6;
       .title {
         font-size: 12px;
-        color: map-get(map-get($theme-color, $them-name), title-color);
+        color: #8b8e99;
         padding: 10px 15px;
       }
       .item {
@@ -47,7 +47,7 @@ $theme-color: (
         font-weight: normal;
         text-transform: none;
         transition: background-color 0.2s ease-in-out 0s;
-        color: map-get(map-get($theme-color, $them-name), font-color);
+        color: #666;
         text-decoration: none;
         font-size: 13px;
         &:hover, &.active {

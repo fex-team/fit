@@ -1,5 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
+import Search from '../../../components/search-components'
 
 import LeftMenuPC from './left-menu-pc'
 import LeftMenuMobile from './left-menu-mobile'
@@ -100,6 +101,7 @@ export default class Layout extends React.Component {
                     <Menu/>
                 </div>
                 <div className={menuColor}>
+                    <Search history={this.context.history}/>
                     {LeftMenu ? LeftMenu : null}
                 </div>
                 <div className="g-mn">
