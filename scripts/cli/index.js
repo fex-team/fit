@@ -123,17 +123,23 @@ switch (args[0]) {
 			checkModules(allModules);
 			let diff = moduleDistribute(getProjectStatus)
 			cleanModulesSync(diff, allModules, params)
+
+			if (diff.length === 0) {
+				console.log('all modules clean')
+				return;
+			}
+
 			buildModules(diff).then(() => {
-				patchModuleSync(diff, allModules, params)
-				let newDiff = _.uniq(diff.concat(moduleDistribute(getProjectStatus)))
-				publishModules(newDiff).then(() => {
-					cleanModulesSync(newDiff)
-					commitModules(newDiff)
-					pushModules(pullModules(newDiff))
-				}).catch((e) => {
-					console.log(e.toString())
-					console.trace();
-				})
+//				patchModuleSync(diff, allModules, params)
+//				let newDiff = _.uniq(diff.concat(moduleDistribute(getProjectStatus)))
+//				publishModules(newDiff).then(() => {
+//					cleanModulesSync(newDiff)
+//					commitModules(newDiff)
+//					pushModules(pullModules(newDiff))
+//				}).catch((e) => {
+//					console.log(e.toString())
+//					console.trace();
+//				})
 			}).catch((e) => {
 				console.log(e.toString());
 				console.trace();
