@@ -6,11 +6,11 @@ var root = process.cwd();
 
 export default function publishModules(modules) {
 
-	var whoami = execSync('npm whoami')
+	var whoami = execSync('npm whoami').toString()
 
-	if (whoami !== 'tieba') {
-		console.log('you are not logined by tieba');
-		process.exit(1);
+	if (whoami.replace(/\s+/, '') !== 'tieba') {
+		console.log('you are not logined by tieba')
+		process.exit(1)
 	}
 
 	return multiProcessor(() => {
