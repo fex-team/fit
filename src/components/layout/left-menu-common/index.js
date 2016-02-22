@@ -6,7 +6,8 @@
 const menu35b4b419fa4b8c97858f967daf196f96 = [
                     {
                         title: '友好时间 Timeago',
-                        path: '/common/timeago'
+                        path: '/common/timeago',
+                        icon: 'undefined'
                     },
                     ]
 
