@@ -6,14 +6,26 @@ var root = process.cwd();
 export default function commitGit(modules) {
 	modules.filter(checkGitInPackageJSON).forEach((filePath) => {
 		process.chdir(filePath)
-		try {
-			execSync('git add -A')
-			execSync('git commit -m "quick push"')
+
+		let output = execSync('git status --porcelain', {
+			cwd: filePath
+		}).toString().replace(/\s\w\s/g, '').split('\n').filter((val) => {
+			return val.length > 0;
+		})
+
+		if (output.length > 0) {
+			try {
+				execSync('git add -A')
+				execSync('git commit -m "quick push"')
+			}
+			catch (e) {
+				console.log(e.toString())
+			}
+			console.log(`COMMIT: quick commit ${filePath}`)
 		}
-		catch (e) {
-			console.log(e.toString())
+		else {
+			console.log(`INFO: ${filePath} is clean`)
 		}
-		console.log(`COMMIT: quick commit ${filePath}`)
 	})
 	process.chdir(root)
 }
