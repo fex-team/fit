@@ -133,7 +133,6 @@ switch (args[0]) {
 				patchModuleSync(diff, allModules, params)
 				let newDiff = _.uniq(diff.concat(moduleDistribute(getProjectStatus)))
 				publishModules(newDiff).then(() => {
-					cleanModulesSync(newDiff)
 					commitModules(newDiff)
 					pushModules(pullModules(newDiff))
 				}).catch((e) => {
