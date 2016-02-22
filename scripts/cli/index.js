@@ -9,15 +9,15 @@ import os from 'os'
 import _ from 'lodash'
 
 import {
-	getPathModules,
-	getAllPathModules,
-	getAllComponentJSON,
-	getConfigModules,
+		getPathModules,
+		getAllPathModules,
+		getAllComponentJSON,
+		getConfigModules,
 } from './utils/util'
 
 import {
-	setModuleGlobal,
-	getModuleGlobal
+		setModuleGlobal,
+		getModuleGlobal
 } from './utils/global'
 
 import initPrepare from './feature/init'
@@ -40,7 +40,7 @@ var root = process.cwd()
 
 if (args.length === 0) {
 	console.error(
-		`
+			`
 fit cli tools
 
 type: pc|web|native
@@ -145,6 +145,16 @@ switch (args[0]) {
 
 		break
 
+	case 'check':
+
+		let diff = moduleDistribute(getProjectStatus);
+
+		console.log('These module had modified: \n');
+
+		console.log(diff.join('\n'));
+
+		break
+
 	case 'update':
 
 		let flag = initPrepare();
@@ -186,7 +196,7 @@ switch (args[0]) {
 
 	default:
 		console.error(
-			'Command `%s` unrecognized.'
+				'Command `%s` unrecognized.'
 		)
 		process.exit(1)
 		break
