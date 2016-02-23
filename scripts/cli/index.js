@@ -32,6 +32,7 @@ import addModules from './feature/add'
 import getProjectStatus from './feature/git-status'
 import checkModules from './feature/check'
 import initProject from './feature/init-project'
+import upgradeDependencies from './feature/upgrade-dependencies'
 
 import moduleDistribute from './utils/distribute'
 import multiProcessor from './utils/multi-processor'
@@ -84,6 +85,12 @@ switch (args[0]) {
 	case 'clean':
 
 		moduleDistribute(cleanModulesSync)
+
+		break
+
+	case 'upgrade-dependencies':
+
+		moduleDistribute(upgradeDependencies)
 
 		break
 
