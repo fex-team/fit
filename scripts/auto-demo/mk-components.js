@@ -87,6 +87,7 @@ const mkComponents = (config)=> {
                 import CodeDoc from '../../../../components/code-doc'
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
+                import SidebarComponent from '../../../../components/side-bar'
                 import readme from '../../../../lib/${categoryKey}/${component.path}/readme.md'
                 import '../../../../lib/${categoryKey}/${component.path}/demo'
 
@@ -143,18 +144,16 @@ const mkComponents = (config)=> {
                         return (
                             <div className="_namespace">
                                 <Layout>
-                                    <Header>
-                                        <Title gitlabUrl="http://gitlab.baidu.com/tb-component/${gitlabPath}/tree/master"
-                                               onChange={this.handlePageChange.bind(this)}>{readme}</Title>
-                                    </Header>
-
                                     <Section>
+                                        <Title>{readme}</Title>
                                         <ScrollListenBox store={store}>
                                             {Content}
                                         </ScrollListenBox>
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
+                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/${gitlabPath}/tree/master"
+                                 onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>
                                 </Layout>
