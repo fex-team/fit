@@ -154,6 +154,7 @@ switch (args[0]) {
 		}, 'patch')
 
 		commitModules([root])
+		pullModules([root])
 		pushModules([root])
 
 		break
