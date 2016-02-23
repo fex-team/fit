@@ -1,14 +1,19 @@
-import { getAllConfigModules, getAllPathModules } from '../utils/util'
+import { getAllConfigModules, getAllPathModules, getAllComponentJSON} from '../utils/util'
 import _ from 'lodash'
 import addModules from './add'
 import commitModules from './commit'
 import pullModules from './pull'
 import pushModules from './push'
-import { existsSync, mkdir} from 'fs'
+import initProject from './init-project'
+import { existsSync, mkdir, writeFileSync} from 'fs'
+import format from 'format-json'
 import path from 'path'
+import conch from 'conch'
+import { execSync } from 'child_process'
 
 var registedType = ['pc', 'mobile', 'tb', 'common']
 var root = process.cwd()
+
 
 export default function initPrepare () {
 	console.log('checking missing submodules...')
@@ -31,6 +36,7 @@ export default function initPrepare () {
 		addModules(difference)
 		commitModules(difference)
 		pullModules(difference)
+		initProject(difference)
 		return false;
 	}
 	else {

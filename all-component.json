@@ -40,6 +40,10 @@
             "path": "pagination"
           },
           {
+            "name": "编辑器",
+            "path": "md-editor"
+          },
+          {
             "name": "表格",
             "path": "table"
           },

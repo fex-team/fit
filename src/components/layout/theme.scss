@@ -2,8 +2,8 @@
 
 $theme-color: (
         pc: (
-                bg-color:$bg-color-dark,
-                font-color: #b4b6bd,
+                bg-color: linear-gradient(top, #f6f6f6 0%, #dadada 100%),
+                font-color: #3c4246,
                 font-active-color: #1c9aa0,
                 title-color:#8b8e99
         ),
@@ -34,7 +34,7 @@ $theme-color: (
 
   @each $them-name in pc, mobile, tb, common {
     &.#{$them-name} {
-      background-color: map-get(map-get($theme-color, $them-name), bg-color);
+      background: map-get(map-get($theme-color, $them-name), bg-color);
       .title {
         font-size: 12px;
         color: map-get(map-get($theme-color, $them-name), title-color);

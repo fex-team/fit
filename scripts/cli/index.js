@@ -31,6 +31,7 @@ import commitModules from './feature/commit'
 import addModules from './feature/add'
 import getProjectStatus from './feature/git-status'
 import checkModules from './feature/check'
+import initProject from './feature/init-project'
 
 import moduleDistribute from './utils/distribute'
 import multiProcessor from './utils/multi-processor'
@@ -62,6 +63,13 @@ switch (args[0]) {
 		initPrepare()
 
 		break
+
+	case 'init-project':
+
+		moduleDistribute(initProject)
+
+		break
+
 	case 'build':
 		// build all
 		moduleDistribute(cleanModulesSync)
@@ -103,10 +111,10 @@ switch (args[0]) {
 			cleanModulesSync(modules, allModules, params)
 			buildModules(modules).then(() => {
 				patchModuleSync(modules, allModules, params)
-				let diff = _.uniq(modules.concat(getProjectStatus()))
+				let diff = moduleDistribute(getProjectStatus)
 				publishModules(diff).then(() => {
-					commitGit(diff)
-					pushSubModule(pullSubModule(diff))
+					commitModules(diff)
+					pushModules(pullModules(diff))
 				}).catch((e) => {
 					console.log(e.toString())
 				})
@@ -168,6 +176,7 @@ switch (args[0]) {
 			moduleDistribute(pullModules);
 		}
 
+		commitModules([root])
 		pullModules([root])
 
 		break
