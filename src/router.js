@@ -100,6 +100,8 @@
                 
                 import tbCaptchaComponent from './components/tb/captcha'
                 
+                import tbCaptchaDragComponent from './components/tb/captcha-drag'
+                
                 import tbSubmitComponent from './components/tb/submit'
                 
                 import tbUploadComponent from './components/tb/upload'
@@ -252,6 +254,9 @@
                 
                 <Route path="captcha"
                        component={tbCaptchaComponent}/>
+                
+                <Route path="captcha-drag"
+                       component={tbCaptchaDragComponent}/>
                 
                 <Route path="submit"
                        component={tbSubmitComponent}/>

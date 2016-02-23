@@ -120,19 +120,13 @@ this.unsubscribe = store.subscribe(() => {
 
 外部直接使用`react-router`跳转时,不要使用浏览器api,使用如下方法:
 
-先在class下面注册一个`history`:
+升级到 `react-router` `V2.x`:
 
 ~~~js
-MyComponent.contextTypes = {
-    history: React.PropTypes.object
-}
-~~~
-
-再直接调用`history`的api:
-
-~~~js
-this.context.history.pushState(null, '/components')
+import { browserHistory } from 'react-router'
+browserHistory.push(...)
 ~~~
 
 #### 10.尽量不使用inline-style
 
+避免给拓展和继承带来麻烦,native可以通过脚手架自动生成`inline-style`

@@ -196,6 +196,10 @@
             "path": "captcha"
           },
           {
+            "name": "拖拽验证码",
+            "path": "captcha-drag"
+          },
+          {
             "name": "发帖",
             "path": "submit"
           },
