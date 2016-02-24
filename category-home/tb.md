@@ -120,7 +120,7 @@ $ npm install
 git clone http://gitlab.baidu.com/tb/node.git
 cd node
 npm install
-yog2 run
+yog2 run -e dev
 ```
 
 ### 新建项目
@@ -148,7 +148,7 @@ npm start
 > 最新版fis3怎么装?
 
 ````
-npm install fis3@3.3.12 -g
+npm install fis3 -g
 ````
 
 > fis 上面没有 npm 组件?
