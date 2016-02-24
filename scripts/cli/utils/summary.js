@@ -67,20 +67,15 @@ export function setData (head, key, value) {
 	}
 
 	if (colIndex < 0 && rowIndex < 0) {
-		setHeader(key);
-		datas.push([head, value]);
-	}
-	else if (rowIndex < 0) {
 		rowIndex = setHeader(key) - 1;
-		datas[colIndex][rowIndex] = value;
-	}
-	else if (colIndex < 0) {
 		colIndex = datas.push([head]) - 1;
-		datas[colIndex][rowIndex] = value;
+	} else if (rowIndex < 0) {
+		rowIndex = setHeader(key) - 1;
+	} else if (colIndex < 0) {
+		colIndex = datas.push([head]) - 1;
 	}
-	else {
-		datas[colIndex][rowIndex] = value;
-	}
+
+	datas[colIndex][rowIndex] = value;
 }
 
 export function tableRender () {
