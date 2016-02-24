@@ -145,6 +145,7 @@ switch (args[0]) {
 
 			if (diff.length === 0) {
 				console.log('all modules clean')
+				tableRender();
 				return;
 			}
 
