@@ -43,7 +43,7 @@ export function setHeaders (header) {
 export function setHeader (header) {
 	let _header = _.assign(defaultHeader, { value: header })
 
-	headers.push(_header)
+	return headers.push(_header)
 }
 
 export function logError (job, errmsg) {
@@ -51,32 +51,45 @@ export function logError (job, errmsg) {
 }
 
 export function setData (head, key, value) {
-	let itemIndex = -1;
-	let keyIndex = -1;
+	let rowIndex = -1;
+	let colIndex = -1;
 
 	_.each(headers, (val, _index) => {
 		if (val.value === key) {
-			itemIndex = _index - 1;
+			rowIndex = _index;
 		}
 	})
 
 	_.each(datas, (val, _index) => {
 		if (val[0] === head) {
-			keyIndex = _index - 1;
+			colIndex = _index;
 		}
 	})
 
-	if (itemIndex < 0) {
-		setHeader(key)
-		datas.push([head, value])
+	if (colIndex < 0 && rowIndex < 0) {
+		setHeader(key);
+		datas.push([head, value]);
+	} else if (rowIndex < 0) {
+		rowIndex = setHeader(key);
+		datas[colIndex][rowIndex] = value;
+	} else if (colIndex < 0) {
+		colIndex = datas.push([head]) - 1;
+		datas[colIndex][rowIndex] = value;
+	} else {
+		datas[colIndex][rowIndex] = value;
 	}
-	else if (keyIndex < 0){
-		datas[itemIndex].push(head)
-		datas[itemIndex].push(value)
-	}
-	else {
-		datas[itemIndex][keyIndex] = value
-	}
+
+//	if (itemIndex < 0) {
+//		setHeader(key)
+//		datas.push([head, value])
+//	}
+//	else if (keyIndex < 0){
+//		datas[itemIndex].push(head)
+//		datas[itemIndex].push(value)
+//	}
+//	else {
+//		datas[itemIndex][keyIndex] = value
+//	}
 }
 
 export function tableRender () {

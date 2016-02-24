@@ -86,6 +86,7 @@ switch (args[0]) {
 	case 'clean':
 
 		moduleDistribute(cleanModulesSync)
+		tableRender()
 
 		break
 
