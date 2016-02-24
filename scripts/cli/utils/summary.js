@@ -12,7 +12,7 @@ var headers = [
 		color: "yellow",
 		align: "center",
 		paddingRight: 5,
-		width: 20
+		width: 25
 	}
 ];
 var defaultHeader = {
@@ -21,7 +21,7 @@ var defaultHeader = {
 	color: "yellow",
 	align: "center",
 	paddingRight: 5,
-	width: 10,
+	width: 15,
 	formatter: formatter
 }
 
@@ -34,10 +34,6 @@ function formatter (value) {
 	else {
 		return colors.red(value.toString())
 	}
-}
-
-export function setHeaders (header) {
-	headers = _.cloneDeep(header)
 }
 
 export function setHeader (header) {
@@ -86,6 +82,8 @@ export function setData (head, key, value) {
 }
 
 export function tableRender () {
+
+	console.log(datas)
 
 	var t1 = Table(headers, datas, {
 		borderStyle: 1,
