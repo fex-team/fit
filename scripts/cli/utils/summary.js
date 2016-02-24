@@ -66,6 +66,7 @@ export function setData (head, key, value) {
 		}
 	})
 
+	console.log(head, key, value)
 
 	if (colIndex < 0 && rowIndex < 0) {
 		setHeader(key);
