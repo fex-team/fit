@@ -15,11 +15,6 @@ const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     },
                     
                     {
-                        title: '拖拽验证码 CaptchaDrag',
-                        path: '/tb/captcha-drag'
-                    },
-                    
-                    {
                         title: '发帖 Submit',
                         path: '/tb/submit'
                     },

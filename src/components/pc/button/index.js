@@ -1,218 +1,210 @@
-import React from 'react'
-import CodeView from '../../../../components/code-view'
-import Highlight from 'react-highlight'
-import { ScrollListenBox, ScrollListenNail , ScrollListen, createStore } from 'fit-scroll-listen'
-import { Row, Col } from 'fit-layout'
-import CodeDoc from '../../../../components/code-doc'
-import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
-import Title from '../../../../components/title'
-import SidebarComponent from '../../../../components/side-bar'
-import readme from '../../../../lib/pc/button/readme.md'
-import '../../../../lib/pc/button/demo'
 
-const store = createStore()
+                import React from 'react'
+                import CodeView from '../../../../components/code-view'
+                import Highlight from 'react-highlight'
+                import { ScrollListenBox, ScrollListenNail , ScrollListen, createStore } from 'fit-scroll-listen'
+                import { Row, Col } from 'fit-layout'
+                import CodeDoc from '../../../../components/code-doc'
+                import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
+                import Title from '../../../../components/title'
+                import SidebarComponent from '../../../../components/side-bar'
+                import readme from '../../../../lib/pc/button/readme.md'
+                import '../../../../lib/pc/button/demo'
 
+                const store = createStore()
 
-import ButtonSource from '../../../../lib/pc/button/src/button'
-import ButtonSourceCode from 'text!../../../../lib/pc/button/src/button'
+                
+                        import ButtonSource from '../../../../lib/pc/button/src/button'
+                        import ButtonSourceCode from 'text!../../../../lib/pc/button/src/button'
+                        
+                        import ButtonGroupSource from '../../../../lib/pc/button/src/button-group'
+                        import ButtonGroupSourceCode from 'text!../../../../lib/pc/button/src/button-group'
+                        
 
-import ButtonGroupSource from '../../../../lib/pc/button/src/button-group'
-import ButtonGroupSourceCode from 'text!../../../../lib/pc/button/src/button-group'
+                
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/button/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/button/demo/lists/basic.md'
+                    
+                    import ActiveComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/active.js'
+                    import ActiveCode from 'text!../../../../lib/pc/button/demo/lists/active.js'
+                    import ActiveMarkdown from '../../../../lib/pc/button/demo/lists/active.md'
+                    
+                    import AddonComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/addon.js'
+                    import AddonCode from 'text!../../../../lib/pc/button/demo/lists/addon.js'
+                    import AddonMarkdown from '../../../../lib/pc/button/demo/lists/addon.md'
+                    
+                    import ColorComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/color.js'
+                    import ColorCode from 'text!../../../../lib/pc/button/demo/lists/color.js'
+                    import ColorMarkdown from '../../../../lib/pc/button/demo/lists/color.md'
+                    
+                    import GroupComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/group.js'
+                    import GroupCode from 'text!../../../../lib/pc/button/demo/lists/group.js'
+                    import GroupMarkdown from '../../../../lib/pc/button/demo/lists/group.md'
+                    
+                    import LoadingComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/loading.js'
+                    import LoadingCode from 'text!../../../../lib/pc/button/demo/lists/loading.js'
+                    import LoadingMarkdown from '../../../../lib/pc/button/demo/lists/loading.md'
+                    
+                    import RoundedComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/rounded.js'
+                    import RoundedCode from 'text!../../../../lib/pc/button/demo/lists/rounded.js'
+                    import RoundedMarkdown from '../../../../lib/pc/button/demo/lists/rounded.md'
+                    
+                    import SizeComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/size.js'
+                    import SizeCode from 'text!../../../../lib/pc/button/demo/lists/size.js'
+                    import SizeMarkdown from '../../../../lib/pc/button/demo/lists/size.md'
+                    
 
+                const colStyle = {
+                    padding: 10
+                }
 
-import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/basic.js'
-import BasicCode from 'text!../../../../lib/pc/button/demo/lists/basic.js'
-import BasicMarkdown from '../../../../lib/pc/button/demo/lists/basic.md'
+                const docStyle = {
+                    margin: 10,
+                    background: 'white'
+                }
 
-import ActiveComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/active.js'
-import ActiveCode from 'text!../../../../lib/pc/button/demo/lists/active.js'
-import ActiveMarkdown from '../../../../lib/pc/button/demo/lists/active.md'
+                export default class DemoBox extends React.Component {
+                    constructor(props) {
+                        super(props)
+                        this.state = {
+                            page: 'demo'
+                        }
+                        document.title = '按钮'
+                    }
 
-import AddonComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/addon.js'
-import AddonCode from 'text!../../../../lib/pc/button/demo/lists/addon.js'
-import AddonMarkdown from '../../../../lib/pc/button/demo/lists/addon.md'
+                    handlePageChange(value) {
+                        this.setState({
+                            page: value
+                        })
+                    }
 
-import ColorComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/color.js'
-import ColorCode from 'text!../../../../lib/pc/button/demo/lists/color.js'
-import ColorMarkdown from '../../../../lib/pc/button/demo/lists/color.md'
+                    render() {
+                        let Content = null
 
-import GroupComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/group.js'
-import GroupCode from 'text!../../../../lib/pc/button/demo/lists/group.js'
-import GroupMarkdown from '../../../../lib/pc/button/demo/lists/group.md'
+                        switch (this.state.page) {
+                        case 'demo':
+                            Content = (
+                                <Row>
+                                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BasicMarkdown}
+                                      code={BasicCode}>
 
-import LoadingComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/loading.js'
-import LoadingCode from 'text!../../../../lib/pc/button/demo/lists/loading.js'
-import LoadingMarkdown from '../../../../lib/pc/button/demo/lists/loading.md'
+                                    <BasicComponent/>
 
-import RoundedComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/rounded.js'
-import RoundedCode from 'text!../../../../lib/pc/button/demo/lists/rounded.js'
-import RoundedMarkdown from '../../../../lib/pc/button/demo/lists/rounded.md'
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={ActiveMarkdown}
+                                      code={ActiveCode}>
 
-import SizeComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/button/demo/lists/size.js'
-import SizeCode from 'text!../../../../lib/pc/button/demo/lists/size.js'
-import SizeMarkdown from '../../../../lib/pc/button/demo/lists/size.md'
+                                    <ActiveComponent/>
 
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={AddonMarkdown}
+                                      code={AddonCode}>
 
-const colStyle = {
-    padding: 10
-}
+                                    <AddonComponent/>
 
-const docStyle = {
-    margin: 10,
-    background: 'white'
-}
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={ColorMarkdown}
+                                      code={ColorCode}>
 
-export default class DemoBox extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            page: 'demo'
-        }
-        document.title = '按钮'
-    }
+                                    <ColorComponent/>
 
-    handlePageChange(value) {
-        this.setState({
-            page: value
-        })
-    }
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={GroupMarkdown}
+                                      code={GroupCode}>
 
-    render() {
-        let Content = null
+                                    <GroupComponent/>
 
-        switch (this.state.page) {
-        case 'demo':
-            Content = (
-                <Row>
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={LoadingMarkdown}
+                                      code={LoadingCode}>
 
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView store={store}
-                                  md={BasicMarkdown}
-                                  code={BasicCode}>
+                                    <LoadingComponent/>
 
-                            <BasicComponent/>
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={RoundedMarkdown}
+                                      code={RoundedCode}>
 
-                        </CodeView>
-                    </Col>
+                                    <RoundedComponent/>
 
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView store={store}
-                                  md={ActiveMarkdown}
-                                  code={ActiveCode}>
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={SizeMarkdown}
+                                      code={SizeCode}>
 
-                            <ActiveComponent/>
+                                    <SizeComponent/>
 
-                        </CodeView>
-                    </Col>
+                            </CodeView>
+                        </Col>
+                    
+                                </Row>
+                            )
+                            break
+                        case 'document':
+                            Content = (
+                                <div>
+                                    
+                        <div style={docStyle}>
+                            <CodeDoc code={ButtonSourceCode} instance={ButtonSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={ButtonGroupSourceCode} instance={ButtonGroupSource} />
+                        </div>
+                        
+                                </div>
+                            )
+                            break
+                        }
 
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView store={store}
-                                  md={AddonMarkdown}
-                                  code={AddonCode}>
-
-                            <AddonComponent/>
-
-                        </CodeView>
-                    </Col>
-
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView store={store}
-                                  md={ColorMarkdown}
-                                  code={ColorCode}>
-
-                            <ColorComponent/>
-
-                        </CodeView>
-                    </Col>
-
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView store={store}
-                                  md={GroupMarkdown}
-                                  code={GroupCode}>
-
-                            <GroupComponent/>
-
-                        </CodeView>
-                    </Col>
-
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView store={store}
-                                  md={LoadingMarkdown}
-                                  code={LoadingCode}>
-
-                            <LoadingComponent/>
-
-                        </CodeView>
-                    </Col>
-
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView store={store}
-                                  md={RoundedMarkdown}
-                                  code={RoundedCode}>
-
-                            <RoundedComponent/>
-
-                        </CodeView>
-                    </Col>
-
-                    <Col span="24"
-                         style={colStyle}>
-                        <CodeView store={store}
-                                  md={SizeMarkdown}
-                                  code={SizeCode}>
-
-                            <SizeComponent/>
-
-                        </CodeView>
-                    </Col>
-
-                </Row>
-            )
-            break
-        case 'document':
-            Content = (
-                <div>
-
-                    <div style={docStyle}>
-                        <CodeDoc code={ButtonSourceCode}
-                                 instance={ButtonSource}/>
-                    </div>
-
-                    <div style={docStyle}>
-                        <CodeDoc code={ButtonGroupSourceCode}
-                                 instance={ButtonGroupSource}/>
-                    </div>
-
-                </div>
-            )
-            break
-        }
-
-        return (
-            <div className="_namespace">
-                <Layout>
-                    <Section>
-                        <Title>{readme}</Title>
-                        <ScrollListenBox store={store}>
-                            {Content}
-                        </ScrollListenBox>
-                    </Section>
-                    <Sidebar direction="right"
-                             width="120">
-                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/pc-button/tree/master"
-                                          onChange={this.handlePageChange.bind(this)}/>
-                        <ScrollListen store={store}/>
-                    </Sidebar>
-                </Layout>
-            </div>
-        )
-    }
-}
+                        return (
+                            <div className="_namespace">
+                                <Layout>
+                                    <Section>
+                                        <Title>{readme}</Title>
+                                        <ScrollListenBox store={store}>
+                                            {Content}
+                                        </ScrollListenBox>
+                                    </Section>
+                                    <Sidebar direction="right"
+                                             width="120">
+                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/pc-button/tree/master"
+                                 onChange={this.handlePageChange.bind(this)}/>
+                                        <ScrollListen store={store}/>
+                                    </Sidebar>
+                                </Layout>
+                            </div>
+                        )
+                    }
+                }
                 
