@@ -8,24 +8,20 @@
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import SidebarComponent from '../../../../components/side-bar'
-                import readme from '../../../../lib/pc/image/readme.md'
-                import '../../../../lib/pc/image/demo'
+                import readme from '../../../../lib/tb/captcha-drag/readme.md'
+                import '../../../../lib/tb/captcha-drag/demo'
 
                 const store = createStore()
 
                 
-                        import ImageSource from '../../../../lib/pc/image/src/image'
-                        import ImageSourceCode from 'text!../../../../lib/pc/image/src/image'
+                        import CaptchaDragSource from '../../../../lib/tb/captcha-drag/src/captcha-drag'
+                        import CaptchaDragSourceCode from 'text!../../../../lib/tb/captcha-drag/src/captcha-drag'
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/image/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/pc/image/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/pc/image/demo/lists/basic.md'
-                    
-                    import WideComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/image/demo/lists/wide.js'
-                    import WideCode from 'text!../../../../lib/pc/image/demo/lists/wide.js'
-                    import WideMarkdown from '../../../../lib/pc/image/demo/lists/wide.md'
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/captcha-drag/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/tb/captcha-drag/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/tb/captcha-drag/demo/lists/basic.md'
                     
 
                 const colStyle = {
@@ -43,7 +39,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = '图片容器'
+                        document.title = '拖拽验证码'
                     }
 
                     handlePageChange(value) {
@@ -70,16 +66,6 @@
                             </CodeView>
                         </Col>
                     
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={WideMarkdown}
-                                      code={WideCode}>
-
-                                    <WideComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
                                 </Row>
                             )
                             break
@@ -88,7 +74,7 @@
                                 <div>
                                     
                         <div style={docStyle}>
-                            <CodeDoc code={ImageSourceCode} instance={ImageSource} />
+                            <CodeDoc code={CaptchaDragSourceCode} instance={CaptchaDragSource} />
                         </div>
                         
                                 </div>
@@ -107,7 +93,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/pc-image/tree/master"
+                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/tb-captcha-drag/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>

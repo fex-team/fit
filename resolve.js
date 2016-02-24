@@ -90,6 +90,8 @@
                 
                 'tb-captcha': path.join(__dirname, 'lib/tb/captcha/src'),
                 
+                'tb-captcha-drag': path.join(__dirname, 'lib/tb/captcha-drag/src'),
+                
                 'tb-submit': path.join(__dirname, 'lib/tb/submit/src'),
                 
                 'tb-blue-bar': path.join(__dirname, 'lib/tb/blue-bar/src'),
