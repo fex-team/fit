@@ -195,6 +195,8 @@ switch (args[0]) {
 		commitModules([root])
 		pullModules([root])
 
+		tableRender()
+
 		break
 
 	case 'publish':
@@ -210,6 +212,7 @@ switch (args[0]) {
 	case 'add':
 
 		moduleDistribute(addModules)
+
 		break
 
 	case 'pull':

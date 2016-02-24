@@ -12,7 +12,7 @@ var headers = [
 		color: "yellow",
 		align: "center",
 		paddingRight: 5,
-		width: 15
+		width: 20
 	}
 ];
 var defaultHeader = {
@@ -41,9 +41,9 @@ export function setHeaders (header) {
 }
 
 export function setHeader (header) {
-	let _header = _.assign(defaultHeader, { value: header })
+	let _header = _.assign(defaultHeader, {value: header})
 
-	return headers.push(_header)
+	return headers.push(_.cloneDeep(_header))
 }
 
 export function logError (job, errmsg) {
@@ -66,30 +66,22 @@ export function setData (head, key, value) {
 		}
 	})
 
+
 	if (colIndex < 0 && rowIndex < 0) {
 		setHeader(key);
 		datas.push([head, value]);
-	} else if (rowIndex < 0) {
-		rowIndex = setHeader(key);
-		datas[colIndex][rowIndex] = value;
-	} else if (colIndex < 0) {
-		colIndex = datas.push([head]) - 1;
-		datas[colIndex][rowIndex] = value;
-	} else {
+	}
+	else if (rowIndex < 0) {
+		rowIndex = setHeader(key) - 1;
 		datas[colIndex][rowIndex] = value;
 	}
-
-//	if (itemIndex < 0) {
-//		setHeader(key)
-//		datas.push([head, value])
-//	}
-//	else if (keyIndex < 0){
-//		datas[itemIndex].push(head)
-//		datas[itemIndex].push(value)
-//	}
-//	else {
-//		datas[itemIndex][keyIndex] = value
-//	}
+	else if (colIndex < 0) {
+		colIndex = datas.push([head]) - 1;
+		datas[colIndex][rowIndex] = value;
+	}
+	else {
+		datas[colIndex][rowIndex] = value;
+	}
 }
 
 export function tableRender () {
