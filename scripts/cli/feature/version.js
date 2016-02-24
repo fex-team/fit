@@ -2,6 +2,9 @@ import fs from 'fs'
 import path from 'path'
 import semver from 'semver'
 import format from 'format-json'
+import { setData, logError } from '../utils/summary'
+import { getRelativePath } from '../utils/util'
+
 
 var root = process.cwd();
 
@@ -93,6 +96,7 @@ export default function patchModulesSync(modules, allModules, type) {
 
 	for (let module of modules) {
 		updateModule(module)
+		setData(getRelativePath(module), 'patch', true)
 	}
 
 	writeChanges()

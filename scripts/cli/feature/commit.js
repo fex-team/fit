@@ -1,5 +1,7 @@
 import { execSync } from 'child_process'
 import { checkGitInPackageJSON } from '../utils/util'
+import { setData, logError } from '../utils/summary'
+import { getRelativePath } from '../utils/util'
 
 var root = process.cwd();
 
@@ -17,11 +19,13 @@ export default function commitGit(modules) {
 			try {
 				execSync('git add -A')
 				execSync('git commit -m "quick push"')
+				console.log(`COMMIT: quick commit ${filePath}`)
+				setData(getRelativePath(filePath), 'commit', true)
 			}
 			catch (e) {
-				console.log(e.toString())
+				setData(getRelativePath(filePath), 'commit', false)
+				logError(getRelativePath(filePath), e.toString())
 			}
-			console.log(`COMMIT: quick commit ${filePath}`)
 		}
 		else {
 			console.log(`INFO: ${filePath} is clean`)

@@ -14,6 +14,14 @@ export function getPackageJSON(filePath) {
     return JSON.parse(fs.readFileSync(path.join(filePath, 'package.json')))
 }
 
+export function getRelativePath (filePath) {
+    let splits = filePath.split('/')
+    let moduleName = splits.pop()
+    let moduleType = splits.pop()
+
+    return moduleType + '/' + moduleName
+}
+
 export function getPathModules (type) {
     let pathModules = fs.readdirSync(path.join(root, 'lib', type)).filter((name) => {
         return fs.lstatSync(path.join(root, 'lib', type, name)).isDirectory()

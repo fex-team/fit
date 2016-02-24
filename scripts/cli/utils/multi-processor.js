@@ -11,7 +11,7 @@ function returnTrue () {
 	return true;
 }
 
-export default function (run = noop, beforeRun = returnTrue, afterRun = noop) {
+export default function (run = noop, beforeRun = returnTrue, afterRun = noop, err = noop) {
 
 	function createWorkInstance (job) {
 		let packageJSON = getPackageJSON(job)
@@ -63,6 +63,10 @@ export default function (run = noop, beforeRun = returnTrue, afterRun = noop) {
 
 				instance.stdout.on('data', (data) => {
 					console.log(data.toString())
+				})
+
+				instance.stdout.on('error', (err) => {
+					err(job, err)
 				})
 
 				instance.on('close', onClose.bind(instance, job))

@@ -1,12 +1,15 @@
-import { getAllComponentJSON } from '../utils/util'
+import { getAllComponentJSON, getRelativePath } from '../utils/util'
 import { existsSync, mkdirSync} from 'fs'
 import { execSync } from 'child_process'
+import { setData, logError } from '../utils/summary'
+
 import path from 'path'
 
 var root = process.cwd()
 
 export default function addModule (modules) {
 	process.chdir(root)
+
 	modules.forEach((val) => {
 		let splits = val.split('/')
 		let moduleName = splits.pop()
@@ -30,9 +33,12 @@ export default function addModule (modules) {
 				})
 				console.log(`INFO: added module ${modulePath}`)
 			}
+
+			setData(getRelativePath(val), 'add', true)
 		}
 		catch(e) {
-			console.log(e.toString())
+			setData(getRelativePath(val), 'add', false)
+			logError(getRelativePath(val), e.toString())
 		}
 	})
 }

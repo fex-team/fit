@@ -36,6 +36,7 @@ import upgradeDependencies from './feature/upgrade-dependencies'
 
 import moduleDistribute from './utils/distribute'
 import multiProcessor from './utils/multi-processor'
+import { tableRender } from './utils/summary'
 
 var args = process.argv.slice(2)
 var root = process.cwd()
@@ -134,6 +135,8 @@ switch (args[0]) {
 
 		initPrepare();
 
+		moduleDistribute(initProject)
+
 		moduleDistribute((modules, allModules, params) => {
 			checkModules(allModules);
 			let diff = moduleDistribute(getProjectStatus)
@@ -149,14 +152,18 @@ switch (args[0]) {
 				let newDiff = _.uniq(diff.concat(moduleDistribute(getProjectStatus)))
 				publishModules(newDiff).then(() => {
 					commitModules(newDiff)
-					pushModules(pullModules(newDiff))
+					pushModules(newDiff)
+
+					tableRender()
 				}).catch((e) => {
 					console.log(e.toString())
 					console.trace();
+					tableRender();
 				})
 			}).catch((e) => {
 				console.log(e.toString());
 				console.trace();
+				tableRender();
 			})
 		}, 'patch')
 
@@ -202,7 +209,6 @@ switch (args[0]) {
 	case 'add':
 
 		moduleDistribute(addModules)
-
 		break
 
 	case 'pull':

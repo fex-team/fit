@@ -1,6 +1,7 @@
 import multiProcessor from '../utils/multi-processor'
 import { spawn, execSync } from 'child_process'
-
+import { setData, logError } from '../utils/summary'
+import { getRelativePath } from '../utils/util'
 
 var root = process.cwd();
 
@@ -21,5 +22,10 @@ export default function publishModules(modules) {
 		}
 		process.chdir(job)
 		return true
+	}, (job) => {
+			setData(getRelativePath(job), 'publish', true)
+	}, (job, err) => {
+		setData(getRelativePath(job), 'publish', false)
+		logError(getRelativePath(job), err.toString())
 	})(modules)
 }

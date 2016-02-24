@@ -1,6 +1,8 @@
 let root = process.cwd();
 import path from 'path'
 import { execSync } from 'child_process'
+import { setData, logError } from '../utils/summary'
+import { getRelativePath } from '../utils/util'
 
 export default function pullSubModule (modules) {
 	let succesed = []
@@ -9,10 +11,13 @@ export default function pullSubModule (modules) {
 		try {
 			execSync('git pull origin master')
 			succesed.push(filePath)
+			setData(getRelativePath(filePath), 'pull', true)
 		}
 		catch(e) {
 			console.log(e.toString())
 			succesed.pop()
+			setData(getRelativePath(filePath), 'push', false)
+			logError(getRelativePath(filePath), e.toString())
 		}
 	})
 
