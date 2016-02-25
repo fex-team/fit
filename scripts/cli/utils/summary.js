@@ -62,10 +62,6 @@ export function setData (head, key, value) {
 		}
 	})
 
-	if (key === 'commit') {
-		debugger;
-	}
-
 	if (colIndex < 0 && rowIndex < 0) {
 		rowIndex = setHeader(key) - 1;
 		colIndex = datas.push([head]) - 1;
@@ -78,9 +74,21 @@ export function setData (head, key, value) {
 	datas[colIndex][rowIndex] = value;
 }
 
+function flatenArr () {
+	var len = headers.length;
+
+	datas.forEach((val) => {
+		if (val.length < len) {
+			for (var i = l; i < (len - val.length); i ++) {
+			}
+		}
+	})
+
+}
+
 export function tableRender () {
 
-	console.log(datas)
+	flatenArr(datas)
 
 	var t1 = Table(headers, datas, {
 		borderStyle: 1,

@@ -190,6 +190,7 @@ switch (args[0]) {
 		let flag = initPrepare();
 
 		if (flag) {
+			moduleDistribute(commitModules);
 			moduleDistribute(pullModules);
 		}
 
