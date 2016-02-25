@@ -34,6 +34,7 @@ function formatter (value) {
 	else if (value.toString() === 'false'){
 		return colors.red(value.toString())
 	}
+	return value;
 }
 
 export function setHeader (header) {
