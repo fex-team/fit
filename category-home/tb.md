@@ -1,5 +1,3 @@
-[TOC]
-
 ## 贴吧组件库
 
 放置功能高度聚合的组件,满足与贴吧特定逻辑或url耦合的条件
@@ -58,13 +56,13 @@ $ npm run preview
 
 #### 准备工作
 
-没有接入gitlab开发流程的同学，[点击链接](http://solar.baidu.com/ci/platform/#/gitlab)进入绑定帐号。
+先要加入 贴吧前端Gitlab hi群接收上线提醒，群号：1493692
 
-你没看错，先要加入 贴吧前端Gitlab hi群，群号：1493692
+没有接入gitlab开发流程的同学，[点击链接](http://solar.baidu.com/ci/platform/#/account)进入绑定帐号,用途自动同步到svn,密码密文存储在CI服务器
 
 #### 添加 webhook
 
-在 git 项目中添加 webhook地址 `http://solar.baidu.com/ci/webhook` 以后master的 push 和 merge request请求将自动通知FIS CI进行 svn 同步、代码检查、自动部署、自动测试等自动化服务。
+可以让 `master` 的 `push` 和 `merge request` 请求将自动通知FIS CI进行 svn 同步、代码检查、自动部署、自动测试等自动化服务。
 
 方法:
 
@@ -97,18 +95,10 @@ jsx会被打包到 `output/bundle.jsx`
 ### 旧项目如何维护
 
 ````
-$ npm install
+$ cnpm install
 ````
 
 之后流程见 运行 & 预览
-
-### 代码结构
-
-[项目结构说明](doc/tree.md)
-
-### 组件发布
-
-[组件如何发布到npm](doc/publish.md)
 
 ## node 版开发流程
 
@@ -144,6 +134,18 @@ npm start
 ```
 
 打开 `127.0.0.1:8080` 查看对应项目.路由和线上对应,是 `/n/[项目名]/[子路由]`
+
+#### 部署到开发机 & 上线
+
+同 非node方案
+
+### 代码结构
+
+[项目结构说明](doc/tree.md)
+
+### 组件发布
+
+[组件如何发布到npm](doc/publish.md)
 
 ### Q & A
 
