@@ -74,21 +74,21 @@ export function setData (head, key, value) {
 	datas[colIndex][rowIndex] = value;
 }
 
-function flatenArr () {
-	var len = headers.length;
-
-	datas.forEach((val) => {
-		if (val.length < len) {
-			for (var i = l; i < (len - val.length); i ++) {
-			}
-		}
-	})
-
-}
+//function flatenArr () {
+//	var len = headers.length;
+//
+//	datas.forEach((val) => {
+//		if (val.length < len) {
+//			for (var i = l; i < (len - val.length); i ++) {
+//			}
+//		}
+//	})
+//
+//}
 
 export function tableRender () {
 
-	flatenArr(datas)
+//	flatenArr(datas)
 
 	var t1 = Table(headers, datas, {
 		borderStyle: 1,
