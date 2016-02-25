@@ -29,6 +29,7 @@ export default function commitGit(modules) {
 		}
 		else {
 			console.log(`INFO: ${filePath} is clean`)
+			setData(getRelativePath(filePath), 'commit', 'none')
 		}
 	})
 	process.chdir(root)
