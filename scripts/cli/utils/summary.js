@@ -28,10 +28,10 @@ var defaultHeader = {
 var error = {};
 
 function formatter (value) {
-	if (value) {
+	if (value.toString() === 'true') {
 		return colors.green(value.toString())
 	}
-	else {
+	else if (value.toString() === 'false'){
 		return colors.red(value.toString())
 	}
 }
