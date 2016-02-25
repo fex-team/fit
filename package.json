@@ -86,7 +86,7 @@
     "history": "^2.0.0",
     "html-path-loader": "^0.1.10",
     "humps": "^1.0.0",
-    "jquery": "^2.1.4",
+    "jquery": "~2.1.3",
     "jquery-mockjax": "git+https://github.com/andycall/jquery-mockjax",
     "lodash": "^3.10.1",
     "marked": "^0.3.5",

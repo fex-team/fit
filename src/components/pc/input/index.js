@@ -47,6 +47,10 @@
                     import TextareaCode from 'text!../../../../lib/pc/input/demo/lists/textarea.js'
                     import TextareaMarkdown from '../../../../lib/pc/input/demo/lists/textarea.md'
                     
+                    import ClearComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/input/demo/lists/clear.js'
+                    import ClearCode from 'text!../../../../lib/pc/input/demo/lists/clear.js'
+                    import ClearMarkdown from '../../../../lib/pc/input/demo/lists/clear.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -146,6 +150,16 @@
                                       code={TextareaCode}>
 
                                     <TextareaComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={ClearMarkdown}
+                                      code={ClearCode}>
+
+                                    <ClearComponent/>
 
                             </CodeView>
                         </Col>
