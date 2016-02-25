@@ -101,8 +101,6 @@ export default function initProject (modules) {
 					console.log('INFO: add demo/index.js for', val)
 					writeFileSync(path.join(val, 'demo', 'index.js'), '')
 				}
-
-				setData(getRelativePath(val), 'init-project', true)
 			}
 	)
 }
