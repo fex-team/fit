@@ -8,7 +8,7 @@ export default function pushSubModule (modules) {
 	modules.forEach((filePath) => {
 		process.chdir(filePath)
 		try {
-			execSync('git push origin master')
+			execSync('git push origin master &>/dev/null')
 			setData(getRelativePath(filePath), 'push', true)
 		}
 		catch (e) {
