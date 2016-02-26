@@ -14,7 +14,7 @@ export default function pullSubModule (modules) {
 			setData(getRelativePath(filePath), 'pull', true)
 		}
 		catch(e) {
-			console.log(e.toString())
+			console.log(e.toString(), filePath)
 			succesed.pop()
 			setData(getRelativePath(filePath), 'push', false)
 			logError(getRelativePath(filePath), e.toString())
