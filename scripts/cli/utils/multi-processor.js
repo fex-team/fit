@@ -71,6 +71,7 @@ export default function (run = noop, beforeRun = returnTrue, afterRun = noop, er
 
 				instance.on('close', (code) => {
 					if (code !== 0) {
+						console.log(123);
 						err(job, 'process exited with ' + code);
 					}
 
