@@ -199,6 +199,12 @@ switch (args[0]) {
 	case 'update':
 
 		let flag = initPrepare();
+		var diff = moduleDistribute(getProjectStatus);
+
+		if (diff.length > 0) {
+			writeCache()
+		}
+
 		let cache = getCache();
 
 		if (flag) {
