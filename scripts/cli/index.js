@@ -151,8 +151,6 @@ switch (args[0]) {
 				diff = cache
 			}
 
-			console.log(cache);
-
 			cleanModulesSync(diff, allModules, params)
 
 			if (diff.length === 0) {
