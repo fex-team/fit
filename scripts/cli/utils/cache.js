@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, writeFileSync, readFileSync} from 'fs'
-import { execFileSync } from 'child_process'
+import { execSync } from 'child_process'
 import path from 'path'
 import getProjectState from '../feature/git-status'
 import moduleDistribute from './distribute'
@@ -11,7 +11,7 @@ function getUserHome() {
 function getCacheDir () {
 	let home = getUserHome()
 
-	if (!existsSync(home, '.awesome')) {
+	if (!existsSync(path.join(home, '.awesome'))) {
 		mkdirSync(path.join(home, '.awesome'))
 	}
 
@@ -32,11 +32,13 @@ export function getCache () {
 		return []
 	}
 
-	return readFileSync(path.join(dir, 'diff.txt')).split('\n')
+	return readFileSync(path.join(dir, 'diff.txt')).toString().split('\n')
 }
 
 export function clearCache () {
 	let dir = getCacheDir()
 
-	execFileSync(`rm ${path.join(dir, 'diff.txt')}`)
+	let filePath = path.join(dir, 'diff.txt');
+
+	execSync(`rm ${filePath}`)
 }

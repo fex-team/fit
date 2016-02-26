@@ -141,7 +141,16 @@ switch (args[0]) {
 
 		moduleDistribute((modules, allModules, params) => {
 			checkModules(allModules);
-			let diff = moduleDistribute(getProjectStatus)
+			let cache = getCache();
+			let diff
+
+			if (cache.length === 0) {
+				diff = moduleDistribute(getProjectStatus)
+			}
+			else {
+				diff = cache
+			}
+
 			cleanModulesSync(diff, allModules, params)
 
 			if (diff.length === 0) {
@@ -162,6 +171,7 @@ switch (args[0]) {
 					console.log(e.toString())
 					console.trace();
 					tableRender();
+					clearCache();
 				})
 			}).catch((e) => {
 				console.log(e.toString());
@@ -173,15 +183,6 @@ switch (args[0]) {
 		commitModules([root])
 		pullModules([root])
 		pushModules([root])
-
-		break
-
-
-	case 'cache':
-
-
-		writeCache()
-
 
 		break
 
@@ -198,10 +199,18 @@ switch (args[0]) {
 	case 'update':
 
 		let flag = initPrepare();
+		let cache = getCache();
 
 		if (flag) {
-			moduleDistribute(commitModules);
-			moduleDistribute(pullModules);
+
+			if (cache.length > 0) {
+				commitModules(cache)
+				pullModules(cache)
+			}
+			else {
+				moduleDistribute(commitModules);
+				moduleDistribute(pullModules);
+			}
 		}
 
 		commitModules([root])
