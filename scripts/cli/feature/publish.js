@@ -15,7 +15,7 @@ export default function publishModules(modules) {
 	}
 
 	return multiProcessor(() => {
-		return spawn('npm', ['publish', '&>/dev/null'])
+		return spawn('npm', ['publish', '&>/dev/null', ' & ', ' > ', ' /dev/null'])
 	}, (job) => {
 		if (/\/lib\/tb\/[a-z\-A-Z]+/.test(job.replace(root, ''))) {
 			return false
@@ -25,6 +25,7 @@ export default function publishModules(modules) {
 	}, (job) => {
 			setData(getRelativePath(job), 'publish', true)
 	}, (job, err) => {
+		console.log('publish error')
 		setData(getRelativePath(job), 'publish', false)
 		logError(getRelativePath(job), err.toString())
 	})(modules)
