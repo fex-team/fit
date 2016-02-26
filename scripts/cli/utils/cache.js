@@ -21,7 +21,7 @@ function getCacheDir () {
 export function writeCache () {
 	let dir = getCacheDir()
 	let diff = moduleDistribute(getProjectState)
-
+	
 	writeFileSync(path.join(dir, 'diff.txt'), diff.join('\n'))
 }
 
