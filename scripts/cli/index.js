@@ -196,6 +196,13 @@ switch (args[0]) {
 
 		break
 
+	case 'clearcache':
+
+		clearCache()
+
+		break
+
+
 	case 'update':
 
 		let flag = initPrepare();

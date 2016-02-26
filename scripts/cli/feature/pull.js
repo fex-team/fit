@@ -9,7 +9,7 @@ export default function pullSubModule (modules) {
 	modules.forEach((filePath) => {
 		process.chdir(filePath)
 		try {
-			execSync('git pull origin master')
+			execSync('git pull origin master &> /dev/null')
 			succesed.push(filePath)
 			setData(getRelativePath(filePath), 'pull', true)
 		}
