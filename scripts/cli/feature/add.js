@@ -31,7 +31,6 @@ export default function addModule (modules) {
 				execSync(`git init && git remote add origin ${repoPath}`, {
 					cwd: modulePath
 				})
-				console.log(`INFO: added module ${modulePath}`)
 			}
 
 			setData(getRelativePath(val), 'add', true)
