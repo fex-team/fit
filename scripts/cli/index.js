@@ -164,13 +164,12 @@ switch (args[0]) {
 				publishModules(newDiff).then(() => {
 					commitModules(newDiff)
 					pushModules(newDiff)
-
+					clearCache();
 					tableRender()
 				}).catch((e) => {
 					console.log(e.toString())
 					console.trace();
-					tableRender();
-					clearCache();
+					tableRender()
 				})
 			}).catch((e) => {
 				console.log(e.toString());

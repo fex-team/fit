@@ -32,7 +32,11 @@ export default function (run = noop, beforeRun = returnTrue, afterRun = noop, er
 
 			process.chdir(root)
 
-			function onClose (successJob) {
+			function onClose (successJob, code) {
+				if (code !== 0) {
+					console.log(err(successJob, 'process exited with ' + code));
+				}
+
 				afterRun(successJob)
 				let job = jobCopy.pop()
 				_.pull(runChildInstance, this)
