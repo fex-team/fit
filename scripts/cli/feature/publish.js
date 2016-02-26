@@ -15,7 +15,7 @@ export default function publishModules(modules) {
 	}
 
 	return multiProcessor(() => {
-		return spawn('npm', ['publish'])
+		return spawn('npm', ['publish', '&>/dev/null'])
 	}, (job) => {
 		if (/\/lib\/tb\/[a-z\-A-Z]+/.test(job.replace(root, ''))) {
 			return false

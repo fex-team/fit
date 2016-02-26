@@ -83,7 +83,6 @@ export default function patchModulesSync(modules, allModules, type) {
 
 			for (let dep in moduleObj.dependencies) {
 				if (moduleMaps[dep] && changeModules[moduleMaps[dep].modulePath] && (changeModules[moduleMaps[dep].modulePath].name === dep)) {
-					console.log(`INFO: Update ${changeModules[change].name}'s Dependencies [${dep}] version ${moduleObj.dependencies[dep]} ==> ${changeModules[moduleMaps[dep].modulePath].version}`)
 					moduleObj.dependencies[dep] = '^' + changeModules[moduleMaps[dep].modulePath].version
 				}
 			}
