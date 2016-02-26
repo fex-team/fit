@@ -108,6 +108,8 @@ $ cnpm install
 
 注意,这个是真正的后端服务根目录,所有node项目想要本地开发,都需要在本地先启动它
 
+> node版强制使用npm生态,没有useNpm参数,所有插件请使用npm安装
+
 ```bash
 git clone http://gitlab.baidu.com/tb/node.git
 cd node
