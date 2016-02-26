@@ -19,7 +19,6 @@ export default function commitGit(modules) {
 			try {
 				execSync('git add -A')
 				execSync('git commit -m "quick push"')
-				console.log(`COMMIT: quick commit ${filePath}`)
 				setData(getRelativePath(filePath), 'commit', true)
 			}
 			catch (e) {
@@ -28,7 +27,6 @@ export default function commitGit(modules) {
 			}
 		}
 		else {
-			console.log(`INFO: ${filePath} is clean`)
 			setData(getRelativePath(filePath), 'commit', 'none')
 		}
 	})

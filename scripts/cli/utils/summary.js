@@ -37,6 +37,18 @@ function formatter (value) {
 	return value;
 }
 
+function flatten (datas) {
+	let headerLen = headers.length
+
+	datas.forEach((val) => {
+		for (var i = 0; i < headerLen; i ++) {
+			if (val[i] === undefined) {
+				val[i] = 'none'
+			}
+		}
+	})
+}
+
 export function setHeader (header) {
 	let _header = _.assign(defaultHeader, {value: header})
 
@@ -90,6 +102,7 @@ export function setData (head, key, value) {
 export function tableRender () {
 
 //	flatenArr(datas)
+	flatten(datas)
 
 	var t1 = Table(headers, datas, {
 		borderStyle: 1,
