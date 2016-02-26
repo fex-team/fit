@@ -1,4 +1,5 @@
 import { existsSync, mkdirSync, writeFileSync, readFileSync} from 'fs'
+import { execFileSync } from 'child_process'
 import path from 'path'
 import getProjectState from '../feature/git-status'
 import moduleDistribute from './distribute'
@@ -37,5 +38,5 @@ export function getCache () {
 export function clearCache () {
 	let dir = getCacheDir()
 
-	writeFileSync(path.join())
+	execFileSync(`rm ${path.join(dir, 'diff.txt')}`)
 }

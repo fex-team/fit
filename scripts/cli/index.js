@@ -175,6 +175,13 @@ switch (args[0]) {
 
 		break
 
+
+	case 'cache':
+
+
+
+		break
+
 	case 'check':
 
 		let diff = moduleDistribute(getProjectStatus);
