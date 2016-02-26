@@ -7,8 +7,6 @@ server
 client
 |- index.html // 模板入口
 |- index.jsx  // js入口
-// fis 第三方依赖
-components
 // npm 第三方依赖
 node_modules
 ````
