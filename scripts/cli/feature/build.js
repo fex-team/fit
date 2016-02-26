@@ -6,7 +6,7 @@ import { getRelativePath } from '../utils/util'
 
 export default function buildModules(modules) {
 	return multiProcessor((job) => {
-		return spawn('node', ['_build.js', job])
+		return spawn('node', ['_build.js', job, '&>/dev/null'])
 	}, () => {
 		return true
 	}, (job) => {
