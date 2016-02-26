@@ -208,6 +208,7 @@ switch (args[0]) {
 		var diff = moduleDistribute(getProjectStatus);
 
 		if (diff.length > 0) {
+			console.log('save cache')
 			writeCache()
 		}
 
