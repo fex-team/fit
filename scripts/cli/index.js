@@ -37,6 +37,7 @@ import upgradeDependencies from './feature/upgrade-dependencies'
 import moduleDistribute from './utils/distribute'
 import multiProcessor from './utils/multi-processor'
 import { tableRender } from './utils/summary'
+import { clearCache, getCache, writeCache } from './utils/cache'
 
 var args = process.argv.slice(2)
 var root = process.cwd()
@@ -178,6 +179,8 @@ switch (args[0]) {
 
 	case 'cache':
 
+
+		writeCache()
 
 
 		break

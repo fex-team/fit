@@ -12,7 +12,7 @@ function getCacheDir () {
 	let home = getUserHome()
 
 	if (!existsSync(home, '.awesome')) {
-		mkdirSync(home, '.awesome')
+		mkdirSync(path.join(home, '.awesome'))
 	}
 
 	return path.join(home, '.awesome')
