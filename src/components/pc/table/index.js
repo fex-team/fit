@@ -55,6 +55,10 @@
                     import FindCode from 'text!../../../../lib/pc/table/demo/lists/find.js'
                     import FindMarkdown from '../../../../lib/pc/table/demo/lists/find.md'
                     
+                    import OutsideFindComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/outsideFind.js'
+                    import OutsideFindCode from 'text!../../../../lib/pc/table/demo/lists/outsideFind.js'
+                    import OutsideFindMarkdown from '../../../../lib/pc/table/demo/lists/outsideFind.md'
+                    
                     import MockDeleteComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/mock-delete.js'
                     import MockDeleteCode from 'text!../../../../lib/pc/table/demo/lists/mock-delete.js'
                     import MockDeleteMarkdown from '../../../../lib/pc/table/demo/lists/mock-delete.md'
@@ -202,6 +206,16 @@
                                       code={FindCode}>
 
                                     <FindComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={OutsideFindMarkdown}
+                                      code={OutsideFindCode}>
+
+                                    <OutsideFindComponent/>
 
                             </CodeView>
                         </Col>
