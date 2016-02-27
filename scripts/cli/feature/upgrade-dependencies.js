@@ -44,6 +44,9 @@ export default function upgradeDependenceis (modules) {
 				if (depen) {
 					depenObj[dep] = depen
 				}
+				else {
+					depenObj[dep] = '^0.0.1'
+				}
 			})
 
 			writePackageJSON(filePath, 'dependencies', depenObj)
