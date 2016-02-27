@@ -4,9 +4,10 @@ import format from 'format-json'
 import fs from 'fs'
 import path from 'path'
 import find from 'find'
+import resolveFile from '../../../resolve'
 
 var root = process.cwd();
-var regex = new RegExp("(require\\s{0,1}\\(\\s{0,1}['\"]\\s{0,1}([\\w\\-]{1,})\\s{0,1}['\"]\\s{0,1}\\))|(import\\s(?:[\\w\\-]{1,}\\sfrom\\s){0,1}['\"]([\\w\\-]{1,})['\"])", "g");
+var regex = new RegExp("(require\\s{0,1}\\(\\s{0,1}['\"]\\s{0,1}([\\w\\-]{1,})\\s{0,1}['\"]\\s{0,1}\\))|(import\\s(?:[\\w\\-]{1,}\\sfrom\\s){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])", "g");
 
 export default function upgradeDependenceis (modules) {
 	var rootJSON = getPackageJSON(root)
@@ -44,8 +45,8 @@ export default function upgradeDependenceis (modules) {
 				if (depen) {
 					depenObj[dep] = depen
 				}
-				else {
-					depenObj[dep] = '^0.0.1'
+				else if (dep in resolveFile.alias) {
+					depenObj[dep] = '^' + getPackageJSON(resolveFile.alias[dep].replace('/src', '')).version
 				}
 			})
 
