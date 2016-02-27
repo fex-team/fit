@@ -141,6 +141,8 @@ switch (args[0]) {
 
 		moduleDistribute((modules, allModules, params) => {
 			checkModules(allModules);
+			upgradeDependencies(modules);
+
 			let cache = getCache();
 			let diff
 

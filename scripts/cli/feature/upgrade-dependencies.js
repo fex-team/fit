@@ -1,36 +1,53 @@
-var root = process.cwd();
-import { getPackageJSON } from '../utils/util'
+import { getPackageJSON, getFileContent, writePackageJSON} from '../utils/util'
 import _ from 'lodash'
 import format from 'format-json'
 import fs from 'fs'
 import path from 'path'
+import find from 'find'
+
+var root = process.cwd();
+var regex = new RegExp("(require\\s{0,1}\\(\\s{0,1}['\"]\\s{0,1}([\\w\\-]{1,})\\s{0,1}['\"]\\s{0,1}\\))|(import\\s(?:[\\w\\-]{1,}\\sfrom\\s){0,1}['\"]([\\w\\-]{1,})['\"])", "g");
 
 export default function upgradeDependenceis (modules) {
-	var commonDependencies = {};
-	var moduleLen = modules.length
+	var rootJSON = getPackageJSON(root)
+	var rootDependencies = rootJSON.dependencies
+	var devDependencies = rootJSON.devDependencies
 
 	modules.forEach((filePath) => {
-		let json = getPackageJSON(filePath)
+		var dependencies = [];
+		var depenObj = {};
 
-		if (!json.dependencies) {
-			json.dependencies = {}
-		}
+		find.file(filePath, function(files) {
+			let srcFiles = files.filter((val) => {
+				return /src[\/\w-]+.js$/.test(val)
+			})
 
-		json.dependencies['react'] = '^0.14.7'
-		json.dependencies['classnames'] = '^2.2.3'
-		json.dependencies['react-dom'] = '^0.14.7'
+			srcFiles.forEach((file) => {
+				let code = getFileContent(file)
+				var match;
+				while ((match = regex.exec(code)) != null) {
+					if (match.index === regex.lastIndex) {
+						++regex.lastIndex;
+					}
 
-		fs.writeFileSync(path.join(filePath, 'package.json'), format.plain(json))
+					let matched = match[4] || match[3]
 
-//		let dependencies = json.dependencies
-//
-//		_.each(dependencies, (name, version) => {
-//			if (!commonDependencies[name]) {
-//				commonDependencies[name] = 1;
-//			}
-//
-//			commonDependencies[name]++
-//		})
+					if (matched && dependencies.indexOf(matched) < 0) {
+						dependencies.push(matched)
+					}
+				}
+			})
+
+			dependencies.forEach((dep) => {
+				let depen = rootDependencies[dep] || devDependencies[dep]
+
+				if (depen) {
+					depenObj[dep] = depen
+				}
+			})
+
+			writePackageJSON(filePath, 'dependencies', depenObj)
+		})
 	})
 
 	process.chdir(root)
