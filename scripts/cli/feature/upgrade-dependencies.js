@@ -7,7 +7,7 @@ import find from 'find'
 import resolveFile from '../../../resolve'
 
 var root = process.cwd();
-var regex = new RegExp("(require\\s{0,1}\\(\\s{0,1}['\"]\\s{0,1}([\\w\\-]{1,})\\s{0,1}['\"]\\s{0,1}\\))|(import\\s(?:[\\w\\-]{1,}\\sfrom\\s){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])", "g");
+var regex = new RegExp("(require\\s{0,}\\(\\s{0,}['\"]\\s{0,}([\\w\\-]{1,})\\s{0,}['\"]\\s{0,}\\))|(import\\s{0,}(?:[\\$a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])|(import\\s\\{\\s{0,}[\\w,\\s]{1,}\\}\\s{0,}from\\s{0,}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])", "g");
 
 export default function upgradeDependenceis (modules) {
 	var rootJSON = getPackageJSON(root)
@@ -31,7 +31,7 @@ export default function upgradeDependenceis (modules) {
 						++regex.lastIndex;
 					}
 
-					let matched = match[4] || match[3]
+					let matched = match[2] || match[4] || match[6]
 
 					if (matched && dependencies.indexOf(matched) < 0) {
 						dependencies.push(matched)
