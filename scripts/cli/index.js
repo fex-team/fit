@@ -13,6 +13,7 @@ import {
 		getAllPathModules,
 		getAllComponentJSON,
 		getConfigModules,
+	  getPackageJSON
 } from './utils/util'
 
 import {
@@ -263,7 +264,7 @@ switch (args[0]) {
 
 	default:
 		console.error(
-				'Command `%s` unrecognized.'
+				`Command ${args[0]} unrecognized.`
 		)
 		process.exit(1)
 		break
