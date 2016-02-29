@@ -63,6 +63,7 @@ const mkRouter = (categorys)=> {
         import Components from './components'
         import ComponentsWriteStandard from './components/write-standard'
         import ComponentsChangeLog from './components/change-log'
+        import ComponentsContributor from './components/contributor'
         import ComponentsDoc from './components/doc'
         ${homeImport}
 
@@ -79,6 +80,7 @@ const mkRouter = (categorys)=> {
                 <Route path="/components/write-standard" component={ComponentsWriteStandard}/>
                 <Route path="/components/doc" component={ComponentsDoc}/>
                 <Route path="/components/change-log" component={ComponentsChangeLog}/>
+                <Route path="/components/contributor" component={ComponentsContributor}></Route>
                 ${routerComponent}
             </Router>
         )
