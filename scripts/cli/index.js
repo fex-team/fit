@@ -13,6 +13,7 @@ import {
 		getAllPathModules,
 		getAllComponentJSON,
 		getConfigModules,
+	  getPackageJSON
 } from './utils/util'
 
 import {
@@ -141,6 +142,8 @@ switch (args[0]) {
 
 		moduleDistribute((modules, allModules, params) => {
 			checkModules(allModules);
+			upgradeDependencies(modules);
+
 			let cache = getCache();
 			let diff
 
@@ -150,8 +153,6 @@ switch (args[0]) {
 			else {
 				diff = cache
 			}
-
-			console.log(cache);
 
 			cleanModulesSync(diff, allModules, params)
 
@@ -263,7 +264,7 @@ switch (args[0]) {
 
 	default:
 		console.error(
-				'Command `%s` unrecognized.'
+				`Command ${args[0]} unrecognized.`
 		)
 		process.exit(1)
 		break

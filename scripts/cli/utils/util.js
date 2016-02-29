@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import _ from 'lodash'
+import format from 'format-json'
 
 let root = process.cwd();
 var packageVersion = {}
@@ -12,6 +13,19 @@ import {
 
 export function getPackageJSON(filePath) {
     return JSON.parse(fs.readFileSync(path.join(filePath, 'package.json')))
+}
+
+export function getFileContent (filePath) {
+    return fs.readFileSync(filePath).toString()
+}
+
+export function writePackageJSON (filePath, name, obj) {
+    let json = getPackageJSON(filePath)
+
+
+    json[name] = obj
+
+    fs.writeFileSync(path.join(filePath, 'package.json'), format.plain(json))
 }
 
 export function getRelativePath (filePath) {
