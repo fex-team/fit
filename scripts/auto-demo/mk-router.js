@@ -17,7 +17,7 @@ const mkRouter = (categorys)=> {
         if (categoryKey === 'oxp')continue
 
         homeImport += `
-        import ${categoryKey}Home from '../category-home/${categoryKey}.js'
+        import ${categoryKey}Home from '../category-home/${categoryKey}'
         `
 
         routerComponent += `

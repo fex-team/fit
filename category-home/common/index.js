@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'fit-layout'
 import marked from 'marked'
-import readme from './common.md'
+import readme from './readme.md'
 
 const colStyle = {
     margin: 10,
