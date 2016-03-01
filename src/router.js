@@ -11,13 +11,13 @@
         import ComponentsContributor from './components/contributor'
         import ComponentsDoc from './components/doc'
         
-        import commonHome from '../category-home/common.js'
+        import commonHome from '../category-home/common'
         
-        import pcHome from '../category-home/pc.js'
+        import pcHome from '../category-home/pc'
         
-        import mobileHome from '../category-home/mobile.js'
+        import mobileHome from '../category-home/mobile'
         
-        import tbHome from '../category-home/tb.js'
+        import tbHome from '../category-home/tb'
         
 
         

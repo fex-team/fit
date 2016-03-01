@@ -4,9 +4,7 @@ import marked from 'marked'
 import readme from './readme.md'
 
 const colStyle = {
-    margin: 10,
     padding: 20,
-    border: '1px solid #eee',
     background: 'white'
 }
 
@@ -21,9 +19,9 @@ export default class Layout extends React.Component {
         return (
             <div className="_namespace">
                 <Row>
-                    <Col span="24">
+                    <Col span="24"
+                         style={colStyle}>
                         <div className="markdown-body"
-                             style={colStyle}
                              dangerouslySetInnerHTML={{__html: marked(readme)}}></div>
                     </Col>
                 </Row>

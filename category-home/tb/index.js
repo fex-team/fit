@@ -1,7 +1,10 @@
 import React from 'react'
 import { Row, Col } from 'fit-layout'
 import marked from 'marked'
-import readme from './readme.md'
+import developReadme from './develop.md'
+import nodeDevelopReadme from './node-develop.md'
+import nodeApiReadme from './node-api.md'
+import qaReadme from './qa.md'
 import { Tabs, TabPanel } from 'fit-tabs'
 import './index.scss'
 
@@ -27,12 +30,23 @@ export default class Layout extends React.Component {
                             <TabPanel tab="开发流程"
                                       key="1">
                                 <div className="markdown-body"
-                                     dangerouslySetInnerHTML={{__html: marked(readme)}}></div>
+                                     dangerouslySetInnerHTML={{__html: marked(developReadme)}}></div>
                             </TabPanel>
                             <TabPanel tab="node开发流程"
-                                      key="2">选项卡二内容</TabPanel>
-                            <TabPanel tab="选项卡三"
-                                      key="3">选项卡三内容</TabPanel>
+                                      key="2">
+                                <div className="markdown-body"
+                                     dangerouslySetInnerHTML={{__html: marked(nodeDevelopReadme)}}></div>
+                            </TabPanel>
+                            <TabPanel tab="node组件"
+                                      key="3">
+                                <div className="markdown-body"
+                                     dangerouslySetInnerHTML={{__html: marked(nodeApiReadme)}}></div>
+                            </TabPanel>
+                            <TabPanel tab="Q & A"
+                                      key="4">
+                                <div className="markdown-body"
+                                     dangerouslySetInnerHTML={{__html: marked(qaReadme)}}></div>
+                            </TabPanel>
                         </Tabs>
                     </Col>
                 </Row>
