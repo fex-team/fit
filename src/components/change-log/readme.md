@@ -1,5 +1,11 @@
 ### 改动日志
 
+#### 2016.3.1
+
+`fit-pagination` 新增外部控制跳转方法`jump`
+`fit-table` 修复外部调用jump分页不刷新的bug
+#`fit-table` 支持全量数据前端翻页,设置`local=true`即可
+
 #### 2016.2.29
 
 - 新增 `tb-captcha-drag` 贴吧拖拽验证码第一版
