@@ -1,5 +1,10 @@
 ### 改动日志
 
+#### 2016.3.2
+
+- `fit-select` label现在与`fit-input`一样,默认取消padding
+- `fit-select` 补上说明文档
+
 #### 2016.3.1
 
 - `fit-pagination` 新增外部控制跳转方法`jump`
