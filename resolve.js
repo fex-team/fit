@@ -60,6 +60,8 @@
                 
                 'fit-upload': path.join(__dirname, 'lib/pc/upload/src'),
                 
+                'fit-editor': path.join(__dirname, 'lib/pc/editor/src'),
+                
                 'fit-menu': path.join(__dirname, 'lib/pc/menu/src'),
                 
                 'fit-tabs': path.join(__dirname, 'lib/pc/tabs/src'),
