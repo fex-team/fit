@@ -73,6 +73,8 @@
                 
                 import fitUploadComponent from './components/pc/upload'
                 
+                import fitEditorComponent from './components/pc/editor'
+                
                 import fitMenuComponent from './components/pc/menu'
                 
                 import fitTabsComponent from './components/pc/tabs'
@@ -208,6 +210,9 @@
                 
                 <Route path="upload"
                        component={fitUploadComponent}/>
+                
+                <Route path="editor"
+                       component={fitEditorComponent}/>
                 
                 <Route path="menu"
                        component={fitMenuComponent}/>
