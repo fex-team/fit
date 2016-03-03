@@ -14,15 +14,8 @@
                 const store = createStore()
 
                 
-                        import EditorSource from '../../../../lib/pc/editor/src/editor'
-                        import EditorSourceCode from 'text!../../../../lib/pc/editor/src/editor'
-                        
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/editor/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/pc/editor/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/pc/editor/demo/lists/basic.md'
-                    
 
                 const colStyle = {
                     padding: 10
@@ -56,16 +49,6 @@
                             Content = (
                                 <Row>
                                     
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={BasicMarkdown}
-                                      code={BasicCode}>
-
-                                    <BasicComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
                                 </Row>
                             )
                             break
@@ -73,10 +56,6 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={EditorSourceCode} instance={EditorSource} />
-                        </div>
-                        
                                 </div>
                             )
                             break

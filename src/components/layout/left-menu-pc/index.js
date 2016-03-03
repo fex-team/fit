@@ -120,11 +120,6 @@ const menueee1e2258d7ea163fec625ee44be9637 = [
                         title: '上传 Upload',
                         path: '/pc/upload'
                     },
-                    
-                    {
-                        title: '富文本 Editor',
-                        path: '/pc/editor'
-                    },
                     ]
 const menu056f2d7df6e6b64625c3a2d27ce07b05 = [
                     {
