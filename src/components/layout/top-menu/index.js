@@ -45,6 +45,9 @@ export default class Menu extends React.Component {
                         <Link className="item"
                               activeClassName="active"
                               to="/components/change-log">ChangeLog</Link>
+                        <Link className="item"
+                              activeClassName="active"
+                              to="/components/contributor">贡献榜</Link>
                         <a className="item"
                            href="http://gitlab.baidu.com/tb-component/awesome"
                            target="_blank">Gitlab</a>

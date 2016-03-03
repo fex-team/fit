@@ -50,7 +50,7 @@ export default function upgradeDependenceis (modules) {
 				}
 			})
 
-			console.log(`upgrade ${filePath}`)
+
 			writePackageJSON(filePath, 'dependencies', depenObj)
 		})
 	})

@@ -3,8 +3,6 @@ import Menu from '../layout/top-menu'
 import marked from 'marked'
 import readme from './readme.md'
 
-
-
 export default class Doc extends React.Component {
     constructor(props) {
         super(props)
@@ -20,7 +18,7 @@ export default class Doc extends React.Component {
                 </div>
                 <div className="g-mn">
                     <div className="container"
-                         style={{marginTop:40}}>
+                         style={{marginTop:40,marginBottom:40}}>
                         <div className="markdown-body"
                              dangerouslySetInnerHTML={{__html: marked(readme)}}></div>
                     </div>

@@ -8,20 +8,20 @@
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import SidebarComponent from '../../../../components/side-bar'
-                import readme from '../../../../lib/tb/captcha/readme.md'
-                import '../../../../lib/tb/captcha/demo'
+                import readme from '../../../../lib/pc/editor/readme.md'
+                import '../../../../lib/pc/editor/demo'
 
                 const store = createStore()
 
                 
-                        import CaptchaSource from '../../../../lib/tb/captcha/src/captcha'
-                        import CaptchaSourceCode from 'text!../../../../lib/tb/captcha/src/captcha'
+                        import EditorSource from '../../../../lib/pc/editor/src/editor'
+                        import EditorSourceCode from 'text!../../../../lib/pc/editor/src/editor'
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/captcha/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/tb/captcha/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/tb/captcha/demo/lists/basic.md'
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/editor/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/editor/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/editor/demo/lists/basic.md'
                     
 
                 const colStyle = {
@@ -39,7 +39,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = '验证码'
+                        document.title = '富文本'
                     }
 
                     handlePageChange(value) {
@@ -74,7 +74,7 @@
                                 <div>
                                     
                         <div style={docStyle}>
-                            <CodeDoc code={CaptchaSourceCode} instance={CaptchaSource} />
+                            <CodeDoc code={EditorSourceCode} instance={EditorSource} />
                         </div>
                         
                                 </div>
@@ -93,7 +93,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/tb-captcha/tree/master"
+                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/pc-editor/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>

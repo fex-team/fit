@@ -19,7 +19,7 @@ export default class Components extends React.Component {
                 </div>
                 <div className="g-mn">
                     <div className="container"
-                         style={{marginTop:40}}>
+                         style={{marginTop:40,marginBottom:40}}>
                         <div className="markdown-body"
                              dangerouslySetInnerHTML={{__html: marked(readme)}}></div>
                     </div>

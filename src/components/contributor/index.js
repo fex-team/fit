@@ -9,7 +9,7 @@ export default class ChangeLog extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        document.title = '改进日志'
+        document.title = '贡献者排行榜'
     }
 
     render() {

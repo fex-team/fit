@@ -120,6 +120,10 @@
           {
             "name": "上传",
             "path": "upload"
+          },
+          {
+            "name": "富文本",
+            "path": "editor"
           }
         ],
         "导航": [
