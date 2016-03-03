@@ -8,15 +8,16 @@
         import Components from './components'
         import ComponentsWriteStandard from './components/write-standard'
         import ComponentsChangeLog from './components/change-log'
+        import ComponentsContributor from './components/contributor'
         import ComponentsDoc from './components/doc'
         
-        import commonHome from '../category-home/common.js'
+        import commonHome from '../category-home/common'
         
-        import pcHome from '../category-home/pc.js'
+        import pcHome from '../category-home/pc'
         
-        import mobileHome from '../category-home/mobile.js'
+        import mobileHome from '../category-home/mobile'
         
-        import tbHome from '../category-home/tb.js'
+        import tbHome from '../category-home/tb'
         
 
         
@@ -72,6 +73,8 @@
                 
                 import fitUploadComponent from './components/pc/upload'
                 
+                import fitEditorComponent from './components/pc/editor'
+                
                 import fitMenuComponent from './components/pc/menu'
                 
                 import fitTabsComponent from './components/pc/tabs'
@@ -124,6 +127,7 @@
                 <Route path="/components/write-standard" component={ComponentsWriteStandard}/>
                 <Route path="/components/doc" component={ComponentsDoc}/>
                 <Route path="/components/change-log" component={ComponentsChangeLog}/>
+                <Route path="/components/contributor" component={ComponentsContributor}></Route>
                 
         <Route path="/components/common"
                component={ComponentsLayout}>
@@ -206,6 +210,9 @@
                 
                 <Route path="upload"
                        component={fitUploadComponent}/>
+                
+                <Route path="editor"
+                       component={fitEditorComponent}/>
                 
                 <Route path="menu"
                        component={fitMenuComponent}/>
