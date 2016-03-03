@@ -44,3 +44,13 @@ $ npm run push
 - [gitlab.baidu.com/tb-component](http://gitlab.baidu.com/tb-component) 上新建git仓库,pc组件以pc-为前缀,例如 `pc-upload`,移动端组件以mobile-为前缀
 - 打开根目录的 `all-component.json` 在对应位置添加信息,聪明的你看到文件内容就知道如何添加了
 - 执行 `npm run update`,执行完后会在对应目录下生成项目文件夹,可以开始开发了!
+
+#### 测试
+
+~~~js
+$ npm test
+~~~
+
+任何修改后请务必进行测试,保证已有case正常通过
+
+新功能,新组件请添加新测试用例
