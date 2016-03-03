@@ -4,3 +4,5 @@ npm-debug.log
 lib/**/node_modules
 scripts-babel
 lib
+test_coverage_html
+test_jasmine_html
