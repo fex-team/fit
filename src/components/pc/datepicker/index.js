@@ -41,6 +41,10 @@
                     import InputCode from 'text!../../../../lib/pc/datepicker/demo/lists/input.js'
                     import InputMarkdown from '../../../../lib/pc/datepicker/demo/lists/input.md'
                     
+                    import DefaultValueComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/datepicker/demo/lists/default-value.js'
+                    import DefaultValueCode from 'text!../../../../lib/pc/datepicker/demo/lists/default-value.js'
+                    import DefaultValueMarkdown from '../../../../lib/pc/datepicker/demo/lists/default-value.md'
+                    
                     import LabelComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/datepicker/demo/lists/label.js'
                     import LabelCode from 'text!../../../../lib/pc/datepicker/demo/lists/label.js'
                     import LabelMarkdown from '../../../../lib/pc/datepicker/demo/lists/label.md'
@@ -118,6 +122,16 @@
                                       code={InputCode}>
 
                                     <InputComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={DefaultValueMarkdown}
+                                      code={DefaultValueCode}>
+
+                                    <DefaultValueComponent/>
 
                             </CodeView>
                         </Col>
