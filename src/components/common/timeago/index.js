@@ -27,6 +27,10 @@
                     import ChineseCode from 'text!../../../../lib/common/timeago/demo/lists/chinese.js'
                     import ChineseMarkdown from '../../../../lib/common/timeago/demo/lists/chinese.md'
                     
+                    import LoseComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/timeago/demo/lists/lose.js'
+                    import LoseCode from 'text!../../../../lib/common/timeago/demo/lists/lose.js'
+                    import LoseMarkdown from '../../../../lib/common/timeago/demo/lists/lose.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -76,6 +80,16 @@
                                       code={ChineseCode}>
 
                                     <ChineseComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={LoseMarkdown}
+                                      code={LoseCode}>
+
+                                    <LoseComponent/>
 
                             </CodeView>
                         </Col>
