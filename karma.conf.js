@@ -7,7 +7,6 @@ var webpack = require('webpack')
 var resolve = require('./resolve')
 var externals = require('./externals')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var extractSCSS = new ExtractTextPlugin('style.css')
 
 var webpackConfig = require('./webpack.config');
 
@@ -31,14 +30,12 @@ module.exports = function (config) {
         // list of files to exclude
         exclude: [],
 
-        proxies: {
-
-        },
+        proxies: {},
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'test.js':  ["webpack", 'sourcemap']
+            'test.js': ["webpack", 'sourcemap']
         },
 
         webpack: {
@@ -53,10 +50,6 @@ module.exports = function (config) {
                 ],
                 loaders: [
                     {
-                        test: /\.(tsx|ts)?$/,
-                        exclude: [/node_modules/, /demo\/lists/],
-                        loaders: ['ts-loader', 'html-path-loader']
-                    }, {
                         test: /\.(jsx|js|es6)?$/,
                         exclude: [/node_modules/, /demo\/lists/],
                         loaders: ['babel?presets[]=react,presets[]=es2015', 'html-path-loader']
@@ -67,12 +60,12 @@ module.exports = function (config) {
                     }, {
                         test: /\.(scss|css)/,
                         exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
-                        loader: extractSCSS.extract('style', 'css!autoprefixer!sass!css-path-loader')
+                        loaders: ['style', 'css', 'autoprefixer', 'sass', 'css-path-loader']
                     },
                     {
                         test: /\.(scss|css)/,
                         include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
-                        loader: extractSCSS.extract('style', 'css!autoprefixer!sass')
+                        loaders: ['style', 'css', 'autoprefixer', 'sass']
                     }, {
                         test: /\.(png|jpg)$/,
                         exclude: /node_modules/,
@@ -89,17 +82,18 @@ module.exports = function (config) {
                     }
                 ]
             },
-            //externals: externals,
+
             plugins: [
-                extractSCSS,
                 new webpack.DefinePlugin({
                     "process.env": {
                         NODE_ENV: JSON.stringify("production")
                     }
                 })
             ],
+
             resolve: resolve
         },
+
         //webpack: webpackConfig,
         webpackServer: {
             noInfo: true
