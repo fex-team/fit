@@ -39,7 +39,7 @@ const mkResolve = (config)=> {
         alias: {
             ${resolvePath}
         },
-        extensions: ['', '.js', '.jsx', '.tsx', '.ts', 'coffee', '.cjsx', '.es6']
+        extensions: ['', '.js', '.jsx', '.tsx', '.ts', 'coffee', '.cjsx', '.es6', '.json']
     }
     `
 
