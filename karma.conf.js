@@ -6,9 +6,7 @@
 var webpack = require('webpack')
 var resolve = require('./resolve')
 var externals = require('./externals')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-var webpackConfig = require('./webpack.config');
+var argv = require('yargs').argv
 
 module.exports = function (config) {
 
@@ -19,12 +17,13 @@ module.exports = function (config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine'],
+        frameworks: ['mocha', 'chai'],
 
         // list of files / patterns to load in the browser
         files: [
-            'test.js'
-            //'lib/**/*.spec.js'
+            'node_modules/babel-polyfill/dist/polyfill.js',
+            'node_modules/phantomjs-polyfill/bind-polyfill.js',
+            'lib/**/*.spec.js' // specify files to watch for tests
         ],
 
         // list of files to exclude
@@ -35,12 +34,18 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'test.js': ["webpack", 'sourcemap']
+            'lib/**/*.spec.js': ['webpack', 'sourcemap']
         },
 
         webpack: {
             devtool: "inline-source-map",
+
             module: {
+                // don't run babel-loader through the sinon module
+                noParse: [
+                    /node_modules\/sinon\//
+                ],
+
                 postLoaders: [
                     {
                         test: /\.js$/,
@@ -48,11 +53,12 @@ module.exports = function (config) {
                         loader: 'istanbul-instrumenter'
                     }
                 ],
+
                 loaders: [
                     {
                         test: /\.(jsx|js|es6)?$/,
                         exclude: [/node_modules/, /demo\/lists/],
-                        loaders: ['babel?presets[]=react,presets[]=es2015', 'html-path-loader']
+                        loaders: ['babel', 'html-path-loader']
                     }, {
                         test: /\.(jsx|js|es6)?$/,
                         include: [/demo/],
@@ -91,10 +97,13 @@ module.exports = function (config) {
                 })
             ],
 
-            resolve: resolve
+            resolve: resolve,
+
+            alias: {
+                'sinon': 'sinon/pkg/sinon'
+            }
         },
 
-        //webpack: webpackConfig,
         webpackServer: {
             noInfo: true
         },
@@ -113,10 +122,9 @@ module.exports = function (config) {
             urlFriendlyName: false, // simply replaces spaces with _ for files/dirs
             reportName: 'report_html', // report summary filename; browser info by default
 
-
             // experimental
             preserveDescribeNesting: false, // folded suites stay folded
-            foldAll: false, // reports start folded (only with preserveDescribeNesting)
+            foldAll: false // reports start folded (only with preserveDescribeNesting)
         },
 
         coverageReporter: {
@@ -135,11 +143,11 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
 
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: true,
+        autoWatch: false,
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['Chrome'],   //Chrome  PhantomJS
+        browsers: [argv.debug ? 'Chrome' : 'PhantomJS'],   //Chrome  PhantomJS
 
         phantomjsLauncher: {
             // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
@@ -148,7 +156,7 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: true,
+        singleRun: !argv.debug,
 
         // Concurrency level
         // how many browser should be started simultanous
@@ -160,7 +168,9 @@ module.exports = function (config) {
             'karma-html-reporter',
             'karma-phantomjs-launcher',
             'karma-webpack',
-            'karma-sourcemap-loader'
+            'karma-sourcemap-loader',
+            'karma-mocha',
+            'karma-chai'
         ]
     })
 }

@@ -28,7 +28,8 @@
     "submodule-init": "git submodule init",
     "submodule-update": "git submodule update",
     "alone": "webpack -p --config webpack.config.alone.js",
-    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+    "test": "./node_modules/karma/bin/karma start karma.conf.js",
+    "test:dev": "npm run test -- --debug"
   },
   "author": "",
   "license": "ISC",
@@ -89,7 +90,8 @@
     "typescript": "^1.7.5",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "yargs": "^4.2.0"
   },
   "dependencies": {
     "antd": "^0.10.4",
