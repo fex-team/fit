@@ -14,6 +14,12 @@
                 const store = createStore()
 
                 
+                        import PaginationSource from '../../../../lib/pc/pagination/src/pagination'
+                        import PaginationSourceCode from 'text!../../../../lib/pc/pagination/src/pagination'
+                        
+                        import PaginationAllSource from '../../../../lib/pc/pagination/src/pagination-all'
+                        import PaginationAllSourceCode from 'text!../../../../lib/pc/pagination/src/pagination-all'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/pagination/demo/lists/basic.js'
@@ -126,6 +132,14 @@
                             Content = (
                                 <div>
                                     
+                        <div style={docStyle}>
+                            <CodeDoc code={PaginationSourceCode} instance={PaginationSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={PaginationAllSourceCode} instance={PaginationAllSource} />
+                        </div>
+                        
                                 </div>
                             )
                             break

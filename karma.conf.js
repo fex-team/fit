@@ -46,14 +46,6 @@ module.exports = function (config) {
                     /node_modules\/sinon\//
                 ],
 
-                postLoaders: [
-                    {
-                        test: /\.js$/,
-                        exclude: /(test|node_modules)\//,
-                        loader: 'istanbul-instrumenter'
-                    }
-                ],
-
                 loaders: [
                     {
                         test: /\.(jsx|js|es6)?$/,
@@ -63,6 +55,10 @@ module.exports = function (config) {
                         test: /\.(jsx|js|es6)?$/,
                         include: [/demo/],
                         loaders: ['html-path-loader']
+                    }, {
+                        test: /\.js?$/,
+                        exclude: [/node_modules/, /demo\/lists/, /.*\.spec\.js/],
+                        loader: 'isparta'
                     }, {
                         test: /\.(scss|css)/,
                         exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
