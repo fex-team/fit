@@ -38,6 +38,9 @@ const mkResolve = (config)=> {
     module.exports = {
         alias: {
             ${resolvePath}
+            // fix enzyme's bug
+            'react/lib/ExecutionEnvironment': 'execution-environment',
+            'react/lib/ReactContext': 'react-context'
         },
         extensions: ['', '.js', '.jsx', '.tsx', '.ts', 'coffee', '.cjsx', '.es6', '.json']
     }
