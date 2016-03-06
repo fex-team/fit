@@ -20,8 +20,6 @@
                 
                 'fit-pagination': path.join(__dirname, 'lib/pc/pagination/src'),
                 
-                'fit-md-editor': path.join(__dirname, 'lib/pc/md-editor/src'),
-                
                 'fit-table': path.join(__dirname, 'lib/pc/table/src'),
                 
                 'fit-modal': path.join(__dirname, 'lib/pc/modal/src'),
