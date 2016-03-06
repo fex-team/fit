@@ -41,7 +41,7 @@
           },
           {
             "name": "编辑器",
-            "path": "md-editor"
+            "path": "editor"
           },
           {
             "name": "表格",
