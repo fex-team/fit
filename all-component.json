@@ -221,6 +221,12 @@
             "name": "表情库",
             "path": "emoji"
           }
+        ],
+        "综合": [
+          {
+            "name": "lego card",
+            "path": "lego-card"
+          }
         ]
       }
     },
