@@ -102,6 +102,8 @@
                 
                 'tb-emoji': path.join(__dirname, 'lib/tb/emoji/src'),
                 
+                'tb-lego-card': path.join(__dirname, 'lib/tb/lego-card/src'),
+                
         // oxp
         
             // fix enzyme's bug
