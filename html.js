@@ -32,7 +32,7 @@ module.exports = function (args) {
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?7a3e50ea957bf0abf70578d83749ebc5";
+      hm.src = "//hm.baidu.com/hm.js?9e6356ee54313747e9bbdb40ecdfa809";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
