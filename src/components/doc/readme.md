@@ -14,6 +14,7 @@ $ git clone gitlab.baidu.com/tb-component/awesome
 $ cd awesome
 $ cnpm install
 $ npm run update
+$ cnpm install babel-cli -g
 ~~~
 
 awesome这个模块就是fit官网的全部代码,开发方式采用**根项目统一管理所有子组件**,组件代码并不会被提交到awesome中,执行`npm run update`会读取根目录下`all-components.json`将所有子组件按照分类`clone`到`lib`目录下
@@ -26,6 +27,19 @@ $ npm start
 
 运行后打开`localhost:8090`就可以看到fit网站内容,可以修改任意组件源码,进入对应组件demo目录查看修改效果
 
+##### 更新代码:
+
+~~~js
+$ npm run update
+~~~
+
+这一步会执行下列逻辑:
+
+1. 使用`babel-cli`编译es6编写的编译脚本
+2. 根据`all-components.json`扫描子组件文件夹,如果有丢失则会从svn clone一份
+3. 根据`demo`自动生成路由,组件实例页面,`resolve.js`,可以将`fit-table`的引用重定向到`table`组件的源代码,便于开发调试
+4. 更新`awesome`项目
+
 ##### 提交代码:
 
 ~~~js
@@ -34,7 +48,10 @@ $ npm run push
 
 这一步会执行下列逻辑:
 
-1. 
+1. 使用`babel-cli`编译es6编写的编译脚本
+2. 根据`all-components.json`扫描子组件文件夹,遍历
+
+4. 提交`awesome`项目
 
 ### 项目结构
 
