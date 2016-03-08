@@ -3,6 +3,7 @@
 #### 2016.3.8
 
 - `fit-layout-global` 修复侧边栏出现时,页尾长度会超出的bug
+- `fit-layout-global` 可以设置 `footer` 的 `newLine=false` 让其在有侧边栏时,不单独起一行
 
 #### 2016.3.7
 
