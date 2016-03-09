@@ -3,6 +3,8 @@
 #### 2016.3.9
 
 - `fit-layout-global` `fit-editor` `fit-menu` 支持后端渲染
+- 新增 `tb-share` 贴吧分享组件
+- 新增 `tb-blur-bar` 贴吧顶部栏条
 
 #### 2016.3.8
 

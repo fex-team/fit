@@ -14,8 +14,15 @@
                 const store = createStore()
 
                 
+                        import ShareSource from '../../../../lib/tb/share/src/share'
+                        import ShareSourceCode from 'text!../../../../lib/tb/share/src/share'
+                        
 
                 
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/share/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/tb/share/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/tb/share/demo/lists/basic.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -49,6 +56,16 @@
                             Content = (
                                 <Row>
                                     
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BasicMarkdown}
+                                      code={BasicCode}>
+
+                                    <BasicComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
                                 </Row>
                             )
                             break
@@ -56,6 +73,10 @@
                             Content = (
                                 <div>
                                     
+                        <div style={docStyle}>
+                            <CodeDoc code={ShareSourceCode} instance={ShareSource} />
+                        </div>
+                        
                                 </div>
                             )
                             break

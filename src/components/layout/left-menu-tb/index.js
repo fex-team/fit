@@ -25,6 +25,11 @@ const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     },
                     
                     {
+                        title: '分享 Share',
+                        path: '/tb/share'
+                    },
+                    
+                    {
                         title: '顶部蓝条 BlueBar',
                         path: '/tb/blue-bar'
                     },
