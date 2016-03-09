@@ -107,6 +107,8 @@
                 
                 import tbSubmitComponent from './components/tb/submit'
                 
+                import tbBlueBarComponent from './components/tb/blue-bar'
+                
                 import tbUploadComponent from './components/tb/upload'
                 
                 import tbIconComponent from './components/tb/icon'
@@ -267,6 +269,9 @@
                 
                 <Route path="submit"
                        component={tbSubmitComponent}/>
+                
+                <Route path="blue-bar"
+                       component={tbBlueBarComponent}/>
                 
                 <Route path="upload"
                        component={tbUploadComponent}/>
