@@ -2,7 +2,7 @@
 
 #### 2016.3.9
 
-- `fit-layout-global` `fit-editor` 支持后端渲染
+- `fit-layout-global` `fit-editor` `fit-menu` 支持后端渲染
 
 #### 2016.3.8
 
