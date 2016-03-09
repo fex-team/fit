@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.3.9
+
+- `fit-layout-global` `fit-editor` 支持后端渲染
+
 #### 2016.3.8
 
 - `fit-layout-global` 修复侧边栏出现时,页尾长度会超出的bug
