@@ -94,6 +94,8 @@
                 
                 'tb-submit': path.join(__dirname, 'lib/tb/submit/src'),
                 
+                'tb-share': path.join(__dirname, 'lib/tb/share/src'),
+                
                 'tb-blue-bar': path.join(__dirname, 'lib/tb/blue-bar/src'),
                 
                 'tb-upload': path.join(__dirname, 'lib/tb/upload/src'),
