@@ -204,6 +204,10 @@
             "path": "submit"
           },
           {
+            "name": "分享",
+            "path": "share"
+          },
+          {
             "name": "顶部蓝条",
             "path": "blue-bar"
           },
@@ -220,6 +224,12 @@
           {
             "name": "表情库",
             "path": "emoji"
+          }
+        ],
+        "综合": [
+          {
+            "name": "lego card",
+            "path": "lego-card"
           }
         ]
       }

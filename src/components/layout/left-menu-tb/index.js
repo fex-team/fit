@@ -25,6 +25,16 @@ const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     },
                     
                     {
+                        title: '分享 Share',
+                        path: '/tb/share'
+                    },
+                    
+                    {
+                        title: '顶部蓝条 BlueBar',
+                        path: '/tb/blue-bar'
+                    },
+                    
+                    {
                         title: '上传 Upload',
                         path: '/tb/upload'
                     },
@@ -40,6 +50,7 @@ const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                         path: '/tb/emoji'
                     },
                     ]
+const menu88e7de9fe51dafa4c34996adf25f0373 = []
 
         export default class Layout extends React.Component {
             constructor(props) {
@@ -53,6 +64,8 @@ const menu027446c2f9070b0f5b16a18208bf5fc7 = [
             
             let Menu027446c2f9070b0f5b16a18208bf5fc7 = menuFactory(menu027446c2f9070b0f5b16a18208bf5fc7)
             
+            let Menu88e7de9fe51dafa4c34996adf25f0373 = menuFactory(menu88e7de9fe51dafa4c34996adf25f0373)
+            
 
                 return (
                     <div className="_namespace">
@@ -62,6 +75,9 @@ const menu027446c2f9070b0f5b16a18208bf5fc7 = [
             
             <div className="title">展示</div>
             {Menu027446c2f9070b0f5b16a18208bf5fc7}
+            
+            <div className="title">综合</div>
+            {Menu88e7de9fe51dafa4c34996adf25f0373}
             
                     </div>
                 )

@@ -1,5 +1,30 @@
 ### 改动日志
 
+#### 2016.3.11
+
+- `fit-blue-bar` 修正在贴吧客户端不显示的判断逻辑
+
+#### 2016.3.10
+
+- 重构完全部组件,全部Fit组件都支持透传
+- `fit-modal` 将模态框渲染到body的直接子元素上,避免出现样式bug
+- `fit-scroll-listen` 修复抖动问题
+
+#### 2016.3.9
+
+- `fit-layout-global` `fit-editor` `fit-menu` 支持后端渲染
+- 新增 `tb-share` 贴吧分享组件
+- 新增 `tb-blur-bar` 贴吧顶部栏条
+
+#### 2016.3.8
+
+- `fit-layout-global` 修复侧边栏出现时,页尾长度会超出的bug
+- `fit-layout-global` 可以设置 `footer` 的 `newLine=false` 让其在有侧边栏时,不单独起一行
+
+#### 2016.3.7
+
+- `fit-editor` markdown富文本编辑器诞生,拥有完整markdown功能以及还需完善的菜单功能.这是个简约&丰富的编辑器,我们不会做得大而全,只是为了在遇到 "这里需要富文本编辑器" 的时候,可以轻松完成需求
+
 #### 2016.3.4
 
 - `tb-emoji` 废除inline-style,使用class,修复了在ios8下缺少前缀的显示bug
