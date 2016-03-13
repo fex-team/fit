@@ -14,9 +14,6 @@
                 const store = createStore()
 
                 
-                        import CaptchaSource from '../../../../lib/tb/captcha/src/captcha'
-                        import CaptchaSourceCode from 'text!../../../../lib/tb/captcha/src/captcha'
-                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/captcha/demo/lists/basic.js'
@@ -73,10 +70,6 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={CaptchaSourceCode} instance={CaptchaSource} />
-                        </div>
-                        
                                 </div>
                             )
                             break

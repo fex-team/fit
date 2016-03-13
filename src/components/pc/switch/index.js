@@ -14,9 +14,6 @@
                 const store = createStore()
 
                 
-                        import SwitchSource from '../../../../lib/pc/switch/src/switch'
-                        import SwitchSourceCode from 'text!../../../../lib/pc/switch/src/switch'
-                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/switch/demo/lists/basic.js'
@@ -129,10 +126,6 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={SwitchSourceCode} instance={SwitchSource} />
-                        </div>
-                        
                                 </div>
                             )
                             break

@@ -109,8 +109,6 @@
                 
                 import tbShareComponent from './components/tb/share'
                 
-                import tbBlueBarComponent from './components/tb/blue-bar'
-                
                 import tbUploadComponent from './components/tb/upload'
                 
                 import tbIconComponent from './components/tb/icon'
@@ -274,9 +272,6 @@
                 
                 <Route path="share"
                        component={tbShareComponent}/>
-                
-                <Route path="blue-bar"
-                       component={tbBlueBarComponent}/>
                 
                 <Route path="upload"
                        component={tbUploadComponent}/>

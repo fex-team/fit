@@ -39,10 +39,6 @@
                     import HeaderCode from 'text!../../../../lib/pc/layout-global/demo/lists/header.js'
                     import HeaderMarkdown from '../../../../lib/pc/layout-global/demo/lists/header.md'
                     
-                    import FooterComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/layout-global/demo/lists/footer.js'
-                    import FooterCode from 'text!../../../../lib/pc/layout-global/demo/lists/footer.js'
-                    import FooterMarkdown from '../../../../lib/pc/layout-global/demo/lists/footer.md'
-                    
                     import RightFooterComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/layout-global/demo/lists/right-footer.js'
                     import RightFooterCode from 'text!../../../../lib/pc/layout-global/demo/lists/right-footer.js'
                     import RightFooterMarkdown from '../../../../lib/pc/layout-global/demo/lists/right-footer.md'
@@ -104,16 +100,6 @@
                                       code={HeaderCode}>
 
                                     <HeaderComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={FooterMarkdown}
-                                      code={FooterCode}>
-
-                                    <FooterComponent/>
 
                             </CodeView>
                         </Col>
