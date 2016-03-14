@@ -14,6 +14,9 @@
                 const store = createStore()
 
                 
+                        import PhoneSource from '../../../../lib/pc/phone/src/phone'
+                        import PhoneSourceCode from 'text!../../../../lib/pc/phone/src/phone'
+                        
 
                 
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/phone/demo/lists/basic.js'
@@ -70,6 +73,10 @@
                             Content = (
                                 <div>
                                     
+                        <div style={docStyle}>
+                            <CodeDoc code={PhoneSourceCode} instance={PhoneSource} />
+                        </div>
+                        
                                 </div>
                             )
                             break

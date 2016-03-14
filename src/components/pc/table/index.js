@@ -27,6 +27,10 @@
                     import AjaxCode from 'text!../../../../lib/pc/table/demo/lists/ajax.js'
                     import AjaxMarkdown from '../../../../lib/pc/table/demo/lists/ajax.md'
                     
+                    import PaginationComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/pagination.js'
+                    import PaginationCode from 'text!../../../../lib/pc/table/demo/lists/pagination.js'
+                    import PaginationMarkdown from '../../../../lib/pc/table/demo/lists/pagination.md'
+                    
                     import AddComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/add.js'
                     import AddCode from 'text!../../../../lib/pc/table/demo/lists/add.js'
                     import AddMarkdown from '../../../../lib/pc/table/demo/lists/add.md'
@@ -66,10 +70,6 @@
                     import OutsideComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/outside.js'
                     import OutsideCode from 'text!../../../../lib/pc/table/demo/lists/outside.js'
                     import OutsideMarkdown from '../../../../lib/pc/table/demo/lists/outside.md'
-                    
-                    import PaginationComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/pagination.js'
-                    import PaginationCode from 'text!../../../../lib/pc/table/demo/lists/pagination.js'
-                    import PaginationMarkdown from '../../../../lib/pc/table/demo/lists/pagination.md'
                     
                     import ResponsiveComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/table/demo/lists/responsive.js'
                     import ResponsiveCode from 'text!../../../../lib/pc/table/demo/lists/responsive.js'
@@ -136,6 +136,16 @@
                                       code={AjaxCode}>
 
                                     <AjaxComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={PaginationMarkdown}
+                                      code={PaginationCode}>
+
+                                    <PaginationComponent/>
 
                             </CodeView>
                         </Col>
@@ -236,16 +246,6 @@
                                       code={OutsideCode}>
 
                                     <OutsideComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={PaginationMarkdown}
-                                      code={PaginationCode}>
-
-                                    <PaginationComponent/>
 
                             </CodeView>
                         </Col>
