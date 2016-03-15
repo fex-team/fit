@@ -101,10 +101,10 @@ $ npm test
 
 `index.js`:
 
-```js
+~~~jsx
 // @demo
 // [demo]:24
-```js
+~~~
 
 再执行 `npm run update` 就能自动生成demo了
 
@@ -114,7 +114,7 @@ $ npm test
 
 ### 更新 fit 官网内容
 
-```jsx
+~~~jsx
 $ npm run build
 $ npm run push
-```
+~~~
