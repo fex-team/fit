@@ -4,6 +4,7 @@
 
 - 所有移动端组件由`fiten`前缀,改为`fit`前缀,现在所有通用组件格式都是`fit-xxx`
 - `fit-color` 移动到 `tb-color`,因为这个颜色是专门为贴吧做的
+- 由于fis支持npm的插件正式稳定版发布了,所以移除readme中`fis3 install`的安装提示,所有组件都请使用`npm install`安装
 
 #### 2016.3.11
 

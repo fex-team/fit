@@ -5,6 +5,11 @@
         
 const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     {
+                        title: '颜色 Color',
+                        path: '/tb/color'
+                    },
+                    
+                    {
                         title: '日志请求 Track',
                         path: '/tb/track'
                     },

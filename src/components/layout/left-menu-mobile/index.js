@@ -10,11 +10,6 @@ const menu4092ed98e9035652d4c9ca9441701ed7 = [
                     },
                     
                     {
-                        title: '颜色 Color',
-                        path: '/mobile/color'
-                    },
-                    
-                    {
                         title: '页面缩放 Scale',
                         path: '/mobile/scale'
                     },
