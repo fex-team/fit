@@ -23,6 +23,14 @@
                     import BasicCode from 'text!../../../../lib/common/badge/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/common/badge/demo/lists/basic.md'
                     
+                    import LimitComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/badge/demo/lists/limit.js'
+                    import LimitCode from 'text!../../../../lib/common/badge/demo/lists/limit.js'
+                    import LimitMarkdown from '../../../../lib/common/badge/demo/lists/limit.md'
+                    
+                    import StandAloneComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/badge/demo/lists/stand-alone.js'
+                    import StandAloneCode from 'text!../../../../lib/common/badge/demo/lists/stand-alone.js'
+                    import StandAloneMarkdown from '../../../../lib/common/badge/demo/lists/stand-alone.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -62,6 +70,26 @@
                                       code={BasicCode}>
 
                                     <BasicComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={LimitMarkdown}
+                                      code={LimitCode}>
+
+                                    <LimitComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={StandAloneMarkdown}
+                                      code={StandAloneCode}>
+
+                                    <StandAloneComponent/>
 
                             </CodeView>
                         </Col>
