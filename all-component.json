@@ -74,6 +74,10 @@
           {
             "name": "滚动监听",
             "path": "scroll-listen"
+          },
+          {
+            "name": "标签",
+            "path": "tag"
           }
         ],
         "表单": [
