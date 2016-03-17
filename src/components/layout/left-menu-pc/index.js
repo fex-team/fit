@@ -69,6 +69,11 @@ const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                         title: '滚动监听 ScrollListen',
                         path: '/pc/scroll-listen'
                     },
+                    
+                    {
+                        title: '文字提示 Tooltip',
+                        path: '/pc/tooltip'
+                    },
                     ]
 const menueee1e2258d7ea163fec625ee44be9637 = [
                     {

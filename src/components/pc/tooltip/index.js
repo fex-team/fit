@@ -14,8 +14,19 @@
                 const store = createStore()
 
                 
+                        import TooltipSource from '../../../../lib/pc/tooltip/src/tooltip'
+                        import TooltipSourceCode from 'text!../../../../lib/pc/tooltip/src/tooltip'
+                        
 
                 
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tooltip/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/tooltip/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/tooltip/demo/lists/basic.md'
+                    
+                    import RenderComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tooltip/demo/lists/render.js'
+                    import RenderCode from 'text!../../../../lib/pc/tooltip/demo/lists/render.js'
+                    import RenderMarkdown from '../../../../lib/pc/tooltip/demo/lists/render.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -49,6 +60,26 @@
                             Content = (
                                 <Row>
                                     
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BasicMarkdown}
+                                      code={BasicCode}>
+
+                                    <BasicComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={RenderMarkdown}
+                                      code={RenderCode}>
+
+                                    <RenderComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
                                 </Row>
                             )
                             break
@@ -56,6 +87,10 @@
                             Content = (
                                 <div>
                                     
+                        <div style={docStyle}>
+                            <CodeDoc code={TooltipSourceCode} instance={TooltipSource} />
+                        </div>
+                        
                                 </div>
                             )
                             break

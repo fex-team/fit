@@ -55,6 +55,8 @@
                 
                 import fitScrollListenComponent from './components/pc/scroll-listen'
                 
+                import fitTooltipComponent from './components/pc/tooltip'
+                
                 import fitInputComponent from './components/pc/input'
                 
                 import fitNumberComponent from './components/pc/number'
@@ -189,6 +191,9 @@
                 
                 <Route path="scroll-listen"
                        component={fitScrollListenComponent}/>
+                
+                <Route path="tooltip"
+                       component={fitTooltipComponent}/>
                 
                 <Route path="input"
                        component={fitInputComponent}/>
