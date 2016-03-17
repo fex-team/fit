@@ -26,14 +26,12 @@ const createPath = (dirPath, moduleName, gitlabPrefix, info, prefix)=> {
         // 补上没有的目录或文件
         if (!fs.existsSync(path.join('lib', dirPath, moduleName, 'readme.md'))) {
             console.log(info.name, prefix, info.path)
-            let readmeText = `
-            # ${info.name}
-            ---
+            let readmeText = `# ${info.name}
+---
 
-            \`\`\`\`jsx
-            npm install ${prefix}-${info.path}
-            \`\`\`\`
-            `
+\`\`\`\`jsx
+npm install ${prefix}-${info.path}
+\`\`\`\``
             fs.writeFile(`lib/${dirPath}/${moduleName}/readme.md`, readmeText, (err)=> {
                 if (!err)return
                 console.log(`mk lib/${dirPath}/${moduleName}/readme.md fail: ${err}`)
