@@ -35,6 +35,10 @@
                     import TriggerCode from 'text!../../../../lib/pc/tooltip/demo/lists/trigger.js'
                     import TriggerMarkdown from '../../../../lib/pc/tooltip/demo/lists/trigger.md'
                     
+                    import FollowComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tooltip/demo/lists/follow.js'
+                    import FollowCode from 'text!../../../../lib/pc/tooltip/demo/lists/follow.js'
+                    import FollowMarkdown from '../../../../lib/pc/tooltip/demo/lists/follow.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -104,6 +108,16 @@
                                       code={TriggerCode}>
 
                                     <TriggerComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={FollowMarkdown}
+                                      code={FollowCode}>
+
+                                    <FollowComponent/>
 
                             </CodeView>
                         </Col>
