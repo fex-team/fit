@@ -8,8 +8,8 @@
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import SidebarComponent from '../../../../components/side-bar'
-                import readme from '../../../../lib/common/badge/readme.md'
-                import '../../../../lib/common/badge/demo'
+                import readme from '../../../../lib/pc/tag/readme.md'
+                import '../../../../lib/pc/tag/demo'
 
                 const store = createStore()
 
@@ -32,7 +32,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = '徽标数'
+                        document.title = '标签'
                     }
 
                     handlePageChange(value) {
@@ -72,7 +72,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/badge/tree/master"
+                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/pc-tag/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>
