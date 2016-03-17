@@ -25,6 +25,8 @@
         
                 import fitTimeagoComponent from './components/common/timeago'
                 
+                import fitBadgeComponent from './components/common/badge'
+                
         // pc
         
                 import fitLayoutGlobalComponent from './components/pc/layout-global'
@@ -141,6 +143,9 @@
         
                 <Route path="timeago"
                        component={fitTimeagoComponent}/>
+                
+                <Route path="badge"
+                       component={fitBadgeComponent}/>
                 
         </Route>
         
