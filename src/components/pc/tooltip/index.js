@@ -31,6 +31,10 @@
                     import PositionCode from 'text!../../../../lib/pc/tooltip/demo/lists/position.js'
                     import PositionMarkdown from '../../../../lib/pc/tooltip/demo/lists/position.md'
                     
+                    import TriggerComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tooltip/demo/lists/trigger.js'
+                    import TriggerCode from 'text!../../../../lib/pc/tooltip/demo/lists/trigger.js'
+                    import TriggerMarkdown from '../../../../lib/pc/tooltip/demo/lists/trigger.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -90,6 +94,16 @@
                                       code={PositionCode}>
 
                                     <PositionComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={TriggerMarkdown}
+                                      code={TriggerCode}>
+
+                                    <TriggerComponent/>
 
                             </CodeView>
                         </Col>
