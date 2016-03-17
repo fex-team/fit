@@ -25,6 +25,8 @@
         
                 import fitTimeagoComponent from './components/common/timeago'
                 
+                import fitBadgeComponent from './components/common/badge'
+                
         // pc
         
                 import fitLayoutGlobalComponent from './components/pc/layout-global'
@@ -87,18 +89,18 @@
                 
         // mobile
         
-                import fitenResetComponent from './components/mobile/reset'
+                import fitResetComponent from './components/mobile/reset'
                 
-                import fitenColorComponent from './components/mobile/color'
+                import fitScaleComponent from './components/mobile/scale'
                 
-                import fitenScaleComponent from './components/mobile/scale'
+                import fitChatComponent from './components/mobile/chat'
                 
-                import fitenChatComponent from './components/mobile/chat'
-                
-                import fitenChatBoxComponent from './components/mobile/chat-box'
+                import fitChatBoxComponent from './components/mobile/chat-box'
                 
         // tb
         
+                import tbColorComponent from './components/tb/color'
+                
                 import tbTrackComponent from './components/tb/track'
                 
                 import tbCaptchaComponent from './components/tb/captcha'
@@ -139,6 +141,9 @@
         
                 <Route path="timeago"
                        component={fitTimeagoComponent}/>
+                
+                <Route path="badge"
+                       component={fitBadgeComponent}/>
                 
         </Route>
         
@@ -240,19 +245,16 @@
             <IndexRoute component={mobileHome}/>
         
                 <Route path="reset"
-                       component={fitenResetComponent}/>
-                
-                <Route path="color"
-                       component={fitenColorComponent}/>
+                       component={fitResetComponent}/>
                 
                 <Route path="scale"
-                       component={fitenScaleComponent}/>
+                       component={fitScaleComponent}/>
                 
                 <Route path="chat"
-                       component={fitenChatComponent}/>
+                       component={fitChatComponent}/>
                 
                 <Route path="chat-box"
-                       component={fitenChatBoxComponent}/>
+                       component={fitChatBoxComponent}/>
                 
         </Route>
         
@@ -260,6 +262,9 @@
                component={ComponentsLayout}>
             <IndexRoute component={tbHome}/>
         
+                <Route path="color"
+                       component={tbColorComponent}/>
+                
                 <Route path="track"
                        component={tbTrackComponent}/>
                 

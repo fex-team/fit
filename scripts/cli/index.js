@@ -9,16 +9,16 @@ import os from 'os'
 import _ from 'lodash'
 
 import {
-		getPathModules,
-		getAllPathModules,
-		getAllComponentJSON,
-		getConfigModules,
-	  getPackageJSON
+    getPathModules,
+    getAllPathModules,
+    getAllComponentJSON,
+    getConfigModules,
+    getPackageJSON
 } from './utils/util'
 
 import {
-		setModuleGlobal,
-		getModuleGlobal
+    setModuleGlobal,
+    getModuleGlobal
 } from './utils/global'
 
 import initPrepare from './feature/init'
@@ -44,8 +44,8 @@ var args = process.argv.slice(2)
 var root = process.cwd()
 
 if (args.length === 0) {
-	console.error(
-			`
+    console.error(
+        `
 fit cli tools
 
 type: pc|web|native
@@ -58,215 +58,214 @@ Usage:
     cli minor     <type> <name>         minor module version
     cli diffpub   <type> <name>         clean + build + patch + publish
 `
-	)
-	process.exit(1)
+    )
+    process.exit(1)
 }
 switch (args[0]) {
-	case 'init':
+case 'init':
 
-		initPrepare()
+    initPrepare()
 
-		break
+    break
 
-	case 'init-project':
+case 'init-project':
 
-		moduleDistribute(initProject)
+    moduleDistribute(initProject)
 
-		break
+    break
 
-	case 'build':
-		// build all
-		moduleDistribute(cleanModulesSync)
-		moduleDistribute(buildModules).then(() => {
-			console.log("All Module build success")
-		}).catch((err) => {
-			console.log(err)
-		})
+case 'build':
+    // build all
+    moduleDistribute(cleanModulesSync)
+    moduleDistribute(buildModules).then(() => {
+        console.log("All Module build success")
+    }).catch((err) => {
+        console.log(err)
+    })
 
-		break
+    break
 
-	case 'clean':
+case 'clean':
 
-		moduleDistribute(cleanModulesSync)
-		tableRender()
+    moduleDistribute(cleanModulesSync)
+    tableRender()
 
-		break
+    break
 
-	case 'upgrade-dependencies':
+case 'upgrade-dependencies':
 
-		moduleDistribute(upgradeDependencies)
+    moduleDistribute(upgradeDependencies)
 
-		break
+    break
 
-	case 'patch':
+case 'patch':
 
-		moduleDistribute(patchModuleSync, 'patch')
+    moduleDistribute(patchModuleSync, 'patch')
 
-		break
+    break
 
-	case 'minor':
+case 'minor':
 
-		moduleDistribute(patchModuleSync, 'minor')
+    moduleDistribute(patchModuleSync, 'minor')
 
-		break
+    break
 
-	case 'major':
+case 'major':
 
-		moduleDistribute(patchModuleSync, 'major')
+    moduleDistribute(patchModuleSync, 'major')
 
-		break
+    break
 
-	case 'autopub':
+case 'autopub':
 
-		moduleDistribute((modules, allModules, params) => {
-			cleanModulesSync(modules, allModules, params)
-			buildModules(modules).then(() => {
-				patchModuleSync(modules, allModules, params)
-				let diff = moduleDistribute(getProjectStatus)
-				publishModules(diff).then(() => {
-					commitModules(diff)
-					pushModules(pullModules(diff))
-				}).catch((e) => {
-					console.log(e.toString())
-				})
-			})
-		}, 'patch')
+    moduleDistribute((modules, allModules, params) => {
+        cleanModulesSync(modules, allModules, params)
+        buildModules(modules).then(() => {
+            patchModuleSync(modules, allModules, params)
+            let diff = moduleDistribute(getProjectStatus)
+            publishModules(diff).then(() => {
+                commitModules(diff)
+                pushModules(pullModules(diff))
+            }).catch((e) => {
+                console.log(e.toString())
+            })
+        })
+    }, 'patch')
 
-		break
+    break
 
-	case 'diffpub':
+case 'diffpub':
 
-		initPrepare();
+    initPrepare();
 
-		moduleDistribute(initProject)
+    moduleDistribute(initProject)
 
-		moduleDistribute((modules, allModules, params) => {
-			checkModules(allModules);
-			upgradeDependencies(modules);
+    moduleDistribute((modules, allModules, params) => {
+        checkModules(allModules);
+        upgradeDependencies(modules);
 
-			let cache = getCache();
-			let diff
+        let cache = getCache();
+        let diff
 
-			if (cache.length === 0) {
-				diff = moduleDistribute(getProjectStatus)
-			}
-			else {
-				diff = cache
-			}
+        if (cache.length === 0) {
+            diff = moduleDistribute(getProjectStatus)
+        }
+        else {
+            diff = cache
+        }
 
-			cleanModulesSync(diff, allModules, params)
+        cleanModulesSync(diff, allModules, params)
 
-			if (diff.length === 0) {
-				console.log('all modules clean')
-				return;
-			}
+        if (diff.length === 0) {
+            console.log('all modules clean')
+            return;
+        }
 
-			buildModules(diff).then(() => {
-				patchModuleSync(diff, allModules, params)
-				let newDiff = _.uniq(diff.concat(moduleDistribute(getProjectStatus)))
-				publishModules(newDiff).then(() => {
-					commitModules(newDiff)
-					pushModules(newDiff)
-					clearCache();
-					tableRender()
-				}).catch((e) => {
-					console.log(e.toString())
-					console.trace();
-					tableRender()
-				})
-			}).catch((e) => {
-				console.log(e.toString());
-				console.trace();
-				tableRender();
-			})
-		}, 'patch')
+        buildModules(diff).then(() => {
+            patchModuleSync(diff, allModules, params)
+            let newDiff = _.uniq(diff.concat(moduleDistribute(getProjectStatus)))
+            publishModules(newDiff).then(() => {
+                commitModules(newDiff)
+                pushModules(newDiff)
+                clearCache()
+                tableRender()
+            }).catch((e) => {
+                console.trace(newDiff, e.toString())
+                tableRender()
+            })
+        }).catch((e) => {
+            console.log()
+            console.trace(e.toString())
+            tableRender()
+        })
+    }, 'patch')
 
-		commitModules([root])
-		pullModules([root])
-		pushModules([root])
+    commitModules([root])
+    pullModules([root])
+    pushModules([root])
 
-		break
+    break
 
-	case 'check':
+case 'check':
 
-		let diff = moduleDistribute(getProjectStatus);
+    let diff = moduleDistribute(getProjectStatus);
 
-		console.log('These module had modified: \n');
+    console.log('These module had modified: \n');
 
-		console.log(diff.join('\n'));
+    console.log(diff.join('\n'));
 
-		break
+    break
 
-	case 'clearcache':
+case 'clearcache':
 
-		clearCache()
+    clearCache()
 
-		break
+    break
 
 
-	case 'update':
+case 'update':
 
-		let flag = initPrepare();
-		var diff = moduleDistribute(getProjectStatus);
+    let flag = initPrepare();
+    var diff = moduleDistribute(getProjectStatus);
 
-		if (diff.length > 0) {
-			console.log('save cache')
-			writeCache()
-		}
+    if (diff.length > 0) {
+        console.log('save cache')
+        writeCache()
+    }
 
-		let cache = getCache();
+    let cache = getCache();
 
-		if (flag) {
+    if (flag) {
 
-			if (cache.length > 0) {
-				commitModules(cache)
-				pullModules(cache)
-			}
-			else {
-				moduleDistribute(commitModules);
-				moduleDistribute(pullModules);
-			}
-		}
+        if (cache.length > 0) {
+            commitModules(cache)
+            pullModules(cache)
+        }
+        else {
+            moduleDistribute(commitModules);
+            moduleDistribute(pullModules);
+        }
+    }
 
-		commitModules([root])
-		pullModules([root])
+    commitModules([root])
+    pullModules([root])
 
-		tableRender()
+    tableRender()
 
-		break
+    break
 
-	case 'publish':
-		// push modules to gitlabn
-		moduleDistribute(publishModules)
-		break
+case 'publish':
+    // push modules to gitlabn
+    moduleDistribute(publishModules)
+    break
 
-	case 'commit':
-		moduleDistribute(commitModules)
+case 'commit':
+    moduleDistribute(commitModules)
 
-		break
+    break
 
-	case 'add':
+case 'add':
 
-		moduleDistribute(addModules)
+    moduleDistribute(addModules)
 
-		break
+    break
 
-	case 'pull':
+case 'pull':
 
-		moduleDistribute(pullModules)
+    moduleDistribute(pullModules)
 
-		break
+    break
 
-	case 'push':
-		moduleDistribute(pushModules)
+case 'push':
+    moduleDistribute(pushModules)
 
-		break
+    break
 
-	default:
-		console.error(
-				`Command ${args[0]} unrecognized.`
-		)
-		process.exit(1)
-		break
+default:
+    console.error(
+        `Command ${args[0]} unrecognized.`
+    )
+    process.exit(1)
+    break
 }
 

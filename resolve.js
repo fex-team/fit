@@ -74,18 +74,18 @@
                 
         // mobile
         
-                'fiten-reset': path.join(__dirname, 'lib/mobile/reset/src'),
+                'fit-reset': path.join(__dirname, 'lib/mobile/reset/src'),
                 
-                'fiten-color': path.join(__dirname, 'lib/mobile/color/src'),
+                'fit-scale': path.join(__dirname, 'lib/mobile/scale/src'),
                 
-                'fiten-scale': path.join(__dirname, 'lib/mobile/scale/src'),
+                'fit-chat': path.join(__dirname, 'lib/mobile/chat/src'),
                 
-                'fiten-chat': path.join(__dirname, 'lib/mobile/chat/src'),
-                
-                'fiten-chat-box': path.join(__dirname, 'lib/mobile/chat-box/src'),
+                'fit-chat-box': path.join(__dirname, 'lib/mobile/chat-box/src'),
                 
         // tb
         
+                'tb-color': path.join(__dirname, 'lib/tb/color/src'),
+                
                 'tb-track': path.join(__dirname, 'lib/tb/track/src'),
                 
                 'tb-captcha': path.join(__dirname, 'lib/tb/captcha/src'),

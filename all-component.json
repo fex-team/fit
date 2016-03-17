@@ -1,243 +1,243 @@
 {
-  "categorys": {
-    "common": {
-      "prefix": "fit",
-      "gitlabPrefix": "",
-      "components": {
-        "计算": [
-          {
-            "name": "友好时间",
-            "path": "timeago"
-          },
-          {
-            "name": "徽标数",
-            "path": "badge"
-          }
-        ]
-      }
-    },
-    "pc": {
-      "prefix": "fit",
-      "gitlabPrefix": "pc",
-      "components": {
-        "基本": [
-          {
-            "name": "全屏布局",
-            "path": "layout-global"
-          },
-          {
-            "name": "布局",
-            "path": "layout"
-          },
-          {
-            "name": "按钮",
-            "path": "button"
-          }
-        ],
-        "展示": [
-          {
-            "name": "分页",
-            "path": "pagination"
-          },
-          {
-            "name": "表格",
-            "path": "table"
-          },
-          {
-            "name": "模态框",
-            "path": "modal"
-          },
-          {
-            "name": "提示",
-            "path": "message"
-          },
-          {
-            "name": "折叠面板",
-            "path": "collapse"
-          },
-          {
-            "name": "树形控件",
-            "path": "tree"
-          },
-          {
-            "name": "JSON树",
-            "path": "json-tree"
-          },
-          {
-            "name": "图片容器",
-            "path": "image"
-          },
-          {
-            "name": "组件嵌入",
-            "path": "render-to"
-          },
-          {
-            "name": "滚动监听",
-            "path": "scroll-listen"
-          },
-          {
-            "name": "标签",
-            "path": "tag"
-          }
-        ],
-        "表单": [
-          {
-            "name": "输入框",
-            "path": "input"
-          },
-          {
-            "name": "数字框",
-            "path": "number"
-          },
-          {
-            "name": "自动完成",
-            "path": "auto-complete"
-          },
-          {
-            "name": "选择框",
-            "path": "select"
-          },
-          {
-            "name": "开关",
-            "path": "switch"
-          },
-          {
-            "name": "多选框",
-            "path": "checkbox"
-          },
-          {
-            "name": "单选框",
-            "path": "radio"
-          },
-          {
-            "name": "时间选择器",
-            "path": "timepicker"
-          },
-          {
-            "name": "日期选择器",
-            "path": "datepicker"
-          },
-          {
-            "name": "上传",
-            "path": "upload"
-          },
-          {
-            "name": "富文本",
-            "path": "editor"
-          }
-        ],
-        "导航": [
-          {
-            "name": "菜单",
-            "path": "menu"
-          },
-          {
-            "name": "标签页",
-            "path": "tabs"
-          }
-        ],
-        "样式": [
-          {
-            "name": "基础样式库",
-            "path": "style"
-          },
-          {
-            "name": "手机壳",
-            "path": "phone"
-          }
-        ],
-        "其它": [
-          {
-            "name": "内嵌网页",
-            "path": "iframe"
-          },
-          {
-            "name": "图像裁剪",
-            "path": "cropper"
-          }
-        ]
-      }
-    },
-    "mobile": {
-      "prefix": "fiten",
-      "gitlabPrefix": "mobile",
-      "components": {
-        "基本": [
-          {
-            "name": "样式重置",
-            "path": "reset"
-          },
-          {
-            "name": "颜色",
-            "path": "color"
-          },
-          {
-            "name": "页面缩放",
-            "path": "scale"
-          },
-          {
-            "name": "聊天气泡",
-            "path": "chat"
-          },
-          {
-            "name": "聊天盒子",
-            "path": "chat-box"
-          }
-        ]
-      }
-    },
-    "tb": {
-      "prefix": "tb",
-      "gitlabPrefix": "tb",
-      "components": {
-        "基本": [
-          {
-            "name": "日志请求",
-            "path": "track"
-          },
-          {
-            "name": "验证码",
-            "path": "captcha"
-          },
-          {
-            "name": "拖拽验证码",
-            "path": "captcha-drag"
-          },
-          {
-            "name": "发帖",
-            "path": "submit"
-          },
-          {
-            "name": "分享",
-            "path": "share"
-          },
-          {
-            "name": "顶部蓝条",
-            "path": "blue-bar"
-          },
-          {
-            "name": "上传",
-            "path": "upload"
-          }
-        ],
-        "展示": [
-          {
-            "name": "字体图标",
-            "path": "icon"
-          },
-          {
-            "name": "表情库",
-            "path": "emoji"
-          }
-        ],
-        "综合": [
-          {
-            "name": "lego card",
-            "path": "lego-card"
-          }
-        ]
-      }
-    },
-    "oxp": {}
-  }
+    "categorys": {
+        "common": {
+            "prefix": "fit",
+            "gitlabPrefix": "",
+            "components": {
+                "计算": [
+                    {
+                        "name": "友好时间",
+                        "path": "timeago"
+                    },
+                    {
+                        "name": "徽标数",
+                        "path": "badge"
+                    }
+                ]
+            }
+        },
+        "pc": {
+            "prefix": "fit",
+            "gitlabPrefix": "pc",
+            "components": {
+                "基本": [
+                    {
+                        "name": "全屏布局",
+                        "path": "layout-global"
+                    },
+                    {
+                        "name": "布局",
+                        "path": "layout"
+                    },
+                    {
+                        "name": "按钮",
+                        "path": "button"
+                    }
+                ],
+                "展示": [
+                    {
+                        "name": "分页",
+                        "path": "pagination"
+                    },
+                    {
+                        "name": "表格",
+                        "path": "table"
+                    },
+                    {
+                        "name": "模态框",
+                        "path": "modal"
+                    },
+                    {
+                        "name": "提示",
+                        "path": "message"
+                    },
+                    {
+                        "name": "折叠面板",
+                        "path": "collapse"
+                    },
+                    {
+                        "name": "树形控件",
+                        "path": "tree"
+                    },
+                    {
+                        "name": "JSON树",
+                        "path": "json-tree"
+                    },
+                    {
+                        "name": "图片容器",
+                        "path": "image"
+                    },
+                    {
+                        "name": "组件嵌入",
+                        "path": "render-to"
+                    },
+                    {
+                        "name": "滚动监听",
+                        "path": "scroll-listen"
+                    },
+                    {
+                        "name": "标签",
+                        "path": "tag"
+                    }
+                ],
+                "表单": [
+                    {
+                        "name": "输入框",
+                        "path": "input"
+                    },
+                    {
+                        "name": "数字框",
+                        "path": "number"
+                    },
+                    {
+                        "name": "自动完成",
+                        "path": "auto-complete"
+                    },
+                    {
+                        "name": "选择框",
+                        "path": "select"
+                    },
+                    {
+                        "name": "开关",
+                        "path": "switch"
+                    },
+                    {
+                        "name": "多选框",
+                        "path": "checkbox"
+                    },
+                    {
+                        "name": "单选框",
+                        "path": "radio"
+                    },
+                    {
+                        "name": "时间选择器",
+                        "path": "timepicker"
+                    },
+                    {
+                        "name": "日期选择器",
+                        "path": "datepicker"
+                    },
+                    {
+                        "name": "上传",
+                        "path": "upload"
+                    },
+                    {
+                        "name": "富文本",
+                        "path": "editor"
+                    }
+                ],
+                "导航": [
+                    {
+                        "name": "菜单",
+                        "path": "menu"
+                    },
+                    {
+                        "name": "标签页",
+                        "path": "tabs"
+                    }
+                ],
+                "样式": [
+                    {
+                        "name": "基础样式库",
+                        "path": "style"
+                    },
+                    {
+                        "name": "手机壳",
+                        "path": "phone"
+                    }
+                ],
+                "其它": [
+                    {
+                        "name": "内嵌网页",
+                        "path": "iframe"
+                    },
+                    {
+                        "name": "图像裁剪",
+                        "path": "cropper"
+                    }
+                ]
+            }
+        },
+        "mobile": {
+            "prefix": "fit",
+            "gitlabPrefix": "mobile",
+            "components": {
+                "基本": [
+                    {
+                        "name": "样式重置",
+                        "path": "reset"
+                    },
+                    {
+                        "name": "页面缩放",
+                        "path": "scale"
+                    },
+                    {
+                        "name": "聊天气泡",
+                        "path": "chat"
+                    },
+                    {
+                        "name": "聊天盒子",
+                        "path": "chat-box"
+                    }
+                ]
+            }
+        },
+        "tb": {
+            "prefix": "tb",
+            "gitlabPrefix": "tb",
+            "components": {
+                "基本": [
+                    {
+                        "name": "颜色",
+                        "path": "color"
+                    },
+                    {
+                        "name": "日志请求",
+                        "path": "track"
+                    },
+                    {
+                        "name": "验证码",
+                        "path": "captcha"
+                    },
+                    {
+                        "name": "拖拽验证码",
+                        "path": "captcha-drag"
+                    },
+                    {
+                        "name": "发帖",
+                        "path": "submit"
+                    },
+                    {
+                        "name": "分享",
+                        "path": "share"
+                    },
+                    {
+                        "name": "顶部蓝条",
+                        "path": "blue-bar"
+                    },
+                    {
+                        "name": "上传",
+                        "path": "upload"
+                    }
+                ],
+                "展示": [
+                    {
+                        "name": "字体图标",
+                        "path": "icon"
+                    },
+                    {
+                        "name": "表情库",
+                        "path": "emoji"
+                    }
+                ],
+                "综合": [
+                    {
+                        "name": "lego card",
+                        "path": "lego-card"
+                    }
+                ]
+            }
+        },
+        "oxp": {}
+    }
 }
