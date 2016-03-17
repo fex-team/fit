@@ -14,8 +14,15 @@
                 const store = createStore()
 
                 
+                        import TagSource from '../../../../lib/pc/tag/src/tag'
+                        import TagSourceCode from 'text!../../../../lib/pc/tag/src/tag'
+                        
 
                 
+                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tag/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/tag/demo/lists/basic.js'
+                    import BasicMarkdown from '../../../../lib/pc/tag/demo/lists/basic.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -49,6 +56,16 @@
                             Content = (
                                 <Row>
                                     
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BasicMarkdown}
+                                      code={BasicCode}>
+
+                                    <BasicComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
                                 </Row>
                             )
                             break
@@ -56,6 +73,10 @@
                             Content = (
                                 <div>
                                     
+                        <div style={docStyle}>
+                            <CodeDoc code={TagSourceCode} instance={TagSource} />
+                        </div>
+                        
                                 </div>
                             )
                             break
