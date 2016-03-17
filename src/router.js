@@ -53,6 +53,8 @@
                 
                 import fitScrollListenComponent from './components/pc/scroll-listen'
                 
+                import fitTagComponent from './components/pc/tag'
+                
                 import fitInputComponent from './components/pc/input'
                 
                 import fitNumberComponent from './components/pc/number'
@@ -184,6 +186,9 @@
                 
                 <Route path="scroll-listen"
                        component={fitScrollListenComponent}/>
+                
+                <Route path="tag"
+                       component={fitTagComponent}/>
                 
                 <Route path="input"
                        component={fitInputComponent}/>
