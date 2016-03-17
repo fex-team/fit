@@ -38,6 +38,8 @@
                 
                 'fit-scroll-listen': path.join(__dirname, 'lib/pc/scroll-listen/src'),
                 
+                'fit-tooltip': path.join(__dirname, 'lib/pc/tooltip/src'),
+                
                 'fit-input': path.join(__dirname, 'lib/pc/input/src'),
                 
                 'fit-number': path.join(__dirname, 'lib/pc/number/src'),
