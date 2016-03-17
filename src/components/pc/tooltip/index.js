@@ -27,6 +27,10 @@
                     import RenderCode from 'text!../../../../lib/pc/tooltip/demo/lists/render.js'
                     import RenderMarkdown from '../../../../lib/pc/tooltip/demo/lists/render.md'
                     
+                    import PositionComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tooltip/demo/lists/position.js'
+                    import PositionCode from 'text!../../../../lib/pc/tooltip/demo/lists/position.js'
+                    import PositionMarkdown from '../../../../lib/pc/tooltip/demo/lists/position.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -76,6 +80,16 @@
                                       code={RenderCode}>
 
                                     <RenderComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={PositionMarkdown}
+                                      code={PositionCode}>
+
+                                    <PositionComponent/>
 
                             </CodeView>
                         </Col>
