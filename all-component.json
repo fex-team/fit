@@ -74,6 +74,10 @@
                     {
                         "name": "滚动监听",
                         "path": "scroll-listen"
+                    },
+                    {
+                        "name": "文字提示",
+                        "path": "tooltip"
                     }
                 ],
                 "表单": [
