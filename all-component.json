@@ -82,6 +82,10 @@
                     {
                         "name": "文字提示",
                         "path": "tooltip"
+                    },
+                    {
+                        "name": "进度条",
+                        "path": "progress"
                     }
                 ],
                 "表单": [
