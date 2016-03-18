@@ -31,6 +31,10 @@
                     import PositionCode from 'text!../../../../lib/pc/tooltip/demo/lists/position.js'
                     import PositionMarkdown from '../../../../lib/pc/tooltip/demo/lists/position.md'
                     
+                    import StayComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tooltip/demo/lists/stay.js'
+                    import StayCode from 'text!../../../../lib/pc/tooltip/demo/lists/stay.js'
+                    import StayMarkdown from '../../../../lib/pc/tooltip/demo/lists/stay.md'
+                    
                     import TriggerComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tooltip/demo/lists/trigger.js'
                     import TriggerCode from 'text!../../../../lib/pc/tooltip/demo/lists/trigger.js'
                     import TriggerMarkdown from '../../../../lib/pc/tooltip/demo/lists/trigger.md'
@@ -98,6 +102,16 @@
                                       code={PositionCode}>
 
                                     <PositionComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={StayMarkdown}
+                                      code={StayCode}>
+
+                                    <StayComponent/>
 
                             </CodeView>
                         </Col>
