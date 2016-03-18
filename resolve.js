@@ -42,6 +42,8 @@
                 
                 'fit-tooltip': path.join(__dirname, 'lib/pc/tooltip/src'),
                 
+                'fit-progress': path.join(__dirname, 'lib/pc/progress/src'),
+                
                 'fit-input': path.join(__dirname, 'lib/pc/input/src'),
                 
                 'fit-number': path.join(__dirname, 'lib/pc/number/src'),
