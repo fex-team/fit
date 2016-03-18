@@ -3,6 +3,7 @@
 #### 2016.3.18
 
 - 新增 `fit-tooltip` pc组件,鼠标移上去显示文字提示
+- 新增 `fit-tag` pc组件,用到标签的时候就可以使用它啦
 - `fit-table` 新增 `getAllRows` 获取当前表格页面所有数据 `getCurrentNotSelectRows` 获取当前表格页面所有未选中的数据
 
 #### 2016.3.16
