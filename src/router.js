@@ -59,6 +59,8 @@
                 
                 import fitTooltipComponent from './components/pc/tooltip'
                 
+                import fitProgressComponent from './components/pc/progress'
+                
                 import fitInputComponent from './components/pc/input'
                 
                 import fitNumberComponent from './components/pc/number'
@@ -199,6 +201,9 @@
                 
                 <Route path="tooltip"
                        component={fitTooltipComponent}/>
+                
+                <Route path="progress"
+                       component={fitProgressComponent}/>
                 
                 <Route path="input"
                        component={fitInputComponent}/>

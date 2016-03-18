@@ -79,6 +79,11 @@ const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                         title: '文字提示 Tooltip',
                         path: '/pc/tooltip'
                     },
+                    
+                    {
+                        title: '进度条 Progress',
+                        path: '/pc/progress'
+                    },
                     ]
 const menueee1e2258d7ea163fec625ee44be9637 = [
                     {
