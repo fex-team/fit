@@ -10,7 +10,7 @@
 ##### 初始化项目:
 
 ~~~js
-$ git clone gitlab.baidu.com/tb-component/awesome
+$ git clone http://gitlab.baidu.com/tb-component/awesome.git
 $ cd awesome
 $ cnpm install
 $ npm run update
