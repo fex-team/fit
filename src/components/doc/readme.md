@@ -13,8 +13,8 @@
 $ git clone http://gitlab.baidu.com/tb-component/awesome.git
 $ cd awesome
 $ cnpm install
-$ npm run update
 $ cnpm install babel-cli -g
+$ npm run update
 ~~~
 
 awesome这个模块就是fit官网的全部代码,开发方式采用**根项目统一管理所有子组件**,组件代码并不会被提交到awesome中,执行`npm run update`会读取根目录下`all-components.json`将所有子组件按照分类`clone`到`lib`目录下
