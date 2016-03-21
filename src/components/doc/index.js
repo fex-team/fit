@@ -3,6 +3,8 @@ import Menu from '../layout/top-menu'
 import marked from 'marked'
 import readme from './readme.md'
 
+import './index.scss'
+
 export default class Doc extends React.Component {
     constructor(props) {
         super(props)
@@ -18,7 +20,17 @@ export default class Doc extends React.Component {
                 </div>
                 <div className="g-mn">
                     <div className="container"
-                         style={{marginTop:40,marginBottom:40}}>
+                         style={{paddingTop:40,padingBottom:40}}>
+                        <div className="video">
+                            <video controls="controls"
+                                   className="video-box"
+                                   preload="auto"
+                                   height="500">
+                                <source id="mp4"
+                                        src="http://agroup.baidu.com:8964/static/0c/e432642f982e7643559cd1a707e6086b53371e.mp4?filename=fit-learning.mp4"
+                                        type="video/mp4"/>
+                            </video>
+                        </div>
                         <div className="markdown-body"
                              dangerouslySetInnerHTML={{__html: marked(readme)}}></div>
                     </div>
