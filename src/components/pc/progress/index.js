@@ -27,6 +27,10 @@
                     import StatusCode from 'text!../../../../lib/pc/progress/demo/lists/status.js'
                     import StatusMarkdown from '../../../../lib/pc/progress/demo/lists/status.md'
                     
+                    import CircleComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/progress/demo/lists/circle.js'
+                    import CircleCode from 'text!../../../../lib/pc/progress/demo/lists/circle.js'
+                    import CircleMarkdown from '../../../../lib/pc/progress/demo/lists/circle.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -76,6 +80,16 @@
                                       code={StatusCode}>
 
                                     <StatusComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={CircleMarkdown}
+                                      code={CircleCode}>
+
+                                    <CircleComponent/>
 
                             </CodeView>
                         </Col>
