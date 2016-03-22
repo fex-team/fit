@@ -34,6 +34,14 @@
                     import CircleCode from 'text!../../../../lib/pc/progress/demo/lists/circle.js'
                     import CircleMarkdown from '../../../../lib/pc/progress/demo/lists/circle.md'
                     
+                    import LabelComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/progress/demo/lists/label.js'
+                    import LabelCode from 'text!../../../../lib/pc/progress/demo/lists/label.js'
+                    import LabelMarkdown from '../../../../lib/pc/progress/demo/lists/label.md'
+                    
+                    import LabelCircleComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/progress/demo/lists/label-circle.js'
+                    import LabelCircleCode from 'text!../../../../lib/pc/progress/demo/lists/label-circle.js'
+                    import LabelCircleMarkdown from '../../../../lib/pc/progress/demo/lists/label-circle.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -93,6 +101,26 @@
                                       code={CircleCode}>
 
                                     <CircleComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={LabelMarkdown}
+                                      code={LabelCode}>
+
+                                    <LabelComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={LabelCircleMarkdown}
+                                      code={LabelCircleCode}>
+
+                                    <LabelCircleComponent/>
 
                             </CodeView>
                         </Col>
