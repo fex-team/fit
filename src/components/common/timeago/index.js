@@ -14,23 +14,20 @@
                 const store = createStore()
 
                 
-                        import TimeagoSource from '../../../../lib/common/timeago/src/timeago'
-                        import TimeagoSourceCode from 'text!../../../../lib/common/timeago/src/timeago'
-                        
 
-                
+
                     import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/timeago/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/common/timeago/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/common/timeago/demo/lists/basic.md'
-                    
+
                     import ChineseComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/timeago/demo/lists/chinese.js'
                     import ChineseCode from 'text!../../../../lib/common/timeago/demo/lists/chinese.js'
                     import ChineseMarkdown from '../../../../lib/common/timeago/demo/lists/chinese.md'
-                    
+
                     import LoseComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/timeago/demo/lists/lose.js'
                     import LoseCode from 'text!../../../../lib/common/timeago/demo/lists/lose.js'
                     import LoseMarkdown from '../../../../lib/common/timeago/demo/lists/lose.md'
-                    
+
 
                 const colStyle = {
                     padding: 10
@@ -63,7 +60,7 @@
                         case 'demo':
                             Content = (
                                 <Row>
-                                    
+
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
@@ -73,7 +70,7 @@
 
                             </CodeView>
                         </Col>
-                    
+
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ChineseMarkdown}
@@ -83,7 +80,7 @@
 
                             </CodeView>
                         </Col>
-                    
+
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LoseMarkdown}
@@ -93,18 +90,26 @@
 
                             </CodeView>
                         </Col>
-                    
+
                                 </Row>
                             )
                             break
                         case 'document':
                             Content = (
                                 <div>
-                                    
+
                         <div style={docStyle}>
-                            <CodeDoc code={TimeagoSourceCode} instance={TimeagoSource} />
+                            <CodeDoc code={Object.defineProperty(exportsSourceCode} instance={Object.defineProperty(exportsSource} />
                         </div>
-                        
+
+                        <div style={docStyle}>
+                            <CodeDoc code={"__esModule"SourceCode} instance={"__esModule"Source} />
+                        </div>
+
+                        <div style={docStyle}>
+                            <CodeDoc code={value: true );SourceCode} instance={value: true );Source} />
+                        </div>
+
                                 </div>
                             )
                             break

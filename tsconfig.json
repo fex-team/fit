@@ -7,8 +7,7 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "experimentalDecorators": true,
-        "inlineSourceMap": true,
-        "watch": true
+        "inlineSourceMap": true
     },
     "exclude": [
         "node_modules",
