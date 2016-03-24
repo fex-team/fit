@@ -34,7 +34,7 @@ const mkComponents = (config)=> {
 
                 // 如果没有tsx文件,才读取js
                 let demoRootFile = `lib/${categoryKey}/${component.path}/demo/index`
-                console.log(fs.existsSync(demoRootFile + '.tsx'), __dirname)
+                console.log(fs.existsSync(demoRootFile + '.tsx'), demoRootFile + '.tsx')
                 if (fs.existsSync(demoRootFile + '.tsx')) {
                     demoArray = getDemoArray(demoRootFile + '.tsx')
                 } else {
