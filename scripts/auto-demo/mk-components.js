@@ -30,17 +30,7 @@ const mkComponents = (config)=> {
                 let layoutString = ''
 
                 // demo相关
-                let demoArray = []
-
-                // 如果没有tsx文件,才读取js
-                let demoRootFile = `lib/${categoryKey}/${component.path}/demo/index`
-                console.log(fs.existsSync(demoRootFile + '.tsx'), demoRootFile + '.tsx')
-                if (fs.existsSync(demoRootFile + '.tsx')) {
-                    demoArray = getDemoArray(demoRootFile + '.tsx')
-                } else {
-                    demoArray = getDemoArray(demoRootFile + '.js')
-                }
-
+                let demoArray = getDemoArray(demoRootFile + '.js')
                 if (demoArray.length > 0) {
                     demoArray.map((demoItem)=> {
                         // 首字母大写demo名
@@ -66,7 +56,15 @@ const mkComponents = (config)=> {
                 }
 
                 // 源码文档相关
-                let sourceArray = getDocArray(`lib/${categoryKey}/${component.path}/src/index.js`)
+                let sourceArray = []
+                let sourceRootArray = `lib/${categoryKey}/${component.path}/src/index`
+
+                if (fs.existsSync(sourceRootArray + '.tsx')) {
+                    sourceArray = getDocArray(sourceRootArray + '.tsx')
+                } else {
+                    sourceArray = getDocArray(sourceRootArray + '.js')
+                }
+
                 if (sourceArray.length > 0) {
                     sourceArray.map((sourceItem)=> {
                         let sourceItemFileName = _.kebabCase(sourceItem)
