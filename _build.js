@@ -87,9 +87,9 @@ function parseCss(css) {
     else {
         return {
             content: css.substring(globalIndex, globalEnd),
-            _index: index,
-            index: globalIndex,
-            end: globalEnd
+            _index : index,
+            index  : globalIndex,
+            end    : globalEnd
         }
     }
 }
@@ -148,7 +148,7 @@ function parseSass(scsspaths) {
         let cssPath = scsspath.replace('.scss', '.css')
 
         let result = sass.renderSync({
-            file: scsspath,
+            file     : scsspath,
             sourceMap: true,
         }).css.toString()
 
@@ -166,7 +166,7 @@ function parseSass(scsspaths) {
     })
 }
 
-function htmlPathLoader (jspaths) {
+function htmlPathLoader(jspaths) {
     jspaths.forEach((filepath) => {
         let source = fs.readFileSync(filepath).toString()
 
@@ -198,7 +198,7 @@ function htmlPathLoader (jspaths) {
 
 }
 
-function parseEs6 (jsPaths) {
+function parseEs6(jsPaths) {
     jsPaths.forEach((filepath) => {
         let jsFile = fs.readFileSync(filepath).toString().replace(/\.scss/g, '.css')
 
@@ -210,6 +210,10 @@ function parseEs6 (jsPaths) {
     })
 }
 
+function cleanTsx() {
+    execSync('rm ' + scsspath)
+}
+
 function init() {
     let distDirectory = outputDist(moduleRoot, 'src', 'lib')
     let rawFiles = circleDirectory(distDirectory)
@@ -217,13 +221,16 @@ function init() {
     let scssFiles = findCssFile(rawFiles)
     let jsFiles = findJsFile(rawFiles)
 
-//     parse css
+    // parse css
     cssPathLoader(scssFiles)
     parseSass(scssFiles)
 
-//     parse js
+    // parse js
     htmlPathLoader(jsFiles)
     parseEs6(jsFiles)
+
+    // clean tsx
+    //cleanTsx()
 }
 
 init()

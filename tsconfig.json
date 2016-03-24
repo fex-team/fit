@@ -8,7 +8,8 @@
         "preserveConstEnums": true,
         "experimentalDecorators": true,
         "inlineSourceMap": true,
-        "inlineSources": true
+        "inlineSources": true,
+        "jsx": "react"
     },
     "exclude": [
         "node_modules",
