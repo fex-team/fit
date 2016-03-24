@@ -30,7 +30,16 @@ const mkComponents = (config)=> {
                 let layoutString = ''
 
                 // demo相关
-                let demoArray = getDemoArray(`lib/${categoryKey}/${component.path}/demo/index.js`)
+                let demoArray = []
+
+                // 如果没有tsx文件,才读取js
+                let demoRootFile = `lib/${categoryKey}/${component.path}/demo/index`
+                if (fs.existsSync(demoRootFile + '.tsx')) {
+                    demoArray = getDemoArray(demoRootFile + '.tsx')
+                } else {
+                    demoArray = getDemoArray(demoRootFile + '.js')
+                }
+                
                 if (demoArray.length > 0) {
                     demoArray.map((demoItem)=> {
                         // 首字母大写demo名
