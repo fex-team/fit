@@ -30,7 +30,7 @@ const mkComponents = (config)=> {
                 let layoutString = ''
 
                 // demo相关
-                let demoArray = getDemoArray(demoRootFile + '.js')
+                let demoArray = getDemoArray(`lib/${categoryKey}/${component.path}/demo/index.js`)
                 if (demoArray.length > 0) {
                     demoArray.map((demoItem)=> {
                         // 首字母大写demo名
