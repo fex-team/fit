@@ -7,6 +7,9 @@
     "type": "git",
     "url": "http://gitlab.baidu.com/tb-component/awesome.git"
   },
+  "typescript": {
+    "definition": "fit.d.ts"
+  },
   "scripts": {
     "server": "node server.js",
     "server-dev": "node server.js dev",
@@ -63,12 +66,12 @@
     "jsdom": "^8.0.1",
     "json-loader": "^0.5.3",
     "karma": "^0.13.15",
-    "karma-mocha": "~0.1",
     "karma-chai": "0.1.0",
     "karma-chrome-launcher": "^0.2.2",
     "karma-coverage": "^0.5.3",
     "karma-html-reporter": "^0.2.7",
     "karma-jasmine": "^0.3.6",
+    "karma-mocha": "~0.1",
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-sourcemap-loader": "~0.3",
     "karma-spec-reporter": "0.0.24",
@@ -91,7 +94,7 @@
     "semver": "^5.1.0",
     "style-loader": "^0.13.0",
     "text-loader": "0.0.1",
-    "ts-loader": "^0.7.2",
+    "ts-loader": "^0.8.1",
     "typescript": "^1.7.5",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.13",
