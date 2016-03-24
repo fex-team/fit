@@ -14,14 +14,8 @@
                 const store = createStore()
 
                 
-                        import Object.defineProperty(exportsSource from '../../../../lib/common/timeago/src/object-define-property-exports'
-                        import Object.defineProperty(exportsSourceCode from 'text!../../../../lib/common/timeago/src/object-define-property-exports'
-                        
-                        import "__esModule"Source from '../../../../lib/common/timeago/src/es-module'
-                        import "__esModule"SourceCode from 'text!../../../../lib/common/timeago/src/es-module'
-                        
-                        import value: true );Source from '../../../../lib/common/timeago/src/value-true'
-                        import value: true );SourceCode from 'text!../../../../lib/common/timeago/src/value-true'
+                        import TimeagoSource from '../../../../lib/common/timeago/src/timeago'
+                        import TimeagoSourceCode from 'text!../../../../lib/common/timeago/src/timeago'
                         
 
                 
@@ -108,15 +102,7 @@
                                 <div>
                                     
                         <div style={docStyle}>
-                            <CodeDoc code={Object.defineProperty(exportsSourceCode} instance={Object.defineProperty(exportsSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={"__esModule"SourceCode} instance={"__esModule"Source} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={value: true );SourceCode} instance={value: true );Source} />
+                            <CodeDoc code={TimeagoSourceCode} instance={TimeagoSource} />
                         </div>
                         
                                 </div>
