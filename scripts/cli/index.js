@@ -76,9 +76,9 @@ case 'init-project':
 
 case 'build':
     // build all
+    moduleDistribute(cleanModulesSync)
     console.log('clean!!!!!!!!!!!!!!')
     break
-    moduleDistribute(cleanModulesSync)
     moduleDistribute(buildModules).then(() => {
         console.log("All Module build success")
     }).catch((err) => {
