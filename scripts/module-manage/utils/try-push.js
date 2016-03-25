@@ -1,4 +1,5 @@
 import {execSync} from 'child_process'
+import tryPull from './try-pull'
 import consoleLog from './console-log'
 
 const tryPush = (path)=> {
@@ -14,7 +15,11 @@ const tryPush = (path)=> {
         return true
     } catch (e) {
         const errorString = e.toString()
-        console.log(errorString)
+        consoleLog(`push失败,尝试pull`, 'yellow', path)
+        if (tryPull(path) && tryPush(path)) {
+            consoleLog(`push成功`, 'green', path)
+        }
+        return false
     }
 }
 
