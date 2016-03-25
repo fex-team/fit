@@ -1,19 +1,51 @@
-// 如果不存在则创建路径
 import path from 'path'
 import fs from 'fs'
 import mkdirp from 'mkdirp'
-import { execSync } from 'child_process'
+import {execSync} from 'child_process'
 
-const createPath = (dirPath, moduleName, gitlabPrefix, info, prefix)=> {
-    // lib目录不存在,创建一个
-    if (!fs.existsSync(path.join('lib'))) {
-        mkdirp.sync(`lib`)
+const gitPlantform = 'http://gitlab.baidu.com'
+const gitPlantformGroup = 'tb-component'
+
+const createIfNotExist = (path)=> {
+    if (fs.existsSync(path.join(path))) return
+    mkdirp.sync(path)
+}
+
+const createLibFolderIfNotExist = ()=> {
+    createIfNotExist('lib')
+}
+
+const createCategoryFolderIfNotExist = (info)=> {
+    createIfNotExist(path.join('lib', info.categoryName))
+}
+
+const cloneModuleIfNotExist = (info)=> {
+    const path = path.join('lib', info.categoryName, info.module.path)
+    if (fs.existsSync(path)) return
+
+    // 获取git地址
+    let gitSourcePath
+    if (info.categoryInfo.gitlabPrefix !== '') {
+        gitSourcePath = `${gitlabPrefix}-${moduleName}.git`
+    } else {
+        gitSourcePath = `${moduleName}.git`
     }
 
-    // 子分类目录不存在,创建一个
-    if (!fs.existsSync(path.join('lib', dirPath))) {
-        mkdirp.sync(`lib/${dirPath}`)
-    }
+    // clone
+    execSync(`
+        cd lib/${info.categoryName};
+        git clone ${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}.git ${moduleName}
+    `)
+}
+
+// dirPath, moduleName, gitlabPrefix, info, prefix
+export default (info)=> {
+    // 创建 lib 文件夹
+    createLibFolderIfNotExist()
+    // 创建 分类 文件夹
+    createCategoryFolderIfNotExist(info)
+    // 创建 组件 文件夹
+    cloneModuleIfNotExist(info)
 
     // 模块目录不存在,git clone下来
     if (!fs.existsSync(path.join('lib', dirPath, moduleName))) {
@@ -26,12 +58,14 @@ const createPath = (dirPath, moduleName, gitlabPrefix, info, prefix)=> {
         // 补上没有的目录或文件
         if (!fs.existsSync(path.join('lib', dirPath, moduleName, 'readme.md'))) {
             console.log(info.name, prefix, info.path)
-            let readmeText = `# ${info.name}
----
-
-\`\`\`\`jsx
-npm install ${prefix}-${info.path}
-\`\`\`\``
+            let readmeText = `
+            # ${info.name}
+            ---
+            
+            \`\`\`\`jsx
+            npm install ${prefix}-${info.path}
+            \`\`\`\`
+            `
             fs.writeFile(`lib/${dirPath}/${moduleName}/readme.md`, readmeText, (err)=> {
                 if (!err)return
                 console.log(`mk lib/${dirPath}/${moduleName}/readme.md fail: ${err}`)
@@ -75,5 +109,3 @@ npm install ${prefix}-${info.path}
         console.log(e.toString())
     }
 }
-
-export default createPath

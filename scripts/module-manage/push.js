@@ -1,6 +1,6 @@
-import { execSync } from 'child_process'
+import {execSync} from 'child_process'
 
-const push = (dirPath, moduleName, gitlabPrefix)=> {
+export default (dirPath, moduleName, gitlabPrefix)=> {
     // 删除 lib目录
 
     // 删除 node_modules目录
@@ -12,5 +12,3 @@ const push = (dirPath, moduleName, gitlabPrefix)=> {
         console.log(e.toString())
     }
 }
-
-export default push
