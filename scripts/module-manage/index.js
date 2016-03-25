@@ -5,6 +5,8 @@ import mapModule from './utils/map-module'
 import update from './update'
 import push from './push'
 import {execSync} from 'child_process'
+import tryPull from './utils/try-pull'
+import tryPush from './utils/try-push'
 
 const args = process.argv.slice(2)
 
@@ -14,12 +16,15 @@ case 'update': // 更新
     mapModule(config, (info)=> {
         update(info)
     })
+    tryPull('./')
+
     break
 case 'push': // 提交
     mapModule(config, (info)=> {
         push(info)
     })
-    // push一下根目录
+
+    // push根目录
     try {
         execSync(`git add -A;git commit -m "quick push"; git push`)
     } catch (e) {
