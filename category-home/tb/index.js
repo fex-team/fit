@@ -4,6 +4,7 @@ import marked from 'marked'
 import developReadme from './develop.md'
 import nodeDevelopReadme from './node-develop.md'
 import nodeApiReadme from './node-api.md'
+import typescriptReadme from './typescript.md'
 import qaReadme from './qa.md'
 import { Tabs, TabPanel } from 'fit-tabs'
 import './index.scss'
@@ -42,8 +43,13 @@ export default class Layout extends React.Component {
                                 <div className="markdown-body"
                                      dangerouslySetInnerHTML={{__html: marked(nodeApiReadme)}}></div>
                             </TabPanel>
-                            <TabPanel tab="Q & A"
+                            <TabPanel tab="使用typescript开发"
                                       key="4">
+                                <div className="markdown-body"
+                                     dangerouslySetInnerHTML={{__html: marked(typescriptReadme)}}></div>
+                            </TabPanel>
+                            <TabPanel tab="Q & A"
+                                      key="5">
                                 <div className="markdown-body"
                                      dangerouslySetInnerHTML={{__html: marked(qaReadme)}}></div>
                             </TabPanel>
