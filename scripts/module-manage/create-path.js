@@ -70,7 +70,7 @@ npm install ${prefix}-${info.path}
 
     // pull一下
     try {
-        execSync(`cd lib/${dirPath}/${moduleName};git pull`)
+        execSync(`cd lib/${dirPath}/${moduleName};git pull origin master`)
     } catch (e) {
         console.log(e.toString())
     }

@@ -1,5 +1,4 @@
 // 遍历所有module
-
 const mapModule = (config, callback)=> {
     let categorys = config.categorys
     Object.keys(categorys).map((key, index)=> {
