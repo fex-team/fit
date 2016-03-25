@@ -10,7 +10,7 @@ const gitPlantform = 'http://gitlab.baidu.com'
 const gitPlantformGroup = 'tb-component'
 
 const getModulePath = (info)=> {
-    return `lib/${info.categoryName}/${info.module.path}`
+    return `./lib/${info.categoryName}/${info.module.path}`
 }
 
 const createIfNotExist = (targetPath)=> {

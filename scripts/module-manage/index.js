@@ -17,18 +17,11 @@ case 'update': // 更新
         update(info)
     })
     tryPull('./')
-
     break
 case 'push': // 提交
     mapModule(config, (info)=> {
         push(info)
     })
-
-    // push根目录
-    try {
-        execSync(`git add -A;git commit -m "quick push"; git push`)
-    } catch (e) {
-        console.log(e.toString())
-    }
+    tryPush('./')
     break
 }

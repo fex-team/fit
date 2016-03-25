@@ -1,14 +1,23 @@
 import {execSync} from 'child_process'
+import tryPush from './utils/try-push'
 
-export default (dirPath, moduleName, gitlabPrefix)=> {
+const getModulePath = (info)=> {
+    return `./lib/${info.categoryName}/${info.module.path}`
+}
+
+const deleteLib = (info)=> {
+    execSync(`rm -rf ${getModulePath(info)}/lib`)
+}
+
+const deleteDTS = (info)=> {
+    execSync(`find ${getModulePath(info)} -name "*.d.ts" | xargs rm`)
+}
+
+export default (info)=> {
     // 删除 lib目录
-
-    // 删除 node_modules目录
-
-    // push一下
-    try {
-        execSync(`cd lib/${dirPath}/${moduleName};git add -A;git commit -m "quick push"; git push`)
-    } catch (e) {
-        console.log(e.toString())
-    }
+    deleteLib(info)
+    // 删除.d.ts
+    deleteDTS(info)
+    // push
+    tryPush(getModulePath(info))
 }
