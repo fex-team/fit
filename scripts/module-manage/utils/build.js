@@ -28,6 +28,7 @@ const parseBabel = (filePath) => {
 }
 
 const parseSass = (scssPath) => {
+    console.log(scssPath)
     let cssPath = scssPath.replace('.scss', '.css')
 
     let result = sass.renderSync({
@@ -41,7 +42,6 @@ const parseSass = (scssPath) => {
         result.warnings().forEach((warn) => {
             console.warn(warn.toString())
         })
-        console.log(cssPath)
         fs.writeFileSync(cssPath, result.css)
         execSync(`rm ${scssPath}`)
     }).catch((err) => {
