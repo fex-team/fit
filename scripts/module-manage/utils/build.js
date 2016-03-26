@@ -49,6 +49,7 @@ const parseSass = (scsspath) => {
 }
 
 export default (info)=> {
+    console.log(info)
     // 把文件全部拷贝到lib
     const libPath = outputDistLib(info)
 }
