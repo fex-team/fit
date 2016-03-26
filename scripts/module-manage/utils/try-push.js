@@ -3,7 +3,6 @@ import tryPull from './try-pull'
 import consoleLog from './console-log'
 
 const tryPush = (path)=> {
-    console.log(execSync(`cd ${path};git status`).toString())
     try {
         execSync(`cd ${path};git add -A;git commit -m "quick push";git push origin master`)
         return true
