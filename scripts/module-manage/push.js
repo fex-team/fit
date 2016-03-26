@@ -2,6 +2,8 @@ import {execSync} from 'child_process'
 import consoleLog from './utils/console-log'
 import tryPush from './utils/try-push'
 import build from './utils/build'
+import fs from 'fs'
+import path from 'path'
 
 const hasChanges = (path)=> {
     // 先看看status对不对
@@ -23,7 +25,13 @@ const deleteLib = (info)=> {
 }
 
 const deleteDTS = (info)=> {
-    execSync(`find ${getModulePath(info)} -name "*.d.ts" | xargs rm`)
+    const modulePath = getModulePath(info)
+    execSync(`find ${modulePath} -name "*.d.ts" | xargs rm`)
+
+    // 如果包含 .tsx 文件,则删除 src 下的 js 文件
+    if (fs.existsSync(path.join(modulePath,'src/index.tsx'))){
+        console.log('存在tsx')
+    }
 }
 
 const createDTs = (info)=> {
@@ -55,6 +63,6 @@ export default (info)=> {
     //tryPush(getModulePath(info))
     // 删除 lib目录
     deleteLib(info)
-    // 删除.d.ts
+    // 删除所有 .d.ts
     deleteDTS(info)
 }
