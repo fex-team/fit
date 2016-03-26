@@ -62,10 +62,10 @@ export default (info)=> {
     createDTs(info)
     // 分配新版本
     // 发布npm
-    // try push
-    tryPush(getModulePath(info))
     // 删除 lib目录
     deleteLib(info)
     // 删除所有 .d.ts
     deleteDTS(info)
+    // try push
+    tryPush(getModulePath(info))
 }
