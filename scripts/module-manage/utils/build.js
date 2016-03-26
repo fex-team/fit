@@ -53,7 +53,7 @@ const handleModuleDir = (modulePath)=> {
     })
     // babel 处理
     jsFiles.map((item)=> {
-        console.log(parseBabel(item))
+        parseBabel(item)
     })
 }
 
