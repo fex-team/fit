@@ -19,10 +19,10 @@ export default class SearchComponents extends React.Component {
             }
         }
 
-        mapModule(allComponents, (dirPath, moduleName, gitlabPrefix, info, prefix)=> {
+        mapModule(allComponents, (info)=> {
             this.autoCompleteOpts.datas.push({
-                text: info.name + ' ' + moduleName,
-                value: `${dirPath}/${moduleName}`
+                text: info.module.name + ' ' + info.module.path,
+                value: `${info.categoryName}/${info.module.path}`
             })
         })
     }

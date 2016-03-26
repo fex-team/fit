@@ -8,6 +8,7 @@ import postcss  from 'postcss'
 import path from 'path'
 import htmlPathLoader from './html-path-loader'
 import cssPathLoader from './css-path-loader'
+import * as ts from 'typescript'
 
 const outputDistLib = (info) => {
     let modulePath = `./lib/${info.categoryName}/${info.module.path}`
@@ -48,23 +49,37 @@ const parseSass = (scssPath) => {
     })
 }
 
-const handleModuleDir = (modulePath, info)=> {
-    let jsFiles = execSync(`find ${modulePath} -name "*.js"`).toString().split('\n')
-    jsFiles = jsFiles.filter((item)=> {
+const parseTypescript = (filePath)=> {
+    const absolutePath = path.join(__dirname, '../../..', filePath)
+    const tsxFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
+    let result = ts.transpile(tsxFileContent)
+    fs.writeFileSync(absolutePath, result)
+}
+
+const getfiles = (suffix, modulePath)=> {
+    let files = execSync(`find ${modulePath} -name "*.${suffix}"`).toString().split('\n')
+    files = files.filter((item)=> {
         return item !== ''
     })
-    // babel 处理
+    return files
+}
+
+const handleModuleDir = (modulePath, info)=> {
+    // tsx 文件由 typescript 处理
+    let tsxFiles = getfiles('tsx', modulePath)
+    tsxFiles.map((item)=> {
+        parseTypescript(item)
+    })
+
+    // js 文件由 babel 处理
+    let jsFiles = getfiles('js', modulePath)
     jsFiles.map((item)=> {
         htmlPathLoader(item, info)
         parseBabel(item)
     })
 
-    let scssFiles = execSync(`find ${modulePath} -name "*.scss"`).toString().split('\n')
-    scssFiles = scssFiles.filter((item)=> {
-        return item !== ''
-    })
-
-    // sass 处理
+    // scss 文件由 sass 处理
+    let scssFiles = getfiles('scss', modulePath)
     scssFiles.map((item)=> {
         cssPathLoader(item, info)
         parseSass(item)
@@ -74,6 +89,6 @@ const handleModuleDir = (modulePath, info)=> {
 export default (info)=> {
     // 把文件全部拷贝到lib
     const libPath = outputDistLib(info)
-    // 处理dit目录
+    // 处理dist目录
     handleModuleDir(libPath, info)
 }

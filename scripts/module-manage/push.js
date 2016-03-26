@@ -26,6 +26,14 @@ const deleteDTS = (info)=> {
     execSync(`find ${getModulePath(info)} -name "*.d.ts" | xargs rm`)
 }
 
+const patchNewVersion = ()=> {
+
+}
+
+const publish = ()=> {
+
+}
+
 export default (info)=> {
     // 是否有修改
     if (!hasChanges(getModulePath(info))) {
@@ -35,6 +43,8 @@ export default (info)=> {
     consoleLog('正在编译..', 'grey', getModulePath(info))
     build(info)
     consoleLog('编译完成', 'green', getModulePath(info))
+    // 分配新版本
+    // 发布npm
     // try push
     //tryPush(getModulePath(info))
     // 删除 lib目录
