@@ -28,13 +28,13 @@ const parseBabel = (filePath) => {
 }
 
 const parseSass = (scssPath) => {
-    console.log(scssPath)
     let cssPath = scssPath.replace('.scss', '.css')
 
     let result = sass.renderSync({
         file     : scssPath,
         sourceMap: true
     }).css.toString()
+    console.log(result)
 
     // autoprefixer 插件处理
     postcss([autoprefixer])
