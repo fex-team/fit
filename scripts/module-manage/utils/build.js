@@ -11,6 +11,7 @@ const outputDistLib = (info) => {
     let modulePath = `./info/${info.categoryName}/${info.module.path}`
     let srcDirectory = `${modulePath}/src`
     let distDirectory = `${modulePath}/lib`
+    console.log(`cp -r ${srcDirectory} ${distDirectory}`)
     execSync(`cp -r ${srcDirectory} ${distDirectory}`)
     return distDirectory
 }
