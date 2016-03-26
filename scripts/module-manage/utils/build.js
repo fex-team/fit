@@ -48,6 +48,9 @@ const parseSass = (scssPath) => {
 
 const handleModuleDir = (modulePath)=> {
     const jsFiles = execSync(`find ${modulePath} -name "*.js"`).toString().split('\n')
+    jsFiles.filter((item)=> {
+        return item !== ''
+    })
     console.log(jsFiles)
 }
 
