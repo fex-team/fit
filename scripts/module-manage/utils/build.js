@@ -15,22 +15,20 @@ const outputDistLib = (info) => {
     return distDirectory
 }
 
-const parseEs6 = (filepath) => {
-    return console.log(path.join(__dirname,'../../..', filepath))
-    const jsFileContent = fs.readFileSync(path.join(__dirname, filepath)).toString().replace(/\.scss/g, '.css')
+const parseEs6 = (filePath) => {
+    const absolutePath = path.join(__dirname, '../../..', filePath)
+    const jsFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
     const result = babel.transform(jsFileContent, {
         extends: path.resolve(__dirname, '../../../.babelrc')
     })
-
-    fs.writeFileSync(filepath, result.code)
+    fs.writeFileSync(absolutePath, result.code)
 }
 
-
-const parseSass = (scsspath) => {
-    let cssPath = scsspath.replace('.scss', '.css')
+const parseSass = (scssPath) => {
+    let cssPath = scssPath.replace('.scss', '.css')
 
     let result = sass.renderSync({
-        file     : scsspath,
+        file     : scssPath,
         sourceMap: true
     }).css.toString()
 
@@ -48,9 +46,14 @@ const parseSass = (scsspath) => {
     })
 }
 
+const handleModuleDir = (modulePath)=> {
+    const jsFiles = execSync(`find ${modulePath} -name "*.js"`)
+    console.log(jsFiles)
+}
+
 export default (info)=> {
     // 把文件全部拷贝到lib
     const libPath = outputDistLib(info)
-    // babel编译
-    parseEs6(libPath)
+    // 处理dit目录
+    handleModuleDir(libPath)
 }
