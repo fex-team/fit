@@ -1,7 +1,7 @@
 import fs from 'fs'
 import {execSync} from 'child_process'
 import consoleLog from './console-log'
-import babel from 'babel-core'
+import * as babel from 'babel-core'
 import sass from 'node-sass'
 import autoprefixer from 'autoprefixer'
 import postcss  from 'postcss'
@@ -15,9 +15,10 @@ const outputDistLib = (info) => {
     return distDirectory
 }
 
-const parseEs6 = (filePath) => {
+const parseBabel = (filePath) => {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const jsFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
+    console.log(babel)
     const result = babel.transform(jsFileContent, {
         extends: path.resolve(__dirname, '../../../.babelrc')
     })
@@ -51,7 +52,10 @@ const handleModuleDir = (modulePath)=> {
     jsFiles = jsFiles.filter((item)=> {
         return item !== ''
     })
-    console.log(jsFiles)
+    // babel 处理
+    jsFiles.map((item)=> {
+        console.log(parseBabel(item))
+    })
 }
 
 export default (info)=> {
