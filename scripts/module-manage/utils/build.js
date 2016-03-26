@@ -65,7 +65,7 @@ const handleModuleDir = (modulePath, info)=> {
     // sass 处理
     scssFiles.map((item)=> {
         cssPathLoader(item, info)
-        //parseSass(item)
+        parseSass(item)
     })
 }
 
