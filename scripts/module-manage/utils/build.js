@@ -38,6 +38,7 @@ const parseSass = (scssPath) => {
     // autoprefixer 插件处理
     postcss([autoprefixer])
         .process(result).then(function (result) {
+        console.log(result)
         result.warnings().forEach((warn) => {
             console.warn(warn.toString())
         })
