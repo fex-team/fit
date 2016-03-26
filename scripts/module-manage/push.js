@@ -31,12 +31,12 @@ export default (info)=> {
     if (!hasChanges(getModulePath(info))) {
         return
     }
-    // 删除 lib目录
-    deleteLib(info)
-    // 删除.d.ts
-    deleteDTS(info)
     // 编译
     build(info)
     // try push
-    tryPush(getModulePath(info))
+    //tryPush(getModulePath(info))
+    // 删除 lib目录
+    //deleteLib(info)
+    // 删除.d.ts
+    //deleteDTS(info)
 }
