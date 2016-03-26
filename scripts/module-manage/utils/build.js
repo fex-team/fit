@@ -47,8 +47,8 @@ const parseSass = (scssPath) => {
 }
 
 const handleModuleDir = (modulePath)=> {
-    const jsFiles = execSync(`find ${modulePath} -name "*.js"`)
-    console.log(jsFiles.toString())
+    const jsFiles = execSync(`find ${modulePath} -name "*.js"`).toString().split('\n')
+    console.log(jsFiles)
 }
 
 export default (info)=> {
