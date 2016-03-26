@@ -8,7 +8,7 @@ import postcss  from 'postcss'
 import path from 'path'
 
 const outputDistLib = (info) => {
-    let modulePath = `./info/${info.categoryName}/${info.module.path}`
+    let modulePath = `./lib/${info.categoryName}/${info.module.path}`
     let srcDirectory = `${modulePath}/src`
     let distDirectory = `${modulePath}/lib`
     console.log(`cp -r ${srcDirectory} ${distDirectory}`)
@@ -49,7 +49,6 @@ const parseSass = (scsspath) => {
 }
 
 export default (info)=> {
-    console.log(info)
     // 把文件全部拷贝到lib
     const libPath = outputDistLib(info)
 }
