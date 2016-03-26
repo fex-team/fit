@@ -53,7 +53,8 @@ const parseTypescript = (filePath)=> {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const tsxFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
     let result = ts.transpile(tsxFileContent)
-    fs.writeFileSync(absolutePath, result)
+    fs.writeFileSync(absolutePath.replace(/.tsx/g,'.js'), result)
+    execSync(`rm ${absolutePath}`)
 }
 
 const getfiles = (suffix, modulePath)=> {
@@ -73,6 +74,7 @@ const handleModuleDir = (modulePath, info)=> {
 
     // js 文件由 babel 处理
     let jsFiles = getfiles('js', modulePath)
+    console.log(jsFiles)
     jsFiles.map((item)=> {
         htmlPathLoader(item, info)
         parseBabel(item)
