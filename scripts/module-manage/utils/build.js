@@ -80,6 +80,7 @@ const handleModuleDir = (modulePath, info)=> {
 
     // scss 文件由 sass 处理
     let scssFiles = getfiles('scss', modulePath)
+    console.log(scssFiles)
     scssFiles.map((item)=> {
         cssPathLoader(item, info)
         parseSass(item)
