@@ -42,20 +42,21 @@ const parseCss = (source) => {
     }
 }
 
-export default (filepath, info) => {
+export default (filePath, info) => {
     // 不处理 minxins.scss
-    if (filepath.indexOf('mixins.scss') > 0) {
+    if (filePath.indexOf('mixins.scss') > 0) {
         return
     }
-    
-    let source = fs.readFileSync(filepath).toString()
+
+    let source = fs.readFileSync(filePath).toString()
     //let hasGlobal = !!parseCss(source)
     // if (nameStr && hasGlobal) {
     //     source = global.content + '\n .' + nameStr + '{' + source.substring(0, global._index) + source.substring(global.end + 1) + '}'
     // } else if (nameStr && !hasGlobal) {
     //     source = '.' + nameStr + '{' + source + '}'
     // }
-    source =  `.fit-message{${source}`
+    console.log('处理了 ' + filePath)
+    source = `.fit-message{${source}}`
 
-    fs.writeFileSync(filepath, source)
+    fs.writeFileSync(filePath, source)
 }
