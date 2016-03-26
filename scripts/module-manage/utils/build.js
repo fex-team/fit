@@ -34,7 +34,6 @@ const parseSass = (scssPath) => {
         file     : scssPath,
         sourceMap: true
     }).css.toString()
-    console.log(result)
 
     // autoprefixer 插件处理
     postcss([autoprefixer])

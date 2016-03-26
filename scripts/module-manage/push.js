@@ -26,6 +26,10 @@ const deleteDTS = (info)=> {
     execSync(`find ${getModulePath(info)} -name "*.d.ts" | xargs rm`)
 }
 
+const createDTs = (info)=> {
+    execSync(`tsc -d ./lib/${info.categoryName}/${info.module.path}/src/index.tsx`)
+}
+
 const patchNewVersion = ()=> {
 
 }
@@ -43,12 +47,14 @@ export default (info)=> {
     consoleLog('正在编译..', 'grey', getModulePath(info))
     build(info)
     consoleLog('编译完成', 'green', getModulePath(info))
+    // 生成.d.ts
+    //createDTs(info)
     // 分配新版本
     // 发布npm
     // try push
     //tryPush(getModulePath(info))
     // 删除 lib目录
-    //deleteLib(info)
+    deleteLib(info)
     // 删除.d.ts
-    //deleteDTS(info)
+    deleteDTS(info)
 }
