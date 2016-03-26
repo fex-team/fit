@@ -30,7 +30,7 @@ const deleteDTS = (info)=> {
 
     // 如果包含 .tsx 文件,则删除 src 下的 js 文件
     if (fs.existsSync(path.join(modulePath,'src/index.tsx'))){
-        console.log('存在tsx')
+        execSync(`find ${path.join(modulePath,'src')} -name "*.js" | xargs rm`)
     }
 }
 
