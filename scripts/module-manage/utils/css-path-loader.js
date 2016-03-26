@@ -55,8 +55,7 @@ export default (filePath, info) => {
     // } else if (nameStr && !hasGlobal) {
     //     source = '.' + nameStr + '{' + source + '}'
     // }
-    console.log('处理了 ' + filePath)
-    source = `.fit-message{${source}}`
+    source = `.fit-${info.categoryName}-${info.module.path}{${source}}`
 
     fs.writeFileSync(filePath, source)
 }

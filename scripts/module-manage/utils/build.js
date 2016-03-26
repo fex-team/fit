@@ -6,6 +6,7 @@ import sass from 'node-sass'
 import autoprefixer from 'autoprefixer'
 import postcss  from 'postcss'
 import path from 'path'
+import htmlPathLoader from './html-path-loader'
 import cssPathLoader from './css-path-loader'
 
 const outputDistLib = (info) => {
@@ -54,6 +55,7 @@ const handleModuleDir = (modulePath, info)=> {
     })
     // babel 处理
     jsFiles.map((item)=> {
+        htmlPathLoader(item, info)
         parseBabel(item)
     })
 
