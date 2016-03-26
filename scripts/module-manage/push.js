@@ -62,7 +62,7 @@ export default (info)=> {
     // try push
     //tryPush(getModulePath(info))
     // 删除 lib目录
-    deleteLib(info)
+    //deleteLib(info)
     // 删除所有 .d.ts
     deleteDTS(info)
 }
