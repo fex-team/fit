@@ -11,13 +11,13 @@ const outputDistLib = (info) => {
     let modulePath = `./lib/${info.categoryName}/${info.module.path}`
     let srcDirectory = `${modulePath}/src`
     let distDirectory = `${modulePath}/lib`
-    console.log(`cp -r ${srcDirectory} ${distDirectory}`)
     execSync(`cp -r ${srcDirectory} ${distDirectory}`)
     return distDirectory
 }
 
 const parseEs6 = (filepath) => {
-    const jsFileContent = fs.readFileSync(filepath).toString().replace(/\.scss/g, '.css')
+    return console.log(path.join(__dirname, filepath))
+    const jsFileContent = fs.readFileSync(path.join(__dirname, filepath)).toString().replace(/\.scss/g, '.css')
     const result = babel.transform(jsFileContent, {
         extends: path.resolve(__dirname, '../../../.babelrc')
     })
@@ -51,4 +51,6 @@ const parseSass = (scsspath) => {
 export default (info)=> {
     // 把文件全部拷贝到lib
     const libPath = outputDistLib(info)
+    // babel编译
+    parseEs6(libPath)
 }
