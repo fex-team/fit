@@ -41,7 +41,7 @@ const parseSass = (scssPath) => {
         result.warnings().forEach((warn) => {
             console.warn(warn.toString())
         })
-
+        console.log(cssPath)
         fs.writeFileSync(cssPath, result.css)
         execSync(`rm ${scssPath}`)
     }).catch((err) => {
@@ -74,7 +74,6 @@ const handleModuleDir = (modulePath, info)=> {
 
     // js 文件由 babel 处理
     let jsFiles = getfiles('js', modulePath)
-    console.log(jsFiles)
     jsFiles.map((item)=> {
         htmlPathLoader(item, info)
         parseBabel(item)
