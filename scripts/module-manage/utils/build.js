@@ -16,7 +16,7 @@ const outputDistLib = (info) => {
 }
 
 const parseEs6 = (filepath) => {
-    return console.log(path.join(__dirname, filepath))
+    return console.log(path.join(__dirname,'../../..', filepath))
     const jsFileContent = fs.readFileSync(path.join(__dirname, filepath)).toString().replace(/\.scss/g, '.css')
     const result = babel.transform(jsFileContent, {
         extends: path.resolve(__dirname, '../../../.babelrc')
