@@ -36,24 +36,16 @@ const parseSass = (scssPath) => {
     }).css.toString()
 
     // autoprefixer 插件处理
-    postcss([autoprefixer])
-        .process(result).then(function (result) {
-        console.log(result)
-        result.warnings().forEach((warn) => {
-            console.warn(warn.toString())
-        })
-        fs.writeFileSync(cssPath, result.css)
-        execSync(`rm ${scssPath}`)
-    }).catch((err) => {
-        console.log(err)
-    })
+    const postResult = postcss([autoprefixer]).process(result).css
+    fs.writeFileSync(cssPath, postResult)
+    execSync(`rm ${scssPath}`)
 }
 
 const parseTypescript = (filePath)=> {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const tsxFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
     let result = ts.transpile(tsxFileContent)
-    fs.writeFileSync(absolutePath.replace(/.tsx/g,'.js'), result)
+    fs.writeFileSync(absolutePath.replace(/.tsx/g, '.js'), result)
     execSync(`rm ${absolutePath}`)
 }
 
