@@ -32,7 +32,9 @@ export default (info)=> {
         return
     }
     // 编译
+    consoleLog('正在编译..', 'grey', getModulePath(info))
     build(info)
+    consoleLog('编译完成', 'green', getModulePath(info))
     // try push
     //tryPush(getModulePath(info))
     // 删除 lib目录
