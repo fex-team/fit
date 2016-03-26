@@ -41,7 +41,7 @@ const parseSass = (scssPath) => {
         })
 
         fs.writeFileSync(cssPath, result.css)
-        execSync('rm ' + scsspath)
+        execSync(`rm ${scssPath}`)
     }).catch((err) => {
         console.log(err)
     })
