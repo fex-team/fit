@@ -29,13 +29,16 @@ const deleteDTS = (info)=> {
     execSync(`find ${modulePath} -name "*.d.ts" | xargs rm`)
 
     // 如果包含 .tsx 文件,则删除 src 下的 js 文件
-    if (fs.existsSync(path.join(modulePath,'src/index.tsx'))){
-        execSync(`find ${path.join(modulePath,'src')} -name "*.js" | xargs rm`)
+    if (fs.existsSync(path.join(modulePath, 'src/index.tsx'))) {
+        execSync(`find ${path.join(modulePath, 'src')} -name "*.js" | xargs rm`)
     }
 }
 
 const createDTs = (info)=> {
-    execSync(`tsc -d ./lib/${info.categoryName}/${info.module.path}/src/index.tsx`)
+    const tsxPath = `./lib/${info.categoryName}/${info.module.path}/src/index.tsx`
+    if (fs.existsSync(tsxPath)) {
+        execSync(`tsc -d ${tsxPath}`)
+    }
 }
 
 const patchNewVersion = ()=> {
@@ -56,13 +59,13 @@ export default (info)=> {
     build(info)
     consoleLog('编译完成', 'green', getModulePath(info))
     // 生成.d.ts
-    //createDTs(info)
+    createDTs(info)
     // 分配新版本
     // 发布npm
     // try push
-    //tryPush(getModulePath(info))
+    tryPush(getModulePath(info))
     // 删除 lib目录
-    //deleteLib(info)
+    deleteLib(info)
     // 删除所有 .d.ts
     deleteDTS(info)
 }
