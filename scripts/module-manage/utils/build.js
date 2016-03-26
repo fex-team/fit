@@ -6,6 +6,7 @@ import sass from 'node-sass'
 import autoprefixer from 'autoprefixer'
 import postcss  from 'postcss'
 import path from 'path'
+import cssPathLoader from './css-path-loader'
 
 const outputDistLib = (info) => {
     let modulePath = `./lib/${info.categoryName}/${info.module.path}`
@@ -46,7 +47,7 @@ const parseSass = (scssPath) => {
     })
 }
 
-const handleModuleDir = (modulePath)=> {
+const handleModuleDir = (modulePath, info)=> {
     let jsFiles = execSync(`find ${modulePath} -name "*.js"`).toString().split('\n')
     jsFiles = jsFiles.filter((item)=> {
         return item !== ''
@@ -55,11 +56,22 @@ const handleModuleDir = (modulePath)=> {
     jsFiles.map((item)=> {
         parseBabel(item)
     })
+
+    let scssFiles = execSync(`find ${modulePath} -name "*.scss"`).toString().split('\n')
+    scssFiles = scssFiles.filter((item)=> {
+        return item !== ''
+    })
+
+    // sass 处理
+    scssFiles.map((item)=> {
+        cssPathLoader(item, info)
+        //parseSass(item)
+    })
 }
 
 export default (info)=> {
     // 把文件全部拷贝到lib
     const libPath = outputDistLib(info)
     // 处理dit目录
-    handleModuleDir(libPath)
+    handleModuleDir(libPath, info)
 }
