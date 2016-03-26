@@ -69,7 +69,7 @@ export default (info)=> {
     cloneModuleIfNotExist(info)
     // 判断当前组件目录 git版本控制是否正确
     checkGitControl(info)
-    // 尝试 pull 更新模块
+    // try pull
     tryPull(getModulePath(info))
     // 补上组件没有的文件
     emptyModuleDefault(info)

@@ -1,5 +1,6 @@
 import {execSync} from 'child_process'
 import tryPush from './utils/try-push'
+import build from './utils/build'
 
 const getModulePath = (info)=> {
     return `./lib/${info.categoryName}/${info.module.path}`
@@ -18,6 +19,8 @@ export default (info)=> {
     deleteLib(info)
     // 删除.d.ts
     deleteDTS(info)
-    // push
+    // 编译
+    build(info)
+    // try push
     tryPush(getModulePath(info))
 }
