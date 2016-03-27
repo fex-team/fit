@@ -29,7 +29,7 @@ export default  (modules) => {
 
         find.file(filePath, function (files) {
             let srcFiles = files.filter((val) => {
-                return /src[\/\w-]+.js$/.test(val)
+                return /src[\/\w-]+.[js|tsx]$/.test(val)
             })
 
             srcFiles.forEach((file) => {
@@ -58,8 +58,7 @@ export default  (modules) => {
                     depenObj[dep] = '^' + getPackageJSON(resolveFile.alias[dep].replace('/src', '')).version
                 }
             })
-            console.log(depenObj)
-
+            
             writePackageJSON(filePath, 'dependencies', depenObj)
         })
     })
