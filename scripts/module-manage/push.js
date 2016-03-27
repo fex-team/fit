@@ -5,7 +5,15 @@ import build from './utils/build'
 import find from 'find'
 import fs from 'fs'
 import path from 'path'
-import babylon from 'babylon'
+import * as babylon from 'babylon'
+
+const aaa = babylon.parse('code', {
+    sourceType: "module",
+    plugins   : [
+        'objectRestSpread'
+    ]
+})
+console.log(aaa)
 
 const outputDistLib = (info) => {
     let modulePath = `./lib/${info.categoryName}/${info.module.path}`
