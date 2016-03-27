@@ -60,7 +60,9 @@ const parseDTs = (info)=> {
 
         // 包一层组件定义
         fileContent = `declare fit-${info.module.path} 'component' {\n${fileContentArray.join('\n')}\n}`
-        console.log(fileContent)
+
+        // 覆盖文件内容
+        fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
     })
 }
 
