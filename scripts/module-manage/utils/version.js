@@ -6,6 +6,10 @@ import format from 'format-json'
 let changeModules = {}
 let moduleMaps = {}
 
+const getModulePath = (info)=> {
+    return path.join(__dirname, '../../..', `lib/${info.categoryName}/${info.module.path}`)
+}
+
 const updateModuleVirtual = (modulePath, name, version) => {
     if (!changeModules[modulePath]) {
         changeModules[modulePath] = {
@@ -16,21 +20,22 @@ const updateModuleVirtual = (modulePath, name, version) => {
     }
 }
 
-const buildModuleMap = () => {
-    for (let all of allModules) {
-        let moduleObj = getModuleObj(all)
+const buildModuleMap = (modules) => {
+    modules.map((module)=> {
+        const modulePath = getModulePath(module)
+        let moduleObj = getModuleObj(modulePath)
         moduleMaps[moduleObj.name] = {
             version     : moduleObj.version,
             name        : moduleObj.name,
-            modulePath  : all,
+            modulePath  : modulePath,
             dependencies: []
         }
-        for (var dependence in moduleObj.dependencies) {
+        for (let dependence in moduleObj.dependencies) {
             moduleMaps[moduleObj.name].dependencies.push({
                 [dependence]: moduleObj.dependencies[dependence]
             })
         }
-    }
+    })
 }
 
 const getModuleObj = (module) => {
@@ -85,12 +90,13 @@ const writeChanges = () => {
     }
 }
 
-export default (modules, allModules) => {
-    //buildModuleMap()
+export default (modules) => {
+    buildModuleMap(modules)
 
     for (let module of modules) {
-        updateModule(path.join(__dirname, '../../..', `lib/${module.categoryName}/${module.module.path}`))
+        updateModule(getModulePath(module))
     }
 
+    console.log(moduleMaps)
     //writeChanges()
 }
