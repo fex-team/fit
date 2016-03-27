@@ -44,12 +44,7 @@ const parseCss = (source) => {
 
 export default (filePath, info) => {
     let source = fs.readFileSync(filePath).toString()
-    //let hasGlobal = !!parseCss(source)
-    // if (nameStr && hasGlobal) {
-    //     source = global.content + '\n .' + nameStr + '{' + source.substring(0, global._index) + source.substring(global.end + 1) + '}'
-    // } else if (nameStr && !hasGlobal) {
-    //     source = '.' + nameStr + '{' + source + '}'
-    // }
+   
     source = `.fit-${info.categoryName}-${info.module.path}{${source}}`
 
     fs.writeFileSync(filePath, source)
