@@ -10,14 +10,6 @@ import htmlPathLoader from './html-path-loader'
 import cssPathLoader from './css-path-loader'
 import * as ts from 'typescript'
 
-const outputDistLib = (info) => {
-    let modulePath = `./lib/${info.categoryName}/${info.module.path}`
-    let srcDirectory = `${modulePath}/src`
-    let distDirectory = `${modulePath}/lib`
-    execSync(`cp -r ${srcDirectory} ${distDirectory}`)
-    return distDirectory
-}
-
 const parseBabel = (filePath) => {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const jsFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
@@ -78,10 +70,8 @@ const handleModuleDir = (modulePath, info)=> {
         parseSass(item)
     })
 }
-
-export default (info)=> {
-    // 把文件全部拷贝到lib
-    const libPath = outputDistLib(info)
+export default (info,libPath)=> {
     // 处理dist目录
     handleModuleDir(libPath, info)
 }
+

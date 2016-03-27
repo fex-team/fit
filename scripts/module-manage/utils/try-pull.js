@@ -52,7 +52,7 @@ const tryPull = (path)=> {
             consoleLog(`pull失败了,因为当前远程分支有冲突改动,请手动merge后再试`, 'red', path)
         }
 
-        consoleLog(`pull失败了,因为未知错误:${errorString}`, 'red', path)
+        consoleLog(`pull失败了,错误:${errorString}`, 'red', path)
     }
 }
 
