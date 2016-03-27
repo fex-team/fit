@@ -45,8 +45,13 @@ const patchNewVersion = ()=> {
 
 }
 
-const publish = ()=> {
-
+// TODO
+const publish = (info)=> {
+    // 判断是不是贴吧帐号
+    const whoamiString = execSync('npm whoami').toString()
+    if (whoamiString.replace(/\s+/, '') !== 'tieba') {
+        consoleLog('you are not logined by tieba', 'red', getModulePath(info))
+    }
 }
 
 export default (info)=> {
@@ -62,6 +67,7 @@ export default (info)=> {
     createDTs(info)
     // 分配新版本
     // 发布npm
+    publish(info)
     // 删除 lib目录
     deleteLib(info)
     // 删除所有 .d.ts
