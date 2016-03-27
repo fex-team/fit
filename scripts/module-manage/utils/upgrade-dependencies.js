@@ -32,6 +32,7 @@ export default  (modules) => {
         let srcFiles = files.filter((val) => {
             return /src[\/\w-]+.(js|tsx)$/.test(val)
         })
+        console.log(srcFiles)
 
         srcFiles.forEach((file) => {
             let code = fs.readFileSync(file).toString()
