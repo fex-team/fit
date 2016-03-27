@@ -32,12 +32,18 @@ export default  (modules) => {
         let srcFiles = files.filter((val) => {
             return /src[\/\w-]+.(js|tsx)$/.test(val)
         })
-        console.log(srcFiles)
 
         srcFiles.forEach((file) => {
             let code = fs.readFileSync(file).toString()
             let match
+            if (file.indexOf('tsx') > -1) {
+                console.log(file,regex.exec(code))
+            }
             while ((match = regex.exec(code)) != null) {
+                if (file.indexOf('tsx') > -1) {
+                    console.log(match)
+                }
+
                 if (match.index === regex.lastIndex) {
                     ++regex.lastIndex;
                 }
