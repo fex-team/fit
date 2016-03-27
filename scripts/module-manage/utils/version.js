@@ -90,7 +90,7 @@ export default (modules, allModules) => {
     //buildModuleMap()
 
     for (let module of modules) {
-        updateModule(path.join(__dirname, `lib/${module.categoryName}/${module.module.path}`))
+        updateModule(path.join(__dirname, '../../..', `lib/${module.categoryName}/${module.module.path}`))
     }
 
     //writeChanges()
