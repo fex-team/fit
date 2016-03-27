@@ -2,6 +2,7 @@ import {execSync} from 'child_process'
 import consoleLog from './utils/console-log'
 import tryPush from './utils/try-push'
 import build from './utils/build'
+import find from 'find'
 import reactToTypescriptDefinitions from 'react-to-typescript-definitions'
 import fs from 'fs'
 import path from 'path'
@@ -33,24 +34,11 @@ const deleteLib = (info)=> {
     execSync(`rm -rf ${getModulePath(info)}/lib`)
 }
 
-const deleteDTS = (info)=> {
-    const modulePath = getModulePath(info)
-    execSync(`find ${modulePath} -name "*.d.ts" | xargs rm`)
-
-    // 如果包含 .tsx 文件,则删除 src 下的 js 文件
-    if (fs.existsSync(path.join(modulePath, 'src/index.tsx'))) {
-        execSync(`find ${path.join(modulePath, 'src')} -name "*.js" | xargs rm`)
-    }
-}
-
 const createDTs = (info)=> {
-    // const tsxPath = `./lib/${info.categoryName}/${info.module.path}/src/index.tsx`
-    // if (fs.existsSync(tsxPath)) {
-    //     execSync(`tsc -d ${tsxPath}`)
-    // }
-    console.log('213213')
-    const result = reactToTypescriptDefinitions.generateFromFile('fit-timeago', path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib/index.tsx`))
-    console.log(result)
+    // 搜索 lib 所有文件夹
+    const moduleDirs = find.dirSync(path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib`))
+    //const result = reactToTypescriptDefinitions.generateFromFile('fit-timeago', path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib/index.tsx`))
+    console.log(moduleDirs)
 }
 
 const publish = (info)=> {
@@ -87,9 +75,6 @@ export default (info)=> {
 
         // 删除 lib目录
         //deleteLib(info)
-
-        // 删除所有 .d.ts
-        //deleteDTS(info)
     }
     // try push
     tryPush(getModulePath(info))
