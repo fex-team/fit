@@ -35,10 +35,10 @@ const deleteLib = (info)=> {
 }
 
 const createDTs = (info)=> {
-    // 搜索 lib 所有文件夹
-    const moduleDirs = find.dirSync(path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib`))
-    //const result = reactToTypescriptDefinitions.generateFromFile('fit-timeago', path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib/index.tsx`))
-    console.log(moduleDirs)
+    const tsxPath = `./lib/${info.categoryName}/${info.module.path}/src/index.tsx`
+    if (fs.existsSync(tsxPath)) {
+        execSync(`tsc -d ${tsxPath}`)
+    }
 }
 
 const publish = (info)=> {
@@ -57,13 +57,13 @@ export default (info)=> {
         // 先删除lib目录
         deleteLib(info)
 
-        // 把文件全部拷贝到lib
-        const libPath = outputDistLib(info)
-
         // 生成 d.ts 文件
         createDTs(info)
 
-        // 编译 内部会先拷贝一份到 lib 目录
+        // 把文件全部拷贝到lib
+        const libPath = outputDistLib(info)
+
+        // 编译
         consoleLog('正在编译..', 'grey', getModulePath(info))
         build(info, libPath)
         consoleLog('编译完成', 'green', getModulePath(info))
@@ -75,6 +75,9 @@ export default (info)=> {
 
         // 删除 lib目录
         //deleteLib(info)
+
+        // 删除所有 .d.ts
+        //deleteDTS(info)
     }
     // try push
     // tryPush(getModulePath(info))
