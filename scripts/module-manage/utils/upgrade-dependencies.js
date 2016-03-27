@@ -14,7 +14,6 @@ const getPackageJSON = (filePath)=> {
 const writePackageJSON = (filePath, name, obj) => {
     let json = getPackageJSON(filePath)
     json[name] = obj
-    console.log(json,filePath)
     fs.writeFileSync(path.join(filePath, 'package.json'), format.plain(json))
 }
 
