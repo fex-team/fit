@@ -48,7 +48,8 @@ const createDTs = (info)=> {
     // if (fs.existsSync(tsxPath)) {
     //     execSync(`tsc -d ${tsxPath}`)
     // }
-    const result = reactToTypescriptDefinitions.generateFromFile('fit-timeago', path.join(__dirname, '../../..', `lib/${info.categoryName}/${info.module.path}/lib/index.tsx`))
+    console.log('213213')
+    const result = reactToTypescriptDefinitions.generateFromFile('fit-timeago', path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib/index.tsx`))
     console.log(result)
 }
 
