@@ -59,7 +59,6 @@ const whoIsNeedMe = (moduleObj)=> {
 }
 
 const updateModule = (modulePath) => {
-    return console.log(modulePath)
     let moduleObj = changeModules[modulePath] || getModuleObj(modulePath)
     updateModuleVirtual(modulePath, moduleObj.name, moduleObj.version)
 
