@@ -41,6 +41,23 @@ const createDTs = (info)=> {
     }
 }
 
+const parseDTs = (info)=>{
+    // 搜索 lib 所有文件夹
+    const moduleDirPaths = find.dirSync(path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib`))
+
+    // 不处理没有 tsx 的目录
+    if (!fs.existsSync(`${moduleDirPaths}/index.tsx`)) {
+        return
+    }
+
+    // 循环出所有模块名
+    moduleDirPaths.map((moduleDirPath)=> {
+        let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
+
+        console.log(fileContent)
+    })
+}
+
 const publish = (info)=> {
     // 判断是不是贴吧帐号
     const whoamiString = execSync('npm whoami').toString()
@@ -62,6 +79,9 @@ export default (info)=> {
 
         // 把文件全部拷贝到lib
         const libPath = outputDistLib(info)
+
+        // 加工 d.ts
+        parseDTs(info)
 
         // 编译
         consoleLog('正在编译..', 'grey', getModulePath(info))
