@@ -56,12 +56,12 @@ export default (info)=> {
     if (hasChange) {
         // 先删除lib目录
         deleteLib(info)
-        // 编译
+        // 生成.d.ts
+        createDTs(info)
+        // 编译 内部会先拷贝一份到 lib 目录
         consoleLog('正在编译..', 'grey', getModulePath(info))
         build(info)
         consoleLog('编译完成', 'green', getModulePath(info))
-        // 生成.d.ts
-        createDTs(info)
         // 发布npm
         consoleLog('发布中..', 'grey', getModulePath(info))
         publish(info)
