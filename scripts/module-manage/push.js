@@ -52,9 +52,14 @@ const parseDTs = (info)=> {
 
     moduleDirPaths.map((moduleDirPath)=> {
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
+        // 删除注释
+        let fileContentArray = fileContent.split('\n')
+        fileContentArray = fileContentArray.filter((line)=> {
+            return line.indexOf('//') !== 0
+        })
 
         // 包一层组件定义
-        fileContent = `declare fit-${info.module.path} 'component' {\n${fileContent}\n}`
+        fileContent = `declare fit-${info.module.path} 'component' {\n${fileContentArray.join('\n')}\n}`
         console.log(fileContent)
     })
 }
