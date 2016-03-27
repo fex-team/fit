@@ -33,7 +33,6 @@ export default  (modules) => {
             })
 
             srcFiles.forEach((file) => {
-                return console.log(file)
                 let code = fs.readFileSync(file).toString()
                 let match
                 while ((match = regex.exec(code)) != null) {
@@ -59,6 +58,7 @@ export default  (modules) => {
                     depenObj[dep] = '^' + getPackageJSON(resolveFile.alias[dep].replace('/src', '')).version
                 }
             })
+            console.log(depenObj)
 
             writePackageJSON(filePath, 'dependencies', depenObj)
         })
