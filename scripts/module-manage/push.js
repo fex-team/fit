@@ -77,5 +77,5 @@ export default (info)=> {
         //deleteLib(info)
     }
     // try push
-    tryPush(getModulePath(info))
+    // tryPush(getModulePath(info))
 }
