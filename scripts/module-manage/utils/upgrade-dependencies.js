@@ -7,7 +7,8 @@ import resolveFile from '../../../resolve'
 const root = process.cwd()
 
 const rules = [
-    `(import\s\*\sas\s{0,}(?:[\$_a-zA-Z\-\{\}]{1,}\s{1,}from\s{1,}){0,1}['\"]([\w\\-]{1,})(?:[/\w\\.\-]{1,}){0,1}['\"])`
+    `(import\s\*\sas\s{0,}(?:[\$_a-zA-Z\-\{\}]{1,}\s{1,}from\s{1,}){0,1}['\"]([\w\\-]{1,})(?:[/\w\\.\-]{1,}){0,1}['\"])`,
+    `(import\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])`
 ]
 
 const regs = new RegExp(rules.join('|'))
@@ -44,7 +45,9 @@ export default  (modules) => {
             let code = fs.readFileSync(file).toString()
             let match
 
-            console.log(file, regs.exec(code))
+            if (file.indexOf('tsx') > -1) {
+                console.log(file, regs.exec(code))
+            }
 
             while ((match = regex.exec(code)) != null) {
                 if (file.indexOf('tsx') > -1) {
