@@ -3,7 +3,6 @@ import consoleLog from './utils/console-log'
 import tryPush from './utils/try-push'
 import build from './utils/build'
 import find from 'find'
-import reactToTypescriptDefinitions from 'react-to-typescript-definitions'
 import fs from 'fs'
 import path from 'path'
 
@@ -77,6 +76,16 @@ const parseDTs = (info)=> {
     fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootContent)
 }
 
+const deleteDTS = (info)=> {
+    const modulePath = getModulePath(info)
+    execSync(`find ${modulePath} -name "*.d.ts" | xargs rm`)
+
+    // 如果包含 .tsx 文件,则删除 src 下的 js 文件
+    if (fs.existsSync(path.join(modulePath, 'src/index.tsx'))) {
+        execSync(`find ${path.join(modulePath, 'src')} -name "*.js" | xargs rm`)
+    }
+}
+
 const publish = (info)=> {
     // 判断是不是贴吧帐号
     const whoamiString = execSync('npm whoami').toString()
@@ -108,16 +117,16 @@ export default (info)=> {
         consoleLog('编译完成', 'green', getModulePath(info))
 
         // 发布npm
-        // consoleLog('发布中..', 'grey', getModulePath(info))
-        // publish(info)
-        // consoleLog('发布完成', 'green', getModulePath(info))
+        consoleLog('发布中..', 'grey', getModulePath(info))
+        publish(info)
+        consoleLog('发布完成', 'green', getModulePath(info))
 
         // 删除 lib目录
-        //deleteLib(info)
+        deleteLib(info)
 
         // 删除所有 .d.ts
-        //deleteDTS(info)
+        deleteDTS(info)
     }
     // try push
-    // tryPush(getModulePath(info))
+    tryPush(getModulePath(info))
 }
