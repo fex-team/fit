@@ -74,7 +74,7 @@ const parseDTs = (info)=> {
         const depStr = `/// <reference path="./${modulePathArray[modulePathArray.length - 1]}.d.ts" />`
         rootContent += depStr + '\n'
     })
-    fs.writeFileSync(`${moduleDirPaths}/index.d.ts`, moduleDistRoot)
+    fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootContent)
 }
 
 const publish = (info)=> {
