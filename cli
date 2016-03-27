@@ -1,3 +1,0 @@
-#!/usr/bin/env node
-
-var awesomeCli = require('./scripts-babel/cli');

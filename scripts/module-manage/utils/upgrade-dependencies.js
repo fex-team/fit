@@ -7,13 +7,15 @@ import resolveFile from '../../../resolve'
 const root = process.cwd()
 
 const rules = [
+    // import * as xxx from 'xxx'
     `(import\\s\\*\\sas\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])`,
+    // import {a,b,c} from 'xxx'
+    `(import\\s\\{\\s{0,}[\\w,_\\s]{1,}\\}\\s{0,}from\\s{0,}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])`,
+    // import x from 'xxx'
     `(import\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])`
 ]
 
-const regs = new RegExp(rules.join('|'))
-
-const regex = new RegExp("(require\\s{0,}\\(\\s{0,}['\"]\\s{0,}([\\w\\-]{1,})\\s{0,}['\"]\\s{0,}\\))|(import\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])|(import\\s\\{\\s{0,}[\\w,_\\s]{1,}\\}\\s{0,}from\\s{0,}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])|(import\\s\*\\sas\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])", "g")
+const regex = new RegExp(rules.join('|'), 'g')
 
 const getPackageJSON = (filePath)=> {
     return JSON.parse(fs.readFileSync(path.join(filePath, 'package.json')))
@@ -45,17 +47,9 @@ export default  (modules) => {
             let code = fs.readFileSync(file).toString()
             let match
 
-            if (file.indexOf('tsx') > -1) {
-                console.log(file, regs.exec(code))
-            }
-
             while ((match = regex.exec(code)) != null) {
-                if (file.indexOf('tsx') > -1) {
-                    console.log(match)
-                }
-
                 if (match.index === regex.lastIndex) {
-                    ++regex.lastIndex;
+                    ++regex.lastIndex
                 }
 
                 let matched = match[2] || match[4] || match[6]
