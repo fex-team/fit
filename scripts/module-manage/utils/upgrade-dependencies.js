@@ -44,8 +44,8 @@ export default  (modules) => {
             let code = fs.readFileSync(file).toString()
             let match
 
-                console.log(file, regex.exec(code),regs.exec(code))
-            
+            console.log(file, regs.exec(code))
+
             while ((match = regex.exec(code)) != null) {
                 if (file.indexOf('tsx') > -1) {
                     console.log(match)
