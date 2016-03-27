@@ -71,7 +71,7 @@ const parseDTs = (info)=> {
     moduleDirPaths.map((moduleDirPath)=> {
         // 获得最后一层级目录名
         const modulePathArray = moduleDirPath.split('/')
-        const depStr = `/// <reference path="./${modulePathArray[modulePathArray.length - 1]}.d.ts" />`
+        const depStr = `/// <reference path="./${modulePathArray[modulePathArray.length - 1]}/index.d.ts" />`
         rootContent += depStr + '\n'
     })
     fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootContent)
