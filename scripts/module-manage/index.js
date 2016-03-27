@@ -8,11 +8,15 @@ import {execSync} from 'child_process'
 import tryPull from './utils/try-pull'
 import tryPush from './utils/try-push'
 import versionPatch from './utils/version'
+import upgradeDependencies from './utils/upgrade-dependencies'
 
 const args = process.argv.slice(2)
-
-// 更新版本依赖
 const allModules = getAllModules(config)
+
+// 解析 import 语句,添加依赖
+upgradeDependencies(allModules)
+
+// 更新版本依赖,对有修改的或者被依赖的发布新版本
 versionPatch(allModules)
 
 switch (args[0]) {
