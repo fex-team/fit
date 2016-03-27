@@ -58,6 +58,7 @@ export default  (modules) => {
                     depenObj[dep] = '^' + getPackageJSON(resolveFile.alias[dep].replace('/src', '')).version
                 }
             })
+            console.log(dep)
 
             writePackageJSON(filePath, 'dependencies', depenObj)
         })

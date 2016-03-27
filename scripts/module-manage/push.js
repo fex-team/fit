@@ -41,7 +41,6 @@ const createDTs = (info)=> {
     }
 }
 
-// TODO
 const publish = (info)=> {
     // 判断是不是贴吧帐号
     const whoamiString = execSync('npm whoami').toString()
@@ -53,23 +52,23 @@ const publish = (info)=> {
 
 export default (info)=> {
     // 是否有修改
-    if (!hasChanges(getModulePath(info))) {
-        return
+    const hasChange = hasChanges(getModulePath(info))
+    if (hasChange) {
+        // 编译
+        consoleLog('正在编译..', 'grey', getModulePath(info))
+        build(info)
+        consoleLog('编译完成', 'green', getModulePath(info))
+        // 生成.d.ts
+        createDTs(info)
+        // 发布npm
+        consoleLog('发布中..', 'grey', getModulePath(info))
+        publish(info)
+        consoleLog('发布完成', 'green', getModulePath(info))
+        // 删除 lib目录
+        deleteLib(info)
+        // 删除所有 .d.ts
+        deleteDTS(info)
     }
-    // 编译
-    consoleLog('正在编译..', 'grey', getModulePath(info))
-    build(info)
-    consoleLog('编译完成', 'green', getModulePath(info))
-    // 生成.d.ts
-    createDTs(info)
-    // 发布npm
-    consoleLog('发布中..', 'grey', getModulePath(info))
-    publish(info)
-    consoleLog('发布完成', 'green', getModulePath(info))
-    // 删除 lib目录
-    deleteLib(info)
-    // 删除所有 .d.ts
-    deleteDTS(info)
     // try push
     tryPush(getModulePath(info))
 }
