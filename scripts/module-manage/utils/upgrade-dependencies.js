@@ -7,14 +7,18 @@ import resolveFile from '../../../resolve'
 const root = process.cwd()
 const regex = new RegExp("(require\\s{0,}\\(\\s{0,}['\"]\\s{0,}([\\w\\-]{1,})\\s{0,}['\"]\\s{0,}\\))|(import\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])|(import\\s\\{\\s{0,}[\\w,_\\s]{1,}\\}\\s{0,}from\\s{0,}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])", "g")
 
-const writePackageJSON= (filePath, name, obj) =>{
+const getPackageJSON = (filePath)=> {
+    return JSON.parse(fs.readFileSync(path.join(filePath, 'package.json')))
+}
+
+const writePackageJSON = (filePath, name, obj) => {
     let json = getPackageJSON(filePath)
     json[name] = obj
     fs.writeFileSync(path.join(filePath, 'package.json'), format.plain(json))
 }
 
 export default  (modules) => {
-    const rootJSON = JSON.parse(fs.readFileSync(path.resolve(root, 'package.json')).toString())
+    const rootJSON = getPackageJSON(root)
     const rootDependencies = rootJSON.dependencies
     const devDependencies = rootJSON.devDependencies
 
