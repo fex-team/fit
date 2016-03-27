@@ -2,9 +2,16 @@ import fs from 'fs'
 import path from 'path'
 import semver from 'semver'
 import format from 'format-json'
+import {execSync} from 'child_process'
 
 let changeModules = {}
 let moduleMaps = {}
+
+const hasChanges = (path)=> {
+    // 先看看status对不对
+    const gitStatus = execSync(`cd ${path};git status`)
+    return gitStatus.indexOf('nothing to commit, working directory clean') <= -1
+}
 
 const getModulePath = (info)=> {
     return path.join(__dirname, '../../..', `lib/${info.categoryName}/${info.module.path}`)
@@ -31,7 +38,6 @@ const buildModuleMap = (modules) => {
             dependencies: []
         }
         for (let dependence in moduleObj.dependencies) {
-            console.log(moduleObj.name, dependence, moduleObj.dependencies[dependence])
             moduleMaps[moduleObj.name].dependencies.push({
                 [dependence]: moduleObj.dependencies[dependence]
             })
@@ -78,7 +84,7 @@ const updateModule = (modulePath) => {
 const writeChanges = () => {
     for (let change in changeModules) {
         let moduleObj = getModuleObj(changeModules[change].modulePath)
-        console.log(`INFO: Update ${changeModules[change].name} version ${moduleObj.version} ==> ${changeModules[change].version}`)
+        console.log(`Update ${changeModules[change].name} version ${moduleObj.version} ==> ${changeModules[change].version}`)
         moduleObj.version = changeModules[change].version
 
         for (let dep in moduleObj.dependencies) {
@@ -95,7 +101,11 @@ export default (modules) => {
     buildModuleMap(modules)
 
     for (let module of modules) {
-        updateModule(getModulePath(module))
+        const modulePath = getModulePath(module)
+        if (hasChanges(modulePath)) {
+            updateModule(modulePath)
+        }
     }
-    //writeChanges()
+
+    writeChanges()
 }

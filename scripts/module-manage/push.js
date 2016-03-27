@@ -41,10 +41,6 @@ const createDTs = (info)=> {
     }
 }
 
-const patchNewVersion = ()=> {
-
-}
-
 // TODO
 const publish = (info)=> {
     // 判断是不是贴吧帐号
@@ -52,6 +48,7 @@ const publish = (info)=> {
     if (whoamiString.replace(/\s+/, '') !== 'tieba') {
         consoleLog('you are not logined by tieba', 'red', getModulePath(info))
     }
+    execSync(`cd lib/${info.categoryName}/${info.module.path};npm publish`)
 }
 
 export default (info)=> {
@@ -65,9 +62,10 @@ export default (info)=> {
     consoleLog('编译完成', 'green', getModulePath(info))
     // 生成.d.ts
     createDTs(info)
-    // 分配新版本
     // 发布npm
+    consoleLog('发布中..', 'grey', getModulePath(info))
     publish(info)
+    consoleLog('发布完成', 'green', getModulePath(info))
     // 删除 lib目录
     deleteLib(info)
     // 删除所有 .d.ts

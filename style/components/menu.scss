@@ -1,0 +1,40 @@
+$inverse-bg-color: #3a3f51;
+$inverse-font-color: #b4b6bd;
+$inverse-bg-active-color: #32374a;
+$bg-active-color: #f6f8f8;
+
+@mixin inverse {
+    background-color: $inverse-bg-color;
+    color: $inverse-font-color;
+}
+
+@mixin inverse-hover {
+    @include inverse;
+    &:hover {
+        color: white;
+    }
+}
+
+@mixin menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out 0s;
+    background: white;
+    color: initial;
+    &.brand {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    &.inverse {
+        @include inverse-hover;
+    }
+    &.inverse.brand {
+        color: #eaebed;
+    }
+    &.vertical {
+        padding: 10px 15px;
+    }
+}

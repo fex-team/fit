@@ -43,11 +43,6 @@ const parseCss = (source) => {
 }
 
 export default (filePath, info) => {
-    // 不处理 minxins.scss
-    if (filePath.indexOf('mixins.scss') > 0) {
-        return
-    }
-
     let source = fs.readFileSync(filePath).toString()
     //let hasGlobal = !!parseCss(source)
     // if (nameStr && hasGlobal) {
