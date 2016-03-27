@@ -48,7 +48,7 @@ export default  (modules) => {
                 }
             }
         })
-        
+
         dependencies.forEach((dep) => {
             let depen = rootDependencies[dep] || devDependencies[dep]
 
