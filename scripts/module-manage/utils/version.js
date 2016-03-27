@@ -31,6 +31,7 @@ const buildModuleMap = (modules) => {
             dependencies: []
         }
         for (let dependence in moduleObj.dependencies) {
+            console.log(dependence)
             moduleMaps[moduleObj.name].dependencies.push({
                 [dependence]: moduleObj.dependencies[dependence]
             })
@@ -96,7 +97,5 @@ export default (modules) => {
     for (let module of modules) {
         updateModule(getModulePath(module))
     }
-
-    console.log(moduleMaps)
     //writeChanges()
 }
