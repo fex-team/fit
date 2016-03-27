@@ -41,7 +41,7 @@ const createDTs = (info)=> {
     }
 }
 
-const parseDTs = (info)=>{
+const parseDTs = (info)=> {
     // 搜索 lib 所有文件夹
     const moduleDirPaths = find.dirSync(path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib`))
 
@@ -50,10 +50,11 @@ const parseDTs = (info)=>{
         return
     }
 
-    // 循环出所有模块名
     moduleDirPaths.map((moduleDirPath)=> {
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
 
+        // 包一层组件定义
+        fileContent = `declare fit-${info.module.path} 'component' {\n${fileContent}\n}`
         console.log(fileContent)
     })
 }
