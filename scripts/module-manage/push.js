@@ -54,6 +54,8 @@ export default (info)=> {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
     if (hasChange) {
+        // 先删除lib目录
+        deleteLib(info)
         // 编译
         consoleLog('正在编译..', 'grey', getModulePath(info))
         build(info)
