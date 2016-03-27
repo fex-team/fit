@@ -1,11 +1,17 @@
-//import {getPackageJSON, getFileContent, writePackageJSON} from '../utils/util'
 import path from 'path'
 import find from 'find'
 import fs from 'fs'
+import format from 'format-json'
 import resolveFile from '../../../resolve'
 
 const root = process.cwd()
-const regex = new RegExp("(require\\s{0,}\\(\\s{0,}['\"]\\s{0,}([\\w\\-]{1,})\\s{0,}['\"]\\s{0,}\\))|(import\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])|(import\\s\\{\\s{0,}[\\w,_\\s]{1,}\\}\\s{0,}from\\s{0,}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])", "g");
+const regex = new RegExp("(require\\s{0,}\\(\\s{0,}['\"]\\s{0,}([\\w\\-]{1,})\\s{0,}['\"]\\s{0,}\\))|(import\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])|(import\\s\\{\\s{0,}[\\w,_\\s]{1,}\\}\\s{0,}from\\s{0,}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])", "g")
+
+const writePackageJSON= (filePath, name, obj) =>{
+    let json = getPackageJSON(filePath)
+    json[name] = obj
+    fs.writeFileSync(path.join(filePath, 'package.json'), format.plain(json))
+}
 
 export default  (modules) => {
     const rootJSON = JSON.parse(fs.readFileSync(path.resolve(root, 'package.json')).toString())
@@ -24,7 +30,7 @@ export default  (modules) => {
 
             srcFiles.forEach((file) => {
                 return console.log(file)
-                let code = getFileContent(file)
+                let code = fs.readFileSync(file).toString()
                 let match
                 while ((match = regex.exec(code)) != null) {
                     if (match.index === regex.lastIndex) {
