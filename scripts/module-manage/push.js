@@ -7,7 +7,12 @@ import fs from 'fs'
 import path from 'path'
 import * as babylon from 'babylon'
 
-const aaa = babylon.parse('code', {
+const code = `
+const a = {a:1,b:2,c:3,d:4,e:5}
+const {a,b,...others} = a
+`
+
+const aaa = babylon.parse(code, {
     sourceType: "module",
     plugins   : [
         'objectRestSpread'
