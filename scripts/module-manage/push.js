@@ -70,7 +70,7 @@ export default (info)=> {
         // 生成.d.ts
         createDTs(info)
         // 调整产出目录,准备发布
-        preparePublish(info)
+        //preparePublish(info)
         // 发布npm
         // consoleLog('发布中..', 'grey', getModulePath(info))
         // publish(info)
