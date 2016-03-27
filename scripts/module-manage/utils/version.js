@@ -31,7 +31,7 @@ const buildModuleMap = (modules) => {
             dependencies: []
         }
         for (let dependence in moduleObj.dependencies) {
-            console.log(dependence)
+            console.log(moduleObj.name, dependence, moduleObj.dependencies[dependence])
             moduleMaps[moduleObj.name].dependencies.push({
                 [dependence]: moduleObj.dependencies[dependence]
             })
