@@ -72,14 +72,14 @@ export default (info)=> {
         // 调整产出目录,准备发布
         preparePublish(info)
         // 发布npm
-        consoleLog('发布中..', 'grey', getModulePath(info))
-        publish(info)
-        consoleLog('发布完成', 'green', getModulePath(info))
+        // consoleLog('发布中..', 'grey', getModulePath(info))
+        // publish(info)
+        // consoleLog('发布完成', 'green', getModulePath(info))
         // 删除 lib目录
-        deleteLib(info)
+        // deleteLib(info)
         // 删除所有 .d.ts
-        deleteDTS(info)
+        // deleteDTS(info)
     }
     // try push
-    tryPush(getModulePath(info))
+    // tryPush(getModulePath(info))
 }
