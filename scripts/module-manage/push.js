@@ -57,19 +57,19 @@ export default (info)=> {
         return
     }
     // 编译
-    // consoleLog('正在编译..', 'grey', getModulePath(info))
-    // build(info)
-    // consoleLog('编译完成', 'green', getModulePath(info))
+    consoleLog('正在编译..', 'grey', getModulePath(info))
+    build(info)
+    consoleLog('编译完成', 'green', getModulePath(info))
     // 生成.d.ts
     createDTs(info)
     // 发布npm
-    // consoleLog('发布中..', 'grey', getModulePath(info))
-    // publish(info)
-    // consoleLog('发布完成', 'green', getModulePath(info))
+    consoleLog('发布中..', 'grey', getModulePath(info))
+    publish(info)
+    consoleLog('发布完成', 'green', getModulePath(info))
     // 删除 lib目录
     deleteLib(info)
     // 删除所有 .d.ts
     deleteDTS(info)
     // try push
-    //tryPush(getModulePath(info))
+    tryPush(getModulePath(info))
 }
