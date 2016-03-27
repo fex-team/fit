@@ -18,7 +18,7 @@ const aaa = babylon.parse(code, {
         'objectRestSpread'
     ]
 })
-console.log(aaa)
+console.log(aaa.program.body)
 
 const outputDistLib = (info) => {
     let modulePath = `./lib/${info.categoryName}/${info.module.path}`
