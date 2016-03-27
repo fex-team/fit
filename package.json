@@ -45,6 +45,7 @@
     "babel-preset-react": "^6.1.18",
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.4.3",
+    "babylon": "^6.7.0",
     "chai": "^3.5.0",
     "color": "^0.11.1",
     "colors": "^1.1.2",

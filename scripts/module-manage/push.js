@@ -5,6 +5,7 @@ import build from './utils/build'
 import find from 'find'
 import fs from 'fs'
 import path from 'path'
+import babylon from 'babylon'
 
 const outputDistLib = (info) => {
     let modulePath = `./lib/${info.categoryName}/${info.module.path}`
@@ -96,6 +97,7 @@ const publish = (info)=> {
 }
 
 export default (info)=> {
+    return
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
     if (hasChange) {
