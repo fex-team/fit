@@ -43,7 +43,8 @@ const createDTs = (info)=> {
 
 const parseDTs = (info)=> {
     // 搜索 lib 所有文件夹
-    const moduleDirPaths = find.dirSync(path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib`))
+    const moduleDistRoot = path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib`)
+    const moduleDirPaths = find.dirSync(moduleDistRoot)
 
     // 不处理没有 tsx 的目录
     if (!fs.existsSync(`${moduleDirPaths}/index.tsx`)) {
@@ -73,7 +74,7 @@ const parseDTs = (info)=> {
         const depStr = `/// <reference path="./${modulePathArray[modulePathArray.length - 1]}.d.ts" />`
         rootContent += depStr + '\n'
     })
-    fs.writeFileSync(`${moduleDirPaths}/index.d.ts`, rootContent)
+    fs.writeFileSync(`${moduleDirPaths}/index.d.ts`, moduleDistRoot)
 }
 
 const publish = (info)=> {
