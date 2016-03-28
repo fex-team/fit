@@ -13,7 +13,8 @@
 $ git clone http://gitlab.baidu.com/tb-component/awesome.git
 $ cd awesome
 $ cnpm install
-$ cnpm install babel-cli -g
+$ cnpm install babel-cli typescript tsd -g
+$ tsd install
 $ npm run update
 ~~~
 
