@@ -1,7 +1,7 @@
 import fs from 'fs'
 
 const parsePath = (filePath, info)=> {
-    filePath = filePath.substring(1)
+    filePath = filePath.substring(2)
     console.log(filePath)
 }
 
