@@ -96,7 +96,6 @@ const publish = (info)=> {
 }
 
 export default (info)=> {
-    return
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
     if (hasChange) {
