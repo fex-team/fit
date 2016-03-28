@@ -117,9 +117,9 @@ export default (info)=> {
         consoleLog('编译完成', 'green', getModulePath(info))
 
         // 发布npm
-        consoleLog('发布中..', 'grey', getModulePath(info))
-        publish(info)
-        consoleLog('发布完成', 'green', getModulePath(info))
+        // consoleLog('发布中..', 'grey', getModulePath(info))
+        // publish(info)
+        // consoleLog('发布完成', 'green', getModulePath(info))
 
         // // 删除 lib目录
         deleteLib(info)
@@ -128,5 +128,5 @@ export default (info)=> {
         deleteDTS(info)
     }
     // try push
-    tryPush(getModulePath(info))
+    //tryPush(getModulePath(info))
 }
