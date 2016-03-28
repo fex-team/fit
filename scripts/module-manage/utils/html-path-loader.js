@@ -9,6 +9,8 @@ const parsePath = (filePath, info)=> {
     filePathArray.shift()
     filePathArray.shift()
 
+    console.log('xxxx',filePathArray)
+
     // 长度为 1 说明是入口,不处理
     if (filePathArray.length === 1) {
         return ''
