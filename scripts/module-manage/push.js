@@ -98,35 +98,35 @@ const publish = (info)=> {
 export default (info)=> {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
-    //if (hasChange) {
-    // 先删除lib目录
-    deleteLib(info)
+    if (hasChange) {
+        // 先删除lib目录
+        deleteLib(info)
 
-    // 生成 d.ts 文件
-    createDTs(info)
+        // 生成 d.ts 文件
+        createDTs(info)
 
-    // 把文件全部拷贝到lib
-    const libPath = outputDistLib(info)
+        // 把文件全部拷贝到lib
+        const libPath = outputDistLib(info)
 
-    // 加工 d.ts
-    parseDTs(info)
+        // 加工 d.ts
+        parseDTs(info)
 
-    // 编译
-    consoleLog('正在编译..', 'grey', getModulePath(info))
-    build(info, libPath)
-    consoleLog('编译完成', 'green', getModulePath(info))
+        // 编译
+        consoleLog('正在编译..', 'grey', getModulePath(info))
+        build(info, libPath)
+        consoleLog('编译完成', 'green', getModulePath(info))
 
-    // 发布npm
-    consoleLog('发布中..', 'grey', getModulePath(info))
-    publish(info)
-    consoleLog('发布完成', 'green', getModulePath(info))
+        // 发布npm
+        consoleLog('发布中..', 'grey', getModulePath(info))
+        publish(info)
+        consoleLog('发布完成', 'green', getModulePath(info))
 
-    // 删除 lib目录
-    deleteLib(info)
+        // 删除 lib目录
+        deleteLib(info)
 
-    // 删除所有 .d.ts
-    deleteDTS(info)
-    //}
+        // 删除所有 .d.ts
+        deleteDTS(info)
+    }
     // try push
     tryPush(getModulePath(info))
 }
