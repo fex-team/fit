@@ -15,7 +15,7 @@ const parsePath = (filePath, info)=> {
         return ''
     }
     
-    const prefix = `fit-${info.categoryName}-${info.module.path}`
+    const prefix = `${info.categoryInfo.prefix}-${info.categoryName}-${info.module.path}`
     const addonPath = filePathArray.join('-')
     return `${prefix}-${addonPath}`
 }

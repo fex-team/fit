@@ -1,4 +1,4 @@
-import {execSync} from 'child_process'
+import {exec, execSync} from 'child_process'
 import consoleLog from './utils/console-log'
 import tryPush from './utils/try-push'
 import build from './utils/build'
@@ -59,7 +59,7 @@ const parseDTs = (info)=> {
         })
 
         // 包一层组件定义
-        fileContent = `declare module 'fit-${info.module.path}' {\n${fileContentArray.join('\n')}\n}`
+        fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${fileContentArray.join('\n')}\n}`
 
         // 覆盖文件内容
         fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
@@ -84,6 +84,16 @@ const deleteDTS = (info)=> {
     if (fs.existsSync(path.join(modulePath, 'src/index.tsx'))) {
         execSync(`find ${path.join(modulePath, 'src')} -name "*.js" | xargs rm`)
     }
+}
+
+const syncCnpm = (info)=> {
+    consoleLog(`cnpm 开始同步..`, 'grey', getModulePath(info))
+    exec(`cnpm sync ${info.categoryInfo.prefix}-${info.module.path}`, (err)=> {
+        if (err) {
+            consoleLog(err.toString(), 'red', getModulePath(info))
+        }
+        consoleLog(`cnpm 同步成功`, 'green', getModulePath(info))
+    })
 }
 
 const publish = (info)=> {
@@ -126,6 +136,9 @@ export default (info)=> {
 
         // 删除所有 .d.ts
         deleteDTS(info)
+
+        // 通知 cnpm 更新
+        syncCnpm(info)
     }
     // try push
     tryPush(getModulePath(info))
