@@ -18,7 +18,7 @@
     "cdn": "webpack -p --profile --config webpack.config.cdn.js",
     "update": "npm run babel-scripts && node scripts-babel/module-manage/index.js update && npm run demo-init",
     "start": "npm run demo-init && npm run cdn && npm run server-dev & npm run webpack-dev",
-    "build": "npm run babel-scripts && npm run demo-init && npm run cdn && npm run webpack-dist",
+    "build": "npm run cdn && npm run webpack-dist",
     "push": "npm run babel-scripts && node scripts-babel/module-manage/index.js push",
     "babel-scripts": "babel scripts/ --out-dir scripts-babel/",
     "babel-clean-scripts": "rm -rf scripts-babel",
