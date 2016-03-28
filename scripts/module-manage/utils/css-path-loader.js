@@ -19,7 +19,7 @@ const parsePath = (filePath, info)=> {
 
     // 如果第一个元素就是 .js ,说明是根路径
     const prefix = `fit-${info.categoryName}-${info.module.path}`
-    if (filePathArray[0].indexOf('.js') > -1) {
+    if (filePathArray[0].indexOf('.js') > -1 || filePathArray[0].indexOf('.scss')) {
         return prefix
     } else {
         filePathArray.pop()
