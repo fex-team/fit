@@ -14,7 +14,6 @@ const getModulePath = (info)=> {
 }
 
 const createIfNotExist = (targetPath)=> {
-    console.log('xxxx',targetPath)
     if (fs.existsSync(path.join(targetPath))) return
     mkdirp.sync(targetPath)
 }

@@ -27,7 +27,6 @@ export default (filePath, info) => {
     if (info.module.path !== 'style') {
         const name = parsePath(filePath, info)
         if (name !== '') {
-            console.log('css:',name)
             source = `.${name}{${source}}`
             fs.writeFileSync(filePath, source)
         }
