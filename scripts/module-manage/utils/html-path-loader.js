@@ -2,7 +2,14 @@ import fs from 'fs'
 
 const parsePath = (filePath, info)=> {
     filePath = filePath.substring(2)
-    console.log(filePath)
+    let filePathArray = filePath.split('/')
+
+    filePathArray.unshift()
+    filePathArray.unshift()
+    filePathArray.unshift()
+    filePathArray.unshift()
+    
+    console.log(filePathArray)
 }
 
 export default (filePath, info) => {
