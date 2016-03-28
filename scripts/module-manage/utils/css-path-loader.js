@@ -17,7 +17,7 @@ const parsePath = (filePath, info)=> {
     // 再去除一次第一个元素
     filePathArray.shift()
 
-    // 如果第一个元素就是 .js ,说明是根路径
+    // 如果第一个元素就是 .js | .scss ,说明是根路径
     const prefix = `fit-${info.categoryName}-${info.module.path}`
     if (filePathArray[0].indexOf('.js') > -1 || filePathArray[0].indexOf('.scss')) {
         return prefix
@@ -35,6 +35,7 @@ export default (filePath, info) => {
     if (info.module.path !== 'style') {
         const name = parsePath(filePath, info)
         if (name !== '') {
+            console.log(name)
             source = `.${name}{${source}}`
             fs.writeFileSync(filePath, source)
         }
