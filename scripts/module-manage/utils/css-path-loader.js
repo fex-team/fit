@@ -10,8 +10,8 @@ const parsePath = (filePath, info)=> {
     filePathArray.shift()
     filePathArray.pop()
 
-    // 第一个是空,说明是根路径,不处理
-    if (filePathArray[0] === '') {
+    // 长度是0,说明是根路径,不处理
+    if (filePathArray.length === 0) {
         return ''
     }
     
