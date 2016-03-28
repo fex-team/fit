@@ -9,15 +9,10 @@ const parsePath = (filePath, info)=> {
     filePathArray.shift()
     filePathArray.shift()
 
-    console.log('xxxx',filePathArray)
-
     // 长度为 1 说明是入口,不处理
     if (filePathArray.length === 1) {
         return ''
     }
-
-    // 再去除一次第一个元素
-    filePathArray.shift()
 
     // 如果第一个元素就是 .js | .scss ,说明是根路径
     const prefix = `fit-${info.categoryName}-${info.module.path}`
