@@ -5,7 +5,6 @@ import build from './utils/build'
 import find from 'find'
 import fs from 'fs'
 import path from 'path'
-import * as babylon from 'babylon'
 
 const outputDistLib = (info) => {
     let modulePath = `./lib/${info.categoryName}/${info.module.path}`

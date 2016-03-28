@@ -15,12 +15,12 @@ import path from 'path'
 const args = process.argv.slice(2)
 const allModules = getAllModules(config)
 
-if (fs.existsSync(path.join(__dirname,'../../','lib'))){
+if (fs.existsSync(path.join(__dirname, '../..', 'lib'))) {
     // 解析 import 语句,添加依赖
-    //upgradeDependencies(allModules)
+    upgradeDependencies(allModules)
 
-// 更新版本依赖,对有修改的或者被依赖的发布新版本
-    //versionPatch(allModules)
+    // 更新版本依赖,对有修改的或者被依赖的发布新版本
+    versionPatch(allModules)
 }
 
 switch (args[0]) {
