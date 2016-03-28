@@ -4,11 +4,11 @@ const parsePath = (filePath, info)=> {
     filePath = filePath.substring(2)
     let filePathArray = filePath.split('/')
 
+    console.log(filePathArray.unshift())
     filePathArray.unshift()
     filePathArray.unshift()
     filePathArray.unshift()
-    filePathArray.unshift()
-    
+
     console.log(filePathArray)
 }
 
