@@ -11,7 +11,7 @@ const parsePath = (filePath, info)=> {
 
     // 长度为 1 说明是入口,不处理
     if (filePathArray.length === 1) {
-        return
+        return ''
     }
 
     // 再去除一次第一个元素
@@ -32,8 +32,8 @@ export default (filePath, info) => {
     let source = fs.readFileSync(filePath).toString()
 
     const name = parsePath(filePath, info)
-    console.log(name)
-    source = source.replace(/_namespace/g, `fit-${info.categoryName}-${info.module.path}`)
-
-    fs.writeFileSync(filePath, source)
+    if (name !== '') {
+        source = source.replace(/_namespace/g, name)
+        fs.writeFileSync(filePath, source)
+    }
 }

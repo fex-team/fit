@@ -98,7 +98,7 @@ const publish = (info)=> {
 export default (info)=> {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
-    if (hasChange) {
+    //if (hasChange) {
         // 先删除lib目录
         deleteLib(info)
 
@@ -122,11 +122,11 @@ export default (info)=> {
         // consoleLog('发布完成', 'green', getModulePath(info))
 
         // // 删除 lib目录
-        deleteLib(info)
+        //deleteLib(info)
 
         // // 删除所有 .d.ts
-        deleteDTS(info)
-    }
+        //deleteDTS(info)
+    //}
     // try push
     //tryPush(getModulePath(info))
 }
