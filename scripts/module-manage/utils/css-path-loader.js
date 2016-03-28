@@ -8,21 +8,16 @@ const parsePath = (filePath, info)=> {
     filePathArray.shift()
     filePathArray.shift()
     filePathArray.shift()
+    filePathArray.pop()
 
-    // 长度为 1 说明是入口,不处理
-    if (filePathArray.length === 1) {
+    // 第一个是空,说明是根路径,不处理
+    if (filePathArray[0] === '') {
         return ''
     }
-
-    // 如果第一个元素就是 .js | .scss ,说明是根路径
+    
     const prefix = `fit-${info.categoryName}-${info.module.path}`
-    if (filePathArray[0].indexOf('.js') > -1 || filePathArray[0].indexOf('.scss')) {
-        return prefix
-    } else {
-        filePathArray.pop()
-        const addonPath = filePathArray.join('-')
-        return `${prefix}-${addonPath}`
-    }
+    const addonPath = filePathArray.join('-')
+    return `${prefix}-${addonPath}`
 }
 
 export default (filePath, info) => {
