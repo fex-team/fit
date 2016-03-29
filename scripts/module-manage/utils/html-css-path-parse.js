@@ -13,7 +13,12 @@ export default (filePath, info)=> {
         return ''
     }
 
-    const prefix = `${info.categoryInfo.prefix}-${info.categoryName}-${info.module.path}`
+    const prefix = `${info.categoryInfo.prefix}-${info.module.path}`
     const addonPath = filePathArray.join('-')
-    return `${prefix}-${addonPath}`
+
+    if (addonPath === info.module.path) {
+        return prefix
+    } else {
+        return `${prefix}-${addonPath}`
+    }
 }
