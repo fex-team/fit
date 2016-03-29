@@ -6,8 +6,7 @@ export default (filePath, info) => {
     const name = parsePath(filePath, info)
 
     if (name === '') return
-
-    console.log(name)
+    
     source = source.replace(/_namespace/g, name)
     fs.writeFileSync(filePath, source)
 }
