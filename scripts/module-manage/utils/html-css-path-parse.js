@@ -14,14 +14,14 @@ export default (filePath, info)=> {
     }
 
     const prefix = `${info.categoryInfo.prefix}-${info.module.path}`
-    
+    let addonPath = filePathArray.join('-')
+
     if (addonPath === info.module.path) {
         return prefix
     } else {
-        const addonPath = filePathArray.join('-')
-
         if (filePathArray[0] === info.module.path) {
             filePathArray.shift()
+            addonPath = filePathArray.join('-')
         }
 
         return `${prefix}-${addonPath}`
