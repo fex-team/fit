@@ -133,7 +133,7 @@ export default (info)=> {
         consoleLog('发布完成', 'green', getModulePath(info))
 
         // 删除 lib目录
-        deleteLib(info)
+        //deleteLib(info)
 
         // 删除所有 .d.ts
         deleteDTS(info)
