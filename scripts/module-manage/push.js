@@ -127,7 +127,7 @@ export default (info)=> {
         deleteLib(info)
 
         // 删除 fit-typings 下所有目录
-        deleteFitTypings()
+        //deleteFitTypings()
 
         // 生成 d.ts 文件
         createDTs(info)
