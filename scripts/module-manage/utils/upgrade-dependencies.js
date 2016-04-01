@@ -52,9 +52,7 @@ export default  (modules) => {
                 const componentInfo = relativePathToComponentPath(match2, match4, info)
                 return `import ${_.capitalize(_.camelCase(componentInfo.name))} from '${componentInfo.prefix}-${componentInfo.name}'`
             })
-            if (file.indexOf('timeago') > -1) {
-                console.log(code)
-            }
+            
             let match
 
             while ((match = regex.exec(code)) != null) {
