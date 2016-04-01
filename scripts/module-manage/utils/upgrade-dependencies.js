@@ -3,6 +3,7 @@ import find from 'find'
 import fs from 'fs'
 import format from 'format-json'
 import resolveFile from '../../../resolve'
+import {relativePathToComponentPath} from './utils'
 
 const root = process.cwd()
 
@@ -45,6 +46,10 @@ export default  (modules) => {
 
         srcFiles.forEach((file) => {
             let code = fs.readFileSync(file).toString()
+            // 将所有 fit 组件的引用还原
+            code = code.replace(/import\s(\w|[\{\w,\}]|\*\sas\s)*\sfrom\s\'(..\/){3,}([\w-]*\/)?([\w-]*)\/src\'/g, (word, match1, match2, match3, match4)=> {
+                return relativePathToComponentPath(match2, match4, info)
+            })
             let match
 
             while ((match = regex.exec(code)) != null) {

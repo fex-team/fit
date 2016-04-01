@@ -7,11 +7,8 @@ import postcss  from 'postcss'
 import path from 'path'
 import htmlPathLoader from './html-path-loader'
 import cssPathLoader from './css-path-loader'
+import {relativePathToComponentPath} from './utils'
 import * as ts from 'typescript'
-
-const relativePathToComponentPath = (componentPath, info)=> {
-    return `require('fit-${componentPath}')`
-}
 
 const parseBabel = (filePath, info) => {
     const absolutePath = path.join(__dirname, '../../..', filePath)
@@ -23,10 +20,9 @@ const parseBabel = (filePath, info) => {
     let resultCode = result.code
 
     // 将所有 fit 组件的引用还原
-    resultCode = resultCode.replace(/require\(\'(..\/){3,}([\w-]*)\/src\'\)/g, (word, match1, match2)=> {
-        return relativePathToComponentPath(match2, info)
+    resultCode = resultCode.replace(/require\(\'(..\/){3,}([\w-]*\/)?([\w-]*)\/src\'\)/g, (word, match1, match2, match3)=> {
+        return relativePathToComponentPath(match1, match3, info)
     })
-    console.log(resultCode)
 
     fs.writeFileSync(absolutePath, resultCode)
 }
