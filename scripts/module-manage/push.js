@@ -77,7 +77,9 @@ const parseDTs = (info)=> {
     fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootContent)
 
     // 将文件 copy 一份到 fit-typings
-    execSync(`cp -r ${moduleDistRoot} ./fit-typings/xxx`)
+    const typingPath = `./fit-typings/${info.categoryInfo.prefix}-${info.module.path}`
+    execSync(`cp -r ${moduleDistRoot} ${typingPath}`)
+    execSync(`find ${typingPath} -type f -not -name '*.d.ts' -print0 | xargs -0 rm`)
 }
 
 const deleteDTS = (info)=> {
