@@ -14,7 +14,7 @@
                         "path": "badge"
                     }
                 ],
-                "工具": [
+                "代码工具": [
                     {
                         "name": "透传",
                         "path": "transmit-transparently"

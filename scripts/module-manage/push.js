@@ -50,18 +50,19 @@ const parseDTs = (info)=> {
         return
     }
 
+    // 删除根目录的注释
+    let rootFileContent = fs.readFileSync(`${moduleDistRoot}/index.d.ts`).toString()
+    let rootFileContentArray = rootFileContent.split('\n')
+    rootFileContentArray = rootFileContentArray.filter((line)=> {
+        return line.indexOf('//') !== 0
+    })
+    rootFileContent = rootFileContentArray.join('\n')
+    fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootFileContent)
+
     moduleDirPaths.map((moduleDirPath)=> {
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
-        // 删除注释
-        let fileContentArray = fileContent.split('\n')
-        fileContentArray = fileContentArray.filter((line)=> {
-            return line.indexOf('//') !== 0
-        })
-
         // 包一层组件定义
-        fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${fileContentArray.join('\n')}\n}`
-
-        // 覆盖文件内容
+        fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${fileContent}\n}`
         fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
     })
 
@@ -74,6 +75,9 @@ const parseDTs = (info)=> {
         rootContent += depStr + '\n'
     })
     fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootContent)
+
+    // 将文件 copy 一份到 fit-typings
+    execSync(`cp -r ${moduleDistRoot} ./fit-typings/xxx`)
 }
 
 const deleteDTS = (info)=> {
@@ -128,7 +132,7 @@ export default (info)=> {
 
         // 发布npm
         consoleLog('发布中..', 'grey', getModulePath(info))
-        publish(info)
+        //publish(info)
         consoleLog('发布完成', 'green', getModulePath(info))
 
         // 删除 lib目录
@@ -141,5 +145,5 @@ export default (info)=> {
         syncCnpm(info)
     }
     // try push
-    tryPush(getModulePath(info))
+    //tryPush(getModulePath(info))
 }
