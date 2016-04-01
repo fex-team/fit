@@ -9,6 +9,10 @@ import htmlPathLoader from './html-path-loader'
 import cssPathLoader from './css-path-loader'
 import * as ts from 'typescript'
 
+const relativePathToComponentPath = (componentPath, info)=> {
+    return `require('fit-${componentPath}')`
+}
+
 const parseBabel = (filePath, info) => {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const jsFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
@@ -19,8 +23,8 @@ const parseBabel = (filePath, info) => {
     let resultCode = result.code
 
     // 将所有 fit 组件的引用还原
-    resultCode = resultCode.replace(/require\(\'..\/..\/..\/([\w-])*\/src\'\)/g, (word, match)=> {
-        return `require('fit-${match}')`
+    resultCode = resultCode.replace(/require\(\'(..\/){3,}([\w-]*)\/src\'\)/g, (word, match1, match2)=> {
+        return relativePathToComponentPath(match2, info)
     })
     console.log(resultCode)
 
