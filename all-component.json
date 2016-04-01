@@ -13,6 +13,12 @@
                         "name": "徽标数",
                         "path": "badge"
                     }
+                ],
+                "工具": [
+                    {
+                        "name": "透传",
+                        "path": "transmit-transparently"
+                    }
                 ]
             }
         },

@@ -10,6 +10,8 @@
                 
                 'fit-badge': path.join(__dirname, 'lib/common/badge/src'),
                 
+                'fit-transmit-transparently': path.join(__dirname, 'lib/common/transmit-transparently/src'),
+                
         // pc
         
                 'fit-layout-global': path.join(__dirname, 'lib/pc/layout-global/src'),
