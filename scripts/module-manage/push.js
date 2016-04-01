@@ -75,12 +75,6 @@ const parseDTs = (info)=> {
         rootContent += depStr + '\n'
     })
     fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootContent)
-
-    // 将文件 copy 一份到 fit-typings
-    const typingPath = `./fit-typings/${info.categoryInfo.prefix}-${info.module.path}`
-    execSync(`cp -r ${moduleDistRoot} ${typingPath}`)
-    execSync(`find ${typingPath} -type f -not -name '*.d.ts' -print0 | xargs -0 rm`)
-    console.log('建立好了')
 }
 
 const deleteDTS = (info)=> {
@@ -112,24 +106,12 @@ const publish = (info)=> {
     execSync(`cd lib/${info.categoryName}/${info.module.path};npm publish`)
 }
 
-const deleteFitTypings = ()=> {
-    const root = path.join(__dirname, '../..', `fit-typings`)
-    const dirPaths = find.dirSync(root)
-    dirPaths.forEach((dir)=> {
-        execSync(`rm -rf ${dir}`)
-        console.log('删除完了')
-    })
-}
-
 export default (info)=> {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
     if (hasChange) {
         // 先删除 lib 目录
         deleteLib(info)
-
-        // 删除 fit-typings 下所有目录
-        deleteFitTypings()
 
         // 生成 d.ts 文件
         createDTs(info)

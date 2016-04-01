@@ -9,11 +9,19 @@ import tryPull from './utils/try-pull'
 import tryPush from './utils/try-push'
 import versionPatch from './utils/version'
 import upgradeDependencies from './utils/upgrade-dependencies'
-import fs from 'fs'
+import find from 'find'
 import path from 'path'
 
 const args = process.argv.slice(2)
 const allModules = getAllModules(config)
+
+// const deleteFitTypings = ()=> {
+//     const root = path.join(__dirname, '../..', `fit-typings`)
+//     const dirPaths = find.dirSync(root)
+//     dirPaths.forEach((dir)=> {
+//         execSync(`rm -rf ${dir}`)
+//     })
+// }
 
 switch (args[0]) {
 case 'update': // 更新

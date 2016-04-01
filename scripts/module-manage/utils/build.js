@@ -1,6 +1,5 @@
 import fs from 'fs'
 import {execSync} from 'child_process'
-import consoleLog from './console-log'
 import * as babel from 'babel-core'
 import sass from 'node-sass'
 import autoprefixer from 'autoprefixer'
@@ -10,13 +9,22 @@ import htmlPathLoader from './html-path-loader'
 import cssPathLoader from './css-path-loader'
 import * as ts from 'typescript'
 
-const parseBabel = (filePath) => {
+const parseBabel = (filePath, info) => {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const jsFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
     const result = babel.transform(jsFileContent, {
         extends: path.resolve(__dirname, '../../../.babelrc')
     })
-    fs.writeFileSync(absolutePath, result.code)
+
+    let resultCode = result.code
+
+    // 将所有 fit 组件的引用还原
+    resultCode = resultCode.replace(/require\(\'..\/..\/..\/([\w-])*\/src\'\)/g, (word, match)=> {
+        return `require('fit-${match}')`
+    })
+    console.log(resultCode)
+
+    fs.writeFileSync(absolutePath, resultCode)
 }
 
 const parseSass = (scssPath) => {
@@ -60,7 +68,7 @@ const handleModuleDir = (modulePath, info)=> {
     let jsFiles = getfiles('js', modulePath)
     jsFiles.map((item)=> {
         htmlPathLoader(item, info)
-        parseBabel(item)
+        parseBabel(item, info)
     })
 
     // scss 文件由 sass 处理
@@ -70,7 +78,7 @@ const handleModuleDir = (modulePath, info)=> {
         parseSass(item)
     })
 }
-export default (info,libPath)=> {
+export default (info, libPath)=> {
     // 处理dist目录
     handleModuleDir(libPath, info)
 }
