@@ -9,5 +9,8 @@ export const relativePathToComponentPath = (categoryName = '', componentPath, in
         categoryName = info.categoryName
     }
 
-    return `require('${allComponents.categorys[categoryName].prefix}-${componentPath}')`
+    return {
+        prefix: allComponents.categorys[categoryName].prefix,
+        name  : componentPath
+    }
 }
