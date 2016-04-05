@@ -28,6 +28,7 @@
     "alone": "webpack -p --config webpack.config.alone.js",
     "test": "./node_modules/karma/bin/karma start karma.conf.js",
     "test:dev": "npm run test -- --debug",
+    "test:backend": "node test/server-render-entry.js",
     "server-render-babel": "babel lib/ --out-dir lib-babel/"
   },
   "author": "",
