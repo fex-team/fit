@@ -81,9 +81,9 @@ const deleteDTS = (info)=> {
     const modulePath = getModulePath(info)
     execSync(`find ${modulePath} -name "*.d.ts" | xargs rm`)
 
-    // 如果包含 .tsx 文件,则删除 src 下的 js 文件
+    // 如果包含 .tsx 文件,则删除 src 下的 jsx 文件
     if (fs.existsSync(path.join(modulePath, 'src/index.tsx'))) {
-        execSync(`find ${path.join(modulePath, 'src')} -name "*.js" | xargs rm`)
+        execSync(`find ${path.join(modulePath, 'src')} -name "*.jsx" | xargs rm`)
     }
 }
 
