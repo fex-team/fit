@@ -79,10 +79,12 @@ const parseDTs = (info)=> {
 
 const deleteDTS = (info)=> {
     const modulePath = getModulePath(info)
+    console.log('deleteDTS', `find ${modulePath} -name "*.d.ts" | xargs rm`)
     execSync(`find ${modulePath} -name "*.d.ts" | xargs rm`)
 
     // 如果包含 .tsx 文件,则删除 src 下的 jsx 文件
     if (fs.existsSync(path.join(modulePath, 'src/index.tsx'))) {
+        console.log('deletetsx', `find ${path.join(modulePath, 'src')} -name "*.jsx" | xargs rm`)
         execSync(`find ${path.join(modulePath, 'src')} -name "*.jsx" | xargs rm`)
     }
 }
