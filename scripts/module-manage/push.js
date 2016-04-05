@@ -87,6 +87,11 @@ const deleteDTS = (info)=> {
     }
 }
 
+const deleteJSX = (info)=> {
+    const modulePath = getModulePath(info)
+    execSync(`find ${modulePath} -name "*.jsx" | xargs rm`)
+}
+
 const syncCnpm = (info)=> {
     consoleLog(`cnpm 开始同步..`, 'grey', getModulePath(info))
     exec(`cnpm sync ${info.categoryInfo.prefix}-${info.module.path}`, (err)=> {
@@ -137,6 +142,9 @@ export default (info)=> {
 
         // 删除所有 .d.ts
         deleteDTS(info)
+
+        // 删除所有 jsx
+        deleteJSX(info)
 
         // 通知 cnpm 更新
         syncCnpm(info)
