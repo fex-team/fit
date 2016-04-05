@@ -31,6 +31,11 @@ case 'push': // 提交
         push(info)
     })
     tryPush('./')
+
+    // 最后删除所有 d.ts jsx文件,这些文件可能由依赖自动生成到其它模块下
+    execSync(`find ./lib -name "*.d.ts" | xargs rm`)
+    execSync(`find ./lib -name "*.jsx" | xargs rm`)
+
     break
 
 case 'github': // 传到 github
