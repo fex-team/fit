@@ -27,8 +27,6 @@
                 
                 import fitBadgeComponent from './components/common/badge'
                 
-                import fitTransmitTransparentlyComponent from './components/common/transmit-transparently'
-                
         // pc
         
                 import fitLayoutGlobalComponent from './components/pc/layout-global'
@@ -152,9 +150,6 @@
                 
                 <Route path="badge"
                        component={fitBadgeComponent}/>
-                
-                <Route path="transmit-transparently"
-                       component={fitTransmitTransparentlyComponent}/>
                 
         </Route>
         

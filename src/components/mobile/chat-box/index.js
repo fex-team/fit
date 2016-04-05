@@ -19,20 +19,20 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/chat-box/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/mobile/chat-box/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/chat-box/demo/lists/basic.tsx'
+                    import BasicCode from 'text!../../../../lib/mobile/chat-box/demo/lists/basic.tsx'
                     import BasicMarkdown from '../../../../lib/mobile/chat-box/demo/lists/basic.md'
                     
-                    import ReverseComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/chat-box/demo/lists/reverse.js'
-                    import ReverseCode from 'text!../../../../lib/mobile/chat-box/demo/lists/reverse.js'
+                    import ReverseComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/chat-box/demo/lists/reverse.tsx'
+                    import ReverseCode from 'text!../../../../lib/mobile/chat-box/demo/lists/reverse.tsx'
                     import ReverseMarkdown from '../../../../lib/mobile/chat-box/demo/lists/reverse.md'
                     
-                    import BackBottomComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/chat-box/demo/lists/back-bottom.js'
-                    import BackBottomCode from 'text!../../../../lib/mobile/chat-box/demo/lists/back-bottom.js'
+                    import BackBottomComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/chat-box/demo/lists/back-bottom.tsx'
+                    import BackBottomCode from 'text!../../../../lib/mobile/chat-box/demo/lists/back-bottom.tsx'
                     import BackBottomMarkdown from '../../../../lib/mobile/chat-box/demo/lists/back-bottom.md'
                     
-                    import LoadingComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/chat-box/demo/lists/loading.js'
-                    import LoadingCode from 'text!../../../../lib/mobile/chat-box/demo/lists/loading.js'
+                    import LoadingComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/chat-box/demo/lists/loading.tsx'
+                    import LoadingCode from 'text!../../../../lib/mobile/chat-box/demo/lists/loading.tsx'
                     import LoadingMarkdown from '../../../../lib/mobile/chat-box/demo/lists/loading.md'
                     
 

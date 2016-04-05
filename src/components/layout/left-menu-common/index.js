@@ -14,12 +14,7 @@ const menu35b4b419fa4b8c97858f967daf196f96 = [
                         path: '/common/badge'
                     },
                     ]
-const menu83b5c25c39e6342cb2a7e4a56205f4d4 = [
-                    {
-                        title: '透传 TransmitTransparently',
-                        path: '/common/transmit-transparently'
-                    },
-                    ]
+const menu83b5c25c39e6342cb2a7e4a56205f4d4 = []
 
         export default class Layout extends React.Component {
             constructor(props) {

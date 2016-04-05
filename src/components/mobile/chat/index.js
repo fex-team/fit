@@ -19,8 +19,8 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/chat/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/mobile/chat/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/chat/demo/lists/basic.tsx'
+                    import BasicCode from 'text!../../../../lib/mobile/chat/demo/lists/basic.tsx'
                     import BasicMarkdown from '../../../../lib/mobile/chat/demo/lists/basic.md'
                     
 
