@@ -36,7 +36,7 @@ const deleteLib = (info)=> {
 const createDTs = (info)=> {
     const tsxPath = `./lib/${info.categoryName}/${info.module.path}/src/index.tsx`
     if (fs.existsSync(tsxPath)) {
-        console.log(`tsc -d --experimentalDecorators --jsx preserve ${tsxPath}`)
+        console.log(`createDTs tsc -d --experimentalDecorators --jsx preserve ${tsxPath}`)
         execSync(`tsc -d --experimentalDecorators --jsx preserve ${tsxPath}`)
     }
 }
@@ -163,6 +163,7 @@ export default (info)=> {
         // 通知 cnpm 更新
         syncCnpm(info)
     }
+    execSync(`ls lib/common/transmit-transparently`)
     // try push
     tryPush(getModulePath(info))
 }
