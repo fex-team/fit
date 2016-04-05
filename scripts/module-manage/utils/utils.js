@@ -14,3 +14,14 @@ export const relativePathToComponentPath = (categoryName = '', componentPath, in
         name  : componentPath
     }
 }
+
+export const getGitSourcePath = (info)=> {
+    // 获取git地址
+    let gitSourcePath
+    if (info.categoryInfo.gitlabPrefix !== '') {
+        gitSourcePath = `${info.categoryInfo.gitlabPrefix}-${info.module.path}.git`
+    } else {
+        gitSourcePath = `${info.module.path}.git`
+    }
+    return gitSourcePath
+}

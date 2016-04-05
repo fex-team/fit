@@ -5,6 +5,7 @@ import {execSync} from 'child_process'
 import emptyModuleDefault from './utils/empty-module-default'
 import consoleLog from './utils/console-log'
 import tryPull from './utils/try-pull'
+import {getGitSourcePath} from './utils/utils'
 
 const gitPlantform = 'http://gitlab.baidu.com'
 const gitPlantformGroup = 'tb-component'
@@ -24,17 +25,6 @@ const createLibFolderIfNotExist = ()=> {
 
 const createCategoryFolderIfNotExist = (info)=> {
     createIfNotExist(path.join('lib', info.categoryName))
-}
-
-const getGitSourcePath = (info)=> {
-    // 获取git地址
-    let gitSourcePath
-    if (info.categoryInfo.gitlabPrefix !== '') {
-        gitSourcePath = `${info.categoryInfo.gitlabPrefix}-${info.module.path}.git`
-    } else {
-        gitSourcePath = `${info.module.path}.git`
-    }
-    return gitSourcePath
 }
 
 const cloneModuleIfNotExist = (info)=> {
