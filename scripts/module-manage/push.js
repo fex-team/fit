@@ -36,6 +36,7 @@ const deleteLib = (info)=> {
 const createDTs = (info)=> {
     const tsxPath = `./lib/${info.categoryName}/${info.module.path}/src/index.tsx`
     if (fs.existsSync(tsxPath)) {
+        console.log(`tsc -d --experimentalDecorators --jsx preserve ${tsxPath}`)
         execSync(`tsc -d --experimentalDecorators --jsx preserve ${tsxPath}`)
     }
 }
@@ -84,7 +85,6 @@ const deleteDTS = (info)=> {
 
     // 如果包含 .tsx 文件,则删除 src 下的 jsx 文件
     if (fs.existsSync(path.join(modulePath, 'src/index.tsx'))) {
-        console.log('deletetsx', `find ${path.join(modulePath, 'src')} -name "*.jsx" | xargs rm`)
         execSync(`find ${path.join(modulePath, 'src')} -name "*.jsx" | xargs rm`)
     }
 }
