@@ -19,11 +19,11 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/image/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/image/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/pc/image/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/image/demo/lists/basic.md'
                     
-                    import WideComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/image/demo/lists/wide.js'
+                    import WideComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/image/demo/lists/wide.js'
                     import WideCode from 'text!../../../../lib/pc/image/demo/lists/wide.js'
                     import WideMarkdown from '../../../../lib/pc/image/demo/lists/wide.md'
                     

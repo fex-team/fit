@@ -19,15 +19,15 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/timeago/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/common/timeago/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/common/timeago/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/common/timeago/demo/lists/basic.md'
                     
-                    import ChineseComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/timeago/demo/lists/chinese.js'
+                    import ChineseComponent from 'react-hot-loader!babel-loader!../../../../lib/common/timeago/demo/lists/chinese.js'
                     import ChineseCode from 'text!../../../../lib/common/timeago/demo/lists/chinese.js'
                     import ChineseMarkdown from '../../../../lib/common/timeago/demo/lists/chinese.md'
                     
-                    import LoseComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/timeago/demo/lists/lose.js'
+                    import LoseComponent from 'react-hot-loader!babel-loader!../../../../lib/common/timeago/demo/lists/lose.js'
                     import LoseCode from 'text!../../../../lib/common/timeago/demo/lists/lose.js'
                     import LoseMarkdown from '../../../../lib/common/timeago/demo/lists/lose.md'
                     

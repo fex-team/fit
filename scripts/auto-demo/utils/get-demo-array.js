@@ -1,5 +1,6 @@
 import fs from 'fs'
 import _ from 'lodash'
+import path from 'path'
 
 const getDemoArray = (demoIndexPath)=> {
     // 跳过没有demo的项目
@@ -19,19 +20,24 @@ const getDemoArray = (demoIndexPath)=> {
     })
 
     if (demoLine === -1 || demoLine === 0) {
-        // 没有Demo
+        // 没有 demo
         return []
     }
 
-    // 整理成demo数组
+    // 整理成 demo 数组
     demoLine = _.trim(_.trimLeft(demoLine, '//'))
     let demoArray = []
     demoLine.split(' ').map((item)=> {
         let info = item.split(':')
-        demoArray.push({
-            row: parseInt(info[1]),
-            name: info[0]
-        })
+        let name = info[0]
+        let ext = 'js'
+
+        // 如果 js 后缀不存在,则后缀是 tsx
+        if (!fs.existsSync(path.join(demoIndexPath, '..', 'lists', `${name}.js`))) {
+            ext = 'tsx'
+        }
+
+        demoArray.push({name, ext})
     })
 
     return demoArray

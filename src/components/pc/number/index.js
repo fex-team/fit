@@ -19,27 +19,27 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/number/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/pc/number/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/number/demo/lists/basic.md'
                     
-                    import CallbackComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/callback.js'
+                    import CallbackComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/number/demo/lists/callback.js'
                     import CallbackCode from 'text!../../../../lib/pc/number/demo/lists/callback.js'
                     import CallbackMarkdown from '../../../../lib/pc/number/demo/lists/callback.md'
                     
-                    import FloatComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/float.js'
+                    import FloatComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/number/demo/lists/float.js'
                     import FloatCode from 'text!../../../../lib/pc/number/demo/lists/float.js'
                     import FloatMarkdown from '../../../../lib/pc/number/demo/lists/float.md'
                     
-                    import LimitComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/limit.js'
+                    import LimitComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/number/demo/lists/limit.js'
                     import LimitCode from 'text!../../../../lib/pc/number/demo/lists/limit.js'
                     import LimitMarkdown from '../../../../lib/pc/number/demo/lists/limit.md'
                     
-                    import SpeedComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/speed.js'
+                    import SpeedComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/number/demo/lists/speed.js'
                     import SpeedCode from 'text!../../../../lib/pc/number/demo/lists/speed.js'
                     import SpeedMarkdown from '../../../../lib/pc/number/demo/lists/speed.md'
                     
-                    import StepComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/number/demo/lists/step.js'
+                    import StepComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/number/demo/lists/step.js'
                     import StepCode from 'text!../../../../lib/pc/number/demo/lists/step.js'
                     import StepMarkdown from '../../../../lib/pc/number/demo/lists/step.md'
                     

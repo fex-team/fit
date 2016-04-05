@@ -22,7 +22,7 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tabs/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/tabs/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/pc/tabs/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/tabs/demo/lists/basic.md'
                     

@@ -19,15 +19,15 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/blue-bar/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/blue-bar/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/tb/blue-bar/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/tb/blue-bar/demo/lists/basic.md'
                     
-                    import FixedComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/blue-bar/demo/lists/fixed.js'
+                    import FixedComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/blue-bar/demo/lists/fixed.js'
                     import FixedCode from 'text!../../../../lib/tb/blue-bar/demo/lists/fixed.js'
                     import FixedMarkdown from '../../../../lib/tb/blue-bar/demo/lists/fixed.md'
                     
-                    import ShareComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/blue-bar/demo/lists/share.js'
+                    import ShareComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/blue-bar/demo/lists/share.js'
                     import ShareCode from 'text!../../../../lib/tb/blue-bar/demo/lists/share.js'
                     import ShareMarkdown from '../../../../lib/tb/blue-bar/demo/lists/share.md'
                     

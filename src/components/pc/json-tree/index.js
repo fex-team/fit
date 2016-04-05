@@ -19,11 +19,11 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/json-tree/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/json-tree/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/pc/json-tree/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/json-tree/demo/lists/basic.md'
                     
-                    import RootComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/json-tree/demo/lists/root.js'
+                    import RootComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/json-tree/demo/lists/root.js'
                     import RootCode from 'text!../../../../lib/pc/json-tree/demo/lists/root.js'
                     import RootMarkdown from '../../../../lib/pc/json-tree/demo/lists/root.md'
                     

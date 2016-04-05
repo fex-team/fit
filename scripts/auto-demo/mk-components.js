@@ -35,9 +35,16 @@ const mkComponents = (config)=> {
                     demoArray.map((demoItem)=> {
                         // 首字母大写demo名
                         const camelDemoName = _.capitalize(_.camelCase(demoItem.name))
+
+                        // loader 是 babel 还是 ts-loader
+                        let loader = 'babel-loader'
+                        if (demoItem.ext === 'tsx') {
+                            loader = 'ts-loader'
+                        }
+
                         demoImport += `
-                    import ${camelDemoName}Component from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.js'
-                    import ${camelDemoName}Code from 'text!../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.js'
+                    import ${camelDemoName}Component from 'react-hot-loader!${loader}!../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.${demoItem.ext}'
+                    import ${camelDemoName}Code from 'text!../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.${demoItem.ext}'
                     import ${camelDemoName}Markdown from '../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.md'
                     `
 

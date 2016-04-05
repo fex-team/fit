@@ -16,7 +16,7 @@
                 
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/reset/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/reset/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/mobile/reset/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/mobile/reset/demo/lists/basic.md'
                     

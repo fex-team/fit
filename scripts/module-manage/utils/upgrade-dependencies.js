@@ -52,7 +52,7 @@ export default  (modules) => {
                 const componentInfo = relativePathToComponentPath(match2, match4, info)
                 return `import ${_.capitalize(_.camelCase(componentInfo.name))} from '${componentInfo.prefix}-${componentInfo.name}'`
             })
-            
+
             let match
 
             while ((match = regex.exec(code)) != null) {

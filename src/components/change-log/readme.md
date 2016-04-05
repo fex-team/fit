@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.4.4
+
+- `fit-timeago` `fit-chat` 源码已改为 `typescript`
+
 #### 2016.4.1
 
 - 新增 `fit-transmit-transparently` 这是个修饰工具组件,用来做props安全透传

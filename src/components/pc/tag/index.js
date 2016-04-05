@@ -19,11 +19,11 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tag/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/tag/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/pc/tag/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/tag/demo/lists/basic.md'
                     
-                    import HandleComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/tag/demo/lists/handle.js'
+                    import HandleComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/tag/demo/lists/handle.js'
                     import HandleCode from 'text!../../../../lib/pc/tag/demo/lists/handle.js'
                     import HandleMarkdown from '../../../../lib/pc/tag/demo/lists/handle.md'
                     

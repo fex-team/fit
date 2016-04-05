@@ -19,15 +19,15 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/icon/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/icon/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/tb/icon/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/tb/icon/demo/lists/basic.md'
                     
-                    import ColorComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/icon/demo/lists/color.js'
+                    import ColorComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/icon/demo/lists/color.js'
                     import ColorCode from 'text!../../../../lib/tb/icon/demo/lists/color.js'
                     import ColorMarkdown from '../../../../lib/tb/icon/demo/lists/color.md'
                     
-                    import SizeComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/icon/demo/lists/size.js'
+                    import SizeComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/icon/demo/lists/size.js'
                     import SizeCode from 'text!../../../../lib/tb/icon/demo/lists/size.js'
                     import SizeMarkdown from '../../../../lib/tb/icon/demo/lists/size.md'
                     

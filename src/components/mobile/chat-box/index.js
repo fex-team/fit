@@ -19,19 +19,19 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat-box/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/chat-box/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/mobile/chat-box/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/mobile/chat-box/demo/lists/basic.md'
                     
-                    import ReverseComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat-box/demo/lists/reverse.js'
+                    import ReverseComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/chat-box/demo/lists/reverse.js'
                     import ReverseCode from 'text!../../../../lib/mobile/chat-box/demo/lists/reverse.js'
                     import ReverseMarkdown from '../../../../lib/mobile/chat-box/demo/lists/reverse.md'
                     
-                    import BackBottomComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat-box/demo/lists/back-bottom.js'
+                    import BackBottomComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/chat-box/demo/lists/back-bottom.js'
                     import BackBottomCode from 'text!../../../../lib/mobile/chat-box/demo/lists/back-bottom.js'
                     import BackBottomMarkdown from '../../../../lib/mobile/chat-box/demo/lists/back-bottom.md'
                     
-                    import LoadingComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/mobile/chat-box/demo/lists/loading.js'
+                    import LoadingComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/chat-box/demo/lists/loading.js'
                     import LoadingCode from 'text!../../../../lib/mobile/chat-box/demo/lists/loading.js'
                     import LoadingMarkdown from '../../../../lib/mobile/chat-box/demo/lists/loading.md'
                     

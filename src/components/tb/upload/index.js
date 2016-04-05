@@ -19,7 +19,7 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/upload/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/upload/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/tb/upload/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/tb/upload/demo/lists/basic.md'
                     

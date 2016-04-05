@@ -22,19 +22,19 @@
                         
 
                 
-                    import PostComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/submit/demo/lists/post.js'
+                    import PostComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/submit/demo/lists/post.js'
                     import PostCode from 'text!../../../../lib/tb/submit/demo/lists/post.js'
                     import PostMarkdown from '../../../../lib/tb/submit/demo/lists/post.md'
                     
-                    import ReplyComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/submit/demo/lists/reply.js'
+                    import ReplyComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/submit/demo/lists/reply.js'
                     import ReplyCode from 'text!../../../../lib/tb/submit/demo/lists/reply.js'
                     import ReplyMarkdown from '../../../../lib/tb/submit/demo/lists/reply.md'
                     
-                    import CommentComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/submit/demo/lists/comment.js'
+                    import CommentComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/submit/demo/lists/comment.js'
                     import CommentCode from 'text!../../../../lib/tb/submit/demo/lists/comment.js'
                     import CommentMarkdown from '../../../../lib/tb/submit/demo/lists/comment.md'
                     
-                    import SingleComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/submit/demo/lists/single.js'
+                    import SingleComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/submit/demo/lists/single.js'
                     import SingleCode from 'text!../../../../lib/tb/submit/demo/lists/single.js'
                     import SingleMarkdown from '../../../../lib/tb/submit/demo/lists/single.md'
                     

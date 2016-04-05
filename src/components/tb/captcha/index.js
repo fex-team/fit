@@ -19,7 +19,7 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/tb/captcha/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/captcha/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/tb/captcha/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/tb/captcha/demo/lists/basic.md'
                     

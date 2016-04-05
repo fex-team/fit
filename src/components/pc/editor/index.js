@@ -19,11 +19,11 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/editor/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/editor/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/pc/editor/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/editor/demo/lists/basic.md'
                     
-                    import AutoHeightComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/pc/editor/demo/lists/auto-height.js'
+                    import AutoHeightComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/editor/demo/lists/auto-height.js'
                     import AutoHeightCode from 'text!../../../../lib/pc/editor/demo/lists/auto-height.js'
                     import AutoHeightMarkdown from '../../../../lib/pc/editor/demo/lists/auto-height.md'
                     

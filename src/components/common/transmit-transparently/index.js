@@ -17,9 +17,12 @@
                         import TransmitTransparentlySource from '../../../../lib/common/transmit-transparently/src/transmit-transparently'
                         import TransmitTransparentlySourceCode from 'text!../../../../lib/common/transmit-transparently/src/transmit-transparently'
                         
+                        import othersSource from '../../../../lib/common/transmit-transparently/src/others'
+                        import othersSourceCode from 'text!../../../../lib/common/transmit-transparently/src/others'
+                        
 
                 
-                    import BasicComponent from 'react-hot-loader!babel?presets[]=react,presets[]=es2015!../../../../lib/common/transmit-transparently/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/common/transmit-transparently/demo/lists/basic.js'
                     import BasicCode from 'text!../../../../lib/common/transmit-transparently/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/common/transmit-transparently/demo/lists/basic.md'
                     
@@ -75,6 +78,10 @@
                                     
                         <div style={docStyle}>
                             <CodeDoc code={TransmitTransparentlySourceCode} instance={TransmitTransparentlySource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={othersSourceCode} instance={othersSource} />
                         </div>
                         
                                 </div>
