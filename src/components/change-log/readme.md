@@ -2,7 +2,8 @@
 
 #### 2016.4.4
 
-- `fit-timeago` `fit-chat` 源码已改为 `typescript`
+- `fit-timeago` `fit-chat` `fit-chat-box` 源码已改为 `typescript`
+- `fit-datepicker` 修复了没有选择小时级别,input 依然会精确到小时的bug
 
 #### 2016.4.1
 
