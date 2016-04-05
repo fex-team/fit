@@ -92,6 +92,15 @@ const deleteJSX = (info)=> {
     execSync(`find ${modulePath} -name "*.jsx" | xargs rm`)
 }
 
+const deleteDemoJsxAndJs = (info)=> {
+    const modulePath = getModulePath(info)
+    // 如果包含 .tsx 文件,则删除 demo 下的 js jsx 文件
+    if (fs.existsSync(path.join(modulePath, 'src/index.tsx'))) {
+        execSync(`find ${path.join(modulePath, 'demo/lists')} -name "*.jsx" | xargs rm`)
+        execSync(`find ${path.join(modulePath, 'demo/lists')} -name "*.js" | xargs rm`)
+    }
+}
+
 const syncCnpm = (info)=> {
     consoleLog(`cnpm 开始同步..`, 'grey', getModulePath(info))
     exec(`cnpm sync ${info.categoryInfo.prefix}-${info.module.path}`, (err)=> {
@@ -145,6 +154,9 @@ export default (info)=> {
 
         // 删除所有 jsx
         deleteJSX(info)
+
+        // 清除 demo 不必要的文件 如果是 jsx
+        deleteDemoJsxAndJs(info)
 
         // 通知 cnpm 更新
         syncCnpm(info)
