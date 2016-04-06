@@ -31,6 +31,10 @@
                     import CustomCode from 'text!../../../../lib/pc/modal/demo/lists/custom.js'
                     import CustomMarkdown from '../../../../lib/pc/modal/demo/lists/custom.md'
                     
+                    import SizeComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/modal/demo/lists/size.js'
+                    import SizeCode from 'text!../../../../lib/pc/modal/demo/lists/size.js'
+                    import SizeMarkdown from '../../../../lib/pc/modal/demo/lists/size.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -90,6 +94,16 @@
                                       code={CustomCode}>
 
                                     <CustomComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={SizeMarkdown}
+                                      code={SizeCode}>
+
+                                    <SizeComponent/>
 
                             </CodeView>
                         </Col>
