@@ -33,9 +33,9 @@ const addRemoteGithub = (info)=> {
 const push = (info)=> {
     try {
         if (!info) {
-            execSync(`git push origin github`)
+            execSync(`git push github master`)
         } else {
-            execSync(`cd ${getModulePath(info)};git push origin github`)
+            execSync(`cd ${getModulePath(info)};git push github master`)
         }
     } catch (err) {
     }
