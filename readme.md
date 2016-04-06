@@ -17,7 +17,7 @@ $ npm install fit-[components]
 
 # 用例
 
-````bash
+````jsx
 import Timeago from 'fit-timeago'
 ReactDOM.render(<Timeago date={new Date()}/>, reactNode)
 ````
