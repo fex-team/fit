@@ -22,6 +22,10 @@
                         
 
                 
+                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/common/transmit-transparently/demo/lists/basic.tsx'
+                    import BasicCode from 'text!../../../../lib/common/transmit-transparently/demo/lists/basic.tsx'
+                    import BasicMarkdown from '../../../../lib/common/transmit-transparently/demo/lists/basic.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -55,6 +59,16 @@
                             Content = (
                                 <Row>
                                     
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BasicMarkdown}
+                                      code={BasicCode}>
+
+                                    <BasicComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
                                 </Row>
                             )
                             break
