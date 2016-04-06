@@ -35,7 +35,7 @@ const push = (info)=> {
         if (!info) {
             execSync(`git push github master`)
         } else {
-            execSync(`cd ${getModulePath(info)};git push github master`)
+            execSync(`cd ${getModulePath(info)};git push github master --force`)
         }
     } catch (err) {
     }

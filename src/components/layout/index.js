@@ -108,7 +108,7 @@ export default class Layout extends React.Component {
                     {this.props.children}
                 </div>
                 <div className="g-ft">
-                    联系我们: fex@baidu.com
+                    联系我们: fex@baidu.com huangziyi01@baidu.com
                 </div>
             </div>
         )
