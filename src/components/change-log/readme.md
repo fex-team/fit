@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.4.6
+
+- `tb-captcha-drag` 新增拖拽验证码组件
+
 #### 2016.4.4
 
 - `fit-timeago` `fit-chat` `fit-chat-box` 源码已改为 `typescript`
