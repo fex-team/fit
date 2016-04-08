@@ -1,6 +1,6 @@
 # FIT
 
-React组件库
+React组件库 [fit.baidu.com](http://fit.baidu.com)(网站暂未对外开放,组件源码,下载已全部开放)
 
 # 特性
 
