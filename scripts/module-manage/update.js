@@ -39,8 +39,13 @@ const cloneModuleIfNotExist = (info)=> {
 }
 
 const checkGitControl = (info)=> {
+    const pathInfo = `lib/${info.categoryName}/${info.module.path}`
+
+    // 删除 github 的 remote
+    execSync(`cd ${pathInfo};git remote rm github`)
+
     // 获得当前项目的git路径
-    let projectName = execSync(`cd lib/${info.categoryName}/${info.module.path};git remote -v | head -n1 | awk '{print $2}' | sed -e 's,.*:\(.*/\)\?,,' -e 's/\.git$//'`).toString().trim()
+    let projectName = execSync(`cd ${pathInfo};git remote -v | head -n1 | awk '{print $2}' | sed -e 's,.*:\(.*/\)\?,,' -e 's/\.git$//'`).toString().trim()
 
     let gitSourcePath = getGitSourcePath(info)
     let expectModuleName = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
