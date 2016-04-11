@@ -22,7 +22,7 @@ module.exports = {
             {
                 test   : /\.(tsx|ts)?$/,
                 exclude: [/node_modules/, /demo\/lists/],
-                loaders: ['react-hot-loader', 'ts-loader', 'html-path-loader']
+                loaders: ['react-hot-loader', 'babel', 'ts-loader', 'html-path-loader']
             }, {
                 test   : /\.(jsx|js|es6)?$/,
                 exclude: [/node_modules/, /demo\/lists/],
