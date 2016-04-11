@@ -8,6 +8,13 @@
 
 总之是飞一般的开发体验
 
+#### 注意点
+
+- 前端使用 typescript 开发,建议用 webstorm 或 vscode 开发,体验更佳
+- 默认使用 redux,安装 redux-devtools 的 chrome 插件辅助开发
+- 使用 immutable 辅助不可变 state 流
+- 组件 static needs 数组,传入对应 action,可以将请求初始化时在后端执行
+
 ### 本地启动 node 服务
 
 ```bash
