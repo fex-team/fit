@@ -10,9 +10,9 @@ module.exports = {
     ],
 
     output: {
-        path: __dirname + '/output',
+        path      : __dirname + '/output',
         publicPath: '/output/',
-        filename: 'index.js'
+        filename  : 'index.js'
     },
 
     externals: externals,
@@ -20,38 +20,38 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.(tsx|ts)?$/,
+                test   : /\.(tsx|ts)?$/,
                 exclude: [/node_modules/, /demo\/lists/],
-                loaders: ['react-hot-loader', 'ts-loader', 'html-path-loader']
+                loaders: ['react-hot-loader', 'babel', 'ts-loader', 'html-path-loader']
             }, {
-                test: /\.(jsx|js|es6)?$/,
+                test   : /\.(jsx|js|es6)?$/,
                 exclude: [/node_modules/, /demo\/lists/],
                 loaders: ['react-hot-loader', 'babel', 'html-path-loader']
             }, {
-                test: /\.(jsx|js|es6)?$/,
+                test   : /\.(jsx|js|es6)?$/,
                 include: [/demo/],
                 loaders: ['html-path-loader']
             }, {
-                test: /\.(scss|css)/,
+                test   : /\.(scss|css)/,
                 exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
-                loader: extractSCSS.extract('style', 'css!autoprefixer!sass!css-path-loader')
+                loader : extractSCSS.extract('style', 'css!autoprefixer!sass!css-path-loader')
             },
             {
-                test: /\.(scss|css)/,
+                test   : /\.(scss|css)/,
                 include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
-                loader: extractSCSS.extract('style', 'css!autoprefixer!sass')
+                loader : extractSCSS.extract('style', 'css!autoprefixer!sass')
             }, {
-                test: /\.(png|jpg)$/,
+                test   : /\.(png|jpg)$/,
                 exclude: /node_modules/,
-                loader: 'url?limit=3000&name=img/[hash:8].[name].[ext]'
+                loader : 'url?limit=3000&name=img/[hash:8].[name].[ext]'
             }, {
-                test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test  : /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'url?limit=3000&name=font/[hash:8].[name].[ext]'
             }, {
-                test: /\.json$/,
+                test  : /\.json$/,
                 loader: 'json-loader'
             }, {
-                test: /\.md$/,
+                test  : /\.md$/,
                 loader: 'text-loader'
             }
         ]

@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.4.11
+
+- `fit-tag` 源码已改为 `typescript`
+
 #### 2016.4.7
 
 - `fit-button` 源码已改为 `typescript`
