@@ -35,6 +35,10 @@
                     import SizeCode from 'text!../../../../lib/pc/modal/demo/lists/size.js'
                     import SizeMarkdown from '../../../../lib/pc/modal/demo/lists/size.md'
                     
+                    import BackdropComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/modal/demo/lists/backdrop.js'
+                    import BackdropCode from 'text!../../../../lib/pc/modal/demo/lists/backdrop.js'
+                    import BackdropMarkdown from '../../../../lib/pc/modal/demo/lists/backdrop.md'
+                    
 
                 const colStyle = {
                     padding: 10
@@ -104,6 +108,16 @@
                                       code={SizeCode}>
 
                                     <SizeComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BackdropMarkdown}
+                                      code={BackdropCode}>
+
+                                    <BackdropComponent/>
 
                             </CodeView>
                         </Col>
