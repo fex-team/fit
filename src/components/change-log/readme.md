@@ -1,5 +1,10 @@
 ### 改动日志
 
+#### 2016.4.12
+
+- `fit-modal` 设置 `backdropClickToClose` 控制点击背景幕是否自动关闭模态框
+- `fit-modal` 设置 `size` 控制模态框大小
+
 #### 2016.4.11
 
 - `fit-tag` 源码已改为 `typescript`
