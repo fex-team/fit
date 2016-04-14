@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.4.14
+
+- `fit-table` `edit`:`beforeSend` 参数改为 `rowInfo:Object`, `key:string`, `editValue:any` 分别是:当前修改行信息,当前修改key,当前修改后的值
+
 #### 2016.4.12
 
 - `fit-modal` 设置 `backdropClickToClose` 控制点击背景幕是否自动关闭模态框
