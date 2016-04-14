@@ -102,6 +102,9 @@ const deleteDemoJsxAndJs = (info)=> {
 }
 
 const syncCnpm = (info)=> {
+    // 贴吧组件不同步
+    if (info.categoryName === 'tb')return
+
     consoleLog(`cnpm 开始同步..`, 'grey', getModulePath(info))
     exec(`cnpm sync ${info.categoryInfo.prefix}-${info.module.path}`, (err)=> {
         if (err) {
