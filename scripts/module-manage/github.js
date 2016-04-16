@@ -31,8 +31,8 @@ const addRemoteGithub = (info)=> {
 }
 
 const push = (info)=> {
-    // 忽略贴吧组件
-    if (info.categoryName === 'tb')return
+    // 忽略贴吧组件 根目录可以提交
+    if (info && info.categoryName === 'tb')return
 
     try {
         if (!info) {
