@@ -75,10 +75,18 @@ const mkComponents = (config)=> {
                 if (sourceArray.length > 0) {
                     sourceArray.map((sourceItem)=> {
                         let sourceItemFileName = _.kebabCase(sourceItem)
-                        sourceImport += `
+
+                        if (fs.existsSync(sourceRootArray + '.tsx')) {
+                            sourceImport += `
+                        import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/index.tsx'
+                        import ${sourceItem}SourceCode from 'text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/index.tsx'
+                        `
+                        } else {
+                            sourceImport += `
                         import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
                         import ${sourceItem}SourceCode from 'text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
                         `
+                        }
 
                         sourceString += `
                         <div style={docStyle}>
