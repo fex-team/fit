@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.4.16
+
+- `fit-badge` `fit-reset` `fit-scale` 源码已改为 `typescript`
+
 #### 2016.4.14
 
 - `fit-table` `edit`:`beforeSend` 参数改为 `rowInfo:Object`, `key:string`, `editValue:any` 分别是:当前修改行信息,当前修改key,当前修改后的值
