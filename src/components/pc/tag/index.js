@@ -14,8 +14,8 @@
                 const store = createStore()
 
                 
-                        import TagSource from '../../../../lib/pc/tag/src/tag'
-                        import TagSourceCode from 'text!../../../../lib/pc/tag/src/tag'
+                        import TagSource from '../../../../lib/pc/tag/src/tag/index.tsx'
+                        import TagSourceCode from 'text!../../../../lib/pc/tag/src/tag/index.tsx'
                         
 
                 

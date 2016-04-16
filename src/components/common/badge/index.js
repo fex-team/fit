@@ -14,8 +14,8 @@
                 const store = createStore()
 
                 
-                        import BadgeSource from '../../../../lib/common/badge/src/badge'
-                        import BadgeSourceCode from 'text!../../../../lib/common/badge/src/badge'
+                        import BadgeSource from '../../../../lib/common/badge/src/badge/index.tsx'
+                        import BadgeSourceCode from 'text!../../../../lib/common/badge/src/badge/index.tsx'
                         
 
                 

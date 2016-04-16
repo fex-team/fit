@@ -14,8 +14,8 @@
                 const store = createStore()
 
                 
-                        import TimeagoSource from '../../../../lib/common/timeago/src/timeago'
-                        import TimeagoSourceCode from 'text!../../../../lib/common/timeago/src/timeago'
+                        import TimeagoSource from '../../../../lib/common/timeago/src/timeago/index.tsx'
+                        import TimeagoSourceCode from 'text!../../../../lib/common/timeago/src/timeago/index.tsx'
                         
 
                 

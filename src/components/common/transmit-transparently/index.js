@@ -14,11 +14,11 @@
                 const store = createStore()
 
                 
-                        import TransmitTransparentlySource from '../../../../lib/common/transmit-transparently/src/transmit-transparently'
-                        import TransmitTransparentlySourceCode from 'text!../../../../lib/common/transmit-transparently/src/transmit-transparently'
+                        import TransmitTransparentlySource from '../../../../lib/common/transmit-transparently/src/transmit-transparently/index.tsx'
+                        import TransmitTransparentlySourceCode from 'text!../../../../lib/common/transmit-transparently/src/transmit-transparently/index.tsx'
                         
-                        import othersSource from '../../../../lib/common/transmit-transparently/src/others'
-                        import othersSourceCode from 'text!../../../../lib/common/transmit-transparently/src/others'
+                        import othersSource from '../../../../lib/common/transmit-transparently/src/others/index.tsx'
+                        import othersSourceCode from 'text!../../../../lib/common/transmit-transparently/src/others/index.tsx'
                         
 
                 

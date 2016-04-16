@@ -14,11 +14,11 @@
                 const store = createStore()
 
                 
-                        import ButtonSource from '../../../../lib/pc/button/src/button'
-                        import ButtonSourceCode from 'text!../../../../lib/pc/button/src/button'
+                        import ButtonSource from '../../../../lib/pc/button/src/button/index.tsx'
+                        import ButtonSourceCode from 'text!../../../../lib/pc/button/src/button/index.tsx'
                         
-                        import ButtonGroupSource from '../../../../lib/pc/button/src/button-group'
-                        import ButtonGroupSourceCode from 'text!../../../../lib/pc/button/src/button-group'
+                        import ButtonGroupSource from '../../../../lib/pc/button/src/button-group/index.tsx'
+                        import ButtonGroupSourceCode from 'text!../../../../lib/pc/button/src/button-group/index.tsx'
                         
 
                 
