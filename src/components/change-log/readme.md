@@ -1,5 +1,10 @@
 ### 改动日志
 
+#### 2016.4.17
+
+- `fit-render-to` 源码已改为 `typescript`
+- `tb-share` `tb-track` 源码已改为 `typescript`
+
 #### 2016.4.16
 
 - `fit-badge` `fit-reset` `fit-scale` 源码已改为 `typescript`
