@@ -14,13 +14,13 @@
                 const store = createStore()
 
                 
-                        import ShareSource from '../../../../lib/tb/share/src/share'
-                        import ShareSourceCode from 'text!../../../../lib/tb/share/src/share'
+                        import ShareSource from '../../../../lib/tb/share/src/share/index.tsx'
+                        import ShareSourceCode from 'text!../../../../lib/tb/share/src/share/index.tsx'
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/share/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/tb/share/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/share/demo/lists/basic.tsx'
+                    import BasicCode from 'text!../../../../lib/tb/share/demo/lists/basic.tsx'
                     import BasicMarkdown from '../../../../lib/tb/share/demo/lists/basic.md'
                     
 

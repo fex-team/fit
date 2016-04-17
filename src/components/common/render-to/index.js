@@ -8,20 +8,20 @@
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import SidebarComponent from '../../../../components/side-bar'
-                import readme from '../../../../lib/tb/track/readme.md'
-                import '../../../../lib/tb/track/demo'
+                import readme from '../../../../lib/common/render-to/readme.md'
+                import '../../../../lib/common/render-to/demo'
 
                 const store = createStore()
 
                 
-                        import trackSource from '../../../../lib/tb/track/src/track'
-                        import trackSourceCode from 'text!../../../../lib/tb/track/src/track'
+                        import RenderToSource from '../../../../lib/common/render-to/src/render-to/index.tsx'
+                        import RenderToSourceCode from 'text!../../../../lib/common/render-to/src/render-to/index.tsx'
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/track/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/tb/track/demo/lists/basic.tsx'
-                    import BasicMarkdown from '../../../../lib/tb/track/demo/lists/basic.md'
+                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/common/render-to/demo/lists/basic.tsx'
+                    import BasicCode from 'text!../../../../lib/common/render-to/demo/lists/basic.tsx'
+                    import BasicMarkdown from '../../../../lib/common/render-to/demo/lists/basic.md'
                     
 
                 const colStyle = {
@@ -39,7 +39,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = '日志请求'
+                        document.title = '任意渲染'
                     }
 
                     handlePageChange(value) {
@@ -74,7 +74,7 @@
                                 <div>
                                     
                         <div style={docStyle}>
-                            <CodeDoc code={trackSourceCode} instance={trackSource} />
+                            <CodeDoc code={RenderToSourceCode} instance={RenderToSource} />
                         </div>
                         
                                 </div>
@@ -93,7 +93,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width="120">
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/tb-track/tree/master"
+                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/render-to/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>

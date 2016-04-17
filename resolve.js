@@ -10,6 +10,8 @@
                 
                 'fit-badge': path.join(__dirname, 'lib/common/badge/src'),
                 
+                'fit-render-to': path.join(__dirname, 'lib/common/render-to/src'),
+                
                 'fit-transmit-transparently': path.join(__dirname, 'lib/common/transmit-transparently/src'),
                 
         // pc
@@ -35,8 +37,6 @@
                 'fit-json-tree': path.join(__dirname, 'lib/pc/json-tree/src'),
                 
                 'fit-image': path.join(__dirname, 'lib/pc/image/src'),
-                
-                'fit-render-to': path.join(__dirname, 'lib/pc/render-to/src'),
                 
                 'fit-scroll-listen': path.join(__dirname, 'lib/pc/scroll-listen/src'),
                 

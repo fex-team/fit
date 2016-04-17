@@ -61,11 +61,6 @@ const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                     },
                     
                     {
-                        title: '组件嵌入 RenderTo',
-                        path: '/pc/render-to'
-                    },
-                    
-                    {
                         title: '滚动监听 ScrollListen',
                         path: '/pc/scroll-listen'
                     },

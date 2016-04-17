@@ -27,6 +27,8 @@
                 
                 import fitBadgeComponent from './components/common/badge'
                 
+                import fitRenderToComponent from './components/common/render-to'
+                
                 import fitTransmitTransparentlyComponent from './components/common/transmit-transparently'
                 
         // pc
@@ -52,8 +54,6 @@
                 import fitJsonTreeComponent from './components/pc/json-tree'
                 
                 import fitImageComponent from './components/pc/image'
-                
-                import fitRenderToComponent from './components/pc/render-to'
                 
                 import fitScrollListenComponent from './components/pc/scroll-listen'
                 
@@ -153,6 +153,9 @@
                 <Route path="badge"
                        component={fitBadgeComponent}/>
                 
+                <Route path="render-to"
+                       component={fitRenderToComponent}/>
+                
                 <Route path="transmit-transparently"
                        component={fitTransmitTransparentlyComponent}/>
                 
@@ -194,9 +197,6 @@
                 
                 <Route path="image"
                        component={fitImageComponent}/>
-                
-                <Route path="render-to"
-                       component={fitRenderToComponent}/>
                 
                 <Route path="scroll-listen"
                        component={fitScrollListenComponent}/>
