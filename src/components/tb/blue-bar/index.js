@@ -14,21 +14,21 @@
                 const store = createStore()
 
                 
-                        import BlueBarSource from '../../../../lib/tb/blue-bar/src/blue-bar'
-                        import BlueBarSourceCode from 'text!../../../../lib/tb/blue-bar/src/blue-bar'
+                        import BlueBarSource from '../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
+                        import BlueBarSourceCode from 'text!../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/blue-bar/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/tb/blue-bar/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/blue-bar/demo/lists/basic.tsx'
+                    import BasicCode from 'text!../../../../lib/tb/blue-bar/demo/lists/basic.tsx'
                     import BasicMarkdown from '../../../../lib/tb/blue-bar/demo/lists/basic.md'
                     
-                    import FixedComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/blue-bar/demo/lists/fixed.js'
-                    import FixedCode from 'text!../../../../lib/tb/blue-bar/demo/lists/fixed.js'
+                    import FixedComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/blue-bar/demo/lists/fixed.tsx'
+                    import FixedCode from 'text!../../../../lib/tb/blue-bar/demo/lists/fixed.tsx'
                     import FixedMarkdown from '../../../../lib/tb/blue-bar/demo/lists/fixed.md'
                     
-                    import ShareComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/blue-bar/demo/lists/share.js'
-                    import ShareCode from 'text!../../../../lib/tb/blue-bar/demo/lists/share.js'
+                    import ShareComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/blue-bar/demo/lists/share.tsx'
+                    import ShareCode from 'text!../../../../lib/tb/blue-bar/demo/lists/share.tsx'
                     import ShareMarkdown from '../../../../lib/tb/blue-bar/demo/lists/share.md'
                     
 

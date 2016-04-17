@@ -14,6 +14,12 @@
                         "path": "badge"
                     }
                 ],
+                "展示辅助":[
+                    {
+                        "name": "任意渲染",
+                        "path": "render-to"
+                    }
+                ],
                 "代码工具": [
                     {
                         "name": "透传",
@@ -72,10 +78,6 @@
                     {
                         "name": "图片容器",
                         "path": "image"
-                    },
-                    {
-                        "name": "组件嵌入",
-                        "path": "render-to"
                     },
                     {
                         "name": "滚动监听",

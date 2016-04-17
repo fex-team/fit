@@ -3,6 +3,7 @@
 #### 2016.4.16
 
 - `fit-badge` `fit-reset` `fit-scale` 源码已改为 `typescript`
+- `fit-render-to` 可以任意渲染组件到任何dom结构上,移动到通用组件
 
 #### 2016.4.14
 

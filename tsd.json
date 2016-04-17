@@ -25,6 +25,9 @@
     },
     "classnames/classnames.d.ts": {
       "commit": "e8f8e7471b8ca92ca417f8c878f64ae4d1067972"
+    },
+    "platform/platform.d.ts": {
+      "commit": "94d8775a947f626269b06ccadd6f5e61839389d0"
     }
   }
 }
