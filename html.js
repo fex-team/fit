@@ -22,7 +22,6 @@ module.exports = function (args) {
     <div id='react-dom'></div>
     </body>
     <script src="/output/cdn/React.js"></script>
-    <script src="/output/cdn/ReactDOM.js"></script>
     <script src="/output/cdn/ReactRouter.js"></script>
     <script src="/output/cdn/classNames.js"></script>
     <script src="/output/cdn/_.js"></script>

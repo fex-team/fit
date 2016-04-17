@@ -4,7 +4,6 @@ var path = require('path')
 var config = {
     entry: {
         React: "./node_modules/react",
-        ReactDOM: "./node_modules/react-dom/dist/react-dom.min.js",
         ReactRouter: './node_modules/react-router/umd/ReactRouter.min.js',
         classNames: './node_modules/classnames',
         _: './node_modules/lodash',
