@@ -14,13 +14,13 @@
                 const store = createStore()
 
                 
-                        import CaptchaSource from '../../../../lib/tb/captcha/src/captcha'
-                        import CaptchaSourceCode from 'text!../../../../lib/tb/captcha/src/captcha'
+                        import CaptchaSource from '../../../../lib/tb/captcha/src/captcha/index.tsx'
+                        import CaptchaSourceCode from 'text!../../../../lib/tb/captcha/src/captcha/index.tsx'
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/captcha/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/tb/captcha/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/captcha/demo/lists/basic.tsx'
+                    import BasicCode from 'text!../../../../lib/tb/captcha/demo/lists/basic.tsx'
                     import BasicMarkdown from '../../../../lib/tb/captcha/demo/lists/basic.md'
                     
 

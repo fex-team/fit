@@ -3,7 +3,7 @@
 #### 2016.4.17
 
 - `fit-render-to` 源码已改为 `typescript`
-- `tb-share` `tb-track` 源码已改为 `typescript`
+- `tb-share` `tb-track` `tb-captcha` `tb-icon` 源码已改为 `typescript`
 
 #### 2016.4.16
 
