@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router'
 import { Row, Col } from 'fit-layout'
 

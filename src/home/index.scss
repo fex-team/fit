@@ -1,162 +1,164 @@
 .hero {
-  height: 480px;
-  background-image: linear-gradient(225deg, #3e5673, #1b2530 86%, #1a242e 0);
-  .nav-bar {
-    display: flex;
-    padding-top: 15px;
-    .item {
-      font-weight: bold;
-      color: rgba(255, 255, 255, 0.5);
-      padding: 0 15px;
-      transition: color .3s;
-      display: flex;
-      align-items: center;
-      &:hover {
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.9);
-      }
-      &.brand {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 20px;
-      }
-      &.disabled {
+    height: 480px;
+    background-image: linear-gradient(225deg, #3e5673, #1b2530 86%, #1a242e 0);
+    .nav-bar {
+        display: flex;
+        padding-top: 15px;
+        .item {
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 0 15px;
+            transition: color .3s;
+            display: flex;
+            align-items: center;
+            &:hover {
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            &.brand {
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 20px;
+            }
+            &.disabled {
 
-      }
+            }
+        }
     }
-  }
-  .super-content {
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .brand {
-      font-weight: bold;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 45px;
+    .super-content {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .brand {
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 45px;
+        }
+        .description {
+            margin-top: 10px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 25px;
+        }
     }
-    .description {
-      margin-top: 10px;
-      font-weight: bold;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 25px;
-    }
-  }
 }
 
 .lists {
-  display: flex;
-  margin-top: 100px;
-  .left {
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    width: 0;
-    .title {
-      color: #333;
-      font-weight: bold;
-      font-size: 24px;
+    margin-top: 100px;
+    .left {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        width: 0;
+        .title {
+            color: #333;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .description {
+            font-size: 20px;
+            margin-top: 10px;
+        }
     }
-    .description {
-      font-size: 20px;
-      margin-top: 10px;
+    .right {
+        flex-grow: 1;
+        width: 0;
+        &.demo {
+            height: 420px;
+            background-image: url(./images/demo.png);
+            background-size: cover;
+        }
+        &.source {
+            height: 450px;
+            background-image: url(./images/source.png);
+            background-size: cover;
+        }
+        &.doc {
+            height: 350px;
+            background-image: url(./images/doc.png);
+            background-size: cover;
+        }
     }
-  }
-  .right {
-    flex-grow: 1;
-    width: 0;
-    &.demo {
-      height: 420px;
-      background-image: url(./images/demo.png);
-      background-size: cover;
-    }
-    &.source {
-      height: 450px;
-      background-image: url(./images/source.png);
-      background-size: cover;
-    }
-    &.doc {
-      height: 350px;
-      background-image: url(./images/doc.png);
-      background-size: cover;
-    }
-  }
 }
 
 .hr {
-  height: 1px;
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 100px 0;
+    height: 1px;
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 100px 0;
 }
 
 .footer {
-  margin-top: 100px;
-  background-color: #333;
-  color: whitesmoke;
-  height: 300px;
-  padding: 0 100px;
-  .split {
-    padding-top: 50px;
-    display: flex;
-    height: 250px;
-    .item {
-      flex-grow: 1;
-      width: 0;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-  }
-  .center {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  .title {
-    font-size: 16px;
-  }
-  .child {
-    padding: 10px 0;
-  }
-  a {
-    margin-left: 4px;
+    margin-top: 100px;
+    background-color: #333;
     color: whitesmoke;
-    &:hover {
-      text-decoration: none;
-      color: #1c9aa0;
+    height: 300px;
+    padding: 0 100px;
+    .split {
+        padding-top: 50px;
+        display: flex;
+        height: 250px;
+        .item {
+            flex-grow: 1;
+            width: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
     }
-  }
+    .center {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .title {
+        font-size: 16px;
+    }
+    .child {
+        padding: 10px 0;
+    }
+    a {
+        margin-left: 4px;
+        color: whitesmoke;
+        &:hover {
+            text-decoration: none;
+            color: #1c9aa0;
+        }
+    }
 }
 
 // reset input样式
 .lib-pc-input-src-input .input {
-  background-color: #303E58;
-  color: #9ECCF3;
-  border-color: #6B84B1;
-}
-
-.lib-pc-auto-complete-src-auto-complete .complete-container {
-  background-color: #303E58;
-  color: #799BD8;
-  border-color: #6B84B1;
-}
-
-.lib-pc-auto-complete-src-auto-complete .complete-container .item:hover:not(.active) {
-  background-color: #365173;
+    background-color: #303E58;
+    color: #9ECCF3;
+    border-color: #6B84B1;
 }
 
 ::-webkit-input-placeholder {
-  color: #799BD8;
+    color: #799BD8;
 }
 
-.lib-pc-auto-complete-src-auto-complete .complete-container .item:not(.active) .highlight {
-  color: #66E4A4;
-}
-
-.lib-pc-auto-complete-src-auto-complete .complete-container .item.active, .lib-pc-auto-complete-src-auto-complete .complete-container .item:hover, .lib-pc-auto-complete-src-auto-complete .complete-container .item:hover:not(.active) {
-  transition: text-shadow .2s;
-  background-color: #303E58;
-  text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 15px #fff, 0 0 19px #5aa3e2, 0 0 5px #5aa3e2;
-  color: #B4D7F5;
+// 设置科幻 auto-complete 样式
+.lib-pc-auto_complete-src-auto_complete {
+    .complete-container {
+        background-color: #303E58;
+        color: #799BD8;
+        border-color: #6B84B1;
+    }
+    .complete-container .item:hover:not(.active) {
+        background-color: #365173;
+    }
+    .complete-container .item:not(.active) .highlight {
+        color: #66E4A4;
+    }
+    .complete-container {
+        .item.active, .item:hover, .item:hover:not(.active) {
+            transition: text-shadow .2s;
+            background-color: #303E58;
+            text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 15px #fff, 0 0 19px #5aa3e2, 0 0 5px #5aa3e2;
+            color: #B4D7F5;
+        }
+    }
 }

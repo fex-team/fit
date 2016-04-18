@@ -148,7 +148,7 @@
                                         </ScrollListenBox>
                                     </Section>
                                     <Sidebar direction="right"
-                                             width="120">
+                                             width={120}>
                                         <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/pc-upload/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>

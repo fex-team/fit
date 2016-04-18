@@ -1,5 +1,8 @@
 ### 改动日志
 
+- 所有 'numberic string' 改成数字
+- 升级到 react 15.x 所有组件升级到 V3 大版本
+
 #### 2016.4.17
 
 - `fit-render-to` 源码已改为 `typescript`

@@ -108,7 +108,6 @@
     "yargs": "^4.6.0"
   },
   "dependencies": {
-    "bootstrap": "^3.3.6",
     "classnames": "^2.2.3",
     "conch": "0.0.0",
     "cropperjs": "^0.7.0",
@@ -121,7 +120,7 @@
     "humps": "^1.0.0",
     "immutable": "^3.8.0",
     "jbox": "^0.3.2",
-    "jquery": "^2.2.3",
+    "jquery": "^2.1.4",
     "jquery-mockjax": "git+https://github.com/andycall/jquery-mockjax.git",
     "lodash": "^3.10.1",
     "marked": "^0.3.5",

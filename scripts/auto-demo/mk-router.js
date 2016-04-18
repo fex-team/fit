@@ -55,8 +55,7 @@ const mkRouter = (categorys)=> {
 
     let text = `
         import React from 'react'
-        import { Router, Route, IndexRoute, Redirect } from 'react-router'
-        import { createHistory, useBasename } from 'history'
+        import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-router'
 
         import ComponentsLayout from './components/layout'
         import Home from './home'
@@ -69,12 +68,8 @@ const mkRouter = (categorys)=> {
 
         ${routerPath}
 
-        const history = useBasename(createHistory)({
-            basename: '/'
-        })
-
         const MainRouter = (
-            <Router history={history}>
+            <Router history={browserHistory}>
                 <Route path="/" component={Home}/>
                 <Route path="/components" component={Components}/>
                 <Route path="/components/write-standard" component={ComponentsWriteStandard}/>

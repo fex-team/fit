@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import {Link, Router} from 'react-router'
 import Button from 'fit-button'
 import SearchComponent from '../../components/search-components'
 import './index.scss'
@@ -29,7 +29,7 @@ export default class Home extends React.Component {
                         <div className="description"
                              style={{marginBottom:20}}>React 组件化解决方案
                         </div>
-                        <SearchComponent history={this.context.history}/>
+                        <SearchComponent/>
                     </div>
                 </div>
                 <div className="container">
@@ -91,8 +91,4 @@ export default class Home extends React.Component {
             </div>
         )
     }
-}
-
-Home.contextTypes = {
-    history: React.PropTypes.object
 }
