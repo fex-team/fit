@@ -8,7 +8,7 @@ const menuFactory = (data)=> {
             <Link key={index}
                   className="item"
                   activeClassName="active"
-                  to={`components${item.path}`}>
+                  to={`/components${item.path}`}>
                 {item.title}
             </Link>
         )

@@ -14,8 +14,7 @@ import './theme.scss'
 
 function getPageType(scope) {
     var url = scope.props.location.pathname.split('/')
-
-    return url[1]
+    return url[2]
 }
 
 export default class Layout extends React.Component {
