@@ -22,7 +22,7 @@ const updateModuleVirtual = (modulePath, name, version) => {
         changeModules[modulePath] = {
             modulePath: modulePath,
             name      : name,
-            version   : '3.0.0'
+            version   : semver.inc(version, 'patch')
         }
     }
 }
