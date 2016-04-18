@@ -80,3 +80,11 @@ npm run fis
 #### 构建工具不一致,会出 bug 吗?
 
 有可能,但我们已经尽可能的使 fis 兼容 webpack,一般不会遇到不一致的构建结果,如果不幸遇到了,可以在开发群里提问
+
+#### node_modules 是如何加速处理的?
+
+初始化 npm start 会将所有资源打成tar包加速传输,之后的watch改为传输 diff 文件
+
+#### 本地开发不想用后端渲染,怎么办?
+
+再 /server/action/index.es 的 `serverRender` 第三个参数设置为 `false` 即可
