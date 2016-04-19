@@ -19,12 +19,12 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/tag/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/pc/tag/demo/lists/basic.tsx'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/tag/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/tag/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/tag/demo/lists/basic.md'
                     
-                    import HandleComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/tag/demo/lists/handle.tsx'
-                    import HandleCode from 'text!../../../../lib/pc/tag/demo/lists/handle.tsx'
+                    import HandleComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/tag/demo/lists/handle.js'
+                    import HandleCode from 'text!../../../../lib/pc/tag/demo/lists/handle.js'
                     import HandleMarkdown from '../../../../lib/pc/tag/demo/lists/handle.md'
                     
 

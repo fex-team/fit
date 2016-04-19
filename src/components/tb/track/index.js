@@ -19,8 +19,8 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/track/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/tb/track/demo/lists/basic.tsx'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/track/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/tb/track/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/tb/track/demo/lists/basic.md'
                     
 

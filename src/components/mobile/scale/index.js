@@ -16,8 +16,8 @@
                 
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/scale/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/mobile/scale/demo/lists/basic.tsx'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/scale/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/mobile/scale/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/mobile/scale/demo/lists/basic.md'
                     
 

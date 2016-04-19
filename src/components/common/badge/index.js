@@ -19,28 +19,28 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/common/badge/demo/lists/basic.tsx'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/common/badge/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/common/badge/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/common/badge/demo/lists/basic.md'
                     
-                    import LimitComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/limit.tsx'
-                    import LimitCode from 'text!../../../../lib/common/badge/demo/lists/limit.tsx'
+                    import LimitComponent from 'react-hot-loader!babel-loader!../../../../lib/common/badge/demo/lists/limit.js'
+                    import LimitCode from 'text!../../../../lib/common/badge/demo/lists/limit.js'
                     import LimitMarkdown from '../../../../lib/common/badge/demo/lists/limit.md'
                     
-                    import StandAloneComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/stand-alone.tsx'
-                    import StandAloneCode from 'text!../../../../lib/common/badge/demo/lists/stand-alone.tsx'
+                    import StandAloneComponent from 'react-hot-loader!babel-loader!../../../../lib/common/badge/demo/lists/stand-alone.js'
+                    import StandAloneCode from 'text!../../../../lib/common/badge/demo/lists/stand-alone.js'
                     import StandAloneMarkdown from '../../../../lib/common/badge/demo/lists/stand-alone.md'
                     
-                    import DotComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/dot.tsx'
-                    import DotCode from 'text!../../../../lib/common/badge/demo/lists/dot.tsx'
+                    import DotComponent from 'react-hot-loader!babel-loader!../../../../lib/common/badge/demo/lists/dot.js'
+                    import DotCode from 'text!../../../../lib/common/badge/demo/lists/dot.js'
                     import DotMarkdown from '../../../../lib/common/badge/demo/lists/dot.md'
                     
-                    import CustomLimitComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/custom-limit.tsx'
-                    import CustomLimitCode from 'text!../../../../lib/common/badge/demo/lists/custom-limit.tsx'
+                    import CustomLimitComponent from 'react-hot-loader!babel-loader!../../../../lib/common/badge/demo/lists/custom-limit.js'
+                    import CustomLimitCode from 'text!../../../../lib/common/badge/demo/lists/custom-limit.js'
                     import CustomLimitMarkdown from '../../../../lib/common/badge/demo/lists/custom-limit.md'
                     
-                    import AnimateComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/animate.tsx'
-                    import AnimateCode from 'text!../../../../lib/common/badge/demo/lists/animate.tsx'
+                    import AnimateComponent from 'react-hot-loader!babel-loader!../../../../lib/common/badge/demo/lists/animate.js'
+                    import AnimateCode from 'text!../../../../lib/common/badge/demo/lists/animate.js'
                     import AnimateMarkdown from '../../../../lib/common/badge/demo/lists/animate.md'
                     
 

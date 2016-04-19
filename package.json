@@ -109,6 +109,7 @@
     "yargs": "^4.6.0"
   },
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "classnames": "^2.2.3",
     "conch": "0.0.0",
     "cropperjs": "^0.7.0",

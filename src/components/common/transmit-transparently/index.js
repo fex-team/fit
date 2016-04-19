@@ -22,8 +22,8 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/common/transmit-transparently/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/common/transmit-transparently/demo/lists/basic.tsx'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/common/transmit-transparently/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/common/transmit-transparently/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/common/transmit-transparently/demo/lists/basic.md'
                     
 

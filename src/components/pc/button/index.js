@@ -22,36 +22,36 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/button/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/pc/button/demo/lists/basic.tsx'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/button/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/pc/button/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/pc/button/demo/lists/basic.md'
                     
-                    import ActiveComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/button/demo/lists/active.tsx'
-                    import ActiveCode from 'text!../../../../lib/pc/button/demo/lists/active.tsx'
+                    import ActiveComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/button/demo/lists/active.js'
+                    import ActiveCode from 'text!../../../../lib/pc/button/demo/lists/active.js'
                     import ActiveMarkdown from '../../../../lib/pc/button/demo/lists/active.md'
                     
-                    import AddonComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/button/demo/lists/addon.tsx'
-                    import AddonCode from 'text!../../../../lib/pc/button/demo/lists/addon.tsx'
+                    import AddonComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/button/demo/lists/addon.js'
+                    import AddonCode from 'text!../../../../lib/pc/button/demo/lists/addon.js'
                     import AddonMarkdown from '../../../../lib/pc/button/demo/lists/addon.md'
                     
-                    import ColorComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/button/demo/lists/color.tsx'
-                    import ColorCode from 'text!../../../../lib/pc/button/demo/lists/color.tsx'
+                    import ColorComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/button/demo/lists/color.js'
+                    import ColorCode from 'text!../../../../lib/pc/button/demo/lists/color.js'
                     import ColorMarkdown from '../../../../lib/pc/button/demo/lists/color.md'
                     
-                    import GroupComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/button/demo/lists/group.tsx'
-                    import GroupCode from 'text!../../../../lib/pc/button/demo/lists/group.tsx'
+                    import GroupComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/button/demo/lists/group.js'
+                    import GroupCode from 'text!../../../../lib/pc/button/demo/lists/group.js'
                     import GroupMarkdown from '../../../../lib/pc/button/demo/lists/group.md'
                     
-                    import LoadingComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/button/demo/lists/loading.tsx'
-                    import LoadingCode from 'text!../../../../lib/pc/button/demo/lists/loading.tsx'
+                    import LoadingComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/button/demo/lists/loading.js'
+                    import LoadingCode from 'text!../../../../lib/pc/button/demo/lists/loading.js'
                     import LoadingMarkdown from '../../../../lib/pc/button/demo/lists/loading.md'
                     
-                    import RoundedComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/button/demo/lists/rounded.tsx'
-                    import RoundedCode from 'text!../../../../lib/pc/button/demo/lists/rounded.tsx'
+                    import RoundedComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/button/demo/lists/rounded.js'
+                    import RoundedCode from 'text!../../../../lib/pc/button/demo/lists/rounded.js'
                     import RoundedMarkdown from '../../../../lib/pc/button/demo/lists/rounded.md'
                     
-                    import SizeComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/button/demo/lists/size.tsx'
-                    import SizeCode from 'text!../../../../lib/pc/button/demo/lists/size.tsx'
+                    import SizeComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/button/demo/lists/size.js'
+                    import SizeCode from 'text!../../../../lib/pc/button/demo/lists/size.js'
                     import SizeMarkdown from '../../../../lib/pc/button/demo/lists/size.md'
                     
 

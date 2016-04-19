@@ -19,16 +19,16 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/blue-bar/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/tb/blue-bar/demo/lists/basic.tsx'
+                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/blue-bar/demo/lists/basic.js'
+                    import BasicCode from 'text!../../../../lib/tb/blue-bar/demo/lists/basic.js'
                     import BasicMarkdown from '../../../../lib/tb/blue-bar/demo/lists/basic.md'
                     
-                    import FixedComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/blue-bar/demo/lists/fixed.tsx'
-                    import FixedCode from 'text!../../../../lib/tb/blue-bar/demo/lists/fixed.tsx'
+                    import FixedComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/blue-bar/demo/lists/fixed.js'
+                    import FixedCode from 'text!../../../../lib/tb/blue-bar/demo/lists/fixed.js'
                     import FixedMarkdown from '../../../../lib/tb/blue-bar/demo/lists/fixed.md'
                     
-                    import ShareComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/blue-bar/demo/lists/share.tsx'
-                    import ShareCode from 'text!../../../../lib/tb/blue-bar/demo/lists/share.tsx'
+                    import ShareComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/blue-bar/demo/lists/share.js'
+                    import ShareCode from 'text!../../../../lib/tb/blue-bar/demo/lists/share.js'
                     import ShareMarkdown from '../../../../lib/tb/blue-bar/demo/lists/share.md'
                     
 
