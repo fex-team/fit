@@ -87,9 +87,14 @@ const deleteDTS = (info)=> {
     }
 }
 
-const deleteJSX = (info)=> {
+const deleteJSXAndJs = (info)=> {
     const modulePath = getModulePath(info)
     execSync(`find ${modulePath} -name "*.jsx" | xargs rm`)
+
+    // 如果入口文件是 tsx,再把 .js 文件删除
+    if (!fs.existsSync(`${moduleDirPaths}/index.tsx`)) {
+        execSync(`find ${modulePath} -name "*.js" | xargs rm`)
+    }
 }
 
 const deleteDemoJsxAndJs = (info)=> {
@@ -160,8 +165,8 @@ export default (info)=> {
         // 删除所有 .d.ts
         deleteDTS(info)
 
-        // 删除所有 jsx
-        deleteJSX(info)
+        // 删除所有 jsx 和 js
+        deleteJSXAndJs(info)
 
         // 清除 demo 不必要的文件 如果是 jsx
         deleteDemoJsxAndJs(info)
