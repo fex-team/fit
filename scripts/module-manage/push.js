@@ -93,7 +93,7 @@ const deleteJSXAndJs = (info)=> {
 
     // 如果入口文件是 tsx,再把 .js 文件删除
     if (!fs.existsSync(`${modulePath}/index.tsx`)) {
-        console.log(modulePath)
+        console.log('删除js', modulePath)
         //execSync(`find ${modulePath} -name "*.js" | xargs rm`)
     }
 }
