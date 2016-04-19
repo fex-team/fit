@@ -22,7 +22,13 @@
         
         // common
         
+                import fitTimeagoComponent from './components/common/timeago'
+                
+                import fitBadgeComponent from './components/common/badge'
+                
                 import fitRenderToComponent from './components/common/render-to'
+                
+                import fitTransmitTransparentlyComponent from './components/common/transmit-transparently'
                 
         // pc
         
@@ -126,8 +132,17 @@
                component={ComponentsLayout}>
             <IndexRoute component={commonHome}/>
         
+                <Route path="timeago"
+                       component={fitTimeagoComponent}/>
+                
+                <Route path="badge"
+                       component={fitBadgeComponent}/>
+                
                 <Route path="render-to"
                        component={fitRenderToComponent}/>
+                
+                <Route path="transmit-transparently"
+                       component={fitTransmitTransparentlyComponent}/>
                 
         </Route>
         
