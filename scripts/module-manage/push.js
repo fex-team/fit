@@ -129,7 +129,7 @@ const publish = (info)=> {
 export default (info)=> {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
-    if (hasChange && info.categoryName !== 'tb') {
+    if (hasChange) {
         // 先删除 lib 目录
         deleteLib(info)
 
