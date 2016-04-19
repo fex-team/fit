@@ -16,8 +16,8 @@
                 
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/mobile/reset/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/mobile/reset/demo/lists/basic.js'
+                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/reset/demo/lists/basic.tsx'
+                    import BasicCode from 'text!../../../../lib/mobile/reset/demo/lists/basic.tsx'
                     import BasicMarkdown from '../../../../lib/mobile/reset/demo/lists/basic.md'
                     
 

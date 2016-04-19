@@ -152,8 +152,10 @@ export default (info)=> {
         publish(info)
         consoleLog('发布完成', 'green', getModulePath(info))
 
-        // 删除 lib目录
-        deleteLib(info)
+        // 如果不是 tb 组件,删除 lib目录
+        if (info.categoryName !== 'tb') {
+            deleteLib(info)
+        }
 
         // 删除所有 .d.ts
         deleteDTS(info)
