@@ -19,22 +19,6 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/chat-box/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/mobile/chat-box/demo/lists/basic.tsx'
-                    import BasicMarkdown from '../../../../lib/mobile/chat-box/demo/lists/basic.md'
-                    
-                    import ReverseComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/chat-box/demo/lists/reverse.tsx'
-                    import ReverseCode from 'text!../../../../lib/mobile/chat-box/demo/lists/reverse.tsx'
-                    import ReverseMarkdown from '../../../../lib/mobile/chat-box/demo/lists/reverse.md'
-                    
-                    import BackBottomComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/chat-box/demo/lists/back-bottom.tsx'
-                    import BackBottomCode from 'text!../../../../lib/mobile/chat-box/demo/lists/back-bottom.tsx'
-                    import BackBottomMarkdown from '../../../../lib/mobile/chat-box/demo/lists/back-bottom.md'
-                    
-                    import LoadingComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/chat-box/demo/lists/loading.tsx'
-                    import LoadingCode from 'text!../../../../lib/mobile/chat-box/demo/lists/loading.tsx'
-                    import LoadingMarkdown from '../../../../lib/mobile/chat-box/demo/lists/loading.md'
-                    
 
                 const colStyle = {
                     padding: 10
@@ -68,46 +52,6 @@
                             Content = (
                                 <Row>
                                     
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={BasicMarkdown}
-                                      code={BasicCode}>
-
-                                    <BasicComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={ReverseMarkdown}
-                                      code={ReverseCode}>
-
-                                    <ReverseComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={BackBottomMarkdown}
-                                      code={BackBottomCode}>
-
-                                    <BackBottomComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={LoadingMarkdown}
-                                      code={LoadingCode}>
-
-                                    <LoadingComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
                                 </Row>
                             )
                             break

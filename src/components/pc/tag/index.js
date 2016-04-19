@@ -19,14 +19,6 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/tag/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/pc/tag/demo/lists/basic.tsx'
-                    import BasicMarkdown from '../../../../lib/pc/tag/demo/lists/basic.md'
-                    
-                    import HandleComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/tag/demo/lists/handle.tsx'
-                    import HandleCode from 'text!../../../../lib/pc/tag/demo/lists/handle.tsx'
-                    import HandleMarkdown from '../../../../lib/pc/tag/demo/lists/handle.md'
-                    
 
                 const colStyle = {
                     padding: 10
@@ -60,26 +52,6 @@
                             Content = (
                                 <Row>
                                     
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={BasicMarkdown}
-                                      code={BasicCode}>
-
-                                    <BasicComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={HandleMarkdown}
-                                      code={HandleCode}>
-
-                                    <HandleComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
                                 </Row>
                             )
                             break

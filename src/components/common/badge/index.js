@@ -19,30 +19,6 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/common/badge/demo/lists/basic.tsx'
-                    import BasicMarkdown from '../../../../lib/common/badge/demo/lists/basic.md'
-                    
-                    import LimitComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/limit.tsx'
-                    import LimitCode from 'text!../../../../lib/common/badge/demo/lists/limit.tsx'
-                    import LimitMarkdown from '../../../../lib/common/badge/demo/lists/limit.md'
-                    
-                    import StandAloneComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/stand-alone.tsx'
-                    import StandAloneCode from 'text!../../../../lib/common/badge/demo/lists/stand-alone.tsx'
-                    import StandAloneMarkdown from '../../../../lib/common/badge/demo/lists/stand-alone.md'
-                    
-                    import DotComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/dot.tsx'
-                    import DotCode from 'text!../../../../lib/common/badge/demo/lists/dot.tsx'
-                    import DotMarkdown from '../../../../lib/common/badge/demo/lists/dot.md'
-                    
-                    import CustomLimitComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/custom-limit.tsx'
-                    import CustomLimitCode from 'text!../../../../lib/common/badge/demo/lists/custom-limit.tsx'
-                    import CustomLimitMarkdown from '../../../../lib/common/badge/demo/lists/custom-limit.md'
-                    
-                    import AnimateComponent from 'react-hot-loader!ts-loader!../../../../lib/common/badge/demo/lists/animate.tsx'
-                    import AnimateCode from 'text!../../../../lib/common/badge/demo/lists/animate.tsx'
-                    import AnimateMarkdown from '../../../../lib/common/badge/demo/lists/animate.md'
-                    
 
                 const colStyle = {
                     padding: 10
@@ -76,66 +52,6 @@
                             Content = (
                                 <Row>
                                     
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={BasicMarkdown}
-                                      code={BasicCode}>
-
-                                    <BasicComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={LimitMarkdown}
-                                      code={LimitCode}>
-
-                                    <LimitComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={StandAloneMarkdown}
-                                      code={StandAloneCode}>
-
-                                    <StandAloneComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={DotMarkdown}
-                                      code={DotCode}>
-
-                                    <DotComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={CustomLimitMarkdown}
-                                      code={CustomLimitCode}>
-
-                                    <CustomLimitComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={AnimateMarkdown}
-                                      code={AnimateCode}>
-
-                                    <AnimateComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
                                 </Row>
                             )
                             break

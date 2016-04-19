@@ -22,21 +22,13 @@
         
         // common
         
-                import fitTimeagoComponent from './components/common/timeago'
-                
-                import fitBadgeComponent from './components/common/badge'
-                
                 import fitRenderToComponent from './components/common/render-to'
-                
-                import fitTransmitTransparentlyComponent from './components/common/transmit-transparently'
                 
         // pc
         
                 import fitLayoutGlobalComponent from './components/pc/layout-global'
                 
                 import fitLayoutComponent from './components/pc/layout'
-                
-                import fitButtonComponent from './components/pc/button'
                 
                 import fitPaginationComponent from './components/pc/pagination'
                 
@@ -55,8 +47,6 @@
                 import fitImageComponent from './components/pc/image'
                 
                 import fitScrollListenComponent from './components/pc/scroll-listen'
-                
-                import fitTagComponent from './components/pc/tag'
                 
                 import fitTooltipComponent from './components/pc/tooltip'
                 
@@ -100,10 +90,6 @@
                 
                 import fitScaleComponent from './components/mobile/scale'
                 
-                import fitChatComponent from './components/mobile/chat'
-                
-                import fitChatBoxComponent from './components/mobile/chat-box'
-                
         // tb
         
                 import tbColorComponent from './components/tb/color'
@@ -117,8 +103,6 @@
                 import tbSubmitComponent from './components/tb/submit'
                 
                 import tbShareComponent from './components/tb/share'
-                
-                import tbBlueBarComponent from './components/tb/blue-bar'
                 
                 import tbUploadComponent from './components/tb/upload'
                 
@@ -142,17 +126,8 @@
                component={ComponentsLayout}>
             <IndexRoute component={commonHome}/>
         
-                <Route path="timeago"
-                       component={fitTimeagoComponent}/>
-                
-                <Route path="badge"
-                       component={fitBadgeComponent}/>
-                
                 <Route path="render-to"
                        component={fitRenderToComponent}/>
-                
-                <Route path="transmit-transparently"
-                       component={fitTransmitTransparentlyComponent}/>
                 
         </Route>
         
@@ -165,9 +140,6 @@
                 
                 <Route path="layout"
                        component={fitLayoutComponent}/>
-                
-                <Route path="button"
-                       component={fitButtonComponent}/>
                 
                 <Route path="pagination"
                        component={fitPaginationComponent}/>
@@ -195,9 +167,6 @@
                 
                 <Route path="scroll-listen"
                        component={fitScrollListenComponent}/>
-                
-                <Route path="tag"
-                       component={fitTagComponent}/>
                 
                 <Route path="tooltip"
                        component={fitTooltipComponent}/>
@@ -265,12 +234,6 @@
                 <Route path="scale"
                        component={fitScaleComponent}/>
                 
-                <Route path="chat"
-                       component={fitChatComponent}/>
-                
-                <Route path="chat-box"
-                       component={fitChatBoxComponent}/>
-                
         </Route>
         
         <Route path="/components/tb"
@@ -294,9 +257,6 @@
                 
                 <Route path="share"
                        component={tbShareComponent}/>
-                
-                <Route path="blue-bar"
-                       component={tbBlueBarComponent}/>
                 
                 <Route path="upload"
                        component={tbUploadComponent}/>

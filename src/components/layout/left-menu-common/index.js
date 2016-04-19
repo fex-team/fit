@@ -3,29 +3,14 @@
         import menuFactory from '../menu-factory'
 
         
-const menu35b4b419fa4b8c97858f967daf196f96 = [
-                    {
-                        title: '友好时间 Timeago',
-                        path: '/common/timeago'
-                    },
-                    
-                    {
-                        title: '徽标数 Badge',
-                        path: '/common/badge'
-                    },
-                    ]
+const menu35b4b419fa4b8c97858f967daf196f96 = []
 const menu91c813f98aa65cf79ea90750f463b6f5 = [
                     {
                         title: '任意渲染 RenderTo',
                         path: '/common/render-to'
                     },
                     ]
-const menu83b5c25c39e6342cb2a7e4a56205f4d4 = [
-                    {
-                        title: '透传 TransmitTransparently',
-                        path: '/common/transmit-transparently'
-                    },
-                    ]
+const menu83b5c25c39e6342cb2a7e4a56205f4d4 = []
 
         export default class Layout extends React.Component {
             constructor(props) {

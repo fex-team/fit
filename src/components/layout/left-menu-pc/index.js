@@ -13,11 +13,6 @@ const menu4092ed98e9035652d4c9ca9441701ed7 = [
                         title: '布局 Layout',
                         path: '/pc/layout'
                     },
-                    
-                    {
-                        title: '按钮 Button',
-                        path: '/pc/button'
-                    },
                     ]
 const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                     {
@@ -63,11 +58,6 @@ const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                     {
                         title: '滚动监听 ScrollListen',
                         path: '/pc/scroll-listen'
-                    },
-                    
-                    {
-                        title: '标签 Tag',
-                        path: '/pc/tag'
                     },
                     
                     {
