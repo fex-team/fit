@@ -25,30 +25,30 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/pc/select/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/pc/select/demo/lists/basic.md'
-                    
-                    import DisabledComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/disabled.js'
-                    import DisabledCode from 'text!../../../../lib/pc/select/demo/lists/disabled.js'
-                    import DisabledMarkdown from '../../../../lib/pc/select/demo/lists/disabled.md'
-                    
-                    import GroupComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/group.js'
-                    import GroupCode from 'text!../../../../lib/pc/select/demo/lists/group.js'
-                    import GroupMarkdown from '../../../../lib/pc/select/demo/lists/group.md'
-                    
-                    import LabelComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/label.js'
-                    import LabelCode from 'text!../../../../lib/pc/select/demo/lists/label.js'
-                    import LabelMarkdown from '../../../../lib/pc/select/demo/lists/label.md'
-                    
-                    import SearchComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/search.js'
-                    import SearchCode from 'text!../../../../lib/pc/select/demo/lists/search.js'
-                    import SearchMarkdown from '../../../../lib/pc/select/demo/lists/search.md'
-                    
-                    import SimpleComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/simple.js'
-                    import SimpleCode from 'text!../../../../lib/pc/select/demo/lists/simple.js'
-                    import SimpleMarkdown from '../../../../lib/pc/select/demo/lists/simple.md'
-                    
+                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/basic.js'
+                        import BasicCode from 'text!../../../../lib/pc/select/demo/lists/basic.js'
+                        import BasicMarkdown from '../../../../lib/pc/select/demo/lists/basic.md'
+                        
+                        import DisabledComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/disabled.js'
+                        import DisabledCode from 'text!../../../../lib/pc/select/demo/lists/disabled.js'
+                        import DisabledMarkdown from '../../../../lib/pc/select/demo/lists/disabled.md'
+                        
+                        import GroupComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/group.js'
+                        import GroupCode from 'text!../../../../lib/pc/select/demo/lists/group.js'
+                        import GroupMarkdown from '../../../../lib/pc/select/demo/lists/group.md'
+                        
+                        import LabelComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/label.js'
+                        import LabelCode from 'text!../../../../lib/pc/select/demo/lists/label.js'
+                        import LabelMarkdown from '../../../../lib/pc/select/demo/lists/label.md'
+                        
+                        import SearchComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/search.js'
+                        import SearchCode from 'text!../../../../lib/pc/select/demo/lists/search.js'
+                        import SearchMarkdown from '../../../../lib/pc/select/demo/lists/search.md'
+                        
+                        import SimpleComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/select/demo/lists/simple.js'
+                        import SimpleCode from 'text!../../../../lib/pc/select/demo/lists/simple.js'
+                        import SimpleMarkdown from '../../../../lib/pc/select/demo/lists/simple.md'
+                        
 
                 const colStyle = {
                     padding: 10

@@ -19,26 +19,26 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/pc/upload/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/pc/upload/demo/lists/basic.md'
-                    
-                    import ButtonComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/button.js'
-                    import ButtonCode from 'text!../../../../lib/pc/upload/demo/lists/button.js'
-                    import ButtonMarkdown from '../../../../lib/pc/upload/demo/lists/button.md'
-                    
-                    import FilesComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/files.js'
-                    import FilesCode from 'text!../../../../lib/pc/upload/demo/lists/files.js'
-                    import FilesMarkdown from '../../../../lib/pc/upload/demo/lists/files.md'
-                    
-                    import DragComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/drag.js'
-                    import DragCode from 'text!../../../../lib/pc/upload/demo/lists/drag.js'
-                    import DragMarkdown from '../../../../lib/pc/upload/demo/lists/drag.md'
-                    
-                    import DemoComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/demo.js'
-                    import DemoCode from 'text!../../../../lib/pc/upload/demo/lists/demo.js'
-                    import DemoMarkdown from '../../../../lib/pc/upload/demo/lists/demo.md'
-                    
+                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/basic.js'
+                        import BasicCode from 'text!../../../../lib/pc/upload/demo/lists/basic.js'
+                        import BasicMarkdown from '../../../../lib/pc/upload/demo/lists/basic.md'
+                        
+                        import ButtonComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/button.js'
+                        import ButtonCode from 'text!../../../../lib/pc/upload/demo/lists/button.js'
+                        import ButtonMarkdown from '../../../../lib/pc/upload/demo/lists/button.md'
+                        
+                        import FilesComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/files.js'
+                        import FilesCode from 'text!../../../../lib/pc/upload/demo/lists/files.js'
+                        import FilesMarkdown from '../../../../lib/pc/upload/demo/lists/files.md'
+                        
+                        import DragComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/drag.js'
+                        import DragCode from 'text!../../../../lib/pc/upload/demo/lists/drag.js'
+                        import DragMarkdown from '../../../../lib/pc/upload/demo/lists/drag.md'
+                        
+                        import DemoComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/demo.js'
+                        import DemoCode from 'text!../../../../lib/pc/upload/demo/lists/demo.js'
+                        import DemoMarkdown from '../../../../lib/pc/upload/demo/lists/demo.md'
+                        
 
                 const colStyle = {
                     padding: 10

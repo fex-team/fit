@@ -16,10 +16,10 @@
                 
 
                 
-                    import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/reset/demo/lists/basic.tsx'
-                    import BasicCode from 'text!../../../../lib/mobile/reset/demo/lists/basic.tsx'
-                    import BasicMarkdown from '../../../../lib/mobile/reset/demo/lists/basic.md'
-                    
+                        import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/mobile/reset/demo/lists/basic.tsx'
+                        import BasicCode from 'text!../../../../lib/mobile/reset/demo/lists/basic.tsx'
+                        import BasicMarkdown from '../../../../lib/mobile/reset/demo/lists/basic.md'
+                        
 
                 const colStyle = {
                     padding: 10

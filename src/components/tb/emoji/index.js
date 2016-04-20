@@ -16,14 +16,14 @@
                 
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/emoji/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/tb/emoji/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/tb/emoji/demo/lists/basic.md'
-                    
-                    import ControlComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/emoji/demo/lists/control.js'
-                    import ControlCode from 'text!../../../../lib/tb/emoji/demo/lists/control.js'
-                    import ControlMarkdown from '../../../../lib/tb/emoji/demo/lists/control.md'
-                    
+                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/emoji/demo/lists/basic.js'
+                        import BasicCode from 'text!../../../../lib/tb/emoji/demo/lists/basic.js'
+                        import BasicMarkdown from '../../../../lib/tb/emoji/demo/lists/basic.md'
+                        
+                        import ControlComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/emoji/demo/lists/control.js'
+                        import ControlCode from 'text!../../../../lib/tb/emoji/demo/lists/control.js'
+                        import ControlMarkdown from '../../../../lib/tb/emoji/demo/lists/control.md'
+                        
 
                 const colStyle = {
                     padding: 10

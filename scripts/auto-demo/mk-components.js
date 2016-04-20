@@ -35,7 +35,7 @@ const mkComponents = (config)=> {
                     demoArray.map((demoItem)=> {
                         // 首字母大写demo名
                         const camelDemoName = _.capitalize(_.camelCase(demoItem.name))
-                        console.log(demoItem)
+                        console.log(component, item, categoryKey)
 
                         // loader 是 babel 还是 ts-loader
                         let loader = 'babel-loader'

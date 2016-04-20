@@ -19,10 +19,10 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/upload/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/tb/upload/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/tb/upload/demo/lists/basic.md'
-                    
+                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/upload/demo/lists/basic.js'
+                        import BasicCode from 'text!../../../../lib/tb/upload/demo/lists/basic.js'
+                        import BasicMarkdown from '../../../../lib/tb/upload/demo/lists/basic.md'
+                        
 
                 const colStyle = {
                     padding: 10

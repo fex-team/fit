@@ -19,18 +19,18 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/timepicker/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/pc/timepicker/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/pc/timepicker/demo/lists/basic.md'
-                    
-                    import LabelComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/timepicker/demo/lists/label.js'
-                    import LabelCode from 'text!../../../../lib/pc/timepicker/demo/lists/label.js'
-                    import LabelMarkdown from '../../../../lib/pc/timepicker/demo/lists/label.md'
-                    
-                    import LimitComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/timepicker/demo/lists/limit.js'
-                    import LimitCode from 'text!../../../../lib/pc/timepicker/demo/lists/limit.js'
-                    import LimitMarkdown from '../../../../lib/pc/timepicker/demo/lists/limit.md'
-                    
+                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/timepicker/demo/lists/basic.js'
+                        import BasicCode from 'text!../../../../lib/pc/timepicker/demo/lists/basic.js'
+                        import BasicMarkdown from '../../../../lib/pc/timepicker/demo/lists/basic.md'
+                        
+                        import LabelComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/timepicker/demo/lists/label.js'
+                        import LabelCode from 'text!../../../../lib/pc/timepicker/demo/lists/label.js'
+                        import LabelMarkdown from '../../../../lib/pc/timepicker/demo/lists/label.md'
+                        
+                        import LimitComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/timepicker/demo/lists/limit.js'
+                        import LimitCode from 'text!../../../../lib/pc/timepicker/demo/lists/limit.js'
+                        import LimitMarkdown from '../../../../lib/pc/timepicker/demo/lists/limit.md'
+                        
 
                 const colStyle = {
                     padding: 10

@@ -19,22 +19,22 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/auto-complete/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/pc/auto-complete/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/pc/auto-complete/demo/lists/basic.md'
-                    
-                    import LocalComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/auto-complete/demo/lists/local.js'
-                    import LocalCode from 'text!../../../../lib/pc/auto-complete/demo/lists/local.js'
-                    import LocalMarkdown from '../../../../lib/pc/auto-complete/demo/lists/local.md'
-                    
-                    import CustomParseComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/auto-complete/demo/lists/custom-parse.js'
-                    import CustomParseCode from 'text!../../../../lib/pc/auto-complete/demo/lists/custom-parse.js'
-                    import CustomParseMarkdown from '../../../../lib/pc/auto-complete/demo/lists/custom-parse.md'
-                    
-                    import CallbackComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/auto-complete/demo/lists/callback.js'
-                    import CallbackCode from 'text!../../../../lib/pc/auto-complete/demo/lists/callback.js'
-                    import CallbackMarkdown from '../../../../lib/pc/auto-complete/demo/lists/callback.md'
-                    
+                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/auto-complete/demo/lists/basic.js'
+                        import BasicCode from 'text!../../../../lib/pc/auto-complete/demo/lists/basic.js'
+                        import BasicMarkdown from '../../../../lib/pc/auto-complete/demo/lists/basic.md'
+                        
+                        import LocalComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/auto-complete/demo/lists/local.js'
+                        import LocalCode from 'text!../../../../lib/pc/auto-complete/demo/lists/local.js'
+                        import LocalMarkdown from '../../../../lib/pc/auto-complete/demo/lists/local.md'
+                        
+                        import CustomParseComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/auto-complete/demo/lists/custom-parse.js'
+                        import CustomParseCode from 'text!../../../../lib/pc/auto-complete/demo/lists/custom-parse.js'
+                        import CustomParseMarkdown from '../../../../lib/pc/auto-complete/demo/lists/custom-parse.md'
+                        
+                        import CallbackComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/auto-complete/demo/lists/callback.js'
+                        import CallbackCode from 'text!../../../../lib/pc/auto-complete/demo/lists/callback.js'
+                        import CallbackMarkdown from '../../../../lib/pc/auto-complete/demo/lists/callback.md'
+                        
 
                 const colStyle = {
                     padding: 10

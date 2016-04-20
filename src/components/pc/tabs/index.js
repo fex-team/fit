@@ -22,10 +22,10 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/tabs/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/pc/tabs/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/pc/tabs/demo/lists/basic.md'
-                    
+                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/tabs/demo/lists/basic.js'
+                        import BasicCode from 'text!../../../../lib/pc/tabs/demo/lists/basic.js'
+                        import BasicMarkdown from '../../../../lib/pc/tabs/demo/lists/basic.md'
+                        
 
                 const colStyle = {
                     padding: 10

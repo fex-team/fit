@@ -22,26 +22,26 @@
                         
 
                 
-                    import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/basic.js'
-                    import BasicCode from 'text!../../../../lib/pc/layout/demo/lists/basic.js'
-                    import BasicMarkdown from '../../../../lib/pc/layout/demo/lists/basic.md'
-                    
-                    import CenterComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/center.js'
-                    import CenterCode from 'text!../../../../lib/pc/layout/demo/lists/center.js'
-                    import CenterMarkdown from '../../../../lib/pc/layout/demo/lists/center.md'
-                    
-                    import FlexComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/flex.js'
-                    import FlexCode from 'text!../../../../lib/pc/layout/demo/lists/flex.js'
-                    import FlexMarkdown from '../../../../lib/pc/layout/demo/lists/flex.md'
-                    
-                    import OffsetComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/offset.js'
-                    import OffsetCode from 'text!../../../../lib/pc/layout/demo/lists/offset.js'
-                    import OffsetMarkdown from '../../../../lib/pc/layout/demo/lists/offset.md'
-                    
-                    import OrderComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/order.js'
-                    import OrderCode from 'text!../../../../lib/pc/layout/demo/lists/order.js'
-                    import OrderMarkdown from '../../../../lib/pc/layout/demo/lists/order.md'
-                    
+                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/basic.js'
+                        import BasicCode from 'text!../../../../lib/pc/layout/demo/lists/basic.js'
+                        import BasicMarkdown from '../../../../lib/pc/layout/demo/lists/basic.md'
+                        
+                        import CenterComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/center.js'
+                        import CenterCode from 'text!../../../../lib/pc/layout/demo/lists/center.js'
+                        import CenterMarkdown from '../../../../lib/pc/layout/demo/lists/center.md'
+                        
+                        import FlexComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/flex.js'
+                        import FlexCode from 'text!../../../../lib/pc/layout/demo/lists/flex.js'
+                        import FlexMarkdown from '../../../../lib/pc/layout/demo/lists/flex.md'
+                        
+                        import OffsetComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/offset.js'
+                        import OffsetCode from 'text!../../../../lib/pc/layout/demo/lists/offset.js'
+                        import OffsetMarkdown from '../../../../lib/pc/layout/demo/lists/offset.md'
+                        
+                        import OrderComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout/demo/lists/order.js'
+                        import OrderCode from 'text!../../../../lib/pc/layout/demo/lists/order.js'
+                        import OrderMarkdown from '../../../../lib/pc/layout/demo/lists/order.md'
+                        
 
                 const colStyle = {
                     padding: 10
