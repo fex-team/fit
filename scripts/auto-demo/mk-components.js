@@ -35,7 +35,7 @@ const mkComponents = (config)=> {
                     demoArray.map((demoItem)=> {
                         // 首字母大写demo名
                         const camelDemoName = _.capitalize(_.camelCase(demoItem.name))
-                        console.log(categorys[categoryKey].gitlabPrefix+'-'+component.path)
+                        console.log(categorys[categoryKey].prefix+'-'+component.path)
 
                         // loader 是 babel 还是 ts-loader
                         let loader = 'babel-loader'
