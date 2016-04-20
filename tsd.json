@@ -31,6 +31,12 @@
     },
     "canvasjs/canvasjs.d.ts": {
       "commit": "94d8775a947f626269b06ccadd6f5e61839389d0"
+    },
+    "superagent/superagent.d.ts": {
+      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+    },
+    "node/node.d.ts": {
+      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
     }
   }
 }
