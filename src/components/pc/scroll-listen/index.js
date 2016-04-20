@@ -68,7 +68,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-scroll-listen">
 
                                     <BasicComponent/>
 

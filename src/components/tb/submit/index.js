@@ -74,7 +74,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={PostMarkdown}
-                                      code={PostCode}>
+                                      code={PostCode}
+                                      npmName="tb-submit">
 
                                     <PostComponent/>
 
@@ -84,7 +85,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ReplyMarkdown}
-                                      code={ReplyCode}>
+                                      code={ReplyCode}
+                                      npmName="tb-submit">
 
                                     <ReplyComponent/>
 
@@ -94,7 +96,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CommentMarkdown}
-                                      code={CommentCode}>
+                                      code={CommentCode}
+                                      npmName="tb-submit">
 
                                     <CommentComponent/>
 
@@ -104,7 +107,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SingleMarkdown}
-                                      code={SingleCode}>
+                                      code={SingleCode}
+                                      npmName="tb-submit">
 
                                     <SingleComponent/>
 

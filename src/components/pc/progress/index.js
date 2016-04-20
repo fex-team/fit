@@ -78,7 +78,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-progress">
 
                                     <BasicComponent/>
 
@@ -88,7 +89,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={StatusMarkdown}
-                                      code={StatusCode}>
+                                      code={StatusCode}
+                                      npmName="fit-progress">
 
                                     <StatusComponent/>
 
@@ -98,7 +100,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CircleMarkdown}
-                                      code={CircleCode}>
+                                      code={CircleCode}
+                                      npmName="fit-progress">
 
                                     <CircleComponent/>
 
@@ -108,7 +111,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LabelMarkdown}
-                                      code={LabelCode}>
+                                      code={LabelCode}
+                                      npmName="fit-progress">
 
                                     <LabelComponent/>
 
@@ -118,7 +122,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LabelCircleMarkdown}
-                                      code={LabelCircleCode}>
+                                      code={LabelCircleCode}
+                                      npmName="fit-progress">
 
                                     <LabelCircleComponent/>
 

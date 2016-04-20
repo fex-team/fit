@@ -79,7 +79,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-tooltip">
 
                                     <BasicComponent/>
 
@@ -89,7 +90,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={RenderMarkdown}
-                                      code={RenderCode}>
+                                      code={RenderCode}
+                                      npmName="fit-tooltip">
 
                                     <RenderComponent/>
 
@@ -99,7 +101,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={PositionMarkdown}
-                                      code={PositionCode}>
+                                      code={PositionCode}
+                                      npmName="fit-tooltip">
 
                                     <PositionComponent/>
 
@@ -109,7 +112,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={StayMarkdown}
-                                      code={StayCode}>
+                                      code={StayCode}
+                                      npmName="fit-tooltip">
 
                                     <StayComponent/>
 
@@ -119,7 +123,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={TriggerMarkdown}
-                                      code={TriggerCode}>
+                                      code={TriggerCode}
+                                      npmName="fit-tooltip">
 
                                     <TriggerComponent/>
 
@@ -129,7 +134,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={FollowMarkdown}
-                                      code={FollowCode}>
+                                      code={FollowCode}
+                                      npmName="fit-tooltip">
 
                                     <FollowComponent/>
 

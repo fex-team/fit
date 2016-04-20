@@ -66,7 +66,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-tree">
 
                                     <BasicComponent/>
 
@@ -76,7 +77,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ExpendAllMarkdown}
-                                      code={ExpendAllCode}>
+                                      code={ExpendAllCode}
+                                      npmName="fit-tree">
 
                                     <ExpendAllComponent/>
 

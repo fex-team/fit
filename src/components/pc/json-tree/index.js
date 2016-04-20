@@ -63,7 +63,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-json-tree">
 
                                     <BasicComponent/>
 
@@ -73,7 +74,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={RootMarkdown}
-                                      code={RootCode}>
+                                      code={RootCode}
+                                      npmName="fit-json-tree">
 
                                     <RootComponent/>
 

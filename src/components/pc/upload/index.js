@@ -75,7 +75,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-upload">
 
                                     <BasicComponent/>
 
@@ -85,7 +86,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ButtonMarkdown}
-                                      code={ButtonCode}>
+                                      code={ButtonCode}
+                                      npmName="fit-upload">
 
                                     <ButtonComponent/>
 
@@ -95,7 +97,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={FilesMarkdown}
-                                      code={FilesCode}>
+                                      code={FilesCode}
+                                      npmName="fit-upload">
 
                                     <FilesComponent/>
 
@@ -105,7 +108,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DragMarkdown}
-                                      code={DragCode}>
+                                      code={DragCode}
+                                      npmName="fit-upload">
 
                                     <DragComponent/>
 
@@ -115,7 +119,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DemoMarkdown}
-                                      code={DemoCode}>
+                                      code={DemoCode}
+                                      npmName="fit-upload">
 
                                     <DemoComponent/>
 

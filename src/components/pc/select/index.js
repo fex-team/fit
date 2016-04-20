@@ -85,7 +85,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-select">
 
                                     <BasicComponent/>
 
@@ -95,7 +96,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DisabledMarkdown}
-                                      code={DisabledCode}>
+                                      code={DisabledCode}
+                                      npmName="fit-select">
 
                                     <DisabledComponent/>
 
@@ -105,7 +107,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={GroupMarkdown}
-                                      code={GroupCode}>
+                                      code={GroupCode}
+                                      npmName="fit-select">
 
                                     <GroupComponent/>
 
@@ -115,7 +118,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LabelMarkdown}
-                                      code={LabelCode}>
+                                      code={LabelCode}
+                                      npmName="fit-select">
 
                                     <LabelComponent/>
 
@@ -125,7 +129,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SearchMarkdown}
-                                      code={SearchCode}>
+                                      code={SearchCode}
+                                      npmName="fit-select">
 
                                     <SearchComponent/>
 
@@ -135,7 +140,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SimpleMarkdown}
-                                      code={SimpleCode}>
+                                      code={SimpleCode}
+                                      npmName="fit-select">
 
                                     <SimpleComponent/>
 

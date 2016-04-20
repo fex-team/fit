@@ -68,7 +68,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-message">
 
                                     <BasicComponent/>
 
@@ -78,7 +79,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CallbackMarkdown}
-                                      code={CallbackCode}>
+                                      code={CallbackCode}
+                                      npmName="fit-message">
 
                                     <CallbackComponent/>
 
@@ -88,7 +90,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DurationMarkdown}
-                                      code={DurationCode}>
+                                      code={DurationCode}
+                                      npmName="fit-message">
 
                                     <DurationComponent/>
 
@@ -98,7 +101,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={TypeMarkdown}
-                                      code={TypeCode}>
+                                      code={TypeCode}
+                                      npmName="fit-message">
 
                                     <TypeComponent/>
 

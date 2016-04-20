@@ -80,7 +80,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="tb-color">
 
                                     <BasicComponent/>
 
@@ -90,7 +91,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={AssitMarkdown}
-                                      code={AssitCode}>
+                                      code={AssitCode}
+                                      npmName="tb-color">
 
                                     <AssitComponent/>
 
@@ -100,7 +102,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ButtonMarkdown}
-                                      code={ButtonCode}>
+                                      code={ButtonCode}
+                                      npmName="tb-color">
 
                                     <ButtonComponent/>
 
@@ -110,7 +113,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CarrierMarkdown}
-                                      code={CarrierCode}>
+                                      code={CarrierCode}
+                                      npmName="tb-color">
 
                                     <CarrierComponent/>
 
@@ -120,7 +124,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={NightMarkdown}
-                                      code={NightCode}>
+                                      code={NightCode}
+                                      npmName="tb-color">
 
                                     <NightComponent/>
 
@@ -130,7 +135,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={NightAssitMarkdown}
-                                      code={NightAssitCode}>
+                                      code={NightAssitCode}
+                                      npmName="tb-color">
 
                                     <NightAssitComponent/>
 
@@ -140,7 +146,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={NightCarrierMarkdown}
-                                      code={NightCarrierCode}>
+                                      code={NightCarrierCode}
+                                      npmName="tb-color">
 
                                     <NightCarrierComponent/>
 

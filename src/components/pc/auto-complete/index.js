@@ -71,7 +71,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-auto-complete">
 
                                     <BasicComponent/>
 
@@ -81,7 +82,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LocalMarkdown}
-                                      code={LocalCode}>
+                                      code={LocalCode}
+                                      npmName="fit-auto-complete">
 
                                     <LocalComponent/>
 
@@ -91,7 +93,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CustomParseMarkdown}
-                                      code={CustomParseCode}>
+                                      code={CustomParseCode}
+                                      npmName="fit-auto-complete">
 
                                     <CustomParseComponent/>
 
@@ -101,7 +104,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CallbackMarkdown}
-                                      code={CallbackCode}>
+                                      code={CallbackCode}
+                                      npmName="fit-auto-complete">
 
                                     <CallbackComponent/>
 

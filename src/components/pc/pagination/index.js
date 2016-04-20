@@ -78,7 +78,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-pagination">
 
                                     <BasicComponent/>
 
@@ -88,7 +89,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={AllPageMarkdown}
-                                      code={AllPageCode}>
+                                      code={AllPageCode}
+                                      npmName="fit-pagination">
 
                                     <AllPageComponent/>
 
@@ -98,7 +100,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LoadingMarkdown}
-                                      code={LoadingCode}>
+                                      code={LoadingCode}
+                                      npmName="fit-pagination">
 
                                     <LoadingComponent/>
 
@@ -108,7 +111,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LoadingAllMarkdown}
-                                      code={LoadingAllCode}>
+                                      code={LoadingAllCode}
+                                      npmName="fit-pagination">
 
                                     <LoadingAllComponent/>
 
@@ -118,7 +122,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SizeMarkdown}
-                                      code={SizeCode}>
+                                      code={SizeCode}
+                                      npmName="fit-pagination">
 
                                     <SizeComponent/>
 

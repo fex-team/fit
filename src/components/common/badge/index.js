@@ -79,7 +79,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-badge">
 
                                     <BasicComponent/>
 
@@ -89,7 +90,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LimitMarkdown}
-                                      code={LimitCode}>
+                                      code={LimitCode}
+                                      npmName="fit-badge">
 
                                     <LimitComponent/>
 
@@ -99,7 +101,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={StandAloneMarkdown}
-                                      code={StandAloneCode}>
+                                      code={StandAloneCode}
+                                      npmName="fit-badge">
 
                                     <StandAloneComponent/>
 
@@ -109,7 +112,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DotMarkdown}
-                                      code={DotCode}>
+                                      code={DotCode}
+                                      npmName="fit-badge">
 
                                     <DotComponent/>
 
@@ -119,7 +123,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CustomLimitMarkdown}
-                                      code={CustomLimitCode}>
+                                      code={CustomLimitCode}
+                                      npmName="fit-badge">
 
                                     <CustomLimitComponent/>
 
@@ -129,7 +134,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={AnimateMarkdown}
-                                      code={AnimateCode}>
+                                      code={AnimateCode}
+                                      npmName="fit-badge">
 
                                     <AnimateComponent/>
 

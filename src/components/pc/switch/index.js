@@ -75,7 +75,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-switch">
 
                                     <BasicComponent/>
 
@@ -85,7 +86,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ControlMarkdown}
-                                      code={ControlCode}>
+                                      code={ControlCode}
+                                      npmName="fit-switch">
 
                                     <ControlComponent/>
 
@@ -95,7 +97,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LabelMarkdown}
-                                      code={LabelCode}>
+                                      code={LabelCode}
+                                      npmName="fit-switch">
 
                                     <LabelComponent/>
 
@@ -105,7 +108,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SizeMarkdown}
-                                      code={SizeCode}>
+                                      code={SizeCode}
+                                      npmName="fit-switch">
 
                                     <SizeComponent/>
 
@@ -115,7 +119,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={TypeMarkdown}
-                                      code={TypeCode}>
+                                      code={TypeCode}
+                                      npmName="fit-switch">
 
                                     <TypeComponent/>
 

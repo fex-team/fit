@@ -75,7 +75,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-modal">
 
                                     <BasicComponent/>
 
@@ -85,7 +86,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={RenderMarkdown}
-                                      code={RenderCode}>
+                                      code={RenderCode}
+                                      npmName="fit-modal">
 
                                     <RenderComponent/>
 
@@ -95,7 +97,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CustomMarkdown}
-                                      code={CustomCode}>
+                                      code={CustomCode}
+                                      npmName="fit-modal">
 
                                     <CustomComponent/>
 
@@ -105,7 +108,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SizeMarkdown}
-                                      code={SizeCode}>
+                                      code={SizeCode}
+                                      npmName="fit-modal">
 
                                     <SizeComponent/>
 
@@ -115,7 +119,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BackdropMarkdown}
-                                      code={BackdropCode}>
+                                      code={BackdropCode}
+                                      npmName="fit-modal">
 
                                     <BackdropComponent/>
 

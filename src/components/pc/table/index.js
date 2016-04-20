@@ -123,7 +123,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DataMarkdown}
-                                      code={DataCode}>
+                                      code={DataCode}
+                                      npmName="fit-table">
 
                                     <DataComponent/>
 
@@ -133,7 +134,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={AjaxMarkdown}
-                                      code={AjaxCode}>
+                                      code={AjaxCode}
+                                      npmName="fit-table">
 
                                     <AjaxComponent/>
 
@@ -143,7 +145,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={PaginationMarkdown}
-                                      code={PaginationCode}>
+                                      code={PaginationCode}
+                                      npmName="fit-table">
 
                                     <PaginationComponent/>
 
@@ -153,7 +156,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={AddMarkdown}
-                                      code={AddCode}>
+                                      code={AddCode}
+                                      npmName="fit-table">
 
                                     <AddComponent/>
 
@@ -163,7 +167,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CustomMarkdown}
-                                      code={CustomCode}>
+                                      code={CustomCode}
+                                      npmName="fit-table">
 
                                     <CustomComponent/>
 
@@ -173,7 +178,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CustomColMarkdown}
-                                      code={CustomColCode}>
+                                      code={CustomColCode}
+                                      npmName="fit-table">
 
                                     <CustomColComponent/>
 
@@ -183,7 +189,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DeleteMarkdown}
-                                      code={DeleteCode}>
+                                      code={DeleteCode}
+                                      npmName="fit-table">
 
                                     <DeleteComponent/>
 
@@ -193,7 +200,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={EditMarkdown}
-                                      code={EditCode}>
+                                      code={EditCode}
+                                      npmName="fit-table">
 
                                     <EditComponent/>
 
@@ -203,7 +211,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={FieldsMarkdown}
-                                      code={FieldsCode}>
+                                      code={FieldsCode}
+                                      npmName="fit-table">
 
                                     <FieldsComponent/>
 
@@ -213,7 +222,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={FindMarkdown}
-                                      code={FindCode}>
+                                      code={FindCode}
+                                      npmName="fit-table">
 
                                     <FindComponent/>
 
@@ -223,7 +233,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={OutsideFindMarkdown}
-                                      code={OutsideFindCode}>
+                                      code={OutsideFindCode}
+                                      npmName="fit-table">
 
                                     <OutsideFindComponent/>
 
@@ -233,7 +244,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={MockDeleteMarkdown}
-                                      code={MockDeleteCode}>
+                                      code={MockDeleteCode}
+                                      npmName="fit-table">
 
                                     <MockDeleteComponent/>
 
@@ -243,7 +255,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={OutsideMarkdown}
-                                      code={OutsideCode}>
+                                      code={OutsideCode}
+                                      npmName="fit-table">
 
                                     <OutsideComponent/>
 
@@ -253,7 +266,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ResponsiveMarkdown}
-                                      code={ResponsiveCode}>
+                                      code={ResponsiveCode}
+                                      npmName="fit-table">
 
                                     <ResponsiveComponent/>
 
@@ -263,7 +277,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SelectMarkdown}
-                                      code={SelectCode}>
+                                      code={SelectCode}
+                                      npmName="fit-table">
 
                                     <SelectComponent/>
 
@@ -273,7 +288,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SimpleAjaxMarkdown}
-                                      code={SimpleAjaxCode}>
+                                      code={SimpleAjaxCode}
+                                      npmName="fit-table">
 
                                     <SimpleAjaxComponent/>
 
@@ -283,7 +299,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SortMarkdown}
-                                      code={SortCode}>
+                                      code={SortCode}
+                                      npmName="fit-table">
 
                                     <SortComponent/>
 

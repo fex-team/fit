@@ -81,7 +81,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-menu">
 
                                     <BasicComponent/>
 
@@ -91,7 +92,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ReverseMarkdown}
-                                      code={ReverseCode}>
+                                      code={ReverseCode}
+                                      npmName="fit-menu">
 
                                     <ReverseComponent/>
 
@@ -101,7 +103,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={VerticalMarkdown}
-                                      code={VerticalCode}>
+                                      code={VerticalCode}
+                                      npmName="fit-menu">
 
                                     <VerticalComponent/>
 
@@ -111,7 +114,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SubTreeMarkdown}
-                                      code={SubTreeCode}>
+                                      code={SubTreeCode}
+                                      npmName="fit-menu">
 
                                     <SubTreeComponent/>
 
@@ -121,7 +125,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SubTreeVerticalMarkdown}
-                                      code={SubTreeVerticalCode}>
+                                      code={SubTreeVerticalCode}
+                                      npmName="fit-menu">
 
                                     <SubTreeVerticalComponent/>
 

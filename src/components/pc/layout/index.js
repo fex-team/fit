@@ -78,7 +78,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-layout">
 
                                     <BasicComponent/>
 
@@ -88,7 +89,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CenterMarkdown}
-                                      code={CenterCode}>
+                                      code={CenterCode}
+                                      npmName="fit-layout">
 
                                     <CenterComponent/>
 
@@ -98,7 +100,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={FlexMarkdown}
-                                      code={FlexCode}>
+                                      code={FlexCode}
+                                      npmName="fit-layout">
 
                                     <FlexComponent/>
 
@@ -108,7 +111,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={OffsetMarkdown}
-                                      code={OffsetCode}>
+                                      code={OffsetCode}
+                                      npmName="fit-layout">
 
                                     <OffsetComponent/>
 
@@ -118,7 +122,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={OrderMarkdown}
-                                      code={OrderCode}>
+                                      code={OrderCode}
+                                      npmName="fit-layout">
 
                                     <OrderComponent/>
 

@@ -67,7 +67,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-timepicker">
 
                                     <BasicComponent/>
 
@@ -77,7 +78,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LabelMarkdown}
-                                      code={LabelCode}>
+                                      code={LabelCode}
+                                      npmName="fit-timepicker">
 
                                     <LabelComponent/>
 
@@ -87,7 +89,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LimitMarkdown}
-                                      code={LimitCode}>
+                                      code={LimitCode}
+                                      npmName="fit-timepicker">
 
                                     <LimitComponent/>
 

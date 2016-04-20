@@ -66,7 +66,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-collapse">
 
                                     <BasicComponent/>
 
@@ -76,7 +77,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={AccordionMarkdown}
-                                      code={AccordionCode}>
+                                      code={AccordionCode}
+                                      npmName="fit-collapse">
 
                                     <AccordionComponent/>
 

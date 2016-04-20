@@ -79,7 +79,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-number">
 
                                     <BasicComponent/>
 
@@ -89,7 +90,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CallbackMarkdown}
-                                      code={CallbackCode}>
+                                      code={CallbackCode}
+                                      npmName="fit-number">
 
                                     <CallbackComponent/>
 
@@ -99,7 +101,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={FloatMarkdown}
-                                      code={FloatCode}>
+                                      code={FloatCode}
+                                      npmName="fit-number">
 
                                     <FloatComponent/>
 
@@ -109,7 +112,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LimitMarkdown}
-                                      code={LimitCode}>
+                                      code={LimitCode}
+                                      npmName="fit-number">
 
                                     <LimitComponent/>
 
@@ -119,7 +123,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SpeedMarkdown}
-                                      code={SpeedCode}>
+                                      code={SpeedCode}
+                                      npmName="fit-number">
 
                                     <SpeedComponent/>
 
@@ -129,7 +134,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={StepMarkdown}
-                                      code={StepCode}>
+                                      code={StepCode}
+                                      npmName="fit-number">
 
                                     <StepComponent/>
 

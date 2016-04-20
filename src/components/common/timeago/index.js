@@ -67,7 +67,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-timeago">
 
                                     <BasicComponent/>
 
@@ -77,7 +78,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ChineseMarkdown}
-                                      code={ChineseCode}>
+                                      code={ChineseCode}
+                                      npmName="fit-timeago">
 
                                     <ChineseComponent/>
 
@@ -87,7 +89,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LoseMarkdown}
-                                      code={LoseCode}>
+                                      code={LoseCode}
+                                      npmName="fit-timeago">
 
                                     <LoseComponent/>
 

@@ -67,7 +67,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="tb-icon">
 
                                     <BasicComponent/>
 
@@ -77,7 +78,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ColorMarkdown}
-                                      code={ColorCode}>
+                                      code={ColorCode}
+                                      npmName="tb-icon">
 
                                     <ColorComponent/>
 
@@ -87,7 +89,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SizeMarkdown}
-                                      code={SizeCode}>
+                                      code={SizeCode}
+                                      npmName="tb-icon">
 
                                     <SizeComponent/>
 

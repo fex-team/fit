@@ -89,7 +89,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-datepicker">
 
                                     <BasicComponent/>
 
@@ -99,7 +100,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={RangeMarkdown}
-                                      code={RangeCode}>
+                                      code={RangeCode}
+                                      npmName="fit-datepicker">
 
                                     <RangeComponent/>
 
@@ -109,7 +111,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ToolbarMarkdown}
-                                      code={ToolbarCode}>
+                                      code={ToolbarCode}
+                                      npmName="fit-datepicker">
 
                                     <ToolbarComponent/>
 
@@ -119,7 +122,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={InputMarkdown}
-                                      code={InputCode}>
+                                      code={InputCode}
+                                      npmName="fit-datepicker">
 
                                     <InputComponent/>
 
@@ -129,7 +133,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DefaultValueMarkdown}
-                                      code={DefaultValueCode}>
+                                      code={DefaultValueCode}
+                                      npmName="fit-datepicker">
 
                                     <DefaultValueComponent/>
 
@@ -139,7 +144,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LabelMarkdown}
-                                      code={LabelCode}>
+                                      code={LabelCode}
+                                      npmName="fit-datepicker">
 
                                     <LabelComponent/>
 
@@ -149,7 +155,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ShowTimeMarkdown}
-                                      code={ShowTimeCode}>
+                                      code={ShowTimeCode}
+                                      npmName="fit-datepicker">
 
                                     <ShowTimeComponent/>
 

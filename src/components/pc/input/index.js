@@ -87,7 +87,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-input">
 
                                     <BasicComponent/>
 
@@ -97,7 +98,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DefaultMarkdown}
-                                      code={DefaultCode}>
+                                      code={DefaultCode}
+                                      npmName="fit-input">
 
                                     <DefaultComponent/>
 
@@ -107,7 +109,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CallbackMarkdown}
-                                      code={CallbackCode}>
+                                      code={CallbackCode}
+                                      npmName="fit-input">
 
                                     <CallbackComponent/>
 
@@ -117,7 +120,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DisabledMarkdown}
-                                      code={DisabledCode}>
+                                      code={DisabledCode}
+                                      npmName="fit-input">
 
                                     <DisabledComponent/>
 
@@ -127,7 +131,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={FlexMarkdown}
-                                      code={FlexCode}>
+                                      code={FlexCode}
+                                      npmName="fit-input">
 
                                     <FlexComponent/>
 
@@ -137,7 +142,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={IconMarkdown}
-                                      code={IconCode}>
+                                      code={IconCode}
+                                      npmName="fit-input">
 
                                     <IconComponent/>
 
@@ -147,7 +153,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={TextareaMarkdown}
-                                      code={TextareaCode}>
+                                      code={TextareaCode}
+                                      npmName="fit-input">
 
                                     <TextareaComponent/>
 
@@ -157,7 +164,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ClearMarkdown}
-                                      code={ClearCode}>
+                                      code={ClearCode}
+                                      npmName="fit-input">
 
                                     <ClearComponent/>
 

@@ -93,7 +93,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-radio">
 
                                     <BasicComponent/>
 
@@ -103,7 +104,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ButtonMarkdown}
-                                      code={ButtonCode}>
+                                      code={ButtonCode}
+                                      npmName="fit-radio">
 
                                     <ButtonComponent/>
 
@@ -113,7 +115,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CallbackMarkdown}
-                                      code={CallbackCode}>
+                                      code={CallbackCode}
+                                      npmName="fit-radio">
 
                                     <CallbackComponent/>
 
@@ -123,7 +126,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={CustomMarkdown}
-                                      code={CustomCode}>
+                                      code={CustomCode}
+                                      npmName="fit-radio">
 
                                     <CustomComponent/>
 
@@ -133,7 +137,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={DisableMarkdown}
-                                      code={DisableCode}>
+                                      code={DisableCode}
+                                      npmName="fit-radio">
 
                                     <DisableComponent/>
 
@@ -143,7 +148,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={GroupMarkdown}
-                                      code={GroupCode}>
+                                      code={GroupCode}
+                                      npmName="fit-radio">
 
                                     <GroupComponent/>
 
@@ -153,7 +159,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={LabelMarkdown}
-                                      code={LabelCode}>
+                                      code={LabelCode}
+                                      npmName="fit-radio">
 
                                     <LabelComponent/>
 
@@ -163,7 +170,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={SizeMarkdown}
-                                      code={SizeCode}>
+                                      code={SizeCode}
+                                      npmName="fit-radio">
 
                                     <SizeComponent/>
 

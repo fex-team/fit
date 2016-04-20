@@ -91,7 +91,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="fit-layout-global">
 
                                     <BasicComponent/>
 
@@ -101,7 +102,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={HeaderMarkdown}
-                                      code={HeaderCode}>
+                                      code={HeaderCode}
+                                      npmName="fit-layout-global">
 
                                     <HeaderComponent/>
 
@@ -111,7 +113,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={FooterMarkdown}
-                                      code={FooterCode}>
+                                      code={FooterCode}
+                                      npmName="fit-layout-global">
 
                                     <FooterComponent/>
 
@@ -121,7 +124,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={RightFooterMarkdown}
-                                      code={RightFooterCode}>
+                                      code={RightFooterCode}
+                                      npmName="fit-layout-global">
 
                                     <RightFooterComponent/>
 
@@ -131,7 +135,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={HeaderSectionMarkdown}
-                                      code={HeaderSectionCode}>
+                                      code={HeaderSectionCode}
+                                      npmName="fit-layout-global">
 
                                     <HeaderSectionComponent/>
 
@@ -141,7 +146,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={AllMarkdown}
-                                      code={AllCode}>
+                                      code={AllCode}
+                                      npmName="fit-layout-global">
 
                                     <AllComponent/>
 

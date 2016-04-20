@@ -60,7 +60,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={BasicMarkdown}
-                                      code={BasicCode}>
+                                      code={BasicCode}
+                                      npmName="tb-emoji">
 
                                     <BasicComponent/>
 
@@ -70,7 +71,8 @@
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={ControlMarkdown}
-                                      code={ControlCode}>
+                                      code={ControlCode}
+                                      npmName="tb-emoji">
 
                                     <ControlComponent/>
 
