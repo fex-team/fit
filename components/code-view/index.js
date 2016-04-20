@@ -30,7 +30,7 @@ export default class CodeView extends React.Component {
 
         // 代码
         // 将 ../../src 换成 npm 包路径
-        let code = this.props.code.replace(/..\/..\/src/g, '123')
+        let code = this.props.code.replace(/..\/..\/src/g, this.props.npmName)
 
         let codeDetail = null
         if (this.state.showCode) {

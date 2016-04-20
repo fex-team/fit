@@ -35,7 +35,6 @@ const mkComponents = (config)=> {
                     demoArray.map((demoItem)=> {
                         // 首字母大写demo名
                         const camelDemoName = _.capitalize(_.camelCase(demoItem.name))
-                        console.log(categorys[categoryKey].prefix+'-'+component.path)
 
                         // loader 是 babel 还是 ts-loader
                         let loader = 'babel-loader'
@@ -53,7 +52,8 @@ const mkComponents = (config)=> {
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={${camelDemoName}Markdown}
-                                      code={${camelDemoName}Code}>
+                                      code={${camelDemoName}Code}
+                                      npmName="${categorys[categoryKey].prefix}-${component.path}">
 
                                     <${camelDemoName}Component/>
 
