@@ -29,7 +29,8 @@ export default class CodeView extends React.Component {
         let content = this.props.md.replace(/^#\s.*\n*/g, '')
 
         // 代码
-        let code = this.props.code.replace(/^import\s*React\s*from\s*\'react\'\n/g, '')
+        // 将 ../../src 换成 npm 包路径
+        let code = this.props.code.replace(/..\/..\/src/g, '123')
 
         let codeDetail = null
         if (this.state.showCode) {
