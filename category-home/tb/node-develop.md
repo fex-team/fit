@@ -54,11 +54,25 @@ npm start
 
 打开 `dev.baidu.com:8080` 查看对应项目.路由是 `/n/[项目名]/[子路由]`,线上也是此路径
 
+#### fis 版本地开发
+
+```hash
+npm run start-fis
+```
+
 #### 上线前本地预览
 
 ```hash
 npm run fis
 ```
+
+#### 上线前开发机预览
+
+```hash
+npm run fis-remote
+```
+
+注意先设置 `fis-conf.js` 中的 `host` `port` 字段
 
 ### 上线
 
