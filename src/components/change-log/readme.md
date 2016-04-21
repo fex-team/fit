@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.4.21
+
+- 所有贴吧组件都改为 `typescript`
+
 #### 2016.4.20
 
 - `tb-captcha-drag` 源码已改为 `typescript`

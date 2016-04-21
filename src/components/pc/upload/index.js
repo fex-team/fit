@@ -14,29 +14,29 @@
                 const store = createStore()
 
                 
-                        import UploadSource from '../../../../lib/pc/upload/src/upload'
-                        import UploadSourceCode from 'text!../../../../lib/pc/upload/src/upload'
+                        import UploadSource from '../../../../lib/pc/upload/src/upload/index.tsx'
+                        import UploadSourceCode from 'text!../../../../lib/pc/upload/src/upload/index.tsx'
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/upload/demo/lists/basic.js'
+                        import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/upload/demo/lists/basic.tsx'
+                        import BasicCode from 'text!../../../../lib/pc/upload/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/upload/demo/lists/basic.md'
                         
-                        import ButtonComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/button.js'
-                        import ButtonCode from 'text!../../../../lib/pc/upload/demo/lists/button.js'
+                        import ButtonComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/upload/demo/lists/button.tsx'
+                        import ButtonCode from 'text!../../../../lib/pc/upload/demo/lists/button.tsx'
                         import ButtonMarkdown from '../../../../lib/pc/upload/demo/lists/button.md'
                         
-                        import FilesComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/files.js'
-                        import FilesCode from 'text!../../../../lib/pc/upload/demo/lists/files.js'
+                        import FilesComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/upload/demo/lists/files.tsx'
+                        import FilesCode from 'text!../../../../lib/pc/upload/demo/lists/files.tsx'
                         import FilesMarkdown from '../../../../lib/pc/upload/demo/lists/files.md'
                         
-                        import DragComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/drag.js'
-                        import DragCode from 'text!../../../../lib/pc/upload/demo/lists/drag.js'
+                        import DragComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/upload/demo/lists/drag.tsx'
+                        import DragCode from 'text!../../../../lib/pc/upload/demo/lists/drag.tsx'
                         import DragMarkdown from '../../../../lib/pc/upload/demo/lists/drag.md'
                         
-                        import DemoComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/upload/demo/lists/demo.js'
-                        import DemoCode from 'text!../../../../lib/pc/upload/demo/lists/demo.js'
+                        import DemoComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/upload/demo/lists/demo.tsx'
+                        import DemoCode from 'text!../../../../lib/pc/upload/demo/lists/demo.tsx'
                         import DemoMarkdown from '../../../../lib/pc/upload/demo/lists/demo.md'
                         
 
