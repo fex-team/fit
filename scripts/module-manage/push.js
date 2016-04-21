@@ -159,7 +159,7 @@ export default (info)=> {
 
         // 如果不是 tb 组件,删除 lib目录
         if (info.categoryName !== 'tb') {
-            //deleteLib(info)
+            deleteLib(info)
         }
 
         // 删除所有 .d.ts
