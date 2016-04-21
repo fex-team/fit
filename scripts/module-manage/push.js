@@ -36,7 +36,7 @@ const deleteLib = (info)=> {
 const createDTs = (info)=> {
     const tsxPath = `./lib/${info.categoryName}/${info.module.path}/src/index.tsx`
     if (fs.existsSync(tsxPath)) {
-        execSync(`tsc -d --experimentalDecorators --jsx preserve ${tsxPath}`)
+        execSync(`tsc -d --experimentalDecorators --jsx preserve --t es6 ${tsxPath}`)
     }
 }
 
@@ -159,7 +159,7 @@ export default (info)=> {
 
         // 如果不是 tb 组件,删除 lib目录
         if (info.categoryName !== 'tb') {
-            deleteLib(info)
+            //deleteLib(info)
         }
 
         // 删除所有 .d.ts

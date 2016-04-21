@@ -153,6 +153,7 @@
     "store2": "^2.3.2",
     "superagent": "^1.8.3",
     "superagent-mock": "^1.10.0",
-    "tty-table": "^1.0.7"
+    "tty-table": "^1.0.7",
+    "yog2-kernel": "^0.7.3"
   }
 }

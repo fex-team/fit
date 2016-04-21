@@ -6,7 +6,7 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "react/react.d.ts": {
-      "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
+      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
     },
     "jquery/jquery.d.ts": {
       "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
@@ -39,6 +39,15 @@
       "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
     },
     "es6-promise/es6-promise.d.ts": {
+      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+    },
+    "react-router/react-router.d.ts": {
+      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+    },
+    "react-router/history.d.ts": {
+      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+    },
+    "bluebird/bluebird.d.ts": {
       "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
     }
   }

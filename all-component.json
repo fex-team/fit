@@ -14,7 +14,7 @@
                         "path": "badge"
                     }
                 ],
-                "展示辅助":[
+                "展示辅助": [
                     {
                         "name": "任意渲染",
                         "path": "render-to"
@@ -24,6 +24,10 @@
                     {
                         "name": "透传",
                         "path": "transmit-transparently"
+                    },
+                    {
+                        "name": "同构",
+                        "path": "isomorphic-redux-tools"
                     }
                 ]
             }

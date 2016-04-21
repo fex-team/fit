@@ -45,7 +45,11 @@ const parseSass = (scssPath) => {
 const parseTypescript = (filePath)=> {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const tsxFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
-    let result = ts.transpile(tsxFileContent)
+    let result = ts.transpile(tsxFileContent, {
+        target: 2
+    })
+
+    console.log(result)
     fs.writeFileSync(absolutePath.replace(/.tsx/g, '.js'), result)
     execSync(`rm ${absolutePath}`)
 }
