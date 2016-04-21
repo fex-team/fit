@@ -115,6 +115,7 @@
     "cropperjs": "^0.7.0",
     "css-animation": "^1.2.3",
     "dateformat": "^1.0.12",
+    "es6-promise": "^3.1.2",
     "find": "^0.2.4",
     "font-awesome": "^4.6.1",
     "highlight.js": "^9.3.0",

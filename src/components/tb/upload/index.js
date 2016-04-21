@@ -14,13 +14,13 @@
                 const store = createStore()
 
                 
-                        import UploadSource from '../../../../lib/tb/upload/src/upload'
-                        import UploadSourceCode from 'text!../../../../lib/tb/upload/src/upload'
+                        import UploadSource from '../../../../lib/tb/upload/src/upload/index.tsx'
+                        import UploadSourceCode from 'text!../../../../lib/tb/upload/src/upload/index.tsx'
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/tb/upload/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/tb/upload/demo/lists/basic.js'
+                        import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/upload/demo/lists/basic.tsx'
+                        import BasicCode from 'text!../../../../lib/tb/upload/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/tb/upload/demo/lists/basic.md'
                         
 
