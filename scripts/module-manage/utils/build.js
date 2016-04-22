@@ -46,6 +46,7 @@ const parseTypescript = (filePath)=> {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const tsxFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
     let result = ts.transpile(tsxFileContent, {
+        jsx   : 2,
         target: 2
     })
 
