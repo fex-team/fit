@@ -30,6 +30,8 @@
                 
                 import fitTransmitTransparentlyComponent from './components/common/transmit-transparently'
                 
+                import fitIsomorphicReduxToolsComponent from './components/common/isomorphic-redux-tools'
+                
         // pc
         
                 import fitLayoutGlobalComponent from './components/pc/layout-global'
@@ -145,6 +147,9 @@
                 
                 <Route path="transmit-transparently"
                        component={fitTransmitTransparentlyComponent}/>
+                
+                <Route path="isomorphic-redux-tools"
+                       component={fitIsomorphicReduxToolsComponent}/>
                 
         </Route>
         

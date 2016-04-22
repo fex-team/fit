@@ -14,6 +14,8 @@
                 
                 'fit-transmit-transparently': path.join(__dirname, 'lib/common/transmit-transparently/src'),
                 
+                'fit-isomorphic-redux-tools': path.join(__dirname, 'lib/common/isomorphic-redux-tools/src'),
+                
         // pc
         
                 'fit-layout-global': path.join(__dirname, 'lib/pc/layout-global/src'),

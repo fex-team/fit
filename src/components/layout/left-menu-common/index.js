@@ -25,6 +25,11 @@ const menu83b5c25c39e6342cb2a7e4a56205f4d4 = [
                         title: '透传 TransmitTransparently',
                         path: '/common/transmit-transparently'
                     },
+                    
+                    {
+                        title: '同构 IsomorphicReduxTools',
+                        path: '/common/isomorphic-redux-tools'
+                    },
                     ]
 
         export default class Layout extends React.Component {
