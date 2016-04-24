@@ -80,7 +80,7 @@ const handleModuleDir = (modulePath, info)=> {
     // tsx 文件由 typescript 处理
     let tsxFiles = getfiles('tsx', modulePath)
     tsxFiles.map((item)=> {
-        parseTypescript(item)
+        parseTypescript(item, info)
     })
 
     // js 文件由 babel 处理
@@ -97,7 +97,7 @@ const handleModuleDir = (modulePath, info)=> {
     let scssFiles = getfiles('scss', modulePath)
     scssFiles.map((item)=> {
         cssPathLoader(item, info)
-        parseSass(item)
+        parseSass(item, info)
     })
 }
 export default (info, libPath)=> {

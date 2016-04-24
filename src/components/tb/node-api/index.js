@@ -8,21 +8,26 @@
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import SidebarComponent from '../../../../components/side-bar'
-                import readme from '../../../../lib/tb/captcha/readme.md'
-                import '../../../../lib/tb/captcha/demo'
+                import readme from '../../../../lib/tb/node-api/readme.md'
+                import '../../../../lib/tb/node-api/demo'
 
                 const store = createStore()
 
                 
-                        import CaptchaSource from '../../../../lib/tb/captcha/src/captcha/index.tsx'
-                        import CaptchaSourceCode from 'text!../../../../lib/tb/captcha/src/captcha/index.tsx'
+                        import ralSource from '../../../../lib/tb/node-api/src/ral/index.tsx'
+                        import ralSourceCode from 'text!../../../../lib/tb/node-api/src/ral/index.tsx'
+                        
+                        import genTbsSource from '../../../../lib/tb/node-api/src/gen-tbs/index.tsx'
+                        import genTbsSourceCode from 'text!../../../../lib/tb/node-api/src/gen-tbs/index.tsx'
+                        
+                        import checkTbsSource from '../../../../lib/tb/node-api/src/check-tbs/index.tsx'
+                        import checkTbsSourceCode from 'text!../../../../lib/tb/node-api/src/check-tbs/index.tsx'
+                        
+                        import currentUserSource from '../../../../lib/tb/node-api/src/current-user/index.tsx'
+                        import currentUserSourceCode from 'text!../../../../lib/tb/node-api/src/current-user/index.tsx'
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/captcha/demo/lists/basic.tsx'
-                        import BasicCode from 'text!../../../../lib/tb/captcha/demo/lists/basic.tsx'
-                        import BasicMarkdown from '../../../../lib/tb/captcha/demo/lists/basic.md'
-                        
 
                 const colStyle = {
                     padding: 10
@@ -39,7 +44,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = '验证码'
+                        document.title = 'nodeApi'
                     }
 
                     handlePageChange(value) {
@@ -56,17 +61,6 @@
                             Content = (
                                 <Row>
                                     
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={BasicMarkdown}
-                                      code={BasicCode}
-                                      npmName="tb-captcha">
-
-                                    <BasicComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
                                 </Row>
                             )
                             break
@@ -75,7 +69,19 @@
                                 <div>
                                     
                         <div style={docStyle}>
-                            <CodeDoc code={CaptchaSourceCode} instance={CaptchaSource} />
+                            <CodeDoc code={ralSourceCode} instance={ralSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={genTbsSourceCode} instance={genTbsSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={checkTbsSourceCode} instance={checkTbsSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={currentUserSourceCode} instance={currentUserSource} />
                         </div>
                         
                                 </div>
@@ -94,7 +100,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width={120}>
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/tb-captcha/tree/master"
+                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/tb-node-api/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>
