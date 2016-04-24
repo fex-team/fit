@@ -42,13 +42,27 @@ const parseSass = (scssPath) => {
     execSync(`rm ${scssPath}`)
 }
 
-const parseTypescript = (filePath)=> {
+const parseTypescript = (filePath, info)=> {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const tsxFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
-    let result = ts.transpile(tsxFileContent, {
-        jsx   : 2,
-        target: 2
-    })
+
+    let config = {}
+
+    switch (info.module.type) {
+    case 'server':
+        config = {
+            jsx   : 1,
+            target: 2
+        }
+        break
+    default:
+        config = {
+            jsx   : 2,
+            target: 2
+        }
+    }
+
+    let result = ts.transpile(tsxFileContent, config)
 
     fs.writeFileSync(absolutePath.replace(/.tsx/g, '.js'), result)
     execSync(`rm ${absolutePath}`)
@@ -70,11 +84,14 @@ const handleModuleDir = (modulePath, info)=> {
     })
 
     // js 文件由 babel 处理
-    let jsFiles = getfiles('js', modulePath)
-    jsFiles.map((item)=> {
-        htmlPathLoader(item, info)
-        parseBabel(item, info)
-    })
+    // 忽略 type == server 的模块
+    if (info.module.type !== 'server') {
+        let jsFiles = getfiles('js', modulePath)
+        jsFiles.map((item)=> {
+            htmlPathLoader(item, info)
+            parseBabel(item, info)
+        })
+    }
 
     // scss 文件由 sass 处理
     let scssFiles = getfiles('scss', modulePath)
