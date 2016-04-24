@@ -254,6 +254,10 @@
                     {
                         "name": "lego card",
                         "path": "lego-card"
+                    },
+                    {
+                        "name": "nodeApi",
+                        "path": "node-api"
                     }
                 ]
             }
