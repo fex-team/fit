@@ -36,7 +36,7 @@ const deleteLib = (info)=> {
 const createDTs = (info)=> {
     const tsxPath = `./lib/${info.categoryName}/${info.module.path}/src/index.tsx`
     if (fs.existsSync(tsxPath)) {
-        execSync(`tsc -d --experimentalDecorators --jsx preserve --t es6 ${tsxPath}`)
+        execSync(`tsc -d --experimentalDecorators --jsx preserve --t es6 -m commonjs ${tsxPath}`)
     }
 }
 
