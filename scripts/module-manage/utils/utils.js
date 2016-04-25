@@ -5,7 +5,6 @@ export const relativePathToComponentPath = (categoryName = '', componentPath, in
     categoryName = categoryName.replace(/\//g, '')
 
     // 如果没有 categoryName 说明和当前组件一个 category
-    console.log(categoryName, componentPath)
     if (categoryName === '..') {
         categoryName = info.categoryName
     }
