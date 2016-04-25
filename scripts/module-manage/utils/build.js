@@ -21,8 +21,13 @@ const parseBabel = (filePath, info) => {
 
     // 将所有 fit 组件的引用还原
     resultCode = resultCode.replace(/require\(\'(..\/){3,}([\w-]*\/)?([\w-]*)\/src\'\)/g, (word, match1, match2, match3)=> {
-        console.log(match1,match2,match3)
-        const componentInfo = relativePathToComponentPath(match1, match3, info)
+        let categoryPath
+        if (match2 === undefined) {
+            categoryPath = match1
+        } else {
+            categoryPath = match2
+        }
+        const componentInfo = relativePathToComponentPath(categoryPath, match3, info)
         return `require('${componentInfo.prefix}-${componentInfo.name}')`
     })
 
