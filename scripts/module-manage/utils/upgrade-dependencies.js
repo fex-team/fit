@@ -60,6 +60,9 @@ export default  (modules) => {
                     ++regex.lastIndex
                 }
 
+                if (file.indexOf('tb/upload') > -1) {
+                    console.log(match)
+                }
                 let matched = match[2] || match[4] || match[6]
 
                 if (matched && dependencies.indexOf(matched) < 0) {
