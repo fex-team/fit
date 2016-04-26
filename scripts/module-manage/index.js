@@ -32,9 +32,14 @@ case 'push': // 提交
     })
     tryPush('./')
 
-    // 最后删除所有 d.ts jsx文件,这些文件可能由依赖自动生成到其它模块下
-    execSync(`find ./lib -name "*.d.ts" | xargs rm`)
-    execSync(`find ./lib -name "*.jsx" | xargs rm`)
+    // 最后删除所有 d.ts jsx 文件,这些文件可能由依赖自动生成到其它模块下
+    // 除了 tb 模块
+    allModules.forEach(info=> {
+        if (info.categoryName !== 'tb') {
+            execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.d.ts" | xargs rm`)
+            execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.jsx" | xargs rm`)
+        }
+    })
 
     break
 
