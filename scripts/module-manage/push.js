@@ -46,9 +46,12 @@ const parseDTs = (info)=> {
     const moduleDirPaths = find.dirSync(moduleDistRoot)
 
     // 不处理没有 tsx 的目录
+    console.log('1111111')
     if (!fs.existsSync(`${moduleDirPaths}/index.tsx`)) {
+        console.log('222222222')
         return
     }
+    console.log('3333333333')
 
     // 删除根目录的注释
     let rootFileContent = fs.readFileSync(`${moduleDistRoot}/index.d.ts`).toString()
@@ -61,7 +64,6 @@ const parseDTs = (info)=> {
 
     moduleDirPaths.map((moduleDirPath)=> {
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
-        console.log(fileContent)
         // 包一层组件定义
         fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${fileContent}\n}`
         fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
