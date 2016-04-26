@@ -58,17 +58,22 @@ const parseTypescript = (filePath, info)=> {
     case 'server':
         config = {
             jsx   : 1,
-            target: 2
+            target: 2,
+            module: 1
         }
         break
     default:
         config = {
             jsx   : 2,
-            target: 2
+            target: 2,
+            module: 1
         }
     }
 
     let result = ts.transpile(tsxFileContent, config)
+    if (info.module.path === 'node-api') {
+        console.log(result)
+    }
 
     fs.writeFileSync(absolutePath.replace(/.tsx/g, '.js'), result)
     execSync(`rm ${absolutePath}`)
