@@ -14,18 +14,6 @@
                 const store = createStore()
 
                 
-                        import ralSource from '../../../../lib/tb/node-api/src/ral/index.tsx'
-                        import ralSourceCode from 'text!../../../../lib/tb/node-api/src/ral/index.tsx'
-                        
-                        import genTbsSource from '../../../../lib/tb/node-api/src/gen-tbs/index.tsx'
-                        import genTbsSourceCode from 'text!../../../../lib/tb/node-api/src/gen-tbs/index.tsx'
-                        
-                        import checkTbsSource from '../../../../lib/tb/node-api/src/check-tbs/index.tsx'
-                        import checkTbsSourceCode from 'text!../../../../lib/tb/node-api/src/check-tbs/index.tsx'
-                        
-                        import currentUserSource from '../../../../lib/tb/node-api/src/current-user/index.tsx'
-                        import currentUserSourceCode from 'text!../../../../lib/tb/node-api/src/current-user/index.tsx'
-                        
 
                 
 
@@ -68,22 +56,6 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={ralSourceCode} instance={ralSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={genTbsSourceCode} instance={genTbsSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={checkTbsSourceCode} instance={checkTbsSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={currentUserSourceCode} instance={currentUserSource} />
-                        </div>
-                        
                                 </div>
                             )
                             break
