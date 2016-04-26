@@ -61,6 +61,7 @@ const parseDTs = (info)=> {
 
     moduleDirPaths.map((moduleDirPath)=> {
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
+        console.log(fileContent)
         // 包一层组件定义
         fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${fileContent}\n}`
         fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
@@ -163,7 +164,7 @@ export default (info)=> {
         }
 
         // 删除所有 .d.ts
-        // deleteDTS(info)
+        deleteDTS(info)
 
         // 删除所有 jsx 和 js
         deleteJSXAndJs(info)
