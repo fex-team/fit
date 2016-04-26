@@ -46,7 +46,7 @@ const parseDTs = (info)=> {
     const moduleDirPaths = find.dirSync(moduleDistRoot)
 
     // 不处理没有 tsx 的目录
-    if (!fs.existsSync(path.join(__Dirname, '../..', `lib/${info.categoryName}/${info.module.path}/src/index.tsx`))) {
+    if (!fs.existsSync(path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/src/index.tsx`))) {
         return
     }
 
