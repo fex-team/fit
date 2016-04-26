@@ -49,7 +49,13 @@ export default  (modules) => {
             let code = fs.readFileSync(file).toString()
             // 将所有 fit 组件的引用还原
             code = code.replace(/import\s(\w|[\{\w,\}]|\*\sas\s)*\sfrom\s\'(..\/){3,}([\w-]*\/)?([\w-]*)\/src\'/g, (word, match1, match2, match3, match4)=> {
-                const componentInfo = relativePathToComponentPath(match2, match4, info)
+                let categoryPath
+                if (match3 === undefined) {
+                    categoryPath = match2
+                } else {
+                    categoryPath = match3
+                }
+                const componentInfo = relativePathToComponentPath(categoryPath, match4, info)
                 return `import ${_.capitalize(_.camelCase(componentInfo.name))} from '${componentInfo.prefix}-${componentInfo.name}'`
             })
 
@@ -60,9 +66,6 @@ export default  (modules) => {
                     ++regex.lastIndex
                 }
 
-                if (file.indexOf('tb/upload') > -1) {
-                    console.log(match)
-                }
                 let matched = match[2] || match[4] || match[6]
 
                 if (matched && dependencies.indexOf(matched) < 0) {
