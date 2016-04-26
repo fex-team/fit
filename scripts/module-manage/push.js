@@ -163,7 +163,7 @@ export default (info)=> {
         }
 
         // 删除所有 .d.ts
-        deleteDTS(info)
+        //deleteDTS(info)
 
         // 删除所有 jsx 和 js
         deleteJSXAndJs(info)
