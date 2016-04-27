@@ -75,7 +75,7 @@ const parseDTs = (info)=> {
         const depStr = `/// <reference path="./${modulePathArray[modulePathArray.length - 1]}/index.d.ts" />`
         rootContent += depStr + '\n'
     })
-    fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootContent)
+    //fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootContent)
 }
 
 const deleteDTS = (info)=> {
