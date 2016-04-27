@@ -63,11 +63,10 @@ const parseDTs = (info)=> {
     moduleDirPaths.map((moduleDirPath)=> {
         const moduleDirPathArray = moduleDirPath.split('/')
         const libDirName = moduleDirPathArray[moduleDirPathArray.length-1]
-        console.log(libDirName)
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
         // 包一层组件定义
-        fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${fileContent}\n}`
-        //fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
+        fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}/lib/libDirName' {\n${fileContent}\n}`
+        fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
     })
 }
 
