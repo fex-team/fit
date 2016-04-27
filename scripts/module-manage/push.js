@@ -50,14 +50,14 @@ const parseDTs = (info)=> {
         return
     }
 
-    // 删除根目录的注释
+    // 根目录包一层定义
     let rootFileContent = fs.readFileSync(`${moduleDistRoot}/index.d.ts`).toString()
     let rootFileContentArray = rootFileContent.split('\n')
     rootFileContentArray = rootFileContentArray.filter((line)=> {
         return line.indexOf('//') !== 0
     })
     rootFileContent = rootFileContentArray.join('\n')
-    console.log(rootFileContent)
+    rootFileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${rootFileContent}\n}`
     fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootFileContent)
 
     moduleDirPaths.map((moduleDirPath)=> {
@@ -66,16 +66,6 @@ const parseDTs = (info)=> {
         fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${fileContent}\n}`
         //fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
     })
-
-    // 重写根目录 d.ts
-    let rootContent = ''
-    moduleDirPaths.map((moduleDirPath)=> {
-        // 获得最后一层级目录名
-        const modulePathArray = moduleDirPath.split('/')
-        const depStr = `/// <reference path="./${modulePathArray[modulePathArray.length - 1]}/index.d.ts" />`
-        rootContent += depStr + '\n'
-    })
-    //fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootContent)
 }
 
 const deleteDTS = (info)=> {
