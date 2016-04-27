@@ -52,6 +52,7 @@ const parseDTs = (info)=> {
 
     // 删除根目录的注释
     let rootFileContent = fs.readFileSync(`${moduleDistRoot}/index.d.ts`).toString()
+    console.log(rootFileContent)
     let rootFileContentArray = rootFileContent.split('\n')
     rootFileContentArray = rootFileContentArray.filter((line)=> {
         return line.indexOf('//') !== 0
