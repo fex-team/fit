@@ -62,8 +62,10 @@ const parseDTs = (info)=> {
 
     moduleDirPaths.map((moduleDirPath)=> {
         const moduleDirPathArray = moduleDirPath.split('/')
-        const libDirName = moduleDirPathArray[moduleDirPathArray.length-1]
+        const libDirName = moduleDirPathArray[moduleDirPathArray.length - 1]
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
+        // 删除所有 declare
+        fileContent = fileContent.replace(/declare\s/g, '')
         // 包一层组件定义
         fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}/lib/${libDirName}' {\n${fileContent}\n}`
         fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
