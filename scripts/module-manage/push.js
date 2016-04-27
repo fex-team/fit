@@ -61,6 +61,7 @@ const parseDTs = (info)=> {
     fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootFileContent)
 
     moduleDirPaths.map((moduleDirPath)=> {
+        console.log(moduleDirPath)
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
         // 包一层组件定义
         fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${fileContent}\n}`
