@@ -57,7 +57,7 @@ const parseDTs = (info)=> {
         return line.indexOf('//') !== 0
     })
     rootFileContent = rootFileContentArray.join('\n')
-    fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootFileContent)
+    //fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootFileContent)
 
     moduleDirPaths.map((moduleDirPath)=> {
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
