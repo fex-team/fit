@@ -42,9 +42,10 @@ const fitDts = (content, info, filePath)=> {
     // 如果是 lib 根目录, 包最外层模块定义
     if (filePath.endsWith(`lib/${info.categoryName}/${info.module.path}/lib`)) {
         content = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${content}\n}`
-    }else{
+    } else {
         const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
-        const restPath = filePath.substring(libIndex)
+        let restPath = filePath.substring(libIndex)
+        restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
         console.log(restPath)
         //content = `declare module '${info.categoryInfo.prefix}-${info.module.path}/lib/${libDirName}' {\n${content}\n}`
     }
