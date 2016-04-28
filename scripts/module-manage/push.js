@@ -61,8 +61,11 @@ const fitDts = (content, info, filePath)=> {
     content.replace(/import\s+\'[.\/\w-]+.(scss\';)$/g, '')
 
     // 所有相对定位引用,改为绝对定位引用
-    content.replace(/import\s+\*\s+as\s+\w+\s+from\s+\'([.\/\w-]+)\';|import\s+\w+\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
-        console.log(match, match1, match2)
+    content.replace(/import\s+\*\s+as\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
+        console.log(match1,match2)
+    })
+    content.replace(/import\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
+        console.log(match1,match2)
     })
 
     return content
