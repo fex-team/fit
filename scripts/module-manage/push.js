@@ -34,14 +34,14 @@ const deleteLib = (info)=> {
 }
 
 // 根据路径 处理 .d.ts 文件
-const resolveDtsFromPath = (path, info)=> {
-    if (!fs.existsSync(path))return
+const resolveDtsFromPath = (filePath, dirPath, info)=> {
+    if (!fs.existsSync(filePath))return
 
-    const moduleDirPathArray = path.split('/')
+    const moduleDirPathArray = filePath.split('/')
     const libDirName = moduleDirPathArray[moduleDirPathArray.length - 1]
-    let fileContent = fs.readFileSync(path).toString()
-    fileContent = fitDts(fileContent, info, path)
-    fs.writeFileSync(path, fileContent)
+    let fileContent = fs.readFileSync(filePath).toString()
+    fileContent = fitDts(fileContent, info, dirPath)
+    fs.writeFileSync(filePath, fileContent)
 }
 
 // 加工 .d.ts
@@ -81,10 +81,10 @@ const parseDTs = (info)=> {
     }
 
     // 处理 d.ts
-    resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, info)
+    resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, moduleDistRoot, info)
     moduleDirPaths.map((moduleDirPath)=> {
-        resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, info)
-        resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, info)
+        resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, moduleDirPath, info)
+        resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, moduleDirPath, info)
     })
 }
 
