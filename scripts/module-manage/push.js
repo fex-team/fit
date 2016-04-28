@@ -46,8 +46,7 @@ const fitDts = (content, info, filePath)=> {
         const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
         let restPath = filePath.substring(libIndex)
         restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
-        console.log(restPath)
-        //content = `declare module '${info.categoryInfo.prefix}-${info.module.path}/lib/${libDirName}' {\n${content}\n}`
+        content = `declare module '${restPath}' {\n${content}\n}`
     }
 
     return content
