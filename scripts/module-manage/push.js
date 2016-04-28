@@ -79,7 +79,6 @@ const deleteDTS = (info)=> {
 
     // 如果是 tb 组件,不删除 lib 下的定义文件,因为从gitlab安装时需要
     if (info.categoryName === 'tb') {
-        console.log(`find ${modulePath}/src -name "*.d.ts" | xargs rm`)
         execSync(`find ${modulePath}/src -name "*.d.ts" | xargs rm`)
     } else {
         execSync(`find ${modulePath} -name "*.d.ts" | xargs rm`)
