@@ -37,8 +37,6 @@ const deleteLib = (info)=> {
 const resolveDtsFromPath = (filePath, dirPath, info)=> {
     if (!fs.existsSync(filePath))return
 
-    const moduleDirPathArray = filePath.split('/')
-    const libDirName = moduleDirPathArray[moduleDirPathArray.length - 1]
     let fileContent = fs.readFileSync(filePath).toString()
     fileContent = fitDts(fileContent, info, dirPath)
     fs.writeFileSync(filePath, fileContent)
@@ -49,8 +47,7 @@ const fitDts = (content, info, filePath)=> {
     // 删除所有 declare
     content = content.replace(/declare\s/g, '')
 
-    // 所有相对定位引用,改为绝对定位引用
-    // 如果是 lib 根目录, 包最外层模块定义
+    // 包最外层模块定义
     if (filePath.endsWith(`lib/${info.categoryName}/${info.module.path}/lib`)) {
         content = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${content}\n}`
     } else {
@@ -59,6 +56,11 @@ const fitDts = (content, info, filePath)=> {
         restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
         content = `declare module '${restPath}' {\n${content}\n}`
     }
+
+    // 所有相对定位引用,改为绝对定位引用
+    content.replace(/import\s+\w+\s+from\s+\'(\w+)'/g, (match, match1)=> {
+        console.log(match, match1)
+    })
 
     return content
 }
