@@ -58,6 +58,7 @@ const fitDts = (content, info, filePath)=> {
     }
 
     // 所有相对定位引用,改为绝对定位引用
+    console.log(111)
     content.replace(/import\s+\w+\s+from\s+\'(\w+)'/g, (match, match1)=> {
         console.log(match, match1)
     })
