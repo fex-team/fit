@@ -84,6 +84,7 @@ const parseDTs = (info)=> {
     resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, info)
     moduleDirPaths.map((moduleDirPath)=> {
         resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, info)
+        resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, info)
     })
 }
 
