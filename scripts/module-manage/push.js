@@ -33,6 +33,17 @@ const deleteLib = (info)=> {
     execSync(`rm -rf ${getModulePath(info)}/lib`)
 }
 
+// 根据路径 处理 .d.ts 文件
+const resolveDtsFromPath = (path, info)=> {
+    if (!fs.existsSync(path))return
+
+    const moduleDirPathArray = path.split('/')
+    const libDirName = moduleDirPathArray[moduleDirPathArray.length - 1]
+    let fileContent = fs.readFileSync(path).toString()
+    fileContent = fitDts(fileContent, info, path)
+    fs.writeFileSync(path, fileContent)
+}
+
 // 加工 .d.ts
 const fitDts = (content, info, filePath)=> {
     // 删除所有 declare
@@ -69,24 +80,10 @@ const parseDTs = (info)=> {
         return
     }
 
-    // 根目录包一层定义
-    let rootFileContent = fs.readFileSync(`${moduleDistRoot}/index.d.ts`).toString()
-    let rootFileContentArray = rootFileContent.split('\n')
-    rootFileContentArray = rootFileContentArray.filter((line)=> {
-        return line.indexOf('//') !== 0
-    })
-    rootFileContent = rootFileContentArray.join('\n')
-    rootFileContent = fitDts(rootFileContent, info, moduleDistRoot)
-    fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootFileContent)
-
+    // 处理 d.ts
+    resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, info)
     moduleDirPaths.map((moduleDirPath)=> {
-        if (!fs.existsSync(`${moduleDirPath}/index.d.ts`))return
-
-        const moduleDirPathArray = moduleDirPath.split('/')
-        const libDirName = moduleDirPathArray[moduleDirPathArray.length - 1]
-        let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
-        fileContent = fitDts(fileContent, info, moduleDirPath)
-        fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
+        resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, info)
     })
 }
 
