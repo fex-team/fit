@@ -61,6 +61,8 @@ const parseDTs = (info)=> {
     fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootFileContent)
 
     moduleDirPaths.map((moduleDirPath)=> {
+        if (!fs.existsSync(`${moduleDirPath}/index.d.ts`))return
+        
         const moduleDirPathArray = moduleDirPath.split('/')
         const libDirName = moduleDirPathArray[moduleDirPathArray.length - 1]
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
