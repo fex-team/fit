@@ -96,7 +96,7 @@ const parseDTs = (info)=> {
     resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, moduleDistRoot, info)
     moduleDirPaths.map((moduleDirPath)=> {
         resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, moduleDirPath, info)
-        resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, moduleDirPath, info)
+        resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, moduleDirPath + '/module', info)
     })
 }
 
