@@ -33,6 +33,22 @@ const deleteLib = (info)=> {
     execSync(`rm -rf ${getModulePath(info)}/lib`)
 }
 
+// 加工 .d.ts
+const fitDts = (content, info, filePath)=> {
+    // 删除所有 declare
+    content = content.replace(/declare\s/g, '')
+
+    // 所有相对定位引用,改为绝对定位引用
+    // 如果是 lib 根目录, 包最外层模块定义
+    if (filePath.endsWith(`lib/${info.categoryName}/${info.module.path}/lib`)) {
+        content = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${content}\n}`
+    }else{
+        //content = `declare module '${info.categoryInfo.prefix}-${info.module.path}/lib/${libDirName}' {\n${content}\n}`
+    }
+
+    return content
+}
+
 const createDTs = (info)=> {
     const tsxPath = `./lib/${info.categoryName}/${info.module.path}/src/index.tsx`
     if (fs.existsSync(tsxPath)) {
@@ -57,7 +73,7 @@ const parseDTs = (info)=> {
         return line.indexOf('//') !== 0
     })
     rootFileContent = rootFileContentArray.join('\n')
-    rootFileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${rootFileContent}\n}`
+    rootFileContent = fitDts(rootFileContent, info, moduleDistRoot)
     fs.writeFileSync(`${moduleDistRoot}/index.d.ts`, rootFileContent)
 
     moduleDirPaths.map((moduleDirPath)=> {
@@ -66,10 +82,7 @@ const parseDTs = (info)=> {
         const moduleDirPathArray = moduleDirPath.split('/')
         const libDirName = moduleDirPathArray[moduleDirPathArray.length - 1]
         let fileContent = fs.readFileSync(`${moduleDirPath}/index.d.ts`).toString()
-        // 删除所有 declare
-        fileContent = fileContent.replace(/declare\s/g, '')
-        // 包一层组件定义
-        fileContent = `declare module '${info.categoryInfo.prefix}-${info.module.path}/lib/${libDirName}' {\n${fileContent}\n}`
+        fileContent = fitDts(fileContent, info, moduleDirPath)
         fs.writeFileSync(`${moduleDirPath}/index.d.ts`, fileContent)
     })
 }
