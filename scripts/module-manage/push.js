@@ -5,6 +5,7 @@ import build from './utils/build'
 import find from 'find'
 import fs from 'fs'
 import path from 'path'
+import _ from 'lodash'
 
 const outputDistLib = (info) => {
     let modulePath = `./lib/${info.categoryName}/${info.module.path}`
@@ -67,7 +68,7 @@ const fitDts = (content, info, filePath)=> {
         restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
 
         // 如果引用包含 ./ ../ ,则是相对路径引用
-        if (match2.indexOf('./') > -1 || match2.indexOf('../') > -1) {
+        if (_.startsWith(match2, './') || _.startsWith(match2, '../')) {
             console.log(match2, restPath)
         }
         return `import * as ${match1} from '${match2}'`
@@ -78,7 +79,7 @@ const fitDts = (content, info, filePath)=> {
         restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
 
         // 如果引用包含 ./ ../ ,则是相对路径引用
-        if (match2.indexOf('./') > -1 || match2.indexOf('../') > -1) {
+        if (_.startsWith(match2, './') || _.startsWith(match2, '../')) {
             console.log(match2, restPath)
         }
         return `import ${match1} from '${match2}'`
