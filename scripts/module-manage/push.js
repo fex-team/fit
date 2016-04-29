@@ -70,6 +70,11 @@ const fitDts = (content, info, filePath)=> {
         return `import * as ${match1} from '${match2}'`
     })
     content.replace(/import\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
+        const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
+        let restPath = filePath.substring(libIndex)
+        restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
+        // :todo
+        console.log(match2, restPath)
         return `import ${match1} from '${match2}'`
     })
 
