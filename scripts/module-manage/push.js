@@ -43,6 +43,37 @@ const resolveDtsFromPath = (filePath, dirPath, info)=> {
     fs.writeFileSync(filePath, fileContent)
 }
 
+// 根据路径和模块相对引用,返回 d.ts 绝对引用路径
+const dtsAbsolutePath = (info, filePath, requirePath)=> {
+    const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
+    let restPath = filePath.substring(libIndex)
+    restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
+
+    // 如果引用包含 ./ ../ ,则是相对路径引用
+    let parentDirNumber = 0
+    if (_.startsWith(requirePath, './') || _.startsWith(requirePath, '../')) {
+        let relativePathArray = requirePath.split('/')
+        relativePathArray = relativePathArray.filter((item)=> {
+            if (item === '..') {
+                parentDirNumber++
+            }
+            return item !== '.'
+        })
+        requirePath = relativePathArray.join('/')
+        // 如果有上级目录,对 restPath 进行排除
+        if (parentDirNumber > 0) {
+            let restPathArray = restPath.split('/')
+            while (parentDirNumber > 0) {
+                restPathArray.pop()
+                parentDirNumber--
+            }
+            restPath = restPathArray.join('/')
+        }
+
+        return restPath + '/' + requirePath
+    }
+}
+
 // 加工 .d.ts
 const fitDts = (content, info, filePath)=> {
     // 删除所有 declare
@@ -63,64 +94,12 @@ const fitDts = (content, info, filePath)=> {
 
     // 所有相对定位引用,改为绝对定位引用
     content.replace(/import\s+\*\s+as\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
-        const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
-        let restPath = filePath.substring(libIndex)
-        restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
-
-        // 如果引用包含 ./ ../ ,则是相对路径引用
-        let parentDirNumber = 0
-        if (_.startsWith(match2, './') || _.startsWith(match2, '../')) {
-            let relativePathArray = match2.split('/')
-            relativePathArray = relativePathArray.filter((item)=> {
-                if (item === '..') {
-                    parentDirNumber++
-                }
-                return item !== '.'
-            })
-            match2 = relativePathArray.join('/')
-            // 如果有上级目录,对 restPath 进行排除
-            if (parentDirNumber > 0) {
-                let restPathArray = restPath.split('/')
-                while (parentDirNumber > 0) {
-                    restPathArray.pop()
-                    parentDirNumber--
-                }
-                restPath = restPathArray.join('/')
-            }
-
-            console.log(restPath + '/' + match2)
-        }
-        return `import * as ${match1} from '${match2}'`
+        const absoluteRequirePath = dtsAbsolutePath(info, filePath, match2)
+        return `import * as ${match1} from '${absoluteRequirePath}'`
     })
     content.replace(/import\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
-        const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
-        let restPath = filePath.substring(libIndex)
-        restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
-
-        // 如果引用包含 ./ ../ ,则是相对路径引用
-        let parentDirNumber = 0
-        if (_.startsWith(match2, './') || _.startsWith(match2, '../')) {
-            let relativePathArray = match2.split('/')
-            relativePathArray = relativePathArray.filter((item)=> {
-                if (item === '..') {
-                    parentDirNumber++
-                }
-                return item !== '.'
-            })
-            match2 = relativePathArray.join('/')
-            // 如果有上级目录,对 restPath 进行排除
-            if (parentDirNumber > 0) {
-                let restPathArray = restPath.split('/')
-                while (parentDirNumber > 0) {
-                    restPathArray.pop()
-                    parentDirNumber--
-                }
-                restPath = restPathArray.join('/')
-            }
-
-            console.log(restPath + '/' + match2)
-        }
-        return `import ${match1} from '${match2}'`
+        const absoluteRequirePath = dtsAbsolutePath(info, filePath, match2)
+        return `import ${match1} from '${absoluteRequirePath}'`
     })
 
     return content
