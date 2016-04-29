@@ -69,6 +69,10 @@ const fitDts = (content, info, filePath)=> {
 
         // 如果引用包含 ./ ../ ,则是相对路径引用
         if (_.startsWith(match2, './') || _.startsWith(match2, '../')) {
+            let relativePathArray = match2.split('/')
+            relativePathArray = relativePathArray.filter((item)=>{
+                console.log(item)
+            })
             console.log(match2, restPath)
         }
         return `import * as ${match1} from '${match2}'`
