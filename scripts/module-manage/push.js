@@ -65,6 +65,7 @@ const fitDts = (content, info, filePath)=> {
         const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
         let restPath = filePath.substring(libIndex)
         restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
+        // :todo
         console.log(match2, restPath)
         return `import * as ${match1} from '${match2}'`
     })
