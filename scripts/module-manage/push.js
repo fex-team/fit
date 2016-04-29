@@ -65,16 +65,22 @@ const fitDts = (content, info, filePath)=> {
         const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
         let restPath = filePath.substring(libIndex)
         restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
-        // :todo
-        console.log(match2, restPath)
+
+        // 如果引用包含 ./ ../ ,则是相对路径引用
+        if (match2.indexOf('./') > -1 || match2.indexOf('../') > -1) {
+            console.log(match2, restPath)
+        }
         return `import * as ${match1} from '${match2}'`
     })
     content.replace(/import\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
         const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
         let restPath = filePath.substring(libIndex)
         restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
-        // :todo
-        console.log(match2, restPath)
+
+        // 如果引用包含 ./ ../ ,则是相对路径引用
+        if (match2.indexOf('./') > -1 || match2.indexOf('../') > -1) {
+            console.log(match2, restPath)
+        }
         return `import ${match1} from '${match2}'`
     })
 
