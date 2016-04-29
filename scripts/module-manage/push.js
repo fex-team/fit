@@ -68,16 +68,27 @@ const fitDts = (content, info, filePath)=> {
         restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
 
         // 如果引用包含 ./ ../ ,则是相对路径引用
+        let parentDirNumber = 0
         if (_.startsWith(match2, './') || _.startsWith(match2, '../')) {
             let relativePathArray = match2.split('/')
             relativePathArray = relativePathArray.filter((item)=> {
-                if (item === '.') {
-                    return false
+                if (item === '..') {
+                    parentDirNumber++
                 }
-                return true
+                return item !== '.'
             })
             match2 = relativePathArray.join('/')
-            console.log(123123, match2, restPath)
+            // 如果有上级目录,对 restPath 进行排除
+            if (parentDirNumber > 0) {
+                let restPathArray = restPath.split('/')
+                while (parentDirNumber > 0) {
+                    restPathArray.pop()
+                    parentDirNumber--
+                }
+                restPath = restPathArray.join('/')
+            }
+
+            console.log(match2 + '/' + restPath)
         }
         return `import * as ${match1} from '${match2}'`
     })
@@ -88,7 +99,25 @@ const fitDts = (content, info, filePath)=> {
 
         // 如果引用包含 ./ ../ ,则是相对路径引用
         if (_.startsWith(match2, './') || _.startsWith(match2, '../')) {
-            //console.log(match2, restPath)
+            let relativePathArray = match2.split('/')
+            relativePathArray = relativePathArray.filter((item)=> {
+                if (item === '..') {
+                    parentDirNumber++
+                }
+                return item !== '.'
+            })
+            match2 = relativePathArray.join('/')
+            // 如果有上级目录,对 restPath 进行排除
+            if (parentDirNumber > 0) {
+                let restPathArray = restPath.split('/')
+                while (parentDirNumber > 0) {
+                    restPathArray.pop()
+                    parentDirNumber--
+                }
+                restPath = restPathArray.join('/')
+            }
+
+            console.log(match2 + '/' + restPath)
         }
         return `import ${match1} from '${match2}'`
     })
