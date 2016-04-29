@@ -91,18 +91,17 @@ const fitDts = (content, info, filePath)=> {
     }
 
     // 移除 css 引用
-    content.replace(/import\s+\'[.\/\w-]+.(scss\';)$/g, '')
+    content = content.replace(/import\s+\'[.\/\w-]+.(scss\';)$/g, '')
 
     // 所有相对定位引用,改为绝对定位引用
-    content.replace(/import\s+\*\s+as\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
+    content = content.replace(/import\s+\*\s+as\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
         const absoluteRequirePath = dtsAbsolutePath(info, filePath, match2)
         return `import * as ${match1} from '${absoluteRequirePath}'`
     })
-    content.replace(/import\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
+    content = content.replace(/import\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
         const absoluteRequirePath = dtsAbsolutePath(info, filePath, match2)
         return `import ${match1} from '${absoluteRequirePath}'`
     })
-    console.log(content)
 
     return content
 }
