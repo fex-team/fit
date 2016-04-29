@@ -88,7 +88,7 @@ const fitDts = (content, info, filePath)=> {
                 restPath = restPathArray.join('/')
             }
 
-            console.log(match2 + '/' + restPath)
+            console.log(restPath + '/' + match2)
         }
         return `import * as ${match1} from '${match2}'`
     })
@@ -98,6 +98,7 @@ const fitDts = (content, info, filePath)=> {
         restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
 
         // 如果引用包含 ./ ../ ,则是相对路径引用
+        let parentDirNumber = 0
         if (_.startsWith(match2, './') || _.startsWith(match2, '../')) {
             let relativePathArray = match2.split('/')
             relativePathArray = relativePathArray.filter((item)=> {
@@ -117,7 +118,7 @@ const fitDts = (content, info, filePath)=> {
                 restPath = restPathArray.join('/')
             }
 
-            console.log(match2 + '/' + restPath)
+            console.log(restPath + '/' + match2)
         }
         return `import ${match1} from '${match2}'`
     })
