@@ -72,6 +72,7 @@ const dtsAbsolutePath = (info, filePath, requirePath)=> {
 
         return restPath + '/' + requirePath
     }
+    return requirePath
 }
 
 // 加工 .d.ts
