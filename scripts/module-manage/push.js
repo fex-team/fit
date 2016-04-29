@@ -90,8 +90,8 @@ const fitDts = (content, info, filePath)=> {
         content = `declare module '${restPath}' {\n${content}\n}`
     }
 
-    // 移除 css 引用
-    content = content.replace(/import\s+\'[.\/\w-]+.(scss\';)$/g, '')
+    // 移除 scss 引用
+    content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';)$/g, '')
 
     // 所有相对定位引用,改为绝对定位引用
     content = content.replace(/import\s+\*\s+as\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
