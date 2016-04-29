@@ -77,7 +77,7 @@ const fitDts = (content, info, filePath)=> {
                 return true
             })
             match2 = relativePathArray.join('/')
-            console.log(match2, restPath)
+            console.log(123123, match2, restPath)
         }
         return `import * as ${match1} from '${match2}'`
     })
@@ -88,7 +88,7 @@ const fitDts = (content, info, filePath)=> {
 
         // 如果引用包含 ./ ../ ,则是相对路径引用
         if (_.startsWith(match2, './') || _.startsWith(match2, '../')) {
-            console.log(match2, restPath)
+            //console.log(match2, restPath)
         }
         return `import ${match1} from '${match2}'`
     })
