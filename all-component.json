@@ -257,8 +257,7 @@
                     },
                     {
                         "name": "nodeApi",
-                        "path": "node-api",
-                        "type": "server"
+                        "path": "node-api"
                     }
                 ]
             }

@@ -13,6 +13,12 @@ import * as ts from 'typescript'
 const parseBabel = (filePath, info) => {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const jsFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
+    
+    // 忽略 @babel ignore 模块
+    if (jsFileContent.indexOf('@babel ignore') > -1) {
+        return
+    }
+
     const result = babel.transform(jsFileContent, {
         extends: path.resolve(__dirname, '../../../.babelrc')
     })
@@ -92,14 +98,11 @@ const handleModuleDir = (modulePath, info)=> {
     })
 
     // js 文件由 babel 处理
-    // 忽略 type == server 的模块
-    if (info.module.type !== 'server') {
-        let jsFiles = getfiles('js', modulePath)
-        jsFiles.map((item)=> {
-            htmlPathLoader(item, info)
-            parseBabel(item, info)
-        })
-    }
+    let jsFiles = getfiles('js', modulePath)
+    jsFiles.map((item)=> {
+        htmlPathLoader(item, info)
+        parseBabel(item, info)
+    })
 
     // scss 文件由 sass 处理
     let scssFiles = getfiles('scss', modulePath)
