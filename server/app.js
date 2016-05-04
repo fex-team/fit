@@ -2,7 +2,7 @@
 
 var koa = require('koa')
 var app = koa()
-var getIp = require('./utils/get-ip')
+var getIp = require('request-ip')
 var checkBaidu = require('./utils/check-baidu')
 
 // 设置静态资源缓存
@@ -34,9 +34,9 @@ var args = process.argv.slice(2)
 
 var templateHtml = require('../html.js')(args)
 app.use(function *() {
-    var ip = getIp(this.req)
+    var ip = getIp.getClientIp(this.req)
     var isBaidu = checkBaidu(ip)
-
+    console.log('ip:', ip, isBaidu)
     templateHtml = templateHtml.replace(/__tplData\(\'isBaidu\'\)/g, isBaidu)
 
     this.type = 'text/html; charset=utf-8'
