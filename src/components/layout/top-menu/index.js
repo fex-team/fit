@@ -5,6 +5,7 @@ import './index.scss'
 
 const isBaidu = cookie.get('isBaidu')
 console.log('isBAIDU', cookie.get('isBaidu'))
+console.log('xxx', cookie.get('Hm_lpvt_9e6356ee54313747e9bbdb40ecdfa809'))
 
 export default class Menu extends React.Component {
     constructor(props) {
