@@ -2,8 +2,6 @@
 
 使用贴吧统一帐号发布：
 
-account: tieba
-
-password: 7OADdzHnDV1IaeD6
+帐号密码联系 黄子毅(huangziyi01)
 
 [返回](readme.md)

@@ -32,6 +32,15 @@
                         import storeSource from '../../../../lib/common/isomorphic-redux-tools/src/store/index.tsx'
                         import storeSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/store/index.tsx'
                         
+                        import servicesSource from '../../../../lib/common/isomorphic-redux-tools/src/services/index.tsx'
+                        import servicesSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/services/index.tsx'
+                        
+                        import initServiceSource from '../../../../lib/common/isomorphic-redux-tools/src/init-service/index.tsx'
+                        import initServiceSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/init-service/index.tsx'
+                        
+                        import routerDecoratorSource from '../../../../lib/common/isomorphic-redux-tools/src/router-decorator/index.tsx'
+                        import routerDecoratorSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/router-decorator/index.tsx'
+                        
 
                 
                         import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/common/isomorphic-redux-tools/demo/lists/basic.tsx'
@@ -111,6 +120,18 @@
                         
                         <div style={docStyle}>
                             <CodeDoc code={storeSourceCode} instance={storeSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={servicesSourceCode} instance={servicesSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={initServiceSourceCode} instance={initServiceSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={routerDecoratorSourceCode} instance={routerDecoratorSource} />
                         </div>
                         
                                 </div>
