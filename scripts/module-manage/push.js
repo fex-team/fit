@@ -57,9 +57,17 @@ const dtsAbsolutePath = (info, filePath, requirePath)=> {
             if (item === '..') {
                 parentDirNumber++
             }
+
             return item !== '.'
         })
+
+        // 如果相对路径最后一个是 index,则移除
+        if (relativePathArray[relativePathArray.length - 1] === 'index') {
+            relativePathArray.pop()
+        }
+
         requirePath = relativePathArray.join('/')
+
         // 如果有上级目录,对 restPath 进行排除
         if (parentDirNumber > 0) {
             let restPathArray = restPath.split('/')
