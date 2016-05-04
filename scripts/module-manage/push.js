@@ -91,6 +91,7 @@ const fitDts = (content, info, filePath)=> {
     }
 
     // 移除 scss 引用
+    console.log(content)
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';)$/g, '')
 
     // 所有相对定位引用,改为绝对定位引用
