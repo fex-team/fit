@@ -38,7 +38,7 @@ app.use(function *() {
     var isBaidu = checkBaidu(ip)
 
     this.cookies.set('IS_BAIDU', isBaidu ? '1' : '0', {
-        domain: '.fithome.duapp.com'
+        httpOnly: true
     })
 
     templateHtml = templateHtml.replace(/__tplData\(\'isBaidu\'\)/g, isBaidu)
