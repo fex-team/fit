@@ -36,7 +36,9 @@ var templateHtml = require('../html.js')(args)
 app.use(function *() {
     var ip = getIp.getClientIp(this.req)
     var isBaidu = checkBaidu(ip)
-    console.log(ip, isBaidu)
+
+    this.cookies.set('isBaidu', isBaidu)
+
     templateHtml = templateHtml.replace(/__tplData\(\'isBaidu\'\)/g, isBaidu)
 
     this.type = 'text/html; charset=utf-8'
