@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.5.4
+
+- `fit-isomorphic-redux-tools` 新增 `serverRender` `service` 等核心方法,详细用法见 https://github.com/fex-team/fit/issues/1
+
 #### 2016.4.22
 
 - 新增 `fit-isomorphic-redux-tools` ,是同构app的辅助工具,提供了许多类与方法

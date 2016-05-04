@@ -7,7 +7,7 @@ var server = new webpackDevServer(webpack(webpackConf), {
     publicPath: webpackConf.output.publicPath,
     proxy: {
         '*': {
-            target: 'http://localhost:8080',
+            target: 'http://localhost:18080',
             secure: false
         }
     },
