@@ -7,7 +7,6 @@
         import Components from './components'
         import ComponentsWriteStandard from './components/write-standard'
         import ComponentsChangeLog from './components/change-log'
-        import ComponentsContributor from './components/contributor'
         import ComponentsDoc from './components/doc'
         
         import commonHome from '../category-home/common'
@@ -130,7 +129,6 @@
                 <Route path="/components/write-standard" component={ComponentsWriteStandard}/>
                 <Route path="/components/doc" component={ComponentsDoc}/>
                 <Route path="/components/change-log" component={ComponentsChangeLog}/>
-                <Route path="/components/contributor" component={ComponentsContributor}></Route>
                 
         <Route path="/components/common"
                component={ComponentsLayout}>
