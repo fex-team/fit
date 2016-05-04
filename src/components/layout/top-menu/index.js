@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import {Link} from 'react-router'
 import './index.scss'
 
 export default class Menu extends React.Component {
@@ -28,12 +28,16 @@ export default class Menu extends React.Component {
                         <Link className="item"
                               activeClassName="active"
                               to="/components/common">通用</Link>
-                        <Link className="item"
-                              activeClassName="active"
-                              to="/components/tb">贴吧</Link>
-                        <Link className="item"
-                              activeClassName="active"
-                              to="/components/oxp">Oxp</Link>
+                        {window.isBaidu ?
+                            <Link className="item"
+                                  activeClassName="active"
+                                  to="/components/tb">贴吧</Link> : null
+                        }
+                        {window.isBaidu ?
+                            <Link className="item"
+                                  activeClassName="active"
+                                  to="/components/oxp">Oxp</Link> : null
+                        }
                     </div>
                     <div className="navbar-right">
                         <Link className="item"
@@ -46,8 +50,8 @@ export default class Menu extends React.Component {
                               activeClassName="active"
                               to="/components/change-log">ChangeLog</Link>
                         <a className="item"
-                           href="http://gitlab.baidu.com/tb-component/awesome"
-                           target="_blank">Gitlab</a>
+                           href="https://github.com/fex-team/fit"
+                           target="_blank">Github</a>
                     </div>
                 </div>
             </div>

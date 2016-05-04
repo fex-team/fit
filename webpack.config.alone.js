@@ -4,7 +4,7 @@ var resolve = require('./resolve')
 
 var config = {
     entry: [
-        path.resolve('stand-alone-package', 'index.js')
+        path.resolve('src/stand-alone-package', 'index.js')
     ],
 
     output: {

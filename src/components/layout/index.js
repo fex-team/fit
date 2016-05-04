@@ -22,7 +22,7 @@ export default class Layout extends React.Component {
         super(props)
         this.state = {
             logoligten: false,
-            type: 'pc'
+            type      : 'pc'
         }
     }
 
@@ -54,19 +54,19 @@ export default class Layout extends React.Component {
 
     render() {
         let logoClass = classnames({
-            en: this.state.type === 'pc',
+            en         : this.state.type === 'pc',
             'en-mobile': this.state.type === 'mobile',
-            active: this.state.logoligten
+            active     : this.state.logoligten
         })
 
         let textClass = classnames({
-            move: this.state.type === 'pc',
+            move         : this.state.type === 'pc',
             'move-mobile': this.state.type === 'mobile',
-            active: this.state.logoligten
+            active       : this.state.logoligten
         })
 
         let menuColor = classnames({
-            'g-sd': true,
+            'g-sd'           : true,
             [this.state.type]: true
         })
 
