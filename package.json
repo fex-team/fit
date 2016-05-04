@@ -125,6 +125,7 @@
     "jbox": "^0.3.2",
     "jquery": "^2.1.4",
     "jquery-mockjax": "git+https://github.com/andycall/jquery-mockjax.git",
+    "js-cookie": "^2.1.1",
     "koa": "^1.2.0",
     "koa-static-cache": "^3.1.7",
     "lodash": "^3.10.1",
