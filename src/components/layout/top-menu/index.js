@@ -4,7 +4,6 @@ import cookie from 'js-cookie'
 import './index.scss'
 
 const isBaidu = cookie.get('IS_BAIDU')
-console.log('isBAIDU', cookie.get('IS_BAIDU'))
 
 export default class Menu extends React.Component {
     constructor(props) {
@@ -32,12 +31,12 @@ export default class Menu extends React.Component {
                         <Link className="item"
                               activeClassName="active"
                               to="/components/common">通用</Link>
-                        {isBaidu ?
+                        {isBaidu === '1' ?
                             <Link className="item"
                                   activeClassName="active"
                                   to="/components/tb">贴吧</Link> : null
                         }
-                        {isBaidu ?
+                        {isBaidu === '1' ?
                             <Link className="item"
                                   activeClassName="active"
                                   to="/components/oxp">Oxp</Link> : null
