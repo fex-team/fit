@@ -3,9 +3,8 @@ import {Link} from 'react-router'
 import cookie from 'js-cookie'
 import './index.scss'
 
-const isBaidu = cookie.get('isBaidu')
-console.log('isBAIDU', cookie.get('isBaidu'))
-console.log('xxx', cookie.get('Hm_lpvt_9e6356ee54313747e9bbdb40ecdfa809'))
+const isBaidu = cookie.get('IS_BAIDU')
+console.log('isBAIDU', cookie.get('IS_BAIDU'))
 
 export default class Menu extends React.Component {
     constructor(props) {

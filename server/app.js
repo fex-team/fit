@@ -37,7 +37,7 @@ app.use(function *() {
     var ip = getIp.getClientIp(this.req)
     var isBaidu = checkBaidu(ip)
 
-    this.cookies.set('isBaidu', isBaidu)
+    this.cookies.set('IS_BAIDU', isBaidu)
 
     templateHtml = templateHtml.replace(/__tplData\(\'isBaidu\'\)/g, isBaidu)
 
