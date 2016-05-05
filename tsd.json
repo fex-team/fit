@@ -6,7 +6,7 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "react/react.d.ts": {
-      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
     },
     "jquery/jquery.d.ts": {
       "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
@@ -54,10 +54,16 @@
       "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
     },
     "redux/redux.d.ts": {
-      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
     },
     "redux-thunk/redux-thunk.d.ts": {
       "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+    },
+    "react-redux/react-redux.d.ts": {
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
+    },
+    "axios/axios.d.ts": {
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
     }
   }
 }
