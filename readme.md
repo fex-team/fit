@@ -4,10 +4,10 @@
 
 # 特性
 
-- [x]react + redux + fis3&webpack
-- [x]typescript源码
-- [x]sass模块化
-- [x]支持后端渲染
+- [x] react + redux + fis3&webpack
+- [x] typescript源码
+- [x] sass模块化
+- [x] 支持后端渲染
 
 # 安装
 
@@ -31,3 +31,7 @@ IE9+
 # 链接
 
 - 组件库: https://github.com/fit-component
+
+# 交流群
+
+qq: 183350007
