@@ -41,11 +41,8 @@
     "es6-promise/es6-promise.d.ts": {
       "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
     },
-    "react-router/react-router.d.ts": {
-      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
-    },
     "react-router/history.d.ts": {
-      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
     },
     "bluebird/bluebird.d.ts": {
       "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
@@ -63,6 +60,9 @@
       "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
     },
     "axios/axios.d.ts": {
+      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
+    },
+    "react-router/react-router.d.ts": {
       "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
     }
   }
