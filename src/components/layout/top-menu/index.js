@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router'
+import cookie from 'js-cookie'
 import './index.scss'
+
+const isBaidu = cookie.get('IS_BAIDU')
 
 export default class Menu extends React.Component {
     constructor(props) {
@@ -28,12 +31,12 @@ export default class Menu extends React.Component {
                         <Link className="item"
                               activeClassName="active"
                               to="/components/common">通用</Link>
-                        {window.isBaidu ?
+                        {isBaidu === '1' ?
                             <Link className="item"
                                   activeClassName="active"
                                   to="/components/tb">贴吧</Link> : null
                         }
-                        {window.isBaidu ?
+                        {isBaidu === '1' ?
                             <Link className="item"
                                   activeClassName="active"
                                   to="/components/oxp">Oxp</Link> : null

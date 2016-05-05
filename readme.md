@@ -1,13 +1,13 @@
-# FIT
+# FIT 百度React组件库
 
-React组件库 [fit.baidu.com](http://fit.baidu.com)(网站暂未对外开放,组件源码,下载已全部开放)
+[fit.baidu.com](http://fit.baidu.com) 
 
 # 特性
 
-- react + redux + fis3&webpack
-- typescript源码
-- sass模块化
-- 支持后端渲染
+- [x] react + redux + fis3&webpack
+- [x] typescript源码
+- [x] sass模块化
+- [x] 支持后端渲染
 
 # 安装
 
@@ -32,6 +32,6 @@ IE9+
 
 - 组件库: https://github.com/fit-component
 
-# 待续
+# 交流群
 
-官网暂未开放外部访问,敬请期待
+qq: 183350007

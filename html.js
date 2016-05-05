@@ -21,9 +21,6 @@ module.exports = function (args) {
     <body>
     <div id='react-dom'></div>
     </body>
-    <script>
-        window.isBaidu = __tplData('isBaidu');
-    </script>
     <script src="/output/cdn/_.js"></script>
     <script src="/output/cdn/$.js"></script>
     <script src="/output/index.js"></script>
