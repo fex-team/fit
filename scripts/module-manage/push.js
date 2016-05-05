@@ -75,7 +75,7 @@ const dtsAbsolutePath = (info, filePath, requirePath)=> {
                 restPathArray.pop()
                 parentDirNumber--
             }
-            restPath = restPathArray.join('/')
+            restPath = restPathArray.join('-')
         }
 
         return restPath + '/' + requirePath
