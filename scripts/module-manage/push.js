@@ -66,7 +66,7 @@ const dtsAbsolutePath = (info, filePath, requirePath)=> {
             relativePathArray.pop()
         }
 
-        requirePath = relativePathArray.join('/')
+        requirePath = relativePathArray.join('-')
 
         // 如果有上级目录,对 restPath 进行排除
         if (parentDirNumber > 0) {
