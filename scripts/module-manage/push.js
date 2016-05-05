@@ -15,7 +15,7 @@ const outputDistLib = (info) => {
     return distDirectory
 }
 
-const hasChanges = (path)=> {
+const hasChanges = (path) => {
     // 先看看status对不对
     const gitStatus = execSync(`cd ${path};git status`)
     if (gitStatus.indexOf('nothing to commit, working directory clean') > -1) {
@@ -26,17 +26,17 @@ const hasChanges = (path)=> {
     }
 }
 
-const getModulePath = (info)=> {
+const getModulePath = (info) => {
     return `./lib/${info.categoryName}/${info.module.path}`
 }
 
-const deleteLib = (info)=> {
+const deleteLib = (info) => {
     execSync(`rm -rf ${getModulePath(info)}/lib`)
 }
 
 // 根据路径 处理 .d.ts 文件
-const resolveDtsFromPath = (filePath, dirPath, info)=> {
-    if (!fs.existsSync(filePath))return
+const resolveDtsFromPath = (filePath, dirPath, info) => {
+    if (!fs.existsSync(filePath)) return
 
     let fileContent = fs.readFileSync(filePath).toString()
     fileContent = fitDts(fileContent, info, dirPath)
@@ -44,16 +44,18 @@ const resolveDtsFromPath = (filePath, dirPath, info)=> {
 }
 
 // 根据路径和模块相对引用,返回 d.ts 绝对引用路径
-const dtsAbsolutePath = (info, filePath, requirePath)=> {
+const dtsAbsolutePath = (info, filePath, requirePath) => {
     const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
     let restPath = filePath.substring(libIndex)
     restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
 
-    // 如果引用包含 ./ ../ ,则是相对路径引用
+    // 如果引用包含 ./ ../ ,则是相对路径
     let parentDirNumber = 0
     if (_.startsWith(requirePath, './') || _.startsWith(requirePath, '../')) {
         let relativePathArray = requirePath.split('/')
-        relativePathArray = relativePathArray.filter((item)=> {
+
+        // 移除同级目录，并记录上级层数
+        relativePathArray = relativePathArray.filter((item) => {
             if (item === '..') {
                 parentDirNumber++
             }
@@ -66,25 +68,26 @@ const dtsAbsolutePath = (info, filePath, requirePath)=> {
             relativePathArray.pop()
         }
 
+        // 集合成后半段引用路径
         requirePath = relativePathArray.join('-')
 
-        // 如果有上级目录,对 restPath 进行排除
+        // 原始路径如果有上级目录,对 restPath 进行排除
+        let restPathArray = restPath.split('/')
         if (parentDirNumber > 0) {
-            let restPathArray = restPath.split('/')
             while (parentDirNumber > 0) {
                 restPathArray.pop()
                 parentDirNumber--
             }
-            restPath = restPathArray.join('-')
         }
+        restPath = restPathArray.join('-')
 
-        return restPath + '/' + requirePath
+        return restPath + '-' + requirePath
     }
     return requirePath
 }
 
 // 加工 .d.ts
-const fitDts = (content, info, filePath)=> {
+const fitDts = (content, info, filePath) => {
     // 删除所有 declare
     content = content.replace(/declare\s/g, '')
 
@@ -102,28 +105,26 @@ const fitDts = (content, info, filePath)=> {
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';?)/g, '')
 
     // 所有相对定位引用,改为绝对定位引用
-    content = content.replace(/import\s+\*\s+as\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
+    content = content.replace(/import\s+\*\s+as\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2) => {
         const absoluteRequirePath = dtsAbsolutePath(info, filePath, match2)
-        console.log(absoluteRequirePath)
         return `import * as ${match1} from '${absoluteRequirePath}'`
     })
-    content = content.replace(/import\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2)=> {
+    content = content.replace(/import\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2) => {
         const absoluteRequirePath = dtsAbsolutePath(info, filePath, match2)
-        console.log(absoluteRequirePath)
         return `import ${match1} from '${absoluteRequirePath}'`
     })
 
     return content
 }
 
-const createDTs = (info)=> {
+const createDTs = (info) => {
     const tsxPath = `./lib/${info.categoryName}/${info.module.path}/src/index.tsx`
     if (fs.existsSync(tsxPath)) {
         execSync(`tsc -d --experimentalDecorators --jsx preserve --t es6 -m commonjs ${tsxPath}`)
     }
 }
 
-const parseDTs = (info)=> {
+const parseDTs = (info) => {
     // 搜索 lib 所有文件夹
     const moduleDistRoot = path.join(__dirname, '../..', `lib/${info.categoryName}/${info.module.path}/lib`)
     const moduleDirPaths = find.dirSync(moduleDistRoot)
@@ -135,13 +136,13 @@ const parseDTs = (info)=> {
 
     // 处理 d.ts
     resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, moduleDistRoot, info)
-    moduleDirPaths.map((moduleDirPath)=> {
+    moduleDirPaths.map((moduleDirPath) => {
         resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, moduleDirPath, info)
         resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, moduleDirPath + '/module', info)
     })
 }
 
-const deleteDTS = (info)=> {
+const deleteDTS = (info) => {
     const modulePath = getModulePath(info)
 
     // 如果是 tb 组件,不删除 lib 下的定义文件,因为从gitlab安装时需要
@@ -157,7 +158,7 @@ const deleteDTS = (info)=> {
     }
 }
 
-const deleteJSXAndJs = (info)=> {
+const deleteJSXAndJs = (info) => {
     const modulePath = getModulePath(info)
     execSync(`find ${modulePath} -name "*.jsx" | xargs rm`)
 
@@ -167,7 +168,7 @@ const deleteJSXAndJs = (info)=> {
     }
 }
 
-const deleteDemoJsxAndJs = (info)=> {
+const deleteDemoJsxAndJs = (info) => {
     const modulePath = getModulePath(info)
     // 如果包含 .tsx 文件,则删除 demo 下的 js jsx 文件
     if (fs.existsSync(path.join(modulePath, 'src/index.tsx'))) {
@@ -176,12 +177,12 @@ const deleteDemoJsxAndJs = (info)=> {
     }
 }
 
-const syncCnpm = (info)=> {
+const syncCnpm = (info) => {
     // 贴吧组件不同步
-    if (info.categoryName === 'tb')return
+    if (info.categoryName === 'tb') return
 
     consoleLog(`cnpm 开始同步..`, 'grey', getModulePath(info))
-    exec(`cnpm sync ${info.categoryInfo.prefix}-${info.module.path}`, (err)=> {
+    exec(`cnpm sync ${info.categoryInfo.prefix}-${info.module.path}`, (err) => {
         if (err) {
             consoleLog(err.toString(), 'red', getModulePath(info))
         }
@@ -189,9 +190,9 @@ const syncCnpm = (info)=> {
     })
 }
 
-const publish = (info)=> {
+const publish = (info) => {
     // 贴吧组件不发布
-    if (info.categoryName === 'tb')return
+    if (info.categoryName === 'tb') return
 
     // 判断是不是贴吧帐号
     const whoamiString = execSync('npm whoami').toString()
@@ -201,7 +202,7 @@ const publish = (info)=> {
     execSync(`cd lib/${info.categoryName}/${info.module.path};npm publish`)
 }
 
-export default (info)=> {
+export default (info) => {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
     if (hasChange) {
