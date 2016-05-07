@@ -14,35 +14,29 @@
                 const store = createStore()
 
                 
-                        import MenuSource from '../../../../lib/pc/menu/src/menu'
-                        import MenuSourceCode from 'text!../../../../lib/pc/menu/src/menu'
-                        
-                        import MenuItemSource from '../../../../lib/pc/menu/src/menu-item'
-                        import MenuItemSourceCode from 'text!../../../../lib/pc/menu/src/menu-item'
-                        
-                        import SubMenuSource from '../../../../lib/pc/menu/src/sub-menu'
-                        import SubMenuSourceCode from 'text!../../../../lib/pc/menu/src/sub-menu'
+                        import Source from '../../../../lib/pc/menu/src//index.tsx'
+                        import SourceCode from 'text!../../../../lib/pc/menu/src//index.tsx'
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/menu/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/menu/demo/lists/basic.js'
+                        import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/menu/demo/lists/basic.tsx'
+                        import BasicCode from 'text!../../../../lib/pc/menu/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/menu/demo/lists/basic.md'
                         
-                        import ReverseComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/menu/demo/lists/reverse.js'
-                        import ReverseCode from 'text!../../../../lib/pc/menu/demo/lists/reverse.js'
+                        import ReverseComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/menu/demo/lists/reverse.tsx'
+                        import ReverseCode from 'text!../../../../lib/pc/menu/demo/lists/reverse.tsx'
                         import ReverseMarkdown from '../../../../lib/pc/menu/demo/lists/reverse.md'
                         
-                        import VerticalComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/menu/demo/lists/vertical.js'
-                        import VerticalCode from 'text!../../../../lib/pc/menu/demo/lists/vertical.js'
+                        import VerticalComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/menu/demo/lists/vertical.tsx'
+                        import VerticalCode from 'text!../../../../lib/pc/menu/demo/lists/vertical.tsx'
                         import VerticalMarkdown from '../../../../lib/pc/menu/demo/lists/vertical.md'
                         
-                        import SubTreeComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/menu/demo/lists/sub-tree.js'
-                        import SubTreeCode from 'text!../../../../lib/pc/menu/demo/lists/sub-tree.js'
+                        import SubTreeComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/menu/demo/lists/sub-tree.tsx'
+                        import SubTreeCode from 'text!../../../../lib/pc/menu/demo/lists/sub-tree.tsx'
                         import SubTreeMarkdown from '../../../../lib/pc/menu/demo/lists/sub-tree.md'
                         
-                        import SubTreeVerticalComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/menu/demo/lists/sub-tree-vertical.js'
-                        import SubTreeVerticalCode from 'text!../../../../lib/pc/menu/demo/lists/sub-tree-vertical.js'
+                        import SubTreeVerticalComponent from 'react-hot-loader!ts-loader!../../../../lib/pc/menu/demo/lists/sub-tree-vertical.tsx'
+                        import SubTreeVerticalCode from 'text!../../../../lib/pc/menu/demo/lists/sub-tree-vertical.tsx'
                         import SubTreeVerticalMarkdown from '../../../../lib/pc/menu/demo/lists/sub-tree-vertical.md'
                         
 
@@ -141,15 +135,7 @@
                                 <div>
                                     
                         <div style={docStyle}>
-                            <CodeDoc code={MenuSourceCode} instance={MenuSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={MenuItemSourceCode} instance={MenuItemSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={SubMenuSourceCode} instance={SubMenuSource} />
+                            <CodeDoc code={SourceCode} instance={Source} />
                         </div>
                         
                                 </div>
