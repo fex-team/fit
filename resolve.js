@@ -16,6 +16,8 @@
                 
                 'fit-isomorphic-redux-tools': path.join(__dirname, 'lib/common/isomorphic-redux-tools/src'),
                 
+                'fit-isomorphic-build': path.join(__dirname, 'lib/common/isomorphic-build/src'),
+                
         // pc
         
                 'fit-layout-global': path.join(__dirname, 'lib/pc/layout-global/src'),

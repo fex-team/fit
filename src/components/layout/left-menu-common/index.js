@@ -31,6 +31,7 @@ const menu83b5c25c39e6342cb2a7e4a56205f4d4 = [
                         path: '/common/isomorphic-redux-tools'
                     },
                     ]
+const menu27470a0ac3af4bafd415ca0aa498e297 = []
 
         export default class Layout extends React.Component {
             constructor(props) {
@@ -46,6 +47,8 @@ const menu83b5c25c39e6342cb2a7e4a56205f4d4 = [
             
             let Menu83b5c25c39e6342cb2a7e4a56205f4d4 = menuFactory(menu83b5c25c39e6342cb2a7e4a56205f4d4)
             
+            let Menu27470a0ac3af4bafd415ca0aa498e297 = menuFactory(menu27470a0ac3af4bafd415ca0aa498e297)
+            
 
                 return (
                     <div className="_namespace">
@@ -58,6 +61,9 @@ const menu83b5c25c39e6342cb2a7e4a56205f4d4 = [
             
             <div className="title">代码工具</div>
             {Menu83b5c25c39e6342cb2a7e4a56205f4d4}
+            
+            <div className="title">编译脚本</div>
+            {Menu27470a0ac3af4bafd415ca0aa498e297}
             
                     </div>
                 )
