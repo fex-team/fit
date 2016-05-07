@@ -29,6 +29,12 @@
                         "name": "同构",
                         "path": "isomorphic-redux-tools"
                     }
+                ],
+                "编译脚本": [
+                    {
+                        "name": "同构",
+                        "path": "isomorphic-build"
+                    }
                 ]
             }
         },
