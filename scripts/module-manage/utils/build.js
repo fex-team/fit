@@ -13,7 +13,7 @@ import * as ts from 'typescript'
 const parseBabel = (filePath, info) => {
     const absolutePath = path.join(__dirname, '../../..', filePath)
     const jsFileContent = fs.readFileSync(absolutePath).toString().replace(/\.scss/g, '.css')
-    
+
     // 忽略 @babel ignore 模块
     if (jsFileContent.indexOf('@babel ignore') > -1) {
         return
