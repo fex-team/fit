@@ -35,6 +35,11 @@ export default  (modules) => {
     const devDependencies = rootJSON.devDependencies
 
     modules.forEach((info) => {
+        // 跳过忽略检查的模块
+        if (info.module.ignoreDepCheck) {
+            return
+        }
+
         const filePath = path.join(__dirname, `../../..`, `lib/${info.categoryName}/${info.module.path}`)
         let dependencies = []
         let depenObj = {}

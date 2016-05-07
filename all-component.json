@@ -33,7 +33,8 @@
                 "编译脚本": [
                     {
                         "name": "同构",
-                        "path": "isomorphic-build"
+                        "path": "isomorphic-build",
+                        "ignoreDepCheck": true
                     }
                 ]
             }
