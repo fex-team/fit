@@ -19,23 +19,23 @@
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/modal/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/modal/demo/lists/basic.js'
                         import BasicCode from 'text!../../../../lib/pc/modal/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/modal/demo/lists/basic.md'
                         
-                        import RenderComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/modal/demo/lists/render.js'
+                        import RenderComponent from '../../../../lib/pc/modal/demo/lists/render.js'
                         import RenderCode from 'text!../../../../lib/pc/modal/demo/lists/render.js'
                         import RenderMarkdown from '../../../../lib/pc/modal/demo/lists/render.md'
                         
-                        import CustomComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/modal/demo/lists/custom.js'
+                        import CustomComponent from '../../../../lib/pc/modal/demo/lists/custom.js'
                         import CustomCode from 'text!../../../../lib/pc/modal/demo/lists/custom.js'
                         import CustomMarkdown from '../../../../lib/pc/modal/demo/lists/custom.md'
                         
-                        import SizeComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/modal/demo/lists/size.js'
+                        import SizeComponent from '../../../../lib/pc/modal/demo/lists/size.js'
                         import SizeCode from 'text!../../../../lib/pc/modal/demo/lists/size.js'
                         import SizeMarkdown from '../../../../lib/pc/modal/demo/lists/size.md'
                         
-                        import BackdropComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/modal/demo/lists/backdrop.js'
+                        import BackdropComponent from '../../../../lib/pc/modal/demo/lists/backdrop.js'
                         import BackdropCode from 'text!../../../../lib/pc/modal/demo/lists/backdrop.js'
                         import BackdropMarkdown from '../../../../lib/pc/modal/demo/lists/backdrop.md'
                         

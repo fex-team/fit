@@ -21,15 +21,15 @@ module.exports = {
         loaders: [
             {
                 test   : /\.(tsx|ts)?$/,
-                exclude: [/node_modules/, /demo\/lists/],
+                exclude: [/node_modules/],
                 loaders: ['babel', 'ts-loader', 'html-path-loader']
             }, {
                 test   : /\.(jsx|js|es6)?$/,
-                exclude: [/node_modules/, /demo\/lists/],
+                exclude: [/node_modules/],
                 loaders: ['babel', 'html-path-loader']
             }, {
                 test   : /\.(jsx|js|es6)?$/,
-                include: [/node_modules/, /demo\/lists/],
+                include: [/node_modules/],
                 loaders: ['html-path-loader']
             }, {
                 test   : /\.(scss|css)/,

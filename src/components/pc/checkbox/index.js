@@ -19,27 +19,27 @@
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/checkbox/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/checkbox/demo/lists/basic.js'
                         import BasicCode from 'text!../../../../lib/pc/checkbox/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/checkbox/demo/lists/basic.md'
                         
-                        import CallbackComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/checkbox/demo/lists/callback.js'
+                        import CallbackComponent from '../../../../lib/pc/checkbox/demo/lists/callback.js'
                         import CallbackCode from 'text!../../../../lib/pc/checkbox/demo/lists/callback.js'
                         import CallbackMarkdown from '../../../../lib/pc/checkbox/demo/lists/callback.md'
                         
-                        import CustomComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/checkbox/demo/lists/custom.js'
+                        import CustomComponent from '../../../../lib/pc/checkbox/demo/lists/custom.js'
                         import CustomCode from 'text!../../../../lib/pc/checkbox/demo/lists/custom.js'
                         import CustomMarkdown from '../../../../lib/pc/checkbox/demo/lists/custom.md'
                         
-                        import DisableComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/checkbox/demo/lists/disable.js'
+                        import DisableComponent from '../../../../lib/pc/checkbox/demo/lists/disable.js'
                         import DisableCode from 'text!../../../../lib/pc/checkbox/demo/lists/disable.js'
                         import DisableMarkdown from '../../../../lib/pc/checkbox/demo/lists/disable.md'
                         
-                        import LabelComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/checkbox/demo/lists/label.js'
+                        import LabelComponent from '../../../../lib/pc/checkbox/demo/lists/label.js'
                         import LabelCode from 'text!../../../../lib/pc/checkbox/demo/lists/label.js'
                         import LabelMarkdown from '../../../../lib/pc/checkbox/demo/lists/label.md'
                         
-                        import SizeComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/checkbox/demo/lists/size.js'
+                        import SizeComponent from '../../../../lib/pc/checkbox/demo/lists/size.js'
                         import SizeCode from 'text!../../../../lib/pc/checkbox/demo/lists/size.js'
                         import SizeMarkdown from '../../../../lib/pc/checkbox/demo/lists/size.md'
                         

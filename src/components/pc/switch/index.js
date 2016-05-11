@@ -19,23 +19,23 @@
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/switch/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/switch/demo/lists/basic.js'
                         import BasicCode from 'text!../../../../lib/pc/switch/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/switch/demo/lists/basic.md'
                         
-                        import ControlComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/switch/demo/lists/control.js'
+                        import ControlComponent from '../../../../lib/pc/switch/demo/lists/control.js'
                         import ControlCode from 'text!../../../../lib/pc/switch/demo/lists/control.js'
                         import ControlMarkdown from '../../../../lib/pc/switch/demo/lists/control.md'
                         
-                        import LabelComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/switch/demo/lists/label.js'
+                        import LabelComponent from '../../../../lib/pc/switch/demo/lists/label.js'
                         import LabelCode from 'text!../../../../lib/pc/switch/demo/lists/label.js'
                         import LabelMarkdown from '../../../../lib/pc/switch/demo/lists/label.md'
                         
-                        import SizeComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/switch/demo/lists/size.js'
+                        import SizeComponent from '../../../../lib/pc/switch/demo/lists/size.js'
                         import SizeCode from 'text!../../../../lib/pc/switch/demo/lists/size.js'
                         import SizeMarkdown from '../../../../lib/pc/switch/demo/lists/size.md'
                         
-                        import TypeComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/switch/demo/lists/type.js'
+                        import TypeComponent from '../../../../lib/pc/switch/demo/lists/type.js'
                         import TypeCode from 'text!../../../../lib/pc/switch/demo/lists/type.js'
                         import TypeMarkdown from '../../../../lib/pc/switch/demo/lists/type.md'
                         

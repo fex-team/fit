@@ -16,11 +16,11 @@
                 
 
                 
-                        import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/emoji/demo/lists/basic.tsx'
+                        import BasicComponent from '../../../../lib/tb/emoji/demo/lists/basic.tsx'
                         import BasicCode from 'text!../../../../lib/tb/emoji/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/tb/emoji/demo/lists/basic.md'
                         
-                        import ControlComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/emoji/demo/lists/control.tsx'
+                        import ControlComponent from '../../../../lib/tb/emoji/demo/lists/control.tsx'
                         import ControlCode from 'text!../../../../lib/tb/emoji/demo/lists/control.tsx'
                         import ControlMarkdown from '../../../../lib/tb/emoji/demo/lists/control.md'
                         

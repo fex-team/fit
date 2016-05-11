@@ -31,27 +31,27 @@
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout-global/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/layout-global/demo/lists/basic.js'
                         import BasicCode from 'text!../../../../lib/pc/layout-global/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/layout-global/demo/lists/basic.md'
                         
-                        import HeaderComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout-global/demo/lists/header.js'
+                        import HeaderComponent from '../../../../lib/pc/layout-global/demo/lists/header.js'
                         import HeaderCode from 'text!../../../../lib/pc/layout-global/demo/lists/header.js'
                         import HeaderMarkdown from '../../../../lib/pc/layout-global/demo/lists/header.md'
                         
-                        import FooterComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout-global/demo/lists/footer.js'
+                        import FooterComponent from '../../../../lib/pc/layout-global/demo/lists/footer.js'
                         import FooterCode from 'text!../../../../lib/pc/layout-global/demo/lists/footer.js'
                         import FooterMarkdown from '../../../../lib/pc/layout-global/demo/lists/footer.md'
                         
-                        import RightFooterComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout-global/demo/lists/right-footer.js'
+                        import RightFooterComponent from '../../../../lib/pc/layout-global/demo/lists/right-footer.js'
                         import RightFooterCode from 'text!../../../../lib/pc/layout-global/demo/lists/right-footer.js'
                         import RightFooterMarkdown from '../../../../lib/pc/layout-global/demo/lists/right-footer.md'
                         
-                        import HeaderSectionComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout-global/demo/lists/header-section.js'
+                        import HeaderSectionComponent from '../../../../lib/pc/layout-global/demo/lists/header-section.js'
                         import HeaderSectionCode from 'text!../../../../lib/pc/layout-global/demo/lists/header-section.js'
                         import HeaderSectionMarkdown from '../../../../lib/pc/layout-global/demo/lists/header-section.md'
                         
-                        import AllComponent from 'react-hot-loader!babel-loader!../../../../lib/pc/layout-global/demo/lists/all.js'
+                        import AllComponent from '../../../../lib/pc/layout-global/demo/lists/all.js'
                         import AllCode from 'text!../../../../lib/pc/layout-global/demo/lists/all.js'
                         import AllMarkdown from '../../../../lib/pc/layout-global/demo/lists/all.md'
                         

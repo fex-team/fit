@@ -19,7 +19,7 @@
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/upload/demo/lists/basic.tsx'
+                        import BasicComponent from '../../../../lib/tb/upload/demo/lists/basic.tsx'
                         import BasicCode from 'text!../../../../lib/tb/upload/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/tb/upload/demo/lists/basic.md'
                         

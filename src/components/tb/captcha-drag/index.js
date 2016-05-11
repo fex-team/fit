@@ -19,7 +19,7 @@
                         
 
                 
-                        import BasicComponent from 'react-hot-loader!ts-loader!../../../../lib/tb/captcha-drag/demo/lists/basic.tsx'
+                        import BasicComponent from '../../../../lib/tb/captcha-drag/demo/lists/basic.tsx'
                         import BasicCode from 'text!../../../../lib/tb/captcha-drag/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/tb/captcha-drag/demo/lists/basic.md'
                         
