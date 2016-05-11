@@ -14,7 +14,7 @@
     "server": "node server/app.js",
     "server-dev": "node server/app.js dev",
     "webpack-dev": "node webpack.js",
-    "webpack-dist": "webpack --profile --display-modules --optimize-minimize --optimize-occurence-order --optimize-dedupe --config webpack.config.js",
+    "webpack-dist": "webpack --profile --display-modules --config webpack.config.js",
     "cdn": "webpack -p --profile --config webpack.config.cdn.js",
     "update": "npm run babel-scripts && node scripts-babel/module-manage/index.js update && npm run demo-init",
     "start-dev": "npm run demo-init && npm run cdn && npm run server-dev & npm run webpack-dev",

@@ -22,31 +22,30 @@ module.exports = {
             {
                 test   : /\.(tsx|ts)?$/,
                 exclude: [/node_modules/, /demo\/lists/],
-                loaders: ['react-hot-loader', 'babel', 'ts-loader', 'html-path-loader']
+                loaders: ['babel', 'ts-loader', 'html-path-loader']
             }, {
                 test   : /\.(jsx|js|es6)?$/,
                 exclude: [/node_modules/, /demo\/lists/],
-                loaders: ['react-hot-loader', 'babel', 'html-path-loader']
+                loaders: ['babel', 'html-path-loader']
             }, {
                 test   : /\.(jsx|js|es6)?$/,
-                include: [/demo/],
+                include: [/node_modules/, /demo\/lists/],
                 loaders: ['html-path-loader']
             }, {
                 test   : /\.(scss|css)/,
-                exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
-                loader : extractSCSS.extract('style', 'css!autoprefixer!sass!css-path-loader')
-            },
-            {
+                exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
+                loaders: ['style', 'css', 'autoprefixer', 'sass', 'css-path-loader']
+            }, {
                 test   : /\.(scss|css)/,
-                include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
-                loader : extractSCSS.extract('style', 'css!autoprefixer!sass')
+                include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
+                loaders: ['style', 'css', 'autoprefixer', 'sass']
             }, {
                 test   : /\.(png|jpg)$/,
                 exclude: /node_modules/,
-                loader : 'url?limit=3000&name=img/[hash:8].[name].[ext]'
+                loaders: ['url?limit=3000&name=img/[hash:8].[name].[ext]']
             }, {
-                test  : /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'url?limit=3000&name=font/[hash:8].[name].[ext]'
+                test   : /\.(woff|woff2|ttf|eot|svg)/,
+                loaders: ['url?limit=3000&name=font/[hash:8].[name].[ext]']
             }, {
                 test  : /\.json$/,
                 loader: 'json-loader'
@@ -65,6 +64,10 @@ module.exports = {
             "process.env": {
                 NODE_ENV: JSON.stringify("production")
             }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: false,
+            mangle: false
         })
     ]
 }

@@ -43,7 +43,7 @@ const mkComponents = (config)=> {
                         }
 
                         demoImport += `
-                        import ${camelDemoName}Component from 'react-hot-loader!${loader}!../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.${demoItem.ext}'
+                        import ${camelDemoName}Component from '../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.${demoItem.ext}'
                         import ${camelDemoName}Code from 'text!../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.${demoItem.ext}'
                         import ${camelDemoName}Markdown from '../../../../lib/${categoryKey}/${component.path}/demo/lists/${demoItem.name}.md'
                         `
