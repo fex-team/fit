@@ -15,10 +15,10 @@
 
                 
                         import TransmitTransparentlySource from '../../../../lib/common/transmit-transparently/src/transmit-transparently/index.tsx'
-                        import TransmitTransparentlySourceCode from 'text!../../../../lib/common/transmit-transparently/src/transmit-transparently/index.tsx'
+                        import TransmitTransparentlySourceCode from '-!text!../../../../lib/common/transmit-transparently/src/transmit-transparently/index.tsx'
                         
                         import othersSource from '../../../../lib/common/transmit-transparently/src/others/index.tsx'
-                        import othersSourceCode from 'text!../../../../lib/common/transmit-transparently/src/others/index.tsx'
+                        import othersSourceCode from '-!text!../../../../lib/common/transmit-transparently/src/others/index.tsx'
                         
 
                 

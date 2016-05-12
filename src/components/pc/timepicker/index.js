@@ -15,7 +15,7 @@
 
                 
                         import TimepickerSource from '../../../../lib/pc/timepicker/src/timepicker'
-                        import TimepickerSourceCode from 'text!../../../../lib/pc/timepicker/src/timepicker'
+                        import TimepickerSourceCode from '-!text!../../../../lib/pc/timepicker/src/timepicker'
                         
 
                 

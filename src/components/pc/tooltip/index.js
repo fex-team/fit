@@ -15,7 +15,7 @@
 
                 
                         import TooltipSource from '../../../../lib/pc/tooltip/src/tooltip'
-                        import TooltipSourceCode from 'text!../../../../lib/pc/tooltip/src/tooltip'
+                        import TooltipSourceCode from '-!text!../../../../lib/pc/tooltip/src/tooltip'
                         
 
                 

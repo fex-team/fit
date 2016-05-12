@@ -15,7 +15,7 @@
 
                 
                         import TimeagoSource from '../../../../lib/common/timeago/src/timeago/index.tsx'
-                        import TimeagoSourceCode from 'text!../../../../lib/common/timeago/src/timeago/index.tsx'
+                        import TimeagoSourceCode from '-!text!../../../../lib/common/timeago/src/timeago/index.tsx'
                         
 
                 

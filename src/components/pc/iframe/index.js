@@ -15,7 +15,7 @@
 
                 
                         import IframeSource from '../../../../lib/pc/iframe/src/iframe'
-                        import IframeSourceCode from 'text!../../../../lib/pc/iframe/src/iframe'
+                        import IframeSourceCode from '-!text!../../../../lib/pc/iframe/src/iframe'
                         
 
                 

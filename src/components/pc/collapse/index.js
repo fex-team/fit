@@ -15,10 +15,10 @@
 
                 
                         import CollapseSource from '../../../../lib/pc/collapse/src/collapse'
-                        import CollapseSourceCode from 'text!../../../../lib/pc/collapse/src/collapse'
+                        import CollapseSourceCode from '-!text!../../../../lib/pc/collapse/src/collapse'
                         
                         import CollPanelSource from '../../../../lib/pc/collapse/src/coll-panel'
-                        import CollPanelSourceCode from 'text!../../../../lib/pc/collapse/src/coll-panel'
+                        import CollPanelSourceCode from '-!text!../../../../lib/pc/collapse/src/coll-panel'
                         
 
                 

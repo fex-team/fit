@@ -15,10 +15,10 @@
 
                 
                         import const build = module.exports = function (fisSource from '../../../../lib/common/isomorphic-build/src/const-build-module-exports-function-fis'
-                        import const build = module.exports = function (fisSourceCode from 'text!../../../../lib/common/isomorphic-build/src/const-build-module-exports-function-fis'
+                        import const build = module.exports = function (fisSourceCode from '-!text!../../../../lib/common/isomorphic-build/src/const-build-module-exports-function-fis'
                         
                         import config)Source from '../../../../lib/common/isomorphic-build/src/config'
-                        import config)SourceCode from 'text!../../../../lib/common/isomorphic-build/src/config'
+                        import config)SourceCode from '-!text!../../../../lib/common/isomorphic-build/src/config'
                         
 
                 

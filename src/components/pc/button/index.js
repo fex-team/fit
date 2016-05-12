@@ -15,10 +15,10 @@
 
                 
                         import ButtonSource from '../../../../lib/pc/button/src/button/index.tsx'
-                        import ButtonSourceCode from 'text!../../../../lib/pc/button/src/button/index.tsx'
+                        import ButtonSourceCode from '-!text!../../../../lib/pc/button/src/button/index.tsx'
                         
                         import ButtonGroupSource from '../../../../lib/pc/button/src/button-group/index.tsx'
-                        import ButtonGroupSourceCode from 'text!../../../../lib/pc/button/src/button-group/index.tsx'
+                        import ButtonGroupSourceCode from '-!text!../../../../lib/pc/button/src/button-group/index.tsx'
                         
 
                 

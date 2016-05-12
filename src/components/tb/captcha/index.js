@@ -15,7 +15,7 @@
 
                 
                         import CaptchaSource from '../../../../lib/tb/captcha/src/captcha/index.tsx'
-                        import CaptchaSourceCode from 'text!../../../../lib/tb/captcha/src/captcha/index.tsx'
+                        import CaptchaSourceCode from '-!text!../../../../lib/tb/captcha/src/captcha/index.tsx'
                         
 
                 

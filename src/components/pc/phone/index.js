@@ -15,7 +15,7 @@
 
                 
                         import PhoneSource from '../../../../lib/pc/phone/src/phone'
-                        import PhoneSourceCode from 'text!../../../../lib/pc/phone/src/phone'
+                        import PhoneSourceCode from '-!text!../../../../lib/pc/phone/src/phone'
                         
 
                 

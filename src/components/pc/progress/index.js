@@ -15,10 +15,10 @@
 
                 
                         import ProgressSource from '../../../../lib/pc/progress/src/progress'
-                        import ProgressSourceCode from 'text!../../../../lib/pc/progress/src/progress'
+                        import ProgressSourceCode from '-!text!../../../../lib/pc/progress/src/progress'
                         
                         import ProgressCircleSource from '../../../../lib/pc/progress/src/progress-circle'
-                        import ProgressCircleSourceCode from 'text!../../../../lib/pc/progress/src/progress-circle'
+                        import ProgressCircleSourceCode from '-!text!../../../../lib/pc/progress/src/progress-circle'
                         
 
                 

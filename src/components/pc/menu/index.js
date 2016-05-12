@@ -15,7 +15,7 @@
 
                 
                         import Source from '../../../../lib/pc/menu/src//index.tsx'
-                        import SourceCode from 'text!../../../../lib/pc/menu/src//index.tsx'
+                        import SourceCode from '-!text!../../../../lib/pc/menu/src//index.tsx'
                         
 
                 

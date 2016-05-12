@@ -15,7 +15,7 @@
 
                 
                         import JsonTreeSource from '../../../../lib/pc/json-tree/src/json-tree'
-                        import JsonTreeSourceCode from 'text!../../../../lib/pc/json-tree/src/json-tree'
+                        import JsonTreeSourceCode from '-!text!../../../../lib/pc/json-tree/src/json-tree'
                         
 
                 

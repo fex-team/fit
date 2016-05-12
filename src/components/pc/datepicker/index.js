@@ -15,13 +15,13 @@
 
                 
                         import CalendarSource from '../../../../lib/pc/datepicker/src/calendar'
-                        import CalendarSourceCode from 'text!../../../../lib/pc/datepicker/src/calendar'
+                        import CalendarSourceCode from '-!text!../../../../lib/pc/datepicker/src/calendar'
                         
                         import DateRangeSource from '../../../../lib/pc/datepicker/src/date-range'
-                        import DateRangeSourceCode from 'text!../../../../lib/pc/datepicker/src/date-range'
+                        import DateRangeSourceCode from '-!text!../../../../lib/pc/datepicker/src/date-range'
                         
                         import DateInputSource from '../../../../lib/pc/datepicker/src/date-input'
-                        import DateInputSourceCode from 'text!../../../../lib/pc/datepicker/src/date-input'
+                        import DateInputSourceCode from '-!text!../../../../lib/pc/datepicker/src/date-input'
                         
 
                 

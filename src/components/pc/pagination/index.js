@@ -15,10 +15,10 @@
 
                 
                         import PaginationSource from '../../../../lib/pc/pagination/src/pagination'
-                        import PaginationSourceCode from 'text!../../../../lib/pc/pagination/src/pagination'
+                        import PaginationSourceCode from '-!text!../../../../lib/pc/pagination/src/pagination'
                         
                         import PaginationAllSource from '../../../../lib/pc/pagination/src/pagination-all'
-                        import PaginationAllSourceCode from 'text!../../../../lib/pc/pagination/src/pagination-all'
+                        import PaginationAllSourceCode from '-!text!../../../../lib/pc/pagination/src/pagination-all'
                         
 
                 

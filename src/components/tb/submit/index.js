@@ -15,10 +15,10 @@
 
                 
                         import SubmitSource from '../../../../lib/tb/submit/src/submit'
-                        import SubmitSourceCode from 'text!../../../../lib/tb/submit/src/submit'
+                        import SubmitSourceCode from '-!text!../../../../lib/tb/submit/src/submit'
                         
                         import sendSource from '../../../../lib/tb/submit/src/send'
-                        import sendSourceCode from 'text!../../../../lib/tb/submit/src/send'
+                        import sendSourceCode from '-!text!../../../../lib/tb/submit/src/send'
                         
 
                 

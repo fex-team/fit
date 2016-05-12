@@ -15,7 +15,7 @@
 
                 
                         import UploadSource from '../../../../lib/tb/upload/src/upload/index.tsx'
-                        import UploadSourceCode from 'text!../../../../lib/tb/upload/src/upload/index.tsx'
+                        import UploadSourceCode from '-!text!../../../../lib/tb/upload/src/upload/index.tsx'
                         
 
                 

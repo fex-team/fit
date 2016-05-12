@@ -15,10 +15,10 @@
 
                 
                         import RowSource from '../../../../lib/pc/layout/src/row'
-                        import RowSourceCode from 'text!../../../../lib/pc/layout/src/row'
+                        import RowSourceCode from '-!text!../../../../lib/pc/layout/src/row'
                         
                         import ColSource from '../../../../lib/pc/layout/src/col'
-                        import ColSourceCode from 'text!../../../../lib/pc/layout/src/col'
+                        import ColSourceCode from '-!text!../../../../lib/pc/layout/src/col'
                         
 
                 

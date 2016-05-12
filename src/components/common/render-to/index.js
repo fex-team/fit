@@ -15,7 +15,7 @@
 
                 
                         import RenderToSource from '../../../../lib/common/render-to/src/render-to/index.tsx'
-                        import RenderToSourceCode from 'text!../../../../lib/common/render-to/src/render-to/index.tsx'
+                        import RenderToSourceCode from '-!text!../../../../lib/common/render-to/src/render-to/index.tsx'
                         
 
                 

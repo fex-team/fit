@@ -15,7 +15,7 @@
 
                 
                         import CheckboxSource from '../../../../lib/pc/checkbox/src/checkbox'
-                        import CheckboxSourceCode from 'text!../../../../lib/pc/checkbox/src/checkbox'
+                        import CheckboxSourceCode from '-!text!../../../../lib/pc/checkbox/src/checkbox'
                         
 
                 

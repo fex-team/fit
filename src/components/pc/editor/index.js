@@ -15,7 +15,7 @@
 
                 
                         import EditorSource from '../../../../lib/pc/editor/src/editor'
-                        import EditorSourceCode from 'text!../../../../lib/pc/editor/src/editor'
+                        import EditorSourceCode from '-!text!../../../../lib/pc/editor/src/editor'
                         
 
                 

@@ -15,13 +15,13 @@
 
                 
                         import RadioSource from '../../../../lib/pc/radio/src/radio'
-                        import RadioSourceCode from 'text!../../../../lib/pc/radio/src/radio'
+                        import RadioSourceCode from '-!text!../../../../lib/pc/radio/src/radio'
                         
                         import RadioGroupSource from '../../../../lib/pc/radio/src/radio-group'
-                        import RadioGroupSourceCode from 'text!../../../../lib/pc/radio/src/radio-group'
+                        import RadioGroupSourceCode from '-!text!../../../../lib/pc/radio/src/radio-group'
                         
                         import RadioButtonSource from '../../../../lib/pc/radio/src/radio-button'
-                        import RadioButtonSourceCode from 'text!../../../../lib/pc/radio/src/radio-button'
+                        import RadioButtonSourceCode from '-!text!../../../../lib/pc/radio/src/radio-button'
                         
 
                 

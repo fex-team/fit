@@ -15,25 +15,25 @@
 
                 
                         import connectSource from '../../../../lib/common/isomorphic-redux-tools/src/connect/index.tsx'
-                        import connectSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/connect/index.tsx'
+                        import connectSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/connect/index.tsx'
                         
                         import promiseMiddlewareSource from '../../../../lib/common/isomorphic-redux-tools/src/promise-middleware/index.tsx'
-                        import promiseMiddlewareSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/promise-middleware/index.tsx'
+                        import promiseMiddlewareSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/promise-middleware/index.tsx'
                         
                         import serverRenderSource from '../../../../lib/common/isomorphic-redux-tools/src/server-render/index.tsx'
-                        import serverRenderSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/server-render/index.tsx'
+                        import serverRenderSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/server-render/index.tsx'
                         
                         import fetchSource from '../../../../lib/common/isomorphic-redux-tools/src/fetch/index.tsx'
-                        import fetchSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/fetch/index.tsx'
+                        import fetchSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/fetch/index.tsx'
                         
                         import routerSource from '../../../../lib/common/isomorphic-redux-tools/src/router/index.tsx'
-                        import routerSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/router/index.tsx'
+                        import routerSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/router/index.tsx'
                         
                         import storeSource from '../../../../lib/common/isomorphic-redux-tools/src/store/index.tsx'
-                        import storeSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/store/index.tsx'
+                        import storeSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/store/index.tsx'
                         
                         import serviceSource from '../../../../lib/common/isomorphic-redux-tools/src/service/index.tsx'
-                        import serviceSourceCode from 'text!../../../../lib/common/isomorphic-redux-tools/src/service/index.tsx'
+                        import serviceSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/service/index.tsx'
                         
 
                 

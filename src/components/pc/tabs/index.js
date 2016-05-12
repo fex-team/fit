@@ -15,10 +15,10 @@
 
                 
                         import TabsSource from '../../../../lib/pc/tabs/src/tabs'
-                        import TabsSourceCode from 'text!../../../../lib/pc/tabs/src/tabs'
+                        import TabsSourceCode from '-!text!../../../../lib/pc/tabs/src/tabs'
                         
                         import TabPanelSource from '../../../../lib/pc/tabs/src/tab-panel'
-                        import TabPanelSourceCode from 'text!../../../../lib/pc/tabs/src/tab-panel'
+                        import TabPanelSourceCode from '-!text!../../../../lib/pc/tabs/src/tab-panel'
                         
 
                 

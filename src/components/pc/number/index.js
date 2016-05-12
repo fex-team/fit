@@ -15,7 +15,7 @@
 
                 
                         import NumberSource from '../../../../lib/pc/number/src/number'
-                        import NumberSourceCode from 'text!../../../../lib/pc/number/src/number'
+                        import NumberSourceCode from '-!text!../../../../lib/pc/number/src/number'
                         
 
                 

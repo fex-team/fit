@@ -15,7 +15,7 @@
 
                 
                         import InputSource from '../../../../lib/pc/input/src/input'
-                        import InputSourceCode from 'text!../../../../lib/pc/input/src/input'
+                        import InputSourceCode from '-!text!../../../../lib/pc/input/src/input'
                         
 
                 

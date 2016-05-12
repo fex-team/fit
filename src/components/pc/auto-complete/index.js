@@ -15,7 +15,7 @@
 
                 
                         import AutoCompleteSource from '../../../../lib/pc/auto-complete/src/auto-complete'
-                        import AutoCompleteSourceCode from 'text!../../../../lib/pc/auto-complete/src/auto-complete'
+                        import AutoCompleteSourceCode from '-!text!../../../../lib/pc/auto-complete/src/auto-complete'
                         
 
                 

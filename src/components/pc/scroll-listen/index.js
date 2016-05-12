@@ -15,16 +15,16 @@
 
                 
                         import ScrollListenBoxSource from '../../../../lib/pc/scroll-listen/src/scroll-listen-box'
-                        import ScrollListenBoxSourceCode from 'text!../../../../lib/pc/scroll-listen/src/scroll-listen-box'
+                        import ScrollListenBoxSourceCode from '-!text!../../../../lib/pc/scroll-listen/src/scroll-listen-box'
                         
                         import ScrollListenNailSource from '../../../../lib/pc/scroll-listen/src/scroll-listen-nail'
-                        import ScrollListenNailSourceCode from 'text!../../../../lib/pc/scroll-listen/src/scroll-listen-nail'
+                        import ScrollListenNailSourceCode from '-!text!../../../../lib/pc/scroll-listen/src/scroll-listen-nail'
                         
                         import ScrollListenSource from '../../../../lib/pc/scroll-listen/src/scroll-listen'
-                        import ScrollListenSourceCode from 'text!../../../../lib/pc/scroll-listen/src/scroll-listen'
+                        import ScrollListenSourceCode from '-!text!../../../../lib/pc/scroll-listen/src/scroll-listen'
                         
                         import createStoreSource from '../../../../lib/pc/scroll-listen/src/create-store'
-                        import createStoreSourceCode from 'text!../../../../lib/pc/scroll-listen/src/create-store'
+                        import createStoreSourceCode from '-!text!../../../../lib/pc/scroll-listen/src/create-store'
                         
 
                 

@@ -15,7 +15,7 @@
 
                 
                         import BlueBarSource from '../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
-                        import BlueBarSourceCode from 'text!../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
+                        import BlueBarSourceCode from '-!text!../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
                         
 
                 

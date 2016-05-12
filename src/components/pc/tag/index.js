@@ -15,7 +15,7 @@
 
                 
                         import TagSource from '../../../../lib/pc/tag/src/tag/index.tsx'
-                        import TagSourceCode from 'text!../../../../lib/pc/tag/src/tag/index.tsx'
+                        import TagSourceCode from '-!text!../../../../lib/pc/tag/src/tag/index.tsx'
                         
 
                 

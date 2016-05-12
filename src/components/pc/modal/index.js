@@ -15,7 +15,7 @@
 
                 
                         import ModalSource from '../../../../lib/pc/modal/src/modal'
-                        import ModalSourceCode from 'text!../../../../lib/pc/modal/src/modal'
+                        import ModalSourceCode from '-!text!../../../../lib/pc/modal/src/modal'
                         
 
                 

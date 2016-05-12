@@ -15,7 +15,7 @@
 
                 
                         import TableSource from '../../../../lib/pc/table/src/table'
-                        import TableSourceCode from 'text!../../../../lib/pc/table/src/table'
+                        import TableSourceCode from '-!text!../../../../lib/pc/table/src/table'
                         
 
                 

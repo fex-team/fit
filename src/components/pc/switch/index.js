@@ -15,7 +15,7 @@
 
                 
                         import SwitchSource from '../../../../lib/pc/switch/src/switch'
-                        import SwitchSourceCode from 'text!../../../../lib/pc/switch/src/switch'
+                        import SwitchSourceCode from '-!text!../../../../lib/pc/switch/src/switch'
                         
 
                 

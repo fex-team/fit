@@ -15,7 +15,7 @@
 
                 
                         import trackSource from '../../../../lib/tb/track/src/track/index.tsx'
-                        import trackSourceCode from 'text!../../../../lib/tb/track/src/track/index.tsx'
+                        import trackSourceCode from '-!text!../../../../lib/tb/track/src/track/index.tsx'
                         
 
                 

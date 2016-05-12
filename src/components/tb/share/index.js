@@ -15,7 +15,7 @@
 
                 
                         import ShareSource from '../../../../lib/tb/share/src/share/index.tsx'
-                        import ShareSourceCode from 'text!../../../../lib/tb/share/src/share/index.tsx'
+                        import ShareSourceCode from '-!text!../../../../lib/tb/share/src/share/index.tsx'
                         
 
                 

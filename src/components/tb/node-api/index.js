@@ -15,16 +15,16 @@
 
                 
                         import currentUserSource from '../../../../lib/tb/node-api/src/current-user/index.tsx'
-                        import currentUserSourceCode from 'text!../../../../lib/tb/node-api/src/current-user/index.tsx'
+                        import currentUserSourceCode from '-!text!../../../../lib/tb/node-api/src/current-user/index.tsx'
                         
                         import ralSource from '../../../../lib/tb/node-api/src/ral/index.tsx'
-                        import ralSourceCode from 'text!../../../../lib/tb/node-api/src/ral/index.tsx'
+                        import ralSourceCode from '-!text!../../../../lib/tb/node-api/src/ral/index.tsx'
                         
                         import tbsSource from '../../../../lib/tb/node-api/src/tbs/index.tsx'
-                        import tbsSourceCode from 'text!../../../../lib/tb/node-api/src/tbs/index.tsx'
+                        import tbsSourceCode from '-!text!../../../../lib/tb/node-api/src/tbs/index.tsx'
                         
                         import userSource from '../../../../lib/tb/node-api/src/user/index.tsx'
-                        import userSourceCode from 'text!../../../../lib/tb/node-api/src/user/index.tsx'
+                        import userSourceCode from '-!text!../../../../lib/tb/node-api/src/user/index.tsx'
                         
 
                 

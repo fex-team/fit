@@ -15,10 +15,10 @@
 
                 
                         import TreeSource from '../../../../lib/pc/tree/src/tree'
-                        import TreeSourceCode from 'text!../../../../lib/pc/tree/src/tree'
+                        import TreeSourceCode from '-!text!../../../../lib/pc/tree/src/tree'
                         
                         import TreeNodeSource from '../../../../lib/pc/tree/src/tree-node'
-                        import TreeNodeSourceCode from 'text!../../../../lib/pc/tree/src/tree-node'
+                        import TreeNodeSourceCode from '-!text!../../../../lib/pc/tree/src/tree-node'
                         
 
                 

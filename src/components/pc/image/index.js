@@ -15,7 +15,7 @@
 
                 
                         import ImageSource from '../../../../lib/pc/image/src/image'
-                        import ImageSourceCode from 'text!../../../../lib/pc/image/src/image'
+                        import ImageSourceCode from '-!text!../../../../lib/pc/image/src/image'
                         
 
                 

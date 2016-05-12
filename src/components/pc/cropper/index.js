@@ -15,7 +15,7 @@
 
                 
                         import CropperSource from '../../../../lib/pc/cropper/src/cropper'
-                        import CropperSourceCode from 'text!../../../../lib/pc/cropper/src/cropper'
+                        import CropperSourceCode from '-!text!../../../../lib/pc/cropper/src/cropper'
                         
 
                 

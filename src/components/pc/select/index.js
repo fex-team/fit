@@ -15,13 +15,13 @@
 
                 
                         import SelectSource from '../../../../lib/pc/select/src/select'
-                        import SelectSourceCode from 'text!../../../../lib/pc/select/src/select'
+                        import SelectSourceCode from '-!text!../../../../lib/pc/select/src/select'
                         
                         import OptionSource from '../../../../lib/pc/select/src/option'
-                        import OptionSourceCode from 'text!../../../../lib/pc/select/src/option'
+                        import OptionSourceCode from '-!text!../../../../lib/pc/select/src/option'
                         
                         import OptGroupSource from '../../../../lib/pc/select/src/opt-group'
-                        import OptGroupSourceCode from 'text!../../../../lib/pc/select/src/opt-group'
+                        import OptGroupSourceCode from '-!text!../../../../lib/pc/select/src/opt-group'
                         
 
                 

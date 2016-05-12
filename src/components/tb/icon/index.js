@@ -15,7 +15,7 @@
 
                 
                         import IconSource from '../../../../lib/tb/icon/src/icon/index.tsx'
-                        import IconSourceCode from 'text!../../../../lib/tb/icon/src/icon/index.tsx'
+                        import IconSourceCode from '-!text!../../../../lib/tb/icon/src/icon/index.tsx'
                         
 
                 
