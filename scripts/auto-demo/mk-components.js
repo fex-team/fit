@@ -80,12 +80,12 @@ const mkComponents = (config)=> {
                         if (fs.existsSync(sourceRootArray + '.tsx')) {
                             sourceImport += `
                         import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/index.tsx'
-                        import ${sourceItem}SourceCode from 'text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/index.tsx'
+                        import ${sourceItem}SourceCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/index.tsx'
                         `
                         } else {
                             sourceImport += `
                         import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
-                        import ${sourceItem}SourceCode from 'text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
+                        import ${sourceItem}SourceCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
                         `
                         }
 

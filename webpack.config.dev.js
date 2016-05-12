@@ -28,13 +28,9 @@ var config = {
                 exclude: [/node_modules/],
                 loaders: ['react-hot-loader', 'ts-loader', 'html-path-loader']
             }, {
-                test   : /\.(jsx|js|es6)?$/,
+                test   : /\.(jsx|js)?$/,
                 exclude: [/node_modules/],
                 loaders: ['react-hot-loader', 'babel', 'html-path-loader']
-            }, {
-                test   : /\.(jsx|js|es6)?$/,
-                include: [/node_modules/],
-                loaders: ['html-path-loader']
             }, {
                 test   : /\.(scss|css)/,
                 exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
