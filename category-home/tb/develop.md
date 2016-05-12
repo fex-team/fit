@@ -1,5 +1,11 @@
 ## 开发流程
 
+### 开发环境
+
+- fis3 ^3.3.21
+- node ^4.0
+- cnpm ^3.4.0
+
 ### 快速上手 & 新项目初始化
 
 在 http://gitlab.baidu.com/groups/tb 新建一个项目
