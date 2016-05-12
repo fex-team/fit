@@ -23,7 +23,7 @@
 
                 
                         import BasicComponent from '../../../../lib/pc/tabs/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/tabs/demo/lists/basic.js'
+                        import BasicCode from '-!text!../../../../lib/pc/tabs/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/tabs/demo/lists/basic.md'
                         
 

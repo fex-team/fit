@@ -23,7 +23,7 @@
 
                 
                         import BasicComponent from '../../../../lib/common/transmit-transparently/demo/lists/basic.tsx'
-                        import BasicCode from 'text!../../../../lib/common/transmit-transparently/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/common/transmit-transparently/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/common/transmit-transparently/demo/lists/basic.md'
                         
 

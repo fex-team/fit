@@ -29,7 +29,7 @@
 
                 
                         import BasicComponent from '../../../../lib/pc/scroll-listen/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/scroll-listen/demo/lists/basic.js'
+                        import BasicCode from '-!text!../../../../lib/pc/scroll-listen/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/scroll-listen/demo/lists/basic.md'
                         
 

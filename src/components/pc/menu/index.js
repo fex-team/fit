@@ -20,23 +20,23 @@
 
                 
                         import BasicComponent from '../../../../lib/pc/menu/demo/lists/basic.tsx'
-                        import BasicCode from 'text!../../../../lib/pc/menu/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/menu/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/menu/demo/lists/basic.md'
                         
                         import ReverseComponent from '../../../../lib/pc/menu/demo/lists/reverse.tsx'
-                        import ReverseCode from 'text!../../../../lib/pc/menu/demo/lists/reverse.tsx'
+                        import ReverseCode from '-!text!../../../../lib/pc/menu/demo/lists/reverse.tsx'
                         import ReverseMarkdown from '../../../../lib/pc/menu/demo/lists/reverse.md'
                         
                         import VerticalComponent from '../../../../lib/pc/menu/demo/lists/vertical.tsx'
-                        import VerticalCode from 'text!../../../../lib/pc/menu/demo/lists/vertical.tsx'
+                        import VerticalCode from '-!text!../../../../lib/pc/menu/demo/lists/vertical.tsx'
                         import VerticalMarkdown from '../../../../lib/pc/menu/demo/lists/vertical.md'
                         
                         import SubTreeComponent from '../../../../lib/pc/menu/demo/lists/sub-tree.tsx'
-                        import SubTreeCode from 'text!../../../../lib/pc/menu/demo/lists/sub-tree.tsx'
+                        import SubTreeCode from '-!text!../../../../lib/pc/menu/demo/lists/sub-tree.tsx'
                         import SubTreeMarkdown from '../../../../lib/pc/menu/demo/lists/sub-tree.md'
                         
                         import SubTreeVerticalComponent from '../../../../lib/pc/menu/demo/lists/sub-tree-vertical.tsx'
-                        import SubTreeVerticalCode from 'text!../../../../lib/pc/menu/demo/lists/sub-tree-vertical.tsx'
+                        import SubTreeVerticalCode from '-!text!../../../../lib/pc/menu/demo/lists/sub-tree-vertical.tsx'
                         import SubTreeVerticalMarkdown from '../../../../lib/pc/menu/demo/lists/sub-tree-vertical.md'
                         
 

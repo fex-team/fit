@@ -20,11 +20,11 @@
 
                 
                         import BasicComponent from '../../../../lib/pc/image/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/image/demo/lists/basic.js'
+                        import BasicCode from '-!text!../../../../lib/pc/image/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/image/demo/lists/basic.md'
                         
                         import WideComponent from '../../../../lib/pc/image/demo/lists/wide.js'
-                        import WideCode from 'text!../../../../lib/pc/image/demo/lists/wide.js'
+                        import WideCode from '-!text!../../../../lib/pc/image/demo/lists/wide.js'
                         import WideMarkdown from '../../../../lib/pc/image/demo/lists/wide.md'
                         
 

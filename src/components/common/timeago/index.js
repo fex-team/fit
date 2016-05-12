@@ -20,15 +20,15 @@
 
                 
                         import BasicComponent from '../../../../lib/common/timeago/demo/lists/basic.tsx'
-                        import BasicCode from 'text!../../../../lib/common/timeago/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/common/timeago/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/common/timeago/demo/lists/basic.md'
                         
                         import ChineseComponent from '../../../../lib/common/timeago/demo/lists/chinese.tsx'
-                        import ChineseCode from 'text!../../../../lib/common/timeago/demo/lists/chinese.tsx'
+                        import ChineseCode from '-!text!../../../../lib/common/timeago/demo/lists/chinese.tsx'
                         import ChineseMarkdown from '../../../../lib/common/timeago/demo/lists/chinese.md'
                         
                         import LoseComponent from '../../../../lib/common/timeago/demo/lists/lose.tsx'
-                        import LoseCode from 'text!../../../../lib/common/timeago/demo/lists/lose.tsx'
+                        import LoseCode from '-!text!../../../../lib/common/timeago/demo/lists/lose.tsx'
                         import LoseMarkdown from '../../../../lib/common/timeago/demo/lists/lose.md'
                         
 

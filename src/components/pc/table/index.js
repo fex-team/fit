@@ -20,71 +20,71 @@
 
                 
                         import DataComponent from '../../../../lib/pc/table/demo/lists/data.js'
-                        import DataCode from 'text!../../../../lib/pc/table/demo/lists/data.js'
+                        import DataCode from '-!text!../../../../lib/pc/table/demo/lists/data.js'
                         import DataMarkdown from '../../../../lib/pc/table/demo/lists/data.md'
                         
                         import AjaxComponent from '../../../../lib/pc/table/demo/lists/ajax.js'
-                        import AjaxCode from 'text!../../../../lib/pc/table/demo/lists/ajax.js'
+                        import AjaxCode from '-!text!../../../../lib/pc/table/demo/lists/ajax.js'
                         import AjaxMarkdown from '../../../../lib/pc/table/demo/lists/ajax.md'
                         
                         import PaginationComponent from '../../../../lib/pc/table/demo/lists/pagination.js'
-                        import PaginationCode from 'text!../../../../lib/pc/table/demo/lists/pagination.js'
+                        import PaginationCode from '-!text!../../../../lib/pc/table/demo/lists/pagination.js'
                         import PaginationMarkdown from '../../../../lib/pc/table/demo/lists/pagination.md'
                         
                         import AddComponent from '../../../../lib/pc/table/demo/lists/add.js'
-                        import AddCode from 'text!../../../../lib/pc/table/demo/lists/add.js'
+                        import AddCode from '-!text!../../../../lib/pc/table/demo/lists/add.js'
                         import AddMarkdown from '../../../../lib/pc/table/demo/lists/add.md'
                         
                         import CustomComponent from '../../../../lib/pc/table/demo/lists/custom.js'
-                        import CustomCode from 'text!../../../../lib/pc/table/demo/lists/custom.js'
+                        import CustomCode from '-!text!../../../../lib/pc/table/demo/lists/custom.js'
                         import CustomMarkdown from '../../../../lib/pc/table/demo/lists/custom.md'
                         
                         import CustomColComponent from '../../../../lib/pc/table/demo/lists/custom-col.js'
-                        import CustomColCode from 'text!../../../../lib/pc/table/demo/lists/custom-col.js'
+                        import CustomColCode from '-!text!../../../../lib/pc/table/demo/lists/custom-col.js'
                         import CustomColMarkdown from '../../../../lib/pc/table/demo/lists/custom-col.md'
                         
                         import DeleteComponent from '../../../../lib/pc/table/demo/lists/delete.js'
-                        import DeleteCode from 'text!../../../../lib/pc/table/demo/lists/delete.js'
+                        import DeleteCode from '-!text!../../../../lib/pc/table/demo/lists/delete.js'
                         import DeleteMarkdown from '../../../../lib/pc/table/demo/lists/delete.md'
                         
                         import EditComponent from '../../../../lib/pc/table/demo/lists/edit.js'
-                        import EditCode from 'text!../../../../lib/pc/table/demo/lists/edit.js'
+                        import EditCode from '-!text!../../../../lib/pc/table/demo/lists/edit.js'
                         import EditMarkdown from '../../../../lib/pc/table/demo/lists/edit.md'
                         
                         import FieldsComponent from '../../../../lib/pc/table/demo/lists/fields.js'
-                        import FieldsCode from 'text!../../../../lib/pc/table/demo/lists/fields.js'
+                        import FieldsCode from '-!text!../../../../lib/pc/table/demo/lists/fields.js'
                         import FieldsMarkdown from '../../../../lib/pc/table/demo/lists/fields.md'
                         
                         import FindComponent from '../../../../lib/pc/table/demo/lists/find.js'
-                        import FindCode from 'text!../../../../lib/pc/table/demo/lists/find.js'
+                        import FindCode from '-!text!../../../../lib/pc/table/demo/lists/find.js'
                         import FindMarkdown from '../../../../lib/pc/table/demo/lists/find.md'
                         
                         import OutsideFindComponent from '../../../../lib/pc/table/demo/lists/outsideFind.js'
-                        import OutsideFindCode from 'text!../../../../lib/pc/table/demo/lists/outsideFind.js'
+                        import OutsideFindCode from '-!text!../../../../lib/pc/table/demo/lists/outsideFind.js'
                         import OutsideFindMarkdown from '../../../../lib/pc/table/demo/lists/outsideFind.md'
                         
                         import MockDeleteComponent from '../../../../lib/pc/table/demo/lists/mock-delete.js'
-                        import MockDeleteCode from 'text!../../../../lib/pc/table/demo/lists/mock-delete.js'
+                        import MockDeleteCode from '-!text!../../../../lib/pc/table/demo/lists/mock-delete.js'
                         import MockDeleteMarkdown from '../../../../lib/pc/table/demo/lists/mock-delete.md'
                         
                         import OutsideComponent from '../../../../lib/pc/table/demo/lists/outside.js'
-                        import OutsideCode from 'text!../../../../lib/pc/table/demo/lists/outside.js'
+                        import OutsideCode from '-!text!../../../../lib/pc/table/demo/lists/outside.js'
                         import OutsideMarkdown from '../../../../lib/pc/table/demo/lists/outside.md'
                         
                         import ResponsiveComponent from '../../../../lib/pc/table/demo/lists/responsive.js'
-                        import ResponsiveCode from 'text!../../../../lib/pc/table/demo/lists/responsive.js'
+                        import ResponsiveCode from '-!text!../../../../lib/pc/table/demo/lists/responsive.js'
                         import ResponsiveMarkdown from '../../../../lib/pc/table/demo/lists/responsive.md'
                         
                         import SelectComponent from '../../../../lib/pc/table/demo/lists/select.js'
-                        import SelectCode from 'text!../../../../lib/pc/table/demo/lists/select.js'
+                        import SelectCode from '-!text!../../../../lib/pc/table/demo/lists/select.js'
                         import SelectMarkdown from '../../../../lib/pc/table/demo/lists/select.md'
                         
                         import SimpleAjaxComponent from '../../../../lib/pc/table/demo/lists/simple-ajax.js'
-                        import SimpleAjaxCode from 'text!../../../../lib/pc/table/demo/lists/simple-ajax.js'
+                        import SimpleAjaxCode from '-!text!../../../../lib/pc/table/demo/lists/simple-ajax.js'
                         import SimpleAjaxMarkdown from '../../../../lib/pc/table/demo/lists/simple-ajax.md'
                         
                         import SortComponent from '../../../../lib/pc/table/demo/lists/sort.js'
-                        import SortCode from 'text!../../../../lib/pc/table/demo/lists/sort.js'
+                        import SortCode from '-!text!../../../../lib/pc/table/demo/lists/sort.js'
                         import SortMarkdown from '../../../../lib/pc/table/demo/lists/sort.md'
                         
 

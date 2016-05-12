@@ -17,31 +17,31 @@
 
                 
                         import BasicComponent from '../../../../lib/tb/color/demo/lists/basic.tsx'
-                        import BasicCode from 'text!../../../../lib/tb/color/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/tb/color/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/tb/color/demo/lists/basic.md'
                         
                         import AssitComponent from '../../../../lib/tb/color/demo/lists/assit.tsx'
-                        import AssitCode from 'text!../../../../lib/tb/color/demo/lists/assit.tsx'
+                        import AssitCode from '-!text!../../../../lib/tb/color/demo/lists/assit.tsx'
                         import AssitMarkdown from '../../../../lib/tb/color/demo/lists/assit.md'
                         
                         import ButtonComponent from '../../../../lib/tb/color/demo/lists/button.tsx'
-                        import ButtonCode from 'text!../../../../lib/tb/color/demo/lists/button.tsx'
+                        import ButtonCode from '-!text!../../../../lib/tb/color/demo/lists/button.tsx'
                         import ButtonMarkdown from '../../../../lib/tb/color/demo/lists/button.md'
                         
                         import CarrierComponent from '../../../../lib/tb/color/demo/lists/carrier.tsx'
-                        import CarrierCode from 'text!../../../../lib/tb/color/demo/lists/carrier.tsx'
+                        import CarrierCode from '-!text!../../../../lib/tb/color/demo/lists/carrier.tsx'
                         import CarrierMarkdown from '../../../../lib/tb/color/demo/lists/carrier.md'
                         
                         import NightComponent from '../../../../lib/tb/color/demo/lists/night.tsx'
-                        import NightCode from 'text!../../../../lib/tb/color/demo/lists/night.tsx'
+                        import NightCode from '-!text!../../../../lib/tb/color/demo/lists/night.tsx'
                         import NightMarkdown from '../../../../lib/tb/color/demo/lists/night.md'
                         
                         import NightAssitComponent from '../../../../lib/tb/color/demo/lists/night-assit.tsx'
-                        import NightAssitCode from 'text!../../../../lib/tb/color/demo/lists/night-assit.tsx'
+                        import NightAssitCode from '-!text!../../../../lib/tb/color/demo/lists/night-assit.tsx'
                         import NightAssitMarkdown from '../../../../lib/tb/color/demo/lists/night-assit.md'
                         
                         import NightCarrierComponent from '../../../../lib/tb/color/demo/lists/night-carrier.tsx'
-                        import NightCarrierCode from 'text!../../../../lib/tb/color/demo/lists/night-carrier.tsx'
+                        import NightCarrierCode from '-!text!../../../../lib/tb/color/demo/lists/night-carrier.tsx'
                         import NightCarrierMarkdown from '../../../../lib/tb/color/demo/lists/night-carrier.md'
                         
 

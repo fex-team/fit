@@ -23,23 +23,23 @@
 
                 
                         import BasicComponent from '../../../../lib/pc/pagination/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/pagination/demo/lists/basic.js'
+                        import BasicCode from '-!text!../../../../lib/pc/pagination/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/pagination/demo/lists/basic.md'
                         
                         import AllPageComponent from '../../../../lib/pc/pagination/demo/lists/all-page.js'
-                        import AllPageCode from 'text!../../../../lib/pc/pagination/demo/lists/all-page.js'
+                        import AllPageCode from '-!text!../../../../lib/pc/pagination/demo/lists/all-page.js'
                         import AllPageMarkdown from '../../../../lib/pc/pagination/demo/lists/all-page.md'
                         
                         import LoadingComponent from '../../../../lib/pc/pagination/demo/lists/loading.js'
-                        import LoadingCode from 'text!../../../../lib/pc/pagination/demo/lists/loading.js'
+                        import LoadingCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading.js'
                         import LoadingMarkdown from '../../../../lib/pc/pagination/demo/lists/loading.md'
                         
                         import LoadingAllComponent from '../../../../lib/pc/pagination/demo/lists/loading-all.js'
-                        import LoadingAllCode from 'text!../../../../lib/pc/pagination/demo/lists/loading-all.js'
+                        import LoadingAllCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading-all.js'
                         import LoadingAllMarkdown from '../../../../lib/pc/pagination/demo/lists/loading-all.md'
                         
                         import SizeComponent from '../../../../lib/pc/pagination/demo/lists/size.js'
-                        import SizeCode from 'text!../../../../lib/pc/pagination/demo/lists/size.js'
+                        import SizeCode from '-!text!../../../../lib/pc/pagination/demo/lists/size.js'
                         import SizeMarkdown from '../../../../lib/pc/pagination/demo/lists/size.md'
                         
 

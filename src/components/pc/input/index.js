@@ -20,35 +20,35 @@
 
                 
                         import BasicComponent from '../../../../lib/pc/input/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/input/demo/lists/basic.js'
+                        import BasicCode from '-!text!../../../../lib/pc/input/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/input/demo/lists/basic.md'
                         
                         import DefaultComponent from '../../../../lib/pc/input/demo/lists/default.js'
-                        import DefaultCode from 'text!../../../../lib/pc/input/demo/lists/default.js'
+                        import DefaultCode from '-!text!../../../../lib/pc/input/demo/lists/default.js'
                         import DefaultMarkdown from '../../../../lib/pc/input/demo/lists/default.md'
                         
                         import CallbackComponent from '../../../../lib/pc/input/demo/lists/callback.js'
-                        import CallbackCode from 'text!../../../../lib/pc/input/demo/lists/callback.js'
+                        import CallbackCode from '-!text!../../../../lib/pc/input/demo/lists/callback.js'
                         import CallbackMarkdown from '../../../../lib/pc/input/demo/lists/callback.md'
                         
                         import DisabledComponent from '../../../../lib/pc/input/demo/lists/disabled.js'
-                        import DisabledCode from 'text!../../../../lib/pc/input/demo/lists/disabled.js'
+                        import DisabledCode from '-!text!../../../../lib/pc/input/demo/lists/disabled.js'
                         import DisabledMarkdown from '../../../../lib/pc/input/demo/lists/disabled.md'
                         
                         import FlexComponent from '../../../../lib/pc/input/demo/lists/flex.js'
-                        import FlexCode from 'text!../../../../lib/pc/input/demo/lists/flex.js'
+                        import FlexCode from '-!text!../../../../lib/pc/input/demo/lists/flex.js'
                         import FlexMarkdown from '../../../../lib/pc/input/demo/lists/flex.md'
                         
                         import IconComponent from '../../../../lib/pc/input/demo/lists/icon.js'
-                        import IconCode from 'text!../../../../lib/pc/input/demo/lists/icon.js'
+                        import IconCode from '-!text!../../../../lib/pc/input/demo/lists/icon.js'
                         import IconMarkdown from '../../../../lib/pc/input/demo/lists/icon.md'
                         
                         import TextareaComponent from '../../../../lib/pc/input/demo/lists/textarea.js'
-                        import TextareaCode from 'text!../../../../lib/pc/input/demo/lists/textarea.js'
+                        import TextareaCode from '-!text!../../../../lib/pc/input/demo/lists/textarea.js'
                         import TextareaMarkdown from '../../../../lib/pc/input/demo/lists/textarea.md'
                         
                         import ClearComponent from '../../../../lib/pc/input/demo/lists/clear.js'
-                        import ClearCode from 'text!../../../../lib/pc/input/demo/lists/clear.js'
+                        import ClearCode from '-!text!../../../../lib/pc/input/demo/lists/clear.js'
                         import ClearMarkdown from '../../../../lib/pc/input/demo/lists/clear.md'
                         
 

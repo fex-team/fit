@@ -38,7 +38,7 @@
 
                 
                         import BasicComponent from '../../../../lib/common/isomorphic-redux-tools/demo/lists/basic.tsx'
-                        import BasicCode from 'text!../../../../lib/common/isomorphic-redux-tools/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/common/isomorphic-redux-tools/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/common/isomorphic-redux-tools/demo/lists/basic.md'
                         
 

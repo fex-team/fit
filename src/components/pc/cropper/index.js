@@ -20,11 +20,11 @@
 
                 
                         import BasicComponent from '../../../../lib/pc/cropper/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/cropper/demo/lists/basic.js'
+                        import BasicCode from '-!text!../../../../lib/pc/cropper/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/cropper/demo/lists/basic.md'
                         
                         import ReCutComponent from '../../../../lib/pc/cropper/demo/lists/re-cut.js'
-                        import ReCutCode from 'text!../../../../lib/pc/cropper/demo/lists/re-cut.js'
+                        import ReCutCode from '-!text!../../../../lib/pc/cropper/demo/lists/re-cut.js'
                         import ReCutMarkdown from '../../../../lib/pc/cropper/demo/lists/re-cut.md'
                         
 

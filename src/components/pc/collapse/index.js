@@ -23,11 +23,11 @@
 
                 
                         import BasicComponent from '../../../../lib/pc/collapse/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/collapse/demo/lists/basic.js'
+                        import BasicCode from '-!text!../../../../lib/pc/collapse/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/collapse/demo/lists/basic.md'
                         
                         import AccordionComponent from '../../../../lib/pc/collapse/demo/lists/accordion.js'
-                        import AccordionCode from 'text!../../../../lib/pc/collapse/demo/lists/accordion.js'
+                        import AccordionCode from '-!text!../../../../lib/pc/collapse/demo/lists/accordion.js'
                         import AccordionMarkdown from '../../../../lib/pc/collapse/demo/lists/accordion.md'
                         
 

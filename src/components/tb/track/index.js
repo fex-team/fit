@@ -20,7 +20,7 @@
 
                 
                         import BasicComponent from '../../../../lib/tb/track/demo/lists/basic.tsx'
-                        import BasicCode from 'text!../../../../lib/tb/track/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/tb/track/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/tb/track/demo/lists/basic.md'
                         
 

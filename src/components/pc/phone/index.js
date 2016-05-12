@@ -20,7 +20,7 @@
 
                 
                         import BasicComponent from '../../../../lib/pc/phone/demo/lists/basic.js'
-                        import BasicCode from 'text!../../../../lib/pc/phone/demo/lists/basic.js'
+                        import BasicCode from '-!text!../../../../lib/pc/phone/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/phone/demo/lists/basic.md'
                         
 

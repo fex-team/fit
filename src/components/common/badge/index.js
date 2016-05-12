@@ -20,27 +20,27 @@
 
                 
                         import BasicComponent from '../../../../lib/common/badge/demo/lists/basic.tsx'
-                        import BasicCode from 'text!../../../../lib/common/badge/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/common/badge/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/common/badge/demo/lists/basic.md'
                         
                         import LimitComponent from '../../../../lib/common/badge/demo/lists/limit.tsx'
-                        import LimitCode from 'text!../../../../lib/common/badge/demo/lists/limit.tsx'
+                        import LimitCode from '-!text!../../../../lib/common/badge/demo/lists/limit.tsx'
                         import LimitMarkdown from '../../../../lib/common/badge/demo/lists/limit.md'
                         
                         import StandAloneComponent from '../../../../lib/common/badge/demo/lists/stand-alone.tsx'
-                        import StandAloneCode from 'text!../../../../lib/common/badge/demo/lists/stand-alone.tsx'
+                        import StandAloneCode from '-!text!../../../../lib/common/badge/demo/lists/stand-alone.tsx'
                         import StandAloneMarkdown from '../../../../lib/common/badge/demo/lists/stand-alone.md'
                         
                         import DotComponent from '../../../../lib/common/badge/demo/lists/dot.tsx'
-                        import DotCode from 'text!../../../../lib/common/badge/demo/lists/dot.tsx'
+                        import DotCode from '-!text!../../../../lib/common/badge/demo/lists/dot.tsx'
                         import DotMarkdown from '../../../../lib/common/badge/demo/lists/dot.md'
                         
                         import CustomLimitComponent from '../../../../lib/common/badge/demo/lists/custom-limit.tsx'
-                        import CustomLimitCode from 'text!../../../../lib/common/badge/demo/lists/custom-limit.tsx'
+                        import CustomLimitCode from '-!text!../../../../lib/common/badge/demo/lists/custom-limit.tsx'
                         import CustomLimitMarkdown from '../../../../lib/common/badge/demo/lists/custom-limit.md'
                         
                         import AnimateComponent from '../../../../lib/common/badge/demo/lists/animate.tsx'
-                        import AnimateCode from 'text!../../../../lib/common/badge/demo/lists/animate.tsx'
+                        import AnimateCode from '-!text!../../../../lib/common/badge/demo/lists/animate.tsx'
                         import AnimateMarkdown from '../../../../lib/common/badge/demo/lists/animate.md'
                         
 
