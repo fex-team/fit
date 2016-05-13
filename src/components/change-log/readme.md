@@ -3,6 +3,7 @@
 #### 2016.5.13
 
 - 新增 `fit-isomorphic-build` 通用同构编译脚本
+- `fit-isomorphic-redux-tools` `fetch` 如果不设置 url 参数,默认使用 action 作为 url 地址
 
 #### 2016.5.4
 
