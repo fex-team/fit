@@ -35,7 +35,9 @@ var args = process.argv.slice(2)
 var templateHtml = require('../html.js')(args)
 app.use(function *() {
     var ip = getIp.getClientIp(this.req)
-    var isBaidu = checkBaidu(ip)
+
+    // 本地开发 或者 百度的 ip
+    var isBaidu = (ip === '::ffff:127.0.0.1') || checkBaidu(ip)
 
     this.cookies.set('IS_BAIDU', isBaidu ? '1' : '0', {
         httpOnly: false

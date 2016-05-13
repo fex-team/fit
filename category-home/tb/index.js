@@ -28,12 +28,12 @@ export default class Layout extends React.Component {
                     <Col span="24"
                          style={colStyle}>
                         <Tabs defaultActiveKey="1">
-                            <TabPanel tab="开发流程"
+                            <TabPanel tab="Php开发流程"
                                       key="1">
                                 <div className="markdown-body"
                                      dangerouslySetInnerHTML={{__html: marked(developReadme)}}></div>
                             </TabPanel>
-                            <TabPanel tab="node开发流程"
+                            <TabPanel tab="Node开发流程"
                                       key="2">
                                 <div className="markdown-body"
                                      dangerouslySetInnerHTML={{__html: marked(nodeDevelopReadme)}}></div>

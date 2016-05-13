@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.5.13
+
+- 新增 `fit-isomorphic-build` 通用同构编译脚本
+
 #### 2016.5.4
 
 - `fit-isomorphic-redux-tools` 新增 `serverRender` `service` 等核心方法,详细用法见 https://github.com/fex-team/fit/issues/1

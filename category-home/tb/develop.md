@@ -2,13 +2,15 @@
 
 ### 开发环境
 
-- fis3 ^3.3.21
-- node ^4.0
-- cnpm ^3.4.0
+- `fis3` `^3.3.21`
+- `node` `^4.0`
+- `cnpm` `^3.4.0`
 
 ### 快速上手 & 新项目初始化
 
-在 http://gitlab.baidu.com/groups/tb 新建一个项目
+在 http://gitlab.baidu.com/groups/tb 新建一个项目 `[your-project]`, 没有权限的同学可以找 `huangziyi01` 添加.
+
+执行下列脚本,将项目 clone 到本地,初始化项目:
 
 ```bash
 $ git clone http://gitlab.baidu.com/tb/your-project.git
@@ -18,11 +20,15 @@ $ fis3 init gitlab:tb-component/scaffold
 
 `Run npm install`? n
 
-为什么fis3 init提示的 `Run npm install` 不要装? 因为fis3 init安装npm的方式不走代理,项目初始化最后一步会以淘宝npm源安装依赖包,稳定性会得到提高
+fis3 init安装npm的方式不走代理,项目初始化最后一步会以淘宝npm源安装依赖包,稳定性会得到提高
 
-`Run fis install`? y
+`Run fis install`? n
+
+已经不需要 fis3 组件生态,使用 npm 生态,因此这项也不要选
 
 `Run .build.sh`?   y
+
+初始化环境
 
 ### 运行 & 预览
 
@@ -44,7 +50,7 @@ $ npm run webpack
 $ npm run dev
 ```
 
-#### 沙盒开发，开启压缩与预览 (与上线编译一样,用于qa测试)
+#### 沙盒开发，开启线上编译配置 (用于qa测试)
 
 ```bash
 $ npm run preview
@@ -52,13 +58,13 @@ $ npm run preview
 
 ### 上线
 
-#### 准备工作
+#### 1.准备工作
 
 先要加入 贴吧前端Gitlab hi群接收上线提醒，群号：1493692
 
 没有接入gitlab开发流程的同学，[点击链接](http://solar.baidu.com/ci/platform/#/account)进入绑定帐号,用途自动同步到svn,密码密文存储在CI服务器
 
-#### 添加 webhook
+#### 2.添加 webhook
 
 可以让 `master` 的 `push` 和 `merge request` 请求将自动通知FIS CI进行 svn 同步、代码检查、自动部署、自动测试等自动化服务。
 
@@ -68,7 +74,7 @@ $ npm run preview
 - URL 填写 http://solar.baidu.com/ci/webhook
 - 勾选 Push events , Issues events , Merge Request events
 
-#### 提交代码
+#### 3.提交代码
 
 ````
 git add -A
@@ -79,6 +85,8 @@ git push origin master
 提交代码到master分支，因为项目集成了fisCI钩子，会自动同步到svn主干并在agile平台执行编译。
 
 这时候hi群里的机器人会发来一条消息，告诉你同步成功，并给出一条agile链接，进入以后点击右侧的发布就可以发布代码了，然后就可以orp上线了。
+
+> 所有 php 模块共用一个 svn 路径: fe/react ,因此开发新模块不需要申请 svn 路径,只需要新建 gitlab 地址即可. agile 上的 svn 地址也选择 fe/react 进行发布. 在 orp 贴换到 `tieba` 产品线.
 
 ### 额外
 
@@ -97,11 +105,3 @@ $ cnpm install
 ````
 
 之后流程见 运行 & 预览
-
-### 代码结构
-
-[项目结构说明](doc/tree.md)
-
-### 组件发布
-
-[组件如何发布到npm](doc/publish.md)

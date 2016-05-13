@@ -2,25 +2,24 @@
 
 ### 开发环境
 
-- fis3 ^3.3.21
-- node ^4.0
-- cnpm ^3.4.0
-- yog2 ^0.6.1
+- `fis3` `^3.3.21`
+- `node` `^4.0`
+- `cnpm` `^3.4.0`
+- `yog2` `^0.6.1`
 
 ### 为什么要用 node 开发流程?
 
 - 本地开发
 - 后端渲染
 - 热更新
-
-总之是飞一般的开发体验
+- 实践前端最前沿技术
 
 #### 注意点
 
-- 前端使用 typescript 开发,建议用 webstorm 或 vscode 开发,体验更佳
-- 默认使用 redux,安装 redux-devtools 的 chrome 插件辅助开发
+- 前后端均使用 typescript 开发,建议用 webstorm 或 vscode 开发,体验更佳
+- 默认使用 redux, 安装 redux-devtools 的 chrome 插件辅助开发
 - 使用 immutable 辅助不可变 state 流
-- 组件 static needs 数组,传入对应 action,可以将请求初始化时在后端执行
+- 开发技术详细介绍: https://github.com/fex-team/fit/issues/1
 
 ### 本地启动 node 服务
 
@@ -61,22 +60,16 @@ npm start
 
 打开 `dev.baidu.com:8080` 查看对应项目.路由是 `/n/[项目名]/[子路由]`,线上也是此路径
 
-#### fis 版本地开发
-
-```hash
-npm run start-fis
-```
-
 #### 上线前本地预览
 
 ```hash
-npm run fis
+npm run preview
 ```
 
 #### 上线前开发机预览
 
 ```hash
-npm run fis-remote
+npm run remote
 ```
 
 注意先设置 `fis-conf.js` 中的 `host` `port` 字段
@@ -84,6 +77,8 @@ npm run fis-remote
 ### 上线
 
 与普通开发流程保持一致
+
+> node 版开发流程,一个 git 仓库对应一个 svn 模块,因此新建 git 仓库之前,请先去 icafe 申请 fe/[git-name] 对应名称的 svn 模块. 上线时,在 orp 贴换到 `TiebaNode` 产品线.
 
 ### 一些细节
 
@@ -108,4 +103,8 @@ npm run fis-remote
 
 #### 本地开发不想用后端渲染,怎么办?
 
-再 /server/action/index.es 的 `serverRender` 第三个参数设置为 `false` 即可
+再 /server/action/index.es 的 `serverRender` 的 `enableServerRender` 参数设置为 `false` 即可
+
+#### 脱离贴吧环境,也想使用这套开发流程怎么办?
+
+我们已经将编译脚本与脚手架的核心逻辑发布并且开源了 https://github.com/ascoders/isomorphic-react-redux-app , fork一份,在它基础上开发吧!使用方法与贴吧开发一致.
