@@ -11,8 +11,6 @@ React组件实现,包含PC组件,Mobile组件以及部分产品线定制组件,�
 - sass模块化
 - 后端渲染
 
-（注:fis3已支持npm生态圈,启用[fis3-hook-node_modules](https://github.com/fex-team/fis3-hook-node_modules)插件即可)
-
 ### 安装
 
 ~~~js

@@ -130,3 +130,7 @@ browserHistory.push(...)
 #### 10.尽量不使用inline-style
 
 避免给拓展和继承带来麻烦,native可以通过脚手架自动生成`inline-style`
+
+#### 11.redux 数据与 组件 state 解耦
+
+不要将 redux 附属与任何组件,页面数据应该与 组件 路由 解耦
