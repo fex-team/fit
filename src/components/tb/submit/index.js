@@ -14,28 +14,28 @@
                 const store = createStore()
 
                 
-                        import SubmitSource from '../../../../lib/tb/submit/src/submit'
-                        import SubmitSourceCode from '-!text!../../../../lib/tb/submit/src/submit'
+                        import SubmitSource from '../../../../lib/tb/submit/src/submit/index.tsx'
+                        import SubmitSourceCode from '-!text!../../../../lib/tb/submit/src/submit/index.tsx'
                         
-                        import sendSource from '../../../../lib/tb/submit/src/send'
-                        import sendSourceCode from '-!text!../../../../lib/tb/submit/src/send'
+                        import sendSource from '../../../../lib/tb/submit/src/send/index.tsx'
+                        import sendSourceCode from '-!text!../../../../lib/tb/submit/src/send/index.tsx'
                         
 
                 
-                        import PostComponent from '../../../../lib/tb/submit/demo/lists/post.js'
-                        import PostCode from '-!text!../../../../lib/tb/submit/demo/lists/post.js'
+                        import PostComponent from '../../../../lib/tb/submit/demo/lists/post.tsx'
+                        import PostCode from '-!text!../../../../lib/tb/submit/demo/lists/post.tsx'
                         import PostMarkdown from '../../../../lib/tb/submit/demo/lists/post.md'
                         
-                        import ReplyComponent from '../../../../lib/tb/submit/demo/lists/reply.js'
-                        import ReplyCode from '-!text!../../../../lib/tb/submit/demo/lists/reply.js'
+                        import ReplyComponent from '../../../../lib/tb/submit/demo/lists/reply.tsx'
+                        import ReplyCode from '-!text!../../../../lib/tb/submit/demo/lists/reply.tsx'
                         import ReplyMarkdown from '../../../../lib/tb/submit/demo/lists/reply.md'
                         
-                        import CommentComponent from '../../../../lib/tb/submit/demo/lists/comment.js'
-                        import CommentCode from '-!text!../../../../lib/tb/submit/demo/lists/comment.js'
+                        import CommentComponent from '../../../../lib/tb/submit/demo/lists/comment.tsx'
+                        import CommentCode from '-!text!../../../../lib/tb/submit/demo/lists/comment.tsx'
                         import CommentMarkdown from '../../../../lib/tb/submit/demo/lists/comment.md'
                         
-                        import SingleComponent from '../../../../lib/tb/submit/demo/lists/single.js'
-                        import SingleCode from '-!text!../../../../lib/tb/submit/demo/lists/single.js'
+                        import SingleComponent from '../../../../lib/tb/submit/demo/lists/single.tsx'
+                        import SingleCode from '-!text!../../../../lib/tb/submit/demo/lists/single.tsx'
                         import SingleMarkdown from '../../../../lib/tb/submit/demo/lists/single.md'
                         
 

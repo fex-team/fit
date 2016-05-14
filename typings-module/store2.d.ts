@@ -1,3 +1,4 @@
 declare module 'store2' {
-    const remove:Function
+    const exports: any
+    export=exports
 }
