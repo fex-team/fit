@@ -14,8 +14,17 @@
                 const store = createStore()
 
                 
-                        import Source from '../../../../lib/pc/menu/src//index.tsx'
-                        import SourceCode from '-!text!../../../../lib/pc/menu/src//index.tsx'
+                        import MenuSource from '../../../../lib/pc/menu/src/menu/index.tsx'
+                        import MenuSourceCode from '-!text!../../../../lib/pc/menu/src/menu/index.tsx'
+                        
+                        import MenuItemSource from '../../../../lib/pc/menu/src/menu-item/index.tsx'
+                        import MenuItemSourceCode from '-!text!../../../../lib/pc/menu/src/menu-item/index.tsx'
+                        
+                        import SubMenuSource from '../../../../lib/pc/menu/src/sub-menu/index.tsx'
+                        import SubMenuSourceCode from '-!text!../../../../lib/pc/menu/src/sub-menu/index.tsx'
+                        
+                        import RightMenuSource from '../../../../lib/pc/menu/src/right-menu/index.tsx'
+                        import RightMenuSourceCode from '-!text!../../../../lib/pc/menu/src/right-menu/index.tsx'
                         
 
                 
@@ -150,7 +159,19 @@
                                 <div>
                                     
                         <div style={docStyle}>
-                            <CodeDoc code={SourceCode} instance={Source} />
+                            <CodeDoc code={MenuSourceCode} instance={MenuSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={MenuItemSourceCode} instance={MenuItemSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={SubMenuSourceCode} instance={SubMenuSource} />
+                        </div>
+                        
+                        <div style={docStyle}>
+                            <CodeDoc code={RightMenuSourceCode} instance={RightMenuSource} />
                         </div>
                         
                                 </div>
