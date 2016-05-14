@@ -27,6 +27,10 @@
                         import ReverseCode from '-!text!../../../../lib/pc/menu/demo/lists/reverse.tsx'
                         import ReverseMarkdown from '../../../../lib/pc/menu/demo/lists/reverse.md'
                         
+                        import RightComponent from '../../../../lib/pc/menu/demo/lists/right.tsx'
+                        import RightCode from '-!text!../../../../lib/pc/menu/demo/lists/right.tsx'
+                        import RightMarkdown from '../../../../lib/pc/menu/demo/lists/right.md'
+                        
                         import VerticalComponent from '../../../../lib/pc/menu/demo/lists/vertical.tsx'
                         import VerticalCode from '-!text!../../../../lib/pc/menu/demo/lists/vertical.tsx'
                         import VerticalMarkdown from '../../../../lib/pc/menu/demo/lists/vertical.md'
@@ -90,6 +94,17 @@
                                       npmName="fit-menu">
 
                                     <ReverseComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={RightMarkdown}
+                                      code={RightCode}
+                                      npmName="fit-menu">
+
+                                    <RightComponent/>
 
                             </CodeView>
                         </Col>
