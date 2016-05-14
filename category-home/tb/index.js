@@ -11,7 +11,8 @@ import './index.scss'
 
 const colStyle = {
     padding: '10px 20px 20px 20px',
-    background: 'white'
+    background: 'white',
+    boxSizing: 'border-box'
 }
 
 export default class Layout extends React.Component {

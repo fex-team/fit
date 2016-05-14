@@ -5,7 +5,8 @@ import readme from './readme.md'
 
 const colStyle = {
     padding: 20,
-    background: 'white'
+    background: 'white',
+    boxSizing: 'border-box'
 }
 
 export default class Layout extends React.Component {

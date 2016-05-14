@@ -1,15 +1,21 @@
 // 代码高亮
 .hljs-type {
-  color: #c82829 !important;
+    color: #c82829 !important;
 }
 
 .bar-header {
-  background-color: #f6f8f8;
-  border-bottom: 1px solid #dee5e7;
-  .title {
-    h1 {
-      font-size: 20px;
+    background-color: #f6f8f8;
+    border-bottom: 1px solid #dee5e7;
+    .title {
+        h1 {
+            font-size: 20px;
+        }
+        color: #58666e;
     }
-    color: #58666e;
-  }
+}
+
+// container 容器
+.container {
+    width: 90%;
+    margin: 0 auto;
 }
