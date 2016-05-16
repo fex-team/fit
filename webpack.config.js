@@ -29,12 +29,12 @@ module.exports = {
                 loaders: ['babel', 'html-path-loader']
             }, {
                 test   : /\.(scss|css)/,
-                exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
-                loaders: ['style', 'css', 'autoprefixer', 'sass', 'css-path-loader']
+                exclude: [/node_modules/, /lib\/mobile\/style/, /demo\/lists/],
+                loader : extractSCSS.extract('style', 'css!autoprefixer!sass!css-path-loader')
             }, {
                 test   : /\.(scss|css)/,
-                include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
-                loaders: ['style', 'css', 'autoprefixer', 'sass']
+                include: [/node_modules/, /lib\/mobile\/style/, /demo\/lists/],
+                loader : extractSCSS.extract('style', 'css!autoprefixer!sass')
             }, {
                 test   : /\.(png|jpg)$/,
                 exclude: /node_modules/,
@@ -63,7 +63,7 @@ module.exports = {
         }),
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: false,
-            mangle: false
+            mangle   : false
         })
     ]
 }
