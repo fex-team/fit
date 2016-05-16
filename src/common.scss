@@ -4,8 +4,9 @@
 }
 
 .bar-header {
-    background-color: #f6f8f8;
-    border-bottom: 1px solid #dee5e7;
+    .hljs {
+        background-color: white;
+    }
     .title {
         h1 {
             font-size: 20px;

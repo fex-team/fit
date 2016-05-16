@@ -4,66 +4,65 @@ $theme-color: (
         pc: (
                 bg-color: linear-gradient(top, #f6f6f6 0%, #dadada 100%),
                 font-color: #3c4246,
-                font-active-color: #1c9aa0,
                 title-color:#8b8e99
         ),
         mobile:(
                 bg-color:#7266ba,
                 font-color: whitesmoke,
-                font-active-color: #1c9aa0,
                 title-color:white
         ),
         tb: (
                 bg-color:#23b7e5,
                 font-color: whitesmoke,
-                font-active-color: #1c9aa0,
                 title-color:#fff
         ),
         common: (
                 bg-color:#23b7e5,
                 font-color: whitesmoke,
-                font-active-color: #1c9aa0,
                 title-color:#fff
         )
 );
 
 .g-sd {
-  width: 200px;
-  z-index: 1;
-  transition: background 0.3s ease-in-out;
+    width: 200px;
+    z-index: 1;
+    transition: background 0.3s ease-in-out;
 
-  @each $them-name in pc, mobile, tb, common {
-    &.#{$them-name} {
-      background: #f6f6f6;
-      .title {
-        font-size: 12px;
-        color: #8b8e99;
-        padding: 10px 15px;
-      }
-      .item {
-        position: relative;
-        display: block;
-        padding: 15px 10px 8px 20px;
-        font-weight: normal;
-        text-transform: none;
-        transition: background-color 0.2s ease-in-out 0s;
-        color: #666;
-        text-decoration: none;
-        font-size: 13px;
-        &:hover, &.active {
-          color: map-get(map-get($theme-color, $them-name), font-active-color);
+    @each $them-name in pc, mobile, tb, common {
+        &.#{$them-name} {
+            background: #f6f6f6;
+            .title {
+                font-size: 12px;
+                color: #8b8e99;
+                padding: 10px 15px;
+            }
+            .item {
+                position: relative;
+                display: block;
+                padding: 12px 10px 12px 20px;
+                font-weight: normal;
+                text-transform: none;
+                transition: background-color 0.2s ease-in-out 0s;
+                color: #666;
+                text-decoration: none;
+                font-size: 13px;
+                &:hover, &.active {
+                    border-left: 3px solid #7266ba;
+                    padding-left: 17px;
+                    background: white;
+                    color: #563d7c;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 .g-hd {
-  .navbar-brand {
-    @each $them-name in pc, mobile, tb, common {
-      &.#{$them-name} {
+    .navbar-brand {
+        @each $them-name in pc, mobile, tb, common {
+            &.#{$them-name} {
 
-      }
+            }
+        }
     }
-  }
 }
