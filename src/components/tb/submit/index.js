@@ -40,7 +40,8 @@
                         
 
                 const colStyle = {
-                    padding: 10
+                    padding: 10,
+                    boxSizing: 'border-box'
                 }
 
                 const docStyle = {

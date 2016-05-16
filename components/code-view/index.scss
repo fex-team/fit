@@ -3,8 +3,11 @@
     background: white;
     padding: 0 10px;
     .example-container {
-        position: relative;
-        padding: 15px 0;
+        all: initial;
+        .example-container-box {
+            position: relative;
+            margin: 15px 0;
+        }
     }
     .description {
         code {
@@ -31,6 +34,7 @@
     margin-bottom: 10px;
     border-left: 5px solid #eee;
     font-weight: bold;
+    color: #666;
     background: whitesmoke;
 }
 

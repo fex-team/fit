@@ -14,8 +14,8 @@
                 const store = createStore()
 
                 
-                        import ModalSource from '../../../../lib/pc/modal/src/modal'
-                        import ModalSourceCode from '-!text!../../../../lib/pc/modal/src/modal'
+                        import ModalSource from '../../../../lib/pc/modal/src/modal/index.tsx'
+                        import ModalSourceCode from '-!text!../../../../lib/pc/modal/src/modal/index.tsx'
                         
 
                 
@@ -41,7 +41,8 @@
                         
 
                 const colStyle = {
-                    padding: 10
+                    padding: 10,
+                    boxSizing: 'border-box'
                 }
 
                 const docStyle = {

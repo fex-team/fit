@@ -13,7 +13,7 @@ export default class SearchComponents extends React.Component {
             autoFilter: true,
             inputOpts : {
                 placeholder: '搜索组件..',
-                width      : 195
+                width      : this.props.width || 195
             },
             onSelect  : (value)=> {
                 browserHistory.push(`/components/${value}`)

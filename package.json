@@ -109,7 +109,6 @@
   },
   "dependencies": {
     "axios": "^0.10.0",
-    "bootstrap": "^4.0.0-alpha.2",
     "classnames": "^2.2.3",
     "conch": "0.0.0",
     "cropperjs": "^0.7.0",

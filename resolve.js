@@ -76,8 +76,6 @@
                 
                 'fit-tabs': path.join(__dirname, 'lib/pc/tabs/src'),
                 
-                'fit-style': path.join(__dirname, 'lib/pc/style/src'),
-                
                 'fit-phone': path.join(__dirname, 'lib/pc/phone/src'),
                 
                 'fit-iframe': path.join(__dirname, 'lib/pc/iframe/src'),

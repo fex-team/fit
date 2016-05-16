@@ -1,7 +1,7 @@
 import React from 'react'
 import Highlight from 'react-highlight'
-import { Collapse, CollPanel } from 'fit-collapse'
-import { ScrollListenNail } from 'fit-scroll-listen'
+import {Collapse, CollPanel} from 'fit-collapse'
+import {ScrollListenNail} from 'fit-scroll-listen'
 import marked from 'marked'
 
 import './index.scss'
@@ -48,7 +48,9 @@ export default class CodeView extends React.Component {
                                   className="demo-title">{title[1]}</ScrollListenNail>
                 <div className="code-container">
                     <div className="example-container">
-                        {this.props.children}
+                        <div className="example-container-box">
+                            {this.props.children}
+                        </div>
                     </div>
                     <div className="code custom">
                         <Collapse onChange={this.handleCollapseChange.bind(this)}>
