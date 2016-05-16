@@ -2,7 +2,13 @@
 
 #### 2016.5.16
 
-- 'fit-modal' 模块源码改为 typescript
+- `fit-modal` 模块源码改为 typescript
+- 所有pc模块取消对 `fit-style` 模块的依赖
+- 所有组件移除 boostrap 依赖,关键样式抽出来保留在组件局部样式中,避免引入组件对页面样式造成冲突
+- `fit-radio` disabled鼠标悬停 cursor:default
+- `fit-button` 新增 secondary 样式
+- `fit-select` 修正搜索时选择回调参数错误问题
+- 为了展示美观，在demo使用了额外样式，在demo页面可以关闭美化样式
 
 #### 2016.5.14
 
