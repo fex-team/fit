@@ -2,15 +2,17 @@ import React from 'react'
 import Highlight from 'react-highlight'
 import {Collapse, CollPanel} from 'fit-collapse'
 import {ScrollListenNail} from 'fit-scroll-listen'
+import Switch from 'fit-switch'
 import marked from 'marked'
-
+import classNames from 'classnames'
 import './index.scss'
 
 export default class CodeView extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            showCode: false
+            showCode    : false,
+            useDemoStyle: true
         }
     }
 
@@ -18,6 +20,12 @@ export default class CodeView extends React.Component {
         if (this.state.showCode)return
         this.setState({
             showCode: true
+        })
+    }
+
+    handleUseDemoStyle(checked) {
+        this.setState({
+            useDemoStyle: !checked
         })
     }
 
@@ -41,14 +49,28 @@ export default class CodeView extends React.Component {
             )
         }
 
+        const rightToolsClassName = classNames({
+            'right-tools'       : true,
+            'right-tools-active': !this.state.useDemoStyle
+        })
+
+        const exampleContainerClassName = classNames({
+            'example-container-box': true,
+            'reset'                : this.state.useDemoStyle
+        })
+
         return (
             <div className="_namespace" {...this.props}>
                 <ScrollListenNail store={this.props.store}
                                   title={title[1]}
-                                  className="demo-title">{title[1]}</ScrollListenNail>
+                                  className="demo-title">
+                    {title[1]}
+                    <div className={rightToolsClassName}>原始样式 <Switch onChange={this.handleUseDemoStyle.bind(this)}/>
+                    </div>
+                </ScrollListenNail>
                 <div className="code-container">
                     <div className="example-container">
-                        <div className="example-container-box">
+                        <div className={exampleContainerClassName}>
                             {this.props.children}
                         </div>
                     </div>

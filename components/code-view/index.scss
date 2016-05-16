@@ -1,3 +1,17 @@
+@import "../../style/reset";
+
+& {
+    .right-tools {
+        float: right;
+        padding-right: 15px;
+        font-size: 14px;
+        color: #999;
+        &.right-tools-active {
+            color: #666;
+        }
+    }
+}
+
 > .code-container {
     border: 1px solid #eee;
     background: white;
@@ -7,6 +21,9 @@
         .example-container-box {
             position: relative;
             margin: 15px 0;
+            &.reset {
+                @include reset;
+            }
         }
     }
     .description {

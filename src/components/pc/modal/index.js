@@ -19,24 +19,24 @@
                         
 
                 
-                        import BasicComponent from '../../../../lib/pc/modal/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/modal/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/modal/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/modal/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/modal/demo/lists/basic.md'
                         
-                        import RenderComponent from '../../../../lib/pc/modal/demo/lists/render.js'
-                        import RenderCode from '-!text!../../../../lib/pc/modal/demo/lists/render.js'
+                        import RenderComponent from '../../../../lib/pc/modal/demo/lists/render.tsx'
+                        import RenderCode from '-!text!../../../../lib/pc/modal/demo/lists/render.tsx'
                         import RenderMarkdown from '../../../../lib/pc/modal/demo/lists/render.md'
                         
-                        import CustomComponent from '../../../../lib/pc/modal/demo/lists/custom.js'
-                        import CustomCode from '-!text!../../../../lib/pc/modal/demo/lists/custom.js'
+                        import CustomComponent from '../../../../lib/pc/modal/demo/lists/custom.tsx'
+                        import CustomCode from '-!text!../../../../lib/pc/modal/demo/lists/custom.tsx'
                         import CustomMarkdown from '../../../../lib/pc/modal/demo/lists/custom.md'
                         
-                        import SizeComponent from '../../../../lib/pc/modal/demo/lists/size.js'
-                        import SizeCode from '-!text!../../../../lib/pc/modal/demo/lists/size.js'
+                        import SizeComponent from '../../../../lib/pc/modal/demo/lists/size.tsx'
+                        import SizeCode from '-!text!../../../../lib/pc/modal/demo/lists/size.tsx'
                         import SizeMarkdown from '../../../../lib/pc/modal/demo/lists/size.md'
                         
-                        import BackdropComponent from '../../../../lib/pc/modal/demo/lists/backdrop.js'
-                        import BackdropCode from '-!text!../../../../lib/pc/modal/demo/lists/backdrop.js'
+                        import BackdropComponent from '../../../../lib/pc/modal/demo/lists/backdrop.tsx'
+                        import BackdropCode from '-!text!../../../../lib/pc/modal/demo/lists/backdrop.tsx'
                         import BackdropMarkdown from '../../../../lib/pc/modal/demo/lists/backdrop.md'
                         
 
