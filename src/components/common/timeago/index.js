@@ -18,6 +18,7 @@
                             import TimeagoSourceCode from '-!text!../../../../lib/common/timeago/src/timeago/index.tsx'
                             
                                 import TimeagoSourceModuleCode from '-!text!../../../../lib/common/timeago/src/timeago/module.tsx'
+                                import TimeagoSourceModule from '../../../../lib/common/timeago/src/timeago/module.tsx'
                                 
 
                 
@@ -108,7 +109,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={TimeagoSourceCode} instance={TimeagoSource} moduleCode={TimeagoSourceModuleCode} />
+                                <CodeDoc code={TimeagoSourceCode} instance={TimeagoSource} moduleCode={TimeagoSourceModuleCode} moduleInstance={TimeagoModule} />
                             </div>
                             
                                 </div>

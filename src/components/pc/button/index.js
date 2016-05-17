@@ -18,11 +18,13 @@
                             import ButtonSourceCode from '-!text!../../../../lib/pc/button/src/button/index.tsx'
                             
                                 import ButtonSourceModuleCode from '-!text!../../../../lib/pc/button/src/button/module.tsx'
+                                import ButtonSourceModule from '../../../../lib/pc/button/src/button/module.tsx'
                                 
                             import ButtonGroupSource from '../../../../lib/pc/button/src/button-group/index.tsx'
                             import ButtonGroupSourceCode from '-!text!../../../../lib/pc/button/src/button-group/index.tsx'
                             
                                 import ButtonGroupSourceModuleCode from '-!text!../../../../lib/pc/button/src/button-group/module.tsx'
+                                import ButtonGroupSourceModule from '../../../../lib/pc/button/src/button-group/module.tsx'
                                 
 
                 
@@ -188,11 +190,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={ButtonSourceCode} instance={ButtonSource} moduleCode={ButtonSourceModuleCode} />
+                                <CodeDoc code={ButtonSourceCode} instance={ButtonSource} moduleCode={ButtonSourceModuleCode} moduleInstance={ButtonModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={ButtonGroupSourceCode} instance={ButtonGroupSource} moduleCode={ButtonGroupSourceModuleCode} />
+                                <CodeDoc code={ButtonGroupSourceCode} instance={ButtonGroupSource} moduleCode={ButtonGroupSourceModuleCode} moduleInstance={ButtonGroupModule} />
                             </div>
                             
                                 </div>

@@ -18,6 +18,7 @@
                             import BadgeSourceCode from '-!text!../../../../lib/common/badge/src/badge/index.tsx'
                             
                                 import BadgeSourceModuleCode from '-!text!../../../../lib/common/badge/src/badge/module.tsx'
+                                import BadgeSourceModule from '../../../../lib/common/badge/src/badge/module.tsx'
                                 
 
                 
@@ -153,7 +154,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={BadgeSourceCode} instance={BadgeSource} moduleCode={BadgeSourceModuleCode} />
+                                <CodeDoc code={BadgeSourceCode} instance={BadgeSource} moduleCode={BadgeSourceModuleCode} moduleInstance={BadgeModule} />
                             </div>
                             
                                 </div>

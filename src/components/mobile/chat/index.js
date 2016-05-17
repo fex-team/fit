@@ -18,6 +18,7 @@
                             import ChatSourceCode from '-!text!../../../../lib/mobile/chat/src/chat/index.tsx'
                             
                                 import ChatSourceModuleCode from '-!text!../../../../lib/mobile/chat/src/chat/module.tsx'
+                                import ChatSourceModule from '../../../../lib/mobile/chat/src/chat/module.tsx'
                                 
 
                 
@@ -63,7 +64,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={ChatSourceCode} instance={ChatSource} moduleCode={ChatSourceModuleCode} />
+                                <CodeDoc code={ChatSourceCode} instance={ChatSource} moduleCode={ChatSourceModuleCode} moduleInstance={ChatModule} />
                             </div>
                             
                                 </div>

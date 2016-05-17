@@ -18,21 +18,25 @@
                             import MenuSourceCode from '-!text!../../../../lib/pc/menu/src/menu/index.tsx'
                             
                                 import MenuSourceModuleCode from '-!text!../../../../lib/pc/menu/src/menu/module.tsx'
+                                import MenuSourceModule from '../../../../lib/pc/menu/src/menu/module.tsx'
                                 
                             import MenuItemSource from '../../../../lib/pc/menu/src/menu-item/index.tsx'
                             import MenuItemSourceCode from '-!text!../../../../lib/pc/menu/src/menu-item/index.tsx'
                             
                                 import MenuItemSourceModuleCode from '-!text!../../../../lib/pc/menu/src/menu-item/module.tsx'
+                                import MenuItemSourceModule from '../../../../lib/pc/menu/src/menu-item/module.tsx'
                                 
                             import SubMenuSource from '../../../../lib/pc/menu/src/sub-menu/index.tsx'
                             import SubMenuSourceCode from '-!text!../../../../lib/pc/menu/src/sub-menu/index.tsx'
                             
                                 import SubMenuSourceModuleCode from '-!text!../../../../lib/pc/menu/src/sub-menu/module.tsx'
+                                import SubMenuSourceModule from '../../../../lib/pc/menu/src/sub-menu/module.tsx'
                                 
                             import RightMenuSource from '../../../../lib/pc/menu/src/right-menu/index.tsx'
                             import RightMenuSourceCode from '-!text!../../../../lib/pc/menu/src/right-menu/index.tsx'
                             
                                 import RightMenuSourceModuleCode from '-!text!../../../../lib/pc/menu/src/right-menu/module.tsx'
+                                import RightMenuSourceModule from '../../../../lib/pc/menu/src/right-menu/module.tsx'
                                 
 
                 
@@ -168,19 +172,19 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={MenuSourceCode} instance={MenuSource} moduleCode={MenuSourceModuleCode} />
+                                <CodeDoc code={MenuSourceCode} instance={MenuSource} moduleCode={MenuSourceModuleCode} moduleInstance={MenuModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={MenuItemSourceCode} instance={MenuItemSource} moduleCode={MenuItemSourceModuleCode} />
+                                <CodeDoc code={MenuItemSourceCode} instance={MenuItemSource} moduleCode={MenuItemSourceModuleCode} moduleInstance={MenuItemModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={SubMenuSourceCode} instance={SubMenuSource} moduleCode={SubMenuSourceModuleCode} />
+                                <CodeDoc code={SubMenuSourceCode} instance={SubMenuSource} moduleCode={SubMenuSourceModuleCode} moduleInstance={SubMenuModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={RightMenuSourceCode} instance={RightMenuSource} moduleCode={RightMenuSourceModuleCode} />
+                                <CodeDoc code={RightMenuSourceCode} instance={RightMenuSource} moduleCode={RightMenuSourceModuleCode} moduleInstance={RightMenuModule} />
                             </div>
                             
                                 </div>

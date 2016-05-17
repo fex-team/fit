@@ -88,7 +88,7 @@ const mkComponents = (config)=> {
                             if (isModuleExist) {
                                 sourceImport += `
                                 import ${sourceItem}SourceModuleCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/module.tsx'
-                                import ${sourceItem}SourceModule from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/module.tsx'
+                                import * as ${sourceItem}SourceModule from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/module.tsx'
                                 `
                             }
                         } else {

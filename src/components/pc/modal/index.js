@@ -18,6 +18,7 @@
                             import ModalSourceCode from '-!text!../../../../lib/pc/modal/src/modal/index.tsx'
                             
                                 import ModalSourceModuleCode from '-!text!../../../../lib/pc/modal/src/modal/module.tsx'
+                                import ModalSourceModule from '../../../../lib/pc/modal/src/modal/module.tsx'
                                 
 
                 
@@ -138,7 +139,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={ModalSourceCode} instance={ModalSource} moduleCode={ModalSourceModuleCode} />
+                                <CodeDoc code={ModalSourceCode} instance={ModalSource} moduleCode={ModalSourceModuleCode} moduleInstance={ModalModule} />
                             </div>
                             
                                 </div>

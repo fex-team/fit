@@ -18,6 +18,7 @@
                             import IconSourceCode from '-!text!../../../../lib/tb/icon/src/icon/index.tsx'
                             
                                 import IconSourceModuleCode from '-!text!../../../../lib/tb/icon/src/icon/module.tsx'
+                                import IconSourceModule from '../../../../lib/tb/icon/src/icon/module.tsx'
                                 
 
                 
@@ -108,7 +109,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={IconSourceCode} instance={IconSource} moduleCode={IconSourceModuleCode} />
+                                <CodeDoc code={IconSourceCode} instance={IconSource} moduleCode={IconSourceModuleCode} moduleInstance={IconModule} />
                             </div>
                             
                                 </div>

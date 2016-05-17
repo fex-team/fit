@@ -18,6 +18,7 @@
                             import CaptchaDragSourceCode from '-!text!../../../../lib/tb/captcha-drag/src/captcha-drag/index.tsx'
                             
                                 import CaptchaDragSourceModuleCode from '-!text!../../../../lib/tb/captcha-drag/src/captcha-drag/module.tsx'
+                                import CaptchaDragSourceModule from '../../../../lib/tb/captcha-drag/src/captcha-drag/module.tsx'
                                 
 
                 
@@ -78,7 +79,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={CaptchaDragSourceCode} instance={CaptchaDragSource} moduleCode={CaptchaDragSourceModuleCode} />
+                                <CodeDoc code={CaptchaDragSourceCode} instance={CaptchaDragSource} moduleCode={CaptchaDragSourceModuleCode} moduleInstance={CaptchaDragModule} />
                             </div>
                             
                                 </div>
