@@ -76,24 +76,40 @@ const mkComponents = (config)=> {
                 if (sourceArray.length > 0) {
                     sourceArray.map((sourceItem)=> {
                         let sourceItemFileName = _.kebabCase(sourceItem)
+                        const isTsx = fs.existsSync(sourceRootArray + '.tsx')
+                        const isModuleExist = fs.existsSync(`lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/module.tsx`)
 
-                        if (fs.existsSync(sourceRootArray + '.tsx')) {
+                        if (isTsx) {
                             sourceImport += `
-                        import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/index.tsx'
-                        import ${sourceItem}SourceCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/index.tsx'
-                        `
+                            import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/index.tsx'
+                            import ${sourceItem}SourceCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/index.tsx'
+                            `
+                            // 如果存在 module.tsx 则引入
+                            if (isModuleExist) {
+                                sourceImport += `
+                                import ${sourceItem}SourceModuleCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/module.tsx'
+                                `
+                            }
                         } else {
                             sourceImport += `
-                        import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
-                        import ${sourceItem}SourceCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
-                        `
+                            import ${sourceItem}Source from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
+                            import ${sourceItem}SourceCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}'
+                            `
                         }
 
-                        sourceString += `
-                        <div style={docStyle}>
-                            <CodeDoc code={${sourceItem}SourceCode} instance={${sourceItem}Source} />
-                        </div>
-                        `
+                        if (isTsx && isModuleExist) {
+                            sourceString += `
+                            <div style={docStyle}>
+                                <CodeDoc code={${sourceItem}SourceCode} instance={${sourceItem}Source} moduleCode={${sourceItem}SourceModuleCode} />
+                            </div>
+                            `
+                        } else {
+                            sourceString += `
+                            <div style={docStyle}>
+                                <CodeDoc code={${sourceItem}SourceCode} instance={${sourceItem}Source} />
+                            </div>
+                            `
+                        }
                     })
                 }
 
