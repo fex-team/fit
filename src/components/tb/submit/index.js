@@ -18,13 +18,13 @@
                             import SubmitSourceCode from '-!text!../../../../lib/tb/submit/src/submit/index.tsx'
                             
                                 import SubmitSourceModuleCode from '-!text!../../../../lib/tb/submit/src/submit/module.tsx'
-                                import SubmitSourceModule from '../../../../lib/tb/submit/src/submit/module.tsx'
+                                import * as SubmitSourceModule from '../../../../lib/tb/submit/src/submit/module.tsx'
                                 
                             import sendSource from '../../../../lib/tb/submit/src/send/index.tsx'
                             import sendSourceCode from '-!text!../../../../lib/tb/submit/src/send/index.tsx'
                             
                                 import sendSourceModuleCode from '-!text!../../../../lib/tb/submit/src/send/module.tsx'
-                                import sendSourceModule from '../../../../lib/tb/submit/src/send/module.tsx'
+                                import * as sendSourceModule from '../../../../lib/tb/submit/src/send/module.tsx'
                                 
 
                 

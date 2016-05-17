@@ -18,7 +18,7 @@
                             import RenderToSourceCode from '-!text!../../../../lib/common/render-to/src/render-to/index.tsx'
                             
                                 import RenderToSourceModuleCode from '-!text!../../../../lib/common/render-to/src/render-to/module.tsx'
-                                import RenderToSourceModule from '../../../../lib/common/render-to/src/render-to/module.tsx'
+                                import * as RenderToSourceModule from '../../../../lib/common/render-to/src/render-to/module.tsx'
                                 
 
                 

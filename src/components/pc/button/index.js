@@ -18,13 +18,13 @@
                             import ButtonSourceCode from '-!text!../../../../lib/pc/button/src/button/index.tsx'
                             
                                 import ButtonSourceModuleCode from '-!text!../../../../lib/pc/button/src/button/module.tsx'
-                                import ButtonSourceModule from '../../../../lib/pc/button/src/button/module.tsx'
+                                import * as ButtonSourceModule from '../../../../lib/pc/button/src/button/module.tsx'
                                 
                             import ButtonGroupSource from '../../../../lib/pc/button/src/button-group/index.tsx'
                             import ButtonGroupSourceCode from '-!text!../../../../lib/pc/button/src/button-group/index.tsx'
                             
                                 import ButtonGroupSourceModuleCode from '-!text!../../../../lib/pc/button/src/button-group/module.tsx'
-                                import ButtonGroupSourceModule from '../../../../lib/pc/button/src/button-group/module.tsx'
+                                import * as ButtonGroupSourceModule from '../../../../lib/pc/button/src/button-group/module.tsx'
                                 
 
                 

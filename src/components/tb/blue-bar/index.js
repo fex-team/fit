@@ -18,7 +18,7 @@
                             import BlueBarSourceCode from '-!text!../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
                             
                                 import BlueBarSourceModuleCode from '-!text!../../../../lib/tb/blue-bar/src/blue-bar/module.tsx'
-                                import BlueBarSourceModule from '../../../../lib/tb/blue-bar/src/blue-bar/module.tsx'
+                                import * as BlueBarSourceModule from '../../../../lib/tb/blue-bar/src/blue-bar/module.tsx'
                                 
 
                 

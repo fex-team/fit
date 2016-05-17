@@ -18,7 +18,7 @@
                             import ModalSourceCode from '-!text!../../../../lib/pc/modal/src/modal/index.tsx'
                             
                                 import ModalSourceModuleCode from '-!text!../../../../lib/pc/modal/src/modal/module.tsx'
-                                import ModalSourceModule from '../../../../lib/pc/modal/src/modal/module.tsx'
+                                import * as ModalSourceModule from '../../../../lib/pc/modal/src/modal/module.tsx'
                                 
 
                 

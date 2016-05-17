@@ -18,7 +18,7 @@
                             import CaptchaDragSourceCode from '-!text!../../../../lib/tb/captcha-drag/src/captcha-drag/index.tsx'
                             
                                 import CaptchaDragSourceModuleCode from '-!text!../../../../lib/tb/captcha-drag/src/captcha-drag/module.tsx'
-                                import CaptchaDragSourceModule from '../../../../lib/tb/captcha-drag/src/captcha-drag/module.tsx'
+                                import * as CaptchaDragSourceModule from '../../../../lib/tb/captcha-drag/src/captcha-drag/module.tsx'
                                 
 
                 

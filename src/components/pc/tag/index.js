@@ -18,7 +18,7 @@
                             import TagSourceCode from '-!text!../../../../lib/pc/tag/src/tag/index.tsx'
                             
                                 import TagSourceModuleCode from '-!text!../../../../lib/pc/tag/src/tag/module.tsx'
-                                import TagSourceModule from '../../../../lib/pc/tag/src/tag/module.tsx'
+                                import * as TagSourceModule from '../../../../lib/pc/tag/src/tag/module.tsx'
                                 
 
                 

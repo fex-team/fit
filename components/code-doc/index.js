@@ -10,7 +10,7 @@ export default class CodeDoc extends React.Component {
     }
 
     render() {
-        console.log(this.props.moduleCode)
+        console.log(this.props.moduleInstance)
 
         const titleArray = this.props.code.match(/(\w*).defaultProps/g)
         if (!titleArray)return null

@@ -18,7 +18,7 @@
                             import UploadSourceCode from '-!text!../../../../lib/pc/upload/src/upload/index.tsx'
                             
                                 import UploadSourceModuleCode from '-!text!../../../../lib/pc/upload/src/upload/module.tsx'
-                                import UploadSourceModule from '../../../../lib/pc/upload/src/upload/module.tsx'
+                                import * as UploadSourceModule from '../../../../lib/pc/upload/src/upload/module.tsx'
                                 
 
                 

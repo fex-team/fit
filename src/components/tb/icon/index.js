@@ -18,7 +18,7 @@
                             import IconSourceCode from '-!text!../../../../lib/tb/icon/src/icon/index.tsx'
                             
                                 import IconSourceModuleCode from '-!text!../../../../lib/tb/icon/src/icon/module.tsx'
-                                import IconSourceModule from '../../../../lib/tb/icon/src/icon/module.tsx'
+                                import * as IconSourceModule from '../../../../lib/tb/icon/src/icon/module.tsx'
                                 
 
                 

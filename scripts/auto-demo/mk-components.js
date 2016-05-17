@@ -87,8 +87,8 @@ const mkComponents = (config)=> {
                             // 如果存在 module.tsx 则引入
                             if (isModuleExist) {
                                 sourceImport += `
-                                import ${sourceItem}SourceModuleCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/module.tsx'
-                                import * as ${sourceItem}SourceModule from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/module.tsx'
+                                import * as ${sourceItem}Module from '../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/module.tsx'
+                                import ${sourceItem}ModuleCode from '-!text!../../../../lib/${categoryKey}/${component.path}/src/${sourceItemFileName}/module.tsx'
                                 `
                             }
                         } else {
@@ -101,7 +101,7 @@ const mkComponents = (config)=> {
                         if (isTsx && isModuleExist) {
                             sourceString += `
                             <div style={docStyle}>
-                                <CodeDoc code={${sourceItem}SourceCode} instance={${sourceItem}Source} moduleCode={${sourceItem}SourceModuleCode} moduleInstance={${sourceItem}Module} />
+                                <CodeDoc code={${sourceItem}SourceCode} instance={${sourceItem}Source} moduleCode={${sourceItem}ModuleCode} moduleInstance={${sourceItem}Module} />
                             </div>
                             `
                         } else {

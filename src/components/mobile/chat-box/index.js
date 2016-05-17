@@ -18,7 +18,7 @@
                             import ChatBoxSourceCode from '-!text!../../../../lib/mobile/chat-box/src/chat-box/index.tsx'
                             
                                 import ChatBoxSourceModuleCode from '-!text!../../../../lib/mobile/chat-box/src/chat-box/module.tsx'
-                                import ChatBoxSourceModule from '../../../../lib/mobile/chat-box/src/chat-box/module.tsx'
+                                import * as ChatBoxSourceModule from '../../../../lib/mobile/chat-box/src/chat-box/module.tsx'
                                 
 
                 

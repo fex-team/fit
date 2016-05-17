@@ -18,7 +18,7 @@
                             import ChatSourceCode from '-!text!../../../../lib/mobile/chat/src/chat/index.tsx'
                             
                                 import ChatSourceModuleCode from '-!text!../../../../lib/mobile/chat/src/chat/module.tsx'
-                                import ChatSourceModule from '../../../../lib/mobile/chat/src/chat/module.tsx'
+                                import * as ChatSourceModule from '../../../../lib/mobile/chat/src/chat/module.tsx'
                                 
 
                 
