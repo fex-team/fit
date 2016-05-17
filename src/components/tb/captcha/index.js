@@ -17,8 +17,8 @@
                             import CaptchaSource from '../../../../lib/tb/captcha/src/captcha/index.tsx'
                             import CaptchaSourceCode from '-!text!../../../../lib/tb/captcha/src/captcha/index.tsx'
                             
-                                import CaptchaSourceModuleCode from '-!text!../../../../lib/tb/captcha/src/captcha/module.tsx'
-                                import * as CaptchaSourceModule from '../../../../lib/tb/captcha/src/captcha/module.tsx'
+                                import * as CaptchaModule from '../../../../lib/tb/captcha/src/captcha/module.tsx'
+                                import CaptchaModuleCode from '-!text!../../../../lib/tb/captcha/src/captcha/module.tsx'
                                 
 
                 
@@ -79,7 +79,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={CaptchaSourceCode} instance={CaptchaSource} moduleCode={CaptchaSourceModuleCode} moduleInstance={CaptchaModule} />
+                                <CodeDoc code={CaptchaSourceCode} instance={CaptchaSource} moduleCode={CaptchaModuleCode} moduleInstance={CaptchaModule} />
                             </div>
                             
                                 </div>

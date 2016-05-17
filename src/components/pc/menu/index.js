@@ -17,26 +17,26 @@
                             import MenuSource from '../../../../lib/pc/menu/src/menu/index.tsx'
                             import MenuSourceCode from '-!text!../../../../lib/pc/menu/src/menu/index.tsx'
                             
-                                import MenuSourceModuleCode from '-!text!../../../../lib/pc/menu/src/menu/module.tsx'
-                                import * as MenuSourceModule from '../../../../lib/pc/menu/src/menu/module.tsx'
+                                import * as MenuModule from '../../../../lib/pc/menu/src/menu/module.tsx'
+                                import MenuModuleCode from '-!text!../../../../lib/pc/menu/src/menu/module.tsx'
                                 
                             import MenuItemSource from '../../../../lib/pc/menu/src/menu-item/index.tsx'
                             import MenuItemSourceCode from '-!text!../../../../lib/pc/menu/src/menu-item/index.tsx'
                             
-                                import MenuItemSourceModuleCode from '-!text!../../../../lib/pc/menu/src/menu-item/module.tsx'
-                                import * as MenuItemSourceModule from '../../../../lib/pc/menu/src/menu-item/module.tsx'
+                                import * as MenuItemModule from '../../../../lib/pc/menu/src/menu-item/module.tsx'
+                                import MenuItemModuleCode from '-!text!../../../../lib/pc/menu/src/menu-item/module.tsx'
                                 
                             import SubMenuSource from '../../../../lib/pc/menu/src/sub-menu/index.tsx'
                             import SubMenuSourceCode from '-!text!../../../../lib/pc/menu/src/sub-menu/index.tsx'
                             
-                                import SubMenuSourceModuleCode from '-!text!../../../../lib/pc/menu/src/sub-menu/module.tsx'
-                                import * as SubMenuSourceModule from '../../../../lib/pc/menu/src/sub-menu/module.tsx'
+                                import * as SubMenuModule from '../../../../lib/pc/menu/src/sub-menu/module.tsx'
+                                import SubMenuModuleCode from '-!text!../../../../lib/pc/menu/src/sub-menu/module.tsx'
                                 
                             import RightMenuSource from '../../../../lib/pc/menu/src/right-menu/index.tsx'
                             import RightMenuSourceCode from '-!text!../../../../lib/pc/menu/src/right-menu/index.tsx'
                             
-                                import RightMenuSourceModuleCode from '-!text!../../../../lib/pc/menu/src/right-menu/module.tsx'
-                                import * as RightMenuSourceModule from '../../../../lib/pc/menu/src/right-menu/module.tsx'
+                                import * as RightMenuModule from '../../../../lib/pc/menu/src/right-menu/module.tsx'
+                                import RightMenuModuleCode from '-!text!../../../../lib/pc/menu/src/right-menu/module.tsx'
                                 
 
                 
@@ -172,19 +172,19 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={MenuSourceCode} instance={MenuSource} moduleCode={MenuSourceModuleCode} moduleInstance={MenuModule} />
+                                <CodeDoc code={MenuSourceCode} instance={MenuSource} moduleCode={MenuModuleCode} moduleInstance={MenuModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={MenuItemSourceCode} instance={MenuItemSource} moduleCode={MenuItemSourceModuleCode} moduleInstance={MenuItemModule} />
+                                <CodeDoc code={MenuItemSourceCode} instance={MenuItemSource} moduleCode={MenuItemModuleCode} moduleInstance={MenuItemModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={SubMenuSourceCode} instance={SubMenuSource} moduleCode={SubMenuSourceModuleCode} moduleInstance={SubMenuModule} />
+                                <CodeDoc code={SubMenuSourceCode} instance={SubMenuSource} moduleCode={SubMenuModuleCode} moduleInstance={SubMenuModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={RightMenuSourceCode} instance={RightMenuSource} moduleCode={RightMenuSourceModuleCode} moduleInstance={RightMenuModule} />
+                                <CodeDoc code={RightMenuSourceCode} instance={RightMenuSource} moduleCode={RightMenuModuleCode} moduleInstance={RightMenuModule} />
                             </div>
                             
                                 </div>

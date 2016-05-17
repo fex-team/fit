@@ -17,8 +17,8 @@
                             import UploadSource from '../../../../lib/tb/upload/src/upload/index.tsx'
                             import UploadSourceCode from '-!text!../../../../lib/tb/upload/src/upload/index.tsx'
                             
-                                import UploadSourceModuleCode from '-!text!../../../../lib/tb/upload/src/upload/module.tsx'
-                                import * as UploadSourceModule from '../../../../lib/tb/upload/src/upload/module.tsx'
+                                import * as UploadModule from '../../../../lib/tb/upload/src/upload/module.tsx'
+                                import UploadModuleCode from '-!text!../../../../lib/tb/upload/src/upload/module.tsx'
                                 
 
                 
@@ -79,7 +79,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={UploadSourceCode} instance={UploadSource} moduleCode={UploadSourceModuleCode} moduleInstance={UploadModule} />
+                                <CodeDoc code={UploadSourceCode} instance={UploadSource} moduleCode={UploadModuleCode} moduleInstance={UploadModule} />
                             </div>
                             
                                 </div>

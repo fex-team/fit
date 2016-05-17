@@ -17,8 +17,8 @@
                             import ChatBoxSource from '../../../../lib/mobile/chat-box/src/chat-box/index.tsx'
                             import ChatBoxSourceCode from '-!text!../../../../lib/mobile/chat-box/src/chat-box/index.tsx'
                             
-                                import ChatBoxSourceModuleCode from '-!text!../../../../lib/mobile/chat-box/src/chat-box/module.tsx'
-                                import * as ChatBoxSourceModule from '../../../../lib/mobile/chat-box/src/chat-box/module.tsx'
+                                import * as ChatBoxModule from '../../../../lib/mobile/chat-box/src/chat-box/module.tsx'
+                                import ChatBoxModuleCode from '-!text!../../../../lib/mobile/chat-box/src/chat-box/module.tsx'
                                 
 
                 
@@ -64,7 +64,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={ChatBoxSourceCode} instance={ChatBoxSource} moduleCode={ChatBoxSourceModuleCode} moduleInstance={ChatBoxModule} />
+                                <CodeDoc code={ChatBoxSourceCode} instance={ChatBoxSource} moduleCode={ChatBoxModuleCode} moduleInstance={ChatBoxModule} />
                             </div>
                             
                                 </div>

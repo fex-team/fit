@@ -17,8 +17,8 @@
                             import RenderToSource from '../../../../lib/common/render-to/src/render-to/index.tsx'
                             import RenderToSourceCode from '-!text!../../../../lib/common/render-to/src/render-to/index.tsx'
                             
-                                import RenderToSourceModuleCode from '-!text!../../../../lib/common/render-to/src/render-to/module.tsx'
-                                import * as RenderToSourceModule from '../../../../lib/common/render-to/src/render-to/module.tsx'
+                                import * as RenderToModule from '../../../../lib/common/render-to/src/render-to/module.tsx'
+                                import RenderToModuleCode from '-!text!../../../../lib/common/render-to/src/render-to/module.tsx'
                                 
 
                 
@@ -79,7 +79,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={RenderToSourceCode} instance={RenderToSource} moduleCode={RenderToSourceModuleCode} moduleInstance={RenderToModule} />
+                                <CodeDoc code={RenderToSourceCode} instance={RenderToSource} moduleCode={RenderToModuleCode} moduleInstance={RenderToModule} />
                             </div>
                             
                                 </div>

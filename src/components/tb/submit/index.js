@@ -17,14 +17,14 @@
                             import SubmitSource from '../../../../lib/tb/submit/src/submit/index.tsx'
                             import SubmitSourceCode from '-!text!../../../../lib/tb/submit/src/submit/index.tsx'
                             
-                                import SubmitSourceModuleCode from '-!text!../../../../lib/tb/submit/src/submit/module.tsx'
-                                import * as SubmitSourceModule from '../../../../lib/tb/submit/src/submit/module.tsx'
+                                import * as SubmitModule from '../../../../lib/tb/submit/src/submit/module.tsx'
+                                import SubmitModuleCode from '-!text!../../../../lib/tb/submit/src/submit/module.tsx'
                                 
                             import sendSource from '../../../../lib/tb/submit/src/send/index.tsx'
                             import sendSourceCode from '-!text!../../../../lib/tb/submit/src/send/index.tsx'
                             
-                                import sendSourceModuleCode from '-!text!../../../../lib/tb/submit/src/send/module.tsx'
-                                import * as sendSourceModule from '../../../../lib/tb/submit/src/send/module.tsx'
+                                import * as sendModule from '../../../../lib/tb/submit/src/send/module.tsx'
+                                import sendModuleCode from '-!text!../../../../lib/tb/submit/src/send/module.tsx'
                                 
 
                 
@@ -130,11 +130,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={SubmitSourceCode} instance={SubmitSource} moduleCode={SubmitSourceModuleCode} moduleInstance={SubmitModule} />
+                                <CodeDoc code={SubmitSourceCode} instance={SubmitSource} moduleCode={SubmitModuleCode} moduleInstance={SubmitModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={sendSourceCode} instance={sendSource} moduleCode={sendSourceModuleCode} moduleInstance={sendModule} />
+                                <CodeDoc code={sendSourceCode} instance={sendSource} moduleCode={sendModuleCode} moduleInstance={sendModule} />
                             </div>
                             
                                 </div>

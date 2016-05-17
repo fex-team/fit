@@ -17,8 +17,8 @@
                             import TagSource from '../../../../lib/pc/tag/src/tag/index.tsx'
                             import TagSourceCode from '-!text!../../../../lib/pc/tag/src/tag/index.tsx'
                             
-                                import TagSourceModuleCode from '-!text!../../../../lib/pc/tag/src/tag/module.tsx'
-                                import * as TagSourceModule from '../../../../lib/pc/tag/src/tag/module.tsx'
+                                import * as TagModule from '../../../../lib/pc/tag/src/tag/module.tsx'
+                                import TagModuleCode from '-!text!../../../../lib/pc/tag/src/tag/module.tsx'
                                 
 
                 
@@ -64,7 +64,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={TagSourceCode} instance={TagSource} moduleCode={TagSourceModuleCode} moduleInstance={TagModule} />
+                                <CodeDoc code={TagSourceCode} instance={TagSource} moduleCode={TagModuleCode} moduleInstance={TagModule} />
                             </div>
                             
                                 </div>

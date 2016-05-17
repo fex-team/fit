@@ -17,8 +17,8 @@
                             import TimeagoSource from '../../../../lib/common/timeago/src/timeago/index.tsx'
                             import TimeagoSourceCode from '-!text!../../../../lib/common/timeago/src/timeago/index.tsx'
                             
-                                import TimeagoSourceModuleCode from '-!text!../../../../lib/common/timeago/src/timeago/module.tsx'
-                                import * as TimeagoSourceModule from '../../../../lib/common/timeago/src/timeago/module.tsx'
+                                import * as TimeagoModule from '../../../../lib/common/timeago/src/timeago/module.tsx'
+                                import TimeagoModuleCode from '-!text!../../../../lib/common/timeago/src/timeago/module.tsx'
                                 
 
                 
@@ -109,7 +109,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={TimeagoSourceCode} instance={TimeagoSource} moduleCode={TimeagoSourceModuleCode} moduleInstance={TimeagoModule} />
+                                <CodeDoc code={TimeagoSourceCode} instance={TimeagoSource} moduleCode={TimeagoModuleCode} moduleInstance={TimeagoModule} />
                             </div>
                             
                                 </div>

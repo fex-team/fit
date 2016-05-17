@@ -17,14 +17,14 @@
                             import ButtonSource from '../../../../lib/pc/button/src/button/index.tsx'
                             import ButtonSourceCode from '-!text!../../../../lib/pc/button/src/button/index.tsx'
                             
-                                import ButtonSourceModuleCode from '-!text!../../../../lib/pc/button/src/button/module.tsx'
-                                import * as ButtonSourceModule from '../../../../lib/pc/button/src/button/module.tsx'
+                                import * as ButtonModule from '../../../../lib/pc/button/src/button/module.tsx'
+                                import ButtonModuleCode from '-!text!../../../../lib/pc/button/src/button/module.tsx'
                                 
                             import ButtonGroupSource from '../../../../lib/pc/button/src/button-group/index.tsx'
                             import ButtonGroupSourceCode from '-!text!../../../../lib/pc/button/src/button-group/index.tsx'
                             
-                                import ButtonGroupSourceModuleCode from '-!text!../../../../lib/pc/button/src/button-group/module.tsx'
-                                import * as ButtonGroupSourceModule from '../../../../lib/pc/button/src/button-group/module.tsx'
+                                import * as ButtonGroupModule from '../../../../lib/pc/button/src/button-group/module.tsx'
+                                import ButtonGroupModuleCode from '-!text!../../../../lib/pc/button/src/button-group/module.tsx'
                                 
 
                 
@@ -190,11 +190,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={ButtonSourceCode} instance={ButtonSource} moduleCode={ButtonSourceModuleCode} moduleInstance={ButtonModule} />
+                                <CodeDoc code={ButtonSourceCode} instance={ButtonSource} moduleCode={ButtonModuleCode} moduleInstance={ButtonModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={ButtonGroupSourceCode} instance={ButtonGroupSource} moduleCode={ButtonGroupSourceModuleCode} moduleInstance={ButtonGroupModule} />
+                                <CodeDoc code={ButtonGroupSourceCode} instance={ButtonGroupSource} moduleCode={ButtonGroupModuleCode} moduleInstance={ButtonGroupModule} />
                             </div>
                             
                                 </div>

@@ -17,8 +17,8 @@
                             import ShareSource from '../../../../lib/tb/share/src/share/index.tsx'
                             import ShareSourceCode from '-!text!../../../../lib/tb/share/src/share/index.tsx'
                             
-                                import ShareSourceModuleCode from '-!text!../../../../lib/tb/share/src/share/module.tsx'
-                                import * as ShareSourceModule from '../../../../lib/tb/share/src/share/module.tsx'
+                                import * as ShareModule from '../../../../lib/tb/share/src/share/module.tsx'
+                                import ShareModuleCode from '-!text!../../../../lib/tb/share/src/share/module.tsx'
                                 
 
                 
@@ -79,7 +79,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={ShareSourceCode} instance={ShareSource} moduleCode={ShareSourceModuleCode} moduleInstance={ShareModule} />
+                                <CodeDoc code={ShareSourceCode} instance={ShareSource} moduleCode={ShareModuleCode} moduleInstance={ShareModule} />
                             </div>
                             
                                 </div>

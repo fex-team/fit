@@ -17,8 +17,8 @@
                             import IconSource from '../../../../lib/tb/icon/src/icon/index.tsx'
                             import IconSourceCode from '-!text!../../../../lib/tb/icon/src/icon/index.tsx'
                             
-                                import IconSourceModuleCode from '-!text!../../../../lib/tb/icon/src/icon/module.tsx'
-                                import * as IconSourceModule from '../../../../lib/tb/icon/src/icon/module.tsx'
+                                import * as IconModule from '../../../../lib/tb/icon/src/icon/module.tsx'
+                                import IconModuleCode from '-!text!../../../../lib/tb/icon/src/icon/module.tsx'
                                 
 
                 
@@ -109,7 +109,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={IconSourceCode} instance={IconSource} moduleCode={IconSourceModuleCode} moduleInstance={IconModule} />
+                                <CodeDoc code={IconSourceCode} instance={IconSource} moduleCode={IconModuleCode} moduleInstance={IconModule} />
                             </div>
                             
                                 </div>

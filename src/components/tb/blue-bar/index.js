@@ -17,8 +17,8 @@
                             import BlueBarSource from '../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
                             import BlueBarSourceCode from '-!text!../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
                             
-                                import BlueBarSourceModuleCode from '-!text!../../../../lib/tb/blue-bar/src/blue-bar/module.tsx'
-                                import * as BlueBarSourceModule from '../../../../lib/tb/blue-bar/src/blue-bar/module.tsx'
+                                import * as BlueBarModule from '../../../../lib/tb/blue-bar/src/blue-bar/module.tsx'
+                                import BlueBarModuleCode from '-!text!../../../../lib/tb/blue-bar/src/blue-bar/module.tsx'
                                 
 
                 
@@ -64,7 +64,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={BlueBarSourceCode} instance={BlueBarSource} moduleCode={BlueBarSourceModuleCode} moduleInstance={BlueBarModule} />
+                                <CodeDoc code={BlueBarSourceCode} instance={BlueBarSource} moduleCode={BlueBarModuleCode} moduleInstance={BlueBarModule} />
                             </div>
                             
                                 </div>
