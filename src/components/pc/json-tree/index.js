@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import JsonTreeSource from '../../../../lib/pc/json-tree/src/json-tree'
-                        import JsonTreeSourceCode from '-!text!../../../../lib/pc/json-tree/src/json-tree'
-                        
+                            import JsonTreeSource from '../../../../lib/pc/json-tree/src/json-tree'
+                            import JsonTreeSourceCode from '-!text!../../../../lib/pc/json-tree/src/json-tree'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/json-tree/demo/lists/basic.js'
@@ -90,10 +90,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={JsonTreeSourceCode} instance={JsonTreeSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={JsonTreeSourceCode} instance={JsonTreeSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

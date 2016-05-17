@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import CropperSource from '../../../../lib/pc/cropper/src/cropper'
-                        import CropperSourceCode from '-!text!../../../../lib/pc/cropper/src/cropper'
-                        
+                            import CropperSource from '../../../../lib/pc/cropper/src/cropper'
+                            import CropperSourceCode from '-!text!../../../../lib/pc/cropper/src/cropper'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/cropper/demo/lists/basic.js'
@@ -90,10 +90,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={CropperSourceCode} instance={CropperSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={CropperSourceCode} instance={CropperSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

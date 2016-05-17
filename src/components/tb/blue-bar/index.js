@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import BlueBarSource from '../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
-                        import BlueBarSourceCode from '-!text!../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
-                        
+                            import BlueBarSource from '../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
+                            import BlueBarSourceCode from '-!text!../../../../lib/tb/blue-bar/src/blue-bar/index.tsx'
+                            
+                                import BlueBarSourceModuleCode from '-!text!../../../../lib/tb/blue-bar/src/blue-bar/module.tsx'
+                                
 
                 
 
@@ -60,10 +62,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={BlueBarSourceCode} instance={BlueBarSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={BlueBarSourceCode} instance={BlueBarSource} moduleCode={BlueBarSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

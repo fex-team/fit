@@ -14,27 +14,27 @@
                 const store = createStore()
 
                 
-                        import connectSource from '../../../../lib/common/isomorphic-redux-tools/src/connect/index.tsx'
-                        import connectSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/connect/index.tsx'
-                        
-                        import promiseMiddlewareSource from '../../../../lib/common/isomorphic-redux-tools/src/promise-middleware/index.tsx'
-                        import promiseMiddlewareSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/promise-middleware/index.tsx'
-                        
-                        import serverRenderSource from '../../../../lib/common/isomorphic-redux-tools/src/server-render/index.tsx'
-                        import serverRenderSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/server-render/index.tsx'
-                        
-                        import fetchSource from '../../../../lib/common/isomorphic-redux-tools/src/fetch/index.tsx'
-                        import fetchSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/fetch/index.tsx'
-                        
-                        import routerSource from '../../../../lib/common/isomorphic-redux-tools/src/router/index.tsx'
-                        import routerSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/router/index.tsx'
-                        
-                        import storeSource from '../../../../lib/common/isomorphic-redux-tools/src/store/index.tsx'
-                        import storeSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/store/index.tsx'
-                        
-                        import serviceSource from '../../../../lib/common/isomorphic-redux-tools/src/service/index.tsx'
-                        import serviceSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/service/index.tsx'
-                        
+                            import connectSource from '../../../../lib/common/isomorphic-redux-tools/src/connect/index.tsx'
+                            import connectSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/connect/index.tsx'
+                            
+                            import promiseMiddlewareSource from '../../../../lib/common/isomorphic-redux-tools/src/promise-middleware/index.tsx'
+                            import promiseMiddlewareSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/promise-middleware/index.tsx'
+                            
+                            import serverRenderSource from '../../../../lib/common/isomorphic-redux-tools/src/server-render/index.tsx'
+                            import serverRenderSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/server-render/index.tsx'
+                            
+                            import fetchSource from '../../../../lib/common/isomorphic-redux-tools/src/fetch/index.tsx'
+                            import fetchSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/fetch/index.tsx'
+                            
+                            import routerSource from '../../../../lib/common/isomorphic-redux-tools/src/router/index.tsx'
+                            import routerSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/router/index.tsx'
+                            
+                            import storeSource from '../../../../lib/common/isomorphic-redux-tools/src/store/index.tsx'
+                            import storeSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/store/index.tsx'
+                            
+                            import serviceSource from '../../../../lib/common/isomorphic-redux-tools/src/service/index.tsx'
+                            import serviceSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/service/index.tsx'
+                            
 
                 
                         import BasicComponent from '../../../../lib/common/isomorphic-redux-tools/demo/lists/basic.tsx'
@@ -93,34 +93,34 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={connectSourceCode} instance={connectSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={promiseMiddlewareSourceCode} instance={promiseMiddlewareSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={serverRenderSourceCode} instance={serverRenderSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={fetchSourceCode} instance={fetchSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={routerSourceCode} instance={routerSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={storeSourceCode} instance={storeSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={serviceSourceCode} instance={serviceSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={connectSourceCode} instance={connectSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={promiseMiddlewareSourceCode} instance={promiseMiddlewareSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={serverRenderSourceCode} instance={serverRenderSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={fetchSourceCode} instance={fetchSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={routerSourceCode} instance={routerSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={storeSourceCode} instance={storeSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={serviceSourceCode} instance={serviceSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

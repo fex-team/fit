@@ -14,12 +14,12 @@
                 const store = createStore()
 
                 
-                        import TransmitTransparentlySource from '../../../../lib/common/transmit-transparently/src/transmit-transparently/index.tsx'
-                        import TransmitTransparentlySourceCode from '-!text!../../../../lib/common/transmit-transparently/src/transmit-transparently/index.tsx'
-                        
-                        import othersSource from '../../../../lib/common/transmit-transparently/src/others/index.tsx'
-                        import othersSourceCode from '-!text!../../../../lib/common/transmit-transparently/src/others/index.tsx'
-                        
+                            import TransmitTransparentlySource from '../../../../lib/common/transmit-transparently/src/transmit-transparently/index.tsx'
+                            import TransmitTransparentlySourceCode from '-!text!../../../../lib/common/transmit-transparently/src/transmit-transparently/index.tsx'
+                            
+                            import othersSource from '../../../../lib/common/transmit-transparently/src/others/index.tsx'
+                            import othersSourceCode from '-!text!../../../../lib/common/transmit-transparently/src/others/index.tsx'
+                            
 
                 
                         import BasicComponent from '../../../../lib/common/transmit-transparently/demo/lists/basic.tsx'
@@ -78,14 +78,14 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={TransmitTransparentlySourceCode} instance={TransmitTransparentlySource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={othersSourceCode} instance={othersSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={TransmitTransparentlySourceCode} instance={TransmitTransparentlySource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={othersSourceCode} instance={othersSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

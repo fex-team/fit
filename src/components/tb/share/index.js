@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import ShareSource from '../../../../lib/tb/share/src/share/index.tsx'
-                        import ShareSourceCode from '-!text!../../../../lib/tb/share/src/share/index.tsx'
-                        
+                            import ShareSource from '../../../../lib/tb/share/src/share/index.tsx'
+                            import ShareSourceCode from '-!text!../../../../lib/tb/share/src/share/index.tsx'
+                            
+                                import ShareSourceModuleCode from '-!text!../../../../lib/tb/share/src/share/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/tb/share/demo/lists/basic.tsx'
@@ -75,10 +77,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={ShareSourceCode} instance={ShareSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={ShareSourceCode} instance={ShareSource} moduleCode={ShareSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

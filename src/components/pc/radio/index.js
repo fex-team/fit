@@ -14,15 +14,15 @@
                 const store = createStore()
 
                 
-                        import RadioSource from '../../../../lib/pc/radio/src/radio'
-                        import RadioSourceCode from '-!text!../../../../lib/pc/radio/src/radio'
-                        
-                        import RadioGroupSource from '../../../../lib/pc/radio/src/radio-group'
-                        import RadioGroupSourceCode from '-!text!../../../../lib/pc/radio/src/radio-group'
-                        
-                        import RadioButtonSource from '../../../../lib/pc/radio/src/radio-button'
-                        import RadioButtonSourceCode from '-!text!../../../../lib/pc/radio/src/radio-button'
-                        
+                            import RadioSource from '../../../../lib/pc/radio/src/radio'
+                            import RadioSourceCode from '-!text!../../../../lib/pc/radio/src/radio'
+                            
+                            import RadioGroupSource from '../../../../lib/pc/radio/src/radio-group'
+                            import RadioGroupSourceCode from '-!text!../../../../lib/pc/radio/src/radio-group'
+                            
+                            import RadioButtonSource from '../../../../lib/pc/radio/src/radio-button'
+                            import RadioButtonSourceCode from '-!text!../../../../lib/pc/radio/src/radio-button'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/radio/demo/lists/basic.js'
@@ -186,18 +186,18 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={RadioSourceCode} instance={RadioSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={RadioGroupSourceCode} instance={RadioGroupSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={RadioButtonSourceCode} instance={RadioButtonSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={RadioSourceCode} instance={RadioSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={RadioGroupSourceCode} instance={RadioGroupSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={RadioButtonSourceCode} instance={RadioButtonSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

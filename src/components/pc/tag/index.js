@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import TagSource from '../../../../lib/pc/tag/src/tag/index.tsx'
-                        import TagSourceCode from '-!text!../../../../lib/pc/tag/src/tag/index.tsx'
-                        
+                            import TagSource from '../../../../lib/pc/tag/src/tag/index.tsx'
+                            import TagSourceCode from '-!text!../../../../lib/pc/tag/src/tag/index.tsx'
+                            
+                                import TagSourceModuleCode from '-!text!../../../../lib/pc/tag/src/tag/module.tsx'
+                                
 
                 
 
@@ -60,10 +62,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={TagSourceCode} instance={TagSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={TagSourceCode} instance={TagSource} moduleCode={TagSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

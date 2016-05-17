@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import RenderToSource from '../../../../lib/common/render-to/src/render-to/index.tsx'
-                        import RenderToSourceCode from '-!text!../../../../lib/common/render-to/src/render-to/index.tsx'
-                        
+                            import RenderToSource from '../../../../lib/common/render-to/src/render-to/index.tsx'
+                            import RenderToSourceCode from '-!text!../../../../lib/common/render-to/src/render-to/index.tsx'
+                            
+                                import RenderToSourceModuleCode from '-!text!../../../../lib/common/render-to/src/render-to/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/common/render-to/demo/lists/basic.tsx'
@@ -75,10 +77,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={RenderToSourceCode} instance={RenderToSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={RenderToSourceCode} instance={RenderToSource} moduleCode={RenderToSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import TimepickerSource from '../../../../lib/pc/timepicker/src/timepicker'
-                        import TimepickerSourceCode from '-!text!../../../../lib/pc/timepicker/src/timepicker'
-                        
+                            import TimepickerSource from '../../../../lib/pc/timepicker/src/timepicker'
+                            import TimepickerSourceCode from '-!text!../../../../lib/pc/timepicker/src/timepicker'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/timepicker/demo/lists/basic.js'
@@ -105,10 +105,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={TimepickerSourceCode} instance={TimepickerSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={TimepickerSourceCode} instance={TimepickerSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

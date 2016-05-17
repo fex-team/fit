@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import NumberSource from '../../../../lib/pc/number/src/number'
-                        import NumberSourceCode from '-!text!../../../../lib/pc/number/src/number'
-                        
+                            import NumberSource from '../../../../lib/pc/number/src/number'
+                            import NumberSourceCode from '-!text!../../../../lib/pc/number/src/number'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/number/demo/lists/basic.js'
@@ -150,10 +150,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={NumberSourceCode} instance={NumberSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={NumberSourceCode} instance={NumberSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

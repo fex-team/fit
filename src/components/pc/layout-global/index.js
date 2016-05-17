@@ -14,21 +14,21 @@
                 const store = createStore()
 
                 
-                        import LayoutSource from '../../../../lib/pc/layout-global/src/layout'
-                        import LayoutSourceCode from '-!text!../../../../lib/pc/layout-global/src/layout'
-                        
-                        import HeaderSource from '../../../../lib/pc/layout-global/src/header'
-                        import HeaderSourceCode from '-!text!../../../../lib/pc/layout-global/src/header'
-                        
-                        import SidebarSource from '../../../../lib/pc/layout-global/src/sidebar'
-                        import SidebarSourceCode from '-!text!../../../../lib/pc/layout-global/src/sidebar'
-                        
-                        import SectionSource from '../../../../lib/pc/layout-global/src/section'
-                        import SectionSourceCode from '-!text!../../../../lib/pc/layout-global/src/section'
-                        
-                        import FooterSource from '../../../../lib/pc/layout-global/src/footer'
-                        import FooterSourceCode from '-!text!../../../../lib/pc/layout-global/src/footer'
-                        
+                            import LayoutSource from '../../../../lib/pc/layout-global/src/layout'
+                            import LayoutSourceCode from '-!text!../../../../lib/pc/layout-global/src/layout'
+                            
+                            import HeaderSource from '../../../../lib/pc/layout-global/src/header'
+                            import HeaderSourceCode from '-!text!../../../../lib/pc/layout-global/src/header'
+                            
+                            import SidebarSource from '../../../../lib/pc/layout-global/src/sidebar'
+                            import SidebarSourceCode from '-!text!../../../../lib/pc/layout-global/src/sidebar'
+                            
+                            import SectionSource from '../../../../lib/pc/layout-global/src/section'
+                            import SectionSourceCode from '-!text!../../../../lib/pc/layout-global/src/section'
+                            
+                            import FooterSource from '../../../../lib/pc/layout-global/src/footer'
+                            import FooterSourceCode from '-!text!../../../../lib/pc/layout-global/src/footer'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/layout-global/demo/lists/basic.js'
@@ -162,26 +162,26 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={LayoutSourceCode} instance={LayoutSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={HeaderSourceCode} instance={HeaderSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={SidebarSourceCode} instance={SidebarSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={SectionSourceCode} instance={SectionSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={FooterSourceCode} instance={FooterSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={LayoutSourceCode} instance={LayoutSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={HeaderSourceCode} instance={HeaderSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={SidebarSourceCode} instance={SidebarSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={SectionSourceCode} instance={SectionSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={FooterSourceCode} instance={FooterSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

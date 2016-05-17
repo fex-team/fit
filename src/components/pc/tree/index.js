@@ -14,12 +14,12 @@
                 const store = createStore()
 
                 
-                        import TreeSource from '../../../../lib/pc/tree/src/tree'
-                        import TreeSourceCode from '-!text!../../../../lib/pc/tree/src/tree'
-                        
-                        import TreeNodeSource from '../../../../lib/pc/tree/src/tree-node'
-                        import TreeNodeSourceCode from '-!text!../../../../lib/pc/tree/src/tree-node'
-                        
+                            import TreeSource from '../../../../lib/pc/tree/src/tree'
+                            import TreeSourceCode from '-!text!../../../../lib/pc/tree/src/tree'
+                            
+                            import TreeNodeSource from '../../../../lib/pc/tree/src/tree-node'
+                            import TreeNodeSourceCode from '-!text!../../../../lib/pc/tree/src/tree-node'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/tree/demo/lists/basic.js'
@@ -93,14 +93,14 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={TreeSourceCode} instance={TreeSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={TreeNodeSourceCode} instance={TreeNodeSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={TreeSourceCode} instance={TreeSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={TreeNodeSourceCode} instance={TreeNodeSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

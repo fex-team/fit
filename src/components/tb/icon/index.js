@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import IconSource from '../../../../lib/tb/icon/src/icon/index.tsx'
-                        import IconSourceCode from '-!text!../../../../lib/tb/icon/src/icon/index.tsx'
-                        
+                            import IconSource from '../../../../lib/tb/icon/src/icon/index.tsx'
+                            import IconSourceCode from '-!text!../../../../lib/tb/icon/src/icon/index.tsx'
+                            
+                                import IconSourceModuleCode from '-!text!../../../../lib/tb/icon/src/icon/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/tb/icon/demo/lists/basic.tsx'
@@ -105,10 +107,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={IconSourceCode} instance={IconSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={IconSourceCode} instance={IconSource} moduleCode={IconSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import TooltipSource from '../../../../lib/pc/tooltip/src/tooltip'
-                        import TooltipSourceCode from '-!text!../../../../lib/pc/tooltip/src/tooltip'
-                        
+                            import TooltipSource from '../../../../lib/pc/tooltip/src/tooltip'
+                            import TooltipSourceCode from '-!text!../../../../lib/pc/tooltip/src/tooltip'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/tooltip/demo/lists/basic.js'
@@ -150,10 +150,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={TooltipSourceCode} instance={TooltipSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={TooltipSourceCode} instance={TooltipSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

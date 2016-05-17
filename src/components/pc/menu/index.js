@@ -14,18 +14,26 @@
                 const store = createStore()
 
                 
-                        import MenuSource from '../../../../lib/pc/menu/src/menu/index.tsx'
-                        import MenuSourceCode from '-!text!../../../../lib/pc/menu/src/menu/index.tsx'
-                        
-                        import MenuItemSource from '../../../../lib/pc/menu/src/menu-item/index.tsx'
-                        import MenuItemSourceCode from '-!text!../../../../lib/pc/menu/src/menu-item/index.tsx'
-                        
-                        import SubMenuSource from '../../../../lib/pc/menu/src/sub-menu/index.tsx'
-                        import SubMenuSourceCode from '-!text!../../../../lib/pc/menu/src/sub-menu/index.tsx'
-                        
-                        import RightMenuSource from '../../../../lib/pc/menu/src/right-menu/index.tsx'
-                        import RightMenuSourceCode from '-!text!../../../../lib/pc/menu/src/right-menu/index.tsx'
-                        
+                            import MenuSource from '../../../../lib/pc/menu/src/menu/index.tsx'
+                            import MenuSourceCode from '-!text!../../../../lib/pc/menu/src/menu/index.tsx'
+                            
+                                import MenuSourceModuleCode from '-!text!../../../../lib/pc/menu/src/menu/module.tsx'
+                                
+                            import MenuItemSource from '../../../../lib/pc/menu/src/menu-item/index.tsx'
+                            import MenuItemSourceCode from '-!text!../../../../lib/pc/menu/src/menu-item/index.tsx'
+                            
+                                import MenuItemSourceModuleCode from '-!text!../../../../lib/pc/menu/src/menu-item/module.tsx'
+                                
+                            import SubMenuSource from '../../../../lib/pc/menu/src/sub-menu/index.tsx'
+                            import SubMenuSourceCode from '-!text!../../../../lib/pc/menu/src/sub-menu/index.tsx'
+                            
+                                import SubMenuSourceModuleCode from '-!text!../../../../lib/pc/menu/src/sub-menu/module.tsx'
+                                
+                            import RightMenuSource from '../../../../lib/pc/menu/src/right-menu/index.tsx'
+                            import RightMenuSourceCode from '-!text!../../../../lib/pc/menu/src/right-menu/index.tsx'
+                            
+                                import RightMenuSourceModuleCode from '-!text!../../../../lib/pc/menu/src/right-menu/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/pc/menu/demo/lists/basic.tsx'
@@ -159,22 +167,22 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={MenuSourceCode} instance={MenuSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={MenuItemSourceCode} instance={MenuItemSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={SubMenuSourceCode} instance={SubMenuSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={RightMenuSourceCode} instance={RightMenuSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={MenuSourceCode} instance={MenuSource} moduleCode={MenuSourceModuleCode} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={MenuItemSourceCode} instance={MenuItemSource} moduleCode={MenuItemSourceModuleCode} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={SubMenuSourceCode} instance={SubMenuSource} moduleCode={SubMenuSourceModuleCode} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={RightMenuSourceCode} instance={RightMenuSource} moduleCode={RightMenuSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

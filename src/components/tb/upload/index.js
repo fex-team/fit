@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import UploadSource from '../../../../lib/tb/upload/src/upload/index.tsx'
-                        import UploadSourceCode from '-!text!../../../../lib/tb/upload/src/upload/index.tsx'
-                        
+                            import UploadSource from '../../../../lib/tb/upload/src/upload/index.tsx'
+                            import UploadSourceCode from '-!text!../../../../lib/tb/upload/src/upload/index.tsx'
+                            
+                                import UploadSourceModuleCode from '-!text!../../../../lib/tb/upload/src/upload/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/tb/upload/demo/lists/basic.tsx'
@@ -75,10 +77,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={UploadSourceCode} instance={UploadSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={UploadSourceCode} instance={UploadSource} moduleCode={UploadSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import BadgeSource from '../../../../lib/common/badge/src/badge/index.tsx'
-                        import BadgeSourceCode from '-!text!../../../../lib/common/badge/src/badge/index.tsx'
-                        
+                            import BadgeSource from '../../../../lib/common/badge/src/badge/index.tsx'
+                            import BadgeSourceCode from '-!text!../../../../lib/common/badge/src/badge/index.tsx'
+                            
+                                import BadgeSourceModuleCode from '-!text!../../../../lib/common/badge/src/badge/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/common/badge/demo/lists/basic.tsx'
@@ -150,10 +152,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={BadgeSourceCode} instance={BadgeSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={BadgeSourceCode} instance={BadgeSource} moduleCode={BadgeSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

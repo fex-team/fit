@@ -14,12 +14,12 @@
                 const store = createStore()
 
                 
-                        import TabsSource from '../../../../lib/pc/tabs/src/tabs'
-                        import TabsSourceCode from '-!text!../../../../lib/pc/tabs/src/tabs'
-                        
-                        import TabPanelSource from '../../../../lib/pc/tabs/src/tab-panel'
-                        import TabPanelSourceCode from '-!text!../../../../lib/pc/tabs/src/tab-panel'
-                        
+                            import TabsSource from '../../../../lib/pc/tabs/src/tabs'
+                            import TabsSourceCode from '-!text!../../../../lib/pc/tabs/src/tabs'
+                            
+                            import TabPanelSource from '../../../../lib/pc/tabs/src/tab-panel'
+                            import TabPanelSourceCode from '-!text!../../../../lib/pc/tabs/src/tab-panel'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/tabs/demo/lists/basic.js'
@@ -78,14 +78,14 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={TabsSourceCode} instance={TabsSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={TabPanelSourceCode} instance={TabPanelSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={TabsSourceCode} instance={TabsSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={TabPanelSourceCode} instance={TabPanelSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

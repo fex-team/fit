@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import EditorSource from '../../../../lib/pc/editor/src/editor'
-                        import EditorSourceCode from '-!text!../../../../lib/pc/editor/src/editor'
-                        
+                            import EditorSource from '../../../../lib/pc/editor/src/editor'
+                            import EditorSourceCode from '-!text!../../../../lib/pc/editor/src/editor'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/editor/demo/lists/basic.js'
@@ -90,10 +90,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={EditorSourceCode} instance={EditorSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={EditorSourceCode} instance={EditorSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import ImageSource from '../../../../lib/pc/image/src/image'
-                        import ImageSourceCode from '-!text!../../../../lib/pc/image/src/image'
-                        
+                            import ImageSource from '../../../../lib/pc/image/src/image'
+                            import ImageSourceCode from '-!text!../../../../lib/pc/image/src/image'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/image/demo/lists/basic.js'
@@ -90,10 +90,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={ImageSourceCode} instance={ImageSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={ImageSourceCode} instance={ImageSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

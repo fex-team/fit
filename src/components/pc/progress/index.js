@@ -14,12 +14,12 @@
                 const store = createStore()
 
                 
-                        import ProgressSource from '../../../../lib/pc/progress/src/progress'
-                        import ProgressSourceCode from '-!text!../../../../lib/pc/progress/src/progress'
-                        
-                        import ProgressCircleSource from '../../../../lib/pc/progress/src/progress-circle'
-                        import ProgressCircleSourceCode from '-!text!../../../../lib/pc/progress/src/progress-circle'
-                        
+                            import ProgressSource from '../../../../lib/pc/progress/src/progress'
+                            import ProgressSourceCode from '-!text!../../../../lib/pc/progress/src/progress'
+                            
+                            import ProgressCircleSource from '../../../../lib/pc/progress/src/progress-circle'
+                            import ProgressCircleSourceCode from '-!text!../../../../lib/pc/progress/src/progress-circle'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/progress/demo/lists/basic.js'
@@ -138,14 +138,14 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={ProgressSourceCode} instance={ProgressSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={ProgressCircleSourceCode} instance={ProgressCircleSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={ProgressSourceCode} instance={ProgressSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={ProgressCircleSourceCode} instance={ProgressCircleSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

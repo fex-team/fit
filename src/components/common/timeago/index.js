@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import TimeagoSource from '../../../../lib/common/timeago/src/timeago/index.tsx'
-                        import TimeagoSourceCode from '-!text!../../../../lib/common/timeago/src/timeago/index.tsx'
-                        
+                            import TimeagoSource from '../../../../lib/common/timeago/src/timeago/index.tsx'
+                            import TimeagoSourceCode from '-!text!../../../../lib/common/timeago/src/timeago/index.tsx'
+                            
+                                import TimeagoSourceModuleCode from '-!text!../../../../lib/common/timeago/src/timeago/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/common/timeago/demo/lists/basic.tsx'
@@ -105,10 +107,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={TimeagoSourceCode} instance={TimeagoSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={TimeagoSourceCode} instance={TimeagoSource} moduleCode={TimeagoSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

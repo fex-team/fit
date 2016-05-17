@@ -14,12 +14,12 @@
                 const store = createStore()
 
                 
-                        import RowSource from '../../../../lib/pc/layout/src/row'
-                        import RowSourceCode from '-!text!../../../../lib/pc/layout/src/row'
-                        
-                        import ColSource from '../../../../lib/pc/layout/src/col'
-                        import ColSourceCode from '-!text!../../../../lib/pc/layout/src/col'
-                        
+                            import RowSource from '../../../../lib/pc/layout/src/row'
+                            import RowSourceCode from '-!text!../../../../lib/pc/layout/src/row'
+                            
+                            import ColSource from '../../../../lib/pc/layout/src/col'
+                            import ColSourceCode from '-!text!../../../../lib/pc/layout/src/col'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/layout/demo/lists/basic.js'
@@ -138,14 +138,14 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={RowSourceCode} instance={RowSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={ColSourceCode} instance={ColSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={RowSourceCode} instance={RowSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={ColSourceCode} instance={ColSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

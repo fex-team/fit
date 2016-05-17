@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import trackSource from '../../../../lib/tb/track/src/track/index.tsx'
-                        import trackSourceCode from '-!text!../../../../lib/tb/track/src/track/index.tsx'
-                        
+                            import trackSource from '../../../../lib/tb/track/src/track/index.tsx'
+                            import trackSourceCode from '-!text!../../../../lib/tb/track/src/track/index.tsx'
+                            
 
                 
                         import BasicComponent from '../../../../lib/tb/track/demo/lists/basic.tsx'
@@ -75,10 +75,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={trackSourceCode} instance={trackSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={trackSourceCode} instance={trackSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

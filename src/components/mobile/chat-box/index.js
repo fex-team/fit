@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import ChatBoxSource from '../../../../lib/mobile/chat-box/src/chat-box/index.tsx'
-                        import ChatBoxSourceCode from '-!text!../../../../lib/mobile/chat-box/src/chat-box/index.tsx'
-                        
+                            import ChatBoxSource from '../../../../lib/mobile/chat-box/src/chat-box/index.tsx'
+                            import ChatBoxSourceCode from '-!text!../../../../lib/mobile/chat-box/src/chat-box/index.tsx'
+                            
+                                import ChatBoxSourceModuleCode from '-!text!../../../../lib/mobile/chat-box/src/chat-box/module.tsx'
+                                
 
                 
 
@@ -60,10 +62,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={ChatBoxSourceCode} instance={ChatBoxSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={ChatBoxSourceCode} instance={ChatBoxSource} moduleCode={ChatBoxSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

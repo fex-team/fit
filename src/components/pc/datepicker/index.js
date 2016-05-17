@@ -14,15 +14,15 @@
                 const store = createStore()
 
                 
-                        import CalendarSource from '../../../../lib/pc/datepicker/src/calendar'
-                        import CalendarSourceCode from '-!text!../../../../lib/pc/datepicker/src/calendar'
-                        
-                        import DateRangeSource from '../../../../lib/pc/datepicker/src/date-range'
-                        import DateRangeSourceCode from '-!text!../../../../lib/pc/datepicker/src/date-range'
-                        
-                        import DateInputSource from '../../../../lib/pc/datepicker/src/date-input'
-                        import DateInputSourceCode from '-!text!../../../../lib/pc/datepicker/src/date-input'
-                        
+                            import CalendarSource from '../../../../lib/pc/datepicker/src/calendar'
+                            import CalendarSourceCode from '-!text!../../../../lib/pc/datepicker/src/calendar'
+                            
+                            import DateRangeSource from '../../../../lib/pc/datepicker/src/date-range'
+                            import DateRangeSourceCode from '-!text!../../../../lib/pc/datepicker/src/date-range'
+                            
+                            import DateInputSource from '../../../../lib/pc/datepicker/src/date-input'
+                            import DateInputSourceCode from '-!text!../../../../lib/pc/datepicker/src/date-input'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/datepicker/demo/lists/basic.js'
@@ -171,18 +171,18 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={CalendarSourceCode} instance={CalendarSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={DateRangeSourceCode} instance={DateRangeSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={DateInputSourceCode} instance={DateInputSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={CalendarSourceCode} instance={CalendarSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={DateRangeSourceCode} instance={DateRangeSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={DateInputSourceCode} instance={DateInputSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

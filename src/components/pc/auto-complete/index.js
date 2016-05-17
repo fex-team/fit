@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import AutoCompleteSource from '../../../../lib/pc/auto-complete/src/auto-complete'
-                        import AutoCompleteSourceCode from '-!text!../../../../lib/pc/auto-complete/src/auto-complete'
-                        
+                            import AutoCompleteSource from '../../../../lib/pc/auto-complete/src/auto-complete'
+                            import AutoCompleteSourceCode from '-!text!../../../../lib/pc/auto-complete/src/auto-complete'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/auto-complete/demo/lists/basic.js'
@@ -120,10 +120,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={AutoCompleteSourceCode} instance={AutoCompleteSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={AutoCompleteSourceCode} instance={AutoCompleteSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

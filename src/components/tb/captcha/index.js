@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import CaptchaSource from '../../../../lib/tb/captcha/src/captcha/index.tsx'
-                        import CaptchaSourceCode from '-!text!../../../../lib/tb/captcha/src/captcha/index.tsx'
-                        
+                            import CaptchaSource from '../../../../lib/tb/captcha/src/captcha/index.tsx'
+                            import CaptchaSourceCode from '-!text!../../../../lib/tb/captcha/src/captcha/index.tsx'
+                            
+                                import CaptchaSourceModuleCode from '-!text!../../../../lib/tb/captcha/src/captcha/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/tb/captcha/demo/lists/basic.tsx'
@@ -75,10 +77,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={CaptchaSourceCode} instance={CaptchaSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={CaptchaSourceCode} instance={CaptchaSource} moduleCode={CaptchaSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

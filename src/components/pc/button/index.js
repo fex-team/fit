@@ -14,12 +14,16 @@
                 const store = createStore()
 
                 
-                        import ButtonSource from '../../../../lib/pc/button/src/button/index.tsx'
-                        import ButtonSourceCode from '-!text!../../../../lib/pc/button/src/button/index.tsx'
-                        
-                        import ButtonGroupSource from '../../../../lib/pc/button/src/button-group/index.tsx'
-                        import ButtonGroupSourceCode from '-!text!../../../../lib/pc/button/src/button-group/index.tsx'
-                        
+                            import ButtonSource from '../../../../lib/pc/button/src/button/index.tsx'
+                            import ButtonSourceCode from '-!text!../../../../lib/pc/button/src/button/index.tsx'
+                            
+                                import ButtonSourceModuleCode from '-!text!../../../../lib/pc/button/src/button/module.tsx'
+                                
+                            import ButtonGroupSource from '../../../../lib/pc/button/src/button-group/index.tsx'
+                            import ButtonGroupSourceCode from '-!text!../../../../lib/pc/button/src/button-group/index.tsx'
+                            
+                                import ButtonGroupSourceModuleCode from '-!text!../../../../lib/pc/button/src/button-group/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/pc/button/demo/lists/basic.tsx'
@@ -183,14 +187,14 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={ButtonSourceCode} instance={ButtonSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={ButtonGroupSourceCode} instance={ButtonGroupSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={ButtonSourceCode} instance={ButtonSource} moduleCode={ButtonSourceModuleCode} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={ButtonGroupSourceCode} instance={ButtonGroupSource} moduleCode={ButtonGroupSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

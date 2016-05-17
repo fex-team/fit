@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import IframeSource from '../../../../lib/pc/iframe/src/iframe'
-                        import IframeSourceCode from '-!text!../../../../lib/pc/iframe/src/iframe'
-                        
+                            import IframeSource from '../../../../lib/pc/iframe/src/iframe'
+                            import IframeSourceCode from '-!text!../../../../lib/pc/iframe/src/iframe'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/iframe/demo/lists/basic.js'
@@ -75,10 +75,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={IframeSourceCode} instance={IframeSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={IframeSourceCode} instance={IframeSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

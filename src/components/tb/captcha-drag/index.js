@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import CaptchaDragSource from '../../../../lib/tb/captcha-drag/src/captcha-drag/index.tsx'
-                        import CaptchaDragSourceCode from '-!text!../../../../lib/tb/captcha-drag/src/captcha-drag/index.tsx'
-                        
+                            import CaptchaDragSource from '../../../../lib/tb/captcha-drag/src/captcha-drag/index.tsx'
+                            import CaptchaDragSourceCode from '-!text!../../../../lib/tb/captcha-drag/src/captcha-drag/index.tsx'
+                            
+                                import CaptchaDragSourceModuleCode from '-!text!../../../../lib/tb/captcha-drag/src/captcha-drag/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/tb/captcha-drag/demo/lists/basic.tsx'
@@ -75,10 +77,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={CaptchaDragSourceCode} instance={CaptchaDragSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={CaptchaDragSourceCode} instance={CaptchaDragSource} moduleCode={CaptchaDragSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

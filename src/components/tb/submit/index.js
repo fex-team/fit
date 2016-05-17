@@ -14,12 +14,16 @@
                 const store = createStore()
 
                 
-                        import SubmitSource from '../../../../lib/tb/submit/src/submit/index.tsx'
-                        import SubmitSourceCode from '-!text!../../../../lib/tb/submit/src/submit/index.tsx'
-                        
-                        import sendSource from '../../../../lib/tb/submit/src/send/index.tsx'
-                        import sendSourceCode from '-!text!../../../../lib/tb/submit/src/send/index.tsx'
-                        
+                            import SubmitSource from '../../../../lib/tb/submit/src/submit/index.tsx'
+                            import SubmitSourceCode from '-!text!../../../../lib/tb/submit/src/submit/index.tsx'
+                            
+                                import SubmitSourceModuleCode from '-!text!../../../../lib/tb/submit/src/submit/module.tsx'
+                                
+                            import sendSource from '../../../../lib/tb/submit/src/send/index.tsx'
+                            import sendSourceCode from '-!text!../../../../lib/tb/submit/src/send/index.tsx'
+                            
+                                import sendSourceModuleCode from '-!text!../../../../lib/tb/submit/src/send/module.tsx'
+                                
 
                 
                         import PostComponent from '../../../../lib/tb/submit/demo/lists/post.tsx'
@@ -123,14 +127,14 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={SubmitSourceCode} instance={SubmitSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={sendSourceCode} instance={sendSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={SubmitSourceCode} instance={SubmitSource} moduleCode={SubmitSourceModuleCode} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={sendSourceCode} instance={sendSource} moduleCode={sendSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

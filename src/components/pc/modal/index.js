@@ -14,9 +14,11 @@
                 const store = createStore()
 
                 
-                        import ModalSource from '../../../../lib/pc/modal/src/modal/index.tsx'
-                        import ModalSourceCode from '-!text!../../../../lib/pc/modal/src/modal/index.tsx'
-                        
+                            import ModalSource from '../../../../lib/pc/modal/src/modal/index.tsx'
+                            import ModalSourceCode from '-!text!../../../../lib/pc/modal/src/modal/index.tsx'
+                            
+                                import ModalSourceModuleCode from '-!text!../../../../lib/pc/modal/src/modal/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/pc/modal/demo/lists/basic.tsx'
@@ -135,10 +137,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={ModalSourceCode} instance={ModalSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={ModalSourceCode} instance={ModalSource} moduleCode={ModalSourceModuleCode} />
+                            </div>
+                            
                                 </div>
                             )
                             break

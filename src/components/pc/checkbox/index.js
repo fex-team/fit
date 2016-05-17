@@ -14,9 +14,9 @@
                 const store = createStore()
 
                 
-                        import CheckboxSource from '../../../../lib/pc/checkbox/src/checkbox'
-                        import CheckboxSourceCode from '-!text!../../../../lib/pc/checkbox/src/checkbox'
-                        
+                            import CheckboxSource from '../../../../lib/pc/checkbox/src/checkbox'
+                            import CheckboxSourceCode from '-!text!../../../../lib/pc/checkbox/src/checkbox'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/checkbox/demo/lists/basic.js'
@@ -150,10 +150,10 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={CheckboxSourceCode} instance={CheckboxSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={CheckboxSourceCode} instance={CheckboxSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break

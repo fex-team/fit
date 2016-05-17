@@ -14,15 +14,15 @@
                 const store = createStore()
 
                 
-                        import SelectSource from '../../../../lib/pc/select/src/select'
-                        import SelectSourceCode from '-!text!../../../../lib/pc/select/src/select'
-                        
-                        import OptionSource from '../../../../lib/pc/select/src/option'
-                        import OptionSourceCode from '-!text!../../../../lib/pc/select/src/option'
-                        
-                        import OptGroupSource from '../../../../lib/pc/select/src/opt-group'
-                        import OptGroupSourceCode from '-!text!../../../../lib/pc/select/src/opt-group'
-                        
+                            import SelectSource from '../../../../lib/pc/select/src/select'
+                            import SelectSourceCode from '-!text!../../../../lib/pc/select/src/select'
+                            
+                            import OptionSource from '../../../../lib/pc/select/src/option'
+                            import OptionSourceCode from '-!text!../../../../lib/pc/select/src/option'
+                            
+                            import OptGroupSource from '../../../../lib/pc/select/src/opt-group'
+                            import OptGroupSourceCode from '-!text!../../../../lib/pc/select/src/opt-group'
+                            
 
                 
                         import BasicComponent from '../../../../lib/pc/select/demo/lists/basic.js'
@@ -156,18 +156,18 @@
                             Content = (
                                 <div>
                                     
-                        <div style={docStyle}>
-                            <CodeDoc code={SelectSourceCode} instance={SelectSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={OptionSourceCode} instance={OptionSource} />
-                        </div>
-                        
-                        <div style={docStyle}>
-                            <CodeDoc code={OptGroupSourceCode} instance={OptGroupSource} />
-                        </div>
-                        
+                            <div style={docStyle}>
+                                <CodeDoc code={SelectSourceCode} instance={SelectSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={OptionSourceCode} instance={OptionSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={OptGroupSourceCode} instance={OptGroupSource} />
+                            </div>
+                            
                                 </div>
                             )
                             break
