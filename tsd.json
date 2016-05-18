@@ -64,6 +64,9 @@
     },
     "react-router/react-router.d.ts": {
       "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
+    },
+    "validator/validator.d.ts": {
+      "commit": "e0abafb1a6ff652f7ff967120e312d5c1916eaef"
     }
   }
 }

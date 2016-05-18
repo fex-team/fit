@@ -14,41 +14,44 @@
                 const store = createStore()
 
                 
-                            import InputSource from '../../../../lib/pc/input/src/input'
-                            import InputSourceCode from '-!text!../../../../lib/pc/input/src/input'
+                            import InputSource from '../../../../lib/pc/input/src/input/index.tsx'
+                            import InputSourceCode from '-!text!../../../../lib/pc/input/src/input/index.tsx'
                             
+                                import * as InputModule from '../../../../lib/pc/input/src/input/module.tsx'
+                                import InputModuleCode from '-!text!../../../../lib/pc/input/src/input/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/input/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/input/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/input/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/input/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/input/demo/lists/basic.md'
                         
-                        import DefaultComponent from '../../../../lib/pc/input/demo/lists/default.js'
-                        import DefaultCode from '-!text!../../../../lib/pc/input/demo/lists/default.js'
+                        import DefaultComponent from '../../../../lib/pc/input/demo/lists/default.tsx'
+                        import DefaultCode from '-!text!../../../../lib/pc/input/demo/lists/default.tsx'
                         import DefaultMarkdown from '../../../../lib/pc/input/demo/lists/default.md'
                         
-                        import CallbackComponent from '../../../../lib/pc/input/demo/lists/callback.js'
-                        import CallbackCode from '-!text!../../../../lib/pc/input/demo/lists/callback.js'
+                        import CallbackComponent from '../../../../lib/pc/input/demo/lists/callback.tsx'
+                        import CallbackCode from '-!text!../../../../lib/pc/input/demo/lists/callback.tsx'
                         import CallbackMarkdown from '../../../../lib/pc/input/demo/lists/callback.md'
                         
-                        import DisabledComponent from '../../../../lib/pc/input/demo/lists/disabled.js'
-                        import DisabledCode from '-!text!../../../../lib/pc/input/demo/lists/disabled.js'
+                        import DisabledComponent from '../../../../lib/pc/input/demo/lists/disabled.tsx'
+                        import DisabledCode from '-!text!../../../../lib/pc/input/demo/lists/disabled.tsx'
                         import DisabledMarkdown from '../../../../lib/pc/input/demo/lists/disabled.md'
                         
-                        import FlexComponent from '../../../../lib/pc/input/demo/lists/flex.js'
-                        import FlexCode from '-!text!../../../../lib/pc/input/demo/lists/flex.js'
+                        import FlexComponent from '../../../../lib/pc/input/demo/lists/flex.tsx'
+                        import FlexCode from '-!text!../../../../lib/pc/input/demo/lists/flex.tsx'
                         import FlexMarkdown from '../../../../lib/pc/input/demo/lists/flex.md'
                         
-                        import IconComponent from '../../../../lib/pc/input/demo/lists/icon.js'
-                        import IconCode from '-!text!../../../../lib/pc/input/demo/lists/icon.js'
+                        import IconComponent from '../../../../lib/pc/input/demo/lists/icon.tsx'
+                        import IconCode from '-!text!../../../../lib/pc/input/demo/lists/icon.tsx'
                         import IconMarkdown from '../../../../lib/pc/input/demo/lists/icon.md'
                         
-                        import TextareaComponent from '../../../../lib/pc/input/demo/lists/textarea.js'
-                        import TextareaCode from '-!text!../../../../lib/pc/input/demo/lists/textarea.js'
+                        import TextareaComponent from '../../../../lib/pc/input/demo/lists/textarea.tsx'
+                        import TextareaCode from '-!text!../../../../lib/pc/input/demo/lists/textarea.tsx'
                         import TextareaMarkdown from '../../../../lib/pc/input/demo/lists/textarea.md'
                         
-                        import ClearComponent from '../../../../lib/pc/input/demo/lists/clear.js'
-                        import ClearCode from '-!text!../../../../lib/pc/input/demo/lists/clear.js'
+                        import ClearComponent from '../../../../lib/pc/input/demo/lists/clear.tsx'
+                        import ClearCode from '-!text!../../../../lib/pc/input/demo/lists/clear.tsx'
                         import ClearMarkdown from '../../../../lib/pc/input/demo/lists/clear.md'
                         
 
@@ -181,7 +184,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={InputSourceCode} instance={InputSource} />
+                                <CodeDoc code={InputSourceCode} instance={InputSource} moduleCode={InputModuleCode} moduleInstance={InputModule} />
                             </div>
                             
                                 </div>
