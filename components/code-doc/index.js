@@ -97,7 +97,13 @@ export default class CodeDoc extends React.Component {
 
                     if (value.instanceValue === undefined) {
                         return (
-                            <div>undefined</div>
+                            <div style={{color:'#ccc'}}>undefined</div>
+                        )
+                    }
+
+                    if (value.instanceValue === null) {
+                        return (
+                            <div style={{color:'#1C00CF'}}>null</div>
                         )
                     }
 

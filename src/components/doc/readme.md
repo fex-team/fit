@@ -23,7 +23,7 @@ awesome这个模块就是fit官网的全部代码,开发方式采用**根项目�
 ##### 运行项目:
 
 ~~~js
-$ npm start
+$ npm run start-dev
 ~~~
 
 运行后打开`localhost:8090`就可以看到fit网站内容,可以修改任意组件源码,进入对应组件demo目录查看修改效果
