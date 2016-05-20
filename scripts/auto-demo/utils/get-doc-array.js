@@ -16,6 +16,7 @@ const getDocArray = (docIndexPath)=> {
                 item = _.trim(item)
 
                 // 豁免 Static 结尾
+                console.log(item)
                 if (_.endsWith(item, 'Static')) return
 
                 docArray.push(item)
