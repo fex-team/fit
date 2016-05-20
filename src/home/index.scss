@@ -134,8 +134,8 @@ a {
 }
 
 // reset input样式
-.lib-pc-input-src-input .input {
-    background-color: #303E58;
+.lib-pc-input-src-input .input, .lib-pc-input-src-input {
+    background-color: transparent;
     color: #9ECCF3;
     border-color: #6B84B1;
 }
@@ -149,7 +149,7 @@ a {
     .complete-container {
         background-color: #303E58;
         color: #799BD8;
-        border-color: #6B84B1;
+        border: none;
     }
     .complete-container .item:hover:not(.active) {
         background-color: #365173;

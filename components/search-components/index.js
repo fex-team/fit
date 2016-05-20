@@ -11,10 +11,11 @@ export default class SearchComponents extends React.Component {
         this.autoCompleteOpts = {
             datas     : [],
             autoFilter: true,
-            inputOpts : {
-                placeholder: '搜索组件..',
-                width      : this.props.width || 195
+            label     : '搜索组件..',
+            style     : {
+                width: this.props.width || 195
             },
+            direction : 'center',
             onSelect  : (value)=> {
                 browserHistory.push(`/components/${value}`)
             }

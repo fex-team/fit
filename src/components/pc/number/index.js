@@ -14,33 +14,28 @@
                 const store = createStore()
 
                 
-                            import NumberSource from '../../../../lib/pc/number/src/number'
-                            import NumberSourceCode from '-!text!../../../../lib/pc/number/src/number'
+                            import NumberSource from '../../../../lib/pc/number/src/number/index.tsx'
+                            import NumberSourceCode from '-!text!../../../../lib/pc/number/src/number/index.tsx'
                             
+                                import * as NumberModule from '../../../../lib/pc/number/src/number/module.tsx'
+                                import NumberModuleCode from '-!text!../../../../lib/pc/number/src/number/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/number/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/number/demo/lists/basic.js'
-                        import BasicMarkdown from '../../../../lib/pc/number/demo/lists/basic.md'
-                        
-                        import CallbackComponent from '../../../../lib/pc/number/demo/lists/callback.js'
-                        import CallbackCode from '-!text!../../../../lib/pc/number/demo/lists/callback.js'
-                        import CallbackMarkdown from '../../../../lib/pc/number/demo/lists/callback.md'
-                        
-                        import FloatComponent from '../../../../lib/pc/number/demo/lists/float.js'
-                        import FloatCode from '-!text!../../../../lib/pc/number/demo/lists/float.js'
+                        import FloatComponent from '../../../../lib/pc/number/demo/lists/float.tsx'
+                        import FloatCode from '-!text!../../../../lib/pc/number/demo/lists/float.tsx'
                         import FloatMarkdown from '../../../../lib/pc/number/demo/lists/float.md'
                         
-                        import LimitComponent from '../../../../lib/pc/number/demo/lists/limit.js'
-                        import LimitCode from '-!text!../../../../lib/pc/number/demo/lists/limit.js'
+                        import LimitComponent from '../../../../lib/pc/number/demo/lists/limit.tsx'
+                        import LimitCode from '-!text!../../../../lib/pc/number/demo/lists/limit.tsx'
                         import LimitMarkdown from '../../../../lib/pc/number/demo/lists/limit.md'
                         
-                        import SpeedComponent from '../../../../lib/pc/number/demo/lists/speed.js'
-                        import SpeedCode from '-!text!../../../../lib/pc/number/demo/lists/speed.js'
+                        import SpeedComponent from '../../../../lib/pc/number/demo/lists/speed.tsx'
+                        import SpeedCode from '-!text!../../../../lib/pc/number/demo/lists/speed.tsx'
                         import SpeedMarkdown from '../../../../lib/pc/number/demo/lists/speed.md'
                         
-                        import StepComponent from '../../../../lib/pc/number/demo/lists/step.js'
-                        import StepCode from '-!text!../../../../lib/pc/number/demo/lists/step.js'
+                        import StepComponent from '../../../../lib/pc/number/demo/lists/step.tsx'
+                        import StepCode from '-!text!../../../../lib/pc/number/demo/lists/step.tsx'
                         import StepMarkdown from '../../../../lib/pc/number/demo/lists/step.md'
                         
 
@@ -77,28 +72,6 @@
                             Content = (
                                 <Row>
                                     
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={BasicMarkdown}
-                                      code={BasicCode}
-                                      npmName="fit-number">
-
-                                    <BasicComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={CallbackMarkdown}
-                                      code={CallbackCode}
-                                      npmName="fit-number">
-
-                                    <CallbackComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
                                       md={FloatMarkdown}
@@ -151,7 +124,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={NumberSourceCode} instance={NumberSource} />
+                                <CodeDoc code={NumberSourceCode} instance={NumberSource} moduleCode={NumberModuleCode} moduleInstance={NumberModule} />
                             </div>
                             
                                 </div>

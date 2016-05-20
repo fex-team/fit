@@ -26,33 +26,33 @@
                         import BasicCode from '-!text!../../../../lib/pc/input/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/input/demo/lists/basic.md'
                         
+                        import HighlightComponent from '../../../../lib/pc/input/demo/lists/highlight.tsx'
+                        import HighlightCode from '-!text!../../../../lib/pc/input/demo/lists/highlight.tsx'
+                        import HighlightMarkdown from '../../../../lib/pc/input/demo/lists/highlight.md'
+                        
                         import DefaultComponent from '../../../../lib/pc/input/demo/lists/default.tsx'
                         import DefaultCode from '-!text!../../../../lib/pc/input/demo/lists/default.tsx'
                         import DefaultMarkdown from '../../../../lib/pc/input/demo/lists/default.md'
-                        
-                        import CallbackComponent from '../../../../lib/pc/input/demo/lists/callback.tsx'
-                        import CallbackCode from '-!text!../../../../lib/pc/input/demo/lists/callback.tsx'
-                        import CallbackMarkdown from '../../../../lib/pc/input/demo/lists/callback.md'
                         
                         import DisabledComponent from '../../../../lib/pc/input/demo/lists/disabled.tsx'
                         import DisabledCode from '-!text!../../../../lib/pc/input/demo/lists/disabled.tsx'
                         import DisabledMarkdown from '../../../../lib/pc/input/demo/lists/disabled.md'
                         
-                        import FlexComponent from '../../../../lib/pc/input/demo/lists/flex.tsx'
-                        import FlexCode from '-!text!../../../../lib/pc/input/demo/lists/flex.tsx'
-                        import FlexMarkdown from '../../../../lib/pc/input/demo/lists/flex.md'
+                        import NoLabelComponent from '../../../../lib/pc/input/demo/lists/no-label.tsx'
+                        import NoLabelCode from '-!text!../../../../lib/pc/input/demo/lists/no-label.tsx'
+                        import NoLabelMarkdown from '../../../../lib/pc/input/demo/lists/no-label.md'
                         
-                        import IconComponent from '../../../../lib/pc/input/demo/lists/icon.tsx'
-                        import IconCode from '-!text!../../../../lib/pc/input/demo/lists/icon.tsx'
-                        import IconMarkdown from '../../../../lib/pc/input/demo/lists/icon.md'
+                        import CenterComponent from '../../../../lib/pc/input/demo/lists/center.tsx'
+                        import CenterCode from '-!text!../../../../lib/pc/input/demo/lists/center.tsx'
+                        import CenterMarkdown from '../../../../lib/pc/input/demo/lists/center.md'
                         
-                        import TextareaComponent from '../../../../lib/pc/input/demo/lists/textarea.tsx'
-                        import TextareaCode from '-!text!../../../../lib/pc/input/demo/lists/textarea.tsx'
-                        import TextareaMarkdown from '../../../../lib/pc/input/demo/lists/textarea.md'
+                        import CallbackComponent from '../../../../lib/pc/input/demo/lists/callback.tsx'
+                        import CallbackCode from '-!text!../../../../lib/pc/input/demo/lists/callback.tsx'
+                        import CallbackMarkdown from '../../../../lib/pc/input/demo/lists/callback.md'
                         
-                        import ClearComponent from '../../../../lib/pc/input/demo/lists/clear.tsx'
-                        import ClearCode from '-!text!../../../../lib/pc/input/demo/lists/clear.tsx'
-                        import ClearMarkdown from '../../../../lib/pc/input/demo/lists/clear.md'
+                        import ValidateComponent from '../../../../lib/pc/input/demo/lists/validate.tsx'
+                        import ValidateCode from '-!text!../../../../lib/pc/input/demo/lists/validate.tsx'
+                        import ValidateMarkdown from '../../../../lib/pc/input/demo/lists/validate.md'
                         
 
                 const colStyle = {
@@ -101,22 +101,22 @@
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
-                                      md={DefaultMarkdown}
-                                      code={DefaultCode}
+                                      md={HighlightMarkdown}
+                                      code={HighlightCode}
                                       npmName="fit-input">
 
-                                    <DefaultComponent/>
+                                    <HighlightComponent/>
 
                             </CodeView>
                         </Col>
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
-                                      md={CallbackMarkdown}
-                                      code={CallbackCode}
+                                      md={DefaultMarkdown}
+                                      code={DefaultCode}
                                       npmName="fit-input">
 
-                                    <CallbackComponent/>
+                                    <DefaultComponent/>
 
                             </CodeView>
                         </Col>
@@ -134,44 +134,44 @@
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
-                                      md={FlexMarkdown}
-                                      code={FlexCode}
+                                      md={NoLabelMarkdown}
+                                      code={NoLabelCode}
                                       npmName="fit-input">
 
-                                    <FlexComponent/>
+                                    <NoLabelComponent/>
 
                             </CodeView>
                         </Col>
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
-                                      md={IconMarkdown}
-                                      code={IconCode}
+                                      md={CenterMarkdown}
+                                      code={CenterCode}
                                       npmName="fit-input">
 
-                                    <IconComponent/>
+                                    <CenterComponent/>
 
                             </CodeView>
                         </Col>
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
-                                      md={TextareaMarkdown}
-                                      code={TextareaCode}
+                                      md={CallbackMarkdown}
+                                      code={CallbackCode}
                                       npmName="fit-input">
 
-                                    <TextareaComponent/>
+                                    <CallbackComponent/>
 
                             </CodeView>
                         </Col>
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
-                                      md={ClearMarkdown}
-                                      code={ClearCode}
+                                      md={ValidateMarkdown}
+                                      code={ValidateCode}
                                       npmName="fit-input">
 
-                                    <ClearComponent/>
+                                    <ValidateComponent/>
 
                             </CodeView>
                         </Col>

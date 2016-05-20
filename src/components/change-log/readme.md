@@ -1,5 +1,18 @@
 ### 改动日志
 
+#### 2016.5.20
+
+- tsx 源码组件的文档可以被正确显示了
+- `fit-number` 源码改为typescript
+- `fit-number` 兼容fit-input
+- `fit-autocomplete` 源码改为typescript
+- `fit-autocomplete` 兼容fit-input
+- `fit-input` 改为 material 风格
+- `fit-input` 源码改为typescript
+- `fit-input` `fit-number` `fit-autocomplete` 版本号升级到 4.0
+- `fit-datepicker` `fit-timepicker` 兼容fit-input
+- `fit-input` 支持验证
+
 #### 2016.5.16
 
 - `fit-modal` 模块源码改为 typescript

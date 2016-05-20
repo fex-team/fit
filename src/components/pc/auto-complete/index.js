@@ -14,25 +14,28 @@
                 const store = createStore()
 
                 
-                            import AutoCompleteSource from '../../../../lib/pc/auto-complete/src/auto-complete'
-                            import AutoCompleteSourceCode from '-!text!../../../../lib/pc/auto-complete/src/auto-complete'
+                            import AutoCompleteSource from '../../../../lib/pc/auto-complete/src/auto-complete/index.tsx'
+                            import AutoCompleteSourceCode from '-!text!../../../../lib/pc/auto-complete/src/auto-complete/index.tsx'
                             
+                                import * as AutoCompleteModule from '../../../../lib/pc/auto-complete/src/auto-complete/module.tsx'
+                                import AutoCompleteModuleCode from '-!text!../../../../lib/pc/auto-complete/src/auto-complete/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/auto-complete/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/auto-complete/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/auto-complete/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/auto-complete/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/auto-complete/demo/lists/basic.md'
                         
-                        import LocalComponent from '../../../../lib/pc/auto-complete/demo/lists/local.js'
-                        import LocalCode from '-!text!../../../../lib/pc/auto-complete/demo/lists/local.js'
+                        import LocalComponent from '../../../../lib/pc/auto-complete/demo/lists/local.tsx'
+                        import LocalCode from '-!text!../../../../lib/pc/auto-complete/demo/lists/local.tsx'
                         import LocalMarkdown from '../../../../lib/pc/auto-complete/demo/lists/local.md'
                         
-                        import CustomParseComponent from '../../../../lib/pc/auto-complete/demo/lists/custom-parse.js'
-                        import CustomParseCode from '-!text!../../../../lib/pc/auto-complete/demo/lists/custom-parse.js'
+                        import CustomParseComponent from '../../../../lib/pc/auto-complete/demo/lists/custom-parse.tsx'
+                        import CustomParseCode from '-!text!../../../../lib/pc/auto-complete/demo/lists/custom-parse.tsx'
                         import CustomParseMarkdown from '../../../../lib/pc/auto-complete/demo/lists/custom-parse.md'
                         
-                        import CallbackComponent from '../../../../lib/pc/auto-complete/demo/lists/callback.js'
-                        import CallbackCode from '-!text!../../../../lib/pc/auto-complete/demo/lists/callback.js'
+                        import CallbackComponent from '../../../../lib/pc/auto-complete/demo/lists/callback.tsx'
+                        import CallbackCode from '-!text!../../../../lib/pc/auto-complete/demo/lists/callback.tsx'
                         import CallbackMarkdown from '../../../../lib/pc/auto-complete/demo/lists/callback.md'
                         
 
@@ -121,7 +124,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={AutoCompleteSourceCode} instance={AutoCompleteSource} />
+                                <CodeDoc code={AutoCompleteSourceCode} instance={AutoCompleteSource} moduleCode={AutoCompleteModuleCode} moduleInstance={AutoCompleteModule} />
                             </div>
                             
                                 </div>
