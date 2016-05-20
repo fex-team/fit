@@ -116,6 +116,11 @@ $ npm test
 ### 更新 fit 官网内容
 
 ~~~jsx
-$ npm run build
-$ npm run push
+$ npm run publish
 ~~~
+
+### 注意事项
+
+`src/index.tsx` 文件所有 export 部分都会作为组件文档
+
+对于 ts 定义文件,请以 `Static` 作为后缀,文档会豁免

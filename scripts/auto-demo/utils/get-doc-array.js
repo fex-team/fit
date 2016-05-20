@@ -14,6 +14,10 @@ const getDocArray = (docIndexPath)=> {
             line = line.replace(/\{|\}/g, '')
             line.split(',').map((item)=> {
                 item = _.trim(item)
+
+                // 豁免 Static 结尾
+                if (_.endsWith(item, 'Static')) return
+
                 docArray.push(item)
             })
         }
