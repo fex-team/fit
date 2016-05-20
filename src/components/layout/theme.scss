@@ -30,7 +30,7 @@ $theme-color: (
 
     @each $them-name in pc, mobile, tb, common {
         &.#{$them-name} {
-            background: #f6f6f6;
+            background: white;
             .title {
                 font-size: 12px;
                 color: #8b8e99;

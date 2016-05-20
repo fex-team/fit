@@ -14,9 +14,6 @@
                 const store = createStore()
 
                 
-                            import ExtendValidatorStatic from './input/validate'Source from '../../../../lib/pc/input/src/extend-validator-static-from-input-validate/index.tsx'
-                            import ExtendValidatorStatic from './input/validate'SourceCode from '-!text!../../../../lib/pc/input/src/extend-validator-static-from-input-validate/index.tsx'
-                            
                             import InputSource from '../../../../lib/pc/input/src/input/index.tsx'
                             import InputSourceCode from '-!text!../../../../lib/pc/input/src/input/index.tsx'
                             
@@ -186,10 +183,6 @@
                             Content = (
                                 <div>
                                     
-                            <div style={docStyle}>
-                                <CodeDoc code={ExtendValidatorStatic from './input/validate'SourceCode} instance={ExtendValidatorStatic from './input/validate'Source} />
-                            </div>
-                            
                             <div style={docStyle}>
                                 <CodeDoc code={InputSourceCode} instance={InputSource} moduleCode={InputModuleCode} moduleInstance={InputModule} />
                             </div>
