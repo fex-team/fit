@@ -64,9 +64,15 @@ export default class CodeDoc extends React.Component {
     }
 
     render() {
-        const titleArray = this.props.code.match(/(\w*).defaultProps/g)
-        if (!titleArray)return null
-        const title = titleArray[0]
+        let title = ''
+        // TODO: 给 tsx 文件设置标题
+        if (!this.props.moduleCode) {
+            const titleArray = this.props.code.match(/(\w*).defaultProps/g)
+            if (!titleArray)return null
+            title = titleArray[0]
+        } else {
+
+        }
 
         let tableInfo = {
             title : title.replace(/.defaultProps/g, ''),

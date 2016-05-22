@@ -14,39 +14,44 @@
                 const store = createStore()
 
                 
-                            import SelectSource from '../../../../lib/pc/select/src/select'
-                            import SelectSourceCode from '-!text!../../../../lib/pc/select/src/select'
+                            import SelectSource from '../../../../lib/pc/select/src/select/index.tsx'
+                            import SelectSourceCode from '-!text!../../../../lib/pc/select/src/select/index.tsx'
                             
-                            import OptionSource from '../../../../lib/pc/select/src/option'
-                            import OptionSourceCode from '-!text!../../../../lib/pc/select/src/option'
+                                import * as SelectModule from '../../../../lib/pc/select/src/select/module.tsx'
+                                import SelectModuleCode from '-!text!../../../../lib/pc/select/src/select/module.tsx'
+                                
+                            import OptionSource from '../../../../lib/pc/select/src/option/index.tsx'
+                            import OptionSourceCode from '-!text!../../../../lib/pc/select/src/option/index.tsx'
                             
-                            import OptGroupSource from '../../../../lib/pc/select/src/opt-group'
-                            import OptGroupSourceCode from '-!text!../../../../lib/pc/select/src/opt-group'
+                                import * as OptionModule from '../../../../lib/pc/select/src/option/module.tsx'
+                                import OptionModuleCode from '-!text!../../../../lib/pc/select/src/option/module.tsx'
+                                
+                            import OptGroupSource from '../../../../lib/pc/select/src/opt-group/index.tsx'
+                            import OptGroupSourceCode from '-!text!../../../../lib/pc/select/src/opt-group/index.tsx'
                             
+                                import * as OptGroupModule from '../../../../lib/pc/select/src/opt-group/module.tsx'
+                                import OptGroupModuleCode from '-!text!../../../../lib/pc/select/src/opt-group/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/select/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/select/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/select/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/select/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/select/demo/lists/basic.md'
                         
-                        import DisabledComponent from '../../../../lib/pc/select/demo/lists/disabled.js'
-                        import DisabledCode from '-!text!../../../../lib/pc/select/demo/lists/disabled.js'
+                        import DisabledComponent from '../../../../lib/pc/select/demo/lists/disabled.tsx'
+                        import DisabledCode from '-!text!../../../../lib/pc/select/demo/lists/disabled.tsx'
                         import DisabledMarkdown from '../../../../lib/pc/select/demo/lists/disabled.md'
                         
-                        import GroupComponent from '../../../../lib/pc/select/demo/lists/group.js'
-                        import GroupCode from '-!text!../../../../lib/pc/select/demo/lists/group.js'
+                        import GroupComponent from '../../../../lib/pc/select/demo/lists/group.tsx'
+                        import GroupCode from '-!text!../../../../lib/pc/select/demo/lists/group.tsx'
                         import GroupMarkdown from '../../../../lib/pc/select/demo/lists/group.md'
                         
-                        import LabelComponent from '../../../../lib/pc/select/demo/lists/label.js'
-                        import LabelCode from '-!text!../../../../lib/pc/select/demo/lists/label.js'
-                        import LabelMarkdown from '../../../../lib/pc/select/demo/lists/label.md'
-                        
-                        import SearchComponent from '../../../../lib/pc/select/demo/lists/search.js'
-                        import SearchCode from '-!text!../../../../lib/pc/select/demo/lists/search.js'
+                        import SearchComponent from '../../../../lib/pc/select/demo/lists/search.tsx'
+                        import SearchCode from '-!text!../../../../lib/pc/select/demo/lists/search.tsx'
                         import SearchMarkdown from '../../../../lib/pc/select/demo/lists/search.md'
                         
-                        import SimpleComponent from '../../../../lib/pc/select/demo/lists/simple.js'
-                        import SimpleCode from '-!text!../../../../lib/pc/select/demo/lists/simple.js'
+                        import SimpleComponent from '../../../../lib/pc/select/demo/lists/simple.tsx'
+                        import SimpleCode from '-!text!../../../../lib/pc/select/demo/lists/simple.tsx'
                         import SimpleMarkdown from '../../../../lib/pc/select/demo/lists/simple.md'
                         
 
@@ -118,17 +123,6 @@
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
-                                      md={LabelMarkdown}
-                                      code={LabelCode}
-                                      npmName="fit-select">
-
-                                    <LabelComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
                                       md={SearchMarkdown}
                                       code={SearchCode}
                                       npmName="fit-select">
@@ -157,15 +151,15 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={SelectSourceCode} instance={SelectSource} />
+                                <CodeDoc code={SelectSourceCode} instance={SelectSource} moduleCode={SelectModuleCode} moduleInstance={SelectModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={OptionSourceCode} instance={OptionSource} />
+                                <CodeDoc code={OptionSourceCode} instance={OptionSource} moduleCode={OptionModuleCode} moduleInstance={OptionModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={OptGroupSourceCode} instance={OptGroupSource} />
+                                <CodeDoc code={OptGroupSourceCode} instance={OptGroupSource} moduleCode={OptGroupModuleCode} moduleInstance={OptGroupModule} />
                             </div>
                             
                                 </div>

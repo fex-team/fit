@@ -1,5 +1,14 @@
 ### 改动日志
 
+#### 2016.5.22
+
+- `fit-select` 源码改为typescript
+- `fit-select` 改为material风格
+- `fit-timepicker` 指针拖拽响应范围增大，让指针更容易被选中
+- `fit-table` 兼容 `fit-input`
+- `fit-table` 响应式表格修复
+- `fit-transmit-transparently` 新增第三个参数 ignore 某些 props，可以选择性透传
+
 #### 2016.5.20
 
 - tsx 源码组件的文档可以被正确显示了
