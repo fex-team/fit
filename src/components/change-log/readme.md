@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.5.23
+
+- `fit-input` 控制字体位置 api 由 `direction` 修正为 `textAlign` ,发布了 V5.0.0版本
+
 #### 2016.5.22
 
 - `fit-select` 源码改为typescript
