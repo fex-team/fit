@@ -15,7 +15,7 @@ export default class SearchComponents extends React.Component {
             style     : {
                 width: this.props.width || 195
             },
-            direction : 'center',
+            textAlign : 'center',
             onSelect  : (value)=> {
                 browserHistory.push(`/components/${value}`)
             }

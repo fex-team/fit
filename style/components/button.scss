@@ -17,11 +17,11 @@ $btn-default-border: $border-color;
 $btn-active-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 
 @mixin button-variant($color, $background, $border, $isDarken) {
-    $active-background: lighten($background, 10%);
-    $active-border: lighten($border, 12%);
+    $active-background: lighten($background, 8%);
+    $active-border: lighten($border, 9%);
     @if $isDarken {
-        $active-background: darken($background, 10%);
-        $active-border: darken($border, 12%);
+        $active-background: darken($background, 5%);
+        $active-border: darken($border, 6%);
     }
 
     // material design
@@ -29,7 +29,7 @@ $btn-active-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
         display: block;
         position: absolute;
         @if $isDarken {
-            background: rgba(0, 0, 0, 0.15);
+            background: rgba(0, 0, 0, 0.1);
         } @else {
             background: rgba(255, 255, 255, 0.45);
         }
@@ -50,8 +50,8 @@ $btn-active-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
         border-color: $active-border;
     }
 
-    &:focus,
-    &.focus {
+    &:focus:not(.active),
+    &.focus:not(.active) {
         color: $color;
         background-color: $active-background;
         border-color: $active-border;
@@ -64,13 +64,6 @@ $btn-active-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
         // Remove the gradient for the pressed/active state
         background-image: none;
         box-shadow: $btn-active-box-shadow;
-
-        &:focus,
-        &.focus {
-            color: $color;
-            background-color: $active-background;
-            border-color: $active-border;
-        }
     }
 
     &.disabled,
