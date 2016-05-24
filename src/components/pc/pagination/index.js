@@ -14,32 +14,38 @@
                 const store = createStore()
 
                 
-                            import PaginationSource from '../../../../lib/pc/pagination/src/pagination'
-                            import PaginationSourceCode from '-!text!../../../../lib/pc/pagination/src/pagination'
+                            import PaginationSource from '../../../../lib/pc/pagination/src/pagination/index.tsx'
+                            import PaginationSourceCode from '-!text!../../../../lib/pc/pagination/src/pagination/index.tsx'
                             
-                            import PaginationAllSource from '../../../../lib/pc/pagination/src/pagination-all'
-                            import PaginationAllSourceCode from '-!text!../../../../lib/pc/pagination/src/pagination-all'
+                                import * as PaginationModule from '../../../../lib/pc/pagination/src/pagination/module.tsx'
+                                import PaginationModuleCode from '-!text!../../../../lib/pc/pagination/src/pagination/module.tsx'
+                                
+                            import PaginationFullSource from '../../../../lib/pc/pagination/src/pagination-full/index.tsx'
+                            import PaginationFullSourceCode from '-!text!../../../../lib/pc/pagination/src/pagination-full/index.tsx'
                             
+                                import * as PaginationFullModule from '../../../../lib/pc/pagination/src/pagination-full/module.tsx'
+                                import PaginationFullModuleCode from '-!text!../../../../lib/pc/pagination/src/pagination-full/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/pagination/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/pagination/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/pagination/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/pagination/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/pagination/demo/lists/basic.md'
                         
-                        import AllPageComponent from '../../../../lib/pc/pagination/demo/lists/all-page.js'
-                        import AllPageCode from '-!text!../../../../lib/pc/pagination/demo/lists/all-page.js'
+                        import AllPageComponent from '../../../../lib/pc/pagination/demo/lists/all-page.tsx'
+                        import AllPageCode from '-!text!../../../../lib/pc/pagination/demo/lists/all-page.tsx'
                         import AllPageMarkdown from '../../../../lib/pc/pagination/demo/lists/all-page.md'
                         
-                        import LoadingComponent from '../../../../lib/pc/pagination/demo/lists/loading.js'
-                        import LoadingCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading.js'
+                        import LoadingComponent from '../../../../lib/pc/pagination/demo/lists/loading.tsx'
+                        import LoadingCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading.tsx'
                         import LoadingMarkdown from '../../../../lib/pc/pagination/demo/lists/loading.md'
                         
-                        import LoadingAllComponent from '../../../../lib/pc/pagination/demo/lists/loading-all.js'
-                        import LoadingAllCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading-all.js'
+                        import LoadingAllComponent from '../../../../lib/pc/pagination/demo/lists/loading-all.tsx'
+                        import LoadingAllCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading-all.tsx'
                         import LoadingAllMarkdown from '../../../../lib/pc/pagination/demo/lists/loading-all.md'
                         
-                        import SizeComponent from '../../../../lib/pc/pagination/demo/lists/size.js'
-                        import SizeCode from '-!text!../../../../lib/pc/pagination/demo/lists/size.js'
+                        import SizeComponent from '../../../../lib/pc/pagination/demo/lists/size.tsx'
+                        import SizeCode from '-!text!../../../../lib/pc/pagination/demo/lists/size.tsx'
                         import SizeMarkdown from '../../../../lib/pc/pagination/demo/lists/size.md'
                         
 
@@ -139,11 +145,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={PaginationSourceCode} instance={PaginationSource} />
+                                <CodeDoc code={PaginationSourceCode} instance={PaginationSource} moduleCode={PaginationModuleCode} moduleInstance={PaginationModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={PaginationAllSourceCode} instance={PaginationAllSource} />
+                                <CodeDoc code={PaginationFullSourceCode} instance={PaginationFullSource} moduleCode={PaginationFullModuleCode} moduleInstance={PaginationFullModule} />
                             </div>
                             
                                 </div>

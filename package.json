@@ -21,7 +21,7 @@
     "start": "node server/app.js",
     "build": "npm run cdn && npm run webpack-dist",
     "push": "npm run babel-scripts && node scripts-babel/module-manage/index.js push",
-    "publish": "npm run build;npm run push;git push bae master",
+    "publish": "npm run build;npm run push;git push bae master;npm run github",
     "github": "npm run babel-scripts && node scripts-babel/module-manage/index.js github",
     "babel-scripts": "babel scripts/ --out-dir scripts-babel/",
     "babel-clean-scripts": "rm -rf scripts-babel",
