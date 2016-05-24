@@ -4,14 +4,20 @@
             "prefix": "fit",
             "gitlabPrefix": "",
             "components": {
-                "计算": [
+                "展示": [
                     {
-                        "name": "友好时间",
-                        "path": "timeago"
+                        "name": "载入动画",
+                        "path": "loading"
                     },
                     {
                         "name": "徽标数",
                         "path": "badge"
+                    }
+                ],
+                "计算": [
+                    {
+                        "name": "友好时间",
+                        "path": "timeago"
                     }
                 ],
                 "展示辅助": [

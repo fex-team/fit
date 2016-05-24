@@ -1,5 +1,11 @@
 ### 改动日志
 
+#### 2016.5.24
+
+- `fit-button` 添加 materical 风格
+- `fit-pagination` 源码改为typescript,样式优化,同时分页完整展现导出名由 `PaginationAll` 改为 `PaginationFull`
+- 新增 `fit-loading` loading 组件
+
 #### 2016.5.23
 
 - `fit-input` 控制字体位置 api 由 `direction` 修正为 `textAlign` ,发布了 V5.0.0版本

@@ -6,9 +6,11 @@
             
         // common
         
-                'fit-timeago': path.join(__dirname, 'lib/common/timeago/src'),
+                'fit-loading': path.join(__dirname, 'lib/common/loading/src'),
                 
                 'fit-badge': path.join(__dirname, 'lib/common/badge/src'),
+                
+                'fit-timeago': path.join(__dirname, 'lib/common/timeago/src'),
                 
                 'fit-render-to': path.join(__dirname, 'lib/common/render-to/src'),
                 

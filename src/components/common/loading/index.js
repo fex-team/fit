@@ -8,27 +8,23 @@
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import SidebarComponent from '../../../../components/side-bar'
-                import readme from '../../../../lib/tb/captcha-drag/readme.md'
-                import '../../../../lib/tb/captcha-drag/demo'
+                import readme from '../../../../lib/common/loading/readme.md'
+                import '../../../../lib/common/loading/demo'
 
                 const store = createStore()
 
                 
-                            import CaptchaDragSource from '../../../../lib/tb/captcha-drag/src/captcha-drag/index.tsx'
-                            import CaptchaDragSourceCode from '-!text!../../../../lib/tb/captcha-drag/src/captcha-drag/index.tsx'
+                            import LoadingSource from '../../../../lib/common/loading/src/loading/index.tsx'
+                            import LoadingSourceCode from '-!text!../../../../lib/common/loading/src/loading/index.tsx'
                             
-                                import * as CaptchaDragModule from '../../../../lib/tb/captcha-drag/src/captcha-drag/module.tsx'
-                                import CaptchaDragModuleCode from '-!text!../../../../lib/tb/captcha-drag/src/captcha-drag/module.tsx'
+                                import * as LoadingModule from '../../../../lib/common/loading/src/loading/module.tsx'
+                                import LoadingModuleCode from '-!text!../../../../lib/common/loading/src/loading/module.tsx'
                                 
 
                 
-                        import BasicComponent from '../../../../lib/tb/captcha-drag/demo/lists/basic.tsx'
-                        import BasicCode from '-!text!../../../../lib/tb/captcha-drag/demo/lists/basic.tsx'
-                        import BasicMarkdown from '../../../../lib/tb/captcha-drag/demo/lists/basic.md'
-                        
-                        import SuccessComponent from '../../../../lib/tb/captcha-drag/demo/lists/success.tsx'
-                        import SuccessCode from '-!text!../../../../lib/tb/captcha-drag/demo/lists/success.tsx'
-                        import SuccessMarkdown from '../../../../lib/tb/captcha-drag/demo/lists/success.md'
+                        import BasicComponent from '../../../../lib/common/loading/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/common/loading/demo/lists/basic.tsx'
+                        import BasicMarkdown from '../../../../lib/common/loading/demo/lists/basic.md'
                         
 
                 const colStyle = {
@@ -47,7 +43,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = '拖拽验证码'
+                        document.title = '载入动画'
                     }
 
                     handlePageChange(value) {
@@ -68,20 +64,9 @@
                             <CodeView store={store}
                                       md={BasicMarkdown}
                                       code={BasicCode}
-                                      npmName="tb-captcha-drag">
+                                      npmName="fit-loading">
 
                                     <BasicComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={SuccessMarkdown}
-                                      code={SuccessCode}
-                                      npmName="tb-captcha-drag">
-
-                                    <SuccessComponent/>
 
                             </CodeView>
                         </Col>
@@ -94,7 +79,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={CaptchaDragSourceCode} instance={CaptchaDragSource} moduleCode={CaptchaDragModuleCode} moduleInstance={CaptchaDragModule} />
+                                <CodeDoc code={LoadingSourceCode} instance={LoadingSource} moduleCode={LoadingModuleCode} moduleInstance={LoadingModule} />
                             </div>
                             
                                 </div>
@@ -113,7 +98,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width={120}>
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/tb-captcha-drag/tree/master"
+                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/loading/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>

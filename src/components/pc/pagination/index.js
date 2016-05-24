@@ -40,13 +40,13 @@
                         import LoadingCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading.tsx'
                         import LoadingMarkdown from '../../../../lib/pc/pagination/demo/lists/loading.md'
                         
-                        import LoadingAllComponent from '../../../../lib/pc/pagination/demo/lists/loading-all.tsx'
-                        import LoadingAllCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading-all.tsx'
-                        import LoadingAllMarkdown from '../../../../lib/pc/pagination/demo/lists/loading-all.md'
-                        
                         import SizeComponent from '../../../../lib/pc/pagination/demo/lists/size.tsx'
                         import SizeCode from '-!text!../../../../lib/pc/pagination/demo/lists/size.tsx'
                         import SizeMarkdown from '../../../../lib/pc/pagination/demo/lists/size.md'
+                        
+                        import LoadingAllComponent from '../../../../lib/pc/pagination/demo/lists/loading-all.tsx'
+                        import LoadingAllCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading-all.tsx'
+                        import LoadingAllMarkdown from '../../../../lib/pc/pagination/demo/lists/loading-all.md'
                         
 
                 const colStyle = {
@@ -117,22 +117,22 @@
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
-                                      md={LoadingAllMarkdown}
-                                      code={LoadingAllCode}
+                                      md={SizeMarkdown}
+                                      code={SizeCode}
                                       npmName="fit-pagination">
 
-                                    <LoadingAllComponent/>
+                                    <SizeComponent/>
 
                             </CodeView>
                         </Col>
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
-                                      md={SizeMarkdown}
-                                      code={SizeCode}
+                                      md={LoadingAllMarkdown}
+                                      code={LoadingAllCode}
                                       npmName="fit-pagination">
 
-                                    <SizeComponent/>
+                                    <LoadingAllComponent/>
 
                             </CodeView>
                         </Col>

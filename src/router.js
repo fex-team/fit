@@ -21,9 +21,11 @@
         
         // common
         
-                import fitTimeagoComponent from './components/common/timeago'
+                import fitLoadingComponent from './components/common/loading'
                 
                 import fitBadgeComponent from './components/common/badge'
+                
+                import fitTimeagoComponent from './components/common/timeago'
                 
                 import fitRenderToComponent from './components/common/render-to'
                 
@@ -134,11 +136,14 @@
                component={ComponentsLayout}>
             <IndexRoute component={commonHome}/>
         
-                <Route path="timeago"
-                       component={fitTimeagoComponent}/>
+                <Route path="loading"
+                       component={fitLoadingComponent}/>
                 
                 <Route path="badge"
                        component={fitBadgeComponent}/>
+                
+                <Route path="timeago"
+                       component={fitTimeagoComponent}/>
                 
                 <Route path="render-to"
                        component={fitRenderToComponent}/>

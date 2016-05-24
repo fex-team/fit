@@ -3,15 +3,21 @@
         import menuFactory from '../menu-factory'
 
         
-const menu35b4b419fa4b8c97858f967daf196f96 = [
+const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                     {
-                        title: '友好时间 Timeago',
-                        path: '/common/timeago'
+                        title: '载入动画 Loading',
+                        path: '/common/loading'
                     },
                     
                     {
                         title: '徽标数 Badge',
                         path: '/common/badge'
+                    },
+                    ]
+const menu35b4b419fa4b8c97858f967daf196f96 = [
+                    {
+                        title: '友好时间 Timeago',
+                        path: '/common/timeago'
                     },
                     ]
 const menu91c813f98aa65cf79ea90750f463b6f5 = [
@@ -41,6 +47,8 @@ const menu27470a0ac3af4bafd415ca0aa498e297 = []
 
             render() {
                 
+            let Menu027446c2f9070b0f5b16a18208bf5fc7 = menuFactory(menu027446c2f9070b0f5b16a18208bf5fc7)
+            
             let Menu35b4b419fa4b8c97858f967daf196f96 = menuFactory(menu35b4b419fa4b8c97858f967daf196f96)
             
             let Menu91c813f98aa65cf79ea90750f463b6f5 = menuFactory(menu91c813f98aa65cf79ea90750f463b6f5)
@@ -53,6 +61,9 @@ const menu27470a0ac3af4bafd415ca0aa498e297 = []
                 return (
                     <div className="_namespace">
                         
+            <div className="title">展示</div>
+            {Menu027446c2f9070b0f5b16a18208bf5fc7}
+            
             <div className="title">计算</div>
             {Menu35b4b419fa4b8c97858f967daf196f96}
             
