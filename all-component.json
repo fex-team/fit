@@ -111,6 +111,10 @@
                     {
                         "name": "进度条",
                         "path": "progress"
+                    },
+                    {
+                        "name": "组件展示",
+                        "path": "bluekit"
                     }
                 ],
                 "表单": [

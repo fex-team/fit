@@ -52,6 +52,8 @@
                 
                 'fit-progress': path.join(__dirname, 'lib/pc/progress/src'),
                 
+                'fit-bluekit': path.join(__dirname, 'lib/pc/bluekit/src'),
+                
                 'fit-input': path.join(__dirname, 'lib/pc/input/src'),
                 
                 'fit-number': path.join(__dirname, 'lib/pc/number/src'),

@@ -63,6 +63,8 @@
                 
                 import fitProgressComponent from './components/pc/progress'
                 
+                import fitBluekitComponent from './components/pc/bluekit'
+                
                 import fitInputComponent from './components/pc/input'
                 
                 import fitNumberComponent from './components/pc/number'
@@ -201,6 +203,9 @@
                 
                 <Route path="progress"
                        component={fitProgressComponent}/>
+                
+                <Route path="bluekit"
+                       component={fitBluekitComponent}/>
                 
                 <Route path="input"
                        component={fitInputComponent}/>

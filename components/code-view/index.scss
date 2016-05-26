@@ -20,7 +20,7 @@
         all: initial;
         .example-container-box {
             position: relative;
-            margin: 15px 0;
+            padding: 15px 0;
             &.reset {
                 @include reset;
             }

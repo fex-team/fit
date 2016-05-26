@@ -43,78 +43,13 @@ const resolveDtsFromPath = (filePath, dirPath, info) => {
     fs.writeFileSync(filePath, fileContent)
 }
 
-// 根据路径和模块相对引用,返回 d.ts 绝对引用路径
-const dtsAbsolutePath = (info, filePath, requirePath) => {
-    const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
-    let restPath = filePath.substring(libIndex)
-    restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
-
-    // 如果引用包含 ./ ../ ,则是相对路径
-    let parentDirNumber = 0
-    if (_.startsWith(requirePath, './') || _.startsWith(requirePath, '../')) {
-        let relativePathArray = requirePath.split('/')
-
-        // 移除同级目录，并记录上级层数
-        relativePathArray = relativePathArray.filter((item) => {
-            if (item === '..') {
-                parentDirNumber++
-            }
-
-            return item !== '.'
-        })
-
-        // 如果相对路径最后一个是 index,则移除
-        if (relativePathArray[relativePathArray.length - 1] === 'index') {
-            relativePathArray.pop()
-        }
-
-        // 集合成后半段引用路径
-        requirePath = relativePathArray.join('-')
-
-        // 原始路径如果有上级目录,对 restPath 进行排除
-        let restPathArray = restPath.split('/')
-        if (parentDirNumber > 0) {
-            while (parentDirNumber > 0) {
-                restPathArray.pop()
-                parentDirNumber--
-            }
-        }
-        restPath = restPathArray.join('-')
-
-        return restPath + '-' + requirePath
-    }
-    return requirePath
-}
-
 // 加工 .d.ts
 const fitDts = (content, info, filePath) => {
     // 删除所有 declare
     content = content.replace(/declare\s/g, '')
 
-    // 包最外层模块定义
-    if (filePath.endsWith(`lib/${info.categoryName}/${info.module.path}/lib`)) {
-        content = `declare module '${info.categoryInfo.prefix}-${info.module.path}' {\n${content}\n}`
-    } else {
-        const libIndex = filePath.indexOf(`lib/${info.categoryName}/${info.module.path}/lib`)
-        let restPath = filePath.substring(libIndex)
-        restPath = restPath.replace(`lib/${info.categoryName}/${info.module.path}`, `${info.categoryInfo.prefix}-${info.module.path}`)
-        let restPathArray = restPath.split('/')
-        restPath = restPathArray.join('-')
-        content = `declare module '${restPath}' {\n${content}\n}`
-    }
-
     // 移除 scss 引用
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';?)/g, '')
-
-    // 所有相对定位引用,改为绝对定位引用
-    content = content.replace(/import\s+\*\s+as\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2) => {
-        const absoluteRequirePath = dtsAbsolutePath(info, filePath, match2)
-        return `import * as ${match1} from '${absoluteRequirePath}'`
-    })
-    content = content.replace(/import\s+(\w+)\s+from\s+\'([.\/\w-]+)\';/g, (match, match1, match2) => {
-        const absoluteRequirePath = dtsAbsolutePath(info, filePath, match2)
-        return `import ${match1} from '${absoluteRequirePath}'`
-    })
 
     return content
 }
