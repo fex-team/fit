@@ -90,10 +90,10 @@ export default  (modules) => {
             }
         })
 
-        // 添加 typings 入口
-        depenObj.typings = 'lib/index.d.ts'
-
         writePackageJSON(filePath, 'dependencies', depenObj)
+
+        // 添加 typings 入口
+        writePackageJSON(filePath, 'typings', 'lib/index.d.ts')
     })
 
     process.chdir(root)
