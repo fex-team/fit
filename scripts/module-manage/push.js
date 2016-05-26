@@ -45,9 +45,6 @@ const resolveDtsFromPath = (filePath, dirPath, info) => {
 
 // 加工 .d.ts
 const fitDts = (content, info, filePath) => {
-    // 删除所有 declare
-    content = content.replace(/declare\s/g, '')
-
     // 移除 scss 引用
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';?)/g, '')
 
