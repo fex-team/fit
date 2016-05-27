@@ -80,13 +80,13 @@ hostname -i
 vim /home/work/orp/noderuntime/bin/env.conf
 ```
 
-将ip地址和端口号填入 `fis-conf.js` 文件中 `remoteIp` `remotePort`
+将ip地址和端口号填入 `fis-conf.js` 文件中 `remoteIp` `remotePort`,再执行以下命令即可:
 
 ```hash
 npm run remote
 ```
 
-注意先设置 `fis-conf.js` 中的 `host` `port` 字段
+访问地址是 `[?].tieba.otp.baidu.com/n/[项目名]`
 
 ### 上线
 
