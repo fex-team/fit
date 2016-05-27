@@ -68,6 +68,20 @@ npm run preview
 
 #### 上线前开发机预览
 
+qa测试也使用此方式,在orp申请一台 TiebaNode 产品线的测试机,登录测试机执行以下命令查找ip及端口号:
+
+```hash
+# 显示 ip 地址
+hostname -i
+```
+
+```hash
+# 文件中 PORT 就是 node 的端口号
+vim /home/work/orp/noderuntime/bin/env.conf
+```
+
+将ip地址和端口号填入 `fis-conf.js` 文件中 `remoteIp` `remotePort`
+
 ```hash
 npm run remote
 ```
