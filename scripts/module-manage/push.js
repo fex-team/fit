@@ -48,6 +48,17 @@ const fitDts = (content, info, filePath) => {
     // 移除 scss 引用
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';?)/g, '')
 
+    // 移除 /// <reference
+    let contentArray = content.split('\n')
+    contentArray = contentArray.filter((line)=> {
+        if (line.indexOf('/// <reference') > -1) {
+            return false
+        }
+        return true
+    })
+
+    content = contentArray.join('\n')
+
     return content
 }
 
