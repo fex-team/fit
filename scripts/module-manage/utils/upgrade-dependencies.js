@@ -12,7 +12,7 @@ const rules = [
     // import * as xxx from 'xxx'
     `(import\\s\\*\\sas\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])`,
     // import {a,b,c} from 'xxx'
-    `(import\\s\\{\\s{0,}[\\w,_\\s]{1,}\\}\\s{0,}from\\s{0,}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])`,
+    `(import\\s\\{\\s{0,}[\\w,_\\s]{0,}\\}\\s{0,}from\\s{0,}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])`,
     // import x from 'xxx'
     `(import\\s{0,}(?:[\\$_a-zA-Z\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])`
 ]
@@ -53,7 +53,7 @@ export default  (modules) => {
         srcFiles.forEach((file) => {
             let code = fs.readFileSync(file).toString()
             // 将所有 fit 组件的引用还原
-            code = code.replace(/import\s(\w|[\{\w,\}]|\*\sas\s)*\sfrom\s\'(..\/){3,}([\w-]*\/)?([\w-]*)\/src\'/g, (word, match1, match2, match3, match4)=> {
+            code = code.replace(/import\s(\w*|\{[\w\s,]*\}|\*\sas\s\w*)\sfrom\s\'(..\/){3,}([\w-]*\/)?([\w-]*)\/src\'/g, (word, match1, match2, match3, match4)=> {
                 let categoryPath
                 if (match3 === undefined) {
                     categoryPath = match2
