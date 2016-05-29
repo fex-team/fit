@@ -5,9 +5,6 @@
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
-    "react/react.d.ts": {
-      "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
-    },
     "jquery/jquery.d.ts": {
       "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
     },
@@ -67,6 +64,9 @@
     },
     "validator/validator.d.ts": {
       "commit": "e0abafb1a6ff652f7ff967120e312d5c1916eaef"
+    },
+    "react/react.d.ts": {
+      "commit": "edb64e4a35896510ce02b93c0bca5ec3878db738"
     }
   }
 }

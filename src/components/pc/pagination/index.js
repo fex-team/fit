@@ -48,6 +48,10 @@
                         import LoadingAllCode from '-!text!../../../../lib/pc/pagination/demo/lists/loading-all.tsx'
                         import LoadingAllMarkdown from '../../../../lib/pc/pagination/demo/lists/loading-all.md'
                         
+                        import EnableJumpComponent from '../../../../lib/pc/pagination/demo/lists/enable-jump.tsx'
+                        import EnableJumpCode from '-!text!../../../../lib/pc/pagination/demo/lists/enable-jump.tsx'
+                        import EnableJumpMarkdown from '../../../../lib/pc/pagination/demo/lists/enable-jump.md'
+                        
 
                 const colStyle = {
                     padding: 10,
@@ -133,6 +137,17 @@
                                       npmName="fit-pagination">
 
                                     <LoadingAllComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={EnableJumpMarkdown}
+                                      code={EnableJumpCode}
+                                      npmName="fit-pagination">
+
+                                    <EnableJumpComponent/>
 
                             </CodeView>
                         </Col>

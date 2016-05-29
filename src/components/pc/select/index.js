@@ -38,6 +38,10 @@
                         import BasicCode from '-!text!../../../../lib/pc/select/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/select/demo/lists/basic.md'
                         
+                        import OptionComponent from '../../../../lib/pc/select/demo/lists/option.tsx'
+                        import OptionCode from '-!text!../../../../lib/pc/select/demo/lists/option.tsx'
+                        import OptionMarkdown from '../../../../lib/pc/select/demo/lists/option.md'
+                        
                         import DisabledComponent from '../../../../lib/pc/select/demo/lists/disabled.tsx'
                         import DisabledCode from '-!text!../../../../lib/pc/select/demo/lists/disabled.tsx'
                         import DisabledMarkdown from '../../../../lib/pc/select/demo/lists/disabled.md'
@@ -49,6 +53,18 @@
                         import SearchComponent from '../../../../lib/pc/select/demo/lists/search.tsx'
                         import SearchCode from '-!text!../../../../lib/pc/select/demo/lists/search.tsx'
                         import SearchMarkdown from '../../../../lib/pc/select/demo/lists/search.md'
+                        
+                        import CascaderComponent from '../../../../lib/pc/select/demo/lists/cascader.tsx'
+                        import CascaderCode from '-!text!../../../../lib/pc/select/demo/lists/cascader.tsx'
+                        import CascaderMarkdown from '../../../../lib/pc/select/demo/lists/cascader.md'
+                        
+                        import CascaderFullComponent from '../../../../lib/pc/select/demo/lists/cascader-full.tsx'
+                        import CascaderFullCode from '-!text!../../../../lib/pc/select/demo/lists/cascader-full.tsx'
+                        import CascaderFullMarkdown from '../../../../lib/pc/select/demo/lists/cascader-full.md'
+                        
+                        import FullComponent from '../../../../lib/pc/select/demo/lists/full.tsx'
+                        import FullCode from '-!text!../../../../lib/pc/select/demo/lists/full.tsx'
+                        import FullMarkdown from '../../../../lib/pc/select/demo/lists/full.md'
                         
                         import SimpleComponent from '../../../../lib/pc/select/demo/lists/simple.tsx'
                         import SimpleCode from '-!text!../../../../lib/pc/select/demo/lists/simple.tsx'
@@ -101,6 +117,17 @@
                     
                         <Col span="24" style={colStyle}>
                             <CodeView store={store}
+                                      md={OptionMarkdown}
+                                      code={OptionCode}
+                                      npmName="fit-select">
+
+                                    <OptionComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
                                       md={DisabledMarkdown}
                                       code={DisabledCode}
                                       npmName="fit-select">
@@ -128,6 +155,39 @@
                                       npmName="fit-select">
 
                                     <SearchComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={CascaderMarkdown}
+                                      code={CascaderCode}
+                                      npmName="fit-select">
+
+                                    <CascaderComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={CascaderFullMarkdown}
+                                      code={CascaderFullCode}
+                                      npmName="fit-select">
+
+                                    <CascaderFullComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={FullMarkdown}
+                                      code={FullCode}
+                                      npmName="fit-select">
+
+                                    <FullComponent/>
 
                             </CodeView>
                         </Col>
