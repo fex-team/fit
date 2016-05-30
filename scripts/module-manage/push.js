@@ -6,6 +6,7 @@ import find from 'find'
 import fs from 'fs'
 import path from 'path'
 import _ from 'lodash'
+import mkdirp from 'mkdirp'
 
 const outputDistLib = (info) => {
     let modulePath = `./lib/${info.categoryName}/${info.module.path}`
@@ -35,16 +36,16 @@ const deleteLib = (info) => {
 }
 
 // 根据路径 处理 .d.ts 文件
-const resolveDtsFromPath = (filePath, dirPath, info,rootPath) => {
+const resolveDtsFromPath = (filePath, dirPath, info, rootPath) => {
     if (!fs.existsSync(filePath)) return
 
     let fileContent = fs.readFileSync(filePath).toString()
-    fileContent = fitDts(fileContent, info, dirPath,rootPath)
+    fileContent = fitDts(fileContent, info, dirPath, rootPath)
     fs.writeFileSync(filePath, fileContent)
 }
 
 // 加工 .d.ts
-const fitDts = (content, info, filePath,rootPath) => {
+const fitDts = (content, info, filePath, rootPath) => {
     // 移除 scss 引用
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';?)/g, '')
 
@@ -59,9 +60,21 @@ const fitDts = (content, info, filePath,rootPath) => {
             if (line.indexOf('/// <reference') > -1) {
                 // 先取到path中的内容 example: ../../../../../typings-module/css-animation.d.ts
                 const referencePath = _.trim(line.match(/"[^"]*"/g)[0], '"')
+                const referencePathArray = referencePath.split('/')
+                const autoTypingsPath = path.join(rootPath, 'auto-typings')
+                const referenceName = referencePathArray[referencePathArray.length - 1]
                 // 读取该文件内容
                 const referenceContent = fs.readFileSync(path.join(filePath, referencePath))
-                console.log(referenceContent.toString())
+                // 如果根目录没有 auto-typings 文件夹,则创建
+                if (!fs.existsSync(autoTypingsPath)) {
+                    mkdirp.sync(autoTypingsPath)
+                }
+                // 在 auto-typings 目录下创建这个依赖文件
+                fs.writeFile(path.join(autoTypingsPath, referenceName), referenceContent.toString, (err)=> {
+                    if (!err)return
+                    console.log(`create ${path.join(autoTypingsPath, referenceName)} fail: ${err}`)
+                })
+                // 修正内容中的依赖路径
             }
             return line
         })
@@ -89,10 +102,10 @@ const parseDTs = (info) => {
     }
 
     // 处理 d.ts
-    resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, moduleDistRoot, info,moduleDistRoot)
+    resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, moduleDistRoot, info, moduleDistRoot)
     moduleDirPaths.map((moduleDirPath) => {
-        resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, moduleDirPath, info,moduleDistRoot)
-        resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, moduleDirPath + '/module', info,moduleDistRoot)
+        resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, moduleDirPath, info, moduleDistRoot)
+        resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, moduleDirPath + '/module', info, moduleDistRoot)
     })
 }
 
