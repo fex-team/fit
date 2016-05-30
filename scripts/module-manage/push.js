@@ -78,8 +78,13 @@ const fitDts = (content, info, filePath, rootPath) => {
                  * 修正内容中的依赖路径
                  * */
                 // 判断 filePath 与 rootPath 的距离
-                console.log(filePath.split('/').length,rootPath.split('/').length)
-                line = `/// <reference path="../${referenceName}" />`
+                const filePathDeepRootPathIndex = rootPath.split('/').length - filePath.split('/').length
+                // 距离为 0 的情况
+                let relativePath = './'
+                if (filePathDeepRootPathIndex > 0) {
+                    relativePath = _.repeat('../', filePathDeepRootPathIndex)
+                }
+                line = `/// <reference path="${relativePath}${referenceName}" />`
             }
             return line
         })
