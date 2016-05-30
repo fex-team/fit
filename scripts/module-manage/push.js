@@ -48,7 +48,10 @@ const fitDts = (content, info, filePath) => {
     // 移除 scss 引用
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';?)/g, '')
 
-    // 移除 /// <reference
+    // 暂时不对根目录做处理
+    console.log(filePath)
+
+    // 将 reference 引用到相对路径
     let contentArray = content.split('\n')
     contentArray = contentArray.filter((line)=> {
         if (line.indexOf('/// <reference') > -1) {
