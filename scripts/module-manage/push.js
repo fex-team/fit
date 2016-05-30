@@ -84,7 +84,8 @@ const fitDts = (content, info, filePath, rootPath) => {
                 if (filePathDeepRootPathIndex > 0) {
                     relativePath = _.repeat('../', filePathDeepRootPathIndex)
                 }
-                line = `/// <reference path="${relativePath}${referenceName}" />`
+                line = `/// <reference path="${relativePath}auto-typings/${referenceName}" />`
+                console.log(line)
             }
             return line
         })
