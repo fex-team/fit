@@ -35,16 +35,16 @@ const deleteLib = (info) => {
 }
 
 // 根据路径 处理 .d.ts 文件
-const resolveDtsFromPath = (filePath, dirPath, info) => {
+const resolveDtsFromPath = (filePath, dirPath, info,rootPath) => {
     if (!fs.existsSync(filePath)) return
 
     let fileContent = fs.readFileSync(filePath).toString()
-    fileContent = fitDts(fileContent, info, dirPath)
+    fileContent = fitDts(fileContent, info, dirPath,rootPath)
     fs.writeFileSync(filePath, fileContent)
 }
 
 // 加工 .d.ts
-const fitDts = (content, info, filePath) => {
+const fitDts = (content, info, filePath,rootPath) => {
     // 移除 scss 引用
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';?)/g, '')
 
@@ -59,7 +59,9 @@ const fitDts = (content, info, filePath) => {
             if (line.indexOf('/// <reference') > -1) {
                 // 先取到path中的内容 example: ../../../../../typings-module/css-animation.d.ts
                 const referencePath = _.trim(line.match(/"[^"]*"/g)[0], '"')
-                console.log(referencePath)
+                // 读取该文件内容
+                const referenceContent = fs.readFileSync(path.join(filePath, referencePath))
+                console.log(referenceContent.toString())
             }
             return line
         })
@@ -87,10 +89,10 @@ const parseDTs = (info) => {
     }
 
     // 处理 d.ts
-    resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, moduleDistRoot, info)
+    resolveDtsFromPath(`${moduleDistRoot}/index.d.ts`, moduleDistRoot, info,moduleDistRoot)
     moduleDirPaths.map((moduleDirPath) => {
-        resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, moduleDirPath, info)
-        resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, moduleDirPath + '/module', info)
+        resolveDtsFromPath(`${moduleDirPath}/index.d.ts`, moduleDirPath, info,moduleDistRoot)
+        resolveDtsFromPath(`${moduleDirPath}/module.d.ts`, moduleDirPath + '/module', info,moduleDistRoot)
     })
 }
 
