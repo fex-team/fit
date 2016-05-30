@@ -49,7 +49,12 @@ const fitDts = (content, info, filePath) => {
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';?)/g, '')
 
     // 暂时不对根目录做处理
-    console.log(filePath)
+    const filePathArray = filePath.split('/')
+    if (filePathArray[filePathArray.length - 1] === 'lib' && filePathArray[filePathArray.length - 2] === info.module.path) {
+        console.log('根目录')
+    } else {
+        console.log('非根目录')
+    }
 
     // 将 reference 引用到相对路径
     let contentArray = content.split('\n')
@@ -153,6 +158,7 @@ const publish = (info) => {
 export default (info) => {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
+    console.log(info)
     if (hasChange) {
         // 先删除 lib 目录
         deleteLib(info)
