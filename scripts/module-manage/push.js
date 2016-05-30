@@ -158,7 +158,7 @@ const publish = (info) => {
 export default (info) => {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
-    console.log(info)
+    return console.log(info)
     if (hasChange) {
         // 先删除 lib 目录
         deleteLib(info)
