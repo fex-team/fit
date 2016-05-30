@@ -70,11 +70,16 @@ const fitDts = (content, info, filePath, rootPath) => {
                     mkdirp.sync(autoTypingsPath)
                 }
                 // 在 auto-typings 目录下创建这个依赖文件
-                fs.writeFile(path.join(autoTypingsPath, referenceName), referenceContent.toString, (err)=> {
+                fs.writeFile(path.join(autoTypingsPath, referenceName), referenceContent.toString(), (err)=> {
                     if (!err)return
                     console.log(`create ${path.join(autoTypingsPath, referenceName)} fail: ${err}`)
                 })
-                // 修正内容中的依赖路径
+                /**
+                 * 修正内容中的依赖路径
+                 * */
+                // 判断 filePath 与 rootPath 的距离
+                console.log(filePath.split('/').length,rootPath.split('/').length)
+                line = `/// <reference path="../${referenceName}" />`
             }
             return line
         })
