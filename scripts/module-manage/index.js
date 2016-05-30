@@ -12,6 +12,21 @@ import upgradeDependencies from './utils/upgrade-dependencies'
 const args = process.argv.slice(2)
 const allModules = getAllModules(config)
 
+const clearDts = ()=> {
+    // 最后删除所有 d.ts jsx 文件,这些文件可能由依赖自动生成到其它模块下
+    allModules.forEach(info=> {
+        // 除了 tb 模块,全删
+        if (info.categoryName !== 'tb') {
+            execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.d.ts" | xargs rm`)
+            execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.jsx" | xargs rm`)
+        } else {
+            // 是 tb 模块,只删除 src 的
+            execSync(`find ./lib/${info.categoryName}/${info.module.path}/src -name "*.d.ts" | xargs rm`)
+            execSync(`find ./lib/${info.categoryName}/${info.module.path}/src -name "*.jsx" | xargs rm`)
+        }
+    })
+}
+
 switch (args[0]) {
 case 'update': // 更新
     mapModule(config, (info)=> {
@@ -28,23 +43,14 @@ case 'push': // 提交
     versionPatch(allModules)
 
     mapModule(config, (info)=> {
+        // 组件提交（内含各种编译）
         push(info)
+        // 清空所有 dts
+        clearDts()
     })
+
+    // fit 项目提交（直接提交）
     tryPush('./')
-
-    // 最后删除所有 d.ts jsx 文件,这些文件可能由依赖自动生成到其它模块下
-    allModules.forEach(info=> {
-        // 除了 tb 模块,全删
-        if (info.categoryName !== 'tb') {
-            execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.d.ts" | xargs rm`)
-            execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.jsx" | xargs rm`)
-        }else{
-            // 是 tb 模块,只删除 src 的
-            execSync(`find ./lib/${info.categoryName}/${info.module.path}/src -name "*.d.ts" | xargs rm`)
-            execSync(`find ./lib/${info.categoryName}/${info.module.path}/src -name "*.jsx" | xargs rm`)
-        }
-    })
-
     break
 
 case 'github': // 传到 github
