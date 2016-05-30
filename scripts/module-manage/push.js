@@ -48,24 +48,23 @@ const fitDts = (content, info, filePath) => {
     // 移除 scss 引用
     content = content.replace(/import\s+\'[.\/\w-]+.((css|scss|less)\';?)/g, '')
 
-    // 暂时不对根目录做处理
+    // 将引用的模块 copy 过来,并且修改绝对路径
     const filePathArray = filePath.split('/')
     if (filePathArray[filePathArray.length - 1] === 'lib' && filePathArray[filePathArray.length - 2] === info.module.path) {
-        console.log('根目录')
+        // 根目录暂时不处理
     } else {
-        console.log('非根目录')
+        // 将 reference 引用到相对路径
+        let contentArray = content.split('\n')
+        contentArray = contentArray.map((line)=> {
+            if (line.indexOf('/// <reference') > -1) {
+                // 先取到path中的内容 example: ../../../../../typings-module/css-animation.d.ts
+                const referencePath = _.trim(line.match(/"[^"]*"/g)[0], '"')
+                console.log(referencePath)
+            }
+            return line
+        })
+        content = contentArray.join('\n')
     }
-
-    // 将 reference 引用到相对路径
-    let contentArray = content.split('\n')
-    contentArray = contentArray.filter((line)=> {
-        if (line.indexOf('/// <reference') > -1) {
-            return false
-        }
-        return true
-    })
-
-    content = contentArray.join('\n')
 
     return content
 }

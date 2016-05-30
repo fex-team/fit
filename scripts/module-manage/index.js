@@ -36,6 +36,9 @@ case 'update': // 更新
     break
 
 case 'push': // 提交
+    // 先清理一遍,防止编译到一半取消留下脏文件
+    clearDts()
+
     // 解析 import 语句,添加依赖
     upgradeDependencies(allModules)
 
