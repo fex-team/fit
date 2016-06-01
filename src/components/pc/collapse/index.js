@@ -14,20 +14,26 @@
                 const store = createStore()
 
                 
-                            import CollapseSource from '../../../../lib/pc/collapse/src/collapse'
-                            import CollapseSourceCode from '-!text!../../../../lib/pc/collapse/src/collapse'
+                            import CollapseSource from '../../../../lib/pc/collapse/src/collapse/index.tsx'
+                            import CollapseSourceCode from '-!text!../../../../lib/pc/collapse/src/collapse/index.tsx'
                             
-                            import CollPanelSource from '../../../../lib/pc/collapse/src/coll-panel'
-                            import CollPanelSourceCode from '-!text!../../../../lib/pc/collapse/src/coll-panel'
+                                import * as CollapseModule from '../../../../lib/pc/collapse/src/collapse/module.tsx'
+                                import CollapseModuleCode from '-!text!../../../../lib/pc/collapse/src/collapse/module.tsx'
+                                
+                            import CollPanelSource from '../../../../lib/pc/collapse/src/coll-panel/index.tsx'
+                            import CollPanelSourceCode from '-!text!../../../../lib/pc/collapse/src/coll-panel/index.tsx'
                             
+                                import * as CollPanelModule from '../../../../lib/pc/collapse/src/coll-panel/module.tsx'
+                                import CollPanelModuleCode from '-!text!../../../../lib/pc/collapse/src/coll-panel/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/collapse/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/collapse/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/collapse/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/collapse/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/collapse/demo/lists/basic.md'
                         
-                        import AccordionComponent from '../../../../lib/pc/collapse/demo/lists/accordion.js'
-                        import AccordionCode from '-!text!../../../../lib/pc/collapse/demo/lists/accordion.js'
+                        import AccordionComponent from '../../../../lib/pc/collapse/demo/lists/accordion.tsx'
+                        import AccordionCode from '-!text!../../../../lib/pc/collapse/demo/lists/accordion.tsx'
                         import AccordionMarkdown from '../../../../lib/pc/collapse/demo/lists/accordion.md'
                         
 
@@ -94,11 +100,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={CollapseSourceCode} instance={CollapseSource} />
+                                <CodeDoc code={CollapseSourceCode} instance={CollapseSource} moduleCode={CollapseModuleCode} moduleInstance={CollapseModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={CollPanelSourceCode} instance={CollPanelSource} />
+                                <CodeDoc code={CollPanelSourceCode} instance={CollPanelSource} moduleCode={CollPanelModuleCode} moduleInstance={CollPanelModule} />
                             </div>
                             
                                 </div>

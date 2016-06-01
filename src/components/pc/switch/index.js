@@ -14,29 +14,32 @@
                 const store = createStore()
 
                 
-                            import SwitchSource from '../../../../lib/pc/switch/src/switch'
-                            import SwitchSourceCode from '-!text!../../../../lib/pc/switch/src/switch'
+                            import SwitchSource from '../../../../lib/pc/switch/src/switch/index.tsx'
+                            import SwitchSourceCode from '-!text!../../../../lib/pc/switch/src/switch/index.tsx'
                             
+                                import * as SwitchModule from '../../../../lib/pc/switch/src/switch/module.tsx'
+                                import SwitchModuleCode from '-!text!../../../../lib/pc/switch/src/switch/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/switch/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/switch/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/switch/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/switch/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/switch/demo/lists/basic.md'
                         
-                        import ControlComponent from '../../../../lib/pc/switch/demo/lists/control.js'
-                        import ControlCode from '-!text!../../../../lib/pc/switch/demo/lists/control.js'
+                        import ControlComponent from '../../../../lib/pc/switch/demo/lists/control.tsx'
+                        import ControlCode from '-!text!../../../../lib/pc/switch/demo/lists/control.tsx'
                         import ControlMarkdown from '../../../../lib/pc/switch/demo/lists/control.md'
                         
-                        import LabelComponent from '../../../../lib/pc/switch/demo/lists/label.js'
-                        import LabelCode from '-!text!../../../../lib/pc/switch/demo/lists/label.js'
+                        import LabelComponent from '../../../../lib/pc/switch/demo/lists/label.tsx'
+                        import LabelCode from '-!text!../../../../lib/pc/switch/demo/lists/label.tsx'
                         import LabelMarkdown from '../../../../lib/pc/switch/demo/lists/label.md'
                         
-                        import SizeComponent from '../../../../lib/pc/switch/demo/lists/size.js'
-                        import SizeCode from '-!text!../../../../lib/pc/switch/demo/lists/size.js'
+                        import SizeComponent from '../../../../lib/pc/switch/demo/lists/size.tsx'
+                        import SizeCode from '-!text!../../../../lib/pc/switch/demo/lists/size.tsx'
                         import SizeMarkdown from '../../../../lib/pc/switch/demo/lists/size.md'
                         
-                        import TypeComponent from '../../../../lib/pc/switch/demo/lists/type.js'
-                        import TypeCode from '-!text!../../../../lib/pc/switch/demo/lists/type.js'
+                        import TypeComponent from '../../../../lib/pc/switch/demo/lists/type.tsx'
+                        import TypeCode from '-!text!../../../../lib/pc/switch/demo/lists/type.tsx'
                         import TypeMarkdown from '../../../../lib/pc/switch/demo/lists/type.md'
                         
 
@@ -136,7 +139,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={SwitchSourceCode} instance={SwitchSource} />
+                                <CodeDoc code={SwitchSourceCode} instance={SwitchSource} moduleCode={SwitchModuleCode} moduleInstance={SwitchModule} />
                             </div>
                             
                                 </div>
