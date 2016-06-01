@@ -1,5 +1,14 @@
 ### 改动日志
 
+#### 2016.6.1
+
+- 修复了 tsc 编译产生连带更新版本号的bug
+- 修复了 typescript ref 相对路径引用发布后无效的bug
+- 新增 `fit-image-preload` 预加载图片
+- `fit-switch` 源码改为 typescript
+- `fit-collapse` 源码改为 typescript
+- 新增 `fit-bluekit` 组件展示
+
 #### 2016.5.29
 
 - 复杂依赖解析bug修复
