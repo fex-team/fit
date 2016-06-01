@@ -34,6 +34,10 @@
                     {
                         "name": "同构",
                         "path": "isomorphic-redux-tools"
+                    },
+                    {
+                        "name": "图片预加载",
+                        "path": "image-preload"
                     }
                 ],
                 "编译脚本": [

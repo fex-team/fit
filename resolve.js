@@ -18,6 +18,8 @@
                 
                 'fit-isomorphic-redux-tools': path.join(__dirname, 'lib/common/isomorphic-redux-tools/src'),
                 
+                'fit-image-preload': path.join(__dirname, 'lib/common/image-preload/src'),
+                
                 'fit-isomorphic-build': path.join(__dirname, 'lib/common/isomorphic-build/src'),
                 
         // pc
