@@ -163,6 +163,11 @@ const menu5a0afc9dbd6c2e98769d4620d4fb5b13 = [
                         title: '图像裁剪 Cropper',
                         path: '/pc/cropper'
                     },
+                    
+                    {
+                        title: '盖亚可视化编辑器 Gaea',
+                        path: '/pc/gaea'
+                    },
                     ]
 
         export default class Layout extends React.Component {

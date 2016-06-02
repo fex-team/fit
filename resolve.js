@@ -88,6 +88,8 @@
                 
                 'fit-cropper': path.join(__dirname, 'lib/pc/cropper/src'),
                 
+                'fit-gaea': path.join(__dirname, 'lib/pc/gaea/src'),
+                
         // mobile
         
                 'fit-reset': path.join(__dirname, 'lib/mobile/reset/src'),

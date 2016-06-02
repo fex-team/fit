@@ -14,45 +14,60 @@
                 const store = createStore()
 
                 
-                            import LayoutSource from '../../../../lib/pc/layout-global/src/layout'
-                            import LayoutSourceCode from '-!text!../../../../lib/pc/layout-global/src/layout'
+                            import LayoutSource from '../../../../lib/pc/layout-global/src/layout/index.tsx'
+                            import LayoutSourceCode from '-!text!../../../../lib/pc/layout-global/src/layout/index.tsx'
                             
-                            import HeaderSource from '../../../../lib/pc/layout-global/src/header'
-                            import HeaderSourceCode from '-!text!../../../../lib/pc/layout-global/src/header'
+                                import * as LayoutModule from '../../../../lib/pc/layout-global/src/layout/module.tsx'
+                                import LayoutModuleCode from '-!text!../../../../lib/pc/layout-global/src/layout/module.tsx'
+                                
+                            import HeaderSource from '../../../../lib/pc/layout-global/src/header/index.tsx'
+                            import HeaderSourceCode from '-!text!../../../../lib/pc/layout-global/src/header/index.tsx'
                             
-                            import SidebarSource from '../../../../lib/pc/layout-global/src/sidebar'
-                            import SidebarSourceCode from '-!text!../../../../lib/pc/layout-global/src/sidebar'
+                                import * as HeaderModule from '../../../../lib/pc/layout-global/src/header/module.tsx'
+                                import HeaderModuleCode from '-!text!../../../../lib/pc/layout-global/src/header/module.tsx'
+                                
+                            import SidebarSource from '../../../../lib/pc/layout-global/src/sidebar/index.tsx'
+                            import SidebarSourceCode from '-!text!../../../../lib/pc/layout-global/src/sidebar/index.tsx'
                             
-                            import SectionSource from '../../../../lib/pc/layout-global/src/section'
-                            import SectionSourceCode from '-!text!../../../../lib/pc/layout-global/src/section'
+                                import * as SidebarModule from '../../../../lib/pc/layout-global/src/sidebar/module.tsx'
+                                import SidebarModuleCode from '-!text!../../../../lib/pc/layout-global/src/sidebar/module.tsx'
+                                
+                            import SectionSource from '../../../../lib/pc/layout-global/src/section/index.tsx'
+                            import SectionSourceCode from '-!text!../../../../lib/pc/layout-global/src/section/index.tsx'
                             
-                            import FooterSource from '../../../../lib/pc/layout-global/src/footer'
-                            import FooterSourceCode from '-!text!../../../../lib/pc/layout-global/src/footer'
+                                import * as SectionModule from '../../../../lib/pc/layout-global/src/section/module.tsx'
+                                import SectionModuleCode from '-!text!../../../../lib/pc/layout-global/src/section/module.tsx'
+                                
+                            import FooterSource from '../../../../lib/pc/layout-global/src/footer/index.tsx'
+                            import FooterSourceCode from '-!text!../../../../lib/pc/layout-global/src/footer/index.tsx'
                             
+                                import * as FooterModule from '../../../../lib/pc/layout-global/src/footer/module.tsx'
+                                import FooterModuleCode from '-!text!../../../../lib/pc/layout-global/src/footer/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/layout-global/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/layout-global/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/layout-global/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/layout-global/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/layout-global/demo/lists/basic.md'
                         
-                        import HeaderComponent from '../../../../lib/pc/layout-global/demo/lists/header.js'
-                        import HeaderCode from '-!text!../../../../lib/pc/layout-global/demo/lists/header.js'
+                        import HeaderComponent from '../../../../lib/pc/layout-global/demo/lists/header.tsx'
+                        import HeaderCode from '-!text!../../../../lib/pc/layout-global/demo/lists/header.tsx'
                         import HeaderMarkdown from '../../../../lib/pc/layout-global/demo/lists/header.md'
                         
-                        import FooterComponent from '../../../../lib/pc/layout-global/demo/lists/footer.js'
-                        import FooterCode from '-!text!../../../../lib/pc/layout-global/demo/lists/footer.js'
+                        import FooterComponent from '../../../../lib/pc/layout-global/demo/lists/footer.tsx'
+                        import FooterCode from '-!text!../../../../lib/pc/layout-global/demo/lists/footer.tsx'
                         import FooterMarkdown from '../../../../lib/pc/layout-global/demo/lists/footer.md'
                         
-                        import RightFooterComponent from '../../../../lib/pc/layout-global/demo/lists/right-footer.js'
-                        import RightFooterCode from '-!text!../../../../lib/pc/layout-global/demo/lists/right-footer.js'
+                        import RightFooterComponent from '../../../../lib/pc/layout-global/demo/lists/right-footer.tsx'
+                        import RightFooterCode from '-!text!../../../../lib/pc/layout-global/demo/lists/right-footer.tsx'
                         import RightFooterMarkdown from '../../../../lib/pc/layout-global/demo/lists/right-footer.md'
                         
-                        import HeaderSectionComponent from '../../../../lib/pc/layout-global/demo/lists/header-section.js'
-                        import HeaderSectionCode from '-!text!../../../../lib/pc/layout-global/demo/lists/header-section.js'
+                        import HeaderSectionComponent from '../../../../lib/pc/layout-global/demo/lists/header-section.tsx'
+                        import HeaderSectionCode from '-!text!../../../../lib/pc/layout-global/demo/lists/header-section.tsx'
                         import HeaderSectionMarkdown from '../../../../lib/pc/layout-global/demo/lists/header-section.md'
                         
-                        import AllComponent from '../../../../lib/pc/layout-global/demo/lists/all.js'
-                        import AllCode from '-!text!../../../../lib/pc/layout-global/demo/lists/all.js'
+                        import AllComponent from '../../../../lib/pc/layout-global/demo/lists/all.tsx'
+                        import AllCode from '-!text!../../../../lib/pc/layout-global/demo/lists/all.tsx'
                         import AllMarkdown from '../../../../lib/pc/layout-global/demo/lists/all.md'
                         
 
@@ -163,23 +178,23 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={LayoutSourceCode} instance={LayoutSource} />
+                                <CodeDoc code={LayoutSourceCode} instance={LayoutSource} moduleCode={LayoutModuleCode} moduleInstance={LayoutModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={HeaderSourceCode} instance={HeaderSource} />
+                                <CodeDoc code={HeaderSourceCode} instance={HeaderSource} moduleCode={HeaderModuleCode} moduleInstance={HeaderModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={SidebarSourceCode} instance={SidebarSource} />
+                                <CodeDoc code={SidebarSourceCode} instance={SidebarSource} moduleCode={SidebarModuleCode} moduleInstance={SidebarModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={SectionSourceCode} instance={SectionSource} />
+                                <CodeDoc code={SectionSourceCode} instance={SectionSource} moduleCode={SectionModuleCode} moduleInstance={SectionModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={FooterSourceCode} instance={FooterSource} />
+                                <CodeDoc code={FooterSourceCode} instance={FooterSource} moduleCode={FooterModuleCode} moduleInstance={FooterModule} />
                             </div>
                             
                                 </div>
