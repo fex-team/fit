@@ -56,7 +56,9 @@ const fitDts = (content, info, filePath, rootPath) => {
     if (info.categoryInfo.prefix !== 'tb') {
         const filePathArray = filePath.split('/')
         if (filePathArray[filePathArray.length - 1] === 'lib' && filePathArray[filePathArray.length - 2] === info.module.path) {
-            // 根目录暂时不处理
+            // 根目录
+            // 删除所有 tsd的引用
+            content = content.replace(/\/\/\/\s*\<reference\s*path=\"[..\/]*typings\/tsd\.d\.ts\"\s*\/\>/g, '')
         } else {
             // 将 reference 引用到相对路径
             let contentArray = content.split('\n')
