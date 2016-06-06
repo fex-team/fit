@@ -66,7 +66,10 @@
       "commit": "e0abafb1a6ff652f7ff967120e312d5c1916eaef"
     },
     "react/react.d.ts": {
-      "commit": "edb64e4a35896510ce02b93c0bca5ec3878db738"
+      "commit": "8daa4ef04a6620f650c3617a28f1a2ef444f29f6"
+    },
+    "react-dnd/react-dnd.d.ts": {
+      "commit": "8daa4ef04a6620f650c3617a28f1a2ef444f29f6"
     }
   }
 }

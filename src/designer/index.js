@@ -1,10 +1,92 @@
 import React from 'react'
-import {Link, Router} from 'react-router'
-import Button from 'fit-button'
-import SearchComponent from '../../components/search-components'
-import './index.scss'
+import Gaea from 'fit-gaea'
 
-export default class Home extends React.Component {
+import Button from './components/button'
+
+const info = {
+    components: [Button],
+    pageInfo  : {
+        // 只有 component 不会变
+        component: 'gaea-layout',
+        // 这是可能会变,存在 state 里
+        props    : {
+            name   : '外壳',
+            options: {
+                width        : {
+                    value   : '100%',
+                    editable: false
+                },
+                flexGrow     : {
+                    value   : 1,
+                    editable: false
+                },
+                flexDirection: {
+                    value: 'column'
+                }
+            }
+        },
+        // 这是可能会变,存在 state 里
+        childs   : [{
+            component: 'gaea-button'
+        }, {
+            component: 'gaea-button'
+        }, {
+            component: 'gaea-button'
+        }, {
+            component: 'gaea-layout',
+            childs   : [{
+                component: 'gaea-button',
+                props    : {
+                    options: {
+                        text: {
+                            value: '按钮1'
+                        }
+                    }
+                }
+            }, {
+                component: 'gaea-button',
+                props    : {
+                    options: {
+                        text: {
+                            value: '按钮2'
+                        }
+                    }
+                }
+            }, {
+                component: 'gaea-button',
+                props    : {
+                    options: {
+                        text: {
+                            value: '按钮3'
+                        }
+                    }
+                }
+            }, {
+                component: 'gaea-button',
+                props    : {
+                    options: {
+                        text: {
+                            value: '按钮4'
+                        }
+                    }
+                }
+            }, {
+                component: 'gaea-button',
+                props    : {
+                    options: {
+                        text: {
+                            value: '按钮5'
+                        }
+                    }
+                }
+            }]
+        }, {
+            component: 'gaea-button'
+        },]
+    }
+}
+
+export default class Designer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -13,9 +95,7 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <div className="_namespace">
-                123
-            </div>
+            <Gaea {...info}/>
         )
     }
 }

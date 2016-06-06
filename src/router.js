@@ -4,6 +4,7 @@
 
         import ComponentsLayout from './components/layout'
         import Home from './home'
+        import Designer from './designer'
         import Components from './components'
         import ComponentsWriteStandard from './components/write-standard'
         import ComponentsChangeLog from './components/change-log'
@@ -132,6 +133,7 @@
             <Router history={browserHistory}>
                 <Route path="/" component={Home}/>
                 <Route path="/components" component={Components}/>
+                <Route path="/designer" component={Designer}/>
                 <Route path="/components/write-standard" component={ComponentsWriteStandard}/>
                 <Route path="/components/doc" component={ComponentsDoc}/>
                 <Route path="/components/change-log" component={ComponentsChangeLog}/>

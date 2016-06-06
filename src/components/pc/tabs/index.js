@@ -14,16 +14,22 @@
                 const store = createStore()
 
                 
-                            import TabsSource from '../../../../lib/pc/tabs/src/tabs'
-                            import TabsSourceCode from '-!text!../../../../lib/pc/tabs/src/tabs'
+                            import TabsSource from '../../../../lib/pc/tabs/src/tabs/index.tsx'
+                            import TabsSourceCode from '-!text!../../../../lib/pc/tabs/src/tabs/index.tsx'
                             
-                            import TabPanelSource from '../../../../lib/pc/tabs/src/tab-panel'
-                            import TabPanelSourceCode from '-!text!../../../../lib/pc/tabs/src/tab-panel'
+                                import * as TabsModule from '../../../../lib/pc/tabs/src/tabs/module.tsx'
+                                import TabsModuleCode from '-!text!../../../../lib/pc/tabs/src/tabs/module.tsx'
+                                
+                            import TabPanelSource from '../../../../lib/pc/tabs/src/tab-panel/index.tsx'
+                            import TabPanelSourceCode from '-!text!../../../../lib/pc/tabs/src/tab-panel/index.tsx'
                             
+                                import * as TabPanelModule from '../../../../lib/pc/tabs/src/tab-panel/module.tsx'
+                                import TabPanelModuleCode from '-!text!../../../../lib/pc/tabs/src/tab-panel/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/tabs/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/tabs/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/tabs/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/tabs/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/tabs/demo/lists/basic.md'
                         
 
@@ -79,11 +85,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={TabsSourceCode} instance={TabsSource} />
+                                <CodeDoc code={TabsSourceCode} instance={TabsSource} moduleCode={TabsModuleCode} moduleInstance={TabsModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={TabPanelSourceCode} instance={TabPanelSource} />
+                                <CodeDoc code={TabPanelSourceCode} instance={TabPanelSource} moduleCode={TabPanelModuleCode} moduleInstance={TabPanelModule} />
                             </div>
                             
                                 </div>

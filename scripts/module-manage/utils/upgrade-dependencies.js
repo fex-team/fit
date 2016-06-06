@@ -84,8 +84,7 @@ export default  (modules) => {
 
             if (depen) {
                 depenObj[dep] = depen
-            }
-            else if (dep in resolveFile.alias) {
+            } else if (dep in resolveFile.alias) {
                 depenObj[dep] = '^' + getPackageJSON(resolveFile.alias[dep].replace('/src', '')).version
             }
         })
