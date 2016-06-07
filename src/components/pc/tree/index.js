@@ -14,20 +14,26 @@
                 const store = createStore()
 
                 
-                            import TreeSource from '../../../../lib/pc/tree/src/tree'
-                            import TreeSourceCode from '-!text!../../../../lib/pc/tree/src/tree'
+                            import TreeSource from '../../../../lib/pc/tree/src/tree/index.tsx'
+                            import TreeSourceCode from '-!text!../../../../lib/pc/tree/src/tree/index.tsx'
                             
-                            import TreeNodeSource from '../../../../lib/pc/tree/src/tree-node'
-                            import TreeNodeSourceCode from '-!text!../../../../lib/pc/tree/src/tree-node'
+                                import * as TreeModule from '../../../../lib/pc/tree/src/tree/module.tsx'
+                                import TreeModuleCode from '-!text!../../../../lib/pc/tree/src/tree/module.tsx'
+                                
+                            import TreeNodeSource from '../../../../lib/pc/tree/src/tree-node/index.tsx'
+                            import TreeNodeSourceCode from '-!text!../../../../lib/pc/tree/src/tree-node/index.tsx'
                             
+                                import * as TreeNodeModule from '../../../../lib/pc/tree/src/tree-node/module.tsx'
+                                import TreeNodeModuleCode from '-!text!../../../../lib/pc/tree/src/tree-node/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/tree/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/tree/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/tree/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/tree/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/tree/demo/lists/basic.md'
                         
-                        import ExpendAllComponent from '../../../../lib/pc/tree/demo/lists/expend-all.js'
-                        import ExpendAllCode from '-!text!../../../../lib/pc/tree/demo/lists/expend-all.js'
+                        import ExpendAllComponent from '../../../../lib/pc/tree/demo/lists/expend-all.tsx'
+                        import ExpendAllCode from '-!text!../../../../lib/pc/tree/demo/lists/expend-all.tsx'
                         import ExpendAllMarkdown from '../../../../lib/pc/tree/demo/lists/expend-all.md'
                         
 
@@ -94,11 +100,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={TreeSourceCode} instance={TreeSource} />
+                                <CodeDoc code={TreeSourceCode} instance={TreeSource} moduleCode={TreeModuleCode} moduleInstance={TreeModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={TreeNodeSourceCode} instance={TreeNodeSource} />
+                                <CodeDoc code={TreeNodeSourceCode} instance={TreeNodeSource} moduleCode={TreeNodeModuleCode} moduleInstance={TreeNodeModule} />
                             </div>
                             
                                 </div>
