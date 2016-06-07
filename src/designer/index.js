@@ -27,7 +27,63 @@ const info = {
         },
         // 这是可能会变,存在 state 里
         childs   : [{
-            component: 'gaea-button'
+            component: 'gaea-layout',
+            props    : {
+                options: {
+                    width: {
+                        value: '100%'
+                    }
+                }
+            },
+            childs   : [{
+                component: 'gaea-layout',
+                props    : {
+                    options: {
+                        width: {
+                            value: '50%'
+                        }
+                    }
+                },
+                childs   : [{
+                    component: 'gaea-layout',
+                    props    : {
+                        options: {
+                            width: {
+                                value: '25%'
+                            }
+                        }
+                    }
+                }]
+            }]
+        }, {
+            component: 'gaea-layout',
+            props    : {
+                options: {
+                    width: {
+                        value: '100%'
+                    }
+                }
+            },
+            childs   : [{
+                component: 'gaea-layout',
+                props    : {
+                    options: {
+                        width: {
+                            value: '50%'
+                        }
+                    }
+                },
+                childs   : [{
+                    component: 'gaea-layout',
+                    props    : {
+                        options: {
+                            width: {
+                                value: '25%'
+                            }
+                        }
+                    }
+                }]
+            }]
         }, {
             component: 'gaea-button'
         }, {

@@ -18,6 +18,12 @@ ButtonComponent.defaultProps = {
             value   : '按钮',
             editor  : 'text',
             editable: true
+        },
+        id  : {
+            label   : 'id',
+            value   : '5',
+            editor  : 'text',
+            editable: true
         }
     }
 }
