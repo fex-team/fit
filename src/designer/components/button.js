@@ -12,6 +12,7 @@ export default class ButtonComponent extends React.Component {
 ButtonComponent.defaultProps = {
     name     : '按钮',
     uniqueKey: 'button',
+    icon     : 'square-o',
     options  : {
         text: {
             label   : '文字',

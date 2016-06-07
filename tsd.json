@@ -66,10 +66,13 @@
       "commit": "e0abafb1a6ff652f7ff967120e312d5c1916eaef"
     },
     "react/react.d.ts": {
-      "commit": "8daa4ef04a6620f650c3617a28f1a2ef444f29f6"
+      "commit": "26a1f8c44f5fe76168df717020bfb93839b63db3"
     },
     "react-dnd/react-dnd.d.ts": {
       "commit": "8daa4ef04a6620f650c3617a28f1a2ef444f29f6"
+    },
+    "react/react-addons-pure-render-mixin.d.ts": {
+      "commit": "26a1f8c44f5fe76168df717020bfb93839b63db3"
     }
   }
 }
