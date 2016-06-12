@@ -51,49 +51,45 @@ const fitDts = (content, info, filePath, rootPath) => {
 
     /**
      * 将引用的模块 copy 过来,并且修改绝对路径
-     * 只对非内部模块生效
      */
-    if (info.categoryInfo.prefix !== 'tb') {
-        const filePathArray = filePath.split('/')
-        console.log(filePathArray[filePathArray.length - 1],filePathArray[filePathArray.length - 2])
-        if (filePathArray[filePathArray.length - 1] === 'lib' && filePathArray[filePathArray.length - 2] === info.module.path) {
-            // 根目录
-            // 删除所有 tsd的引用
-            content = content.replace(/\/\/\/\s*\<reference\s*path=\"[..\/]*typings\/tsd\.d\.ts\"\s*\/\>/g, '')
-        } else {
-            // 将 reference 引用到相对路径
-            let contentArray = content.split('\n')
-            contentArray = contentArray.map((line)=> {
-                if (line.indexOf('/// <reference') > -1) {
-                    // 先取到path中的内容 example: ../../../../../typings-module/css-animation.d.ts
-                    const referencePath = _.trim(line.match(/"[^"]*"/g)[0], '"')
-                    const referencePathArray = referencePath.split('/')
-                    const autoTypingsPath = path.join(rootPath, 'auto-typings')
-                    const referenceName = referencePathArray[referencePathArray.length - 1]
-                    // 读取该文件内容
-                    const referenceContent = fs.readFileSync(path.join(filePath, referencePath))
-                    // 如果根目录没有 auto-typings 文件夹,则创建
-                    if (!fs.existsSync(autoTypingsPath)) {
-                        mkdirp.sync(autoTypingsPath)
-                    }
-                    // 在 auto-typings 目录下创建这个依赖文件
-                    fs.writeFileSync(path.join(autoTypingsPath, referenceName), referenceContent.toString())
-                    /**
-                     * 修正内容中的依赖路径
-                     * */
-                    // 判断 filePath 与 rootPath 的距离
-                    const filePathDeepRootPathIndex = filePath.split('/').length - rootPath.split('/').length
-                    // 距离为 0 的情况
-                    let relativePath = './'
-                    if (filePathDeepRootPathIndex > 0) {
-                        relativePath = _.repeat('../', filePathDeepRootPathIndex)
-                    }
-                    line = `/// <reference path="${relativePath}auto-typings/${referenceName}" />`
+    const filePathArray = filePath.split('/')
+    if (filePathArray[filePathArray.length - 1] === 'lib' && filePathArray[filePathArray.length - 2] === info.module.path) {
+        // 根目录
+        // 删除所有 tsd的引用
+        content = content.replace(/\/\/\/\s*\<reference\s*path=\"[..\/]*typings\/tsd\.d\.ts\"\s*\/\>/g, '')
+    } else {
+        // 将 reference 引用到相对路径
+        let contentArray = content.split('\n')
+        contentArray = contentArray.map((line)=> {
+            if (line.indexOf('/// <reference') > -1) {
+                // 先取到path中的内容 example: ../../../../../typings-module/css-animation.d.ts
+                const referencePath = _.trim(line.match(/"[^"]*"/g)[0], '"')
+                const referencePathArray = referencePath.split('/')
+                const autoTypingsPath = path.join(rootPath, 'auto-typings')
+                const referenceName = referencePathArray[referencePathArray.length - 1]
+                // 读取该文件内容
+                const referenceContent = fs.readFileSync(path.join(filePath, referencePath))
+                // 如果根目录没有 auto-typings 文件夹,则创建
+                if (!fs.existsSync(autoTypingsPath)) {
+                    mkdirp.sync(autoTypingsPath)
                 }
-                return line
-            })
-            content = contentArray.join('\n')
-        }
+                // 在 auto-typings 目录下创建这个依赖文件
+                fs.writeFileSync(path.join(autoTypingsPath, referenceName), referenceContent.toString())
+                /**
+                 * 修正内容中的依赖路径
+                 * */
+                // 判断 filePath 与 rootPath 的距离
+                const filePathDeepRootPathIndex = filePath.split('/').length - rootPath.split('/').length
+                // 距离为 0 的情况
+                let relativePath = './'
+                if (filePathDeepRootPathIndex > 0) {
+                    relativePath = _.repeat('../', filePathDeepRootPathIndex)
+                }
+                line = `/// <reference path="${relativePath}auto-typings/${referenceName}" />`
+            }
+            return line
+        })
+        content = contentArray.join('\n')
     }
 
     return content
