@@ -35,6 +35,7 @@ const findCloseSide = (source, startIndex) => {
 const removeGlobal = (source, pathName) => {
     // 寻找所有位置
     const globalLocations = locations('._global {', source)
+    console.log('globalLocations', globalLocations)
     // 完整代码
     let newSource = ''
     // 上一次寻找的最后位置
