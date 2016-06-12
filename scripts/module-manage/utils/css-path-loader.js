@@ -47,9 +47,9 @@ const removeGlobal = (source, pathName) => {
             newSource += `.${pathName}{${middleSource}}`
         }
 
-        let endIndex = findCloseSide(source, startIndex + 8)
+        let endIndex = findCloseSide(source, startIndex + 9)
         lastIndex = endIndex
-        const sourceBlock = source.substring(startIndex + 9, endIndex)
+        const sourceBlock = source.substring(startIndex + 10, endIndex)
         newSource += sourceBlock
     })
 
@@ -69,6 +69,7 @@ export default (filePath, info) => {
     // 对包含 ._global 的做全局处理
     if (source.indexOf('._global') > -1) {
         source = removeGlobal(source, name)
+        console.log(source)
         fs.writeFileSync(filePath, source)
         return
     }
