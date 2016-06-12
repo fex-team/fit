@@ -226,4 +226,9 @@ export default (info) => {
     }
     // try push
     tryPush(getModulePath(info))
+
+    // 如果是 tb 组件,删除 lib目录
+    if (info.categoryName === 'tb') {
+        deleteLib(info)
+    }
 }
