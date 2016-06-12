@@ -55,6 +55,7 @@ const fitDts = (content, info, filePath, rootPath) => {
      */
     if (info.categoryInfo.prefix !== 'tb') {
         const filePathArray = filePath.split('/')
+        console.log(filePathArray[filePathArray.length - 1],filePathArray[filePathArray.length - 2])
         if (filePathArray[filePathArray.length - 1] === 'lib' && filePathArray[filePathArray.length - 2] === info.module.path) {
             // 根目录
             // 删除所有 tsd的引用
