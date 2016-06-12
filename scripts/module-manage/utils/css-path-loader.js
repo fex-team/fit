@@ -67,7 +67,6 @@ export default (filePath, info) => {
     if (name === '') return
 
     // 对包含 ._global 的做全局处理
-    console.log(source, source.indexOf('._global'))
     if (source.indexOf('._global') > -1) {
         source = removeGlobal(source, name)
         fs.writeFileSync(filePath, source)
