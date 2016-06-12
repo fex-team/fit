@@ -22,6 +22,10 @@
                                 
 
                 
+                        import BasicComponent from '../../../../lib/mobile/chat/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/mobile/chat/demo/lists/basic.tsx'
+                        import BasicMarkdown from '../../../../lib/mobile/chat/demo/lists/basic.md'
+                        
 
                 const colStyle = {
                     padding: 10,
@@ -56,6 +60,17 @@
                             Content = (
                                 <Row>
                                     
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={BasicMarkdown}
+                                      code={BasicCode}
+                                      npmName="fit-chat">
+
+                                    <BasicComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
                                 </Row>
                             )
                             break

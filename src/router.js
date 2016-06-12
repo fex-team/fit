@@ -106,6 +106,10 @@
                 
                 import fitScaleComponent from './components/mobile/scale'
                 
+                import fitChatComponent from './components/mobile/chat'
+                
+                import fitChatBoxComponent from './components/mobile/chat-box'
+                
         // tb
         
                 import tbColorComponent from './components/tb/color'
@@ -273,6 +277,12 @@
                 
                 <Route path="scale"
                        component={fitScaleComponent}/>
+                
+                <Route path="chat"
+                       component={fitChatComponent}/>
+                
+                <Route path="chat-box"
+                       component={fitChatBoxComponent}/>
                 
         </Route>
         

@@ -13,6 +13,16 @@ const menu4092ed98e9035652d4c9ca9441701ed7 = [
                         title: '页面缩放 Scale',
                         path: '/mobile/scale'
                     },
+                    
+                    {
+                        title: '聊天气泡 Chat',
+                        path: '/mobile/chat'
+                    },
+                    
+                    {
+                        title: '聊天盒子 ChatBox',
+                        path: '/mobile/chat-box'
+                    },
                     ]
 
         export default class Layout extends React.Component {
