@@ -35,7 +35,6 @@ const findCloseSide = (source, startIndex) => {
 const removeGlobal = (source, pathName) => {
     // 寻找所有位置
     const globalLocations = locations('._global {', source)
-    console.log('globalLocations', globalLocations)
     // 完整代码
     let newSource = ''
     // 上一次寻找的最后位置
@@ -68,6 +67,7 @@ export default (filePath, info) => {
     if (name === '') return
 
     // 对包含 ._global 的做全局处理
+    console.log(source, source.indexOf('._global'))
     if (source.indexOf('._global') > -1) {
         source = removeGlobal(source, name)
         fs.writeFileSync(filePath, source)
