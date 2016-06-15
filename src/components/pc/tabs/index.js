@@ -32,6 +32,10 @@
                         import BasicCode from '-!text!../../../../lib/pc/tabs/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/tabs/demo/lists/basic.md'
                         
+                        import OldStyleComponent from '../../../../lib/pc/tabs/demo/lists/old-style.tsx'
+                        import OldStyleCode from '-!text!../../../../lib/pc/tabs/demo/lists/old-style.tsx'
+                        import OldStyleMarkdown from '../../../../lib/pc/tabs/demo/lists/old-style.md'
+                        
 
                 const colStyle = {
                     padding: 10,
@@ -73,6 +77,17 @@
                                       npmName="fit-tabs">
 
                                     <BasicComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={OldStyleMarkdown}
+                                      code={OldStyleCode}
+                                      npmName="fit-tabs">
+
+                                    <OldStyleComponent/>
 
                             </CodeView>
                         </Col>
