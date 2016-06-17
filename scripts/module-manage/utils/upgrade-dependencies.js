@@ -74,6 +74,7 @@ export default  (modules) => {
                 }
 
                 let matched = match[2] || match[4] || match[6]|| match[8]
+                console.log(matched)
 
                 // 排除 undefined
                 if (matched === undefined)continue
