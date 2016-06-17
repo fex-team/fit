@@ -73,6 +73,9 @@ export default  (modules) => {
                     ++regex.lastIndex
                 }
 
+                // console.log('match start ==================')
+                // console.log(match)
+
                 let matched = match[2] || match[4] || match[6]
 
                 if (matched && dependencies.indexOf(matched) < 0) {
