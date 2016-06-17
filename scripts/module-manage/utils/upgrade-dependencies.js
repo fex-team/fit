@@ -16,7 +16,7 @@ const rules = [
     // import x from 'xxx'
     `(import\\s{0,}(?:[\\$_a-zA-Z0-9\\-\\{\\}]{1,}\\s{1,}from\\s{1,}){0,1}['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])`,
     // require ('xxx')
-    `(require\\s{0,}(){0,1}\(['\"]([\\w\\-]{1,})(?:[/\\w\\.\\-]{1,}){0,1}['\"])\)`
+    `(require\\(\(\\'[\\$_a-zA-Z0-9\\-\\/\\.]{1,}\\'\)\\))`
 ]
 
 const regex = new RegExp(rules.join('|'), 'g')
@@ -73,10 +73,19 @@ export default  (modules) => {
                     ++regex.lastIndex
                 }
 
-                // console.log('match start ==================')
-                // console.log(match)
+                let matched = match[2] || match[4] || match[6]|| match[8]
 
-                let matched = match[2] || match[4] || match[6]
+                // 排除 undefined
+                if (matched === undefined)continue
+
+                // 排除以 . 开头的
+                if (matched.indexOf('.') === 1)continue
+
+                // 如果有 / 说明是引了这个模块的自目录,但依然需要安装完整模块,因此去除后面 / 的路径避免干扰
+                if (matched.indexOf('/' > -1)) {
+                    const matchedArray = matched.split('/')
+                    matched = matchedArray[0]
+                }
 
                 if (matched && dependencies.indexOf(matched) < 0) {
                     dependencies.push(matched)
