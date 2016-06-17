@@ -20,11 +20,21 @@
                                 import * as GaeaModule from '../../../../lib/pc/gaea/src/gaea/module.tsx'
                                 import GaeaModuleCode from '-!text!../../../../lib/pc/gaea/src/gaea/module.tsx'
                                 
+                            import PreviewSource from '../../../../lib/pc/gaea/src/preview/index.tsx'
+                            import PreviewSourceCode from '-!text!../../../../lib/pc/gaea/src/preview/index.tsx'
+                            
+                                import * as PreviewModule from '../../../../lib/pc/gaea/src/preview/module.tsx'
+                                import PreviewModuleCode from '-!text!../../../../lib/pc/gaea/src/preview/module.tsx'
+                                
 
                 
                         import BasicComponent from '../../../../lib/pc/gaea/demo/lists/basic.tsx'
                         import BasicCode from '-!text!../../../../lib/pc/gaea/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/gaea/demo/lists/basic.md'
+                        
+                        import PreviewComponent from '../../../../lib/pc/gaea/demo/lists/preview.tsx'
+                        import PreviewCode from '-!text!../../../../lib/pc/gaea/demo/lists/preview.tsx'
+                        import PreviewMarkdown from '../../../../lib/pc/gaea/demo/lists/preview.md'
                         
 
                 const colStyle = {
@@ -71,6 +81,17 @@
                             </CodeView>
                         </Col>
                     
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={PreviewMarkdown}
+                                      code={PreviewCode}
+                                      npmName="fit-gaea">
+
+                                    <PreviewComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
                                 </Row>
                             )
                             break
@@ -80,6 +101,10 @@
                                     
                             <div style={docStyle}>
                                 <CodeDoc code={GaeaSourceCode} instance={GaeaSource} moduleCode={GaeaModuleCode} moduleInstance={GaeaModule} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={PreviewSourceCode} instance={PreviewSource} moduleCode={PreviewModuleCode} moduleInstance={PreviewModule} />
                             </div>
                             
                                 </div>
