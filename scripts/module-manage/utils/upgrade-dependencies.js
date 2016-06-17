@@ -73,8 +73,9 @@ export default  (modules) => {
                     ++regex.lastIndex
                 }
 
-                let matched = match[2] || match[4] || match[6]|| match[8]
-                console.log(matched)
+                let matched = match[2] || match[4] || match[6] || match[8]
+
+                matched = _.trim(matched, '\'')
 
                 // 排除 undefined
                 if (matched === undefined)continue
