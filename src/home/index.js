@@ -21,7 +21,7 @@ export default class Home extends React.Component {
                         <Link to="/components"
                               className="item">组件库</Link>
                         <Link to="/designer"
-                              className="disabled item">在线编辑器(V0.0.28)</Link>
+                              className="disabled item">在线编辑器(V0.1.0)</Link>
                     </div>
                     <div className="super-content">
                         <div className="brand">FIT</div>
