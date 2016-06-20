@@ -1,5 +1,26 @@
 ### 改动日志
 
+#### 2016.6.20
+
+- 新增 `fit-gaea` 可视化拖拽编辑器初版
+- 修复引用字体文件的 bug
+- `fit-tabs` 源码改为 typescript
+- `fit-layout-global` 源码改为 typescript
+- 修复 `fit-gaea` 选中组件 卡的问题
+- `fit-gaea` 内部拖动禁止拖到自己或者父级
+- `fit-gaea` 新增 `tree` 视图
+- `fit-gaea` 新增 `icon` 组件图标
+- 删除的文件入口的 `tsd.d.ts` 的引用，开源地方三模块需要用户自己安装
+- `fit-gaea` 丢失 `react-dnd-html5-backend` 问题修复
+- `fit-tree` 源码改为 typescript
+- `fit-tree` `fit-json` 箭头动画修复
+- `fit-tree` 选中后，hover 视图区域就不用自动跟随了
+- `fit-gaea` 在 tree 视图的外壳后面追加当前组件数量
+- `fit-gaea` tree 选中后展开/隐藏 选中效果会消失的 bug
+- `fit-gaea` 实现合并任意分组功能
+- `fit-gaea` viewport 区新增选择宽度
+- `fit-gaea` tab 用 径向渐变 优化样式
+
 #### 2016.6.1
 
 - 修复了 tsc 编译产生连带更新版本号的bug
