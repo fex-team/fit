@@ -23,6 +23,9 @@
                             import serverRenderSource from '../../../../lib/common/isomorphic-redux-tools/src/server-render/index.tsx'
                             import serverRenderSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/server-render/index.tsx'
                             
+                            import serverRenderValueSource from '../../../../lib/common/isomorphic-redux-tools/src/server-render-value/index.tsx'
+                            import serverRenderValueSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/server-render-value/index.tsx'
+                            
                             import fetchSource from '../../../../lib/common/isomorphic-redux-tools/src/fetch/index.tsx'
                             import fetchSourceCode from '-!text!../../../../lib/common/isomorphic-redux-tools/src/fetch/index.tsx'
                             
@@ -103,6 +106,10 @@
                             
                             <div style={docStyle}>
                                 <CodeDoc code={serverRenderSourceCode} instance={serverRenderSource} />
+                            </div>
+                            
+                            <div style={docStyle}>
+                                <CodeDoc code={serverRenderValueSourceCode} instance={serverRenderValueSource} />
                             </div>
                             
                             <div style={docStyle}>
