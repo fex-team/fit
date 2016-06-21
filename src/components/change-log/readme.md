@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.6.21
+
+- `fit-gaea` 新增 `toolsOnlyCustomComponents` 隐藏非定制组件
+
 #### 2016.6.20
 
 - 新增 `fit-gaea` 可视化拖拽编辑器初版
