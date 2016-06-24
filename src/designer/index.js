@@ -7,10 +7,7 @@ import Title from './components/title'
 
 const info = {
     components: [Title, Button],
-    pageInfo  : data,
-    onSave    : (info:any)=> {
-        console.log(JSON.stringify(info.pageInfo))
-    }
+    pageInfo  : data
 }
 
 export default class Designer extends React.Component {

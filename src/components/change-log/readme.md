@@ -1,5 +1,10 @@
 ### 改动日志
 
+#### 2016.6.24
+
+- `fit-gaea` 新增历史纪录恢复功能
+- `fit-gaea` 标题可配置
+
 #### 2016.6.21
 
 - `fit-gaea` 新增 `toolsOnlyCustomComponents` 隐藏非定制组件
