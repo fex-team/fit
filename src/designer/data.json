@@ -13,6 +13,9 @@
             },
             "flexDirection": {
                 "value": "column"
+            },
+            "minHeight": {
+                "value": "100%"
             }
         }
     },
