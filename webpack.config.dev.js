@@ -4,7 +4,7 @@ var resolve = require('./resolve')
 var externals = require('./externals')
 
 var config = {
-    devtool: 'eval-source-map',
+    devtool: 'cheap-source-map',
     watch  : true,
 
     entry: [
