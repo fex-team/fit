@@ -3,7 +3,7 @@ module.exports = function (args) {
 
     if (args[0]!=='dev'){
         bundleCss = `
-        <link rel="stylesheet" type="text/css" href="/output/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
         `
     }
 
@@ -21,9 +21,8 @@ module.exports = function (args) {
     <body>
     <div id='react-dom'></div>
     </body>
-    <script src="/output/cdn/_.js"></script>
-    <script src="/output/cdn/$.js"></script>
-    <script src="/output/index.js"></script>
+    <script src="/static/dll/library.dll.js"></script>
+    <script src="/static/bundle.js"></script>
     <script>
     var _hmt = _hmt || [];
     (function() {

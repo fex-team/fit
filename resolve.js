@@ -100,34 +100,6 @@
                 
                 'fit-chat-box': path.join(__dirname, 'lib/mobile/chat-box/src'),
                 
-        // tb
-        
-                'tb-color': path.join(__dirname, 'lib/tb/color/src'),
-                
-                'tb-track': path.join(__dirname, 'lib/tb/track/src'),
-                
-                'tb-captcha': path.join(__dirname, 'lib/tb/captcha/src'),
-                
-                'tb-captcha-drag': path.join(__dirname, 'lib/tb/captcha-drag/src'),
-                
-                'tb-submit': path.join(__dirname, 'lib/tb/submit/src'),
-                
-                'tb-share': path.join(__dirname, 'lib/tb/share/src'),
-                
-                'tb-blue-bar': path.join(__dirname, 'lib/tb/blue-bar/src'),
-                
-                'tb-upload': path.join(__dirname, 'lib/tb/upload/src'),
-                
-                'tb-icon': path.join(__dirname, 'lib/tb/icon/src'),
-                
-                'tb-emoji': path.join(__dirname, 'lib/tb/emoji/src'),
-                
-                'tb-lego-card': path.join(__dirname, 'lib/tb/lego-card/src'),
-                
-                'tb-node-api': path.join(__dirname, 'lib/tb/node-api/src'),
-                
-        // oxp
-        
             // fix enzyme's bug
             'react/lib/ExecutionEnvironment': 'execution-environment',
             'react/lib/ReactContext': 'react-context'

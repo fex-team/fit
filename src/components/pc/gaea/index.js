@@ -36,6 +36,14 @@
                         import PreviewCode from '-!text!../../../../lib/pc/gaea/demo/lists/preview.tsx'
                         import PreviewMarkdown from '../../../../lib/pc/gaea/demo/lists/preview.md'
                         
+                        import PluginComponent from '../../../../lib/pc/gaea/demo/lists/plugin.tsx'
+                        import PluginCode from '-!text!../../../../lib/pc/gaea/demo/lists/plugin.tsx'
+                        import PluginMarkdown from '../../../../lib/pc/gaea/demo/lists/plugin.md'
+                        
+                        import ConfigComponent from '../../../../lib/pc/gaea/demo/lists/config.tsx'
+                        import ConfigCode from '-!text!../../../../lib/pc/gaea/demo/lists/config.tsx'
+                        import ConfigMarkdown from '../../../../lib/pc/gaea/demo/lists/config.md'
+                        
 
                 const colStyle = {
                     padding: 10,
@@ -88,6 +96,28 @@
                                       npmName="fit-gaea">
 
                                     <PreviewComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={PluginMarkdown}
+                                      code={PluginCode}
+                                      npmName="fit-gaea">
+
+                                    <PluginComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={ConfigMarkdown}
+                                      code={ConfigCode}
+                                      npmName="fit-gaea">
+
+                                    <ConfigComponent/>
 
                             </CodeView>
                         </Col>

@@ -87,6 +87,10 @@
                         import SortCode from '-!text!../../../../lib/pc/table/demo/lists/sort.js'
                         import SortMarkdown from '../../../../lib/pc/table/demo/lists/sort.md'
                         
+                        import StaticSortComponent from '../../../../lib/pc/table/demo/lists/static-sort.js'
+                        import StaticSortCode from '-!text!../../../../lib/pc/table/demo/lists/static-sort.js'
+                        import StaticSortMarkdown from '../../../../lib/pc/table/demo/lists/static-sort.md'
+                        
 
                 const colStyle = {
                     padding: 10,
@@ -304,6 +308,17 @@
                                       npmName="fit-table">
 
                                     <SortComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={StaticSortMarkdown}
+                                      code={StaticSortCode}
+                                      npmName="fit-table">
+
+                                    <StaticSortComponent/>
 
                             </CodeView>
                         </Col>

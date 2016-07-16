@@ -4,7 +4,6 @@ import Search from '../../../components/search-components'
 
 import LeftMenuPC from './left-menu-pc'
 import LeftMenuMobile from './left-menu-mobile'
-import LeftMenuTb from './left-menu-tb'
 import LeftMenuCommon from './left-menu-common'
 
 import Menu from './top-menu'
@@ -82,11 +81,6 @@ export default class Layout extends React.Component {
                 <LeftMenuMobile />
             )
             break
-        case 'tb':
-            LeftMenu = (
-                <LeftMenuTb />
-            )
-            break
         case 'common':
             LeftMenu = (
                 <LeftMenuCommon />
@@ -107,7 +101,7 @@ export default class Layout extends React.Component {
                     {this.props.children}
                 </div>
                 <div className="g-ft">
-                    联系我们: fex@baidu.com huangziyi01@baidu.com
+                    联系我们: fex@baidu.com
                 </div>
             </div>
         )

@@ -16,8 +16,6 @@
         
         import mobileHome from '../category-home/mobile'
         
-        import tbHome from '../category-home/tb'
-        
 
         
         // common
@@ -110,28 +108,6 @@
                 
                 import fitChatBoxComponent from './components/mobile/chat-box'
                 
-        // tb
-        
-                import tbColorComponent from './components/tb/color'
-                
-                import tbTrackComponent from './components/tb/track'
-                
-                import tbCaptchaComponent from './components/tb/captcha'
-                
-                import tbCaptchaDragComponent from './components/tb/captcha-drag'
-                
-                import tbSubmitComponent from './components/tb/submit'
-                
-                import tbShareComponent from './components/tb/share'
-                
-                import tbUploadComponent from './components/tb/upload'
-                
-                import tbIconComponent from './components/tb/icon'
-                
-                import tbEmojiComponent from './components/tb/emoji'
-                
-        // oxp
-        
 
         const MainRouter = (
             <Router history={browserHistory}>
@@ -283,39 +259,6 @@
                 
                 <Route path="chat-box"
                        component={fitChatBoxComponent}/>
-                
-        </Route>
-        
-        <Route path="/components/tb"
-               component={ComponentsLayout}>
-            <IndexRoute component={tbHome}/>
-        
-                <Route path="color"
-                       component={tbColorComponent}/>
-                
-                <Route path="track"
-                       component={tbTrackComponent}/>
-                
-                <Route path="captcha"
-                       component={tbCaptchaComponent}/>
-                
-                <Route path="captcha-drag"
-                       component={tbCaptchaDragComponent}/>
-                
-                <Route path="submit"
-                       component={tbSubmitComponent}/>
-                
-                <Route path="share"
-                       component={tbShareComponent}/>
-                
-                <Route path="upload"
-                       component={tbUploadComponent}/>
-                
-                <Route path="icon"
-                       component={tbIconComponent}/>
-                
-                <Route path="emoji"
-                       component={tbEmojiComponent}/>
                 
         </Route>
         
