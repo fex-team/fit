@@ -7,8 +7,8 @@ import consoleLog from './utils/console-log'
 import tryPull from './utils/try-pull'
 import {getGitSourcePath} from './utils/utils'
 
-const gitPlantform = 'http://gitlab.baidu.com'
-const gitPlantformGroup = 'tb-component'
+const gitPlantform = 'https://github.com'
+const gitPlantformGroup = 'fit-component'
 
 const getModulePath = (info)=> {
     return `./lib/${info.categoryName}/${info.module.path}`
