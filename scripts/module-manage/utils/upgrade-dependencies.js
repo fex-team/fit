@@ -2,7 +2,7 @@ import path from 'path'
 import find from 'find'
 import fs from 'fs'
 import format from 'format-json'
-import resolveFile from '../../../resolve'
+import resolveFile from '../../webpack/resolve'
 import _ from 'lodash'
 import {relativePathToComponentPath} from './utils'
 
