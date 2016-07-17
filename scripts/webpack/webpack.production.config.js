@@ -50,12 +50,7 @@ var config = {
             }
         ]
     },
-
-    resolve: {
-        'react/lib/ExecutionEnvironment': 'execution-environment',
-        'react/lib/ReactContext': 'react-context'
-    },
-
+    
     plugins: [
         extractSCSS,
         new webpack.DefinePlugin({
