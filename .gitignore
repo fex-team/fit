@@ -7,3 +7,4 @@ lib
 test_coverage_html
 test_jasmine_html
 typings
+output
