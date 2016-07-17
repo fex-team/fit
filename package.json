@@ -11,14 +11,14 @@
     "definition": "fit.d.ts"
   },
   "scripts": {
-    "server": "node server/app.js",
-    "server-dev": "node server/app.js dev",
-    "webpack-dev": "node scripts/webpack/server.js",
+    "server": "node server/app.js production",
+    "server-dev": "node server/app.js",
+    "webpack-dev": "node scripts/webpack/webpack-server.js",
     "webpack-dist": "webpack --profile --display-modules --config scripts/webpack/webpack.production.config.js",
     "dll": "webpack --config scripts/webpack/webpack.dll.config.js",
     "dll-production": "webpack -p --config ./scripts/webpack/webpack.dll.production.config.js",
     "update": "npm run babel-scripts && node scripts-babel/module-manage/index.js update && npm run demo-init",
-    "start": "npm run demo-init && npm run dll && npm run server-dev & npm run webpack-dev",
+    "start": "npm run babel-scripts && npm run demo-init && npm run dll && npm run server-dev & npm run webpack-dev",
     "build": "npm run dll-production && npm run webpack-dist",
     "push": "npm run babel-scripts && node scripts-babel/module-manage/index.js push",
     "publish": "npm run build;npm run push;git push bae master;npm run github",

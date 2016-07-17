@@ -2,6 +2,7 @@
 
 var koa = require('koa')
 var app = koa()
+var config = require('../config')
 
 // 设置静态资源缓存
 var staticCache = require('koa-static-cache')
@@ -36,4 +37,4 @@ app.use(function *() {
     this.body = templateHtml
 })
 
-module.exports = app.listen(18080)
+module.exports = app.listen(config.localPort)

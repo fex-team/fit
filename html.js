@@ -1,10 +1,14 @@
+var config = require('./config')
+
 module.exports = function (args) {
     var bundleCss = ''
+    var bundleJs = ''
 
-    if (args[0]!=='dev'){
-        bundleCss = `
-        <link rel="stylesheet" type="text/css" href="/static/style.css">
-        `
+    if (args[0] === 'production') {
+        bundleCss = `<link rel="stylesheet" type="text/css" href="/static/style.css">`
+        bundleJs = `<script src="/static/bundle.js"></script>`
+    } else {
+        bundleJs = `<script src="http://localhost:${config.localWebpackPort}/bundle.js"></script>`
     }
 
     return `
@@ -22,7 +26,7 @@ module.exports = function (args) {
     <div id='react-dom'></div>
     </body>
     <script src="/static/dll/library.dll.js"></script>
-    <script src="/static/bundle.js"></script>
+    ${bundleJs}
     <script>
     var _hmt = _hmt || [];
     (function() {

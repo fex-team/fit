@@ -2,21 +2,22 @@ var webpack = require('webpack')
 var path = require('path')
 var resolve = require('./resolve')
 var dllPlugins = require('./dll-plugins')
-
+var globalConfig = require('../../config')
+    
 var config = {
     devtool: 'cheap-source-map',
     watch  : true,
 
     entry: [
-        'webpack-dev-server/client?http://localhost:8090',
+        `webpack-dev-server/client?http://localhost:${globalConfig.localWebpackPort}`,
         'webpack/hot/only-dev-server',
         './src/index.js'
     ],
 
     output: {
-        path      : __dirname + '/output',
-        publicPath: '/output/',
-        filename  : 'index.js'
+        path      : __dirname,
+        publicPath: `http://localhost:${globalConfig.localWebpackPort}/`,
+        filename  : 'bundle.js'
     },
 
     module: {
