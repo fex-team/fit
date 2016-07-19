@@ -9,6 +9,7 @@ export default class Home extends React.Component {
         super(props)
         this.state = {}
         document.title = 'Fit Design'
+        console.log(123)
     }
 
     render() {
