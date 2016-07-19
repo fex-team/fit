@@ -61,14 +61,13 @@ const removeGlobal = (source, pathName) => {
 export default (filePath, info) => {
     let source = fs.readFileSync(filePath).toString()
     const name = parsePath(filePath, info)
-
-    // 对 fit-style 不做处理
-    if (info.module.path === 'style') return
+    
     if (name === '') return
 
     // 对包含 ._global 的做全局处理
     if (source.indexOf('._global') > -1) {
         source = removeGlobal(source, name)
+        console.log('result', source)
         fs.writeFileSync(filePath, source)
         return
     }
