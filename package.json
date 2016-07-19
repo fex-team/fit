@@ -102,7 +102,7 @@
         "typescript": "^1.8.10",
         "url-loader": "^0.5.7",
         "webpack": "^1.13.0",
-        "webpack-server": "^1.14.1",
+        "webpack-dev-server": "^1.14.1",
         "yargs": "^4.6.0"
     },
     "dependencies": {
