@@ -4,12 +4,12 @@ import Button from 'fit-button'
 import SearchComponent from '../../components/search-components'
 import './index.scss'
 
+console.log(999)
 export default class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
         document.title = 'Fit Design'
-        console.log(123)
     }
 
     render() {
