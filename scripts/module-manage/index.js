@@ -55,8 +55,4 @@ case 'push': // 提交
     // fit 项目提交（直接提交）
     tryPush('./')
     break
-
-case 'github': // 传到 github
-    github(allModules)
-    break
 }

@@ -12,7 +12,6 @@ export default class Home extends React.Component {
     }
 
     render() {
-        console.log('home render')
         return (
             <div className="_namespace">
                 <div className="hero">
