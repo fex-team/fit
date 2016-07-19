@@ -5,8 +5,7 @@ var dllPlugins = require('./dll-plugins')
 var globalConfig = require('../../config')
     
 var config = {
-    devtool: 'cheap-source-map',
-    watch  : true,
+    debug: true,
 
     entry: [
         `webpack-dev-server/client?http://localhost:${globalConfig.localWebpackPort}`,
@@ -60,7 +59,11 @@ var config = {
             'process.env.NODE_ENV': '"development"'
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[file].map',
+            columns : false
+        })
     ],
 
     resolve: resolve
