@@ -18,4 +18,5 @@ import './all.scss'
 document.title = 'Fit Design'
 
 console.log(document.getElementById('react-dom'))
+console.log(routes)
 ReactDOM.render(routes, document.getElementById('react-dom'))
