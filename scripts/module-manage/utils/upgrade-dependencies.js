@@ -95,13 +95,25 @@ export default  (modules) => {
             }
         })
 
-        dependencies.forEach((dep) => {
-            let depen = rootDependencies[dep] || devDependencies[dep]
+        // 固定某些依赖版本号
+        const fixedDeps = {
+            'react'                         : '^0.14.0 || ^15.0.0',
+            'react-dom'                     : '^0.14.0 || ^15.0.0',
+            'react-addons-pure-render-mixin': '^0.14.0 || ^15.0.0'
+        }
 
-            if (depen) {
-                depenObj[dep] = depen
-            } else if (dep in resolveFile.alias) {
-                depenObj[dep] = '^' + getPackageJSON(resolveFile.alias[dep].replace('/src', '')).version
+        dependencies.forEach((dep) => {
+            if (fixedDeps[dep]) {
+                // 优先用固定版本号
+                depenObj[dep] = fixedDeps[dep]
+            } else {
+                let depen = rootDependencies[dep] || devDependencies[dep]
+                if (depen) {
+                    // 找到版本号直接用
+                    depenObj[dep] = depen
+                } else if (dep in resolveFile.alias) {
+                    depenObj[dep] = '^' + getPackageJSON(resolveFile.alias[dep].replace('/src', '')).version
+                }
             }
         })
 

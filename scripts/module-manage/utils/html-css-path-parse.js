@@ -1,5 +1,4 @@
 export default (filePath, info)=> {
-    console.log(filePath)
     filePath = filePath.substring(2)
     let filePathArray = filePath.split('/')
 

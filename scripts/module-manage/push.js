@@ -204,7 +204,7 @@ export default (info) => {
 
         // 发布npm
         consoleLog('发布中..', 'grey', getModulePath(info))
-        //publish(info)
+        publish(info)
         consoleLog('发布完成', 'green', getModulePath(info))
 
         // 如果不是 tb 组件,删除 lib目录
@@ -222,10 +222,10 @@ export default (info) => {
         deleteDemoJsxAndJs(info)
 
         // 通知 cnpm 更新
-        //syncCnpm(info)
+        syncCnpm(info)
     }
     // try push
-    //tryPush(getModulePath(info))
+    tryPush(getModulePath(info))
 
     // 如果是 tb 组件,删除 lib目录
     if (info.categoryName === 'tb') {
