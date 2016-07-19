@@ -19,7 +19,7 @@
         "dll-production": "webpack -p --config ./scripts/webpack/webpack.dll.production.config.js",
         "update": "npm run babel-scripts && node scripts-babel/module-manage/index.js update && npm run demo-init",
         "start-dev": "npm run babel-scripts && npm run demo-init && npm run dll && npm run server-production & npm run webpack",
-        "start": "npm run server-production",
+        "start": "node server/app.js production",
         "build": "npm run dll-production && npm run webpack-production",
         "push": "npm run babel-scripts && node scripts-babel/module-manage/index.js push",
         "web": "git push bae master --force",
