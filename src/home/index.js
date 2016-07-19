@@ -4,7 +4,6 @@ import Button from 'fit-button'
 import SearchComponent from '../../components/search-components'
 import './index.scss'
 
-console.log(999)
 export default class Home extends React.Component {
     constructor(props) {
         super(props)
@@ -13,6 +12,7 @@ export default class Home extends React.Component {
     }
 
     render() {
+        console.log('home render')
         return (
             <div className="_namespace">
                 <div className="hero">
