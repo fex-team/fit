@@ -17,4 +17,9 @@ import './all.scss'
 
 document.title = 'Fit Design'
 
+// if (process.env.NODE_ENV !== 'production') {
+//     const {whyDidYouUpdate} = require('why-did-you-update')
+//     whyDidYouUpdate(React)
+// }
+
 ReactDOM.render(routes, document.getElementById('react-dom'))
