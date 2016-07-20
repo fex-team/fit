@@ -58,6 +58,8 @@
                 
                 import fitScrollListenComponent from './components/pc/scroll-listen'
                 
+                import fitTagComponent from './components/pc/tag'
+                
                 import fitTooltipComponent from './components/pc/tooltip'
                 
                 import fitProgressComponent from './components/pc/progress'
@@ -181,6 +183,9 @@
                 
                 <Route path="scroll-listen"
                        component={fitScrollListenComponent}/>
+                
+                <Route path="tag"
+                       component={fitTagComponent}/>
                 
                 <Route path="tooltip"
                        component={fitTooltipComponent}/>

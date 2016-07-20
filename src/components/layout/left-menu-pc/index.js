@@ -66,6 +66,11 @@ const menu027446c2f9070b0f5b16a18208bf5fc7 = [
                     },
                     
                     {
+                        title: '标签 Tag',
+                        path: '/pc/tag'
+                    },
+                    
+                    {
                         title: '文字提示 Tooltip',
                         path: '/pc/tooltip'
                     },
