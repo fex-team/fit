@@ -59,8 +59,10 @@ export default (info)=> {
     // 创建 分类 文件夹
     createCategoryFolderIfNotExist(info)
     // clone 组件
+    console.log('cloneModuleIfNotExist')
     cloneModuleIfNotExist(info)
     // 判断当前组件目录 git版本控制是否正确
+    console.log('checkGitControl')
     checkGitControl(info)
     // try pull
     tryPull(getModulePath(info))
