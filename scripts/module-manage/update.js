@@ -59,6 +59,7 @@ export default (info)=> {
     createCategoryFolderIfNotExist(info)
     // clone 组件
     console.log('cloneModuleIfNotExist')
+    const gitSourcePath = getGitSourcePath(info)
     const cloneSource = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
     console.log(`git clone ${cloneSource} ${info.module.path}`)
     cloneModuleIfNotExist(info)
