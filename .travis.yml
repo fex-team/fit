@@ -10,6 +10,9 @@ node_js:
   - "6.2.1"
   - "5.0"
 
+before_script:
+  - npm run update
+
 script:
   - npm run build
 
