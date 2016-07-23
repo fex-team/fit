@@ -40,13 +40,6 @@ const cloneModuleIfNotExist = (info)=> {
 
 const checkGitControl = (info)=> {
     const pathInfo = `lib/${info.categoryName}/${info.module.path}`
-
-    // 删除 github 的 remote
-    try {
-        execSync(`cd ${pathInfo};git remote rm github >/dev/null 2>&1`)
-    } catch (err) {
-
-    }
 }
 
 export default (info)=> {
