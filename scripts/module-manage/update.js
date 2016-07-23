@@ -28,8 +28,10 @@ const createCategoryFolderIfNotExist = (info)=> {
 }
 
 const cloneModuleIfNotExist = (info)=> {
+    console.log(1, targetPath)
     const targetPath = path.join('lib', info.categoryName, info.module.path)
     if (fs.existsSync(targetPath)) return
+    console.log(2)
 
     const gitSourcePath = getGitSourcePath(info)
     // clone
