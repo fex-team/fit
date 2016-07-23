@@ -11,7 +11,7 @@ var config = {
     ],
 
     output: {
-        path      : path.join(__dirname, '../output/static'),
+        path      : path.join(__dirname, '../../output/static'),
         publicPath: '/static/',
         filename  : 'bundle.js'
     },
