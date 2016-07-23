@@ -9,13 +9,13 @@ module.exports = {
 
     output: {
         filename: '[name].dll.js',
-        path    : path.join(process.cwd(), 'output/static/dll'),
+        path    : path.join(__dirname, '../output/static/dll'),
         library : '[name]'
     },
 
     plugins: [
         new webpack.DllPlugin({
-            path: path.join(process.cwd(), 'output/static/dll', '[name]-mainfest.json'),
+            path: path.join(__dirname, '../output/static/dll', '[name]-mainfest.json'),
             name: '[name]'
         }),
         new webpack.DefinePlugin({
