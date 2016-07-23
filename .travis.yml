@@ -11,6 +11,7 @@ node_js:
   - "5.0"
 
 before_script:
+  - rm -rf lib
   - npm run update
 
 script:

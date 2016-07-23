@@ -28,16 +28,12 @@ const createCategoryFolderIfNotExist = (info)=> {
 }
 
 const cloneModuleIfNotExist = (info)=> {
-    console.log(1, path.join('lib', info.categoryName, info.module.path))
-    console.log('isExist? ', fs.existsSync(path.join('lib', info.categoryName, info.module.path)))
     const targetPath = path.join('lib', info.categoryName, info.module.path)
     if (fs.existsSync(targetPath)) return
-    console.log(2)
 
     const gitSourcePath = getGitSourcePath(info)
     // clone
     const cloneSource = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
-    console.log(`cd lib/${info.categoryName};git clone ${cloneSource} ${info.module.path}`)
     execSync(`cd lib/${info.categoryName};git clone ${cloneSource} ${info.module.path}`)
     consoleLog('cloned', 'green', getModulePath(info))
 }
