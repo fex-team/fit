@@ -54,6 +54,7 @@ const checkGitControl = (info)=> {
     let gitSourcePath = getGitSourcePath(info)
     let expectModuleName = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
 
+    console.log(projectName + '.git', expectModuleName)
     if (projectName + '.git' !== expectModuleName) {
         consoleLog(`错误:不要手动创建lib目录的任何文件夹,请在${gitPlantform}/${gitPlantformGroup}建立项目后,填写到all-component.json, 再重新执行npm update会自动创建,请删除此文件夹（删除前先做好备份）`, 'red', getModulePath(info))
     }
