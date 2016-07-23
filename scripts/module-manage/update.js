@@ -33,7 +33,6 @@ const cloneModuleIfNotExist = (info)=> {
 
     const gitSourcePath = getGitSourcePath(info)
     // clone
-    console.log('info.module.path', info.module.path)
     const cloneSource = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
     execSync(`cd lib/${info.categoryName};git clone ${cloneSource} ${info.module.path}`)
     consoleLog('cloned', 'green', getModulePath(info))
@@ -60,6 +59,8 @@ export default (info)=> {
     createCategoryFolderIfNotExist(info)
     // clone 组件
     console.log('cloneModuleIfNotExist')
+    const cloneSource = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
+    console.log(`git clone ${cloneSource} ${info.module.path}`)
     cloneModuleIfNotExist(info)
     // 判断当前组件目录 git版本控制是否正确
     console.log('checkGitControl')
