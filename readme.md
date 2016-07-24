@@ -1,3 +1,6 @@
+[![Build Status](https://img.shields.io/travis/fex-team/fit/master.svg?style=flat)](https://travis-ci.org/fex-team/fit)
+[![Coverage Status](https://img.shields.io/coveralls/fex-team/fit/master.svg?style=flat)](https://coveralls.io/github/fex-team/fit?branch=master) 
+
 # FIT 百度React组件库
 
 [fit.baidu.com](http://fit.baidu.com) 
