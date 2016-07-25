@@ -51,9 +51,55 @@ ButtonComponent.defaultProps = {
                 }]
             }]
         },
+        object: {
+            label: '对象选项',
+            editor: 'object',
+            children: {
+                name: {
+                    label: '对象内选项1',
+                    editor: 'text',
+                    editable: true
+                },
+                age: {
+                    label: '对象内选项2',
+                    editor: 'selector',
+                    editable: true,
+                    options : [{
+                        key  : 'a',
+                        value: '小明'
+                    }, {
+                        key  : 'b',
+                        value: '小红'
+                    }, {
+                        key  : 'c',
+                        value: '小白'
+                    }, {
+                        key  : 'd',
+                        value: '小王'
+                    }, {
+                        key  : 'e',
+                        value: '小李'
+                    }, {
+                        groupValue: '其它',
+                        children  : [{
+                            key  : 'aa',
+                            value: '小黑'
+                        }, {
+                            key  : 'bb',
+                            value: '小天'
+                        }]
+                    }]
+                }
+            },
+            value: {
+                name: 'andycall',
+                age: '20'
+            }
+        },
         array     : {
             label   : '数组选项',
             editor  : 'array',
+            freeze: true,
             children: {
                 name: {
                     label   : '数组内选项1',
