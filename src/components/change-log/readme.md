@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.7.23
+
+- `fit-transmit-transparently` 修复传参的 bug,修复深度 clone 的 bug
+
 #### 2016.7.20
 
 - 所有组件修复 React 15.2.x 带来的 props 问题,解决方法是修正了所有组件不合法的 props

@@ -41,13 +41,6 @@ const cloneModuleIfNotExist = (info)=> {
 const checkGitControl = (info)=> {
     const pathInfo = `lib/${info.categoryName}/${info.module.path}`
 
-    // 删除 github 的 remote
-    try {
-        execSync(`cd ${pathInfo};git remote rm github >/dev/null 2>&1`)
-    } catch (err) {
-
-    }
-
     // 获得当前项目的git路径
     let projectName = execSync(`cd ${pathInfo};git remote -v | head -n1 | awk '{print $2}' | sed -e 's,.*:\(.*/\)\?,,' -e 's/\.git$//'`).toString().trim()
 
@@ -67,7 +60,7 @@ export default (info)=> {
     // clone 组件
     cloneModuleIfNotExist(info)
     // 判断当前组件目录 git版本控制是否正确
-    checkGitControl(info)
+    //checkGitControl(info)
     // try pull
     tryPull(getModulePath(info))
     // 补上组件没有的文件
