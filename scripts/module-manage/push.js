@@ -171,12 +171,7 @@ const syncCnpm = (info) => {
 const publish = (info) => {
     // 贴吧组件不发布
     if (info.categoryName === 'tb') return
-
-    // 判断是不是贴吧帐号
-    // const whoamiString = execSync('npm whoami').toString()
-    // if (whoamiString.replace(/\s+/, '') !== 'tieba') {
-    //     consoleLog('you are not logined by tieba', 'red', getModulePath(info))
-    // }
+    
     execSync(`cd lib/${info.categoryName}/${info.module.path};npm publish`)
 }
 
