@@ -173,10 +173,10 @@ const publish = (info) => {
     if (info.categoryName === 'tb') return
 
     // 判断是不是贴吧帐号
-    const whoamiString = execSync('npm whoami').toString()
-    if (whoamiString.replace(/\s+/, '') !== 'tieba') {
-        consoleLog('you are not logined by tieba', 'red', getModulePath(info))
-    }
+    // const whoamiString = execSync('npm whoami').toString()
+    // if (whoamiString.replace(/\s+/, '') !== 'tieba') {
+    //     consoleLog('you are not logined by tieba', 'red', getModulePath(info))
+    // }
     execSync(`cd lib/${info.categoryName}/${info.module.path};npm publish`)
 }
 
