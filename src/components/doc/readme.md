@@ -3,17 +3,17 @@
 ### 运行环境
 
 - mac
-- node@5.x
+- node@6.x
 
 ### 运行步骤
 
 ##### 初始化项目:
 
 ~~~js
-$ git clone http://gitlab.baidu.com/tb-component/awesome.git
-$ cd awesome
-$ cnpm install
-$ cnpm install babel-cli typescript tsd -g
+$ git clone https://github.com/fex-team/fit
+$ cd fit
+$ npm install
+$ npm install babel-cli typescript tsd -g
 $ tsd install
 $ npm run update
 ~~~
@@ -116,7 +116,7 @@ $ npm test
 ### 更新 fit 官网内容
 
 ~~~jsx
-$ npm run publish
+$ npm run web
 ~~~
 
 ### 注意事项

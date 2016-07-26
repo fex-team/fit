@@ -40,8 +40,13 @@
                         import PluginCode from '-!text!../../../../lib/pc/gaea/demo/lists/plugin.js'
                         import PluginMarkdown from '../../../../lib/pc/gaea/demo/lists/plugin.md'
                         
+<<<<<<< 940228823dbe9f0824ca791cae3f5be794204602
                         import ConfigComponent from '../../../../lib/pc/gaea/demo/lists/config.js'
                         import ConfigCode from '-!text!../../../../lib/pc/gaea/demo/lists/config.js'
+=======
+                        import ConfigComponent from '../../../../lib/pc/gaea/demo/lists/config.tsx'
+                        import ConfigCode from '-!text!../../../../lib/pc/gaea/demo/lists/config.tsx'
+>>>>>>> quick push
                         import ConfigMarkdown from '../../../../lib/pc/gaea/demo/lists/config.md'
                         
 
