@@ -5,6 +5,7 @@ import Search from '../../../components/search-components'
 import LeftMenuPC from './left-menu-pc'
 import LeftMenuMobile from './left-menu-mobile'
 import LeftMenuCommon from './left-menu-common'
+import LeftMenuTb from './left-menu-tb'
 
 import Menu from './top-menu'
 
@@ -84,6 +85,11 @@ export default class Layout extends React.Component {
         case 'common':
             LeftMenu = (
                 <LeftMenuCommon />
+            )
+            break
+        case 'tb':
+            LeftMenu = (
+                <LeftMenuTb />
             )
             break
         }
