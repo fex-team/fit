@@ -40,10 +40,6 @@
                         import PluginCode from '-!text!../../../../lib/pc/gaea/demo/lists/plugin.tsx'
                         import PluginMarkdown from '../../../../lib/pc/gaea/demo/lists/plugin.md'
                         
-                        import ExtendComponent from '../../../../lib/pc/gaea/demo/lists/extend.tsx'
-                        import ExtendCode from '-!text!../../../../lib/pc/gaea/demo/lists/extend.tsx'
-                        import ExtendMarkdown from '../../../../lib/pc/gaea/demo/lists/extend.md'
-                        
                         import ConfigComponent from '../../../../lib/pc/gaea/demo/lists/config.tsx'
                         import ConfigCode from '-!text!../../../../lib/pc/gaea/demo/lists/config.tsx'
                         import ConfigMarkdown from '../../../../lib/pc/gaea/demo/lists/config.md'
@@ -111,17 +107,6 @@
                                       npmName="fit-gaea">
 
                                     <PluginComponent/>
-
-                            </CodeView>
-                        </Col>
-                    
-                        <Col span="24" style={colStyle}>
-                            <CodeView store={store}
-                                      md={ExtendMarkdown}
-                                      code={ExtendCode}
-                                      npmName="fit-gaea">
-
-                                    <ExtendComponent/>
 
                             </CodeView>
                         </Col>
