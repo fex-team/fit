@@ -28,18 +28,18 @@
                                 
 
                 
-                        import BasicComponent from '../../../../lib/pc/gaea/demo/lists/basic.tsx'
-                        import BasicCode from '-!text!../../../../lib/pc/gaea/demo/lists/basic.tsx'
+                        import BasicComponent from '../../../../lib/pc/gaea/demo/lists/basic.js'
+                        import BasicCode from '-!text!../../../../lib/pc/gaea/demo/lists/basic.js'
                         import BasicMarkdown from '../../../../lib/pc/gaea/demo/lists/basic.md'
                         
-                        import PreviewComponent from '../../../../lib/pc/gaea/demo/lists/preview.tsx'
-                        import PreviewCode from '-!text!../../../../lib/pc/gaea/demo/lists/preview.tsx'
+                        import PreviewComponent from '../../../../lib/pc/gaea/demo/lists/preview.js'
+                        import PreviewCode from '-!text!../../../../lib/pc/gaea/demo/lists/preview.js'
                         import PreviewMarkdown from '../../../../lib/pc/gaea/demo/lists/preview.md'
                         
-                        import PluginComponent from '../../../../lib/pc/gaea/demo/lists/plugin.tsx'
-                        import PluginCode from '-!text!../../../../lib/pc/gaea/demo/lists/plugin.tsx'
+                        import PluginComponent from '../../../../lib/pc/gaea/demo/lists/plugin.js'
+                        import PluginCode from '-!text!../../../../lib/pc/gaea/demo/lists/plugin.js'
                         import PluginMarkdown from '../../../../lib/pc/gaea/demo/lists/plugin.md'
-                        
+
                         import ConfigComponent from '../../../../lib/pc/gaea/demo/lists/config.tsx'
                         import ConfigCode from '-!text!../../../../lib/pc/gaea/demo/lists/config.tsx'
                         import ConfigMarkdown from '../../../../lib/pc/gaea/demo/lists/config.md'
