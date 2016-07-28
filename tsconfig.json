@@ -14,6 +14,7 @@
         "output",
         "typings",
         "test_coverage_html",
-        "test_jasmine_html"
+        "test_jasmine_html",
+        "auto-typings"
     ]
 }

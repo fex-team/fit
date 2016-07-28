@@ -194,7 +194,7 @@ const mkComponents = (config)=> {
                                     </Section>
                                     <Sidebar direction="right"
                                              width={120}>
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/${gitlabPath}/tree/master"
+                                        <SidebarComponent gitlabUrl="https://github.com/fit-component/${gitlabPath}/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>

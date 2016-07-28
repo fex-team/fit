@@ -14,12 +14,12 @@ const allModules = getAllModules(config)
 const clearDts = ()=> {
     // 最后删除所有 d.ts jsx 文件,这些文件可能由依赖自动生成到其它模块下
     allModules.forEach(info=> {
-        // 除了 tb 模块,全删
-        if (info.categoryName !== 'tb') {
+        // 除了内部模块,全删
+        if (info.categoryInfo.access === 'public') {
             execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.d.ts" | xargs rm`)
             execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.jsx" | xargs rm`)
         } else {
-            // 是 tb 模块,只删除 src 的
+            // 是私有模块,只删除 src 的
             execSync(`find ./lib/${info.categoryName}/${info.module.path}/src -name "*.d.ts" | xargs rm`)
             execSync(`find ./lib/${info.categoryName}/${info.module.path}/src -name "*.jsx" | xargs rm`)
         }

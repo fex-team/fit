@@ -3,6 +3,7 @@
         "common": {
             "prefix": "fit",
             "gitlabPrefix": "",
+            "access": "public",
             "components": {
                 "展示": [
                     {
@@ -52,6 +53,7 @@
         "pc": {
             "prefix": "fit",
             "gitlabPrefix": "pc",
+            "access": "public",
             "components": {
                 "基本": [
                     {
@@ -202,6 +204,7 @@
         "mobile": {
             "prefix": "fit",
             "gitlabPrefix": "mobile",
+            "access": "public",
             "components": {
                 "基本": [
                     {
@@ -219,6 +222,67 @@
                     {
                         "name": "聊天盒子",
                         "path": "chat-box"
+                    }
+                ]
+            }
+        },
+        "tb": {
+            "prefix": "tb",
+            "gitlabPrefix": "tb",
+            "access": "private",
+            "components": {
+                "基本": [
+                    {
+                        "name": "颜色",
+                        "path": "color"
+                    },
+                    {
+                        "name": "日志请求",
+                        "path": "track"
+                    },
+                    {
+                        "name": "验证码",
+                        "path": "captcha"
+                    },
+                    {
+                        "name": "拖拽验证码",
+                        "path": "captcha-drag"
+                    },
+                    {
+                        "name": "发帖",
+                        "path": "submit"
+                    },
+                    {
+                        "name": "分享",
+                        "path": "share"
+                    },
+                    {
+                        "name": "顶部蓝条",
+                        "path": "blue-bar"
+                    },
+                    {
+                        "name": "上传",
+                        "path": "upload"
+                    }
+                ],
+                "展示": [
+                    {
+                        "name": "字体图标",
+                        "path": "icon"
+                    },
+                    {
+                        "name": "表情库",
+                        "path": "emoji"
+                    }
+                ],
+                "综合": [
+                    {
+                        "name": "lego card",
+                        "path": "lego-card"
+                    },
+                    {
+                        "name": "nodeApi",
+                        "path": "node-api"
                     }
                 ]
             }

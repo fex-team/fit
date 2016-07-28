@@ -10,6 +10,9 @@ import {getGitSourcePath} from './utils/utils'
 const gitPlantform = 'https://github.com'
 const gitPlantformGroup = 'fit-component'
 
+const baiduGitPlantform = 'http://gitlab.baidu.com'
+const baiduGitPlantformGroup = 'tb-component'
+
 const getModulePath = (info)=> {
     return `./lib/${info.categoryName}/${info.module.path}`
 }
@@ -32,8 +35,15 @@ const cloneModuleIfNotExist = (info)=> {
     if (fs.existsSync(targetPath)) return
 
     const gitSourcePath = getGitSourcePath(info)
-    // clone
-    const cloneSource = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
+
+    // run git clone
+    let cloneSource = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
+
+    // 对内部模块,替换地址
+    if (info.categoryInfo.access === 'private') {
+        cloneSource = `${baiduGitPlantform}/${baiduGitPlantformGroup}/${gitSourcePath}`
+    }
+
     execSync(`cd lib/${info.categoryName};git clone ${cloneSource} ${info.module.path}`)
     consoleLog('cloned', 'green', getModulePath(info))
 }
@@ -45,7 +55,13 @@ const checkGitControl = (info)=> {
     let projectName = execSync(`cd ${pathInfo};git remote -v | head -n1 | awk '{print $2}' | sed -e 's,.*:\(.*/\)\?,,' -e 's/\.git$//'`).toString().trim()
 
     let gitSourcePath = getGitSourcePath(info)
+
     let expectModuleName = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
+
+    // 对内部模块,替换地址
+    if (info.categoryInfo.access === 'private') {
+        expectModuleName = `${baiduGitPlantform}/${baiduGitPlantformGroup}/${gitSourcePath}`
+    }
 
     if (projectName + '.git' !== expectModuleName) {
         consoleLog(`错误:不要手动创建lib目录的任何文件夹,请在${gitPlantform}/${gitPlantformGroup}建立项目后,填写到all-component.json, 再重新执行npm update会自动创建,请删除此文件夹（删除前先做好备份）`, 'red', getModulePath(info))
@@ -60,7 +76,7 @@ export default (info)=> {
     // clone 组件
     cloneModuleIfNotExist(info)
     // 判断当前组件目录 git版本控制是否正确
-    //checkGitControl(info)
+    checkGitControl(info)
     // try pull
     tryPull(getModulePath(info))
     // 补上组件没有的文件
