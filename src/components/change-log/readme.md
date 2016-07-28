@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.7.28
+
+- `fit-gaea` 现在预览能正确显示了
+
 #### 2016.7.23
 
 - `fit-transmit-transparently` 修复传参的 bug,修复深度 clone 的 bug
