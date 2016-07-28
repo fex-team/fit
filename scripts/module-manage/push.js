@@ -123,8 +123,8 @@ const parseDTs = (info) => {
 const deleteDTS = (info) => {
     const modulePath = getModulePath(info)
 
-    // 如果是 tb 组件,不删除 lib 下的定义文件,因为从gitlab安装时需要
-    if (info.categoryName === 'tb') {
+    // 如果私有组件,不删除 lib 下的定义文件,因为从gitlab安装时需要
+    if (info.categoryInfo.access === 'private') {
         execSync(`find ${modulePath}/src -name "*.d.ts" | xargs rm`)
     } else {
         execSync(`find ${modulePath} -name "*.d.ts" | xargs rm`)
@@ -156,9 +156,6 @@ const deleteDemoJsxAndJs = (info) => {
 }
 
 const syncCnpm = (info) => {
-    // 贴吧组件不同步
-    if (info.categoryName === 'tb') return
-
     consoleLog(`cnpm 开始同步..`, 'grey', getModulePath(info))
     exec(`cnpm sync ${info.categoryInfo.prefix}-${info.module.path}`, (err) => {
         if (err) {
@@ -169,9 +166,6 @@ const syncCnpm = (info) => {
 }
 
 const publish = (info) => {
-    // 贴吧组件不发布
-    if (info.categoryName === 'tb') return
-    
     execSync(`cd lib/${info.categoryName}/${info.module.path};npm publish`)
 }
 
@@ -197,13 +191,16 @@ export default (info) => {
         build(info, libPath)
         consoleLog('编译完成', 'green', getModulePath(info))
 
-        // 发布npm
-        consoleLog('发布中..', 'grey', getModulePath(info))
-        publish(info)
-        consoleLog('发布完成', 'green', getModulePath(info))
+        // 如果是开放模块,发布 npm
+        if (info.categoryInfo.access === 'public') {
+            consoleLog('发布中..', 'grey', getModulePath(info))
+            publish(info)
+            consoleLog('发布完成', 'green', getModulePath(info))
+        }
 
-        // 如果不是 tb 组件,删除 lib目录
-        if (info.categoryName !== 'tb') {
+        // 如果是开放模块,删除 lib 目录
+        // 私有模块因为通过内部平台直接安装,源码需要保存 lib 目录
+        if (info.categoryInfo.access === 'public') {
             deleteLib(info)
         }
 
@@ -216,14 +213,18 @@ export default (info) => {
         // 清除 demo 不必要的文件 如果是 jsx
         deleteDemoJsxAndJs(info)
 
-        // 通知 cnpm 更新
-        syncCnpm(info)
+        // 如果是开放模块,通知 cnpm 更新
+        if (info.categoryInfo.access === 'public') {
+            syncCnpm(info)
+        }
     }
     // try push
+    consoleLog('正在提交代码..', 'grey', getModulePath(info))
     tryPush(getModulePath(info))
+    consoleLog('提交代码成功..', 'grey', getModulePath(info))
 
-    // 如果是 tb 组件,删除 lib目录
-    if (info.categoryName === 'tb') {
+    // 如果是开放模块,删除 lib目录
+    if (info.categoryInfo.access === 'public') {
         deleteLib(info)
     }
 }

@@ -3,6 +3,7 @@
         "common": {
             "prefix": "fit",
             "gitlabPrefix": "",
+            "access": "public",
             "components": {
                 "展示": [
                     {
@@ -52,6 +53,7 @@
         "pc": {
             "prefix": "fit",
             "gitlabPrefix": "pc",
+            "access": "public",
             "components": {
                 "基本": [
                     {
@@ -202,6 +204,7 @@
         "mobile": {
             "prefix": "fit",
             "gitlabPrefix": "mobile",
+            "access": "public",
             "components": {
                 "基本": [
                     {
@@ -226,6 +229,7 @@
         "tb": {
             "prefix": "tb",
             "gitlabPrefix": "tb",
+            "access": "private",
             "components": {
                 "基本": [
                     {

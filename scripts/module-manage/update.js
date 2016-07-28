@@ -40,7 +40,7 @@ const cloneModuleIfNotExist = (info)=> {
     let cloneSource = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
 
     // 对内部模块,替换地址
-    if (info.categoryInfo.prefix === 'tb') {
+    if (info.categoryInfo.access === 'private') {
         cloneSource = `${baiduGitPlantform}/${baiduGitPlantformGroup}/${gitSourcePath}`
     }
 
@@ -59,7 +59,7 @@ const checkGitControl = (info)=> {
     let expectModuleName = `${gitPlantform}/${gitPlantformGroup}/${gitSourcePath}`
 
     // 对内部模块,替换地址
-    if (info.categoryInfo.prefix === 'tb') {
+    if (info.categoryInfo.access === 'private') {
         expectModuleName = `${baiduGitPlantform}/${baiduGitPlantformGroup}/${gitSourcePath}`
     }
 
