@@ -95,7 +95,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width={120}>
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/pc-iframe/tree/master"
+                                        <SidebarComponent gitlabUrl="https://github.com/fit-component/pc-iframe/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>

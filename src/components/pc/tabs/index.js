@@ -123,7 +123,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width={120}>
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/pc-tabs/tree/master"
+                                        <SidebarComponent gitlabUrl="https://github.com/fit-component/pc-tabs/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>

@@ -128,7 +128,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width={120}>
-                                        <SidebarComponent gitlabUrl="http://gitlab.baidu.com/tb-component/tb-icon/tree/master"
+                                        <SidebarComponent gitlabUrl="https://github.com/fit-component/tb-icon/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>
