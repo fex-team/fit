@@ -31,7 +31,7 @@ export default class Menu extends React.Component {
                         <Link className="item"
                               activeClassName="active"
                               to="/components/common">通用</Link>
-                        {isBaidu &&
+                        {isBaidu !== '0' &&
                         <Link className="item"
                               activeClassName="active"
                               to="/components/tb">贴吧</Link>

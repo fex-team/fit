@@ -44,8 +44,6 @@ app.use(function *() {
         httpOnly: false
     })
 
-    console.log('isBaidu?', isBaidu)
-
     templateHtml = templateHtml.replace(/__tplData\(\'isBaidu\'\)/g, isBaidu)
 
     this.type = 'text/html; charset=utf-8'
