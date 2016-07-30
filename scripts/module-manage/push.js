@@ -51,7 +51,19 @@ const fitDts = (content, info, filePath, rootPath) => {
 
     /**
      * 将引用的模块 copy 过来,并且修改绝对路径
+     * 内部模块不执行,因为会同步到仓库中,而使项目中出现重复定义的 bug
      */
+    if (info.categoryInfo.access === 'public') {
+        content = autoTypings(content, info, filePath, rootPath)
+    }
+
+    return content
+}
+
+/**
+ * 创建 auto-typings 将根目录的 typings 复制到每个文件中
+ */
+const autoTypings = (content, info, filePath, rootPath)=> {
     const filePathArray = filePath.split('/')
     if (filePathArray[filePathArray.length - 1] === 'lib' && filePathArray[filePathArray.length - 2] === info.module.path) {
         // 根目录
@@ -78,7 +90,7 @@ const fitDts = (content, info, filePath, rootPath) => {
                 /**
                  * 修正内容中的依赖路径
                  * */
-                // 判断 filePath 与 rootPath 的距离
+                    // 判断 filePath 与 rootPath 的距离
                 const filePathDeepRootPathIndex = filePath.split('/').length - rootPath.split('/').length
                 // 距离为 0 的情况
                 let relativePath = './'
