@@ -45,7 +45,7 @@ export default class Title extends React.Component {
                         <a href={this.props.gitlabUrl}
                            target="_blank">
                             <i style={{marginRight:10}}
-                               className="fa fa-link"/>Gitlab
+                               className="fa fa-link"/>Github
                         </a>
                     </div>
                 </div>

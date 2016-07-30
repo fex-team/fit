@@ -14,32 +14,38 @@
                 const store = createStore()
 
                 
-                            import RowSource from '../../../../lib/pc/layout/src/row'
-                            import RowSourceCode from '-!text!../../../../lib/pc/layout/src/row'
+                            import RowSource from '../../../../lib/pc/layout/src/row/index.tsx'
+                            import RowSourceCode from '-!text!../../../../lib/pc/layout/src/row/index.tsx'
                             
-                            import ColSource from '../../../../lib/pc/layout/src/col'
-                            import ColSourceCode from '-!text!../../../../lib/pc/layout/src/col'
+                                import * as RowModule from '../../../../lib/pc/layout/src/row/module.tsx'
+                                import RowModuleCode from '-!text!../../../../lib/pc/layout/src/row/module.tsx'
+                                
+                            import ColSource from '../../../../lib/pc/layout/src/col/index.tsx'
+                            import ColSourceCode from '-!text!../../../../lib/pc/layout/src/col/index.tsx'
                             
+                                import * as ColModule from '../../../../lib/pc/layout/src/col/module.tsx'
+                                import ColModuleCode from '-!text!../../../../lib/pc/layout/src/col/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/layout/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/layout/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/layout/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/layout/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/layout/demo/lists/basic.md'
                         
-                        import CenterComponent from '../../../../lib/pc/layout/demo/lists/center.js'
-                        import CenterCode from '-!text!../../../../lib/pc/layout/demo/lists/center.js'
+                        import CenterComponent from '../../../../lib/pc/layout/demo/lists/center.tsx'
+                        import CenterCode from '-!text!../../../../lib/pc/layout/demo/lists/center.tsx'
                         import CenterMarkdown from '../../../../lib/pc/layout/demo/lists/center.md'
                         
-                        import FlexComponent from '../../../../lib/pc/layout/demo/lists/flex.js'
-                        import FlexCode from '-!text!../../../../lib/pc/layout/demo/lists/flex.js'
+                        import FlexComponent from '../../../../lib/pc/layout/demo/lists/flex.tsx'
+                        import FlexCode from '-!text!../../../../lib/pc/layout/demo/lists/flex.tsx'
                         import FlexMarkdown from '../../../../lib/pc/layout/demo/lists/flex.md'
                         
-                        import OffsetComponent from '../../../../lib/pc/layout/demo/lists/offset.js'
-                        import OffsetCode from '-!text!../../../../lib/pc/layout/demo/lists/offset.js'
+                        import OffsetComponent from '../../../../lib/pc/layout/demo/lists/offset.tsx'
+                        import OffsetCode from '-!text!../../../../lib/pc/layout/demo/lists/offset.tsx'
                         import OffsetMarkdown from '../../../../lib/pc/layout/demo/lists/offset.md'
                         
-                        import OrderComponent from '../../../../lib/pc/layout/demo/lists/order.js'
-                        import OrderCode from '-!text!../../../../lib/pc/layout/demo/lists/order.js'
+                        import OrderComponent from '../../../../lib/pc/layout/demo/lists/order.tsx'
+                        import OrderCode from '-!text!../../../../lib/pc/layout/demo/lists/order.tsx'
                         import OrderMarkdown from '../../../../lib/pc/layout/demo/lists/order.md'
                         
 
@@ -139,11 +145,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={RowSourceCode} instance={RowSource} />
+                                <CodeDoc code={RowSourceCode} instance={RowSource} moduleCode={RowModuleCode} moduleInstance={RowModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={ColSourceCode} instance={ColSource} />
+                                <CodeDoc code={ColSourceCode} instance={ColSource} moduleCode={ColModuleCode} moduleInstance={ColModule} />
                             </div>
                             
                                 </div>

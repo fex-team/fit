@@ -1,12 +1,13 @@
 import React from 'react'
-import { Row, Col } from 'fit-layout'
+import {Row, Col} from 'fit-layout'
 import marked from 'marked'
 import readme from './readme.md'
+import getComponentList from '../getComponentList'
 
 const colStyle = {
-    padding: 20,
+    padding   : 20,
     background: 'white',
-    boxSizing: 'border-box'
+    boxSizing : 'border-box'
 }
 
 export default class Layout extends React.Component {
@@ -26,6 +27,7 @@ export default class Layout extends React.Component {
                              dangerouslySetInnerHTML={{__html: marked(readme)}}></div>
                     </Col>
                 </Row>
+                {getComponentList('pc')}
             </div>
         )
     }

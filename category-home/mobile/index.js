@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col } from 'fit-layout'
 import marked from 'marked'
 import readme from './readme.md'
+import getComponentList from '../getComponentList'
 
 const colStyle = {
     padding: 20,
@@ -25,6 +26,7 @@ export default class Layout extends React.Component {
                         <div className="markdown-body"
                              dangerouslySetInnerHTML={{__html: marked(readme)}}></div>
                     </Col>
+                    {getComponentList('mobile')}
                 </Row>
             </div>
         )
