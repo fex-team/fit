@@ -160,7 +160,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.2.4",
     "react-router-redux": "^4.0.2",
-    "react-tappable": "^0.8.1",
+    "react-tappable": "^0.8.2",
     "react-textarea-autosize": "^4.0.0",
     "read-dir-files": "^0.1.1",
     "redux": "^3.4.0",

@@ -1,6 +1,4 @@
 import React from 'react'
-import Highlight from 'react-highlight'
-import marked from 'marked'
 import classNames from 'classnames'
 import './index.scss'
 

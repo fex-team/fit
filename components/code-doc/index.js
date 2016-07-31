@@ -67,11 +67,12 @@ export default class CodeDoc extends React.Component {
         let title = ''
         // TODO: 给 tsx 文件设置标题
         if (!this.props.moduleCode) {
+            // TODO: js版处理,等所有js->tsx 这个逻辑会删掉
             const titleArray = this.props.code.match(/(\w*).defaultProps/g)
             if (!titleArray)return null
             title = titleArray[0]
         } else {
-
+            title = this.props.code.match(`export default class (.*) extends React.Component`)[1]
         }
 
         let tableInfo = {
@@ -81,7 +82,7 @@ export default class CodeDoc extends React.Component {
                 value : '参数',
                 render: (value)=> {
                     return (
-                        <span style={{whiteSpace:'nowrap'}}>{value.infoParam}</span>
+                        <span style={{whiteSpace: 'nowrap'}}>{value.infoParam}</span>
                     )
                 }
             }, {
@@ -89,7 +90,7 @@ export default class CodeDoc extends React.Component {
                 value : '类型',
                 render: (value)=> {
                     return (
-                        <span style={{color:'#881280'}}>{value.infoType}</span>
+                        <span style={{color: '#881280'}}>{value.infoType}</span>
                     )
                 }
             }, {
@@ -103,30 +104,30 @@ export default class CodeDoc extends React.Component {
 
                     if (value.instanceValue === undefined) {
                         return (
-                            <div style={{color:'#ccc'}}>undefined</div>
+                            <div style={{color: '#ccc'}}>undefined</div>
                         )
                     }
 
                     if (value.instanceValue === null) {
                         return (
-                            <div style={{color:'#1C00CF'}}>null</div>
+                            <div style={{color: '#1C00CF'}}>null</div>
                         )
                     }
 
                     switch (value.infoType) {
                     case 'string':
                         child = (
-                            <span style={{color:'#C41A16'}}>'{value.instanceValue}'</span>
+                            <span style={{color: '#C41A16'}}>'{value.instanceValue}'</span>
                         )
                         break
                     case 'boolean':
                         child = (
-                            <span style={{color:'#1C00CF'}}>{value.instanceValue.toString()}</span>
+                            <span style={{color: '#1C00CF'}}>{value.instanceValue.toString()}</span>
                         )
                         break
                     case 'number':
                         child = (
-                            <span style={{color:'#1C00CF'}}>{value.instanceValue}</span>
+                            <span style={{color: '#1C00CF'}}>{value.instanceValue}</span>
                         )
                         break
                     case 'array':
@@ -151,7 +152,7 @@ export default class CodeDoc extends React.Component {
                         break
                     case 'null':
                         child = (
-                            <span style={{color:'#1C00CF'}}>null</span>
+                            <span style={{color: '#1C00CF'}}>null</span>
                         )
                         break
                     case 'function':
@@ -161,7 +162,7 @@ export default class CodeDoc extends React.Component {
                         break
                     case 'undefined':
                         child = (
-                            <span style={{color:'#ccc'}}>undefined</span>
+                            <span style={{color: '#ccc'}}>undefined</span>
                         )
                         break
                     default:
@@ -256,10 +257,25 @@ export default class CodeDoc extends React.Component {
             let propsMap = {}
 
             // props对象实例
-            const propsInstance = new this.props.moduleInstance.Props()
+            let propsInstance
+            if (this.props.moduleInstance.Props) {
+                // class 方式定义
+                // TODO 老的方式,以后要干掉
+                propsInstance = new this.props.moduleInstance.Props()
+            } else {
+                propsInstance = this.props.moduleInstance.defaultProps
+            }
 
             // 如果是 tsx 系的,解析 modules 生成文档
-            const propsInterface = findFunctionBody('export interface PropsInterface', this.props.moduleCode)
+            let propsInterface
+
+            if (this.props.moduleCode.indexOf('PropsInterface') > -1) {
+                // TODO: 老定义方式,以后要干掉
+                propsInterface = findFunctionBody('export interface PropsInterface', this.props.moduleCode)
+            } else {
+                propsInterface = findFunctionBody('export interface PropsDefine', this.props.moduleCode)
+            }
+
             const codeInfos = parseCodeText(propsInterface)
             codeInfos.forEach((codeInfo)=> {
                 let tableData = {

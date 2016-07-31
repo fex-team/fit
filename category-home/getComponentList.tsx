@@ -7,18 +7,20 @@ const allComponents = require('../all-component.json')
  * 根据分类,获取组件展示列表
  */
 export default (categoryName: string) => {
-    return Object.keys(allComponents.categorys[categoryName].components).map(key => {
-        const items = allComponents.categorys[categoryName].components[key].map((item: any) => {
+    return Object.keys(allComponents.categorys[categoryName].components).map((key, index) => {
+        const items = allComponents.categorys[categoryName].components[key].map((item: any, index: number) => {
             return (
-                <Link to={`/components/${categoryName}/${item.path}`}
-                    style={{ marginRight: 10 }}>{item.name}</Link>
+                <Link key={index}
+                      to={`/components/${categoryName}/${item.path}`}
+                      style={{ marginRight: 10 }}>{item.name}</Link>
             )
         })
 
         return (
-            <Row style={{ padding: 20 }}>
+            <Row key={index}
+                 style={{ padding: 20 }}>
                 <Col span="24"
-                    style={{
+                     style={{
                         paddingBottom: 10,
                         fontSize: 16,
                         borderBottom: '1px solid #ddd',
@@ -27,7 +29,7 @@ export default (categoryName: string) => {
                     {key}
                 </Col>
                 <Col span="24"
-                    style={{ paddingBottom: 10, marginTop: 15, fontSize: 16, boxSizing: 'border-box' }}>
+                     style={{ paddingBottom: 10, marginTop: 15, fontSize: 16, boxSizing: 'border-box' }}>
                     {items}
                 </Col>
             </Row>

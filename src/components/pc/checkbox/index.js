@@ -14,33 +14,36 @@
                 const store = createStore()
 
                 
-                            import CheckboxSource from '../../../../lib/pc/checkbox/src/checkbox'
-                            import CheckboxSourceCode from '-!text!../../../../lib/pc/checkbox/src/checkbox'
+                            import CheckboxSource from '../../../../lib/pc/checkbox/src/checkbox/index.tsx'
+                            import CheckboxSourceCode from '-!text!../../../../lib/pc/checkbox/src/checkbox/index.tsx'
                             
+                                import * as CheckboxModule from '../../../../lib/pc/checkbox/src/checkbox/module.tsx'
+                                import CheckboxModuleCode from '-!text!../../../../lib/pc/checkbox/src/checkbox/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/checkbox/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/checkbox/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/checkbox/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/checkbox/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/checkbox/demo/lists/basic.md'
                         
-                        import CallbackComponent from '../../../../lib/pc/checkbox/demo/lists/callback.js'
-                        import CallbackCode from '-!text!../../../../lib/pc/checkbox/demo/lists/callback.js'
+                        import CallbackComponent from '../../../../lib/pc/checkbox/demo/lists/callback.tsx'
+                        import CallbackCode from '-!text!../../../../lib/pc/checkbox/demo/lists/callback.tsx'
                         import CallbackMarkdown from '../../../../lib/pc/checkbox/demo/lists/callback.md'
                         
-                        import CustomComponent from '../../../../lib/pc/checkbox/demo/lists/custom.js'
-                        import CustomCode from '-!text!../../../../lib/pc/checkbox/demo/lists/custom.js'
+                        import CustomComponent from '../../../../lib/pc/checkbox/demo/lists/custom.tsx'
+                        import CustomCode from '-!text!../../../../lib/pc/checkbox/demo/lists/custom.tsx'
                         import CustomMarkdown from '../../../../lib/pc/checkbox/demo/lists/custom.md'
                         
-                        import DisableComponent from '../../../../lib/pc/checkbox/demo/lists/disable.js'
-                        import DisableCode from '-!text!../../../../lib/pc/checkbox/demo/lists/disable.js'
+                        import DisableComponent from '../../../../lib/pc/checkbox/demo/lists/disable.tsx'
+                        import DisableCode from '-!text!../../../../lib/pc/checkbox/demo/lists/disable.tsx'
                         import DisableMarkdown from '../../../../lib/pc/checkbox/demo/lists/disable.md'
                         
-                        import LabelComponent from '../../../../lib/pc/checkbox/demo/lists/label.js'
-                        import LabelCode from '-!text!../../../../lib/pc/checkbox/demo/lists/label.js'
+                        import LabelComponent from '../../../../lib/pc/checkbox/demo/lists/label.tsx'
+                        import LabelCode from '-!text!../../../../lib/pc/checkbox/demo/lists/label.tsx'
                         import LabelMarkdown from '../../../../lib/pc/checkbox/demo/lists/label.md'
                         
-                        import SizeComponent from '../../../../lib/pc/checkbox/demo/lists/size.js'
-                        import SizeCode from '-!text!../../../../lib/pc/checkbox/demo/lists/size.js'
+                        import SizeComponent from '../../../../lib/pc/checkbox/demo/lists/size.tsx'
+                        import SizeCode from '-!text!../../../../lib/pc/checkbox/demo/lists/size.tsx'
                         import SizeMarkdown from '../../../../lib/pc/checkbox/demo/lists/size.md'
                         
 
@@ -151,7 +154,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={CheckboxSourceCode} instance={CheckboxSource} />
+                                <CodeDoc code={CheckboxSourceCode} instance={CheckboxSource} moduleCode={CheckboxModuleCode} moduleInstance={CheckboxModule} />
                             </div>
                             
                                 </div>

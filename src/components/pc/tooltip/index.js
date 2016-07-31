@@ -14,33 +14,36 @@
                 const store = createStore()
 
                 
-                            import TooltipSource from '../../../../lib/pc/tooltip/src/tooltip'
-                            import TooltipSourceCode from '-!text!../../../../lib/pc/tooltip/src/tooltip'
+                            import TooltipSource from '../../../../lib/pc/tooltip/src/tooltip/index.tsx'
+                            import TooltipSourceCode from '-!text!../../../../lib/pc/tooltip/src/tooltip/index.tsx'
                             
+                                import * as TooltipModule from '../../../../lib/pc/tooltip/src/tooltip/module.tsx'
+                                import TooltipModuleCode from '-!text!../../../../lib/pc/tooltip/src/tooltip/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/tooltip/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/tooltip/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/tooltip/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/tooltip/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/tooltip/demo/lists/basic.md'
                         
-                        import RenderComponent from '../../../../lib/pc/tooltip/demo/lists/render.js'
-                        import RenderCode from '-!text!../../../../lib/pc/tooltip/demo/lists/render.js'
+                        import RenderComponent from '../../../../lib/pc/tooltip/demo/lists/render.tsx'
+                        import RenderCode from '-!text!../../../../lib/pc/tooltip/demo/lists/render.tsx'
                         import RenderMarkdown from '../../../../lib/pc/tooltip/demo/lists/render.md'
                         
-                        import PositionComponent from '../../../../lib/pc/tooltip/demo/lists/position.js'
-                        import PositionCode from '-!text!../../../../lib/pc/tooltip/demo/lists/position.js'
+                        import PositionComponent from '../../../../lib/pc/tooltip/demo/lists/position.tsx'
+                        import PositionCode from '-!text!../../../../lib/pc/tooltip/demo/lists/position.tsx'
                         import PositionMarkdown from '../../../../lib/pc/tooltip/demo/lists/position.md'
                         
-                        import StayComponent from '../../../../lib/pc/tooltip/demo/lists/stay.js'
-                        import StayCode from '-!text!../../../../lib/pc/tooltip/demo/lists/stay.js'
+                        import StayComponent from '../../../../lib/pc/tooltip/demo/lists/stay.tsx'
+                        import StayCode from '-!text!../../../../lib/pc/tooltip/demo/lists/stay.tsx'
                         import StayMarkdown from '../../../../lib/pc/tooltip/demo/lists/stay.md'
                         
-                        import TriggerComponent from '../../../../lib/pc/tooltip/demo/lists/trigger.js'
-                        import TriggerCode from '-!text!../../../../lib/pc/tooltip/demo/lists/trigger.js'
+                        import TriggerComponent from '../../../../lib/pc/tooltip/demo/lists/trigger.tsx'
+                        import TriggerCode from '-!text!../../../../lib/pc/tooltip/demo/lists/trigger.tsx'
                         import TriggerMarkdown from '../../../../lib/pc/tooltip/demo/lists/trigger.md'
                         
-                        import FollowComponent from '../../../../lib/pc/tooltip/demo/lists/follow.js'
-                        import FollowCode from '-!text!../../../../lib/pc/tooltip/demo/lists/follow.js'
+                        import FollowComponent from '../../../../lib/pc/tooltip/demo/lists/follow.tsx'
+                        import FollowCode from '-!text!../../../../lib/pc/tooltip/demo/lists/follow.tsx'
                         import FollowMarkdown from '../../../../lib/pc/tooltip/demo/lists/follow.md'
                         
 
@@ -151,7 +154,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={TooltipSourceCode} instance={TooltipSource} />
+                                <CodeDoc code={TooltipSourceCode} instance={TooltipSource} moduleCode={TooltipModuleCode} moduleInstance={TooltipModule} />
                             </div>
                             
                                 </div>

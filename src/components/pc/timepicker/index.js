@@ -14,21 +14,24 @@
                 const store = createStore()
 
                 
-                            import TimepickerSource from '../../../../lib/pc/timepicker/src/timepicker'
-                            import TimepickerSourceCode from '-!text!../../../../lib/pc/timepicker/src/timepicker'
+                            import TimepickerSource from '../../../../lib/pc/timepicker/src/timepicker/index.tsx'
+                            import TimepickerSourceCode from '-!text!../../../../lib/pc/timepicker/src/timepicker/index.tsx'
                             
+                                import * as TimepickerModule from '../../../../lib/pc/timepicker/src/timepicker/module.tsx'
+                                import TimepickerModuleCode from '-!text!../../../../lib/pc/timepicker/src/timepicker/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/timepicker/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/timepicker/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/timepicker/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/timepicker/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/timepicker/demo/lists/basic.md'
                         
-                        import LabelComponent from '../../../../lib/pc/timepicker/demo/lists/label.js'
-                        import LabelCode from '-!text!../../../../lib/pc/timepicker/demo/lists/label.js'
+                        import LabelComponent from '../../../../lib/pc/timepicker/demo/lists/label.tsx'
+                        import LabelCode from '-!text!../../../../lib/pc/timepicker/demo/lists/label.tsx'
                         import LabelMarkdown from '../../../../lib/pc/timepicker/demo/lists/label.md'
                         
-                        import LimitComponent from '../../../../lib/pc/timepicker/demo/lists/limit.js'
-                        import LimitCode from '-!text!../../../../lib/pc/timepicker/demo/lists/limit.js'
+                        import LimitComponent from '../../../../lib/pc/timepicker/demo/lists/limit.tsx'
+                        import LimitCode from '-!text!../../../../lib/pc/timepicker/demo/lists/limit.tsx'
                         import LimitMarkdown from '../../../../lib/pc/timepicker/demo/lists/limit.md'
                         
 
@@ -106,7 +109,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={TimepickerSourceCode} instance={TimepickerSource} />
+                                <CodeDoc code={TimepickerSourceCode} instance={TimepickerSource} moduleCode={TimepickerModuleCode} moduleInstance={TimepickerModule} />
                             </div>
                             
                                 </div>

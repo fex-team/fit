@@ -14,47 +14,56 @@
                 const store = createStore()
 
                 
-                            import RadioSource from '../../../../lib/pc/radio/src/radio'
-                            import RadioSourceCode from '-!text!../../../../lib/pc/radio/src/radio'
+                            import RadioSource from '../../../../lib/pc/radio/src/radio/index.tsx'
+                            import RadioSourceCode from '-!text!../../../../lib/pc/radio/src/radio/index.tsx'
                             
-                            import RadioGroupSource from '../../../../lib/pc/radio/src/radio-group'
-                            import RadioGroupSourceCode from '-!text!../../../../lib/pc/radio/src/radio-group'
+                                import * as RadioModule from '../../../../lib/pc/radio/src/radio/module.tsx'
+                                import RadioModuleCode from '-!text!../../../../lib/pc/radio/src/radio/module.tsx'
+                                
+                            import RadioGroupSource from '../../../../lib/pc/radio/src/radio-group/index.tsx'
+                            import RadioGroupSourceCode from '-!text!../../../../lib/pc/radio/src/radio-group/index.tsx'
                             
-                            import RadioButtonSource from '../../../../lib/pc/radio/src/radio-button'
-                            import RadioButtonSourceCode from '-!text!../../../../lib/pc/radio/src/radio-button'
+                                import * as RadioGroupModule from '../../../../lib/pc/radio/src/radio-group/module.tsx'
+                                import RadioGroupModuleCode from '-!text!../../../../lib/pc/radio/src/radio-group/module.tsx'
+                                
+                            import RadioButtonSource from '../../../../lib/pc/radio/src/radio-button/index.tsx'
+                            import RadioButtonSourceCode from '-!text!../../../../lib/pc/radio/src/radio-button/index.tsx'
                             
+                                import * as RadioButtonModule from '../../../../lib/pc/radio/src/radio-button/module.tsx'
+                                import RadioButtonModuleCode from '-!text!../../../../lib/pc/radio/src/radio-button/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/radio/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/radio/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/radio/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/radio/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/radio/demo/lists/basic.md'
                         
-                        import ButtonComponent from '../../../../lib/pc/radio/demo/lists/button.js'
-                        import ButtonCode from '-!text!../../../../lib/pc/radio/demo/lists/button.js'
+                        import ButtonComponent from '../../../../lib/pc/radio/demo/lists/button.tsx'
+                        import ButtonCode from '-!text!../../../../lib/pc/radio/demo/lists/button.tsx'
                         import ButtonMarkdown from '../../../../lib/pc/radio/demo/lists/button.md'
                         
-                        import CallbackComponent from '../../../../lib/pc/radio/demo/lists/callback.js'
-                        import CallbackCode from '-!text!../../../../lib/pc/radio/demo/lists/callback.js'
+                        import CallbackComponent from '../../../../lib/pc/radio/demo/lists/callback.tsx'
+                        import CallbackCode from '-!text!../../../../lib/pc/radio/demo/lists/callback.tsx'
                         import CallbackMarkdown from '../../../../lib/pc/radio/demo/lists/callback.md'
                         
-                        import CustomComponent from '../../../../lib/pc/radio/demo/lists/custom.js'
-                        import CustomCode from '-!text!../../../../lib/pc/radio/demo/lists/custom.js'
+                        import CustomComponent from '../../../../lib/pc/radio/demo/lists/custom.tsx'
+                        import CustomCode from '-!text!../../../../lib/pc/radio/demo/lists/custom.tsx'
                         import CustomMarkdown from '../../../../lib/pc/radio/demo/lists/custom.md'
                         
-                        import DisableComponent from '../../../../lib/pc/radio/demo/lists/disable.js'
-                        import DisableCode from '-!text!../../../../lib/pc/radio/demo/lists/disable.js'
+                        import DisableComponent from '../../../../lib/pc/radio/demo/lists/disable.tsx'
+                        import DisableCode from '-!text!../../../../lib/pc/radio/demo/lists/disable.tsx'
                         import DisableMarkdown from '../../../../lib/pc/radio/demo/lists/disable.md'
                         
-                        import GroupComponent from '../../../../lib/pc/radio/demo/lists/group.js'
-                        import GroupCode from '-!text!../../../../lib/pc/radio/demo/lists/group.js'
+                        import GroupComponent from '../../../../lib/pc/radio/demo/lists/group.tsx'
+                        import GroupCode from '-!text!../../../../lib/pc/radio/demo/lists/group.tsx'
                         import GroupMarkdown from '../../../../lib/pc/radio/demo/lists/group.md'
                         
-                        import LabelComponent from '../../../../lib/pc/radio/demo/lists/label.js'
-                        import LabelCode from '-!text!../../../../lib/pc/radio/demo/lists/label.js'
+                        import LabelComponent from '../../../../lib/pc/radio/demo/lists/label.tsx'
+                        import LabelCode from '-!text!../../../../lib/pc/radio/demo/lists/label.tsx'
                         import LabelMarkdown from '../../../../lib/pc/radio/demo/lists/label.md'
                         
-                        import SizeComponent from '../../../../lib/pc/radio/demo/lists/size.js'
-                        import SizeCode from '-!text!../../../../lib/pc/radio/demo/lists/size.js'
+                        import SizeComponent from '../../../../lib/pc/radio/demo/lists/size.tsx'
+                        import SizeCode from '-!text!../../../../lib/pc/radio/demo/lists/size.tsx'
                         import SizeMarkdown from '../../../../lib/pc/radio/demo/lists/size.md'
                         
 
@@ -187,15 +196,15 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={RadioSourceCode} instance={RadioSource} />
+                                <CodeDoc code={RadioSourceCode} instance={RadioSource} moduleCode={RadioModuleCode} moduleInstance={RadioModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={RadioGroupSourceCode} instance={RadioGroupSource} />
+                                <CodeDoc code={RadioGroupSourceCode} instance={RadioGroupSource} moduleCode={RadioGroupModuleCode} moduleInstance={RadioGroupModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={RadioButtonSourceCode} instance={RadioButtonSource} />
+                                <CodeDoc code={RadioButtonSourceCode} instance={RadioButtonSource} moduleCode={RadioButtonModuleCode} moduleInstance={RadioButtonModule} />
                             </div>
                             
                                 </div>
