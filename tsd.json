@@ -32,9 +32,6 @@
     "superagent/superagent.d.ts": {
       "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
     },
-    "node/node.d.ts": {
-      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
-    },
     "react-router/history.d.ts": {
       "commit": "73f7bb99692823f1811817f9753a02b57af5305e"
     },
@@ -76,6 +73,9 @@
     },
     "invariant/invariant.d.ts": {
       "commit": "415de78bb5108cd2c58078011819c26aa4fac3f9"
+    },
+    "node/node.d.ts": {
+      "commit": "2a24bbb7ca4f13e52c7f6a0ab6144b565bf1ef55"
     }
   }
 }

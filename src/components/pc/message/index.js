@@ -16,20 +16,20 @@
                 
 
                 
-                        import BasicComponent from '../../../../lib/pc/message/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/message/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/message/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/message/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/message/demo/lists/basic.md'
                         
-                        import CallbackComponent from '../../../../lib/pc/message/demo/lists/callback.js'
-                        import CallbackCode from '-!text!../../../../lib/pc/message/demo/lists/callback.js'
+                        import CallbackComponent from '../../../../lib/pc/message/demo/lists/callback.tsx'
+                        import CallbackCode from '-!text!../../../../lib/pc/message/demo/lists/callback.tsx'
                         import CallbackMarkdown from '../../../../lib/pc/message/demo/lists/callback.md'
                         
-                        import DurationComponent from '../../../../lib/pc/message/demo/lists/duration.js'
-                        import DurationCode from '-!text!../../../../lib/pc/message/demo/lists/duration.js'
+                        import DurationComponent from '../../../../lib/pc/message/demo/lists/duration.tsx'
+                        import DurationCode from '-!text!../../../../lib/pc/message/demo/lists/duration.tsx'
                         import DurationMarkdown from '../../../../lib/pc/message/demo/lists/duration.md'
                         
-                        import TypeComponent from '../../../../lib/pc/message/demo/lists/type.js'
-                        import TypeCode from '-!text!../../../../lib/pc/message/demo/lists/type.js'
+                        import TypeComponent from '../../../../lib/pc/message/demo/lists/type.tsx'
+                        import TypeCode from '-!text!../../../../lib/pc/message/demo/lists/type.tsx'
                         import TypeMarkdown from '../../../../lib/pc/message/demo/lists/type.md'
                         
 

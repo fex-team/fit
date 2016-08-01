@@ -14,13 +14,16 @@
                 const store = createStore()
 
                 
-                            import PhoneSource from '../../../../lib/pc/phone/src/phone'
-                            import PhoneSourceCode from '-!text!../../../../lib/pc/phone/src/phone'
+                            import PhoneSource from '../../../../lib/pc/phone/src/phone/index.tsx'
+                            import PhoneSourceCode from '-!text!../../../../lib/pc/phone/src/phone/index.tsx'
                             
+                                import * as PhoneModule from '../../../../lib/pc/phone/src/phone/module.tsx'
+                                import PhoneModuleCode from '-!text!../../../../lib/pc/phone/src/phone/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/phone/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/phone/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/phone/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/phone/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/phone/demo/lists/basic.md'
                         
 
@@ -76,7 +79,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={PhoneSourceCode} instance={PhoneSource} />
+                                <CodeDoc code={PhoneSourceCode} instance={PhoneSource} moduleCode={PhoneModuleCode} moduleInstance={PhoneModule} />
                             </div>
                             
                                 </div>

@@ -181,7 +181,7 @@ const publish = (info) => {
     execSync(`cd lib/${info.categoryName}/${info.module.path};npm publish`)
 }
 
-export default (info) => {
+export default (info, message) => {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
 
@@ -232,7 +232,7 @@ export default (info) => {
     }
     // try push
     consoleLog('正在提交代码..', 'grey', getModulePath(info))
-    tryPush(getModulePath(info))
+    tryPush(getModulePath(info), message)
     consoleLog('提交代码成功..', 'grey', getModulePath(info))
 
     // 如果是开放模块,删除 lib目录
