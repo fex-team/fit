@@ -4,7 +4,7 @@ import consoleLog from './console-log'
 
 const tryPush = (path, message)=> {
     try {
-        execSync(`cd ${path};git add -A;git commit -m "${message | 'quick push'}";git push origin master`)
+        execSync(`cd ${path};git add -A;git commit -m "${message}";git push origin master`)
         return true
     } catch (e) {
         const errorString = e.toString()

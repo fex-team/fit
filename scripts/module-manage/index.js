@@ -46,12 +46,12 @@ case 'push': // 提交
 
     mapModule(config, (info)=> {
         // 组件提交（内含各种编译）
-        push(info, args[1])
+        push(info, args[1] ? args[1] : 'quick push')
         // 清空所有 dts
         clearDts()
     })
 
     // fit 项目提交（直接提交）
-    tryPush('./', args[1])
+    tryPush('./', args[1] ? args[1] : 'quick push')
     break
 }
