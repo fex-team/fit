@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.8.2
+
+- `fit-process` 源码改为 typescript
+
 #### 2016.7.31
 
 - `fit-tooltip` 源码改为 typescript

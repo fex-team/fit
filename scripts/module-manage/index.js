@@ -7,8 +7,16 @@ import tryPull from './utils/try-pull'
 import tryPush from './utils/try-push'
 import versionPatch from './utils/version'
 import upgradeDependencies from './utils/upgrade-dependencies'
+import program from 'commander'
 
-const args = process.argv.slice(2)
+program
+    .version('1.0.0')
+    .option('-u, --update', '更新')
+    .option('-p, --push', '提交')
+    .option('-t, --travis', '持续集成')
+    .option('-m, --message [value]', '提交时带的信息')
+    .parse(process.argv);
+
 const allModules = getAllModules(config)
 
 const clearDts = ()=> {
@@ -26,15 +34,21 @@ const clearDts = ()=> {
     })
 }
 
-switch (args[0]) {
-case 'update': // 更新
+if (program.update) {
+    // 更新
     mapModule(config, (info)=> {
+        // 如果是 travis 模式, 跳过内部组件
+        if (program.travis && info.categoryInfo.access === 'private') {
+            return
+        }
+
         update(info)
     })
     tryPull('./')
-    break
+}
 
-case 'push': // 提交
+if (program.push) {
+    // 提交
     // 先清理一遍,防止编译到一半取消留下脏文件
     clearDts()
 
@@ -45,13 +59,16 @@ case 'push': // 提交
     versionPatch(allModules)
 
     mapModule(config, (info)=> {
+        // 如果是 travis 模式, 跳过内部组件
+        if (program.travis && info.categoryInfo.access === 'private') {
+            return
+        }
         // 组件提交（内含各种编译）
-        push(info, args[1] ? args[1] : 'quick push')
+        push(info, program.message ? program.message : 'quick push', program)
         // 清空所有 dts
         clearDts()
     })
 
     // fit 项目提交（直接提交）
-    tryPush('./', args[1] ? args[1] : 'quick push')
-    break
+    tryPush('./', program.message ? program.message : 'quick push')
 }

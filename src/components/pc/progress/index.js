@@ -14,32 +14,38 @@
                 const store = createStore()
 
                 
-                            import ProgressSource from '../../../../lib/pc/progress/src/progress'
-                            import ProgressSourceCode from '-!text!../../../../lib/pc/progress/src/progress'
+                            import ProgressSource from '../../../../lib/pc/progress/src/progress/index.tsx'
+                            import ProgressSourceCode from '-!text!../../../../lib/pc/progress/src/progress/index.tsx'
                             
-                            import ProgressCircleSource from '../../../../lib/pc/progress/src/progress-circle'
-                            import ProgressCircleSourceCode from '-!text!../../../../lib/pc/progress/src/progress-circle'
+                                import * as ProgressModule from '../../../../lib/pc/progress/src/progress/module.tsx'
+                                import ProgressModuleCode from '-!text!../../../../lib/pc/progress/src/progress/module.tsx'
+                                
+                            import ProgressCircleSource from '../../../../lib/pc/progress/src/progress-circle/index.tsx'
+                            import ProgressCircleSourceCode from '-!text!../../../../lib/pc/progress/src/progress-circle/index.tsx'
                             
+                                import * as ProgressCircleModule from '../../../../lib/pc/progress/src/progress-circle/module.tsx'
+                                import ProgressCircleModuleCode from '-!text!../../../../lib/pc/progress/src/progress-circle/module.tsx'
+                                
 
                 
-                        import BasicComponent from '../../../../lib/pc/progress/demo/lists/basic.js'
-                        import BasicCode from '-!text!../../../../lib/pc/progress/demo/lists/basic.js'
+                        import BasicComponent from '../../../../lib/pc/progress/demo/lists/basic.tsx'
+                        import BasicCode from '-!text!../../../../lib/pc/progress/demo/lists/basic.tsx'
                         import BasicMarkdown from '../../../../lib/pc/progress/demo/lists/basic.md'
                         
-                        import StatusComponent from '../../../../lib/pc/progress/demo/lists/status.js'
-                        import StatusCode from '-!text!../../../../lib/pc/progress/demo/lists/status.js'
+                        import StatusComponent from '../../../../lib/pc/progress/demo/lists/status.tsx'
+                        import StatusCode from '-!text!../../../../lib/pc/progress/demo/lists/status.tsx'
                         import StatusMarkdown from '../../../../lib/pc/progress/demo/lists/status.md'
                         
-                        import CircleComponent from '../../../../lib/pc/progress/demo/lists/circle.js'
-                        import CircleCode from '-!text!../../../../lib/pc/progress/demo/lists/circle.js'
+                        import CircleComponent from '../../../../lib/pc/progress/demo/lists/circle.tsx'
+                        import CircleCode from '-!text!../../../../lib/pc/progress/demo/lists/circle.tsx'
                         import CircleMarkdown from '../../../../lib/pc/progress/demo/lists/circle.md'
                         
-                        import LabelComponent from '../../../../lib/pc/progress/demo/lists/label.js'
-                        import LabelCode from '-!text!../../../../lib/pc/progress/demo/lists/label.js'
+                        import LabelComponent from '../../../../lib/pc/progress/demo/lists/label.tsx'
+                        import LabelCode from '-!text!../../../../lib/pc/progress/demo/lists/label.tsx'
                         import LabelMarkdown from '../../../../lib/pc/progress/demo/lists/label.md'
                         
-                        import LabelCircleComponent from '../../../../lib/pc/progress/demo/lists/label-circle.js'
-                        import LabelCircleCode from '-!text!../../../../lib/pc/progress/demo/lists/label-circle.js'
+                        import LabelCircleComponent from '../../../../lib/pc/progress/demo/lists/label-circle.tsx'
+                        import LabelCircleCode from '-!text!../../../../lib/pc/progress/demo/lists/label-circle.tsx'
                         import LabelCircleMarkdown from '../../../../lib/pc/progress/demo/lists/label-circle.md'
                         
 
@@ -139,11 +145,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={ProgressSourceCode} instance={ProgressSource} />
+                                <CodeDoc code={ProgressSourceCode} instance={ProgressSource} moduleCode={ProgressModuleCode} moduleInstance={ProgressModule} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={ProgressCircleSourceCode} instance={ProgressCircleSource} />
+                                <CodeDoc code={ProgressCircleSourceCode} instance={ProgressCircleSource} moduleCode={ProgressCircleModuleCode} moduleInstance={ProgressCircleModule} />
                             </div>
                             
                                 </div>

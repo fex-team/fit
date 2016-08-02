@@ -12,7 +12,7 @@ node_js:
 
 before_script:
   - rm -rf lib
-  - npm run update
+  - npm run update-travis
 
 script:
   - npm run build
