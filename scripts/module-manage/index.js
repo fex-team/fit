@@ -14,8 +14,8 @@ program
     .option('-u, --update', '更新')
     .option('-p, --push', '提交')
     .option('-t, --travis', '持续集成')
-    .option('-m, --message [value]', '提交时带的信息')
-    .parse(process.argv);
+    .option('-m, --message [value]', '提交时带的信息', 'quick push')
+    .parse(process.argv)
 
 const allModules = getAllModules(config)
 
@@ -64,11 +64,11 @@ if (program.push) {
             return
         }
         // 组件提交（内含各种编译）
-        push(info, program.message ? program.message : 'quick push', program)
+        push(info, program.message, program)
         // 清空所有 dts
         clearDts()
     })
 
     // fit 项目提交（直接提交）
-    tryPush('./', program.message ? program.message : 'quick push')
+    tryPush('./', program.message)
 }
