@@ -4,8 +4,7 @@
 // Karma configuration
 // Generated on Fri Dec 18 2015 12:30:32 GMT+0800 (CST)
 var webpack = require('webpack')
-var resolve = require('./resolve')
-var externals = require('./externals')
+var resolve = require('../webpack/resolve')
 var argv = require('yargs').argv
 
 module.exports = function (config) {
@@ -13,7 +12,7 @@ module.exports = function (config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+        basePath: '../../',
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -48,38 +47,33 @@ module.exports = function (config) {
 
                 loaders: [
                     {
-                        test: /\.(jsx|js|es6)?$/,
-                        exclude: [/node_modules/, /demo\/lists/],
+                        test   : /\.(tsx|ts)?$/,
+                        exclude: [/node_modules/],
+                        loaders: ['babel', 'ts-loader', 'html-path-loader']
+                    }, {
+                        test   : /\.(jsx|js)?$/,
+                        exclude: [/node_modules/],
                         loaders: ['babel', 'html-path-loader']
                     }, {
-                        test: /\.(jsx|js|es6)?$/,
-                        include: [/demo/],
-                        loaders: ['html-path-loader']
-                    }, {
-                        test: /\.js?$/,
-                        exclude: [/node_modules/, /demo\/lists/, /.*\.spec\.js/],
-                        loader: 'isparta'
-                    }, {
-                        test: /\.(scss|css)/,
-                        exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
+                        test   : /\.(scss|css)/,
+                        exclude: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
                         loaders: ['style', 'css', 'autoprefixer', 'sass', 'css-path-loader']
-                    },
-                    {
-                        test: /\.(scss|css)/,
-                        include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/, /demo\/lists/],
+                    }, {
+                        test   : /\.(scss|css)/,
+                        include: [/node_modules/, /lib\/pc\/style/, /lib\/mobile\/style/],
                         loaders: ['style', 'css', 'autoprefixer', 'sass']
                     }, {
-                        test: /\.(png|jpg)$/,
+                        test   : /\.(png|jpg)$/,
                         exclude: /node_modules/,
-                        loader: 'url?limit=3000&name=img/[hash:8].[name].[ext]'
+                        loaders: ['url?limit=1024&name=img/[hash:8].[name].[ext]']
                     }, {
-                        test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                        loader: 'url?limit=3000&name=font/[hash:8].[name].[ext]'
+                        test   : /\.(woff|woff2|ttf|eot|svg)/,
+                        loaders: ['url?limit=1024&name=font/[hash:8].[name].[ext]']
                     }, {
-                        test: /\.json$/,
+                        test  : /\.json$/,
                         loader: 'json-loader'
                     }, {
-                        test: /\.md$/,
+                        test  : /\.md$/,
                         loader: 'text-loader'
                     }
                 ]
