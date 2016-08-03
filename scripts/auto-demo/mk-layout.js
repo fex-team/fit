@@ -4,8 +4,13 @@ import _ from 'lodash'
 import mkdirp from 'mkdirp'
 import getDemoArray from './utils/get-demo-array'
 
-const mkLayout = (categorys)=> {
+const mkLayout = (categorys, program)=> {
     for (let categoryKey in categorys) {
+        // 如果是 travis 模式,跳过内部模块
+        if (program.travis && categorys[categoryKey].access === 'private'){
+            continue
+        }
+
         // pc tb 等等模块名
         let menus = ''
         let renderFactory = ''

@@ -2,12 +2,17 @@ import fs from 'fs'
 import _ from 'lodash'
 import getDemoArray from './utils/get-demo-array'
 
-const mkRouter = (categorys)=> {
+const mkRouter = (categorys, program)=> {
     let routerPath = ''
     let routerComponent = ''
     let homeImport = ''
 
     for (let categoryKey in categorys) {
+        // 如果是 travis 模式,跳过内部模块
+        if (program.travis && categorys[categoryKey].access === 'private') {
+            continue
+        }
+
         // pc tb 等等模块名
         routerPath += `
         // ${categoryKey}

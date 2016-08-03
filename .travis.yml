@@ -11,7 +11,9 @@ node_js:
   - "5.0"
 
 before_script:
-  - npm run babel-scripts && node scripts-babel/module-manage/index.js --update --travis --token $GH_TOKEN && npm run demo-init
+  - npm run babel-scripts
+  - node scripts-babel/module-manage/index.js --update --travis --token $GH_TOKEN
+  - node scripts-babel/auto-demo/index.js --travis
 
 script:
   - npm run build
