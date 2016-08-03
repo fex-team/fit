@@ -17,6 +17,7 @@ before_script:
 
 script:
   - npm run build
+  - npm test
 
 cache:
   directories:
