@@ -4,7 +4,7 @@ import consoleLog from './console-log'
 const tryPull = (path)=> {
     // 先看看status对不对
     const gitStatus = execSync(`cd ${path};git status`)
-    console.log('tryPull', gitStatus)
+    console.log('tryPull', gitStatus.toString())
     if (gitStatus.indexOf('Changes not staged for commit') > -1) {
         consoleLog(`有没提交的修改,正在提交..`, 'grey', path)
         execSync(`cd ${path};git add -A;git commit -m "quick push"`)
