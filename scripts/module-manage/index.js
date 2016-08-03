@@ -39,6 +39,7 @@ if (program.update) {
     // 更新
     mapModule(config, (info)=> {
         // 如果是 travis 模式, 跳过内部组件
+        console.log('判断travis:', program.travis, info.categoryInfo.access)
         if (program.travis && info.categoryInfo.access === 'private') {
             return
         }
