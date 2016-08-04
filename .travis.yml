@@ -12,8 +12,7 @@ node_js:
 
 before_script:
   - npm run babel-scripts
-  - node scripts-babel/module-manage/index.js --update --travis --token $GH_TOKEN
-  - node scripts-babel/auto-demo/index.js --travis
+  - npm run update -- --travis --token $GH_TOKEN
 
 script:
   - npm run build
