@@ -29,7 +29,8 @@
         "demo-init": "node scripts-babel/auto-demo/index.js",
         "test": "./node_modules/karma/bin/karma start scripts/test/karma.conf.js",
         "test:dev": "npm run test -- --debug",
-        "test:backend": "node test/server-render-entry.js"
+        "test:backend": "node test/server-render-entry.js",
+        "work": "node work.js"
     },
     "author": "",
     "license": "ISC",
