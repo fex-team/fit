@@ -11,11 +11,11 @@ node_js:
   - "5.0"
 
 before_script:
-  - npm run babel-scripts
   - npm run update -- --travis --token $GH_TOKEN
+  - npm run demo-init -- --travis
 
 script:
-  - npm run build
+  - npm run build -- --travis
   - npm test
 
 cache:
