@@ -1,6 +1,5 @@
 import React from 'react'
-import {Link, Router} from 'react-router'
-import Button from 'fit-button'
+import {Link} from 'react-router'
 import SearchComponent from '../../components/search-components'
 import './index.scss'
 
@@ -16,17 +15,25 @@ export default class Home extends React.Component {
             <div className="_namespace">
                 <div className="hero">
                     <div className="container nav-bar">
-                        <Link to="/"
-                              className="brand item">FIT</Link>
-                        <Link to="/components"
-                              className="item">组件库</Link>
-                        <Link to="/designer"
-                              className="disabled item">在线编辑器(V0.1.0)</Link>
+                        <div className="nav-bar-second-container">
+                            <Link to="/"
+                                  className="brand item">FIT</Link>
+                            <Link to="/components"
+                                  className="item">组件库</Link>
+                            <Link to="/designer"
+                                  className="disabled item">在线编辑器(V0.2.23)</Link>
+                        </div>
+
+                        <div className="nav-bar-second-container">
+                            <a className="github-link"
+                               target="_blank"
+                               href="https://github.com/fex-team/fit"><i className="fa fa-github"/></a>
+                        </div>
                     </div>
                     <div className="super-content">
                         <div className="brand">FIT</div>
                         <div className="description"
-                             style={{marginBottom:20}}>React 组件化解决方案
+                             style={{marginBottom: 20}}>React 组件化解决方案
                         </div>
                         <SearchComponent width={300}/>
                     </div>
