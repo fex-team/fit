@@ -22,7 +22,7 @@ module.exports = function (config) {
         files: [
             'node_modules/babel-polyfill/dist/polyfill.js',
             'node_modules/phantomjs-polyfill/bind-polyfill.js',
-            'lib/**/*.spec.js' // specify files to watch for tests
+            'lib/**/*.spec.tsx' // specify files to watch for tests
         ],
 
         // list of files to exclude
@@ -33,7 +33,7 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'lib/**/*.spec.js': ['webpack', 'sourcemap']
+            'lib/**/*.spec.tsx': ['webpack', 'sourcemap']
         },
 
         webpack: {
@@ -91,6 +91,13 @@ module.exports = function (config) {
 
             alias: {
                 'sinon': 'sinon/pkg/sinon'
+            },
+
+            // 这三行配置兼容 enzyme 对 React 15.[0-3].x
+            externals: {
+                'react/lib/ExecutionEnvironment': true,
+                'react/addons': true,
+                'react/lib/ReactContext': 'window'
             }
         },
 
