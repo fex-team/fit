@@ -139,7 +139,9 @@ const deleteDTS = (info) => {
     if (info.categoryInfo.access === 'private') {
         execSync(`find ${modulePath}/src -name "*.d.ts" | xargs rm`)
     } else {
-        execSync(`find ${modulePath} -name "*.d.ts" | xargs rm`)
+        // 这种目录全扫描,会豁免 models 目录!
+        // 这样,我们就可以在组件的 models 目录下定义 d.ts 文件而不用担心被删除啦!
+        execSync(`find ${modulePath} -not -path "${modulePath}/models/*" -name "*.d.ts" | xargs rm`)
     }
 
     // 如果包含 .tsx 文件,则删除 src 下的 jsx 文件

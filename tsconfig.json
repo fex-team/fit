@@ -9,12 +9,14 @@
         "jsx": "react",
         "sourceMap": true
     },
+    "filesGlob": [
+        "*.d.ts"
+    ],
     "exclude": [
         "node_modules",
         "output",
         "typings",
         "test_coverage_html",
-        "test_jasmine_html",
-        "auto-typings"
+        "test_jasmine_html"
     ]
 }

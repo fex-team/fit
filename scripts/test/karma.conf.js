@@ -81,8 +81,8 @@ module.exports = function (config) {
 
             plugins: [
                 new webpack.DefinePlugin({
-                    "process.env": {
-                        NODE_ENV: JSON.stringify("production")
+                    'process.env': {
+                        NODE_ENV: JSON.stringify('production')
                     }
                 })
             ],
@@ -111,7 +111,7 @@ module.exports = function (config) {
         reporters: ['dots', 'coverage', 'html'],
 
         htmlReporter: {
-            outputDir: 'test_jasmine_html', // where to put the reports
+            outputDir: 'test/jasmine', // where to put the reports
             templatePath: null, // set if you moved jasmine_template.html
             focusOnFailures: true, // reports show failures on start
             namedFiles: false, // name files instead of creating sub-directories
@@ -126,7 +126,7 @@ module.exports = function (config) {
 
         coverageReporter: {
             type: 'html',
-            dir: './test_coverage_html/'
+            dir: 'test/coverage'
         },
 
         // web server port

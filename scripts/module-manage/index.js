@@ -25,11 +25,14 @@ const clearDts = ()=> {
     allModules.forEach(info=> {
         // 除了内部模块,全删
         if (info.categoryInfo.access === 'public') {
-            execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.d.ts" | xargs rm`)
+            // d.ts 要保留 models 下的
+            execSync(`find ./lib/${info.categoryName}/${info.module.path} -not -path "./lib/${info.categoryName}/${info.module.path}/models/*" -name "*.d.ts" | xargs rm`)
+
             execSync(`find ./lib/${info.categoryName}/${info.module.path} -name "*.jsx" | xargs rm`)
         } else {
             // 是私有模块,只删除 src 的
             execSync(`find ./lib/${info.categoryName}/${info.module.path}/src -name "*.d.ts" | xargs rm`)
+
             execSync(`find ./lib/${info.categoryName}/${info.module.path}/src -name "*.jsx" | xargs rm`)
         }
     })

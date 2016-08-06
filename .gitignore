@@ -2,6 +2,6 @@ node_modules
 .idea
 npm-debug.log
 scripts-babel
-test_coverage_html
-test_jasmine_html
+test/coverage
+test/jasmine
 lib
