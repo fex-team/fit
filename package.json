@@ -137,6 +137,8 @@
     "md5": "^2.1.0",
     "mkdirp": "^0.5.1",
     "mobile-detect": "^1.3.2",
+    "mobx": "^2.4.2",
+    "mobx-react": "^3.5.4",
     "moment": "^2.12.0",
     "object-assign": "^4.0.1",
     "operative": "^0.4.4",
