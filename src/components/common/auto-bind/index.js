@@ -8,17 +8,17 @@
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import SidebarComponent from '../../../../components/side-bar'
-                import readme from '../../../../lib/pc/gaea/readme.md'
-                import '../../../../lib/pc/gaea/demo'
+                import readme from '../../../../lib/common/auto-bind/readme.md'
+                import '../../../../lib/common/auto-bind/demo'
 
                 const store = createStore()
 
                 
-                            import //export GaeaSource from '../../../../lib/pc/gaea/src/export-gaea/index.tsx'
-                            import //export GaeaSourceCode from '-!text!../../../../lib/pc/gaea/src/export-gaea/index.tsx'
+                            import autoBindMethodSource from '../../../../lib/common/auto-bind/src/auto-bind-method/index.tsx'
+                            import autoBindMethodSourceCode from '-!text!../../../../lib/common/auto-bind/src/auto-bind-method/index.tsx'
                             
-                            import PreviewSource from '../../../../lib/pc/gaea/src/preview/index.tsx'
-                            import PreviewSourceCode from '-!text!../../../../lib/pc/gaea/src/preview/index.tsx'
+                            import autoBindClassSource from '../../../../lib/common/auto-bind/src/auto-bind-class/index.tsx'
+                            import autoBindClassSourceCode from '-!text!../../../../lib/common/auto-bind/src/auto-bind-class/index.tsx'
                             
 
                 
@@ -39,7 +39,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = '盖亚可视化编辑器'
+                        document.title = '自动绑定'
                     }
 
                     handlePageChange(value) {
@@ -64,11 +64,11 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={//export GaeaSourceCode} instance={//export GaeaSource} />
+                                <CodeDoc code={autoBindMethodSourceCode} instance={autoBindMethodSource} />
                             </div>
                             
                             <div style={docStyle}>
-                                <CodeDoc code={PreviewSourceCode} instance={PreviewSource} />
+                                <CodeDoc code={autoBindClassSourceCode} instance={autoBindClassSource} />
                             </div>
                             
                                 </div>
@@ -87,7 +87,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width={120}>
-                                        <SidebarComponent gitlabUrl="https://github.com/fit-component/pc-gaea/tree/master"
+                                        <SidebarComponent gitlabUrl="https://github.com/fit-component/auto-bind/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>

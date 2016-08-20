@@ -5,3 +5,4 @@ scripts-babel
 test/coverage
 test/jasmine
 lib
+built

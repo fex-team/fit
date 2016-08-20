@@ -9,7 +9,7 @@ import Title from './components/title'
 const info = {
     components            : [Title, Button],
     version               : '1.3.0',
-    pageInfo              : data,
+    defaultValue              : data,
     versionInit           : (save)=> {
         save([{
             date: new Date(),

@@ -100,8 +100,6 @@
                 
                 import fitCropperComponent from './components/pc/cropper'
                 
-                import fitGaeaComponent from './components/pc/gaea'
-                
         // mobile
         
                 import fitResetComponent from './components/mobile/reset'
@@ -265,9 +263,6 @@
                 
                 <Route path="cropper"
                        component={fitCropperComponent}/>
-                
-                <Route path="gaea"
-                       component={fitGaeaComponent}/>
                 
         </Route>
         

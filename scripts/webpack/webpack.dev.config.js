@@ -24,7 +24,7 @@ var config = {
             {
                 test   : /\.(tsx|ts)?$/,
                 exclude: [/node_modules/],
-                loaders: ['react-hot-loader', 'ts-loader', 'html-path-loader']
+                loaders: ['react-hot-loader','babel', 'ts-loader', 'html-path-loader']
             }, {
                 test   : /\.(jsx|js)?$/,
                 exclude: [/node_modules/],

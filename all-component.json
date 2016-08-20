@@ -39,6 +39,10 @@
                     {
                         "name": "图片预加载",
                         "path": "image-preload"
+                    },
+                    {
+                        "name": "自动绑定",
+                        "path": "auto-bind"
                     }
                 ],
                 "编译脚本": [

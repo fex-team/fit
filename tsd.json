@@ -65,11 +65,8 @@
     "react-dnd/react-dnd.d.ts": {
       "commit": "8daa4ef04a6620f650c3617a28f1a2ef444f29f6"
     },
-    "react/react-addons-pure-render-mixin.d.ts": {
-      "commit": "26a1f8c44f5fe76168df717020bfb93839b63db3"
-    },
     "pure-render-decorator/pure-render-decorator.d.ts": {
-      "commit": "1315d46f8066eec8c197914da88e98629ebc2254"
+      "commit": "611669c15328d2356355e0cec6cc15df2abe42d6"
     },
     "invariant/invariant.d.ts": {
       "commit": "415de78bb5108cd2c58078011819c26aa4fac3f9"
@@ -88,6 +85,9 @@
     },
     "mocha/mocha.d.ts": {
       "commit": "e65947027120a0dc77723266906e4ce6c28bd725"
+    },
+    "keymaster/keymaster.d.ts": {
+      "commit": "21ea263edc07408cb0db6cdf5af9299d90ad72ed"
     }
   }
 }
