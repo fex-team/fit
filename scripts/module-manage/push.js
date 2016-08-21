@@ -101,8 +101,14 @@ const autoTypings = (content, info, filePath, rootPath)=> {
 
 const createDTs = (info) => {
     const tsxPath = `./lib/${info.categoryName}/${info.module.path}`
-    if (fs.existsSync(tsxPath)) {
-        execSync(`tsc -d --experimentalDecorators --jsx preserve --t es6 -m commonjs --outDir ${tsxPath}/lib  ${tsxPath}/src/index.tsx`)
+
+    if (fs.existsSync(tsxPath + '/src/index.tsx')) {
+        if (fs.existsSync(tsxPath)) {
+            execSync(`tsc -d --experimentalDecorators --jsx preserve --t es6 -m commonjs --outDir ${tsxPath}/lib  ${tsxPath}/src/index.tsx`)
+        }
+    } else {
+        // js 文件暂时拷贝过去
+        execSync(`cp -r ${tsxPath}/src ${tsxPath}/lib`)
     }
 }
 
@@ -146,13 +152,13 @@ export default (info, message) => {
         // 先删除 lib 目录
         deleteLib(info)
 
-        // 生成 d.ts 文件
+        // typescript 编译
         createDTs(info)
 
         // 加工 d.ts
         parseDTs(info)
 
-        // 编译
+        // babel sass 编译
         consoleLog('正在编译..', 'grey', getModulePath(info))
         let modulePath = `./lib/${info.categoryName}/${info.module.path}/lib`
         build(info, modulePath)
