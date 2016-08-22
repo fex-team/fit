@@ -27,3 +27,5 @@
 /// <reference path="mocha/mocha.d.ts" />
 /// <reference path="pure-render-decorator/pure-render-decorator.d.ts" />
 /// <reference path="keymaster/keymaster.d.ts" />
+/// <reference path="react/react-addons-transition-group.d.ts" />
+/// <reference path="react/react-addons-css-transition-group.d.ts" />

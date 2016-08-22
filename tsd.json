@@ -60,7 +60,7 @@
       "commit": "e0abafb1a6ff652f7ff967120e312d5c1916eaef"
     },
     "react/react.d.ts": {
-      "commit": "0d1048c7bbac722c592c5e9af54e310fc5658053"
+      "commit": "55c3e254e151847b8d37ca09b1a566ad4a48a66a"
     },
     "react-dnd/react-dnd.d.ts": {
       "commit": "8daa4ef04a6620f650c3617a28f1a2ef444f29f6"
@@ -88,6 +88,12 @@
     },
     "keymaster/keymaster.d.ts": {
       "commit": "21ea263edc07408cb0db6cdf5af9299d90ad72ed"
+    },
+    "react/react-addons-transition-group.d.ts": {
+      "commit": "55c3e254e151847b8d37ca09b1a566ad4a48a66a"
+    },
+    "react/react-addons-css-transition-group.d.ts": {
+      "commit": "55c3e254e151847b8d37ca09b1a566ad4a48a66a"
     }
   }
 }
