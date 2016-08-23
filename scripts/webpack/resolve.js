@@ -101,7 +101,9 @@ module.exports = {
 
         // fix enzyme's bug
         'react/lib/ExecutionEnvironment': 'execution-environment',
-        'react/lib/ReactContext'        : 'react-context'
+        'react/lib/ReactContext'        : 'react-context',
+
+        'react-native': 'react-native-web'
     },
     extensions: ['', '.js', '.jsx', '.tsx', '.ts', 'coffee', '.cjsx', '.es6', '.json']
 }

@@ -29,3 +29,4 @@
 /// <reference path="keymaster/keymaster.d.ts" />
 /// <reference path="react/react-addons-transition-group.d.ts" />
 /// <reference path="react/react-addons-css-transition-group.d.ts" />
+/// <reference path="./index.d.ts" />

@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.8.23
+
+- `fit-panel` [breakChange] `tabPanel` 的 key 属性修改为 activeKey, 避免与 key 属性冲突
+
 #### 2016.8.20
 
 - `fit-gaea` 发布 1.0.0 版本, 极大优化了性能, 流畅支持 2000 个组件实例编辑
