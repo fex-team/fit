@@ -62,6 +62,9 @@ if (program.push) {
     // 更新版本依赖,对有修改的或者被依赖的发布新版本
     versionPatch(allModules)
 
+    // 执行 tsc
+    execSync(`tsc -d`)
+
     mapModule(config, (info)=> {
         // 如果是 travis 模式, 跳过内部组件
         if (program.travis && info.categoryInfo.access === 'private') {
@@ -69,9 +72,10 @@ if (program.push) {
         }
         // 组件提交（内含各种编译）
         push(info, program.message, program)
-        // 清空所有 dts
-        clearDts()
     })
+
+    // 清空所有 dts
+    clearDts()
 
     // fit 项目提交（直接提交）
     tryPush('./', program.message)

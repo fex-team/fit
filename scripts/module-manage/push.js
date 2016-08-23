@@ -101,10 +101,11 @@ const autoTypings = (content, info, filePath, rootPath)=> {
 
 const createDTs = (info) => {
     const tsxPath = `./lib/${info.categoryName}/${info.module.path}`
-
     if (fs.existsSync(tsxPath + '/src/index.tsx')) {
-        if (fs.existsSync(tsxPath)) {
-            execSync(`tsc -d --experimentalDecorators --jsx preserve --t es6 -m commonjs --outDir ${tsxPath}/lib  ${tsxPath}/src/index.tsx`)
+        const builtTsxPath = `./built/lib/${info.categoryName}/${info.module.path}`
+        if (fs.existsSync(builtTsxPath)) {
+            // 直接拷贝过去
+            execSync(`mv ${builtTsxPath}/src ${tsxPath}/lib`)
         }
     } else {
         // js 文件暂时拷贝过去
@@ -148,48 +149,48 @@ export default (info, message) => {
     // 是否有修改
     const hasChange = hasChanges(getModulePath(info))
 
-    if (hasChange) {
-        // 先删除 lib 目录
-        deleteLib(info)
+    //if (hasChange) {
+    // 先删除 lib 目录
+    deleteLib(info)
 
-        // typescript 编译
-        createDTs(info)
+    // typescript 编译
+    createDTs(info)
 
-        // 加工 d.ts
-        parseDTs(info)
+    // 加工 d.ts
+    //parseDTs(info)
 
-        // babel sass 编译
-        consoleLog('正在编译..', 'grey', getModulePath(info))
-        let modulePath = `./lib/${info.categoryName}/${info.module.path}/lib`
-        build(info, modulePath)
-        consoleLog('编译完成', 'green', getModulePath(info))
+    // babel sass 编译
+    consoleLog('正在编译..', 'grey', getModulePath(info))
+    let modulePath = `./lib/${info.categoryName}/${info.module.path}/lib`
+    //build(info, modulePath)
+    consoleLog('编译完成', 'green', getModulePath(info))
 
-        // 如果是开放模块,发布 npm
-        if (info.categoryInfo.access === 'public') {
-            consoleLog('发布中..', 'grey', getModulePath(info))
-            publish(info)
-            consoleLog('发布完成', 'green', getModulePath(info))
-        }
-
-        // 如果是开放模块,删除 lib 目录
-        // 私有模块因为通过内部平台直接安装,源码需要保存 lib 目录
-        if (info.categoryInfo.access === 'public') {
-            deleteLib(info)
-        }
-
-        // 如果是开放模块,通知 cnpm 更新
-        if (info.categoryInfo.access === 'public') {
-            syncCnpm(info)
-        }
-
-        // try push
-        consoleLog('正在提交代码..', 'grey', getModulePath(info))
-        tryPush(getModulePath(info), message)
-        consoleLog('提交代码成功..', 'grey', getModulePath(info))
+    // 如果是开放模块,发布 npm
+    if (info.categoryInfo.access === 'public') {
+        consoleLog('发布中..', 'grey', getModulePath(info))
+        //publish(info)
+        consoleLog('发布完成', 'green', getModulePath(info))
     }
+
+    // 如果是开放模块,删除 lib 目录
+    // 私有模块因为通过内部平台直接安装,源码需要保存 lib 目录
+    if (info.categoryInfo.access === 'public') {
+        //deleteLib(info)
+    }
+
+    // 如果是开放模块,通知 cnpm 更新
+    if (info.categoryInfo.access === 'public') {
+        //syncCnpm(info)
+    }
+
+    // try push
+    consoleLog('正在提交代码..', 'grey', getModulePath(info))
+    //tryPush(getModulePath(info), message)
+    consoleLog('提交代码成功..', 'grey', getModulePath(info))
+    //}
 
     // 如果是开放模块,删除 lib目录
     if (info.categoryInfo.access === 'public') {
-        deleteLib(info)
+        //deleteLib(info)
     }
 }
