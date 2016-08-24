@@ -14,8 +14,8 @@
                 const store = createStore()
 
                 
-                            import //export GaeaSource from '../../../../lib/pc/gaea/src/export-gaea/index.tsx'
-                            import //export GaeaSourceCode from '-!text!../../../../lib/pc/gaea/src/export-gaea/index.tsx'
+                            import GaeaSource from '../../../../lib/pc/gaea/src/gaea/index.tsx'
+                            import GaeaSourceCode from '-!text!../../../../lib/pc/gaea/src/gaea/index.tsx'
                             
                             import PreviewSource from '../../../../lib/pc/gaea/src/preview/index.tsx'
                             import PreviewSourceCode from '-!text!../../../../lib/pc/gaea/src/preview/index.tsx'
@@ -64,7 +64,7 @@
                                 <div>
                                     
                             <div style={docStyle}>
-                                <CodeDoc code={//export GaeaSourceCode} instance={//export GaeaSource} />
+                                <CodeDoc code={GaeaSourceCode} instance={GaeaSource} />
                             </div>
                             
                             <div style={docStyle}>
