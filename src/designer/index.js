@@ -3,7 +3,7 @@ import Gaea from 'fit-gaea'
 import data from './data.json'
 import _ from 'lodash'
 
-import WebComponent from '../../lib/pc/gaea/src/native-components/index'
+import WebComponent from '../../lib/pc/gaea/src/web-components/index'
 
 import Button from './components/button'
 import Title from './components/title'
