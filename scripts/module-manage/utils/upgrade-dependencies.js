@@ -55,7 +55,7 @@ export default  (modules) => {
         srcFiles.forEach((file) => {
             let code = fs.readFileSync(file).toString()
             // 将所有 fit 组件的引用还原
-            code = code.replace(/import\s(\w*|\{[\w\s,]*\}|\*\sas\s\w*)\sfrom\s\'(..\/){3,}([\w-]*\/)?([\w-]*)\/src\'/g, (word, match1, match2, match3, match4)=> {
+            code = code.replace(/import\s(\w*|\{[\w\s,]*\}|\*\sas\s\w*)\sfrom\s\'(..\/){2,}([\w-]*\/)?([\w-]*)\/src\'/g, (word, match1, match2, match3, match4)=> {
                 let categoryPath
                 if (match3 === undefined) {
                     categoryPath = match2
