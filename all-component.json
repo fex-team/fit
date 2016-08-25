@@ -201,6 +201,18 @@
                     {
                         "name": "盖亚可视化编辑器",
                         "path": "gaea"
+                    },
+                    {
+                        "name": "盖亚预览",
+                        "path": "gaea-preview"
+                    },
+                    {
+                        "name": "盖亚基础组件",
+                        "path": "gaea-web-components"
+                    },
+                    {
+                        "name": "盖亚基础组件 Native",
+                        "path": "gaea-native-components"
                     }
                 ]
             }

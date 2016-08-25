@@ -8,8 +8,8 @@
                 import { Layout, Header, Section, Sidebar } from 'fit-layout-global'
                 import Title from '../../../../components/title'
                 import SidebarComponent from '../../../../components/side-bar'
-                import readme from '../../../../lib/pc/gaea/readme.md'
-                import '../../../../lib/pc/gaea/demo'
+                import readme from '../../../../lib/pc/gaea-native-components/readme.md'
+                import '../../../../lib/pc/gaea-native-components/demo'
 
                 const store = createStore()
 
@@ -33,7 +33,7 @@
                         this.state = {
                             page: 'demo'
                         }
-                        document.title = '盖亚可视化编辑器'
+                        document.title = '盖亚基础组件 Native'
                     }
 
                     handlePageChange(value) {
@@ -73,7 +73,7 @@
                                     </Section>
                                     <Sidebar direction="right"
                                              width={120}>
-                                        <SidebarComponent gitlabUrl="https://github.com/fit-component/pc-gaea/tree/master"
+                                        <SidebarComponent gitlabUrl="https://github.com/fit-component/pc-gaea-native-components/tree/master"
                                  onChange={this.handlePageChange.bind(this)}/>
                                         <ScrollListen store={store}/>
                                     </Sidebar>
