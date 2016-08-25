@@ -3,13 +3,13 @@ import Gaea from 'fit-gaea'
 import data from './data.json'
 import _ from 'lodash'
 
-import WebComponent from '../../lib/pc/gaea-web-components/src/index'
+import Component from '../../lib/pc/gaea-web-components/src/index'
 
 import Button from './components/button'
 import Title from './components/title'
 
 const info = {
-    baseComponents        : WebComponent,
+    baseComponents        : Component,
     customComponents      : [Title, Button],
     version               : '1.3.0',
     defaultValue          : data,
