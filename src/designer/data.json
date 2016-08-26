@@ -1,1 +1,81 @@
-{}
+{
+    "gaea-component-1472197488267-1": {
+        "props": {
+            "gaeaUniqueKey": "gaea-layout",
+            "minHeight": 500
+        },
+        "layoutChilds": [
+            "gaea-component-1472197495549-2",
+            "gaea-component-1472197514530-3",
+            "gaea-component-1472197514978-4",
+            "gaea-component-1472197515725-5",
+            "gaea-component-1472197516178-6",
+            "gaea-component-1472197516732-7"
+        ],
+        "parentMapUniqueKey": null
+    },
+    "gaea-component-1472197495549-2": {
+        "props": {
+            "gaeaUniqueKey": "gaea-paragraph",
+            "text": "段落文字123"
+        },
+        "parentMapUniqueKey": "gaea-component-1472197488267-1"
+    },
+    "gaea-component-1472197514530-3": {
+        "props": {
+            "gaeaUniqueKey": "gaea-paragraph"
+        },
+        "parentMapUniqueKey": "gaea-component-1472197488267-1"
+    },
+    "gaea-component-1472197514978-4": {
+        "props": {
+            "gaeaUniqueKey": "gaea-button"
+        },
+        "parentMapUniqueKey": "gaea-component-1472197488267-1"
+    },
+    "gaea-component-1472197515725-5": {
+        "props": {
+            "gaeaUniqueKey": "gaea-input"
+        },
+        "parentMapUniqueKey": "gaea-component-1472197488267-1"
+    },
+    "gaea-component-1472197516178-6": {
+        "props": {
+            "gaeaUniqueKey": "gaea-button"
+        },
+        "parentMapUniqueKey": "gaea-component-1472197488267-1"
+    },
+    "gaea-component-1472197516732-7": {
+        "props": {
+            "gaeaUniqueKey": "gaea-layout"
+        },
+        "parentMapUniqueKey": "gaea-component-1472197488267-1",
+        "layoutChilds": [
+            "gaea-component-1472197517325-8"
+        ]
+    },
+    "gaea-component-1472197517325-8": {
+        "props": {
+            "gaeaUniqueKey": "gaea-layout"
+        },
+        "parentMapUniqueKey": "gaea-component-1472197516732-7",
+        "layoutChilds": [
+            "gaea-component-1472197517911-9",
+            "gaea-component-1472197518652-10"
+        ]
+    },
+    "gaea-component-1472197517911-9": {
+        "props": {
+            "gaeaUniqueKey": "gaea-paragraph"
+        },
+        "parentMapUniqueKey": "gaea-component-1472197517325-8"
+    },
+    "gaea-component-1472197518652-10": {
+        "props": {
+            "gaeaName": "按钮88",
+            "gaeaUniqueKey": "gaea-button",
+            "name": "按钮888"
+        },
+        "parentMapUniqueKey": "gaea-component-1472197517325-8"
+    }
+}

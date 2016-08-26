@@ -5,14 +5,10 @@ import _ from 'lodash'
 
 import Component from '../../lib/pc/gaea-web-components/src/index'
 
-import Button from './components/button'
-import Title from './components/title'
-
 const info = {
     baseComponents        : Component,
-    customComponents      : [Title, Button],
     version               : '1.3.0',
-    defaultValue          : data,
+    defaultValue          : null,
     versionInit           : (save)=> {
         save([{
             date: new Date(),

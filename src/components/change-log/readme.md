@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.8.26
+
+- `fit-gaea` [breakChange] 修改组件定义方式, 让原生组件增加字段即可适配编辑
+
 #### 2016.8.23
 
 - `fit-panel` [breakChange] `tabPanel` 的 key 属性修改为 activeKey, 避免与 key 属性冲突
