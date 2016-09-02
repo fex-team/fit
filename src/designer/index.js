@@ -40,8 +40,8 @@ const info = {
             id         : _.uniqueId('test_')
         }], true)
     },
-    onSave                : (info)=> {
-        info.saveToVersion(_.uniqueId('test_'))
+    onSave                : (componentsInfo)=> {
+
     },
     onOnlineModalShow     : (callback)=> {
         callback([{
