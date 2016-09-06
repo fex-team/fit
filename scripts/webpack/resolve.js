@@ -103,7 +103,7 @@ module.exports = {
         'react/lib/ExecutionEnvironment': 'execution-environment',
         'react/lib/ReactContext'        : 'react-context',
 
-        'react-native': 'react-native-web'
+        'react-native': 'nt-react-native-web'
     },
     extensions: ['', '.js', '.jsx', '.tsx', '.ts', 'coffee', '.cjsx', '.es6', '.json']
 }

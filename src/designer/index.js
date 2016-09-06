@@ -7,6 +7,7 @@ import Component from '../../lib/pc/gaea-native-components/src/index'
 
 const info = {
     baseComponents        : Component,
+    isReactNative         : true,
     version               : '1.3.0',
     defaultValue          : null,
     versionInit           : (save)=> {
