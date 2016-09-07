@@ -3,11 +3,11 @@ import Gaea from 'fit-gaea'
 import data from './data.json'
 import _ from 'lodash'
 
-import Component from '../../lib/pc/gaea-native-components/src/index'
+import Component from '../../lib/pc/gaea-web-components/src/index'
 
 const info = {
     baseComponents        : Component,
-    isReactNative         : true,
+    isReactNative         : false,
     version               : '1.3.0',
     defaultValue          : null,
     versionInit           : (save)=> {
