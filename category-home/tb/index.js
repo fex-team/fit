@@ -30,27 +30,27 @@ export default class Layout extends React.Component {
                          style={colStyle}>
                         <Tabs defaultActiveKey="1">
                             <TabPanel tab="Php开发流程"
-                                      key="1">
+                                      activeKey="1">
                                 <div className="markdown-body"
                                      dangerouslySetInnerHTML={{__html: marked(developReadme)}}></div>
                             </TabPanel>
                             <TabPanel tab="Node开发流程"
-                                      key="2">
+                                      activeKey="2">
                                 <div className="markdown-body"
                                      dangerouslySetInnerHTML={{__html: marked(nodeDevelopReadme)}}></div>
                             </TabPanel>
                             <TabPanel tab="node组件"
-                                      key="3">
+                                      activeKey="3">
                                 <div className="markdown-body"
                                      dangerouslySetInnerHTML={{__html: marked(nodeApiReadme)}}></div>
                             </TabPanel>
                             <TabPanel tab="使用typescript开发"
-                                      key="4">
+                                      activeKey="4">
                                 <div className="markdown-body"
                                      dangerouslySetInnerHTML={{__html: marked(typescriptReadme)}}></div>
                             </TabPanel>
                             <TabPanel tab="Q & A"
-                                      key="5">
+                                      activeKey="5">
                                 <div className="markdown-body"
                                      dangerouslySetInnerHTML={{__html: marked(qaReadme)}}></div>
                             </TabPanel>
