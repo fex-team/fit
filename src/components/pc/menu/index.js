@@ -64,6 +64,10 @@
                         import SubTreeVerticalCode from '-!text!../../../../lib/pc/menu/demo/lists/sub-tree-vertical.tsx'
                         import SubTreeVerticalMarkdown from '../../../../lib/pc/menu/demo/lists/sub-tree-vertical.md'
                         
+                        import RightSubTreeComponent from '../../../../lib/pc/menu/demo/lists/right-sub-tree.tsx'
+                        import RightSubTreeCode from '-!text!../../../../lib/pc/menu/demo/lists/right-sub-tree.tsx'
+                        import RightSubTreeMarkdown from '../../../../lib/pc/menu/demo/lists/right-sub-tree.md'
+                        
 
                 const colStyle = {
                     padding: 10,
@@ -160,6 +164,17 @@
                                       npmName="fit-menu">
 
                                     <SubTreeVerticalComponent/>
+
+                            </CodeView>
+                        </Col>
+                    
+                        <Col span="24" style={colStyle}>
+                            <CodeView store={store}
+                                      md={RightSubTreeMarkdown}
+                                      code={RightSubTreeCode}
+                                      npmName="fit-menu">
+
+                                    <RightSubTreeComponent/>
 
                             </CodeView>
                         </Col>
