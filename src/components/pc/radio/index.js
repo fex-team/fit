@@ -26,12 +26,6 @@
                                 import * as RadioGroupModule from '../../../../lib/pc/radio/src/radio-group/module.tsx'
                                 import RadioGroupModuleCode from '-!text!../../../../lib/pc/radio/src/radio-group/module.tsx'
                                 
-                            import RadioButtonSource from '../../../../lib/pc/radio/src/radio-button/index.tsx'
-                            import RadioButtonSourceCode from '-!text!../../../../lib/pc/radio/src/radio-button/index.tsx'
-                            
-                                import * as RadioButtonModule from '../../../../lib/pc/radio/src/radio-button/module.tsx'
-                                import RadioButtonModuleCode from '-!text!../../../../lib/pc/radio/src/radio-button/module.tsx'
-                                
 
                 
                         import BasicComponent from '../../../../lib/pc/radio/demo/lists/basic.tsx'
@@ -201,10 +195,6 @@
                             
                             <div style={docStyle}>
                                 <CodeDoc code={RadioGroupSourceCode} instance={RadioGroupSource} moduleCode={RadioGroupModuleCode} moduleInstance={RadioGroupModule} />
-                            </div>
-                            
-                            <div style={docStyle}>
-                                <CodeDoc code={RadioButtonSourceCode} instance={RadioButtonSource} moduleCode={RadioButtonModuleCode} moduleInstance={RadioButtonModule} />
                             </div>
                             
                                 </div>
