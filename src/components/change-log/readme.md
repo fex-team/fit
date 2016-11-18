@@ -1,5 +1,9 @@
 ### 改动日志
 
+#### 2016.11.18
+
+- 贴吧track submit增加https支持
+
 #### 2016.9.18
 
 - `fit-menu` 现在 `RightMenu` 也受反色控制了
