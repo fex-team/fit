@@ -18,7 +18,7 @@
         "dll": "webpack --config scripts/webpack/webpack.dll.config.js",
         "dll-production": "webpack -p --config ./scripts/webpack/webpack.dll.production.config.js",
         "before-update": "npm run babel-scripts",
-        "update": "node scripts-babel/module-manage/index.js --update",
+        "update": "npm run babel-scripts && node scripts-babel/module-manage/index.js --update",
         "start-dev": "npm run babel-scripts && npm run demo-init && npm run dll && npm run server & npm run webpack",
         "start": "node server/app.js production",
         "build": "npm run dll-production && npm run webpack-production",
