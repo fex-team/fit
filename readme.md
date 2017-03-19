@@ -35,6 +35,6 @@ IE9+
 
 - 组件库: https://github.com/fit-component
 
-# 交流群
+## 后记
 
-qq: 183350007
+组件库已基本稳定，少有维护，沉淀出的组件库维护经验：https://github.com/ascoders/blog/issues/5
