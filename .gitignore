@@ -1,8 +1,1 @@
-node_modules
-.idea
-npm-debug.log
-scripts-babel
-test/coverage
-test/jasmine
-lib
-built
+
